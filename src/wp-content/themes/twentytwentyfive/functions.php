@@ -156,3 +156,27 @@ if ( ! function_exists( 'twentytwentyfive_format_binding' ) ) :
 		}
 	}
 endif;
+
+// // Adds a custom field for alcohol percentage in WooCommerce products.
+// add_action('woocommerce_product_options_general_product_data', 'add_alcohol_percentage_field');
+
+// function add_alcohol_percentage_field() {
+//     woocommerce_wp_text_input([
+//         'id' => 'alcohol_percentage',
+//         'label' => __('Процент алкоголя (%)', 'woocommerce'),
+//         'desc_tip' => true,
+//         'description' => __('Введите процентное содержание алкоголя, например 12.5', 'woocommerce'),
+//         'type' => 'number',
+//         'custom_attributes' => [
+//             'step' => '0.1',
+//             'min' => '0'
+//         ]
+//     ]);
+// }
+// add_action('woocommerce_process_product_meta', 'save_alcohol_percentage_field');
+
+// function save_alcohol_percentage_field($post_id) {
+//     if (isset($_POST['alcohol_percentage'])) {
+//         update_post_meta($post_id, 'alcohol_percentage', sanitize_text_field($_POST['alcohol_percentage']));
+//     }
+// }
