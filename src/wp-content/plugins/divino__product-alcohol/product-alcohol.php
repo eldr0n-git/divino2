@@ -2,7 +2,7 @@
 /*
 Plugin Name: DIVINO Alcohol Percentage for Products
 Description: Добавляет поле "Процент алкоголя" к товарам WooCommerce.
-Version: 1.01
+Version: 1.02
 Author: eldr0n
 Website: https://divino.kz
 */
@@ -10,8 +10,8 @@ Website: https://divino.kz
 add_action('woocommerce_product_options_general_product_data', 'add_alcohol_percentage_field');
 function add_alcohol_percentage_field() {
     global $post;
-    $categories = ['вино', 'коньяк', 'водка', 'ликёры'];
-    if (has_term($categories, 'product_cat', $post)) {
+    $categories = ['Вино', 'wine', 'водка', 'ликёры'];
+    if (has_term($categories, 'product_kind', $post)) {
         woocommerce_wp_text_input([
             'id' => 'alcohol_percentage',
             'label' => __('Процент алкоголя (%)', 'woocommerce'),

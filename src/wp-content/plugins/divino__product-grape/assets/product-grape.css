@@ -1,0 +1,11 @@
+.grape-varieties {
+    margin-top: 2em;
+}
+.grape-varieties h3 {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+.grape-varieties ul {
+    list-style: disc;
+    padding-left: 20px;
+}

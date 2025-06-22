@@ -6,6 +6,7 @@
 /mysql_data2
 /db
 /db_data
+/src/wp-content/uploads
 /.pnp
 /.svn
 .pnp.js

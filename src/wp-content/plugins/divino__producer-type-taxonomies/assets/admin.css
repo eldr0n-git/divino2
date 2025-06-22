@@ -1,0 +1,4 @@
+/* Устанавливаем ширину колонки таксономии product_kind */
+.column-taxonomy-product_kind {
+    width: 11%;
+}
