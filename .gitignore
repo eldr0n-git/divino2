@@ -7,6 +7,7 @@
 /db
 /db_data
 /src/wp-content/uploads
+/src/wp-content/debug.log
 /.pnp
 /.svn
 .pnp.js
