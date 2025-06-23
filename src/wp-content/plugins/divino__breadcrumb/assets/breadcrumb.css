@@ -1,0 +1,52 @@
+/**
+ * Product Kind Breadcrumb Styles
+ * Version: 1.0.0
+ */
+
+ .product-kind-breadcrumb {
+    margin: 0 0 20px 0;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #666;
+    font-family: inherit;
+    line-height: 1.5;
+}
+
+.product-kind-breadcrumb a {
+    color: #0073aa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.product-kind-breadcrumb a:hover {
+    color: #005177;
+    text-decoration: underline;
+}
+
+.product-kind-breadcrumb a:focus {
+    outline: 2px solid #0073aa;
+    outline-offset: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .product-kind-breadcrumb {
+        font-size: 12px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+    .product-kind-breadcrumb {
+        color: #ccc;
+    }
+    
+    .product-kind-breadcrumb a {
+        color: #4fc3f7;
+    }
+    
+    .product-kind-breadcrumb a:hover {
+        color: #81d4fa;
+    }
+}
