@@ -165,5 +165,5 @@ add_action('save_post_product', function ($post_id) {
 
 add_action('wp_loaded', function () {
     $taxonomies = get_taxonomies([], 'names');
-    error_log('Зарегистрированные таксономии: ' . print_r($taxonomies, true));
+    //error_log('Зарегистрированные таксономии: ' . print_r($taxonomies, true));
 });

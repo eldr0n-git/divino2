@@ -2,7 +2,7 @@
 /*
 Plugin Name: WooCommerce Product Types & Brands
 Description: Добавляет таксономии "Тип товара" и "Производитель" для товаров WooCommerce.
-Version: 1.0
+Version: 1.02
 Author: eldr0n
 Website: https://divino.kz
 */
@@ -10,6 +10,10 @@ Website: https://divino.kz
 if (!defined('ABSPATH')) {
     exit;
 }
+// !!!! ТИПЫ ТОВАРОВ !!!!
+add_filter('divino_product_kinds', function () {
+    return ['spirits', 'softspirits', 'wine', 'champagne-and-sparkling'];
+});
 // Регистрируем кастомные таксономии
 add_action('init', function () {
     // Тип товара

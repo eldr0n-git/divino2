@@ -13,15 +13,17 @@ if (!defined('ABSPATH')) {
 }
 
 // Функция для получения категорий алкогольных товаров
-function get_product_categories() {
-    return ['spirits', 'softspirits', 'wine', 'champagne-and-sparkling'];
-}
+// function get_product_categories() {
+//     return ['spirits', 'softspirits', 'wine', 'champagne-and-sparkling'];
+// }
+
+
 
 add_action('woocommerce_product_options_general_product_data', 'add_alcohol_percentage_field');
 function add_alcohol_percentage_field() {
     global $post;
     
-    if (has_term(get_product_categories(), 'product_kind', $post)) {
+    if (has_term(apply_filters('divino_product_kinds', []), 'product_kind', $post)) {
         woocommerce_wp_text_input([
             'id' => 'alcohol_percentage',
             'label' => __('Процент алкоголя (%)', 'woocommerce'),
@@ -47,7 +49,7 @@ add_action('woocommerce_single_product_summary', 'display_alcohol_percentage', 2
 function display_alcohol_percentage() {
     global $product;
     
-    if (!has_term(get_product_categories(), 'product_kind', $product->get_id())) {
+    if (!has_term(apply_filters('divino_product_kinds', []), 'product_kind', $product->get_id())) {
         return;
     }
     
