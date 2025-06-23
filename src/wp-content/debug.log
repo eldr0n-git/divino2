@@ -3077,3 +3077,28 @@
     [region] => region
 )
 
+[23-Jun-2025 09:15:35 UTC] Зарегистрированные таксономии: Array
+(
+    [category] => category
+    [post_tag] => post_tag
+    [nav_menu] => nav_menu
+    [link_category] => link_category
+    [post_format] => post_format
+    [wp_theme] => wp_theme
+    [wp_template_part_area] => wp_template_part_area
+    [wp_pattern_category] => wp_pattern_category
+    [action-group] => action-group
+    [product_brand] => product_brand
+    [product_type] => product_type
+    [product_visibility] => product_visibility
+    [product_cat] => product_cat
+    [product_tag] => product_tag
+    [product_shipping_class] => product_shipping_class
+    [pa_alcohol_percentage] => pa_alcohol_percentage
+    [pa_grape-variety] => pa_grape-variety
+    [pa_vintage] => pa_vintage
+    [pa_volume] => pa_volume
+    [product_kind] => product_kind
+    [region] => region
+)
+

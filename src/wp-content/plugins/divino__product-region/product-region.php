@@ -5,6 +5,10 @@
  * Version: 1.0
  * Author: eldr0n
  */
+// Запрещаем прямой доступ к файлу
+if (!defined('ABSPATH')) {
+    exit;
+}
 
 add_action('init', function () {
     register_taxonomy('region', 'product', [

@@ -6,7 +6,10 @@ Version: 1.0
 Author: eldr0n
 Website: https://divino.kz
 */
-
+// Запрещаем прямой доступ к файлу
+if (!defined('ABSPATH')) {
+    exit;
+}
 add_action('add_meta_boxes', function () {
     add_meta_box(
         'product_brand_meta_box',

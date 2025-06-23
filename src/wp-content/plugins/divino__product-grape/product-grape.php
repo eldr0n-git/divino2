@@ -7,6 +7,11 @@
  * Website: https://divino.kz
  */
 
+ // Запрещаем прямой доступ к файлу
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 add_action('init', function () {
     if (!class_exists('WooCommerce')) return;
 

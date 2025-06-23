@@ -6,7 +6,10 @@ Version: 1.0
 Author: eldr0n
 Website: https://divino.kz
 */
-
+// Запрещаем прямой доступ к файлу
+if (!defined('ABSPATH')) {
+    exit;
+}
 // Регистрируем кастомные таксономии
 add_action('init', function () {
     // Тип товара

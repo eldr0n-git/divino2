@@ -7,6 +7,11 @@ Author: eldr0n
 Website: https://divino.kz
 */
 
+// Запрещаем прямой доступ к файлу
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 // Функция для получения категорий алкогольных товаров
 function get_product_categories() {
     return ['spirits', 'softspirits', 'wine', 'champagne-and-sparkling'];
