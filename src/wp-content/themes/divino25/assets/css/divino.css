@@ -1,0 +1,6 @@
+.wp-block-site-title a{
+    background-image: url('/wp-content/themes/twentytwentyfive/images/divino-logo.svg');
+    width: 150px;
+    height: 80px;
+    background-size: contain;
+}
