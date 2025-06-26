@@ -173,3 +173,14 @@ function divino_login_styles() {
     wp_enqueue_style( 'divino-login', get_stylesheet_directory_uri() . '/assets/css/divino-login.css' );
 }
 add_action( 'login_enqueue_scripts', 'divino_login_styles' );
+
+// Enqueue the Onest font from Google Fonts
+function divino_enqueue_onest_font() {
+    wp_enqueue_style(
+        'onest-font',
+        'https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap',
+        [],
+        null
+    );
+}
+add_action('wp_enqueue_scripts', 'divino_enqueue_onest_font');

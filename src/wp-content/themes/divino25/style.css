@@ -12,6 +12,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: divino
 */
 
+
+:root {
+    --primary-color: #C7383E;
+    --primary-bg-primary: #C7383E;
+    --primary-text-color: #fff;
+    --pd: 15px;
+}
+
 /*
  * Link styles
  * https://github.com/WordPress/gutenberg/issues/42319
@@ -71,3 +79,62 @@ footer .wp-block-site-title a {
     width: 150px;
     height: 80px;
 }
+
+
+/* catalogue button */
+
+.catalog-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .catalog-toggle {
+    background-color: var(--primary-bg-primary);
+    color: var(--primary-text-color);
+    border: var(--primary-brd-size) solid var(--primary-brd-color);
+    border-radius: 8px;
+    padding: calc(var(--pd) - 4px) var(--pd);
+    cursor: pointer;
+    font-family: 'onest-font', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    display: flex;
+  }
+
+  .catalog-toggle .button__text::before {
+    display: block;
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('assets/images/ico-catalogue.svg');
+    margin-right: 10px;
+  }
+  .catalog-toggle .button__text {
+    display: flex;
+    align-items: center;
+  }
+
+  .catalog-menu {
+    display: none;
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    list-style: none;
+    padding: 0;
+    margin-top: 4px;
+    z-index: 1000;
+    min-width: 180px;
+  }
+
+  .catalog-menu li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .catalog-menu li a:hover {
+    background: #f0f0f0;
+  }
