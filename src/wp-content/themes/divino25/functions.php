@@ -168,14 +168,34 @@ add_action('wp_loaded', function () {
     //error_log('Зарегистрированные таксономии: ' . print_r($taxonomies, true));
 });
 
+//FIX WISHLIST PLUGIN DEBUG MESSAGES
+// Подавить уведомление о раннем вызове textdomain
+add_action('init', function() {
+    remove_action('_load_textdomain_just_in_time', '_load_textdomain_just_in_time');
+}, 1);
+
+// Или более точечно для конкретного плагина
+add_filter('doing_it_wrong_trigger_error', function($trigger, $function_name) {
+    if ($function_name === '_load_textdomain_just_in_time' && 
+        strpos(debug_backtrace()[2]['file'] ?? '', 'ti-woocommerce-wishlist') !== false) {
+        return false;
+    }
+    return $trigger;
+}, 10, 2);
+
+
+
+
 function divino_login_styles() {
     // Подключаем CSS-файл
     wp_enqueue_style( 'divino-login', get_stylesheet_directory_uri() . '/assets/css/divino-login.css' );
 }
 add_action( 'login_enqueue_scripts', 'divino_login_styles' );
 
+
+// FONTS    
 // Enqueue the Onest font from Google Fonts
-function divino_enqueue_onest_font() {
+function title_enqueue_onest_font() {
     wp_enqueue_style(
         'onest-font',
         'https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap',
@@ -183,4 +203,13 @@ function divino_enqueue_onest_font() {
         null
     );
 }
-add_action('wp_enqueue_scripts', 'divino_enqueue_onest_font');
+function main_enqueue_rubik_font() {
+    wp_enqueue_style(
+        'main-font',
+        'https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap',
+        [],
+        null
+    );
+}
+add_action('wp_enqueue_scripts', 'title_enqueue_onest_font');
+add_action('wp_enqueue_scripts', 'main_enqueue_rubik_font');

@@ -47,7 +47,6 @@ add_filter('parse_query', function ($query) {
 });
 // Добавление поля для выбора региона на странице редактирования товара
 add_action('woocommerce_single_product_summary', function () {
-    error_log('Вызван хук региона'); // ← Эта строка должна появиться в debug.log
     $terms = get_the_terms(get_the_ID(), 'region');
     if ($terms && !is_wp_error($terms)) {
         $names = array_map('esc_html', wp_list_pluck($terms, 'name'));

@@ -241,3 +241,9 @@ register_activation_hook( __FILE__, 'activation_tinv_wishlist' );
 register_deactivation_hook( __FILE__, 'deactivation_tinv_wishlist' );
 register_uninstall_hook( __FILE__, 'uninstall_tinv_wishlist' );
 add_action( 'plugins_loaded', 'run_tinv_wishlist', 20 );
+
+//FIX DEBUG MESSAGES
+// Instead of loading translations immediately, use:
+add_action('init', function() {
+    load_plugin_textdomain('ti-woocommerce-wishlist', false, dirname(plugin_basename(__FILE__)) . '/languages');
+});

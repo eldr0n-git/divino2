@@ -1146,3 +1146,8 @@ function tinvwl_message_placeholders( string $string, ?WC_Product $product = nul
 add_action( 'tinvwl_flush_rewrite_rules', 'TInvWL_Public_TInvWL::apply_rewrite_rules' );
 add_action( 'tinvwl_disable_notifications_event', 'TInvWL_Admin_Notices::disable_notifications' );
 add_action( 'tinvwl_remove_without_author_wishlist', 'TInvWL_Admin_TInvWL::remove_old_wishlists' );
+
+// FIX DEBUG MESSAGES
+add_action('init', function() {
+    load_plugin_textdomain('ti-woocommerce-wishlist', false, dirname(plugin_basename(__FILE__)) . '/languages');
+});
