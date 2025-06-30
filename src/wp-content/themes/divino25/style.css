@@ -41,6 +41,10 @@ Text Domain: divino
 a {
 	text-decoration-thickness: 1px !important;
 	text-underline-offset: .1em;
+    outline: none;
+}
+a:focus {
+    outline: none;
 }
 
 /* Focus styles */
@@ -91,8 +95,10 @@ h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption, p {
 }
 
 footer .wp-block-site-title a {
-    width: 150px;
-    height: 80px;
+    width: 181px;
+    height: 120px;
+    background-image: url('assets/images/divino-logo-dark.svg');
+    background-position: 0 0;
 }
 
 
@@ -339,4 +345,9 @@ footer .wp-block-site-title a {
     z-index: 1001;
     position: relative;
     background: #fff;
+}
+
+footer {
+    background-color: #000;
+    color: #fff;
 }

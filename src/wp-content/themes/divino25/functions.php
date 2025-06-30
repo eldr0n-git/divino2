@@ -213,3 +213,14 @@ function main_enqueue_rubik_font() {
 }
 add_action('wp_enqueue_scripts', 'title_enqueue_onest_font');
 add_action('wp_enqueue_scripts', 'main_enqueue_rubik_font');
+
+// Remove the prefix from WooCommerce archive titles
+function remove_custom_taxonomy_archive_title_prefix_general( $title ) {
+    // Check if we are on an archive page for your 'product_kind' custom taxonomy
+    if ( is_tax( 'product_kind' ) ) {
+        // Get the title of the current term (e.g., "Белое вино")
+        $title = single_term_title( '', false );
+    }
+    return $title;
+}
+add_filter( 'get_the_archive_title', 'remove_custom_taxonomy_archive_title_prefix_general' );
