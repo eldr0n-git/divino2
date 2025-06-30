@@ -87,6 +87,7 @@ h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption, p {
     background-repeat: no-repeat;
     display: flex;
     font-size: 0;
+    background-position: -5px 0;
 }
 
 footer .wp-block-site-title a {
@@ -115,6 +116,7 @@ footer .wp-block-site-title a {
     display: flex;
 }
 
+
 .catalog-toggle .button__text::before {
     display: block;
     content: '';
@@ -125,21 +127,26 @@ footer .wp-block-site-title a {
     background-image: url('assets/images/ico-catalogue.svg');
     margin-right: 10px;
 }
+.catalog-toggle.active .button__text::before {
+    background-image: url('assets/images/ico-cancel.svg');
+}
+
 .catalog-toggle .button__text {
     display: flex;
     align-items: center;
 }
-
 .catalog-menu {
-    display: none;
-    position: absolute;
-    background: white;
-    border: 1px solid #ccc;
+    max-width: var(--wp--style--global--wide-size);
+    display: flex;
+    flex-grow: 1;
+    margin-left: -60px;
+}
+.catalog-menu > ul {
+    display: flex;
     list-style: none;
     padding: 0;
-    margin-top: 4px;
-    z-index: 1000;
-    min-width: 180px;
+    justify-content: space-between;
+    flex-grow: 1;
 }
 
 .catalog-menu li a {
@@ -147,6 +154,10 @@ footer .wp-block-site-title a {
     padding: 10px;
     text-decoration: none;
     color: #333;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    background: #fff;
 }
 
 .catalog-menu li a:hover {
@@ -193,9 +204,9 @@ footer .wp-block-site-title a {
     display: flex;
     align-items: center;
     /* a fix to align with logo*/
-    padding: 10px 0 10px 6px;
+    padding: 10px 0;
     margin-top: 0;
-    
+
 }
 .cat_menu__item {
     font-size: 16px;
@@ -233,6 +244,7 @@ footer .wp-block-site-title a {
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
     padding: 0 12px;
+    line-height: 16px;
 }
 .basket-toggle__count {
     background-color: #49C171;
@@ -296,7 +308,35 @@ footer .wp-block-site-title a {
 }
 
 /* Megamenu */
+.megamenu{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    max-width: initial;
+    margin: 0;
+    display: none;
+}
 .megamenu__cnt {
     width: 100%;
     background-color: #fff;
+    max-width: initial;
+    display: flex;
+    flex-grow: 1;
+    margin-left: -50px;
+    justify-content: center;
+}
+.veil{
+    background-color: rgba(0,0,0, 0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: none;
+}
+.header__cnt{
+    z-index: 1001;
+    position: relative;
+    background: #fff;
 }

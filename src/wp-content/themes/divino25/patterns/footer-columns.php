@@ -70,9 +70,9 @@
 			<?php
 			printf(
 				/* translators: Designed with WordPress. %s: WordPress link. */
-				esc_html__( 'Designed with %s', 'divino' ),
-				'<a href="' . esc_url( __( 'https://wordpress.org', 'divino' ) ) . '" rel="nofollow">WordPress</a>'
-			);
+                esc_html__( 'Сеть винных бутиков %s', 'Divino' ),
+                '<a href="' . esc_url( __( 'https://divino.kz', 'divino' ) ) . '" rel="nofollow">Divino</a>'
+                );
 			?>
 			</p>
 			<!-- /wp:paragraph -->

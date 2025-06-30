@@ -42,23 +42,17 @@
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|80"}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"top","justifyContent":"space-between"}} -->
 			<div class="wp-block-group">
 				<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"}} -->
-					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Blog', 'divino' ); ?>","url":"#"} /-->
+					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Магазины', 'divino' ); ?>","url":"#"} /-->
 
-					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'About', 'divino' ); ?>","url":"#"} /-->
+					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Как купить', 'divino' ); ?>","url":"#"} /-->
 
-					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'FAQs', 'divino' ); ?>","url":"#"} /-->
+					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Гарантии', 'divino' ); ?>","url":"#"} /-->
 
-					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Authors', 'divino' ); ?>","url":"#"} /-->
+					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Франшиза', 'divino' ); ?>","url":"#"} /-->
 				<!-- /wp:navigation -->
 
 				<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"}} -->
-					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Events', 'divino' ); ?>","url":"#"} /-->
-
-					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Shop', 'divino' ); ?>","url":"#"} /-->
-
-					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Patterns', 'divino' ); ?>","url":"#"} /-->
-
-					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Themes', 'divino' ); ?>","url":"#"} /-->
+					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Блог', 'divino' ); ?>","url":"#"} /-->
 				<!-- /wp:navigation -->
 			</div>
 				<!-- /wp:group -->
@@ -72,16 +66,16 @@
 		<!-- wp:group {"align":"full","style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 		<div class="wp-block-group alignfull">
 			<!-- wp:paragraph {"fontSize":"small"} -->
-			<p class="has-small-font-size"><?php esc_html_e( 'Twenty Twenty-Five', 'divino' ); ?></p>
+			<p class="has-small-font-size"><?php esc_html_e( '2025 &copy; Все права защищены', 'divino' ); ?></p>
 			<!-- /wp:paragraph -->
 			<!-- wp:paragraph {"fontSize":"small"} -->
 			<p class="has-small-font-size">
 				<?php
 				printf(
 					/* translators: Designed with WordPress. %s: WordPress link. */
-					esc_html__( 'Designed with %s', 'divino' ),
-					'<a href="' . esc_url( __( 'https://wordpress.org', 'divino' ) ) . '" rel="nofollow">WordPress</a>'
-				);
+                    esc_html__( 'Сеть винных бутиков %s', 'Divino' ),
+                    '<a href="' . esc_url( __( 'https://divino.kz', 'divino' ) ) . '" rel="nofollow">Divino</a>'
+                        );
 				?>
 			</p>
 			<!-- /wp:paragraph -->

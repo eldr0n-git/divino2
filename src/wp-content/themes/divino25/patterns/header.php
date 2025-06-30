@@ -13,7 +13,7 @@
 
 ?>
 <!-- wp:group {"align":"full","layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull">
+<div class="header__cnt wp-block-group alignfull">
 	<!-- wp:group {"layout":{"type":"constrained"}} -->
 	<div class="wp-block-group alignwide">
 
@@ -64,22 +64,27 @@
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const toggle = document.querySelector('.catalog-toggle');
-                const menu = document.querySelector('.catalog-menu');
+                const menu = document.querySelector('.megamenu');
+                const veil = document.querySelector('.actionMegamenuVeil');
 
                 toggle?.addEventListener('click', (e) => {
-                e.stopPropagation();
-                menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+                    e.stopPropagation();
+                    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+                    veil.style.display = (veil.style.display === 'flex') ? 'none' : 'flex';
+                    toggle.classList.toggle('active');
                 });
 
                 document.addEventListener('click', () => {
-                menu.style.display = 'none';
+                    menu.style.display = 'none';
+                    veil.style.display = 'none';
+                    toggle.classList.remove('active');
                 });
             });
             </script>
             <div class="catalog-dropdown">
                 <button class="button button--primary catalog-toggle"><span class="button__text">Каталог</span></button>
 
-                
+
             </div>
             <div class="cat_menu">
                 <ul class="cat_menu__cnt">
@@ -98,7 +103,7 @@
                                 'hide_empty' => false,
                                 'parent' => $parent_term->term_id,
                             ]);
-                            
+
                             if (!is_wp_error($child_terms) && !empty($child_terms)) {
                                 foreach ($child_terms as $child_term) {
                                     $link = get_term_link($child_term);
@@ -123,25 +128,41 @@
                 </div>
             </div>
         </div>
-        <div class="megamenu" style="position:absolute">
+        <div class="megamenu">
             <div class="megamenu__cnt">
-                <ul class="catalog-menu">
-                    <?php
-                    $terms = get_terms([
-                        'taxonomy' => 'product_kind',
-                        'hide_empty' => false,
-                        'parent' => 0,
-                    ]);
+                <div class="catalog-menu">
+                <?php
+                    function display_product_kind_terms($parent = 0)
+                    {
+                        $terms = get_terms([
+                            'taxonomy' => 'product_kind',
+                            'hide_empty' => false,
+                            'parent' => $parent,
+                        ]);
 
-                    foreach ($terms as $term) {
-                        $link = get_term_link($term);
-                        echo '<li><a href="' . esc_url($link) . '">' . esc_html($term->name) . '</a></li>';
+                        if (!empty($terms)) {
+                            echo '<ul>';
+                            foreach ($terms as $term) {
+                                $link = get_term_link($term);
+                                echo '<li><a href="' . esc_url($link) . '">' . esc_html($term->name) . '</a>';
+
+                                // Рекурсивный вызов для подкатегорий
+                                display_product_kind_terms($term->term_id);
+
+                                echo '</li>';
+                            }
+                            echo '</ul>';
+                        }
                     }
+
+                    // Выводим всё дерево с корневых категорий
+                    display_product_kind_terms();
                     ?>
-                </ul>
+                </div>
             </div>
         </div>
 	</div>
 	<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
+ <div class="veil actionMegamenuVeil"></div>
