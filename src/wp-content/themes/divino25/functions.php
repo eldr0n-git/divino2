@@ -223,4 +223,7 @@ function remove_custom_taxonomy_archive_title_prefix_general( $title ) {
     }
     return $title;
 }
+
+// Удаляем префикс из заголовков H1 архивов таксономий
 add_filter( 'get_the_archive_title', 'remove_custom_taxonomy_archive_title_prefix_general' );
+

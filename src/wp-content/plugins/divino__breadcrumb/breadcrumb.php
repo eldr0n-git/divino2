@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Product Kind Breadcrumb
+ * Plugin Name: DIVINO Product Kind Breadcrumb
  * Description: Кастомный breadcrumb для WooCommerce с использованием таксономии product_kind вместо стандартных категорий
- * Version: 1.0.1
+ * Version: 1.1.1
  * Author: eldr0n
  * website URI: https://divino.kz
  * Text Domain: product-kind-breadcrumb
@@ -111,6 +111,9 @@ class ProductKindBreadcrumb {
         // Основные функции
         add_action('wp_enqueue_scripts', array($this, 'enqueue_styles'));
         add_shortcode('product_kind_breadcrumb', array($this, 'breadcrumb_shortcode'));
+        add_action('woocommerce_archive_description', array($this, 'display_breadcrumb'), 5);
+        add_action('template_redirect', array($this, 'maybe_output_breadcrumb'));
+        
         
         // Замена стандартного breadcrumb (если включено в настройках)
         $settings = $this->get_settings();
@@ -124,7 +127,43 @@ class ProductKindBreadcrumb {
             add_action('wp_footer', array($this, 'debug_breadcrumb_info'));
         }
     }
+    private function get_deepest_term($terms, $taxonomy) {
+        $deepest_term = null;
+        $max_depth = -1;
     
+        foreach ($terms as $term) {
+            $depth = 0;
+            $current = $term;
+            while ($current->parent != 0) {
+                $current = get_term($current->parent, $taxonomy);
+                if (is_wp_error($current)) break;
+                $depth++;
+            }
+            if ($depth > $max_depth) {
+                $max_depth = $depth;
+                $deepest_term = $term;
+            }
+        }
+    
+        return $deepest_term ? $deepest_term : $terms[0];
+    }
+    
+    private function get_term_hierarchy($term, $taxonomy) {
+        $hierarchy = array();
+        while ($term && !is_wp_error($term)) {
+            array_unshift($hierarchy, $term);
+            if ($term->parent == 0) break;
+            $term = get_term($term->parent, $taxonomy);
+        }
+        return $hierarchy;
+    }
+    
+    private function get_primary_product_cat($product_id) {
+        $terms = wp_get_post_terms($product_id, 'product_cat');
+        if (empty($terms) || is_wp_error($terms)) return null;
+        return $this->get_deepest_term($terms, 'product_cat');
+    }
+
     /**
      * Инициализация админ панели
      */
@@ -178,6 +217,14 @@ class ProductKindBreadcrumb {
         return wp_parse_args($settings, $this->default_settings);
     }
     
+    public function maybe_output_breadcrumb() {
+        if (is_tax('product_kind')) {
+            add_action('wp_head', function () {
+                // Выведем перед началом контента
+                add_action('wp_body_open', array($this, 'display_breadcrumb'), 5);
+            });
+        }
+    }
     /**
      * Подключение стилей
      */
@@ -243,24 +290,32 @@ class ProductKindBreadcrumb {
         }
         
         if (is_product()) {
-            // Страница товара
-            $main_kind = $this->get_primary_product_kind($post->ID);
-            
-            if ($main_kind) {
-                $hierarchy = $this->get_product_kind_hierarchy($main_kind);
-                
-                foreach ($hierarchy as $term) {
+            // === PRODUCT PAGE ===
+            $kind_term = $this->get_primary_product_kind($post->ID);
+            $cat_term = $this->get_primary_product_cat($post->ID);
+        
+            if ($kind_term) {
+                $kind_hierarchy = $this->get_term_hierarchy($kind_term, 'product_kind');
+                foreach ($kind_hierarchy as $term) {
                     $breadcrumb[] = '<a href="' . get_term_link($term) . '">' . esc_html($term->name) . '</a>';
                 }
             }
-            
+        
+            if ($cat_term) {
+                $cat_hierarchy = $this->get_term_hierarchy($cat_term, 'product_cat');
+                foreach ($cat_hierarchy as $term) {
+                    $breadcrumb[] = '<a href="' . get_term_link($term) . '">' . esc_html($term->name) . '</a>';
+                }
+            }
+        
             $breadcrumb[] = esc_html(get_the_title());
-            
-        } elseif (is_tax('product_kind')) {
-            // Архив product_kind
+        
+        } elseif (is_tax('product_kind') || is_tax('product_cat')) {
+            // === ARCHIVE PAGE ===
             $current_term = get_queried_object();
-            $hierarchy = $this->get_product_kind_hierarchy($current_term);
-            
+            $taxonomy = $current_term->taxonomy;
+        
+            $hierarchy = $this->get_term_hierarchy($current_term, $taxonomy);
             foreach ($hierarchy as $key => $term) {
                 if ($key === array_key_last($hierarchy)) {
                     $breadcrumb[] = esc_html($term->name);
@@ -268,7 +323,34 @@ class ProductKindBreadcrumb {
                     $breadcrumb[] = '<a href="' . get_term_link($term) . '">' . esc_html($term->name) . '</a>';
                 }
             }
+        
+            // Добавим связанную таксономию, если есть
+            $related_tax = ($taxonomy === 'product_kind') ? 'product_cat' : 'product_kind';
+            $product_ids = get_posts(array(
+                'post_type' => 'product',
+                'numberposts' => 1,
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => $taxonomy,
+                        'field' => 'term_id',
+                        'terms' => $current_term->term_id
+                    )
+                ),
+                'fields' => 'ids'
+            ));
+        
+            if (!empty($product_ids)) {
+                $related_terms = wp_get_post_terms($product_ids[0], $related_tax);
+                if (!empty($related_terms) && !is_wp_error($related_terms)) {
+                    $primary_related = $this->get_deepest_term($related_terms, $related_tax);
+                    $related_hierarchy = $this->get_term_hierarchy($primary_related, $related_tax);
+                    foreach ($related_hierarchy as $term) {
+                        $breadcrumb[] = '<a href="' . get_term_link($term) . '">' . esc_html($term->name) . '</a>';
+                    }
+                }
+            }
         }
+        
         
         return implode($settings['separator'], $breadcrumb);
     }
@@ -403,22 +485,22 @@ class ProductKindBreadcrumb {
      */
     public function remove_woocommerce_breadcrumb() {
         // Удаляем стандартные хуки WooCommerce
-        remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
-        remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 10);
+        //remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+        //remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 10);
         
         // Удаляем из других возможных мест
-        remove_action('woocommerce_single_product_summary', 'woocommerce_breadcrumb', 20);
-        remove_action('woocommerce_archive_description', 'woocommerce_breadcrumb', 10);
+        //remove_action('woocommerce_single_product_summary', 'woocommerce_breadcrumb', 20);
+        //remove_action('woocommerce_archive_description', 'woocommerce_breadcrumb', 10);
         
         // Удаляем breadcrumb из темы (если она добавляет через собственные функции)
-        remove_action('wp_head', 'woocommerce_breadcrumb');
-        remove_action('wp_footer', 'woocommerce_breadcrumb');
+        //remove_action('wp_head', 'woocommerce_breadcrumb');
+        //remove_action('wp_footer', 'woocommerce_breadcrumb');
         
         // Попытка удалить через фильтр (для некоторых тем) 
-        add_filter('woocommerce_get_breadcrumb', '__return_empty_array', 999);
+        //add_filter('woocommerce_get_breadcrumb', '__return_empty_array', 999);
         
         // Отключаем через настройки темы (если поддерживается)
-        add_filter('theme_mod_woocommerce_breadcrumb_enable', '__return_false');
+        //add_filter('theme_mod_woocommerce_breadcrumb_enable', '__return_false');
         
         // Дополнительные попытки удаления -- СКРЫВАЕМ breadcrumb KIND
         //$this->advanced_breadcrumb_removal();
@@ -475,10 +557,20 @@ class ProductKindBreadcrumb {
      * Добавление кастомного breadcrumb
      */
     public function add_custom_breadcrumb() {
-        if (is_woocommerce() || is_cart() || is_checkout() || is_account_page()) {
+        $queried_object = get_queried_object();
+    
+        if (
+            is_woocommerce() ||
+            is_cart() ||
+            is_checkout() ||
+            is_account_page() ||
+            (isset($queried_object->taxonomy) && $queried_object->taxonomy === 'product_kind')
+        ) {
             $this->display_breadcrumb();
+           
         }
     }
+    
     
     /**
      * Добавление меню в админ панель
