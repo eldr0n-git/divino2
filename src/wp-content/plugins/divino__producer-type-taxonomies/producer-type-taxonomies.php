@@ -74,15 +74,3 @@ add_action('admin_enqueue_scripts', function ($hook) {
     }
 });
 
-add_action('template_redirect', function() {
-    if (is_tax('product_kind')) {
-        // Добавляем WooCommerce хуки
-        do_action('woocommerce_before_main_content');
-
-        // Ваш код
-
-        do_action('woocommerce_after_main_content');
-    }
-});
-
-do_action('before_product_kind_content');

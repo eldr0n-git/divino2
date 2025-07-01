@@ -176,7 +176,7 @@ add_action('init', function() {
 
 // Или более точечно для конкретного плагина
 add_filter('doing_it_wrong_trigger_error', function($trigger, $function_name) {
-    if ($function_name === '_load_textdomain_just_in_time' && 
+    if ($function_name === '_load_textdomain_just_in_time' &&
         strpos(debug_backtrace()[2]['file'] ?? '', 'ti-woocommerce-wishlist') !== false) {
         return false;
     }
@@ -193,9 +193,9 @@ function divino_login_styles() {
 add_action( 'login_enqueue_scripts', 'divino_login_styles' );
 
 
-// FONTS    
+// FONTS
 // Enqueue the Onest font from Google Fonts
-function title_enqueue_onest_font() {
+function main_enqueue_onest_font() {
     wp_enqueue_style(
         'onest-font',
         'https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap',
@@ -211,8 +211,23 @@ function main_enqueue_rubik_font() {
         null
     );
 }
-add_action('wp_enqueue_scripts', 'title_enqueue_onest_font');
+function main_enqueue_title_font() {
+    wp_enqueue_style(
+        'title-font',
+        'https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap',
+        [],
+        null
+    );
+}
+
+
+
+
+
+
+add_action('wp_enqueue_scripts', 'main_enqueue_onest_font');
 add_action('wp_enqueue_scripts', 'main_enqueue_rubik_font');
+add_action('wp_enqueue_scripts', 'main_enqueue_title_font');
 
 // Remove the prefix from WooCommerce archive titles
 function remove_custom_taxonomy_archive_title_prefix_general( $title ) {

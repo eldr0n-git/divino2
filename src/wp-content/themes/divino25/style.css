@@ -26,6 +26,7 @@ Text Domain: divino
     --airy-bg-color: transparent;
     --airy-bg-color-hover: #c7383f17;
     --airy-text-color: var(--primary-color);
+    --airy-secondary-text-color: #B2A0A9;
 
     --input-bg-color: #F4F5F7;
     --input-brd-color: #DEDEE2;
@@ -75,7 +76,12 @@ a:focus {
 h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption, p {
 	text-wrap: pretty;
 }
-
+h1 {
+    font-family: 'Literata', serif;
+    font-weight: 500;
+    font-size: 48px;
+    letter-spacing: -1px;
+}
 /*
  * Change the position of the more block on the front, by making it a block level element.
  * https://github.com/WordPress/gutenberg/issues/65934
@@ -340,6 +346,26 @@ footer .wp-block-site-title a {
     left: 0;
     z-index: 1000;
     display: none;
+}
+
+.breadcrumb__cnt {
+    margin-top: calc(var(--pd) * 2);
+    margin-bottom: calc(var(--pd) * 2);
+}
+.product-kind-breadcrumb {
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+
+    color: var(--airy-secondary-text-color);
+}
+.product-kind-breadcrumb > a {
+    color: var(--primary-color);
+}
+.product-kind-breadcrumb > span{
+    padding-left: 10px;
+    padding-right: 10px;
+
 }
 .header__cnt{
     z-index: 1001;

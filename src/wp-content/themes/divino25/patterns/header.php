@@ -166,3 +166,5 @@
 </div>
 <!-- /wp:group -->
  <div class="veil actionMegamenuVeil"></div>
+
+ <?php product_kind_breadcrumb(); ?>
