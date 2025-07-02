@@ -69,14 +69,18 @@
 
                 toggle?.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
-                    veil.style.display = (veil.style.display === 'flex') ? 'none' : 'flex';
+                    menu.style.visibility = (menu.style.visibility === 'visible') ? 'hidden' : 'visible';
+                    veil.style.visibility = (veil.style.visibility === 'visible') ? 'hidden' : 'visible';
                     toggle.classList.toggle('active');
+                    menu.style.opacity = (menu.style.opacity === '1') ? '0' : '1';
+                    veil.style.opacity = (veil.style.opacity === '1') ? '0' : '1';
                 });
 
                 document.addEventListener('click', () => {
-                    menu.style.display = 'none';
-                    veil.style.display = 'none';
+                    menu.style.visibility = 'hidden';
+                    veil.style.visibility = 'hidden';
+                    menu.style.opacity = 0;
+                    veil.style.opacity = 0;
                     toggle.classList.remove('active');
                 });
             });

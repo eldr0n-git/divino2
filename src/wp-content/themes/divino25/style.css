@@ -126,8 +126,12 @@ footer .wp-block-site-title a {
     font-size: 18px;
     font-weight: 600;
     display: flex;
+    border: 3px solid transparent;
+    transition: all 0.1s ease-in-out;
 }
-
+.catalog-toggle.active {
+    border-color: #000;
+}
 
 .catalog-toggle .button__text::before {
     display: block;
@@ -159,6 +163,8 @@ footer .wp-block-site-title a {
     padding: 0;
     justify-content: space-between;
     flex-grow: 1;
+    margin: 0;
+    padding-bottom: 30px;
 }
 
 .catalog-menu li a {
@@ -323,10 +329,12 @@ footer .wp-block-site-title a {
 .megamenu{
     position: absolute;
     display: flex;
-    width: 100%;
+    width: calc(100% - 50px);
     max-width: initial;
     margin: 0;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
 }
 .megamenu__cnt {
     width: 100%;
@@ -335,6 +343,7 @@ footer .wp-block-site-title a {
     display: flex;
     flex-grow: 1;
     margin-left: -50px;
+    padding-left: 50px;
     justify-content: center;
 }
 .veil{
@@ -345,7 +354,9 @@ footer .wp-block-site-title a {
     top: 0;
     left: 0;
     z-index: 1000;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
 }
 
 .breadcrumb__cnt {
