@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-06-18 11:52:04+0000\n"
+"PO-Revision-Date: 2025-06-24 15:54:35+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -6734,7 +6734,7 @@ msgstr "Агадир-Ида-У-Танан"
 #: assets/client/blocks/product-gallery/block.json
 msgctxt "block title"
 msgid "Product Gallery (Beta)"
-msgstr "Галерея товаров (бета-версия)"
+msgstr "Галерея товаров (бета)"
 
 #: assets/client/blocks/order-confirmation-additional-fields/block.json
 msgctxt "block description"
@@ -8561,7 +8561,7 @@ msgstr "Отображение среднего рейтинга товара"
 #: assets/client/blocks/product-average-rating/block.json
 msgctxt "block title"
 msgid "Product Average Rating (Beta)"
-msgstr "Средний рейтинг товара (бета-версия)"
+msgstr "Средний рейтинг товара (бета)"
 
 #: assets/client/admin/product-editor/blocks/product-fields/product-variations-options-field/block.json
 #: assets/client/admin/product-editor/blocks/product-fields/variation-options/block.json
@@ -10592,7 +10592,7 @@ msgstr ""
 
 #: src/Internal/Features/FeaturesController.php:258
 msgid "Try the new product editor (Beta)"
-msgstr "Попробуйте новый редактор товаров (бета-версия)"
+msgstr "Попробуйте новый редактор товаров (бета)"
 
 #: src/Internal/Features/FeaturesController.php:257
 msgid "New product editor"
@@ -16868,7 +16868,7 @@ msgstr "Кордова"
 msgid "Ciudad Autónoma de Buenos Aires"
 msgstr "Автономный город Буэнос-Айрес"
 
-#: src/Blocks/BlockTypesController.php:229
+#: src/Blocks/BlockTypesController.php:230
 msgid "WooCommerce Product Elements"
 msgstr "Элементы товара WooCommerce"
 
@@ -17558,7 +17558,7 @@ msgstr "Черновик"
 #. Asian characters), enter 'characters_excluding_spaces' or
 #. 'characters_including_spaces'. Otherwise, enter 'words'. Do not translate
 #. into your own language.
-#: src/Blocks/BlockTypes/AbstractBlock.php:469
+#: src/Blocks/BlockTypes/AbstractBlock.php:439
 msgctxt "Word count type. Do not translate!"
 msgid "words"
 msgstr "слов"
@@ -34081,7 +34081,7 @@ msgstr "Адреса"
 #: includes/admin/views/html-admin-page-product-export.php:88
 #: includes/class-wc-query.php:141 includes/wc-account-functions.php:108
 #: src/Admin/API/Reports/Downloads/Stats/Controller.php:106
-#: src/Admin/ReportCSVEmail.php:69 src/Blocks/BlockTypesController.php:184
+#: src/Admin/ReportCSVEmail.php:69 src/Blocks/BlockTypesController.php:185
 #: src/Internal/Admin/Analytics.php:248
 #: src/Internal/Admin/Onboarding/OnboardingProducts.php:37
 #: src/Internal/Features/ProductBlockEditor/ProductTemplates/DownloadableProductTrait.php:56
@@ -35127,7 +35127,7 @@ msgid "Search for:"
 msgstr "Искать:"
 
 #: includes/emails/class-wc-email-customer-invoice.php:37
-#: src/Blocks/BlockTypesController.php:176 templates/order/order-details.php:57
+#: src/Blocks/BlockTypesController.php:177 templates/order/order-details.php:57
 #: assets/client/blocks/legacy-template.js:7
 #: assets/client/blocks/order-confirmation-totals-wrapper.js:1
 msgid "Order details"
@@ -35331,7 +35331,7 @@ msgstr "Имя пользователя или Email"
 msgid "View order: %s"
 msgstr "Посмотреть заказ: %s"
 
-#: src/Blocks/BlockTypesController.php:192
+#: src/Blocks/BlockTypesController.php:193
 #: templates/emails/email-addresses.php:64
 #: templates/emails/email-addresses.php:66
 #: templates/emails/plain/email-addresses.php:47
@@ -35345,7 +35345,7 @@ msgstr "Посмотреть заказ: %s"
 msgid "Shipping address"
 msgstr "Адрес доставки"
 
-#: src/Blocks/BlockTypesController.php:200
+#: src/Blocks/BlockTypesController.php:201
 #: templates/emails/email-addresses.php:33
 #: templates/emails/email-addresses.php:35
 #: templates/emails/plain/email-addresses.php:20
@@ -35860,7 +35860,7 @@ msgstr "Отзывы (%d)"
 
 #: includes/class-wc-emails.php:649 includes/class-wc-emails.php:654
 #: includes/wc-template-functions.php:2126
-#: src/Blocks/BlockTypesController.php:208
+#: src/Blocks/BlockTypesController.php:209
 #: src/Blocks/Domain/Services/CheckoutFieldsFrontend.php:101
 #: templates/checkout/form-shipping.php:57
 #: templates/single-product/tabs/additional-information.php:22
@@ -44218,7 +44218,7 @@ msgstr "Статус заказа изменён с «%1$s» на «%2$s»."
 #: includes/react-admin/connect-existing-pages.php:64
 #: includes/wc-order-functions.php:1135
 #: src/Admin/Features/ProductBlockEditor/BlockRegistry.php:135
-#: src/Admin/PageController.php:208 src/Blocks/BlockTypesController.php:225
+#: src/Admin/PageController.php:208 src/Blocks/BlockTypesController.php:226
 #: src/Blocks/Patterns/PatternRegistry.php:24
 #: src/Internal/Admin/Homescreen.php:182 src/Internal/Admin/Loader.php:420
 #: src/Internal/Admin/Settings.php:214 templates/auth/header.php:35

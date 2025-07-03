@@ -49,7 +49,7 @@
                         </a>
                     </li>
                     <li class="mainNav__item">
-                        <a href="<?php echo class_exists('WooCommerce') && function_exists('wc_get_account_url') ? esc_url(wc_get_account_url()) : esc_url(home_url('/my-account/')); ?>" class="mainNav__link mainNav__link--account">
+                    <a href="<?php echo class_exists('WooCommerce') ? esc_url(wc_get_page_permalink('myaccount')) : esc_url(home_url('/my-account/')); ?>" class="mainNav__link mainNav__link--account">
                             <span class="mainNav__linktext">Аккаунт</span>
                         </a>
                     </li>

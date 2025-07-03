@@ -186,11 +186,11 @@ add_filter('doing_it_wrong_trigger_error', function($trigger, $function_name) {
 
 
 
-function divino_login_styles() {
-    // Подключаем CSS-файл
-    wp_enqueue_style( 'divino-login', get_stylesheet_directory_uri() . '/assets/css/divino-login.css' );
-}
-add_action( 'login_enqueue_scripts', 'divino_login_styles' );
+// function divino_login_styles() {
+//     // Подключаем CSS-файл
+//     wp_enqueue_style( 'divino-login', get_stylesheet_directory_uri() . '/assets/css/divino-login.css' );
+// }
+// add_action( 'login_enqueue_scripts', 'divino_login_styles' );
 
 
 // FONTS
@@ -221,10 +221,6 @@ function main_enqueue_title_font() {
 }
 
 
-
-
-
-
 add_action('wp_enqueue_scripts', 'main_enqueue_onest_font');
 add_action('wp_enqueue_scripts', 'main_enqueue_rubik_font');
 add_action('wp_enqueue_scripts', 'main_enqueue_title_font');
@@ -238,46 +234,3 @@ function remove_custom_taxonomy_archive_title_prefix_general( $title ) {
     }
     return $title;
 }
-
-// Удаляем префикс из заголовков H1 архивов таксономий
-add_filter( 'get_the_archive_title', 'remove_custom_taxonomy_archive_title_prefix_general' );
-
-
-
-add_filter( 'template_include', function( $template ) {
-    if ( is_tax( 'product_kind' ) ) {
-        // Использовать archive-product.php из темы, если он есть
-        $custom_template = locate_template( 'woocommerce/archive-product.php' );
-        if ( $custom_template ) {
-            return $custom_template;
-        }
-    }
-    return $template;
-});
-
-add_filter( 'woocommerce_is_woocommerce', function( $is_woocommerce ) {
-    if ( is_tax( 'product_kind' ) ) {
-        return true;
-    }
-    return $is_woocommerce;
-});
-
-add_filter( 'template_include', function( $template ) {
-    if ( is_tax( 'product_kind' ) ) {
-        // Используем шаблон как для product_cat
-        $custom_template = locate_template( 'woocommerce/archive-product.php' );
-        if ( $custom_template ) {
-            return $custom_template;
-        }
-    }
-    return $template;
-});
-add_action( 'pre_get_posts', function( $query ) {
-    if ( is_admin() || ! $query->is_main_query() ) {
-        return;
-    }
-
-    if ( is_tax( 'product_kind' ) ) {
-        $query->set( 'post_type', 'product' );
-    }
-});
