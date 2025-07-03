@@ -155,7 +155,6 @@ footer .wp-block-site-title a {
     max-width: var(--wp--style--global--wide-size);
     display: flex;
     flex-grow: 1;
-    margin-left: -60px;
 }
 .catalog-menu > ul {
     display: flex;
@@ -324,7 +323,12 @@ footer .wp-block-site-title a {
 .mainNav__link--geo .mainNav__linktext::before {
     background-image: url('assets/images/ico-geo.svg');
 }
-
+.title_section,
+.cat_section {
+    z-index: 1002;
+    position: relative;
+    background-color: #fff;
+}
 /* Megamenu */
 .megamenu{
     position: absolute;
@@ -334,7 +338,10 @@ footer .wp-block-site-title a {
     margin: 0;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.1s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    top: 0px;
+z-index: 1000;
+
 }
 .megamenu__cnt {
     width: 100%;
@@ -356,7 +363,7 @@ footer .wp-block-site-title a {
     z-index: 1000;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .breadcrumb__cnt {
@@ -387,4 +394,8 @@ footer .wp-block-site-title a {
 footer {
     background-color: #000;
     color: #fff;
+}
+
+.wp-block-post-featured-image img{
+
 }

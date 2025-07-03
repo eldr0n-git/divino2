@@ -74,6 +74,7 @@
                     toggle.classList.toggle('active');
                     menu.style.opacity = (menu.style.opacity === '1') ? '0' : '1';
                     veil.style.opacity = (veil.style.opacity === '1') ? '0' : '1';
+                    menu.style.top = '190px'; // Reset top position to default
                 });
 
                 document.addEventListener('click', () => {

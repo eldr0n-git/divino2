@@ -242,3 +242,42 @@ function remove_custom_taxonomy_archive_title_prefix_general( $title ) {
 // Удаляем префикс из заголовков H1 архивов таксономий
 add_filter( 'get_the_archive_title', 'remove_custom_taxonomy_archive_title_prefix_general' );
 
+
+
+add_filter( 'template_include', function( $template ) {
+    if ( is_tax( 'product_kind' ) ) {
+        // Использовать archive-product.php из темы, если он есть
+        $custom_template = locate_template( 'woocommerce/archive-product.php' );
+        if ( $custom_template ) {
+            return $custom_template;
+        }
+    }
+    return $template;
+});
+
+add_filter( 'woocommerce_is_woocommerce', function( $is_woocommerce ) {
+    if ( is_tax( 'product_kind' ) ) {
+        return true;
+    }
+    return $is_woocommerce;
+});
+
+add_filter( 'template_include', function( $template ) {
+    if ( is_tax( 'product_kind' ) ) {
+        // Используем шаблон как для product_cat
+        $custom_template = locate_template( 'woocommerce/archive-product.php' );
+        if ( $custom_template ) {
+            return $custom_template;
+        }
+    }
+    return $template;
+});
+add_action( 'pre_get_posts', function( $query ) {
+    if ( is_admin() || ! $query->is_main_query() ) {
+        return;
+    }
+
+    if ( is_tax( 'product_kind' ) ) {
+        $query->set( 'post_type', 'product' );
+    }
+});

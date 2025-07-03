@@ -73,4 +73,30 @@ add_action('admin_enqueue_scripts', function ($hook) {
         );
     }
 });
+// Добавляем поддержку таксономии product_kind в WooCommerce для корректной работы с шаблонами
+add_filter( 'woocommerce_is_woocommerce', function( $is_woocommerce ) {
+    if ( is_tax( 'product_kind' ) ) {
+        return true;
+    }
+    return $is_woocommerce;
+});
+add_action( 'pre_get_posts', function( $query ) {
+    if ( is_admin() || ! $query->is_main_query() ) {
+        return;
+    }
 
+    if ( is_tax( 'product_kind' ) ) {
+        $query->set( 'post_type', 'product' );
+    }
+});
+
+add_filter( 'template_include', function( $template ) {
+    if ( is_tax( 'product_kind' ) ) {
+        // Используем шаблон как для product_cat
+        $custom_template = locate_template( 'woocommerce/archive-product.php' );
+        if ( $custom_template ) {
+            return $custom_template;
+        }
+    }
+    return $template;
+});
