@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Builder UI Controller.
+ * divino Builder UI Controller.
  *
- * @package astra-builder
+ * @package divino-builder
  */
 
 // No direct access, please.
@@ -17,7 +17,7 @@ if ( ! class_exists( 'divino_Builder_UI_Controller' ) ) {
 	 */
 	final class divino_Builder_UI_Controller {
 		/**
-		 * Astra SVGs.
+		 * divino SVGs.
 		 *
 		 * @var mixed ast_svgs
 		 */
@@ -166,8 +166,8 @@ if ( ! class_exists( 'divino_Builder_UI_Controller' ) ) {
 		 */
 		public static function render_customizer_edit_button( $class = '' ) { ?>
 			<div class="customize-partial-edit-shortcut <?php echo esc_attr( $class ); ?>" data-id="ahfb">
-				<button aria-label="<?php esc_attr_e( 'Click to edit this element.', 'astra' ); ?>"
-						title="<?php esc_attr_e( 'Click to edit this element.', 'astra' ); ?>"
+				<button aria-label="<?php esc_attr_e( 'Click to edit this element.', 'divino' ); ?>"
+						title="<?php esc_attr_e( 'Click to edit this element.', 'divino' ); ?>"
 						class="customize-partial-edit-shortcut-button item-customizer-focus">
 					<?php echo self::fetch_svg_icon( 'edit' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</button>
@@ -186,7 +186,7 @@ if ( ! class_exists( 'divino_Builder_UI_Controller' ) ) {
 		public static function render_grid_row_customizer_edit_button( $type, $row_position ) {
 			?>
 			<div class="customize-partial-edit-shortcut row-editor-shortcut" data-id="ahfb">
-				<button aria-label="<?php esc_attr_e( 'Click to edit this element.', 'astra' ); ?>"	title="<?php esc_attr_e( 'Click to edit this Row.', 'astra' ); ?>" class="item-customizer-focus">
+				<button aria-label="<?php esc_attr_e( 'Click to edit this element.', 'divino' ); ?>"	title="<?php esc_attr_e( 'Click to edit this Row.', 'divino' ); ?>" class="item-customizer-focus">
 					<?php echo self::fetch_svg_icon( 'edit' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</button>
 			</div>
@@ -201,7 +201,7 @@ if ( ! class_exists( 'divino_Builder_UI_Controller' ) ) {
 		public static function render_banner_customizer_edit_button() {
 			?>
 				<div class="customize-partial-edit-shortcut banner-editor-shortcut" data-id="ahfb">
-					<button aria-label="<?php esc_attr_e( 'Click to edit this element.', 'astra' ); ?>"	title="<?php esc_attr_e( 'Click to edit this Row.', 'astra' ); ?>" class="item-customizer-focus">
+					<button aria-label="<?php esc_attr_e( 'Click to edit this element.', 'divino' ); ?>"	title="<?php esc_attr_e( 'Click to edit this Row.', 'divino' ); ?>" class="item-customizer-focus">
 						<?php echo self::fetch_svg_icon( 'edit' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</button>
 				</div>
@@ -216,7 +216,7 @@ if ( ! class_exists( 'divino_Builder_UI_Controller' ) ) {
 		public static function render_mobile_trigger() {
 
 			$icon             = divino_get_option( 'header-trigger-icon' );
-			$mobile_label     = divino_get_i18n_option( 'mobile-header-menu-label', _x( '%astra%', 'Primary Menu: Menu Label (Mobile Menu)', 'astra' ) );
+			$mobile_label     = divino_get_i18n_option( 'mobile-header-menu-label', _x( '%divino%', 'Primary Menu: Menu Label (Mobile Menu)', 'divino' ) );
 			$toggle_btn_style = divino_get_option( 'mobile-header-toggle-btn-style' );
 			$aria_controls    = '';
 			if ( false === divino_Builder_Helper::$is_header_footer_builder_active ) {
@@ -308,19 +308,19 @@ if ( ! class_exists( 'divino_Builder_UI_Controller' ) ) {
 			$flyout_cart_unit_breakpoint    = 'px' === $flyout_cart_width_desktop_unit ? 500 : 50;
 			$is_width_long                  = $flyout_cart_width_desktop && $flyout_cart_width_desktop > $flyout_cart_unit_breakpoint ? 'ast-large-view' : '';
 			?>
-			<div class="astra-mobile-cart-overlay"></div>
-			<div id="astra-mobile-cart-drawer" class="astra-cart-drawer">
-				<div class="astra-cart-drawer-header">
-					<button tabindex="0" type="button" class="astra-cart-drawer-close" aria-label="<?php echo esc_attr__( 'Close Cart Drawer', 'astra' ); ?>">
+			<div class="divino-mobile-cart-overlay"></div>
+			<div id="divino-mobile-cart-drawer" class="divino-cart-drawer">
+				<div class="divino-cart-drawer-header">
+					<button tabindex="0" type="button" class="divino-cart-drawer-close" aria-label="<?php echo esc_attr__( 'Close Cart Drawer', 'divino' ); ?>">
 							<?php echo self::fetch_svg_icon( 'close' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</button>
-					<div class="astra-cart-drawer-title">
+					<div class="divino-cart-drawer-title">
 					<?php
-						echo apply_filters( 'divino_header_cart_flyout_shopping_cart_text', __( 'Shopping Cart', 'astra' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						echo apply_filters( 'divino_header_cart_flyout_shopping_cart_text', __( 'Shopping Cart', 'divino' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					?>
 					</div>
 				</div>
-				<div class="astra-cart-drawer-content <?php echo esc_attr( $is_width_long ); ?>">
+				<div class="divino-cart-drawer-content <?php echo esc_attr( $is_width_long ); ?>">
 					<?php
 					if ( class_exists( 'divino_Woocommerce' ) ) {
 						the_widget( 'WC_Widget_Cart', 'title=' );
@@ -378,7 +378,7 @@ if ( ! class_exists( 'divino_Builder_UI_Controller' ) ) {
 					$account_link = divino_get_option( 'header-account-login-link' );
 					$show_menu    = divino_get_option( 'header-account-action-menu-display-on' );
 
-					$logged_in_text = divino_get_i18n_option( 'header-account-logged-in-text', _x( '%astra%', 'Header Builder: Account Widget - Logged In View Text', 'astra' ) );
+					$logged_in_text = divino_get_i18n_option( 'header-account-logged-in-text', _x( '%divino%', 'Header Builder: Account Widget - Logged In View Text', 'divino' ) );
 
 					if ( 'default' !== $account_type && 'default' === $link_type && defined( 'divino_EXT_VER' ) ) {
 						$new_tab = 'target=_self';
@@ -426,7 +426,7 @@ if ( ! class_exists( 'divino_Builder_UI_Controller' ) ) {
 
 					?>
 					<div class="ast-header-account-inner-wrap">
-						<a class="<?php echo esc_attr( implode( ' ', $link_classes ) ); ?>" role="link" aria-label="<?php esc_attr_e( 'Account icon link', 'astra' ); ?>" <?php echo esc_attr( $link_href . ' ' . $new_tab . ' ' . $link_rel ); ?> >
+						<a class="<?php echo esc_attr( implode( ' ', $link_classes ) ); ?>" role="link" aria-label="<?php esc_attr_e( 'Account icon link', 'divino' ); ?>" <?php echo esc_attr( $link_href . ' ' . $new_tab . ' ' . $link_rel ); ?> >
 
 							<?php
 							if ( 'avatar' === $login_profile_type ) {
@@ -457,7 +457,7 @@ if ( ! class_exists( 'divino_Builder_UI_Controller' ) ) {
 
 					<?php
 					$action_type     = divino_get_option( 'header-account-logout-action' );
-					$logged_out_text = divino_get_i18n_option( 'header-account-logged-out-text', _x( '%astra%', 'Header Builder: Account Widget - Logged Out View Text', 'astra' ) );
+					$logged_out_text = divino_get_i18n_option( 'header-account-logged-out-text', _x( '%divino%', 'Header Builder: Account Widget - Logged Out View Text', 'divino' ) );
 					$login_link      = divino_get_option( 'header-account-logout-link' );
 
 					$extend_text_profile_type = divino_get_option( 'header-account-logout-style-extend-text-profile-type' );
@@ -496,7 +496,7 @@ if ( ! class_exists( 'divino_Builder_UI_Controller' ) ) {
 
 					$link_href = 'href=' . esc_url( $link_url ) . '';
 					?>
-					<a class="<?php echo esc_attr( implode( ' ', $logged_out_style_class ) ); ?>" aria-label="<?php esc_attr_e( 'Account icon link', 'astra' ); ?>" <?php echo esc_attr( $link_href . ' ' . $new_tab . ' ' . $link_rel ); ?> >
+					<a class="<?php echo esc_attr( implode( ' ', $logged_out_style_class ) ); ?>" aria-label="<?php esc_attr_e( 'Account icon link', 'divino' ); ?>" <?php echo esc_attr( $link_href . ' ' . $new_tab . ' ' . $link_rel ); ?> >
 						<?php if ( 'icon' === $logged_out_style ) { ?>
 							<?php echo self::fetch_svg_icon( $icon_skin ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 							<?php
@@ -513,7 +513,7 @@ if ( ! class_exists( 'divino_Builder_UI_Controller' ) ) {
 					/**
 					 * The login popup form is moved to footer from here @since 4.6.12
 					 *
-					 * @see Astra Addon -> divino_Addon_Header_Account_Markup::login_popup_form_markup
+					 * @see divino Addon -> divino_Addon_Header_Account_Markup::login_popup_form_markup
 					 */
 					?>
 				<?php } ?>

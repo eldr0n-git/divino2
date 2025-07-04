@@ -3,7 +3,7 @@
  * Home starter content.
  *
  * @since 4.0.0
- * @package Astra\Compatibility\Starter_Content
+ * @package divino\Compatibility\Starter_Content
  */
 
 // @codingStandardsIgnoreStart WordPressVIPMinimum.Security.Mustache.OutputNotation -- Required for starter content.
@@ -161,7 +161,7 @@ $divino_default_home_content = '<!-- wp:cover {"minHeight":720,"minHeightUnit":"
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"align":"center","style":{"typography":{"fontSize":"22px","lineHeight":1.6}}} -->
-<p class="has-text-align-center" style="font-size:22px;line-height:1.6">“The best part is that Astra comes with hundreds of professionally designed templates for just about every industry, makes it super easy for non-techy users to build a website.”</p>
+<p class="has-text-align-center" style="font-size:22px;line-height:1.6">“The best part is that divino comes with hundreds of professionally designed templates for just about every industry, makes it super easy for non-techy users to build a website.”</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph {"align":"center"} -->
@@ -233,6 +233,6 @@ $divino_default_home_content = '<!-- wp:cover {"minHeight":720,"minHeightUnit":"
 // @codingStandardsIgnoreEnd WordPressVIPMinimum.Security.Mustache.OutputNotation -- Required for starter content.
 return array(
 	'post_type'    => 'page',
-	'post_title'   => _x( 'Home', 'Theme starter content', 'astra' ),
+	'post_title'   => _x( 'Home', 'Theme starter content', 'divino' ),
 	'post_content' => $divino_default_home_content,
 );

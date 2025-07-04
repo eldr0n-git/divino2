@@ -1,7 +1,7 @@
 /**
- * CSS code for all Astra Extensions admin screens
+ * CSS code for all divino Extensions admin screens
  *
- * @package Astra
+ * @package divino
  * @since 1.0.0
  */
 .ast-clear:before, .ast-clear:after {
@@ -21,7 +21,7 @@
 }
 
 /**
- * Astra Welcome Page
+ * divino Welcome Page
  */
 .ast-container {
     max-width: 1200px;
@@ -65,14 +65,14 @@
 }
 
 /**
- * Astra Welcome screen sidebar
+ * divino Welcome screen sidebar
  */
 .ast-sidebar .hndle .dashicons{
 	margin: 0 0 0 5px;
 }
 
 /**
- * Astra Custom Notice for static position
+ * divino Custom Notice for static position
  */
 .ast-notice{
     margin-bottom: 20px;

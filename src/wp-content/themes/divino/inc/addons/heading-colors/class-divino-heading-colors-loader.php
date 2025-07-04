@@ -1,10 +1,10 @@
 <?php
 /**
- * Heading Colors Loader for Astra theme.
+ * Heading Colors Loader for divino theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 2.2.0
+ * @since       divino 2.2.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -82,7 +82,7 @@ class divino_Heading_Colors_Loader {
 	/**
 	 * Set Options Default Values
 	 *
-	 * @param  array $defaults  Astra options default value array.
+	 * @param  array $defaults  divino options default value array.
 	 * @return array
 	 *
 	 * @since 2.2.0
@@ -91,7 +91,7 @@ class divino_Heading_Colors_Loader {
 
 		$divino_options = divino_Theme_Options::get_divino_options();
 		/**
-		 * Update Astra default color and typography values. To not update directly on existing users site, added backwards.
+		 * Update divino default color and typography values. To not update directly on existing users site, added backwards.
 		 *
 		 * @since 4.0.0
 		 */
@@ -236,7 +236,7 @@ class divino_Heading_Colors_Loader {
 		/**
 		 * Register Panel & Sections
 		 */
-		require_once divino_THEME_HEADING_COLORS_DIR . 'customizer/class-astra-heading-colors-configs.php';// phpcs:ignore: WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+		require_once divino_THEME_HEADING_COLORS_DIR . 'customizer/class-divino-heading-colors-configs.php';// phpcs:ignore: WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	}
 
 	/**
@@ -251,11 +251,11 @@ class divino_Heading_Colors_Loader {
 		/* Directory and Extension */
 		$dir_name    = SCRIPT_DEBUG ? 'unminified' : 'minified';
 		$file_prefix = SCRIPT_DEBUG ? '' : '.min';
-		wp_enqueue_script( 'astra-heading-colors-customizer-preview-js', divino_THEME_HEADING_COLORS_URI . 'assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'astra-customizer-preview-js' ), divino_THEME_VERSION, true );
+		wp_enqueue_script( 'divino-heading-colors-customizer-preview-js', divino_THEME_HEADING_COLORS_URI . 'assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'divino-customizer-preview-js' ), divino_THEME_VERSION, true );
 
 		wp_localize_script(
-			'astra-heading-colors-customizer-preview-js',
-			'astraHeadingColorOptions',
+			'divino-heading-colors-customizer-preview-js',
+			'divinoHeadingColorOptions',
 			array(
 				'maybeApplyHeadingColorForTitle' => divino_has_global_color_format_support(),
 			)

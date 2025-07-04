@@ -1,3 +1,4 @@
+<!-- cta-events-list.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Events list

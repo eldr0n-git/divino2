@@ -407,7 +407,7 @@ if ( ! class_exists( 'divino_WP_Background_Process' ) ) {
 			// Adds every 5 minutes to the existing schedules.
 			$schedules[ $this->identifier . '_cron_interval' ] = array(
 				'interval' => MINUTE_IN_SECONDS * $interval,
-				'display'  => sprintf( /* translators: %d: Minutes interval */ __( 'Every %d Minutes', 'astra' ), $interval ),
+				'display'  => sprintf( /* translators: %d: Minutes interval */ __( 'Every %d Minutes', 'divino' ), $interval ),
 			);
 
 			return $schedules;

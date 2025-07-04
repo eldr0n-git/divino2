@@ -1,10 +1,10 @@
 <?php
 /**
- * Button Styling Loader for Astra theme.
+ * Button Styling Loader for divino theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 3.0.0
+ * @since       divino 3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -62,12 +62,12 @@ class divino_Footer_Button_Component_Loader {
 		/* Directory and Extension */
 		$dir_name    = SCRIPT_DEBUG ? 'unminified' : 'minified';
 		$file_prefix = SCRIPT_DEBUG ? '' : '.min';
-		wp_enqueue_script( 'astra-footer-button-customizer-preview-js', divino_FOOTER_BUTTON_URI . '/assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'astra-customizer-preview-js' ), divino_THEME_VERSION, true );
+		wp_enqueue_script( 'divino-footer-button-customizer-preview-js', divino_FOOTER_BUTTON_URI . '/assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'divino-customizer-preview-js' ), divino_THEME_VERSION, true );
 
 		// Localize variables for Button JS.
 		wp_localize_script(
-			'astra-footer-button-customizer-preview-js',
-			'AstraBuilderFooterButtonData',
+			'divino-footer-button-customizer-preview-js',
+			'divinoBuilderFooterButtonData',
 			array(
 				'component_limit'    => defined( 'divino_EXT_VER' ) ? divino_Builder_Helper::$component_limit : divino_Builder_Helper::$num_of_footer_button,
 				'tablet_break_point' => divino_get_tablet_breakpoint(),

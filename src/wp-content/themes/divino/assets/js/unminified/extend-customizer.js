@@ -1,7 +1,7 @@
 /**
  * Extend Customizer Panel
  *
- * @package Astra
+ * @package divino
  */
 
 ( function( $ ) {

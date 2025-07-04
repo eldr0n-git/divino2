@@ -4,7 +4,7 @@
  *
  * @link https://wp.stories.google/
  *
- * @package Astra
+ * @package divino
  */
 
 // If plugin - 'Google\Web_Stories' not exist then return.
@@ -13,7 +13,7 @@ if ( ! defined( 'WEBSTORIES_VERSION' ) ) {
 }
 
 /**
- * Astra Web_Stories Compatibility
+ * divino Web_Stories Compatibility
  *
  * @since 3.2.0
  */
@@ -60,8 +60,8 @@ class divino_Web_Stories {
 	 *
 	 * @since 3.2.0
 	 *
-	 * @param  string $dynamic_css          Astra Dynamic CSS.
-	 * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+	 * @param  string $dynamic_css          divino Dynamic CSS.
+	 * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
 	 *
 	 * @return String Generated dynamic CSS for Heading Colors.
 	 */

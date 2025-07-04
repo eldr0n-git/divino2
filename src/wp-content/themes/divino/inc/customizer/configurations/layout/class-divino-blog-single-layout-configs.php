@@ -1,10 +1,10 @@
 <?php
 /**
- * Bottom Footer Options for Astra Theme.
+ * Bottom Footer Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,10 +20,10 @@ if ( ! class_exists( 'divino_Blog_Single_Layout_Configs' ) ) {
 		/**
 		 * Register Blog Single Layout Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -42,10 +42,10 @@ if ( ! class_exists( 'divino_Blog_Single_Layout_Configs' ) ) {
 					'section'    => 'section-blog-single',
 					'default'    => divino_get_option( 'blog-single-width' ),
 					'priority'   => 6,
-					'title'      => __( 'Content Width', 'astra' ),
+					'title'      => __( 'Content Width', 'divino' ),
 					'choices'    => array(
-						'default' => __( 'Default', 'astra' ),
-						'custom'  => __( 'Custom', 'astra' ),
+						'default' => __( 'Default', 'divino' ),
+						'custom'  => __( 'Custom', 'divino' ),
 					),
 					'transport'  => 'postMessage',
 					'responsive' => false,
@@ -72,7 +72,7 @@ if ( ! class_exists( 'divino_Blog_Single_Layout_Configs' ) ) {
 						),
 					),
 					'priority'    => 6,
-					'title'       => __( 'Custom Width', 'astra' ),
+					'title'       => __( 'Custom Width', 'divino' ),
 					'suffix'      => 'px',
 					'input_attrs' => array(
 						'min'  => 0,
@@ -90,7 +90,7 @@ if ( ! class_exists( 'divino_Blog_Single_Layout_Configs' ) ) {
 					'default'  => divino_get_option( 'single-content-images-shadow' ),
 					'type'     => 'control',
 					'section'  => 'section-blog-single',
-					'title'    => __( 'Content Images Box Shadow', 'astra' ),
+					'title'    => __( 'Content Images Box Shadow', 'divino' ),
 					'control'  => 'ast-toggle-control',
 					'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),
 					'priority' => 9,
@@ -103,7 +103,7 @@ if ( ! class_exists( 'divino_Blog_Single_Layout_Configs' ) ) {
 				array(
 					'name'     => divino_THEME_SETTINGS . '[section-blog-single-spacing-divider]',
 					'section'  => 'section-blog-single',
-					'title'    => __( 'Post Spacing', 'astra' ),
+					'title'    => __( 'Post Spacing', 'divino' ),
 					'type'     => 'control',
 					'control'  => 'ast-heading',
 					'priority' => 24,
@@ -120,14 +120,14 @@ if ( ! class_exists( 'divino_Blog_Single_Layout_Configs' ) ) {
 					'control'           => 'ast-responsive-spacing',
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 					'section'           => 'section-blog-single',
-					'title'             => __( 'Outside', 'astra' ),
+					'title'             => __( 'Outside', 'divino' ),
 					'linked_choices'    => true,
 					'unit_choices'      => array( 'px', 'em', '%' ),
 					'choices'           => array(
-						'top'    => __( 'Top', 'astra' ),
-						'right'  => __( 'Right', 'astra' ),
-						'bottom' => __( 'Bottom', 'astra' ),
-						'left'   => __( 'Left', 'astra' ),
+						'top'    => __( 'Top', 'divino' ),
+						'right'  => __( 'Right', 'divino' ),
+						'bottom' => __( 'Bottom', 'divino' ),
+						'left'   => __( 'Left', 'divino' ),
 					),
 					'priority'          => 25,
 					'context'           => $tab_config,
@@ -144,15 +144,15 @@ if ( ! class_exists( 'divino_Blog_Single_Layout_Configs' ) ) {
 					'control'           => 'ast-responsive-spacing',
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 					'section'           => 'section-blog-single',
-					'title'             => __( 'Inside', 'astra' ),
+					'title'             => __( 'Inside', 'divino' ),
 					'linked_choices'    => true,
 					'transport'         => 'refresh',
 					'unit_choices'      => array( 'px', 'em', '%' ),
 					'choices'           => array(
-						'top'    => __( 'Top', 'astra' ),
-						'right'  => __( 'Right', 'astra' ),
-						'bottom' => __( 'Bottom', 'astra' ),
-						'left'   => __( 'Left', 'astra' ),
+						'top'    => __( 'Top', 'divino' ),
+						'right'  => __( 'Right', 'divino' ),
+						'bottom' => __( 'Bottom', 'divino' ),
+						'left'   => __( 'Left', 'divino' ),
 					),
 					'priority'          => 30,
 					'divider'           => array( 'ast_class' => 'ast-top-divider' ),

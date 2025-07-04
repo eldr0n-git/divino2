@@ -2,9 +2,9 @@
 /**
  * Template parts
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -163,9 +163,9 @@ if ( ! function_exists( 'divino_masthead_toggle_buttons_primary' ) ) {
 		$display_outside_menu       = divino_get_option( 'header-display-outside-menu' );
 
 		if ( ! $disable_primary_navigation || ( 'none' !== $custom_header_section && ! $display_outside_menu ) ) {
-			$menu_title          = trim( apply_filters( 'divino_main_menu_toggle_label', divino_get_i18n_option( 'header-main-menu-label', _x( '%astra%', 'Primary Menu: Menu Label for Toggle Button', 'astra' ) ) ) );
+			$menu_title          = trim( apply_filters( 'divino_main_menu_toggle_label', divino_get_i18n_option( 'header-main-menu-label', _x( '%divino%', 'Primary Menu: Menu Label for Toggle Button', 'divino' ) ) ) );
 			$menu_label_class    = '';
-			$screen_reader_title = esc_html__( 'Main Menu', 'astra' );
+			$screen_reader_title = esc_html__( 'Main Menu', 'divino' );
 			if ( '' !== $menu_title ) {
 				$menu_label_class    = 'ast-menu-label';
 				$screen_reader_title = $menu_title;

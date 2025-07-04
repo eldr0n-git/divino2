@@ -1,10 +1,10 @@
 <?php
 /**
- * Astra Pro Customizer Section
+ * divino Pro Customizer Section
  *
- * @package   Astra
- * @link      https://wpastra.com/
- * @since     Astra 1.0.10
+ * @package   divino
+ * @link      https://wpdivino.com/
+ * @since     divino 1.0.10
  */
 
 // No direct access, please.
@@ -29,7 +29,7 @@ if ( ! class_exists( 'divino_Pro_Customizer' ) ) {
 		 * @since  1.0.10
 		 * @var    string
 		 */
-		public $type = 'astra-pro';
+		public $type = 'divino-pro';
 
 		/**
 		 * Custom pro button URL.

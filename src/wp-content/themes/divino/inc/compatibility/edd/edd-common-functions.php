@@ -2,9 +2,9 @@
 /**
  * Custom functions that used for Easy Digital Downloads compatibility.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.5.5
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.5.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -320,8 +320,8 @@ if ( ! function_exists( 'divino_edd_archive_product_category' ) ) {
  */
 function divino_edd_cart_button_markup() {
 	$variable_button      = divino_get_option( 'edd-archive-variable-button' );
-	$add_to_cart_text     = divino_get_i18n_option( 'edd-archive-add-to-cart-button-text', _x( '%astra%', 'EDD Product Archive: Cart Button Text', 'astra' ) );
-	$variable_button_text = divino_get_i18n_option( 'edd-archive-variable-button-text', _x( '%astra%', 'EDD Product Archive: Variable Product Button Text', 'astra' ) );
+	$add_to_cart_text     = divino_get_i18n_option( 'edd-archive-add-to-cart-button-text', _x( '%divino%', 'EDD Product Archive: Cart Button Text', 'divino' ) );
+	$variable_button_text = divino_get_i18n_option( 'edd-archive-variable-button-text', _x( '%divino%', 'EDD Product Archive: Variable Product Button Text', 'divino' ) );
 	$output               = edd_get_purchase_link();
 	if ( edd_has_variable_prices( get_the_ID() ) && 'button' === $variable_button ) {
 		$output  = '<div class="ast-edd-variable-details-button-wrap">';
@@ -333,7 +333,7 @@ function divino_edd_cart_button_markup() {
 				array(
 					'price'    => false,
 					'text'     => esc_html( $add_to_cart_text ),
-					'checkout' => esc_html( $add_to_cart_text ), // To display astra customizer add to cart text.
+					'checkout' => esc_html( $add_to_cart_text ), // To display divino customizer add to cart text.
 				)
 			);
 		}

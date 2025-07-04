@@ -2,8 +2,8 @@
 /**
  * Account Header Configuration.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       4.5.2
  */
 
@@ -15,13 +15,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register account header builder Customizer Configurations.
  *
  * @since 4.5.2
- * @return array Astra Customizer Configurations with updated configurations.
+ * @return array divino Customizer Configurations with updated configurations.
  */
 function divino_header_account_configuration() {
 	$_section = 'section-header-account';
 
 	$account_choices = array(
-		'default' => __( 'Default', 'astra' ),
+		'default' => __( 'Default', 'divino' ),
 	);
 
 	$login_link_context = divino_Builder_Helper::$general_tab;
@@ -41,11 +41,11 @@ function divino_header_account_configuration() {
 		);
 
 		if ( class_exists( 'LifterLMS' ) ) {
-			$account_choices['lifterlms'] = __( 'LifterLMS', 'astra' );
+			$account_choices['lifterlms'] = __( 'LifterLMS', 'divino' );
 		}
 
 		if ( class_exists( 'WooCommerce' ) ) {
-			$account_choices['woocommerce'] = __( 'WooCommerce', 'astra' );
+			$account_choices['woocommerce'] = __( 'WooCommerce', 'divino' );
 		}
 
 		if ( count( $account_choices ) > 1 ) {
@@ -92,7 +92,7 @@ function divino_header_account_configuration() {
 			'name'     => $_section,
 			'type'     => 'section',
 			'priority' => 80,
-			'title'    => __( 'Account', 'astra' ),
+			'title'    => __( 'Account', 'divino' ),
 			'panel'    => 'panel-header-builder-group',
 		),
 
@@ -118,7 +118,7 @@ function divino_header_account_configuration() {
 			'control'     => 'ast-heading',
 			'section'     => $_section,
 			'priority'    => 1,
-			'title'       => __( 'Logged In View', 'astra' ),
+			'title'       => __( 'Logged In View', 'divino' ),
 			'settings'    => array(),
 			'input_attrs' => array(
 				'class' => 'ast-control-reduce-top-space',
@@ -136,11 +136,11 @@ function divino_header_account_configuration() {
 			'control'    => 'ast-selector',
 			'section'    => $_section,
 			'priority'   => 3,
-			'title'      => __( 'Profile Type', 'astra' ),
+			'title'      => __( 'Profile Type', 'divino' ),
 			'choices'    => array(
-				'icon'   => __( 'Icon', 'astra' ),
-				'avatar' => __( 'Avatar', 'astra' ),
-				'text'   => __( 'Text', 'astra' ),
+				'icon'   => __( 'Icon', 'divino' ),
+				'avatar' => __( 'Avatar', 'divino' ),
+				'text'   => __( 'Text', 'divino' ),
 			),
 			'transport'  => 'postMessage',
 			'partial'    => array(
@@ -164,12 +164,12 @@ function divino_header_account_configuration() {
 			'control'     => 'ast-selector',
 			'section'     => $_section,
 			'priority'    => 3,
-			'description' => __( 'Choose if you want to display Icon or Avatar with the Text selected Profile Type.', 'astra' ),
-			'title'       => __( 'Show Text with', 'astra' ),
+			'description' => __( 'Choose if you want to display Icon or Avatar with the Text selected Profile Type.', 'divino' ),
+			'title'       => __( 'Show Text with', 'divino' ),
 			'choices'     => array(
-				'default' => __( 'Default', 'astra' ),
-				'avatar'  => __( 'Avatar', 'astra' ),
-				'icon'    => __( 'Icon', 'astra' ),
+				'default' => __( 'Default', 'divino' ),
+				'avatar'  => __( 'Avatar', 'divino' ),
+				'icon'    => __( 'Icon', 'divino' ),
 			),
 			'transport'   => 'postMessage',
 			'partial'     => array(
@@ -198,7 +198,7 @@ function divino_header_account_configuration() {
 			'type'      => 'control',
 			'control'   => 'ast-text-input',
 			'section'   => $_section,
-			'title'     => __( 'Text', 'astra' ),
+			'title'     => __( 'Text', 'divino' ),
 			'priority'  => 3,
 			'transport' => 'postMessage',
 			'context'   => array(
@@ -225,7 +225,7 @@ function divino_header_account_configuration() {
 			'control'           => 'ast-link',
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_link' ),
 			'section'           => $_section,
-			'title'             => __( 'Account URL', 'astra' ),
+			'title'             => __( 'Account URL', 'divino' ),
 			'priority'          => 6,
 			'transport'         => 'postMessage',
 			'context'           => $login_link_context,
@@ -244,7 +244,7 @@ function divino_header_account_configuration() {
 			'type'     => 'control',
 			'control'  => 'ast-heading',
 			'section'  => $_section,
-			'title'    => __( 'Logged Out View', 'astra' ),
+			'title'    => __( 'Logged Out View', 'divino' ),
 			'priority' => 200,
 			'settings' => array(),
 			'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),
@@ -259,12 +259,12 @@ function divino_header_account_configuration() {
 			'type'       => 'control',
 			'control'    => 'ast-selector',
 			'section'    => $_section,
-			'title'      => __( 'Profile Type', 'astra' ),
+			'title'      => __( 'Profile Type', 'divino' ),
 			'priority'   => 201,
 			'choices'    => array(
-				'none' => __( 'None', 'astra' ),
-				'icon' => __( 'Icon', 'astra' ),
-				'text' => __( 'Text', 'astra' ),
+				'none' => __( 'None', 'divino' ),
+				'icon' => __( 'Icon', 'divino' ),
+				'text' => __( 'Text', 'divino' ),
 			),
 			'transport'  => 'postMessage',
 			'partial'    => array(
@@ -287,11 +287,11 @@ function divino_header_account_configuration() {
 			'control'     => 'ast-selector',
 			'section'     => $_section,
 			'priority'    => 202,
-			'description' => __( 'Choose if you want to display Icon with the Text selected Profile Type for logged out users.', 'astra' ),
-			'title'       => __( 'Show Text with', 'astra' ),
+			'description' => __( 'Choose if you want to display Icon with the Text selected Profile Type for logged out users.', 'divino' ),
+			'title'       => __( 'Show Text with', 'divino' ),
 			'choices'     => array(
-				'default' => __( 'Default', 'astra' ),
-				'icon'    => __( 'Icon', 'astra' ),
+				'default' => __( 'Default', 'divino' ),
+				'icon'    => __( 'Icon', 'divino' ),
 			),
 			'transport'   => 'postMessage',
 			'partial'     => array(
@@ -318,7 +318,7 @@ function divino_header_account_configuration() {
 			'type'      => 'control',
 			'control'   => 'ast-toggle-control',
 			'section'   => $_section,
-			'title'     => __( 'Preview', 'astra' ),
+			'title'     => __( 'Preview', 'divino' ),
 			'priority'  => 206,
 			'context'   => array(
 				array(
@@ -345,7 +345,7 @@ function divino_header_account_configuration() {
 			'type'      => 'control',
 			'control'   => 'text',
 			'section'   => $_section,
-			'title'     => __( 'Text', 'astra' ),
+			'title'     => __( 'Text', 'divino' ),
 			'priority'  => 203,
 			'transport' => 'postMessage',
 			'context'   => array(
@@ -372,7 +372,7 @@ function divino_header_account_configuration() {
 			'control'           => 'ast-link',
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_link' ),
 			'section'           => $_section,
-			'title'             => __( 'Login URL', 'astra' ),
+			'title'             => __( 'Login URL', 'divino' ),
 			'priority'          => 205,
 			'transport'         => 'postMessage',
 			'divider'           => array( 'ast_class' => 'ast-top-divider' ),
@@ -396,7 +396,7 @@ function divino_header_account_configuration() {
 			'priority'          => 2,
 			'transport'         => 'postMessage',
 			'default'           => divino_get_option( 'header-account-image-width' ),
-			'title'             => __( 'Avatar Width', 'astra' ),
+			'title'             => __( 'Avatar Width', 'divino' ),
 			'type'              => 'control',
 			'divider'           => defined( 'divino_EXT_VER' ) ? array( 'ast_class' => 'ast-bottom-spacing' ) : array( 'ast_class' => 'ast-bottom-divider' ),
 			'control'           => 'ast-responsive-slider',
@@ -446,7 +446,7 @@ function divino_header_account_configuration() {
 			'priority'          => 4,
 			'transport'         => 'postMessage',
 			'default'           => divino_get_option( 'header-account-icon-size' ),
-			'title'             => __( 'Icon Size', 'astra' ),
+			'title'             => __( 'Icon Size', 'divino' ),
 			'type'              => 'control',
 			'suffix'            => 'px',
 			'control'           => 'ast-responsive-slider',
@@ -459,7 +459,7 @@ function divino_header_account_configuration() {
 			),
 			'context'           => array(
 				/**
-				 * Other conditions are maintained from "inc/customizer/custom-controls/class-astra-customizer-control-base.php".
+				 * Other conditions are maintained from "inc/customizer/custom-controls/class-divino-customizer-control-base.php".
 				 */
 				divino_Builder_Helper::$design_tab_config,
 				array(
@@ -491,10 +491,10 @@ function divino_header_account_configuration() {
 			'control'           => 'ast-color',
 			'divider'           => array( 'ast_class' => defined( 'divino_EXT_VER' ) ? '' : 'ast-bottom-divider' ),
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
-			'title'             => __( 'Icon Color', 'astra' ),
+			'title'             => __( 'Icon Color', 'divino' ),
 			'context'           => array(
 				/**
-				 * Other conditions are maintained from "inc/customizer/custom-controls/class-astra-customizer-control-base.php".
+				 * Other conditions are maintained from "inc/customizer/custom-controls/class-divino-customizer-control-base.php".
 				 */
 				divino_Builder_Helper::$design_tab_config,
 				array(
@@ -522,7 +522,7 @@ function divino_header_account_configuration() {
 			'control'  => 'ast-heading',
 			'section'  => $_section,
 			'priority' => 15,
-			'title'    => __( 'Text Options', 'astra' ),
+			'title'    => __( 'Text Options', 'divino' ),
 			'settings' => array(),
 			'context'  => array(
 				divino_Builder_Helper::$design_tab_config,
@@ -556,7 +556,7 @@ function divino_header_account_configuration() {
 			'control'           => 'ast-color',
 			'divider'           => array( 'ast_class' => 'ast-top-section-spacing' ),
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
-			'title'             => __( 'Profile Text Color', 'astra' ),
+			'title'             => __( 'Profile Text Color', 'divino' ),
 			'context'           => array(
 				divino_Builder_Helper::$design_tab_config,
 				array(
@@ -581,7 +581,7 @@ function divino_header_account_configuration() {
 		array(
 			'name'     => divino_THEME_SETTINGS . '[header-account-spacing-divider]',
 			'section'  => 'section-header-account',
-			'title'    => __( 'Spacing', 'astra' ),
+			'title'    => __( 'Spacing', 'divino' ),
 			'type'     => 'control',
 			'control'  => 'ast-heading',
 			'priority' => 510,
@@ -602,14 +602,14 @@ function divino_header_account_configuration() {
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 			'section'           => $_section,
 			'priority'          => 511,
-			'title'             => __( 'Margin', 'astra' ),
+			'title'             => __( 'Margin', 'divino' ),
 			'linked_choices'    => true,
 			'unit_choices'      => array( 'px', 'em', '%' ),
 			'choices'           => array(
-				'top'    => __( 'Top', 'astra' ),
-				'right'  => __( 'Right', 'astra' ),
-				'bottom' => __( 'Bottom', 'astra' ),
-				'left'   => __( 'Left', 'astra' ),
+				'top'    => __( 'Top', 'divino' ),
+				'right'  => __( 'Right', 'divino' ),
+				'bottom' => __( 'Bottom', 'divino' ),
+				'left'   => __( 'Left', 'divino' ),
 			),
 			'context'           => divino_Builder_Helper::$design_tab,
 			'divider'           => array( 'ast_class' => 'ast-top-section-spacing' ),

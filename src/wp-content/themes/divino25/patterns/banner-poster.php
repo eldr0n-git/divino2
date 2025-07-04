@@ -1,3 +1,4 @@
+<!-- banner-poster.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Poster-like section

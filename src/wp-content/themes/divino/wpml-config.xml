@@ -25,7 +25,7 @@
 		<custom-field action="copy">ast-advanced-hook-users</custom-field>
 	</custom-fields>
 	<admin-texts>
-		<key name="astra-settings">
+		<key name="divino-settings">
 			<key name="header-html-1"/>
 			<key name="header-html-2"/>
 			<key name="header-html-3"/>

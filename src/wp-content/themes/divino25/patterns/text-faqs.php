@@ -1,3 +1,4 @@
+<!-- text-faqs.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: FAQs
@@ -33,7 +34,6 @@
 
 					<!-- wp:paragraph -->
 					<p><?php echo esc_html_x( 'This exquisite compilation showcases a diverse array of photographs that capture the essence of different eras and cultures, reflecting the unique styles and perspectives of each artist.', 'Answer in the FAQs pattern.', 'divino' ); ?></p>
-					<!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->
 			</div>
@@ -49,7 +49,6 @@
 
 					<!-- wp:paragraph -->
 					<p><?php echo esc_html_x( 'This exquisite compilation showcases a diverse array of photographs that capture the essence of different eras and cultures, reflecting the unique styles and perspectives of each artist.', 'Answer in the FAQs pattern.', 'divino' ); ?></p>
-					<!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->
 			</div>
@@ -69,7 +68,6 @@
 
 					<!-- wp:paragraph -->
 					<p><?php echo esc_html_x( 'This exquisite compilation showcases a diverse array of photographs that capture the essence of different eras and cultures, reflecting the unique styles and perspectives of each artist.', 'Answer in the FAQs pattern.', 'divino' ); ?></p>
-					<!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->
 			</div>
@@ -85,7 +83,6 @@
 
 					<!-- wp:paragraph -->
 					<p><?php echo esc_html_x( 'This exquisite compilation showcases a diverse array of photographs that capture the essence of different eras and cultures, reflecting the unique styles and perspectives of each artist.', 'Answer in the FAQs pattern.', 'divino' ); ?></p>
-					<!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->
 			</div>

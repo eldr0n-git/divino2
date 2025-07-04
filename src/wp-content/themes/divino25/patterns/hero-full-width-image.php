@@ -1,3 +1,4 @@
+<!-- hero-full-width-image.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Hero, full width image

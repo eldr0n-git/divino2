@@ -2,8 +2,8 @@
 /**
  * Copyright footer Configuration.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       4.5.2
  */
 
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register copyright footer builder Customizer Configurations.
  *
  * @since 4.5.2
- * @return array Astra Customizer Configurations with updated configurations.
+ * @return array divino Customizer Configurations with updated configurations.
  */
 function divino_copyright_footer_configuration() {
 	$_section = 'section-footer-copyright';
@@ -28,7 +28,7 @@ function divino_copyright_footer_configuration() {
 			'name'     => $_section,
 			'type'     => 'section',
 			'priority' => 5,
-			'title'    => __( 'Copyright', 'astra' ),
+			'title'    => __( 'Copyright', 'divino' ),
 			'panel'    => 'panel-footer-builder-group',
 		),
 
@@ -77,7 +77,7 @@ function divino_copyright_footer_configuration() {
 			'control'   => 'ast-selector',
 			'section'   => $_section,
 			'priority'  => 6,
-			'title'     => __( 'Alignment', 'astra' ),
+			'title'     => __( 'Alignment', 'divino' ),
 			'context'   => divino_Builder_Helper::$general_tab,
 			'transport' => 'postMessage',
 			'choices'   => array(
@@ -100,7 +100,7 @@ function divino_copyright_footer_configuration() {
 			'transport'         => 'postMessage',
 			'control'           => 'ast-color',
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
-			'title'             => __( 'Text Color', 'astra' ),
+			'title'             => __( 'Text Color', 'divino' ),
 			'context'           => divino_Builder_Helper::$design_tab,
 			'divider'           => array( 'ast_class' => 'ast-bottom-section-divider' ),
 
@@ -112,7 +112,7 @@ function divino_copyright_footer_configuration() {
 		array(
 			'name'     => divino_THEME_SETTINGS . '[' . $_section . '-margin-divider]',
 			'section'  => $_section,
-			'title'    => __( 'Spacing', 'astra' ),
+			'title'    => __( 'Spacing', 'divino' ),
 			'type'     => 'control',
 			'control'  => 'ast-heading',
 			'priority' => 99,
@@ -133,14 +133,14 @@ function divino_copyright_footer_configuration() {
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 			'section'           => $_section,
 			'priority'          => 220,
-			'title'             => __( 'Margin', 'astra' ),
+			'title'             => __( 'Margin', 'divino' ),
 			'linked_choices'    => true,
 			'unit_choices'      => array( 'px', 'em', '%' ),
 			'choices'           => array(
-				'top'    => __( 'Top', 'astra' ),
-				'right'  => __( 'Right', 'astra' ),
-				'bottom' => __( 'Bottom', 'astra' ),
-				'left'   => __( 'Left', 'astra' ),
+				'top'    => __( 'Top', 'divino' ),
+				'right'  => __( 'Right', 'divino' ),
+				'bottom' => __( 'Bottom', 'divino' ),
+				'left'   => __( 'Left', 'divino' ),
 			),
 			'context'           => divino_Builder_Helper::$design_tab,
 			'divider'           => array( 'ast_class' => 'ast-section-spacing' ),

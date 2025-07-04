@@ -2,9 +2,9 @@
 /**
  * Template for 404
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 $divino_404_subtitle_tag = true === divino_check_is_structural_setup() ? 'h3' : 'div';

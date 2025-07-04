@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Extended Base Dynamic CSS.
+ * divino Extended Base Dynamic CSS.
  *
- * @package Astra
+ * @package divino
  */
 
 // No direct access, please.

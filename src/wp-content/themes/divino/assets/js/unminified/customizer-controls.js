@@ -1,7 +1,7 @@
 /**
  * Customizer controls
  *
- * @package Astra
+ * @package divino
  */
 
 ( function( $ ) {
@@ -41,7 +41,7 @@
 		_initToggles: function()
 		{
 			// Trigger the Adv Tab Click trigger.
-			ASTControlTrigger.triggerHook( 'astra-toggle-control', api );
+			ASTControlTrigger.triggerHook( 'divino-toggle-control', api );
 
 			// Loop through each setting.
 			$.each( ASTCustomizerToggles, function( settingId, toggles ) {
@@ -109,7 +109,7 @@
 		 */
 		_initSubControlsToggle: function()
 		{
-			document.addEventListener('AstraToggleSubControls', function (e) {
+			document.addEventListener('divinoToggleSubControls', function (e) {
 				let subControlData = e.detail;
 				ASTCustomizer.subControlsToggleCSS( subControlData.controlValue, subControlData.dependents );
 			});
@@ -122,8 +122,8 @@
 
 
 ( function( api ) {
-    // Extends our custom astra-pro section.
-    api.sectionConstructor['astra-pro'] = api.Section.extend( {
+    // Extends our custom divino-pro section.
+    api.sectionConstructor['divino-pro'] = api.Section.extend( {
         // No events for this type of section.
         attachEvents: function () {},
         // Always make the section active.

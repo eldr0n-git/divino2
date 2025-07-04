@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Builder Loader.
+ * divino Builder Loader.
  *
- * @package astra-builder
+ * @package divino-builder
  */
 
 // No direct access, please.
@@ -52,24 +52,24 @@ if ( ! class_exists( 'divino_Builder_Loader' ) ) {
 			/**
 			 * Builder Core Files.
 			 */
-			require_once divino_THEME_DIR . 'inc/core/builder/class-astra-builder-helper.php';
-			require_once divino_THEME_DIR . 'inc/core/builder/class-astra-builder-options.php';
+			require_once divino_THEME_DIR . 'inc/core/builder/class-divino-builder-helper.php';
+			require_once divino_THEME_DIR . 'inc/core/builder/class-divino-builder-options.php';
 
 			/**
 			 * Builder - Header & Footer Markup.
 			 */
-			require_once divino_THEME_DIR . 'inc/builder/markup/class-astra-builder-header.php';
-			require_once divino_THEME_DIR . 'inc/builder/markup/class-astra-builder-footer.php';
+			require_once divino_THEME_DIR . 'inc/builder/markup/class-divino-builder-header.php';
+			require_once divino_THEME_DIR . 'inc/builder/markup/class-divino-builder-footer.php';
 
 			/**
 			 * Builder Controllers.
 			 */
-			require_once divino_THEME_DIR . 'inc/builder/controllers/class-astra-builder-widget-controller.php';
-			require_once divino_THEME_DIR . 'inc/builder/controllers/class-astra-builder-ui-controller.php';
+			require_once divino_THEME_DIR . 'inc/builder/controllers/class-divino-builder-widget-controller.php';
+			require_once divino_THEME_DIR . 'inc/builder/controllers/class-divino-builder-ui-controller.php';
 			/**
 			 * Customizer - Configs.
 			 */
-			require_once divino_THEME_DIR . 'inc/customizer/class-astra-builder-customizer.php';
+			require_once divino_THEME_DIR . 'inc/customizer/class-divino-builder-customizer.php';
 
 			/*DONE */
 
@@ -87,7 +87,7 @@ if ( ! class_exists( 'divino_Builder_Loader' ) ) {
 		/**
 		 * Update Quick Settings links.
 		 *
-		 * @param array $quick_settings Links to the Quick Settings in Astra.
+		 * @param array $quick_settings Links to the Quick Settings in divino.
 		 * @since 3.0.0
 		 */
 		public function quick_settings( $quick_settings ) {
@@ -96,10 +96,10 @@ if ( ! class_exists( 'divino_Builder_Loader' ) ) {
 				return $quick_settings;
 			}
 
-			$quick_settings['header']['title']     = __( 'Header Builder', 'astra' );
+			$quick_settings['header']['title']     = __( 'Header Builder', 'divino' );
 			$quick_settings['header']['quick_url'] = admin_url( 'customize.php?autofocus[panel]=panel-header-builder-group' );
 
-			$quick_settings['footer']['title']     = __( 'Footer Builder', 'astra' );
+			$quick_settings['footer']['title']     = __( 'Footer Builder', 'divino' );
 			$quick_settings['footer']['quick_url'] = admin_url( 'customize.php?autofocus[panel]=panel-footer-builder-group' );
 
 			return $quick_settings;

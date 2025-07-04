@@ -24,20 +24,20 @@ if ( ! function_exists( 'divino_post_format_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'divino_post_format_setup' );
 
-// Enqueues editor-style.css in the editors.
-if ( ! function_exists( 'divino_editor_style' ) ) :
-	/**
-	 * Enqueues editor-style.css in the editors.
-	 *
-	 * @since divino 1.0
-	 *
-	 * @return void
-	 */
-	function divino_editor_style() {
-		add_editor_style( get_parent_theme_file_uri( 'assets/css/editor-style.css' ) );
-	}
-endif;
-add_action( 'after_setup_theme', 'divino_editor_style' );
+// // Enqueues editor-style.css in the editors.
+// if ( ! function_exists( 'divino_editor_style' ) ) :
+// 	/**
+// 	 * Enqueues editor-style.css in the editors.
+// 	 *
+// 	 * @since divino 1.0
+// 	 *
+// 	 * @return void
+// 	 */
+// 	function divino_editor_style() {
+// 		add_editor_style( get_parent_theme_file_uri( 'assets/css/editor-style.css' ) );
+// 	}
+// endif;
+// add_action( 'after_setup_theme', 'divino_editor_style' );
 
 // Enqueues style.css on the front.
 if ( ! function_exists( 'divino_enqueue_styles' ) ) :
@@ -59,34 +59,69 @@ if ( ! function_exists( 'divino_enqueue_styles' ) ) :
 endif;
 add_action( 'wp_enqueue_scripts', 'divino_enqueue_styles' );
 
-// Registers custom block styles.
-if ( ! function_exists( 'divino_block_styles' ) ) :
-	/**
-	 * Registers custom block styles.
-	 *
-	 * @since divino 1.0
-	 *
-	 * @return void
-	 */
-	function divino_block_styles() {
-		register_block_style(
-			'core/list',
-			array(
-				'name'         => 'checkmark-list',
-				'label'        => __( 'Checkmark', 'divino' ),
-				'inline_style' => '
-				ul.is-style-checkmark-list {
-					list-style-type: "\2713";
-				}
 
-				ul.is-style-checkmark-list li {
-					padding-inline-start: 1ch;
-				}',
-			)
-		);
-	}
-endif;
-add_action( 'init', 'divino_block_styles' );
+
+// FONTS
+// Enqueue the Onest font from Google Fonts
+function main_enqueue_onest_font() {
+    wp_enqueue_style(
+        'onest-font',
+        'https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap',
+        [],
+        null
+    );
+}
+function main_enqueue_rubik_font() {
+    wp_enqueue_style(
+        'main-font',
+        'https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap',
+        [],
+        null
+    );
+}
+function main_enqueue_title_font() {
+    wp_enqueue_style(
+        'title-font',
+        'https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap',
+        [],
+        null
+    );
+}
+
+
+add_action('wp_enqueue_scripts', 'main_enqueue_onest_font');
+add_action('wp_enqueue_scripts', 'main_enqueue_rubik_font');
+add_action('wp_enqueue_scripts', 'main_enqueue_title_font');
+
+
+// // Registers custom block styles.
+// if ( ! function_exists( 'divino_block_styles' ) ) :
+// 	/**
+// 	 * Registers custom block styles.
+// 	 *
+// 	 * @since divino 1.0
+// 	 *
+// 	 * @return void
+// 	 */
+// 	function divino_block_styles() {
+// 		register_block_style(
+// 			'core/list',
+// 			array(
+// 				'name'         => 'checkmark-list',
+// 				'label'        => __( 'Checkmark', 'divino' ),
+// 				'inline_style' => '
+// 				ul.is-style-checkmark-list {
+// 					list-style-type: "\2713";
+// 				}
+
+// 				ul.is-style-checkmark-list li {
+// 					padding-inline-start: 1ch;
+// 				}',
+// 			)
+// 		);
+// 	}
+// endif;
+// add_action( 'init', 'divino_block_styles' );
 
 // Registers pattern categories.
 if ( ! function_exists( 'divino_pattern_categories' ) ) :
@@ -168,69 +203,11 @@ add_action('wp_loaded', function () {
     //error_log('Зарегистрированные таксономии: ' . print_r($taxonomies, true));
 });
 
-//FIX WISHLIST PLUGIN DEBUG MESSAGES
-// Подавить уведомление о раннем вызове textdomain
-add_action('init', function() {
-    remove_action('_load_textdomain_just_in_time', '_load_textdomain_just_in_time');
-}, 1);
 
-// Или более точечно для конкретного плагина
-add_filter('doing_it_wrong_trigger_error', function($trigger, $function_name) {
-    if ($function_name === '_load_textdomain_just_in_time' &&
-        strpos(debug_backtrace()[2]['file'] ?? '', 'ti-woocommerce-wishlist') !== false) {
-        return false;
-    }
-    return $trigger;
-}, 10, 2);
+//=====================================================================================
+// IMAGES SIZE CATALOG
+add_theme_support('post-thumbnails');
+// Добавляем размер изображения для карточек товаров
+add_image_size('product-card', 260, 370, true); // true — жёсткая обрезка
 
-
-
-
-// function divino_login_styles() {
-//     // Подключаем CSS-файл
-//     wp_enqueue_style( 'divino-login', get_stylesheet_directory_uri() . '/assets/css/divino-login.css' );
-// }
-// add_action( 'login_enqueue_scripts', 'divino_login_styles' );
-
-
-// FONTS
-// Enqueue the Onest font from Google Fonts
-function main_enqueue_onest_font() {
-    wp_enqueue_style(
-        'onest-font',
-        'https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap',
-        [],
-        null
-    );
-}
-function main_enqueue_rubik_font() {
-    wp_enqueue_style(
-        'main-font',
-        'https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap',
-        [],
-        null
-    );
-}
-function main_enqueue_title_font() {
-    wp_enqueue_style(
-        'title-font',
-        'https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap',
-        [],
-        null
-    );
-}
-
-
-add_action('wp_enqueue_scripts', 'main_enqueue_onest_font');
-add_action('wp_enqueue_scripts', 'main_enqueue_rubik_font');
-add_action('wp_enqueue_scripts', 'main_enqueue_title_font');
-
-// Remove the prefix from WooCommerce archive titles
-function remove_custom_taxonomy_archive_title_prefix_general( $title ) {
-    // Check if we are on an archive page for your 'product_kind' custom taxonomy
-    if ( is_tax( 'product_kind' ) ) {
-        // Get the title of the current term (e.g., "Белое вино")
-        $title = single_term_title( '', false );
-    }
-    return $title;
-}
+add_filter( 'woocommerce_template_debug_mode', '__return_true' );

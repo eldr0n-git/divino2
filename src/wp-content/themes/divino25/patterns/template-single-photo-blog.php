@@ -1,3 +1,4 @@
+<!-- template-single-photo-blog.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Photo blog single post
@@ -51,7 +52,6 @@
 						<div class="wp-block-group">
 							<!-- wp:paragraph {"fontSize":"small"} -->
 							<p class="has-small-font-size"><?php echo esc_html_x( 'Categories:', 'Prefix before one or more categories. The categories are displayed in a separate block on the next line.', 'divino' ); ?></p>
-							<!-- /wp:paragraph -->
 							<!-- wp:post-terms {"term":"category","style":{"typography":{"fontStyle":"normal","fontWeight":"300"}}} /-->
 						</div>
 						<!-- /wp:group -->
@@ -59,7 +59,6 @@
 						<div class="wp-block-group">
 							<!-- wp:paragraph {"fontSize":"small"} -->
 							<p class="has-small-font-size"><?php echo esc_html_x( 'Tagged:', 'Prefix before one or more tags. The tags are displayed in a separate block on the next line.', 'divino' ); ?></p>
-							<!-- /wp:paragraph -->
 							<!-- wp:post-terms {"term":"post_tag","style":{"typography":{"fontStyle":"normal","fontWeight":"300"}}} /-->
 						</div>
 					<!-- /wp:group -->

@@ -1,10 +1,10 @@
 <?php
 /**
- * Accessibility Options for Astra Theme.
+ * Accessibility Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 4.1.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 4.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -12,16 +12,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Register Astra Accessibility Configurations.
+ * Register divino Accessibility Configurations.
  */
 class divino_Accessibility_Configs extends divino_Customizer_Config_Base {
 	/**
-	 * Register Astra Accessibility Configurations.
+	 * Register divino Accessibility Configurations.
 	 *
-	 * @param Array                $configurations Astra Customizer Configurations.
+	 * @param Array                $configurations divino Customizer Configurations.
 	 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 	 * @since 4.1.0
-	 * @return Array Astra Customizer Configurations with updated configurations.
+	 * @return Array divino Customizer Configurations with updated configurations.
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {
 
@@ -35,7 +35,7 @@ class divino_Accessibility_Configs extends divino_Customizer_Config_Base {
 				'default'  => divino_get_option( 'site-accessibility-toggle' ),
 				'type'     => 'control',
 				'control'  => 'ast-toggle-control',
-				'title'    => __( 'Site Accessibility', 'astra' ),
+				'title'    => __( 'Site Accessibility', 'divino' ),
 				'section'  => 'section-accessibility',
 				'priority' => 1,
 				'divider'  => array( 'ast_class' => 'ast-section-spacing' ),
@@ -50,15 +50,15 @@ class divino_Accessibility_Configs extends divino_Customizer_Config_Base {
 				'type'     => 'control',
 				'control'  => 'ast-radio-icon',
 				'priority' => 1,
-				'title'    => __( 'Global Highlight', 'astra' ),
+				'title'    => __( 'Global Highlight', 'divino' ),
 				'section'  => 'section-accessibility',
 				'choices'  => array(
 					'dotted' => array(
-						'label' => __( 'Dotted', 'astra' ),
+						'label' => __( 'Dotted', 'divino' ),
 						'path'  => 'ellipsis',
 					),
 					'solid'  => array(
-						'label' => __( 'Solid', 'astra' ),
+						'label' => __( 'Solid', 'divino' ),
 						'path'  => 'minus',
 					),
 				),
@@ -81,7 +81,7 @@ class divino_Accessibility_Configs extends divino_Customizer_Config_Base {
 				'type'     => 'control',
 				'control'  => 'ast-color',
 				'priority' => 1,
-				'title'    => __( 'Color', 'astra' ),
+				'title'    => __( 'Color', 'divino' ),
 				'section'  => 'section-accessibility',
 				'context'  => array(
 					array(
@@ -101,19 +101,19 @@ class divino_Accessibility_Configs extends divino_Customizer_Config_Base {
 				'type'     => 'control',
 				'control'  => 'ast-radio-icon',
 				'priority' => 1,
-				'title'    => __( 'Input Highlight', 'astra' ),
+				'title'    => __( 'Input Highlight', 'divino' ),
 				'section'  => 'section-accessibility',
 				'choices'  => array(
 					'disable' => array(
-						'label' => __( 'Disable', 'astra' ),
+						'label' => __( 'Disable', 'divino' ),
 						'path'  => 'remove',
 					),
 					'dotted'  => array(
-						'label' => __( 'Dotted', 'astra' ),
+						'label' => __( 'Dotted', 'divino' ),
 						'path'  => 'ellipsis',
 					),
 					'solid'   => array(
-						'label' => __( 'Solid', 'astra' ),
+						'label' => __( 'Solid', 'divino' ),
 						'path'  => 'minus',
 					),
 				),
@@ -136,7 +136,7 @@ class divino_Accessibility_Configs extends divino_Customizer_Config_Base {
 				'type'     => 'control',
 				'control'  => 'ast-color',
 				'priority' => 1,
-				'title'    => __( 'Color', 'astra' ),
+				'title'    => __( 'Color', 'divino' ),
 				'section'  => 'section-accessibility',
 				'context'  => array(
 					array(

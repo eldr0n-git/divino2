@@ -1,10 +1,10 @@
 <?php
 /**
- * Global Misc Options for Astra Theme.
+ * Global Misc Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra  4.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino  4.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -12,16 +12,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Register Astra Global Misc Configurations.
+ * Register divino Global Misc Configurations.
  */
 class divino_Global_Misc_Configs extends divino_Customizer_Config_Base {
 	/**
-	 * Register Astra Global Misc  Configurations.
+	 * Register divino Global Misc  Configurations.
 	 *
-	 * @param Array                $configurations Astra Customizer Configurations.
+	 * @param Array                $configurations divino Customizer Configurations.
 	 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 	 * @since 4.0.0
-	 * @return Array Astra Customizer Configurations with updated configurations.
+	 * @return Array divino Customizer Configurations with updated configurations.
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {
 
@@ -35,7 +35,7 @@ class divino_Global_Misc_Configs extends divino_Customizer_Config_Base {
 				'default'  => divino_get_option( 'enable-scroll-to-id' ),
 				'type'     => 'control',
 				'control'  => 'ast-toggle-control',
-				'title'    => __( 'Enable Smooth Scroll to ID', 'astra' ),
+				'title'    => __( 'Enable Smooth Scroll to ID', 'divino' ),
 				'section'  => 'section-global-misc',
 				'divider'  => array( 'ast_class' => 'ast-section-spacing' ),
 				'priority' => 10,

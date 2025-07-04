@@ -1,10 +1,10 @@
 <?php
 /**
- * Store Notice options for Astra Theme.
+ * Store Notice options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 3.9.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 3.9.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,12 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class divino_Woo_Store_Notice_Configs extends divino_Customizer_Config_Base {
 	/**
-	 * Register Astra-WooCommerce Shop Cart Layout Customizer Configurations.
+	 * Register divino-WooCommerce Shop Cart Layout Customizer Configurations.
 	 *
-	 * @param Array                $configurations Astra Customizer Configurations.
+	 * @param Array                $configurations divino Customizer Configurations.
 	 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 	 * @since 3.9.0
-	 * @return Array Astra Customizer Configurations with updated configurations.
+	 * @return Array divino Customizer Configurations with updated configurations.
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {
 
@@ -35,7 +35,7 @@ class divino_Woo_Store_Notice_Configs extends divino_Customizer_Config_Base {
 				'default'   => divino_get_option( 'woo-store-notice-colors-group' ),
 				'type'      => 'control',
 				'control'   => 'ast-color-group',
-				'title'     => __( 'Color', 'astra' ),
+				'title'     => __( 'Color', 'divino' ),
 				'section'   => 'woocommerce_store_notice',
 				'transport' => 'postMessage',
 				'priority'  => 50,
@@ -60,7 +60,7 @@ class divino_Woo_Store_Notice_Configs extends divino_Customizer_Config_Base {
 				'section'           => 'woocommerce_store_notice',
 				'transport'         => 'postMessage',
 				'priority'          => 1,
-				'title'             => __( 'Text', 'astra' ),
+				'title'             => __( 'Text', 'divino' ),
 			),
 
 			// Option: Background Color.
@@ -74,7 +74,7 @@ class divino_Woo_Store_Notice_Configs extends divino_Customizer_Config_Base {
 				'section'           => 'woocommerce_store_notice',
 				'transport'         => 'postMessage',
 				'priority'          => 2,
-				'title'             => __( 'Background', 'astra' ),
+				'title'             => __( 'Background', 'divino' ),
 			),
 
 			/**
@@ -88,11 +88,11 @@ class divino_Woo_Store_Notice_Configs extends divino_Customizer_Config_Base {
 				'section'    => 'woocommerce_store_notice',
 				'transport'  => 'postMessage',
 				'priority'   => 60,
-				'title'      => __( 'Notice Position', 'astra' ),
+				'title'      => __( 'Notice Position', 'divino' ),
 				'choices'    => array(
-					'hang-over-top' => __( 'Hang Over Top', 'astra' ),
-					'top'           => __( 'Top', 'astra' ),
-					'bottom'        => __( 'Bottom', 'astra' ),
+					'hang-over-top' => __( 'Hang Over Top', 'divino' ),
+					'top'           => __( 'Top', 'divino' ),
+					'bottom'        => __( 'Bottom', 'divino' ),
 				),
 				'context'    => array(
 					array(

@@ -1,9 +1,9 @@
 <?php
 /**
- * Heading Colors for Astra theme.
+ * Heading Colors for divino theme.
  *
- * @package     astra-builder
- * @link        https://wpastra.com/
+ * @package     divino-builder
+ * @link        https://wpdivino.com/
  * @since       3.0.0
  */
 
@@ -26,7 +26,7 @@ class divino_Header_Social_Icon_Component {
 	public function __construct() {
 
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once divino_HEADER_SOCIAL_ICON_DIR . '/class-astra-header-social-icon-component-loader.php';
+		require_once divino_HEADER_SOCIAL_ICON_DIR . '/class-divino-header-social-icon-component-loader.php';
 
 		// Include front end files.
 		if ( ! is_admin() || divino_Builder_Customizer::divino_collect_customizer_builder_data() ) {

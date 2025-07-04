@@ -2,9 +2,9 @@
 /**
  * Colors and Background - Header Options for our theme.
  *
- * @package     Astra Addon
+ * @package     divino Addon
  * @link        https://www.brainstormforce.com
- * @since       Astra 1.4.3
+ * @since       divino 1.4.3
  */
 
 // Block direct access to the file.
@@ -31,10 +31,10 @@ if ( ! class_exists( 'divino_Customizer_Colors_Transparent_Header_Configs' ) ) {
 		/**
 		 * Register Colors and Background - Header Options Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -50,11 +50,11 @@ if ( ! class_exists( 'divino_Customizer_Colors_Transparent_Header_Configs' ) ) {
 					'type'        => 'control',
 					'priority'    => 34,
 					'control'     => 'ast-color',
-					'title'       => __( 'Logo Color', 'astra' ),
+					'title'       => __( 'Logo Color', 'divino' ),
 					'context'     => true === divino_Builder_Helper::$is_header_footer_builder_active ? divino_Builder_Helper::$design_tab : divino_Builder_Helper::$general_tab,
 					'responsive'  => false,
 					'rgba'        => true,
-					'description' => __( 'Use it with transparent images for optimal results.', 'astra' ),
+					'description' => __( 'Use it with transparent images for optimal results.', 'divino' ),
 					'divider'     => array( 'ast_class' => 'ast-top-section-spacing' ),
 				),
 
@@ -69,13 +69,13 @@ if ( ! class_exists( 'divino_Customizer_Colors_Transparent_Header_Configs' ) ) {
 					'priority'   => 34,
 					'transport'  => 'postMessage',
 					'control'    => 'ast-responsive-color',
-					'title'      => __( 'Above Header', 'astra' ),
+					'title'      => __( 'Above Header', 'divino' ),
 					'context'    => true === divino_Builder_Helper::$is_header_footer_builder_active ? divino_Builder_Helper::$design_tab : divino_Builder_Helper::$general_tab,
 					'responsive' => true,
 					'rgba'       => true,
 					'divider'    => array(
 						'ast_class' => 'ast-top-divider ast-top-divider',
-						'ast_title' => __( 'Background Overlay', 'astra' ),
+						'ast_title' => __( 'Background Overlay', 'divino' ),
 					),
 				),
 
@@ -90,7 +90,7 @@ if ( ! class_exists( 'divino_Customizer_Colors_Transparent_Header_Configs' ) ) {
 					'priority'   => 34,
 					'transport'  => 'postMessage',
 					'control'    => 'ast-responsive-color',
-					'title'      => __( 'Primary Header', 'astra' ),
+					'title'      => __( 'Primary Header', 'divino' ),
 					'context'    => true === divino_Builder_Helper::$is_header_footer_builder_active ? divino_Builder_Helper::$design_tab : divino_Builder_Helper::$general_tab,
 					'responsive' => true,
 					'rgba'       => true,
@@ -107,7 +107,7 @@ if ( ! class_exists( 'divino_Customizer_Colors_Transparent_Header_Configs' ) ) {
 					'priority'   => 34,
 					'transport'  => 'postMessage',
 					'control'    => 'ast-responsive-color',
-					'title'      => __( 'Below Header', 'astra' ),
+					'title'      => __( 'Below Header', 'divino' ),
 					'context'    => true === divino_Builder_Helper::$is_header_footer_builder_active ? divino_Builder_Helper::$design_tab : divino_Builder_Helper::$general_tab,
 					'responsive' => true,
 					'rgba'       => true,
@@ -125,8 +125,8 @@ if ( ! class_exists( 'divino_Customizer_Colors_Transparent_Header_Configs' ) ) {
 					'section'    => 'section-transparent-header',
 					'control'    => 'ast-responsive-color',
 					'transport'  => 'postMessage',
-					'title'      => __( 'Normal', 'astra' ),
-					'tab'        => __( 'Normal', 'astra' ),
+					'title'      => __( 'Normal', 'divino' ),
+					'tab'        => __( 'Normal', 'divino' ),
 					'responsive' => true,
 					'rgba'       => true,
 				),
@@ -143,8 +143,8 @@ if ( ! class_exists( 'divino_Customizer_Colors_Transparent_Header_Configs' ) ) {
 					'section'    => 'section-transparent-header',
 					'control'    => 'ast-responsive-color',
 					'transport'  => 'postMessage',
-					'title'      => __( 'Hover', 'astra' ),
-					'tab'        => __( 'Hover', 'astra' ),
+					'title'      => __( 'Hover', 'divino' ),
+					'tab'        => __( 'Hover', 'divino' ),
 					'responsive' => true,
 					'rgba'       => true,
 				),
@@ -161,8 +161,8 @@ if ( ! class_exists( 'divino_Customizer_Colors_Transparent_Header_Configs' ) ) {
 					'section'    => 'section-transparent-header',
 					'control'    => 'ast-responsive-color',
 					'transport'  => 'postMessage',
-					'tab'        => __( 'Normal', 'astra' ),
-					'title'      => __( 'Normal', 'astra' ),
+					'tab'        => __( 'Normal', 'divino' ),
+					'title'      => __( 'Normal', 'divino' ),
 					'responsive' => true,
 					'rgba'       => true,
 				),
@@ -178,8 +178,8 @@ if ( ! class_exists( 'divino_Customizer_Colors_Transparent_Header_Configs' ) ) {
 					'section'    => 'section-transparent-header',
 					'transport'  => 'postMessage',
 					'control'    => 'ast-responsive-color',
-					'tab'        => __( 'Normal', 'astra' ),
-					'title'      => __( 'Background', 'astra' ),
+					'tab'        => __( 'Normal', 'divino' ),
+					'title'      => __( 'Background', 'divino' ),
 					'responsive' => true,
 					'rgba'       => true,
 					'context'    => true === divino_Builder_Helper::$is_header_footer_builder_active ? divino_Builder_Helper::$design_tab : divino_Builder_Helper::$general_tab,
@@ -197,8 +197,8 @@ if ( ! class_exists( 'divino_Customizer_Colors_Transparent_Header_Configs' ) ) {
 					'section'    => 'section-transparent-header',
 					'control'    => 'ast-responsive-color',
 					'transport'  => 'postMessage',
-					'tab'        => __( 'Hover', 'astra' ),
-					'title'      => __( 'Hover / Active', 'astra' ),
+					'tab'        => __( 'Hover', 'divino' ),
+					'title'      => __( 'Hover / Active', 'divino' ),
 					'responsive' => true,
 					'rgba'       => true,
 				),
@@ -215,8 +215,8 @@ if ( ! class_exists( 'divino_Customizer_Colors_Transparent_Header_Configs' ) ) {
 					'section'    => 'section-transparent-header',
 					'control'    => 'ast-responsive-color',
 					'transport'  => 'postMessage',
-					'tab'        => __( 'Normal', 'astra' ),
-					'title'      => __( 'Normal', 'astra' ),
+					'tab'        => __( 'Normal', 'divino' ),
+					'title'      => __( 'Normal', 'divino' ),
 					'responsive' => true,
 					'rgba'       => true,
 				),
@@ -232,8 +232,8 @@ if ( ! class_exists( 'divino_Customizer_Colors_Transparent_Header_Configs' ) ) {
 					'section'    => 'section-transparent-header',
 					'control'    => 'ast-responsive-color',
 					'transport'  => 'postMessage',
-					'tab'        => __( 'Normal', 'astra' ),
-					'title'      => __( 'Background', 'astra' ),
+					'tab'        => __( 'Normal', 'divino' ),
+					'title'      => __( 'Background', 'divino' ),
 					'responsive' => true,
 					'rgba'       => true,
 					'context'    => true === divino_Builder_Helper::$is_header_footer_builder_active ? divino_Builder_Helper::$design_tab : divino_Builder_Helper::$general_tab,
@@ -251,8 +251,8 @@ if ( ! class_exists( 'divino_Customizer_Colors_Transparent_Header_Configs' ) ) {
 					'section'    => 'section-transparent-header',
 					'control'    => 'ast-responsive-color',
 					'transport'  => 'postMessage',
-					'tab'        => __( 'Hover', 'astra' ),
-					'title'      => __( 'Hover / Active', 'astra' ),
+					'tab'        => __( 'Hover', 'divino' ),
+					'title'      => __( 'Hover / Active', 'divino' ),
 					'responsive' => true,
 					'rgba'       => true,
 				),
@@ -269,8 +269,8 @@ if ( ! class_exists( 'divino_Customizer_Colors_Transparent_Header_Configs' ) ) {
 					'section'    => 'section-transparent-header',
 					'transport'  => 'postMessage',
 					'control'    => 'ast-responsive-color',
-					'tab'        => __( 'Normal', 'astra' ),
-					'title'      => __( 'Normal', 'astra' ),
+					'tab'        => __( 'Normal', 'divino' ),
+					'title'      => __( 'Normal', 'divino' ),
 					'responsive' => true,
 					'rgba'       => true,
 				),
@@ -287,8 +287,8 @@ if ( ! class_exists( 'divino_Customizer_Colors_Transparent_Header_Configs' ) ) {
 					'section'    => 'section-transparent-header',
 					'transport'  => 'postMessage',
 					'control'    => 'ast-responsive-color',
-					'tab'        => __( 'Hover', 'astra' ),
-					'title'      => __( 'Hover', 'astra' ),
+					'tab'        => __( 'Hover', 'divino' ),
+					'title'      => __( 'Hover', 'divino' ),
 					'responsive' => true,
 					'rgba'       => true,
 				),

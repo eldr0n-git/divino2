@@ -1,3 +1,4 @@
+<!-- template-query-loop-vertical-header-blog.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Right-aligned query loop

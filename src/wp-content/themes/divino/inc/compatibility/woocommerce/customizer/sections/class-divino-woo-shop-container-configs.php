@@ -1,10 +1,10 @@
 <?php
 /**
- * Container Options for Astra theme.
+ * Container Options for divino theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       divino 1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,12 +18,12 @@ if ( ! class_exists( 'divino_Woo_Shop_Container_Configs' ) ) {
 	 */
 	class divino_Woo_Shop_Container_Configs extends divino_Customizer_Config_Base {
 		/**
-		 * Register Astra-WooCommerce Shop Container Settings.
+		 * Register divino-WooCommerce Shop Container Settings.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -40,18 +40,18 @@ if ( ! class_exists( 'divino_Woo_Shop_Container_Configs' ) ) {
 					'section'           => 'section-woo-general',
 					'default'           => divino_get_option( 'woocommerce-ast-content-layout' ),
 					'priority'          => 5,
-					'title'             => __( 'Container Layout', 'astra' ),
+					'title'             => __( 'Container Layout', 'divino' ),
 					'choices'           => array(
 						'default'                => array(
-							'label' => __( 'Default', 'astra' ),
+							'label' => __( 'Default', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'layout-default', false ) : '',
 						),
 						'normal-width-container' => array(
-							'label' => __( 'Normal', 'astra' ),
+							'label' => __( 'Normal', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'normal-width-container', false ) : '',
 						),
 						'full-width-container'   => array(
-							'label' => __( 'Full Width', 'astra' ),
+							'label' => __( 'Full Width', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'full-width-container', false ) : '',
 						),
 					),
@@ -68,12 +68,12 @@ if ( ! class_exists( 'divino_Woo_Shop_Container_Configs' ) ) {
 					'section'     => 'section-woo-general',
 					'default'     => divino_get_option( 'woocommerce-content-style', 'default' ),
 					'priority'    => 5,
-					'title'       => __( 'Container Style', 'astra' ),
-					'description' => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
+					'title'       => __( 'Container Style', 'divino' ),
+					'description' => __( 'Container style will apply only when layout is set to either normal or narrow.', 'divino' ),
 					'choices'     => array(
-						'default' => __( 'Default', 'astra' ),
-						'unboxed' => __( 'Unboxed', 'astra' ),
-						'boxed'   => __( 'Boxed', 'astra' ),
+						'default' => __( 'Default', 'divino' ),
+						'unboxed' => __( 'Unboxed', 'divino' ),
+						'boxed'   => __( 'Boxed', 'divino' ),
 					),
 					'renderAs'    => 'text',
 					'responsive'  => false,

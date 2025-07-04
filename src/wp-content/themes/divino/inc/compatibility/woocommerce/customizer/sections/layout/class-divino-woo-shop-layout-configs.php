@@ -1,10 +1,10 @@
 <?php
 /**
- * WooCommerce Options for Astra Theme.
+ * WooCommerce Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.1.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,12 +18,12 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 	 */
 	class divino_Woo_Shop_Layout_Configs extends divino_Customizer_Config_Base {
 		/**
-		 * Register Astra-WooCommerce Shop Layout Customizer Configurations.
+		 * Register divino-WooCommerce Shop Layout Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -37,8 +37,8 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 
 			if ( $divino_addon_with_woo ) {
 				$divino_shop_page_pro_features = array(
-					'redirect_cart_page'     => __( 'Redirect To Cart Page', 'astra' ),
-					'redirect_checkout_page' => __( 'Redirect To Checkout Page', 'astra' ),
+					'redirect_cart_page'     => __( 'Redirect To Cart Page', 'divino' ),
+					'redirect_checkout_page' => __( 'Redirect To Checkout Page', 'divino' ),
 				);
 			}
 
@@ -50,7 +50,7 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 				'is_parent'   => true,
 				'main_index'  => 'add_cart',
 				'clone_limit' => 2,
-				'title'       => __( 'Add To Cart', 'astra' ),
+				'title'       => __( 'Add To Cart', 'divino' ),
 			);
 
 			/**
@@ -61,32 +61,32 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 				'is_parent'   => true,
 				'main_index'  => 'ratings',
 				'clone_limit' => 2,
-				'title'       => __( 'Ratings', 'astra' ),
+				'title'       => __( 'Ratings', 'divino' ),
 			);
 
 			if ( $divino_addon_with_woo ) {
 				$current_shop_layouts = array(
 					'shop-page-grid-style'   => array(
-						'label' => __( 'Design 1', 'astra' ),
+						'label' => __( 'Design 1', 'divino' ),
 						'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'shop-grid-view', false ) : '',
 					),
 					'shop-page-modern-style' => array(
-						'label' => __( 'Design 2', 'astra' ),
+						'label' => __( 'Design 2', 'divino' ),
 						'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'shop-modern-view', false ) : '',
 					),
 					'shop-page-list-style'   => array(
-						'label' => __( 'Design 3', 'astra' ),
+						'label' => __( 'Design 3', 'divino' ),
 						'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'shop-list-view', false ) : '',
 					),
 				);
 			} else {
 				$current_shop_layouts = array(
 					'shop-page-grid-style'   => array(
-						'label' => __( 'Design 1', 'astra' ),
+						'label' => __( 'Design 1', 'divino' ),
 						'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'shop-grid-view', false ) : '',
 					),
 					'shop-page-modern-style' => array(
-						'label' => __( 'Design 2', 'astra' ),
+						'label' => __( 'Design 2', 'divino' ),
 						'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'shop-modern-view', false ) : '',
 					),
 				);
@@ -112,7 +112,7 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 				array(
 					'name'     => divino_THEME_SETTINGS . '[shop-box-styling]',
 					'section'  => 'woocommerce_product_catalog',
-					'title'    => __( 'Shop Card Styling', 'astra' ),
+					'title'    => __( 'Shop Card Styling', 'divino' ),
 					'type'     => 'control',
 					'control'  => 'ast-heading',
 					'priority' => 229,
@@ -133,7 +133,7 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 					'control'    => 'ast-selector',
 					'section'    => 'woocommerce_product_catalog',
 					'priority'   => 229,
-					'title'      => __( 'Horizontal Content Alignment', 'astra' ),
+					'title'      => __( 'Horizontal Content Alignment', 'divino' ),
 					'responsive' => true,
 					'choices'    => array(
 						'align-left'   => 'align-left',
@@ -152,7 +152,7 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 				array(
 					'name'     => divino_THEME_SETTINGS . '[woo-shop-structure-divider]',
 					'section'  => 'woocommerce_product_catalog',
-					'title'    => __( 'Shop Card Structure', 'astra' ),
+					'title'    => __( 'Shop Card Structure', 'divino' ),
 					'type'     => 'control',
 					'control'  => 'ast-heading',
 					'priority' => 15,
@@ -173,13 +173,13 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 					'priority'          => 15,
 					'choices'           => array_merge(
 						array(
-							'title'      => __( 'Title', 'astra' ),
-							'price'      => __( 'Price', 'astra' ),
-							'short_desc' => __( 'Short Description', 'astra' ),
+							'title'      => __( 'Title', 'divino' ),
+							'price'      => __( 'Price', 'divino' ),
+							'short_desc' => __( 'Short Description', 'divino' ),
 						),
 						$add_to_cart_attr,
 						array(
-							'category' => __( 'Category', 'astra' ),
+							'category' => __( 'Category', 'divino' ),
 						),
 						$ratings,
 					),
@@ -192,7 +192,7 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 				array(
 					'name'     => divino_THEME_SETTINGS . '[woo-shop-skin-divider]',
 					'section'  => 'woocommerce_product_catalog',
-					'title'    => __( 'Shop Layout', 'astra' ),
+					'title'    => __( 'Shop Layout', 'divino' ),
 					'type'     => 'control',
 					'control'  => 'ast-heading',
 					'priority' => 7,
@@ -208,7 +208,7 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 					'default'           => divino_get_option( 'shop-style' ),
 					'type'              => 'control',
 					'section'           => 'woocommerce_product_catalog',
-					'title'             => __( 'Shop Card Design', 'astra' ),
+					'title'             => __( 'Shop Card Design', 'divino' ),
 					'control'           => 'ast-radio-image',
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_choices' ),
 					'priority'          => 8,
@@ -234,7 +234,7 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 						)
 					),
 					'priority'          => 9,
-					'title'             => __( 'Shop Columns', 'astra' ),
+					'title'             => __( 'Shop Columns', 'divino' ),
 					'input_attrs'       => array(
 						'step' => 1,
 						'min'  => 1,
@@ -250,7 +250,7 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 					'name'         => divino_THEME_SETTINGS . '[shop-no-of-products]',
 					'type'         => 'control',
 					'section'      => 'woocommerce_product_catalog',
-					'title'        => __( 'Products Per Page', 'astra' ),
+					'title'        => __( 'Products Per Page', 'divino' ),
 					'default'      => divino_get_option( 'shop-no-of-products' ),
 					'control'      => 'ast-number',
 					'qty_selector' => true,
@@ -272,10 +272,10 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 					'section'    => 'woocommerce_product_catalog',
 					'default'    => divino_get_option( 'shop-archive-width' ),
 					'priority'   => 9,
-					'title'      => __( 'Shop Archive Content Width', 'astra' ),
+					'title'      => __( 'Shop Archive Content Width', 'divino' ),
 					'choices'    => array(
-						'default' => __( 'Default', 'astra' ),
-						'custom'  => __( 'Custom', 'astra' ),
+						'default' => __( 'Default', 'divino' ),
+						'custom'  => __( 'Custom', 'divino' ),
 					),
 					'transport'  => 'refresh',
 					'renderAs'   => 'text',
@@ -293,7 +293,7 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 					'section'     => 'woocommerce_product_catalog',
 					'default'     => divino_get_option( 'shop-archive-max-width' ),
 					'priority'    => 9,
-					'title'       => __( 'Custom Width', 'astra' ),
+					'title'       => __( 'Custom Width', 'divino' ),
 					'transport'   => 'postMessage',
 					'suffix'      => 'px',
 					'input_attrs' => array(
@@ -321,15 +321,15 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 				'parent'     => divino_THEME_SETTINGS . '[shop-product-structure]',
 				'default'    => divino_get_option( 'shop-add-to-cart-action' ),
 				'section'    => 'woocommerce_product_catalog',
-				'title'      => __( 'Add To Cart Action', 'astra' ),
+				'title'      => __( 'Add To Cart Action', 'divino' ),
 				'type'       => 'sub-control',
 				'control'    => 'ast-select',
 				'linked'     => 'add_cart',
 				'priority'   => 10,
 				'choices'    => array_merge(
 					array(
-						'default'       => __( 'Default', 'astra' ),
-						'slide_in_cart' => __( 'Slide In Cart', 'astra' ),
+						'default'       => __( 'Default', 'divino' ),
+						'slide_in_cart' => __( 'Slide In Cart', 'divino' ),
 					),
 					$divino_shop_page_pro_features
 				),
@@ -350,10 +350,10 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 					'control'    => 'ast-selector',
 					'section'    => 'woocommerce_product_catalog',
 					'priority'   => 10,
-					'title'      => __( 'Review Count', 'astra' ),
+					'title'      => __( 'Review Count', 'divino' ),
 					'choices'    => array(
-						'default'      => __( 'Default', 'astra' ),
-						'count_string' => __( 'Count + Text', 'astra' ),
+						'default'      => __( 'Default', 'divino' ),
+						'count_string' => __( 'Count + Text', 'divino' ),
 					),
 					'transport'  => 'postMessage',
 					'responsive' => false,
@@ -372,10 +372,10 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 					'priority' => 10,
 					'label'    => '',
 					'linked'   => 'add_cart',
-					'help'     => __( 'Please publish the changes and see result on the frontend.<br />[Slide in cart requires Cart added inside Header Builder]', 'astra' ),
+					'help'     => __( 'Please publish the changes and see result on the frontend.<br />[Slide in cart requires Cart added inside Header Builder]', 'divino' ),
 				);
 
-				// Learn More link if Astra Pro is not activated.
+				// Learn More link if divino Pro is not activated.
 				if ( divino_showcase_upgrade_notices() ) {
 					$_configs[] = array(
 						'name'     => divino_THEME_SETTINGS . '[ast-woo-shop-pro-items]',
@@ -384,40 +384,40 @@ if ( ! class_exists( 'divino_Woo_Shop_Layout_Configs' ) ) {
 						'campaign' => 'woocommerce',
 						'choices'  => array(
 							'two'   => array(
-								'title' => __( 'More shop design layouts', 'astra' ),
+								'title' => __( 'More shop design layouts', 'divino' ),
 							),
 							'three' => array(
-								'title' => __( 'Shop toolbar structure', 'astra' ),
+								'title' => __( 'Shop toolbar structure', 'divino' ),
 							),
 							'five'  => array(
-								'title' => __( 'Offcanvas product filters', 'astra' ),
+								'title' => __( 'Offcanvas product filters', 'divino' ),
 							),
 							'six'   => array(
-								'title' => __( 'Products quick view', 'astra' ),
+								'title' => __( 'Products quick view', 'divino' ),
 							),
 							'seven' => array(
-								'title' => __( 'Shop pagination', 'astra' ),
+								'title' => __( 'Shop pagination', 'divino' ),
 							),
 							'eight' => array(
-								'title' => __( 'More typography options', 'astra' ),
+								'title' => __( 'More typography options', 'divino' ),
 							),
 							'nine'  => array(
-								'title' => __( 'More color options', 'astra' ),
+								'title' => __( 'More color options', 'divino' ),
 							),
 							'ten'   => array(
-								'title' => __( 'More spacing options', 'astra' ),
+								'title' => __( 'More spacing options', 'divino' ),
 							),
 							'four'  => array(
-								'title' => __( 'Box shadow design options', 'astra' ),
+								'title' => __( 'Box shadow design options', 'divino' ),
 							),
 							'one'   => array(
-								'title' => __( 'More design controls', 'astra' ),
+								'title' => __( 'More design controls', 'divino' ),
 							),
 						),
 						'section'  => 'woocommerce_product_catalog',
 						'default'  => '',
 						'priority' => 999,
-						'title'    => __( 'Optimize your WooCommerce store for maximum profit with enhanced features', 'astra' ),
+						'title'    => __( 'Optimize your WooCommerce store for maximum profit with enhanced features', 'divino' ),
 						'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),
 						'context'  => array(),
 					);

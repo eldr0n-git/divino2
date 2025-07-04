@@ -2,7 +2,7 @@
 /**
  * Scroll To Top Options for our theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
  * @since       4.0.0
  */
@@ -24,10 +24,10 @@ class divino_Scroll_To_Top_Configs extends divino_Customizer_Config_Base {
 	/**
 	 * Register Scroll To Top Customizer Configurations.
 	 *
-	 * @param Array                $configurations Astra Customizer Configurations.
+	 * @param Array                $configurations divino Customizer Configurations.
 	 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 	 * @since 4.0.0
-	 * @return Array Astra Customizer Configurations with updated configurations.
+	 * @return Array divino Customizer Configurations with updated configurations.
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {
 
@@ -41,7 +41,7 @@ class divino_Scroll_To_Top_Configs extends divino_Customizer_Config_Base {
 				'default'  => divino_get_option( 'scroll-to-top-enable' ),
 				'type'     => 'control',
 				'section'  => 'section-scroll-to-top',
-				'title'    => __( 'Enable Scroll to Top', 'astra' ),
+				'title'    => __( 'Enable Scroll to Top', 'divino' ),
 				'priority' => 1,
 				'control'  => 'ast-toggle-control',
 				'divider'  => array( 'ast_class' => 'ast-section-spacing' ),
@@ -57,11 +57,11 @@ class divino_Scroll_To_Top_Configs extends divino_Customizer_Config_Base {
 				'control'    => 'ast-selector',
 				'section'    => 'section-scroll-to-top',
 				'priority'   => 10,
-				'title'      => __( 'Display On', 'astra' ),
+				'title'      => __( 'Display On', 'divino' ),
 				'choices'    => array(
-					'desktop' => __( 'Desktop', 'astra' ),
-					'mobile'  => __( 'Mobile', 'astra' ),
-					'both'    => __( 'Desktop + Mobile', 'astra' ),
+					'desktop' => __( 'Desktop', 'divino' ),
+					'mobile'  => __( 'Mobile', 'divino' ),
+					'both'    => __( 'Desktop + Mobile', 'divino' ),
 				),
 				'renderAs'   => 'text',
 				'responsive' => false,
@@ -87,10 +87,10 @@ class divino_Scroll_To_Top_Configs extends divino_Customizer_Config_Base {
 				'control'    => 'ast-selector',
 				'transport'  => 'postMessage',
 				'section'    => 'section-scroll-to-top',
-				'title'      => __( 'Position', 'astra' ),
+				'title'      => __( 'Position', 'divino' ),
 				'choices'    => array(
-					'left'  => __( 'Left', 'astra' ),
-					'right' => __( 'Right', 'astra' ),
+					'left'  => __( 'Left', 'divino' ),
+					'right' => __( 'Right', 'divino' ),
 				),
 				'priority'   => 11,
 				'responsive' => false,
@@ -117,7 +117,7 @@ class divino_Scroll_To_Top_Configs extends divino_Customizer_Config_Base {
 				'control'   => 'ast-slider',
 				'transport' => 'postMessage',
 				'section'   => 'section-scroll-to-top',
-				'title'     => __( 'Icon Size', 'astra' ),
+				'title'     => __( 'Icon Size', 'divino' ),
 				'suffix'    => 'px',
 				'priority'  => 12,
 				'context'   => array(
@@ -136,7 +136,7 @@ class divino_Scroll_To_Top_Configs extends divino_Customizer_Config_Base {
 				'default'  => divino_get_option( 'scroll-on-top-color-group' ),
 				'type'     => 'control',
 				'control'  => 'ast-color-group',
-				'title'    => __( 'Icon Color', 'astra' ),
+				'title'    => __( 'Icon Color', 'divino' ),
 				'section'  => 'section-scroll-to-top',
 				'context'  => array(
 					'relation' => 'AND',
@@ -156,7 +156,7 @@ class divino_Scroll_To_Top_Configs extends divino_Customizer_Config_Base {
 				'default'   => divino_get_option( 'scroll-on-top-bg-color-group' ),
 				'type'      => 'control',
 				'control'   => 'ast-color-group',
-				'title'     => __( 'Background Color', 'astra' ),
+				'title'     => __( 'Background Color', 'divino' ),
 				'section'   => 'section-scroll-to-top',
 				'transport' => 'postMessage',
 				'context'   => array(
@@ -181,7 +181,7 @@ class divino_Scroll_To_Top_Configs extends divino_Customizer_Config_Base {
 				'control'        => 'ast-responsive-spacing',
 				'transport'      => 'postMessage',
 				'section'        => 'section-scroll-to-top',
-				'title'          => __( 'Border Radius', 'astra' ),
+				'title'          => __( 'Border Radius', 'divino' ),
 				'suffix'         => 'px',
 				'priority'       => 1,
 				'divider'        => array( 'ast_class' => 'ast-top-section-divider' ),
@@ -197,10 +197,10 @@ class divino_Scroll_To_Top_Configs extends divino_Customizer_Config_Base {
 				'linked_choices' => true,
 				'unit_choices'   => array( 'px', 'em', '%' ),
 				'choices'        => array(
-					'top'    => __( 'Top', 'astra' ),
-					'right'  => __( 'Right', 'astra' ),
-					'bottom' => __( 'Bottom', 'astra' ),
-					'left'   => __( 'Left', 'astra' ),
+					'top'    => __( 'Top', 'divino' ),
+					'right'  => __( 'Right', 'divino' ),
+					'bottom' => __( 'Bottom', 'divino' ),
+					'left'   => __( 'Left', 'divino' ),
 				),
 				'connected'      => false,
 			),
@@ -218,7 +218,7 @@ class divino_Scroll_To_Top_Configs extends divino_Customizer_Config_Base {
 				'control'           => 'ast-color',
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 				'transport'         => 'postMessage',
-				'title'             => __( 'Color', 'astra' ),
+				'title'             => __( 'Color', 'divino' ),
 			),
 
 			/**
@@ -234,7 +234,7 @@ class divino_Scroll_To_Top_Configs extends divino_Customizer_Config_Base {
 				'transport'         => 'postMessage',
 				'control'           => 'ast-color',
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
-				'title'             => __( 'Color', 'astra' ),
+				'title'             => __( 'Color', 'divino' ),
 			),
 
 			/**
@@ -250,7 +250,7 @@ class divino_Scroll_To_Top_Configs extends divino_Customizer_Config_Base {
 				'control'           => 'ast-color',
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 				'transport'         => 'postMessage',
-				'title'             => __( 'Hover Color', 'astra' ),
+				'title'             => __( 'Hover Color', 'divino' ),
 			),
 
 			/**
@@ -266,7 +266,7 @@ class divino_Scroll_To_Top_Configs extends divino_Customizer_Config_Base {
 				'control'           => 'ast-color',
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 				'transport'         => 'postMessage',
-				'title'             => __( 'Hover Color', 'astra' ),
+				'title'             => __( 'Hover Color', 'divino' ),
 			),
 		);
 
@@ -286,7 +286,7 @@ class divino_Scroll_To_Top_Configs extends divino_Customizer_Config_Base {
 				'section'  => 'section-scroll-to-top',
 				'priority' => 1,
 				'label'    => '',
-				'help'     => __( 'Note: To get design settings in action make sure to enable Scroll to Top.', 'astra' ),
+				'help'     => __( 'Note: To get design settings in action make sure to enable Scroll to Top.', 'divino' ),
 				'context'  => array(
 					'relation' => 'AND',
 					divino_Builder_Helper::$design_tab_config,

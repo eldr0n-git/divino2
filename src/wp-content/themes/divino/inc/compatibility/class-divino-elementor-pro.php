@@ -2,7 +2,7 @@
 /**
  * Elementor Compatibility File.
  *
- * @package Astra
+ * @package divino
  */
 
 // phpcs:disable PHPCompatibility.Keywords.NewKeywords.t_namespaceFound, WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedNamespaceFound
@@ -25,12 +25,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Astra Elementor Compatibility
+ * divino Elementor Compatibility
  */
 if ( ! class_exists( 'divino_Elementor_Pro' ) ) {
 
 	/**
-	 * Astra Elementor Compatibility
+	 * divino Elementor Compatibility
 	 *
 	 * @since 1.2.7
 	 */
@@ -445,7 +445,7 @@ if ( ! class_exists( 'divino_Elementor_Pro' ) ) {
 				$classes = array_diff(
 					$classes,
 					array(
-						// Astra common grid.
+						// divino common grid.
 						'ast-col-xs-1',
 						'ast-col-xs-2',
 						'ast-col-xs-3',
@@ -507,14 +507,14 @@ if ( ! class_exists( 'divino_Elementor_Pro' ) ) {
 						'ast-col-xl-11',
 						'ast-col-xl-12',
 
-						// Astra Blog / Single Post.
+						// divino Blog / Single Post.
 						'ast-article-post',
 						'ast-article-single',
 						'ast-separate-posts',
 						'remove-featured-img-padding',
 						'ast-featured-post',
 
-						// Astra Woocommerce.
+						// divino Woocommerce.
 						'ast-product-gallery-layout-vertical',
 						'ast-product-gallery-layout-horizontal',
 						'ast-product-gallery-with-no-image',
@@ -527,7 +527,7 @@ if ( ! class_exists( 'divino_Elementor_Pro' ) ) {
 						'ast-qv-on-image-click',
 						'ast-qv-after-summary',
 
-						'astra-woo-hover-swap',
+						'divino-woo-hover-swap',
 
 						'box-shadow-0',
 						'box-shadow-0-hover',

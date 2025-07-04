@@ -2,8 +2,8 @@
 /**
  * Menu footer Configuration.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       4.5.2
  */
 
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register menu footer builder Customizer Configurations.
  *
  * @since 4.5.2
- * @return array Astra Customizer Configurations with updated configurations.
+ * @return array divino Customizer Configurations with updated configurations.
  */
 function divino_menu_footer_configuration() {
 	$_section = 'section-footer-menu';
@@ -39,7 +39,7 @@ function divino_menu_footer_configuration() {
 		array(
 			'name'     => $_section,
 			'type'     => 'section',
-			'title'    => __( 'Footer Menu', 'astra' ),
+			'title'    => __( 'Footer Menu', 'divino' ),
 			'panel'    => 'panel-footer-builder-group',
 			'priority' => 50,
 		),
@@ -56,7 +56,7 @@ function divino_menu_footer_configuration() {
 			'priority'  => 10,
 			'link_type' => 'section',
 			'linked'    => 'menu_locations',
-			'link_text' => __( 'Configure Menu from Here.', 'astra' ),
+			'link_text' => __( 'Configure Menu from Here.', 'divino' ),
 			'context'   => divino_Builder_Helper::$general_tab,
 
 		),
@@ -67,7 +67,7 @@ function divino_menu_footer_configuration() {
 			'default'    => divino_get_option( 'footer-menu-layout' ),
 			'section'    => $_section,
 			'priority'   => 20,
-			'title'      => __( 'Layout', 'astra' ),
+			'title'      => __( 'Layout', 'divino' ),
 			'type'       => 'control',
 			'control'    => 'ast-selector',
 			'transport'  => 'postMessage',
@@ -77,8 +77,8 @@ function divino_menu_footer_configuration() {
 				'render_callback'     => array( divino_Builder_Footer::get_instance(), 'footer_menu' ),
 			),
 			'choices'    => array(
-				'horizontal' => __( 'Inline', 'astra' ),
-				'vertical'   => __( 'Stack', 'astra' ),
+				'horizontal' => __( 'Inline', 'divino' ),
+				'vertical'   => __( 'Stack', 'divino' ),
 			),
 			'context'    => divino_Builder_Helper::$general_tab,
 			'responsive' => true,
@@ -96,7 +96,7 @@ function divino_menu_footer_configuration() {
 			'control'   => 'ast-selector',
 			'section'   => $_section,
 			'priority'  => 21,
-			'title'     => __( 'Alignment', 'astra' ),
+			'title'     => __( 'Alignment', 'divino' ),
 			'context'   => divino_Builder_Helper::$general_tab,
 			'transport' => 'postMessage',
 			'choices'   => array(
@@ -112,7 +112,7 @@ function divino_menu_footer_configuration() {
 			'type'       => 'control',
 			'control'    => 'ast-color-group',
 			'context'    => divino_Builder_Helper::$design_tab,
-			'title'      => __( 'Link / Text', 'astra' ),
+			'title'      => __( 'Link / Text', 'divino' ),
 			'section'    => $_section,
 			'transport'  => 'postMessage',
 			'priority'   => 90,
@@ -124,7 +124,7 @@ function divino_menu_footer_configuration() {
 			'type'       => 'control',
 			'control'    => 'ast-color-group',
 			'context'    => divino_Builder_Helper::$design_tab,
-			'title'      => __( 'Background', 'astra' ),
+			'title'      => __( 'Background', 'divino' ),
 			'section'    => $_section,
 			'transport'  => 'postMessage',
 			'priority'   => 90,
@@ -139,9 +139,9 @@ function divino_menu_footer_configuration() {
 			'type'       => 'sub-control',
 			'control'    => 'ast-responsive-color',
 			'transport'  => 'postMessage',
-			'tab'        => __( 'Normal', 'astra' ),
+			'tab'        => __( 'Normal', 'divino' ),
 			'section'    => $_section,
-			'title'      => __( 'Normal', 'astra' ),
+			'title'      => __( 'Normal', 'divino' ),
 			'responsive' => true,
 			'rgba'       => true,
 			'priority'   => 7,
@@ -156,10 +156,10 @@ function divino_menu_footer_configuration() {
 			'control'    => 'ast-responsive-background',
 			'section'    => $_section,
 			'transport'  => 'postMessage',
-			'tab'        => __( 'Normal', 'astra' ),
+			'tab'        => __( 'Normal', 'divino' ),
 			'data_attrs' => array( 'name' => 'footer-menu-bg-obj-responsive' ),
-			'title'      => __( 'Normal', 'astra' ),
-			'label'      => __( 'Normal', 'astra' ),
+			'title'      => __( 'Normal', 'divino' ),
+			'label'      => __( 'Normal', 'divino' ),
 			'priority'   => 9,
 		),
 
@@ -168,11 +168,11 @@ function divino_menu_footer_configuration() {
 			'name'       => 'footer-menu-h-color-responsive',
 			'default'    => divino_get_option( 'footer-menu-h-color-responsive' ),
 			'parent'     => divino_THEME_SETTINGS . '[footer-menu-link-colors]',
-			'tab'        => __( 'Hover', 'astra' ),
+			'tab'        => __( 'Hover', 'divino' ),
 			'type'       => 'sub-control',
 			'control'    => 'ast-responsive-color',
 			'transport'  => 'postMessage',
-			'title'      => __( 'Hover', 'astra' ),
+			'title'      => __( 'Hover', 'divino' ),
 			'section'    => $_section,
 			'responsive' => true,
 			'rgba'       => true,
@@ -185,11 +185,11 @@ function divino_menu_footer_configuration() {
 			'default'    => divino_get_option( 'footer-menu-h-bg-color-responsive' ),
 			'parent'     => divino_THEME_SETTINGS . '[footer-menu-background-colors]',
 			'type'       => 'sub-control',
-			'title'      => __( 'Hover', 'astra' ),
+			'title'      => __( 'Hover', 'divino' ),
 			'section'    => $_section,
 			'control'    => 'ast-responsive-color',
 			'transport'  => 'postMessage',
-			'tab'        => __( 'Hover', 'astra' ),
+			'tab'        => __( 'Hover', 'divino' ),
 			'responsive' => true,
 			'rgba'       => true,
 			'priority'   => 21,
@@ -204,8 +204,8 @@ function divino_menu_footer_configuration() {
 			'section'    => $_section,
 			'control'    => 'ast-responsive-color',
 			'transport'  => 'postMessage',
-			'tab'        => __( 'Active', 'astra' ),
-			'title'      => __( 'Active', 'astra' ),
+			'tab'        => __( 'Active', 'divino' ),
+			'title'      => __( 'Active', 'divino' ),
 			'responsive' => true,
 			'rgba'       => true,
 			'priority'   => 31,
@@ -220,8 +220,8 @@ function divino_menu_footer_configuration() {
 			'control'    => 'ast-responsive-color',
 			'transport'  => 'postMessage',
 			'section'    => $_section,
-			'title'      => __( 'Active', 'astra' ),
-			'tab'        => __( 'Active', 'astra' ),
+			'title'      => __( 'Active', 'divino' ),
+			'tab'        => __( 'Active', 'divino' ),
 			'responsive' => true,
 			'rgba'       => true,
 			'priority'   => 33,
@@ -233,7 +233,7 @@ function divino_menu_footer_configuration() {
 		array(
 			'name'     => divino_THEME_SETTINGS . '[footer-main-menu-divider]',
 			'section'  => $_section,
-			'title'    => __( 'Spacing', 'astra' ),
+			'title'    => __( 'Spacing', 'divino' ),
 			'type'     => 'control',
 			'control'  => 'ast-heading',
 			'priority' => 210,
@@ -253,14 +253,14 @@ function divino_menu_footer_configuration() {
 			'section'           => $_section,
 			'context'           => divino_Builder_Helper::$design_tab,
 			'priority'          => 210,
-			'title'             => __( 'Menu Spacing', 'astra' ),
+			'title'             => __( 'Menu Spacing', 'divino' ),
 			'linked_choices'    => true,
 			'unit_choices'      => array( 'px', 'em', '%' ),
 			'choices'           => array(
-				'top'    => __( 'Top', 'astra' ),
-				'right'  => __( 'Right', 'astra' ),
-				'bottom' => __( 'Bottom', 'astra' ),
-				'left'   => __( 'Left', 'astra' ),
+				'top'    => __( 'Top', 'divino' ),
+				'right'  => __( 'Right', 'divino' ),
+				'bottom' => __( 'Bottom', 'divino' ),
+				'left'   => __( 'Left', 'divino' ),
 			),
 			'divider'           => array( 'ast_class' => 'ast-bottom-section-divider ast-section-spacing' ),
 		),
@@ -277,14 +277,14 @@ function divino_menu_footer_configuration() {
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 			'section'           => $_section,
 			'priority'          => 220,
-			'title'             => __( 'Margin', 'astra' ),
+			'title'             => __( 'Margin', 'divino' ),
 			'linked_choices'    => true,
 			'unit_choices'      => array( 'px', 'em', '%' ),
 			'choices'           => array(
-				'top'    => __( 'Top', 'astra' ),
-				'right'  => __( 'Right', 'astra' ),
-				'bottom' => __( 'Bottom', 'astra' ),
-				'left'   => __( 'Left', 'astra' ),
+				'top'    => __( 'Top', 'divino' ),
+				'right'  => __( 'Right', 'divino' ),
+				'bottom' => __( 'Bottom', 'divino' ),
+				'left'   => __( 'Left', 'divino' ),
 			),
 			'context'           => divino_Builder_Helper::$design_tab,
 		),
@@ -302,7 +302,7 @@ function divino_menu_footer_configuration() {
 				'default'   => divino_get_option( 'footer-menu-typography' ),
 				'type'      => 'control',
 				'control'   => 'ast-settings-group',
-				'title'     => __( 'Menu Font', 'astra' ),
+				'title'     => __( 'Menu Font', 'divino' ),
 				'is_font'   => true,
 				'section'   => $_section,
 				'context'   => divino_Builder_Helper::$design_tab,
@@ -319,7 +319,7 @@ function divino_menu_footer_configuration() {
 				'section'           => $_section,
 				'type'              => 'sub-control',
 				'priority'          => 23,
-				'title'             => __( 'Font Size', 'astra' ),
+				'title'             => __( 'Font Size', 'divino' ),
 				'transport'         => 'postMessage',
 				'control'           => 'ast-responsive-slider',
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
@@ -363,7 +363,7 @@ function divino_menu_footer_configuration() {
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
 				'type'              => 'control',
 				'transport'         => 'postMessage',
-				'title'             => __( 'Menu Font Size', 'astra' ),
+				'title'             => __( 'Menu Font Size', 'divino' ),
 				'priority'          => 120,
 				'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
 				'input_attrs'       => array(

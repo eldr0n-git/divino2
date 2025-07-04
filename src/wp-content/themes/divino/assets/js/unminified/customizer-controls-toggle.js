@@ -1,7 +1,7 @@
 /**
  * Customizer controls toggles
  *
- * @package Astra
+ * @package divino
  */
 
 ( function( $ ) {
@@ -22,7 +22,7 @@
 		 */
 	    triggerHook: function( hook, args )
 	    {
-	    	$( 'body' ).trigger( 'astra-control-trigger.' + hook, args );
+	    	$( 'body' ).trigger( 'divino-control-trigger.' + hook, args );
 	    },
 
 	    /**
@@ -35,7 +35,7 @@
 	     */
 	    addHook: function( hook, callback )
 	    {
-	    	$( 'body' ).on( 'astra-control-trigger.' + hook, callback );
+	    	$( 'body' ).on( 'divino-control-trigger.' + hook, callback );
 	    },
 
 	    /**
@@ -48,7 +48,7 @@
 	     */
 	    removeHook: function( hook, callback )
 	    {
-		    $( 'body' ).off( 'astra-control-trigger.' + hook, callback );
+		    $( 'body' ).off( 'divino-control-trigger.' + hook, callback );
 	    },
 	};
 
@@ -60,11 +60,11 @@
 	 */
 	ASTCustomizerToggles = {
 
-		'astra-settings[display-site-title-responsive]' : [],
+		'divino-settings[display-site-title-responsive]' : [],
 
-		'astra-settings[display-site-tagline-responsive]' : [],
+		'divino-settings[display-site-tagline-responsive]' : [],
 
-		'astra-settings[ast-header-retina-logo]' :[],
+		'divino-settings[ast-header-retina-logo]' :[],
 
 		'custom_logo' : [],
 
@@ -80,54 +80,54 @@
 		// Layout 2 > Right Section > Text / HTML
 		// Layout 2 > Right Section > Search Type
 		// Layout 2 > Right Section > Search Type > Search Box Type.
-		'astra-settings[header-main-rt-section]' : [],
+		'divino-settings[header-main-rt-section]' : [],
 
 
-		'astra-settings[hide-custom-menu-mobile]' :[],
+		'divino-settings[hide-custom-menu-mobile]' :[],
 
 
 		/**
 		 * Blog
 		 */
-		'astra-settings[blog-width]' :[],
+		'divino-settings[blog-width]' :[],
 
-		'astra-settings[blog-post-structure]' :[],
+		'divino-settings[blog-post-structure]' :[],
 
 		/**
 		 * Blog Single
 		 */
-		 'astra-settings[blog-single-post-structure]' : [],
+		 'divino-settings[blog-single-post-structure]' : [],
 
-		'astra-settings[blog-single-width]' : [],
+		'divino-settings[blog-single-width]' : [],
 
-		'astra-settings[blog-single-meta]' :[],
+		'divino-settings[blog-single-meta]' :[],
 
 
 		/**
 		 * Small Footer
 		 */
-		'astra-settings[footer-sml-layout]' : [],
+		'divino-settings[footer-sml-layout]' : [],
 
-		'astra-settings[footer-sml-section-1]' :[],
+		'divino-settings[footer-sml-section-1]' :[],
 
-		'astra-settings[footer-sml-section-2]' :[],
+		'divino-settings[footer-sml-section-2]' :[],
 
-		'astra-settings[footer-sml-divider]' :[],
+		'divino-settings[footer-sml-divider]' :[],
 
-		'astra-settings[header-main-sep]' :[],
+		'divino-settings[header-main-sep]' :[],
 
-		'astra-settings[disable-primary-nav]' :[],
+		'divino-settings[disable-primary-nav]' :[],
 
 		/**
 		 * Footer Widgets
 		 */
-		'astra-settings[footer-adv]' :[],
+		'divino-settings[footer-adv]' :[],
 
-		'astra-settings[shop-archive-width]' :[],
+		'divino-settings[shop-archive-width]' :[],
 
-		'astra-settings[mobile-header-logo]' :[],
+		'divino-settings[mobile-header-logo]' :[],
 
-		'astra-settings[different-mobile-logo]' :[],
+		'divino-settings[different-mobile-logo]' :[],
 	};
 
 } )( jQuery );

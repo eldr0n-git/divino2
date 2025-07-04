@@ -1,3 +1,4 @@
+<!-- grid-videos.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Grid with videos

@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Loop
+ * divino Loop
  *
- * @package Astra
+ * @package divino
  * @since 1.2.7
  */
 
@@ -233,7 +233,7 @@ if ( ! class_exists( 'divino_Loop' ) ) {
 		}
 
 		/**
-		 * Add wrapper div 'ast-row' for Astra template part.
+		 * Add wrapper div 'ast-row' for divino template part.
 		 *
 		 * @since  1.2.7
 		 * @return void
@@ -245,7 +245,7 @@ if ( ! class_exists( 'divino_Loop' ) ) {
 		}
 
 		/**
-		 * Add closing wrapper div for 'ast-row' after Astra template part.
+		 * Add closing wrapper div for 'ast-row' after divino template part.
 		 *
 		 * @since  1.2.7
 		 * @return void

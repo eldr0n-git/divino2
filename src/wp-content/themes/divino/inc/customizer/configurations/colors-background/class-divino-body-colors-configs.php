@@ -1,9 +1,9 @@
 <?php
 /**
- * Styling Options for Astra Theme.
+ * Styling Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       1.4.3
  */
 
@@ -20,10 +20,10 @@ if ( ! class_exists( 'divino_Body_Colors_Configs' ) ) {
 		/**
 		 * Register Body Color Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -40,18 +40,18 @@ if ( ! class_exists( 'divino_Body_Colors_Configs' ) ) {
 					'control'   => 'ast-hidden',
 					'section'   => $_section,
 					'priority'  => 5,
-					'title'     => __( 'Global Palette', 'astra' ),
+					'title'     => __( 'Global Palette', 'divino' ),
 					'default'   => divino_get_option( 'global-color-palette' ),
 					'transport' => 'postMessage',
 				),
 
 				array(
-					'name'      => 'astra-color-palettes',
+					'name'      => 'divino-color-palettes',
 					'type'      => 'control',
 					'control'   => 'ast-color-palette',
 					'section'   => $_section,
 					'priority'  => 5,
-					'title'     => __( 'Global Palette', 'astra' ),
+					'title'     => __( 'Global Palette', 'divino' ),
 					'default'   => divino_get_palette_colors(),
 					'transport' => 'postMessage',
 					'divider'   => array( 'ast_class' => 'ast-section-spacing ast-bottom-section-divider' ),
@@ -63,7 +63,7 @@ if ( ! class_exists( 'divino_Body_Colors_Configs' ) ) {
 				array(
 					'name'        => divino_THEME_SETTINGS . '[theme-color-divider-reset]',
 					'section'     => $_section,
-					'title'       => __( 'Theme Color', 'astra' ),
+					'title'       => __( 'Theme Color', 'divino' ),
 					'type'        => 'control',
 					'control'     => 'ast-group-title',
 					'priority'    => 5,
@@ -90,7 +90,7 @@ if ( ! class_exists( 'divino_Body_Colors_Configs' ) ) {
 					'section'  => $_section,
 					'default'  => divino_get_option( 'theme-color' ),
 					'priority' => 5,
-					'title'    => __( 'Accent', 'astra' ),
+					'title'    => __( 'Accent', 'divino' ),
 				),
 
 				/**
@@ -101,7 +101,7 @@ if ( ! class_exists( 'divino_Body_Colors_Configs' ) ) {
 					'default'    => divino_get_option( 'base-link-colors-group' ),
 					'type'       => 'control',
 					'control'    => 'ast-color-group',
-					'title'      => __( 'Links', 'astra' ),
+					'title'      => __( 'Links', 'divino' ),
 					'section'    => $_section,
 					'transport'  => 'postMessage',
 					'priority'   => 5,
@@ -116,7 +116,7 @@ if ( ! class_exists( 'divino_Body_Colors_Configs' ) ) {
 					'control'  => 'ast-color',
 					'default'  => divino_get_option( 'link-color' ),
 					'priority' => 5,
-					'title'    => __( 'Normal', 'astra' ),
+					'title'    => __( 'Normal', 'divino' ),
 				),
 
 				/**
@@ -130,7 +130,7 @@ if ( ! class_exists( 'divino_Body_Colors_Configs' ) ) {
 					'type'     => 'sub-control',
 					'control'  => 'ast-color',
 					'priority' => 10,
-					'title'    => __( 'Hover', 'astra' ),
+					'title'    => __( 'Hover', 'divino' ),
 				),
 
 				/**
@@ -143,7 +143,7 @@ if ( ! class_exists( 'divino_Body_Colors_Configs' ) ) {
 					'control'  => 'ast-color',
 					'section'  => $_section,
 					'priority' => 6,
-					'title'    => __( 'Body Text', 'astra' ),
+					'title'    => __( 'Body Text', 'divino' ),
 				),
 
 				/**
@@ -156,7 +156,7 @@ if ( ! class_exists( 'divino_Body_Colors_Configs' ) ) {
 					'control'  => 'ast-color',
 					'section'  => $_section,
 					'priority' => 6,
-					'title'    => __( 'Borders', 'astra' ),
+					'title'    => __( 'Borders', 'divino' ),
 					'divider'  => array( 'ast_class' => 'ast-bottom-divider' ),
 				),
 

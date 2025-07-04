@@ -2,7 +2,7 @@
 /**
  * LifterLMS General Options for our theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
  * @since       1.4.3
  */
@@ -18,12 +18,12 @@ if ( ! class_exists( 'divino_Lifter_General_Configs' ) ) {
 	 */
 	class divino_Lifter_General_Configs extends divino_Customizer_Config_Base {
 		/**
-		 * Register Astra-LifterLMS General Customizer Configurations.
+		 * Register divino-LifterLMS General Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -41,7 +41,7 @@ if ( ! class_exists( 'divino_Lifter_General_Configs' ) ) {
 				array(
 					'name'     => divino_THEME_SETTINGS . '[llms-course-grid-divider]',
 					'section'  => $section,
-					'title'    => __( 'Columns', 'astra' ),
+					'title'    => __( 'Columns', 'divino' ),
 					'type'     => 'control',
 					'control'  => 'ast-heading',
 					'priority' => 1,
@@ -66,7 +66,7 @@ if ( ! class_exists( 'divino_Lifter_General_Configs' ) ) {
 							'mobile'  => 1,
 						)
 					),
-					'title'             => __( 'Course Columns', 'astra' ),
+					'title'             => __( 'Course Columns', 'divino' ),
 					'priority'          => 1,
 					'input_attrs'       => array(
 						'step' => 1,
@@ -93,7 +93,7 @@ if ( ! class_exists( 'divino_Lifter_General_Configs' ) ) {
 							'mobile'  => 1,
 						)
 					),
-					'title'             => __( 'Membership Columns', 'astra' ),
+					'title'             => __( 'Membership Columns', 'divino' ),
 					'priority'          => 1,
 					'input_attrs'       => array(
 						'step' => 1,
@@ -103,7 +103,7 @@ if ( ! class_exists( 'divino_Lifter_General_Configs' ) ) {
 				),
 			);
 
-			// Learn More link if Astra Pro is not activated.
+			// Learn More link if divino Pro is not activated.
 			if ( divino_showcase_upgrade_notices() ) {
 
 				$_configs[] =
@@ -117,7 +117,7 @@ if ( ! class_exists( 'divino_Lifter_General_Configs' ) ) {
 						'control'  => 'ast-button-link',
 						'section'  => $section,
 						'priority' => 999,
-						'title'    => __( 'View Astra Pro Features', 'astra' ),
+						'title'    => __( 'View divino Pro Features', 'divino' ),
 						'url'      => divino_get_pro_url( '/pricing/', 'free-theme', 'customizer', 'lifterlms' ),
 						'settings' => array(),
 						'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),

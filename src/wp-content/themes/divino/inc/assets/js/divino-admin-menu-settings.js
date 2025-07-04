@@ -7,7 +7,7 @@
 
 (function($){
 
-	AstraThemeAdmin = {
+	divinoThemeAdmin = {
 
 		init: function()
 		{
@@ -16,19 +16,19 @@
 
 
 		/**
-		 * Binds events for the Astra Theme.
+		 * Binds events for the divino Theme.
 		 *
 		 * @since 1.0.0
 		 * @method _bind
 		 */
 		_bind: function()
 		{
-			$( document ).on('ast-after-plugin-active', AstraThemeAdmin._disableActivcationNotice );
-			$( document ).on('click' , '.astra-install-recommended-plugin', AstraThemeAdmin._installNow );
-			$( document ).on('click' , '.astra-activate-recommended-plugin', AstraThemeAdmin._activatePlugin);
-			$( document ).on('wp-plugin-install-success' , AstraThemeAdmin._activatePlugin);
-			$( document ).on('wp-plugin-install-error'   , AstraThemeAdmin._installError);
-			$( document ).on('wp-plugin-installing'      , AstraThemeAdmin._pluginInstalling);
+			$( document ).on('ast-after-plugin-active', divinoThemeAdmin._disableActivcationNotice );
+			$( document ).on('click' , '.divino-install-recommended-plugin', divinoThemeAdmin._installNow );
+			$( document ).on('click' , '.divino-activate-recommended-plugin', divinoThemeAdmin._activatePlugin);
+			$( document ).on('wp-plugin-install-success' , divinoThemeAdmin._activatePlugin);
+			$( document ).on('wp-plugin-install-error'   , divinoThemeAdmin._installError);
+			$( document ).on('wp-plugin-installing'      , divinoThemeAdmin._pluginInstalling);
 		},
 
 		/**
@@ -36,7 +36,7 @@
 		 */
 		_installError: function( event, response ) {
 
-			var $card = jQuery( '.astra-install-recommended-plugin' );
+			var $card = jQuery( '.divino-install-recommended-plugin' );
 
 			$card
 				.removeClass( 'button-primary' )
@@ -52,8 +52,8 @@
 
 			var slug = args.slug;
 
-			var $card = jQuery( '.astra-install-recommended-plugin' );
-			var activatingText = astra.recommendedPluiginActivatingText;
+			var $card = jQuery( '.divino-install-recommended-plugin' );
+			var activatingText = divino.recommendedPluiginActivatingText;
 
 
 			$card.each(function( index, element ) {
@@ -77,15 +77,15 @@
 			var activatedSlug = $init;
 
 			if (typeof $init === 'undefined') {
-				var $message = jQuery('.astra-install-recommended-plugin[data-slug=' + response.slug + ']');
+				var $message = jQuery('.divino-install-recommended-plugin[data-slug=' + response.slug + ']');
 				activatedSlug = response.slug;
 			}
 
 			// Transform the 'Install' button into an 'Activate' button.
 			$init = $message.data('init');
-			var activatingText = astra.recommendedPluiginActivatingText;
-			var astraSitesLink = astra.astraSitesLink;
-			var astraPluginRecommendedNonce = astra.astraPluginManagerNonce;
+			var activatingText = divino.recommendedPluiginActivatingText;
+			var divinoSitesLink = divino.divinoSitesLink;
+			var divinoPluginRecommendedNonce = divino.divinoPluginManagerNonce;
 
 			$message.removeClass( 'install-now installed button-disabled updated-message' )
 				.addClass('updating-message')
@@ -95,11 +95,11 @@
 			setTimeout( function() {
 
 				$.ajax({
-					url: astra.ajaxUrl,
+					url: divino.ajaxUrl,
 					type: 'POST',
 					data: {
 						'action'            : 'divino_recommended_plugin_activate',
-						'security'          : astraPluginRecommendedNonce,
+						'security'          : divinoPluginRecommendedNonce,
 						'init'              : $init,
 					},
 				})
@@ -108,11 +108,11 @@
 					console.error( result );
 
 					if( result.success ) {
-						$message.removeClass( 'astra-activate-recommended-plugin astra-install-recommended-plugin button button-primary install-now activate-now updating-message' );
+						$message.removeClass( 'divino-activate-recommended-plugin divino-install-recommended-plugin button button-primary install-now activate-now updating-message' );
 
-						$message.parent('.ast-addon-link-wrapper').parent('.astra-recommended-plugin').addClass('active');
+						$message.parent('.ast-addon-link-wrapper').parent('.divino-recommended-plugin').addClass('active');
 
-						jQuery(document).trigger( 'ast-after-plugin-active', [astraSitesLink, activatedSlug] );
+						jQuery(document).trigger( 'ast-after-plugin-active', [divinoSitesLink, activatedSlug] );
 
 					} else {
 
@@ -143,11 +143,11 @@
 				wp.updates.requestFilesystemCredentials( event );
 
 				$document.on( 'credential-modal-cancel', function() {
-					var $message = $( '.astra-install-recommended-plugin.updating-message' );
+					var $message = $( '.divino-install-recommended-plugin.updating-message' );
 
 					$message
-						.addClass('astra-activate-recommended-plugin')
-						.removeClass( 'updating-message astra-install-recommended-plugin' )
+						.addClass('divino-activate-recommended-plugin')
+						.removeClass( 'updating-message divino-install-recommended-plugin' )
 						.text( wp.updates.l10n.installNow );
 
 					wp.a11y.speak( wp.updates.l10n.updateCancel, 'polite' );
@@ -162,24 +162,24 @@
 		/**
 		 * After plugin active redirect and deactivate activation notice
 		 */
-		_disableActivcationNotice: function( event, astraSitesLink, activatedSlug )
+		_disableActivcationNotice: function( event, divinoSitesLink, activatedSlug )
 		{
 			event.preventDefault();
 
-			if ( activatedSlug.indexOf( 'astra-sites' ) >= 0 || activatedSlug.indexOf( 'astra-pro-sites' ) >= 0 ) {
-				if ( 'undefined' != typeof AstraNotices ) {
-			    	AstraNotices._ajax( 'astra-sites-on-active', '' );
+			if ( activatedSlug.indexOf( 'divino-sites' ) >= 0 || activatedSlug.indexOf( 'divino-pro-sites' ) >= 0 ) {
+				if ( 'undefined' != typeof divinoNotices ) {
+			    	divinoNotices._ajax( 'divino-sites-on-active', '' );
 				}
-				window.location.href = astraSitesLink + '&ast-disable-activation-notice';
+				window.location.href = divinoSitesLink + '&ast-disable-activation-notice';
 			}
 		},
 	};
 
 	/**
-	 * Initialize AstraThemeAdmin
+	 * Initialize divinoThemeAdmin
 	 */
 	$(function(){
-		AstraThemeAdmin.init();
+		divinoThemeAdmin.init();
 	});
 
 })(jQuery);

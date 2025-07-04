@@ -4,7 +4,7 @@
  *
  * Update this template for Default Blog Style
  *
- * @package Astra Addon
+ * @package divino Addon
  */
 
 $blog_structure_order = divino_get_option( 'blog-post-structure', array() );

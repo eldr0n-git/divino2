@@ -1,9 +1,9 @@
 /**
  * custom-fields-priority.js
  *
- * Provide more preferences to Astra meta setting so wordpress custom field not causing any kind of conflicts.
+ * Provide more preferences to divino meta setting so wordpress custom field not causing any kind of conflicts.
  *
- * @package Astra
+ * @package divino
  */
 function removeMetaBoxSection() {
 	document.getElementById("the-list").remove();

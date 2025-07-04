@@ -1,9 +1,9 @@
 <?php
 /**
- * Astra Theme Customizer Configuration Builder.
+ * divino Theme Customizer Configuration Builder.
  *
- * @package     astra-builder
- * @link        https://wpastra.com/
+ * @package     divino-builder
+ * @link        https://wpdivino.com/
  * @since       3.0.0
  */
 
@@ -25,7 +25,7 @@ class divino_Social_Icon_Component_Configs {
 	 * @param string $builder_type Builder Type.
 	 * @param string $section Section slug.
 	 * @since 3.0.0
-	 * @return array $configurations Astra Customizer Configurations with updated configurations.
+	 * @return array $configurations divino Customizer Configurations with updated configurations.
 	 */
 	public static function register_configuration( $configurations, $builder_type = 'header', $section = 'section-hb-social-icons-' ) {
 
@@ -56,7 +56,7 @@ class divino_Social_Icon_Component_Configs {
 					'type'        => 'section',
 					'priority'    => 90,
 					/* translators: 1: index */
-					'title'       => 1 === $number_of_social_icons ? __( 'Social Icons', 'astra' ) : sprintf( __( 'Social Icons %s', 'astra' ), $index ),
+					'title'       => 1 === $number_of_social_icons ? __( 'Social Icons', 'divino' ) : sprintf( __( 'Social Icons %s', 'divino' ), $index ),
 					'panel'       => 'panel-' . $builder_type . '-builder-group',
 					'clone_index' => $index,
 					'clone_type'  => $builder_type . '-social-icons',
@@ -80,11 +80,11 @@ class divino_Social_Icon_Component_Configs {
 					'section'    => $_section,
 					'type'       => 'control',
 					'control'    => 'ast-selector',
-					'title'      => __( 'Color Type', 'astra' ),
+					'title'      => __( 'Color Type', 'divino' ),
 					'priority'   => 1,
 					'choices'    => array(
-						'custom'   => __( 'Custom', 'astra' ),
-						'official' => __( 'Official', 'astra' ),
+						'custom'   => __( 'Custom', 'divino' ),
+						'official' => __( 'Official', 'divino' ),
 					),
 					'context'    => divino_Builder_Helper::$design_tab,
 					'responsive' => false,
@@ -99,7 +99,7 @@ class divino_Social_Icon_Component_Configs {
 					'section'    => $_section,
 					'transport'  => 'postMessage',
 					'control'    => 'ast-responsive-color',
-					'title'      => __( 'Icon Color', 'astra' ),
+					'title'      => __( 'Icon Color', 'divino' ),
 					'responsive' => true,
 					'rgba'       => true,
 					'context'    => array(
@@ -125,7 +125,7 @@ class divino_Social_Icon_Component_Configs {
 					'section'    => $_section,
 					'transport'  => 'postMessage',
 					'control'    => 'ast-responsive-color',
-					'title'      => __( 'Label Color', 'astra' ),
+					'title'      => __( 'Label Color', 'divino' ),
 					'responsive' => true,
 					'rgba'       => true,
 					'context'    => array(
@@ -153,7 +153,7 @@ class divino_Social_Icon_Component_Configs {
 					'default'  => divino_get_option( $builder_type . '-social-' . $index . '-brand-hover-toggle' ),
 					'type'     => 'control',
 					'section'  => $_section,
-					'title'    => __( 'Enable Brand Color On Hover', 'astra' ),
+					'title'    => __( 'Enable Brand Color On Hover', 'divino' ),
 					'priority' => 1,
 					'control'  => 'ast-toggle-control',
 					'context'  => array(
@@ -174,7 +174,7 @@ class divino_Social_Icon_Component_Configs {
 					'default'    => divino_get_option( $builder_type . '-social-' . $index . '-color-group' ),
 					'type'       => 'control',
 					'control'    => 'ast-color-group',
-					'title'      => __( 'Icon Color', 'astra' ),
+					'title'      => __( 'Icon Color', 'divino' ),
 					'section'    => $_section,
 					'transport'  => 'postMessage',
 					'priority'   => 1,
@@ -193,7 +193,7 @@ class divino_Social_Icon_Component_Configs {
 					'default'    => divino_get_option( $builder_type . '-social-' . $index . '-color-group' ),
 					'type'       => 'control',
 					'control'    => 'ast-color-group',
-					'title'      => __( 'Label Color', 'astra' ),
+					'title'      => __( 'Label Color', 'divino' ),
 					'section'    => $_section,
 					'transport'  => 'postMessage',
 					'priority'   => 1,
@@ -212,7 +212,7 @@ class divino_Social_Icon_Component_Configs {
 					'default'    => divino_get_option( $builder_type . '-social-' . $index . '-color-group' ),
 					'type'       => 'control',
 					'control'    => 'ast-color-group',
-					'title'      => __( 'Background Color', 'astra' ),
+					'title'      => __( 'Background Color', 'divino' ),
 					'section'    => $_section,
 					'transport'  => 'postMessage',
 					'priority'   => 1,
@@ -237,13 +237,13 @@ class divino_Social_Icon_Component_Configs {
 					'type'       => 'sub-control',
 					'parent'     => divino_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-icon-color-group]',
 					'section'    => $_section,
-					'tab'        => __( 'Normal', 'astra' ),
+					'tab'        => __( 'Normal', 'divino' ),
 					'control'    => 'ast-responsive-color',
 					'responsive' => true,
 					'rgba'       => true,
 					'priority'   => 1,
 					'context'    => divino_Builder_Helper::$design_tab,
-					'title'      => __( 'Normal', 'astra' ),
+					'title'      => __( 'Normal', 'divino' ),
 				),
 
 				/**
@@ -256,13 +256,13 @@ class divino_Social_Icon_Component_Configs {
 					'type'       => 'sub-control',
 					'parent'     => divino_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-icon-color-group]',
 					'section'    => $_section,
-					'tab'        => __( 'Hover', 'astra' ),
+					'tab'        => __( 'Hover', 'divino' ),
 					'control'    => 'ast-responsive-color',
 					'responsive' => true,
 					'rgba'       => true,
 					'priority'   => 1,
 					'context'    => divino_Builder_Helper::$design_tab,
-					'title'      => __( 'Hover', 'astra' ),
+					'title'      => __( 'Hover', 'divino' ),
 				),
 
 				/**
@@ -275,13 +275,13 @@ class divino_Social_Icon_Component_Configs {
 					'type'       => 'sub-control',
 					'parent'     => divino_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-label-color-group]',
 					'section'    => $_section,
-					'tab'        => __( 'Normal', 'astra' ),
+					'tab'        => __( 'Normal', 'divino' ),
 					'control'    => 'ast-responsive-color',
 					'responsive' => true,
 					'rgba'       => true,
 					'priority'   => 1,
 					'context'    => divino_Builder_Helper::$design_tab,
-					'title'      => __( 'Normal', 'astra' ),
+					'title'      => __( 'Normal', 'divino' ),
 				),
 
 				/**
@@ -294,13 +294,13 @@ class divino_Social_Icon_Component_Configs {
 					'type'       => 'sub-control',
 					'parent'     => divino_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-label-color-group]',
 					'section'    => $_section,
-					'tab'        => __( 'Hover', 'astra' ),
+					'tab'        => __( 'Hover', 'divino' ),
 					'control'    => 'ast-responsive-color',
 					'responsive' => true,
 					'rgba'       => true,
 					'priority'   => 1,
 					'context'    => divino_Builder_Helper::$design_tab,
-					'title'      => __( 'Hover', 'astra' ),
+					'title'      => __( 'Hover', 'divino' ),
 				),
 
 				/**
@@ -313,13 +313,13 @@ class divino_Social_Icon_Component_Configs {
 					'type'       => 'sub-control',
 					'parent'     => divino_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-background-color-group]',
 					'section'    => $_section,
-					'tab'        => __( 'Normal', 'astra' ),
+					'tab'        => __( 'Normal', 'divino' ),
 					'control'    => 'ast-responsive-color',
 					'responsive' => true,
 					'rgba'       => true,
 					'priority'   => 1,
 					'context'    => divino_Builder_Helper::$design_tab,
-					'title'      => __( 'Normal', 'astra' ),
+					'title'      => __( 'Normal', 'divino' ),
 				),
 
 				/**
@@ -332,13 +332,13 @@ class divino_Social_Icon_Component_Configs {
 					'type'       => 'sub-control',
 					'parent'     => divino_THEME_SETTINGS . '[' . $builder_type . '-social-' . $index . '-background-color-group]',
 					'section'    => $_section,
-					'tab'        => __( 'Hover', 'astra' ),
+					'tab'        => __( 'Hover', 'divino' ),
 					'control'    => 'ast-responsive-color',
 					'responsive' => true,
 					'rgba'       => true,
 					'priority'   => 1,
 					'context'    => divino_Builder_Helper::$design_tab,
-					'title'      => __( 'Hover', 'astra' ),
+					'title'      => __( 'Hover', 'divino' ),
 				),
 
 				/**
@@ -349,7 +349,7 @@ class divino_Social_Icon_Component_Configs {
 					'section'   => $_section,
 					'type'      => 'control',
 					'control'   => 'ast-social-icons',
-					'title'     => __( 'Social Icons', 'astra' ),
+					'title'     => __( 'Social Icons', 'divino' ),
 					'transport' => 'postMessage',
 					'priority'  => 1,
 					'default'   => divino_get_option( $builder_type . '-social-icons-' . $index ),
@@ -371,7 +371,7 @@ class divino_Social_Icon_Component_Configs {
 					'control'   => 'ast-toggle-control',
 					'section'   => $_section,
 					'priority'  => 2,
-					'title'     => __( 'Show Label', 'astra' ),
+					'title'     => __( 'Show Label', 'divino' ),
 					'transport' => 'postMessage',
 					'partial'   => array(
 						'selector'            => '.ast-' . $builder_type . '-social-' . $index . '-wrap',
@@ -391,7 +391,7 @@ class divino_Social_Icon_Component_Configs {
 					'priority'          => 2,
 					'transport'         => 'postMessage',
 					'default'           => divino_get_option( $builder_type . '-social-' . $index . '-space' ),
-					'title'             => __( 'Icon Spacing', 'astra' ),
+					'title'             => __( 'Icon Spacing', 'divino' ),
 					'suffix'            => 'px',
 					'type'              => 'control',
 					'control'           => 'ast-responsive-slider',
@@ -414,7 +414,7 @@ class divino_Social_Icon_Component_Configs {
 					'priority'    => 2,
 					'transport'   => 'postMessage',
 					'default'     => divino_get_option( $builder_type . '-social-' . $index . '-bg-space' ),
-					'title'       => __( 'Icon Background Space', 'astra' ),
+					'title'       => __( 'Icon Background Space', 'divino' ),
 					'suffix'      => 'px',
 					'type'        => 'control',
 					'control'     => 'ast-slider',
@@ -437,7 +437,7 @@ class divino_Social_Icon_Component_Configs {
 					'priority'          => 1,
 					'transport'         => 'postMessage',
 					'default'           => divino_get_option( $builder_type . '-social-' . $index . '-size' ),
-					'title'             => __( 'Icon Size', 'astra' ),
+					'title'             => __( 'Icon Size', 'divino' ),
 					'suffix'            => 'px',
 					'type'              => 'control',
 					'control'           => 'ast-responsive-slider',
@@ -461,15 +461,15 @@ class divino_Social_Icon_Component_Configs {
 					'control'           => 'ast-responsive-spacing',
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 					'section'           => $_section,
-					'title'             => __( 'Icon Radius', 'astra' ),
+					'title'             => __( 'Icon Radius', 'divino' ),
 					'linked_choices'    => true,
 					'transport'         => 'postMessage',
 					'unit_choices'      => array( 'px', 'em', '%' ),
 					'choices'           => array(
-						'top'    => __( 'Top', 'astra' ),
-						'right'  => __( 'Right', 'astra' ),
-						'bottom' => __( 'Bottom', 'astra' ),
-						'left'   => __( 'Left', 'astra' ),
+						'top'    => __( 'Top', 'divino' ),
+						'right'  => __( 'Right', 'divino' ),
+						'bottom' => __( 'Bottom', 'divino' ),
+						'left'   => __( 'Left', 'divino' ),
 					),
 					'priority'          => 4,
 					'connected'         => false,
@@ -482,7 +482,7 @@ class divino_Social_Icon_Component_Configs {
 				array(
 					'name'     => divino_THEME_SETTINGS . '[' . $_section . '-margin-divider]',
 					'section'  => $_section,
-					'title'    => __( 'Spacing', 'astra' ),
+					'title'    => __( 'Spacing', 'divino' ),
 					'type'     => 'control',
 					'control'  => 'ast-heading',
 					'priority' => 49,
@@ -503,14 +503,14 @@ class divino_Social_Icon_Component_Configs {
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 					'section'           => $_section,
 					'priority'          => 49,
-					'title'             => __( 'Margin', 'astra' ),
+					'title'             => __( 'Margin', 'divino' ),
 					'linked_choices'    => true,
 					'unit_choices'      => array( 'px', 'em', '%' ),
 					'choices'           => array(
-						'top'    => __( 'Top', 'astra' ),
-						'right'  => __( 'Right', 'astra' ),
-						'bottom' => __( 'Bottom', 'astra' ),
-						'left'   => __( 'Left', 'astra' ),
+						'top'    => __( 'Top', 'divino' ),
+						'right'  => __( 'Right', 'divino' ),
+						'bottom' => __( 'Bottom', 'divino' ),
+						'left'   => __( 'Left', 'divino' ),
 					),
 					'context'           => divino_Builder_Helper::$design_tab,
 					'divider'           => array( 'ast_class' => 'ast-section-spacing' ),
@@ -526,7 +526,7 @@ class divino_Social_Icon_Component_Configs {
 					'control'   => 'ast-selector',
 					'section'   => $_section,
 					'priority'  => 6,
-					'title'     => __( 'Alignment', 'astra' ),
+					'title'     => __( 'Alignment', 'divino' ),
 					'context'   => divino_Builder_Helper::$general_tab,
 					'transport' => 'refresh',
 					'choices'   => array(

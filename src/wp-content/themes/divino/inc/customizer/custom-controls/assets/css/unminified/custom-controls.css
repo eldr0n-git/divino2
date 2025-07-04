@@ -210,7 +210,7 @@
 	display: block;
 }
 
-.customize-control-ast-background .astra-color-picker-wrap {
+.customize-control-ast-background .divino-color-picker-wrap {
 	margin-top: 18px;
 }
 
@@ -231,7 +231,7 @@
 	right: 16px;
 }
 
-.ast-field-settings-modal .customize-control-ast-background .astra-popover-tabs .ast-clear-btn-inside-picker.components-button {
+.ast-field-settings-modal .customize-control-ast-background .divino-popover-tabs .ast-clear-btn-inside-picker.components-button {
 	margin: 5px 20px 20px 10px;
 }
 
@@ -489,7 +489,7 @@
 	top: -4px;
 }
 
-#customize-control-astra-settings-theme-color-divider-reset .ast-reset-btn-preset-wrap {
+#customize-control-divino-settings-theme-color-divider-reset .ast-reset-btn-preset-wrap {
 	top: 4px;
 }
 
@@ -591,7 +591,7 @@
 	right: 112px;
 }
 
-#customize-control-astra-settings-woo-single-page-color-group .ast-color-group-reset {
+#customize-control-divino-settings-woo-single-page-color-group .ast-color-group-reset {
 	right: 145px;
 }
 
@@ -610,26 +610,26 @@
 	width: 100%;
 }
 
-.customize-control-ast-color-group .ast-divider-title + .ast-control-wrap .astra-color-picker-wrap {
+.customize-control-ast-color-group .ast-divider-title + .ast-control-wrap .divino-color-picker-wrap {
 	top: 73px;
 }
 
-.astra-color-picker-wrap.picker-open + span {
+.divino-color-picker-wrap.picker-open + span {
 	display: none;
 }
 
-#customize-control-astra-color-palettes {
+#customize-control-divino-color-palettes {
 	display: flex;
 	flex-direction: column;
 	gap: 16px;
 }
 
-#customize-control-astra-color-palettes .ast-field-settings-wrap {
+#customize-control-divino-color-palettes .ast-field-settings-wrap {
 	position: absolute;
 	top: 24px;
 }
 
-#customize-control-astra-color-palettes .color-button-wrap {
+#customize-control-divino-color-palettes .color-button-wrap {
 	display: unset;
 	position: relative;
 	right: unset;
@@ -638,7 +638,7 @@
 	z-index: 10;
 }
 
-#customize-control-astra-color-palettes .astra-color-picker-wrap {
+#customize-control-divino-color-palettes .divino-color-picker-wrap {
 	position: absolute;
 	z-index: 999;
 	right: 0;
@@ -647,28 +647,28 @@
 	margin-top: 10px;
 }
 
-#customize-control-astra-color-palettes .astra-color-picker-wrap.picker-open {
+#customize-control-divino-color-palettes .divino-color-picker-wrap.picker-open {
 	display: block;
 	z-index: 99;
 }
 
-#customize-control-astra-settings-theme-button-border-group-border-size .ast-units-wrapper.ast-range-unit, #customize-control-astra-settings-secondary-theme-button-border-group-border-size .ast-units-wrapper.ast-range-unit {
+#customize-control-divino-settings-theme-button-border-group-border-size .ast-units-wrapper.ast-range-unit, #customize-control-divino-settings-secondary-theme-button-border-group-border-size .ast-units-wrapper.ast-range-unit {
 	top: 10px
 }
 
-#customize-control-astra-color-palettes .ast-color-palette-label {
+#customize-control-divino-color-palettes .ast-color-palette-label {
 	width: 65%;
 	display: inline-block;
 	margin-right: 10px;
 	vertical-align: top;
 }
 
-#customize-control-astra-color-palettes .ast-color-palette-label input {
+#customize-control-divino-color-palettes .ast-color-palette-label input {
 	background: none;
 	border: none;
 }
 
-#customize-control-astra-color-palettes .ast-color-palette-label input:focus {
+#customize-control-divino-color-palettes .ast-color-palette-label input:focus {
 	border: 1px solid black;
 	outline: none;
 	box-shadow: none;
@@ -681,16 +681,16 @@
 	justify-content: space-between;
 }
 
-.ast-single-palette-wrap .components-button.astra-color-icon-indicate .component-color-indicator.astra-advanced-color-indicate {
+.ast-single-palette-wrap .components-button.divino-color-icon-indicate .component-color-indicator.divino-advanced-color-indicate {
 	width: 25px;
 	height: 25px;
 }
 
-#customize-control-astra-color-palettes .ast-color-palette-wrapper .ast-color-picker-wrap:first-child {
+#customize-control-divino-color-palettes .ast-color-palette-wrapper .ast-color-picker-wrap:first-child {
 	margin-left: 0;
 }
 
-#customize-control-astra-color-palettes .ast-color-palette-wrapper .ast-color-picker-wrap {
+#customize-control-divino-color-palettes .ast-color-palette-wrapper .ast-color-picker-wrap {
 	cursor: pointer;
 }
 
@@ -699,11 +699,11 @@
 	width: 13px;
 }
 
-#customize-control-astra-color-palettes .ast-reset-btn:disabled {
+#customize-control-divino-color-palettes .ast-reset-btn:disabled {
 	opacity: 0.6;
 }
 
-#customize-control-astra-color-palettes .ast-palette-presets-inner-wrap .ast-preset-label-wrap {
+#customize-control-divino-color-palettes .ast-palette-presets-inner-wrap .ast-preset-label-wrap {
 	font-size: 13px;
 	line-height: 18px;
 	color: var( --ast-customizer-text-color );
@@ -754,7 +754,7 @@
 	border-color: var( --ast-customizer-primary-color );
 }
 
-#customize-control-astra-color-palettes .ast-color-palette-wrap > section {
+#customize-control-divino-color-palettes .ast-color-palette-wrap > section {
 	display: flex;
 	text-align: center;
 	outline: none;
@@ -763,7 +763,7 @@
 	box-shadow: 0 0 0 1px #ddd;
 }
 
-#customize-control-astra-color-palettes .ast-single-color-container {
+#customize-control-divino-color-palettes .ast-single-color-container {
 	width: 25%;
 	height: 22px;
 	display: inline-block;
@@ -797,7 +797,7 @@
 	color: #fff
 }
 
-#customize-control-astra-color-palettes .ast-color-palette-wrap.active > section {
+#customize-control-divino-color-palettes .ast-color-palette-wrap.active > section {
 	box-shadow: 0 0 0 1px var( --ast-customizer-color-1 );
 }
 
@@ -866,7 +866,7 @@ section.ast-palette-presets-inner-wrap {
 	box-shadow: none;
 }
 
-#customize-control-astra-color-palettes .ast-color-palette-wrapper {
+#customize-control-divino-color-palettes .ast-color-palette-wrapper {
 	clear: both;
 }
 
@@ -874,18 +874,18 @@ section.ast-palette-presets-inner-wrap {
 	z-index: 99;
 }
 
-#customize-control-astra-color-palettes .ast-palette-selection-wrapper {
+#customize-control-divino-color-palettes .ast-palette-selection-wrapper {
 	overflow: hidden;
 	padding: 2px;
 }
 
 @media ( min-width: 1800px ) {
-	#customize-control-astra-color-palettes .astra-color-picker-wrap {
+	#customize-control-divino-color-palettes .divino-color-picker-wrap {
 		width: auto;
 	}
 }
 
-#customize-control-astra-color-palettes .ast-field-settings-modal {
+#customize-control-divino-color-palettes .ast-field-settings-modal {
 	margin-left: -12px;
 	margin-right: -12px;
 	display: none;
@@ -894,11 +894,11 @@ section.ast-palette-presets-inner-wrap {
 	border-radius: 4px;
 }
 
-.astra-advanced-color-indicate .global-color {
+.divino-advanced-color-indicate .global-color {
 	display: none;
 }
 
-.color-button-wrap.has-global-palette-color .astra-advanced-color-indicate .global-color {
+.color-button-wrap.has-global-palette-color .divino-advanced-color-indicate .global-color {
 	color: var(--ast-customizer-secondary-text-color);
 	position: absolute;
 	left: 50%;
@@ -907,11 +907,11 @@ section.ast-palette-presets-inner-wrap {
 	transform: translate( -50%, -50% );
 }
 
-.color-button-wrap.has-global-palette-color .astra-advanced-color-indicate .global-color.darkish {
+.color-button-wrap.has-global-palette-color .divino-advanced-color-indicate .global-color.darkish {
 	color: var(--ast-customizer-icon-color);
 }
 
-.color-button-wrap.has-global-palette-color .astra-advanced-color-indicate .global-color svg {
+.color-button-wrap.has-global-palette-color .divino-advanced-color-indicate .global-color svg {
     fill: transparent;
 }
 
@@ -984,8 +984,8 @@ section.ast-palette-presets-inner-wrap {
 }
 
 /* Palette Rename CSS */
-#customize-control-astra-color-palettes .ast-color-palette-wrap.active > section,
-#customize-control-astra-color-palettes .ast-color-palette-wrap > section {
+#customize-control-divino-color-palettes .ast-color-palette-wrap.active > section,
+#customize-control-divino-color-palettes .ast-color-palette-wrap > section {
 	box-shadow: none;
 }
 
@@ -1029,27 +1029,27 @@ section.ast-palette-presets-inner-wrap {
 } */
 
 /* Button Icons SVG */
-.astra-control-field.astra-color-control .components-button svg {
+.divino-control-field.divino-color-control .components-button svg {
 	fill: transparent;
 }
 
 /** Remove Button Color */
 
-.astra-control-field.astra-color-control {
+.divino-control-field.divino-color-control {
 	display: flex;
 }
 
-.astra-control-field {
+.divino-control-field {
 	position: relative;
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
-.astra-control-field.astra-color-control .customize-control-title {
+.divino-control-field.divino-color-control .customize-control-title {
 	flex-grow: 2;
 }
 
-.astra-control-field .customize-control-title {
+.divino-control-field .customize-control-title {
 	font-size: 14px;
 	font-weight: 600;
 	margin-bottom: 0;
@@ -1059,7 +1059,7 @@ section.ast-palette-presets-inner-wrap {
 	line-height: 18px;
 }
 
-.astra-globe-dashicon {
+.divino-globe-dashicon {
 	color: #ffffff;
 	background: rgba( 0, 0, 0, 0.4 );
 	border-radius: 100%;
@@ -1067,7 +1067,7 @@ section.ast-palette-presets-inner-wrap {
 	opacity: 0.78;
 }
 
-.components-button.astra-color-icon-indicate .component-color-indicator.astra-advanced-color-indicate {
+.components-button.divino-color-icon-indicate .component-color-indicator.divino-advanced-color-indicate {
 	width: 28px;
 	height: 28px;
 	border-radius: 50%;
@@ -1081,11 +1081,11 @@ section.ast-palette-presets-inner-wrap {
 	display: inline-block;
 }
 
-.astra-advanced-color-indicate.component-color-indicator {
+.divino-advanced-color-indicate.component-color-indicator {
 	border: none;
 }
 
-.astra-color-icon-indicate.components-button {
+.divino-color-icon-indicate.components-button {
 	height: fit-content;
 	position: relative;
 	transform: scale( 1 );
@@ -1098,11 +1098,11 @@ section.ast-palette-presets-inner-wrap {
 }
 
 /** Color */
-.astra-popover-color .components-popover__content .components-focal-point-picker-wrapper {
+.divino-popover-color .components-popover__content .components-focal-point-picker-wrapper {
 	box-sizing: border-box;
 }
 
-.astra-popover-color .components-popover__content .components-focal-point-picker_position-display-container input[type="number"].components-text-control__input {
+.divino-popover-color .components-popover__content .components-focal-point-picker_position-display-container input[type="number"].components-text-control__input {
 	min-height: 16px;
 	line-height: 16px;
 	font-size: 12px;
@@ -1110,17 +1110,17 @@ section.ast-palette-presets-inner-wrap {
 	font-weight: normal;
 }
 
-.astra-popover-color .components-popover__content .components-focal-point-picker_position-display-container .components-base-control {
+.divino-popover-color .components-popover__content .components-focal-point-picker_position-display-container .components-base-control {
 	flex: 1;
 	margin-bottom: 0;
 }
 
-.astra-popover-color .components-popover__content .components-focal-point-picker_position-display-container .components-base-control .components-base-control__label {
+.divino-popover-color .components-popover__content .components-focal-point-picker_position-display-container .components-base-control .components-base-control__label {
 	margin-bottom: 0;
 	margin-right: 0.2em;
 }
 
-.astra-popover-color .components-popover__content .components-focal-point-picker_position-display-container .components-base-control__field {
+.divino-popover-color .components-popover__content .components-focal-point-picker_position-display-container .components-base-control__field {
 	display: flex;
 	align-items: center;
 	font-size: 8px;
@@ -1129,22 +1129,22 @@ section.ast-palette-presets-inner-wrap {
 	text-transform: uppercase;
 }
 
-.astra-popover-color .components-popover__content .components-focal-point-picker_position-display-container .components-base-control:last-child .components-base-control__field {
+.divino-popover-color .components-popover__content .components-focal-point-picker_position-display-container .components-base-control:last-child .components-base-control__field {
 	justify-content: flex-end;
 }
 
-.astra-popover-color .components-popover__content .actions {
+.divino-popover-color .components-popover__content .actions {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 10px;
 }
 
-.astra-popover-color .components-popover__content .actions .button {
+.divino-popover-color .components-popover__content .actions .button {
 	flex: 1;
 	margin-top: 10px;
 }
 
-.astra-background-picker-wrap .astra-popover-color .components-popover__content {
+.divino-background-picker-wrap .divino-popover-color .components-popover__content {
 	min-width: 300px;
 	min-height: 340px;
 	max-height: 60vh;
@@ -1161,7 +1161,7 @@ section.ast-palette-presets-inner-wrap {
 	width: 27px;
 }
 
-.components-button.astra-background-icon-indicate {
+.components-button.divino-background-icon-indicate {
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
@@ -1176,7 +1176,7 @@ section.ast-palette-presets-inner-wrap {
 	background-position: 0 0, 0 5px, 5px -5px, -5px 0;
 }
 
-.components-button.astra-background-icon-indicate .component-color-indicator.astra-advanced-color-indicate {
+.components-button.divino-background-icon-indicate .component-color-indicator.divino-advanced-color-indicate {
 	width: 100%;
 	height: 100%;
 	border-radius: 4px;
@@ -1187,7 +1187,7 @@ section.ast-palette-presets-inner-wrap {
 	top: 0;
 }
 
-.components-button.astra-background-icon-indicate > svg.dashicon {
+.components-button.divino-background-icon-indicate > svg.dashicon {
 	position: absolute;
 	transform: translate( -50%, -50% );
 	left: 50%;
@@ -1200,11 +1200,11 @@ section.ast-palette-presets-inner-wrap {
 	border: 1px solid rgba( 0, 0, 0, 0.1 );
 }
 
-.components-button.astra-background-icon-indicate > svg.dashicon path {
+.components-button.divino-background-icon-indicate > svg.dashicon path {
 	transform: translate( 1px, 1px );
 }
 
-.components-button.astra-background-icon-indicate img.astra-background-image-preview {
+.components-button.divino-background-icon-indicate img.divino-background-image-preview {
 	display: flex;
 	object-fit: cover;
 	min-width: 100%;
@@ -1213,19 +1213,19 @@ section.ast-palette-presets-inner-wrap {
 	top: 0;
 }
 
-.components-button.astra-background-icon-indicate:hover {
+.components-button.divino-background-icon-indicate:hover {
 	box-shadow: none !important;
 }
 
-.astra-control-field.astra-color-control {
+.divino-control-field.divino-color-control {
 	display: flex;
 }
 
-.astra-control-field.astra-color-control .customize-control-title {
+.divino-control-field.divino-color-control .customize-control-title {
 	flex-grow: 2;
 }
 
-.components-popover.astra-popover-color .components-popover__content {
+.components-popover.divino-popover-color .components-popover__content {
 	padding: 15px 15px 0px;
 	box-sizing: initial;
 	background: #fff;
@@ -1243,22 +1243,22 @@ section.ast-palette-presets-inner-wrap {
 	min-height: 28px;
 }
 
-.components-popover.astra-popover-color .components-popover__content .sketch-picker {
+.components-popover.divino-popover-color .components-popover__content .sketch-picker {
 	padding: 0 0 5px !important;
 	box-shadow: none !important;
 	border-radius: 0px !important;
 }
 
-.components-popover.astra-popover-color .components-popover__content .attachment-media-view {
+.components-popover.divino-popover-color .components-popover__content .attachment-media-view {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
-.astra-swatches-wrap .astra-swatche-item-wrap:hover {
+.divino-swatches-wrap .divino-swatche-item-wrap:hover {
 	transform: scale( 1.1 ) !important;
 }
 
-.astra-swatches-wrap .astra-swatche-item-wrap .astra-swatch-item {
+.divino-swatches-wrap .divino-swatche-item-wrap .divino-swatch-item {
 	background-image: linear-gradient( 45deg, #ddd 25%, transparent 0 ), linear-gradient( -45deg, #ddd 25%, transparent 0 ), linear-gradient( 45deg, transparent 75%, #ddd 0 ), linear-gradient( -45deg, transparent 75%, #ddd 0 );
 	background-size: 10px 10px;
 	background-position: 0 0, 0 5px, 5px -5px, -5px 0;
@@ -1267,15 +1267,15 @@ section.ast-palette-presets-inner-wrap {
 	justify-content: center;
 }
 
-.astra-swatches-wrap .astra-swatche-item-wrap .astra-swatch-item .dashicon {
+.divino-swatches-wrap .divino-swatche-item-wrap .divino-swatch-item .dashicon {
 	display: none;
 }
 
-.astra-swatches-wrap .astra-swatche-item-wrap .astra-swatch-item.swatch-active {
+.divino-swatches-wrap .divino-swatche-item-wrap .divino-swatch-item.swatch-active {
 	box-shadow: 0 0 0 8px inset !important;
 }
 
-.astra-swatches-wrap .astra-swatche-item-wrap .astra-swatch-item.swatch-active .dashicon {
+.divino-swatches-wrap .divino-swatche-item-wrap .divino-swatch-item.swatch-active .dashicon {
 	display: block;
 	color: white;
 	background: rgba( 0, 0, 0, 0.6 );
@@ -1285,11 +1285,11 @@ section.ast-palette-presets-inner-wrap {
 	border-radius: 100%;
 }
 
-.astra-swatches-wrap .astra-swatche-item-wrap .astra-swatch-item.swatch-active .dashicon path {
+.divino-swatches-wrap .divino-swatche-item-wrap .divino-swatch-item.swatch-active .dashicon path {
 	transform: translate( 1px, 1px );
 }
 
-.components-button.astra-color-icon-indicate > .dashicon {
+.components-button.divino-color-icon-indicate > .dashicon {
 	position: absolute;
 	transform: translate( -50%, -50% );
 	left: 50%;
@@ -1303,27 +1303,27 @@ section.ast-palette-presets-inner-wrap {
 	border: 1px solid rgba( 0, 0, 0, 0.1 );
 }
 
-.astra-popover-color {
+.divino-popover-color {
 	margin: 5px -5px 0;
 	background-color: #ffffff;
 	border-radius: 4px;
 	box-shadow: 0 6px 24px 0 #0000003d;
 }
 
-.astra-popover-color .components-h-stack.ast-color-palette {
+.divino-popover-color .components-h-stack.ast-color-palette {
 	padding: 14px 5px;
 }
 
-.customize-control-ast-responsive-background .astra-popover-color .components-h-stack.ast-color-palette,
-.customize-control-ast-color-group .astra-popover-color .astra-background-tabs .components-h-stack.ast-color-palette {
+.customize-control-ast-responsive-background .divino-popover-color .components-h-stack.ast-color-palette,
+.customize-control-ast-color-group .divino-popover-color .divino-background-tabs .components-h-stack.ast-color-palette {
 	padding: 0 5px 14px;
 }
 
-.astra-popover-color .components-h-stack .components-button {
+.divino-popover-color .components-h-stack .components-button {
 	flex: inherit;
 }
 
-.astra-popover-color .components-circular-option-picker__option:focus::after {
+.divino-popover-color .components-circular-option-picker__option:focus::after {
 	width: auto;
 	height: auto;
 }
@@ -1332,21 +1332,21 @@ section.ast-palette-presets-inner-wrap {
     box-shadow: none;
 }
 
-.astra-popover-color .components-h-stack .components-circular-option-picker__option-wrapper {
+.divino-popover-color .components-h-stack .components-circular-option-picker__option-wrapper {
 	margin-right: 0;
 }
 
-.astra-popover-color .components-color-picker .react-colorful__hue,
-.astra-popover-color .components-color-picker .react-colorful__alpha {
+.divino-popover-color .components-color-picker .react-colorful__hue,
+.divino-popover-color .components-color-picker .react-colorful__alpha {
 	width: 90%;
 }
 
-.ast-field-settings-modal .astra-popover-color {
+.ast-field-settings-modal .divino-popover-color {
 	margin-left: 0px;
 	border: 1px solid #dedede;
 }
 
-.ast-field-settings-modal .astra-popover-color .components-tab-panel__tabs {
+.ast-field-settings-modal .divino-popover-color .components-tab-panel__tabs {
 	padding: 8px;
 }
 
@@ -1362,7 +1362,7 @@ section.ast-palette-presets-inner-wrap {
 	border-radius: 3px;
 }
 
-.astra-color-picker-wrap {
+.divino-color-picker-wrap {
 	position: absolute;
 	z-index: 2;
 	top: 30px;
@@ -1372,24 +1372,24 @@ section.ast-palette-presets-inner-wrap {
 	display: none;
 }
 
-.astra-color-picker-wrap .astra-popover-color .components-color-picker,
-.astra-color-picker-wrap .astra-popover-color .react-colorful {
+.divino-color-picker-wrap .divino-popover-color .components-color-picker,
+.divino-color-picker-wrap .divino-popover-color .react-colorful {
 	width: 100%;
 }
 
-.astra-popover-color .components-custom-gradient-picker {
+.divino-popover-color .components-custom-gradient-picker {
 	z-index: 1;
 }
 
-.astra-popover-color .components-custom-gradient-picker__ui-line {
+.divino-popover-color .components-custom-gradient-picker__ui-line {
 	z-index: -1;
 }
 
-.astra-color-picker-wrap.picker-open {
+.divino-color-picker-wrap.picker-open {
 	display: block;
 }
 
-.ast-field-settings-modal .astra-color-picker-wrap {
+.ast-field-settings-modal .divino-color-picker-wrap {
 	position: relative;
 	top: 10px;
 }
@@ -1408,7 +1408,7 @@ section.ast-palette-presets-inner-wrap {
 	right: 65px;
 }
 
-.ast-color-btn-clear-wrap .astra-color-clear-button.components-button {
+.ast-color-btn-clear-wrap .divino-color-clear-button.components-button {
 	padding: 10px 3px;
 	width: 20px;
 	height: 20px;
@@ -1416,7 +1416,7 @@ section.ast-palette-presets-inner-wrap {
 
 .ast-clear-btn-inside-picker.components-button,
 .ast-reset-btn-inside-picker.components-button,
-.astra-popover-tabs .ast-clear-btn-inside-picker.components-button {
+.divino-popover-tabs .ast-clear-btn-inside-picker.components-button {
 	margin: 5px 20px 20px 15px;
 	padding: 0 8px;
 	border: 1px solid #ccc;
@@ -1424,12 +1424,12 @@ section.ast-palette-presets-inner-wrap {
 }
 
 .ast-clear-btn-inside-picker.components-button:hover,
-.astra-popover-tabs .ast-clear-btn-inside-picker.components-button:hover,
+.divino-popover-tabs .ast-clear-btn-inside-picker.components-button:hover,
 .ast-clear-btn-inside-picker.components-button:focus,
-.astra-popover-tabs .ast-clear-btn-inside-picker.components-button:focus,
+.divino-popover-tabs .ast-clear-btn-inside-picker.components-button:focus,
 .ast-clear-btn-inside-picker.components-button:active,
-.astra-popover-tabs .ast-clear-btn-inside-picker.components-button:active,
-.astra-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear:active {
+.divino-popover-tabs .ast-clear-btn-inside-picker.components-button:active,
+.divino-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear:active {
 	box-shadow: none !important;
 	background: transparent !important;
 }
@@ -1464,7 +1464,7 @@ section.ast-palette-presets-inner-wrap {
 	fill: var(--ast-customizer-color-1);
   }
 
-.astra-color-clear-button.components-button:focus:not( :disabled ) {
+.divino-color-clear-button.components-button:focus:not( :disabled ) {
 	outline: unset;
 	border: none;
 }
@@ -1483,14 +1483,14 @@ section.ast-palette-presets-inner-wrap {
 	fill: var( --ast-customizer-color-1 );
 }
 
-.astra-color-clear-button.components-button.is-secondary:hover:not( :disabled ),
-.astra-color-clear-button.components-button:focus:not( :disabled ) {
+.divino-color-clear-button.components-button.is-secondary:hover:not( :disabled ),
+.divino-color-clear-button.components-button:focus:not( :disabled ) {
 	box-shadow: 0 0 black;
 	padding: 1.5px;
 	border: none;
 }
 
-.astra-color-clear-button.components-button.is-secondary:disabled,
+.divino-color-clear-button.components-button.is-secondary:disabled,
 .ast-reset-btn.components-button.is-secondary:disabled span {
 	color: var( --ast-customizer-color-6 );
 }
@@ -1509,7 +1509,7 @@ section.ast-palette-presets-inner-wrap {
 	right: 78px;
 }
 
-.astra-color-picker-wrap .components-color-picker__inputs-wrapper {
+.divino-color-picker-wrap .components-color-picker__inputs-wrapper {
 	min-width: unset;
 }
 
@@ -1519,18 +1519,18 @@ section.ast-palette-presets-inner-wrap {
 }
 
 
-#customize-control-astra-settings-site-layout-outside-bg-obj-responsive .ast-reset-btn.components-button.is-secondary:not(:disabled) svg path {
+#customize-control-divino-settings-site-layout-outside-bg-obj-responsive .ast-reset-btn.components-button.is-secondary:not(:disabled) svg path {
 	fill: var(--ast-customizer-color-6);
   }
   
-  #customize-control-astra-settings-site-layout-outside-bg-obj-responsive .ast-reset-btn.components-button.is-secondary:not(:disabled) svg:hover  path{
+  #customize-control-divino-settings-site-layout-outside-bg-obj-responsive .ast-reset-btn.components-button.is-secondary:not(:disabled) svg:hover  path{
 	fill: var(--ast-customizer-color-1);
   }
   
-  #customize-control-astra-settings-content-bg-obj-responsive .ast-reset-btn.components-button.is-secondary:not(:disabled) svg path {
+  #customize-control-divino-settings-content-bg-obj-responsive .ast-reset-btn.components-button.is-secondary:not(:disabled) svg path {
 	fill: var(--ast-customizer-color-6);
   }
-  #customize-control-astra-settings-content-bg-obj-responsive .ast-reset-btn.components-button.is-secondary:not(:disabled) svg:hover  path{
+  #customize-control-divino-settings-content-bg-obj-responsive .ast-reset-btn.components-button.is-secondary:not(:disabled) svg:hover  path{
 	fill: var(--ast-customizer-color-1);
   }
 
@@ -1539,31 +1539,31 @@ section.ast-palette-presets-inner-wrap {
 	flex-direction: inherit;
 }
 
-.astra-color-picker-wrap .components-popover__content {
+.divino-color-picker-wrap .components-popover__content {
 	width: max-content;
 }
 
-.astra-color-picker-wrap .components-custom-gradient-picker__inserter .components-color-picker,
-.astra-color-picker-wrap .astra-popover-color .ast-gradient-ui .components-color-picker,
-.astra-color-picker-wrap .astra-popover-color .ast-gradient-ui .react-colorful {
+.divino-color-picker-wrap .components-custom-gradient-picker__inserter .components-color-picker,
+.divino-color-picker-wrap .divino-popover-color .ast-gradient-ui .components-color-picker,
+.divino-color-picker-wrap .divino-popover-color .ast-gradient-ui .react-colorful {
 	width: 216px;
 }
 
-.astra-color-picker-wrap .ast-gradient-ui .components-select-control.components-custom-gradient-picker__type-picker {
+.divino-color-picker-wrap .ast-gradient-ui .components-select-control.components-custom-gradient-picker__type-picker {
 	flex-direction: column;
 	align-items: start;
 }
 
-.astra-color-picker-wrap .ast-gradient-ui .components-angle-picker-control {
+.divino-color-picker-wrap .ast-gradient-ui .components-angle-picker-control {
 	margin-bottom: 0;
 }
 
-.astra-color-picker-wrap .ast-gradient-ui .components-custom-gradient-picker__remove-control-point {
+.divino-color-picker-wrap .ast-gradient-ui .components-custom-gradient-picker__remove-control-point {
 	padding: 0 16px 16px 16px;
 	border: 0;
 }
 
-.astra-color-picker-wrap .ast-gradient-ui .components-custom-gradient-picker__remove-control-point:focus {
+.divino-color-picker-wrap .ast-gradient-ui .components-custom-gradient-picker__remove-control-point:focus {
 	box-shadow: none;
 	outline: none;
 }
@@ -1596,12 +1596,12 @@ section.ast-palette-presets-inner-wrap {
 	mix-blend-mode: difference;
 }
 
-.astra-popover-color .components-circular-option-picker .components-circular-option-picker__swatches {
+.divino-popover-color .components-circular-option-picker .components-circular-option-picker__swatches {
 	gap: 4px;
 	justify-content: center;
 }
 
-.astra-popover-color .components-circular-option-picker__option-wrapper:hover {
+.divino-popover-color .components-circular-option-picker__option-wrapper:hover {
 	transform: scale( 1.1 );
 }
 
@@ -1613,18 +1613,18 @@ section.ast-palette-presets-inner-wrap {
 	margin-top: 30px;
 }
 
-.astra-popover-tabs .color-tab [data-wp-component="Flex"],
-.astra-popover-color .color-tab [data-wp-component="Flex"] {
+.divino-popover-tabs .color-tab [data-wp-component="Flex"],
+.divino-popover-color .color-tab [data-wp-component="Flex"] {
 	padding-left: 8px;
 }
 
-.astra-popover-tabs .ast-clear-btn-inside-picker.components-button,
-.astra-popover-color .ast-clear-btn-inside-picker.components-button {
+.divino-popover-tabs .ast-clear-btn-inside-picker.components-button,
+.divino-popover-color .ast-clear-btn-inside-picker.components-button {
 	margin-left: 8px;
 	margin-top: 0px;
 }
 
-.astra-popover-color div[data-wp-component="Flex"] {
+.divino-popover-color div[data-wp-component="Flex"] {
 	padding-left: 10px;
 }
 @media ( max-width: 1845px ) {
@@ -1634,7 +1634,7 @@ section.ast-palette-presets-inner-wrap {
 		width: 22px;
 	}
 
-	.astra-background-tabs .ast-color-palette .components-circular-option-picker__option-wrapper {
+	.divino-background-tabs .ast-color-palette .components-circular-option-picker__option-wrapper {
 		height: 20px;
 		width: 20px;
 	}
@@ -1644,16 +1644,16 @@ section.ast-palette-presets-inner-wrap {
 		top: -2px;
 	}
 
-	.astra-popover-color .ast-color-palette.components-circular-option-picker {
+	.divino-popover-color .ast-color-palette.components-circular-option-picker {
 		width: auto;
 		padding: 16px 0px 0px 8px;
 	}
 
-	.astra-typography-control .typography-button-wrap > button.components-button.astra-typography-preview-indicate {
+	.divino-typography-control .typography-button-wrap > button.components-button.divino-typography-preview-indicate {
 		padding: 0 2px;
 	}
 
-	.astra-typography-control .typography-button-wrap > button.components-button {
+	.divino-typography-control .typography-button-wrap > button.components-button {
 		padding: 0 4px;
 	}
 
@@ -1674,7 +1674,7 @@ section.ast-palette-presets-inner-wrap {
 		width: 18px;
 	}
 
-	.astra-popover-color .components-circular-option-picker__option[aria-pressed="true"] + svg,
+	.divino-popover-color .components-circular-option-picker__option[aria-pressed="true"] + svg,
 	.components-circular-option-picker__option[aria-selected="true"] + svg {
 		width: 22px;
 		height: 22px;
@@ -1688,7 +1688,7 @@ section.ast-palette-presets-inner-wrap {
 		height: 24px;
 	}
 
-	.astra-background-tabs .components-circular-option-picker__option[aria-selected="true"] + svg {
+	.divino-background-tabs .components-circular-option-picker__option[aria-selected="true"] + svg {
 		width: 20px;
 		height: 20px;
 	}
@@ -1718,12 +1718,12 @@ section.ast-palette-presets-inner-wrap {
 	}
 }
 
-.astra-color-icon-indicate.components-button:focus:not( :disabled ) {
+.divino-color-icon-indicate.components-button:focus:not( :disabled ) {
 	box-shadow: unset;
 	outline: unset;
 }
 
-.astra-color-icon-indicate.components-button:hover {
+.divino-color-icon-indicate.components-button:hover {
 	transform: scale( 1.05 );
 }
 
@@ -1757,7 +1757,7 @@ section.ast-palette-presets-inner-wrap {
 }
 
 /* Instead of updating above CSS, handled this control's edge case separately. */
-li#customize-control-astra-settings-transparent-content-section-text-color-responsive .ast-control-wrap .ast-responsive-btns {
+li#customize-control-divino-settings-transparent-content-section-text-color-responsive .ast-control-wrap .ast-responsive-btns {
 	top: 2px;
 }
 
@@ -1872,7 +1872,7 @@ textarea {
 	margin-top: 16px;
 }
 
-#customize-control-astra-settings-scroll-to-top-on-devices {
+#customize-control-divino-settings-scroll-to-top-on-devices {
 	margin-top: 24px;
 }
 
@@ -1898,7 +1898,7 @@ textarea {
 	font-weight: 400;
 }
 
-.media-position-setting .astra-popover-tabs .components-tab-panel__tabs {
+.media-position-setting .divino-popover-tabs .components-tab-panel__tabs {
 	padding-left: 0;
 	padding-right: 0;
 }
@@ -1997,7 +1997,7 @@ textarea {
 }
 
 /* Specific fix: align tooltip for Force Reload toggle */
-#customize-control-astra-settings-color-switcher-force-reload.ast-top-dotted-divider .ast-control-tooltip {
+#customize-control-divino-settings-color-switcher-force-reload.ast-top-dotted-divider .ast-control-tooltip {
 	transform: translateY( -50% );
 }
 
@@ -2038,7 +2038,7 @@ textarea {
 	top: 50%;
 }
 
-#customize-control-astra-settings-header-logo-color .dashicons-editor-help[data-title]+.ast-tooltip[data-title]::before {
+#customize-control-divino-settings-header-logo-color .dashicons-editor-help[data-title]+.ast-tooltip[data-title]::before {
 	right: 58px;
 }
 
@@ -2073,27 +2073,27 @@ textarea {
 	top: -83px;
 }
 
-#customize-control-astra-settings-single-post-sidebar-layout .ast-control-tooltip,
-#customize-control-astra-settings-single-page-sidebar-layout .ast-control-tooltip {
+#customize-control-divino-settings-single-post-sidebar-layout .ast-control-tooltip,
+#customize-control-divino-settings-single-page-sidebar-layout .ast-control-tooltip {
 	top: 15px;
 }
 
 /* Alignment fix for WooCommerce sidebar layout control */
-#customize-control-astra-settings-woocommerce-sidebar-layout .ast-control-tooltip,
-#customize-control-astra-settings-single-product-sidebar-layout .ast-control-tooltip,
-#customize-control-astra-settings-archive-product-sidebar-layout .ast-control-tooltip {
+#customize-control-divino-settings-woocommerce-sidebar-layout .ast-control-tooltip,
+#customize-control-divino-settings-single-product-sidebar-layout .ast-control-tooltip,
+#customize-control-divino-settings-archive-product-sidebar-layout .ast-control-tooltip {
         top: 15px;
 }
 
-#customize-control-astra-settings-product-sale-notification .ast-control-tooltip {
+#customize-control-divino-settings-product-sale-notification .ast-control-tooltip {
 	top: -35px !important;
 }
 
-#customize-control-astra-settings-product-sale-notification .ast-tooltip {
+#customize-control-divino-settings-product-sale-notification .ast-tooltip {
 	margin: -34px 0 0 20px;
 }
 
-#customize-control-astra-settings-product-sale-notification .dashicons-editor-help[data-title]+.ast-tooltip[data-title]::before {
+#customize-control-divino-settings-product-sale-notification .dashicons-editor-help[data-title]+.ast-tooltip[data-title]::before {
 	right: 20px;
 }
 
@@ -2112,8 +2112,8 @@ input[type="text"].select2-search__field {
 	border-radius: 0;
 }
 
-#customize-control-astra-settings-ast-callback-notice-header-transparent-header-meta-link,
-#customize-control-astra-settings-ast-callback-notice-header-transparent-header-logo-link {
+#customize-control-divino-settings-ast-callback-notice-header-transparent-header-meta-link,
+#customize-control-divino-settings-ast-callback-notice-header-transparent-header-logo-link {
 	margin-top: -5px;
 	background-color: var( --ast-customizer-notice-background );
 	border-radius: 0 0 4px 4px;
@@ -2132,7 +2132,7 @@ input[type="text"].select2-search__field {
 /* Safari Browser specific CSS */
 @media not all and ( min-resolution: 0.001dpcm ) {
 	@supports ( -webkit-appearance: none ) {
-		#customize-control-astra-settings-ast-header-responsive-logo-width .wrapper {
+		#customize-control-divino-settings-ast-header-responsive-logo-width .wrapper {
 			display: inline-block;
 			width: 100%;
 		}
@@ -2164,10 +2164,10 @@ input[type="text"].select2-search__field {
 		padding-bottom: 20px;
 	}
 
-	#customize-control-astra-settings-blog-archive-image-width .customize-control-title,
-	#customize-control-astra-settings-blog-archive-image-height .customize-control-title,
-	#customize-control-astra-settings-blog-single-post-image-width .customize-control-title,
-	#customize-control-astra-settings-blog-single-post-image-height .customize-control-title {
+	#customize-control-divino-settings-blog-archive-image-width .customize-control-title,
+	#customize-control-divino-settings-blog-archive-image-height .customize-control-title,
+	#customize-control-divino-settings-blog-single-post-image-width .customize-control-title,
+	#customize-control-divino-settings-blog-single-post-image-height .customize-control-title {
 		margin-left: 0px;
 		margin-right: 20px;
 	}
@@ -2201,19 +2201,19 @@ input[type="text"].select2-search__field {
 }
 
 /* Hiding this specific control on responsive devices.  */
-.preview-tablet #customize-control-astra-settings-woo-desktop-cart-flyout-width {
+.preview-tablet #customize-control-divino-settings-woo-desktop-cart-flyout-width {
 	display: none;
 }
 
-.preview-tablet #customize-control-astra-settings-woo-desktop-cart-flyout-direction {
+.preview-tablet #customize-control-divino-settings-woo-desktop-cart-flyout-direction {
 	display: none;
 }
 
-.preview-mobile #customize-control-astra-settings-woo-desktop-cart-flyout-width {
+.preview-mobile #customize-control-divino-settings-woo-desktop-cart-flyout-width {
 	display: none;
 }
 
-.preview-mobile #customize-control-astra-settings-woo-desktop-cart-flyout-direction {
+.preview-mobile #customize-control-divino-settings-woo-desktop-cart-flyout-direction {
 	display: none;
 }
 
@@ -2360,7 +2360,7 @@ li[ID*="accordion-section-ast-sub-section-"].control-section-ast_section {
 	padding-right: 6px;
 }
 
-#customize-header-actions button#astra-tour {
+#customize-header-actions button#divino-tour {
 	display: block;
 	position: absolute;
 	top: 0;
@@ -2379,8 +2379,8 @@ li[ID*="accordion-section-ast-sub-section-"].control-section-ast_section {
 	stroke: #3c434a;
 }
 
-#customize-header-actions button#astra-tour:hover,
-#customize-header-actions button#astra-tour:focus {
+#customize-header-actions button#divino-tour:hover,
+#customize-header-actions button#divino-tour:focus {
 	background: #fff;
 	color: #2271b1;
 	fill: #2271b1;
@@ -2390,7 +2390,7 @@ li[ID*="accordion-section-ast-sub-section-"].control-section-ast_section {
 	outline: 1px solid transparent;
 }
 
-#customize-header-actions button#astra-tour svg {
+#customize-header-actions button#divino-tour svg {
 	margin-top: 7px;
 	margin-left: 3px;
 	width: 16px;
@@ -2398,7 +2398,7 @@ li[ID*="accordion-section-ast-sub-section-"].control-section-ast_section {
 }
 
 @media screen and ( max-width: 640px ) {
-	#customize-header-actions button#astra-tour {
+	#customize-header-actions button#divino-tour {
 		left: 153px;
 	}
 }
@@ -2455,7 +2455,7 @@ li[ID*="accordion-section-ast-sub-section-"].control-section-ast_section {
 }
 
 /* Show the ast-style-guide-tooltip on hover */
-#astra-tour:hover .ast-style-guide-tooltip {
+#divino-tour:hover .ast-style-guide-tooltip {
 	display: block;
 	opacity: 1;
 }
@@ -2614,15 +2614,15 @@ li[ID*="accordion-section-ast-sub-section-"].control-section-ast_section {
 	width: auto;
 }
 
-#customize-control-astra-settings-breadcrumb-separator-selector svg {
+#customize-control-divino-settings-breadcrumb-separator-selector svg {
 	border-radius: 4px;
 }
 
-#accordion-section-astra-pro .wp-ui-highlight {
+#accordion-section-divino-pro .wp-ui-highlight {
 	background-color: var(--ast-customizer-border-color);
 }
 
-#customize-control-astra-settings-secondary-theme-button-bg-color-group, #customize-control-astra-settings-secondary-theme-button-border-color-group {
+#customize-control-divino-settings-secondary-theme-button-bg-color-group, #customize-control-divino-settings-secondary-theme-button-border-color-group {
 	margin-top: 8px;
 }
 
@@ -2749,12 +2749,12 @@ li[ID*="accordion-section-ast-sub-section-"].control-section-ast_section {
 	font-weight: 600;
 }
 
-.ast-top-divider .ast-control-wrap .astra-color-picker-wrap {
+.ast-top-divider .ast-control-wrap .divino-color-picker-wrap {
 	top: 55px;
 	background-color: transparent;
 }
 
-.ast-top-divider .ast-divider-title+.ast-control-wrap .astra-color-picker-wrap {
+.ast-top-divider .ast-divider-title+.ast-control-wrap .divino-color-picker-wrap {
 	top: 100px;
 	background-color: transparent;
 }
@@ -2793,17 +2793,17 @@ li.customize-control.ast-top-section-spacing {
 */
 
 .customize-control.ast-top-dotted-divider,
-#customize-control-astra-settings-edd-archive-variable-button-text,
-#customize-control-astra-settings-header-account-logged-out-text,
-#customize-control-astra-settings-shop-load-more-text,
-#customize-control-astra-settings-single-product-shipping-text,
-#customize-control-astra-settings-checkout-back-to-cart-button-text,
-#customize-control-astra-settings-ast-header-retina-logo,
-#customize-control-astra-settings-product-sale-percent-value,
-#customize-control-astra-settings-header-account-create-menu-link,
-#customize-control-astra-settings-woo-cart-button-text,
-#customize-control-astra-settings-single-product-recently-viewed-text,
-#customize-control-astra-settings-sticky-header-retina-logo {
+#customize-control-divino-settings-edd-archive-variable-button-text,
+#customize-control-divino-settings-header-account-logged-out-text,
+#customize-control-divino-settings-shop-load-more-text,
+#customize-control-divino-settings-single-product-shipping-text,
+#customize-control-divino-settings-checkout-back-to-cart-button-text,
+#customize-control-divino-settings-ast-header-retina-logo,
+#customize-control-divino-settings-product-sale-percent-value,
+#customize-control-divino-settings-header-account-create-menu-link,
+#customize-control-divino-settings-woo-cart-button-text,
+#customize-control-divino-settings-single-product-recently-viewed-text,
+#customize-control-divino-settings-sticky-header-retina-logo {
 	margin-top: 24px;
 	padding-top: 24px;
 	border-top: 0.5px dashed var(--ast-customizer-divider-color);
@@ -2814,12 +2814,12 @@ li.customize-control.ast-top-section-spacing {
 	margin-top: 16px;
 }
 
-#customize-control-astra-settings-product-sale-percent-value .ast-control-tooltip {
+#customize-control-divino-settings-product-sale-percent-value .ast-control-tooltip {
 	top: 24px;
 }
 
 .customize-control.ast-bottom-dotted-divider,
-#customize-control-astra-settings-header-account-logged-in-text {
+#customize-control-divino-settings-header-account-logged-in-text {
 	margin-bottom: 8px;
 	padding-bottom: 24px;
 	border-bottom: 0.5px dashed var(--ast-customizer-divider-color);
@@ -2908,13 +2908,13 @@ li.customize-control.ast-top-section-spacing {
 	margin-top: 16px;
 }
 
-#customize-control-astra-settings-footer-create-menu-link,
-#customize-control-astra-settings-footer-language-switcher-options,
-#customize-control-astra-settings-header-mobile-menu-create-menu-link,
-#customize-control-astra-settings-header-language-switcher-options,
-#customize-control-astra-settings-site-icon-link,
+#customize-control-divino-settings-footer-create-menu-link,
+#customize-control-divino-settings-footer-language-switcher-options,
+#customize-control-divino-settings-header-mobile-menu-create-menu-link,
+#customize-control-divino-settings-header-language-switcher-options,
+#customize-control-divino-settings-site-icon-link,
 [ID*="sub-accordion-section-section-hb-menu-"] [ID*="-create-menu-link"],
-[ID*="customize-control-astra-settings-footer-button"][ID*="-text"] {
+[ID*="customize-control-divino-settings-footer-button"][ID*="-text"] {
 	margin-top: 24px;
 }
 
@@ -2942,12 +2942,12 @@ li.customize-control.ast-top-section-spacing {
 	top: 30px;
 }
 
-#customize-control-astra-settings-archive-post-content-style .ast-control-tooltip {
+#customize-control-divino-settings-archive-post-content-style .ast-control-tooltip {
 	top: 0;
 }
 
-#customize-control-astra-settings-archive-post-sidebar-layout .ast-control-tooltip,
-#customize-control-astra-settings-single-post-social-sharing-icon-position .ast-control-tooltip {
+#customize-control-divino-settings-archive-post-sidebar-layout .ast-control-tooltip,
+#customize-control-divino-settings-single-post-social-sharing-icon-position .ast-control-tooltip {
 	top: 15px;
 }
 
@@ -2955,7 +2955,7 @@ li.customize-control.ast-top-section-spacing {
 	margin-top: 0;
 }
 
-#customize-control-astra-typography-presets {
+#customize-control-divino-typography-presets {
 	padding-bottom: 20px;
 }
 
@@ -2963,7 +2963,7 @@ li.customize-control.ast-top-section-spacing {
 	margin-top: 10px;
 }
 
-#customize-control-astra-settings-blog-filter-taxonomy-text-colors {
+#customize-control-divino-settings-blog-filter-taxonomy-text-colors {
 	margin-top: 0;
 }
 .ast-typo-presets {
@@ -3290,8 +3290,8 @@ div .ast-field-settings-modal .customize-control-ast-font-extras {
 	z-index: 1;
 }
 
-#customize-control-astra-settings-ast-headings-font-settings .ast-fields-wrap,
-#customize-control-astra-settings-ast-body-font-settings .ast-fields-wrap {
+#customize-control-divino-settings-ast-headings-font-settings .ast-fields-wrap,
+#customize-control-divino-settings-ast-body-font-settings .ast-fields-wrap {
 	overflow: visible;
 }
 
@@ -3321,7 +3321,7 @@ span.customize-control-title.ast-group-section-title {
 	margin-left: 5px;
 }
 
-li#customize-control-astra-settings-header-preset-style .customizer-text {
+li#customize-control-divino-settings-header-preset-style .customizer-text {
 	font-weight: 600;
 }
 
@@ -3358,14 +3358,14 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	cursor: pointer;
 }
 
-#customize-control-astra-settings-header-preset-style .ast-field-settings-modal {
+#customize-control-divino-settings-header-preset-style .ast-field-settings-modal {
 	display: none;
 	padding: 0;
 	width: calc( 100% + 16px );
 	margin-left: -8px;
 }
 
-#customize-control-astra-settings-header-preset-style .ast-adv-toggle-icon {
+#customize-control-divino-settings-header-preset-style .ast-adv-toggle-icon {
 	top: -5px;
 }
 
@@ -4187,15 +4187,15 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	display: none;
 }
 
-#customize-control-astra-settings-header-trigger-icon input[type="radio"]:checked + label .ahfb-svg-iconset svg rect {
+#customize-control-divino-settings-header-trigger-icon input[type="radio"]:checked + label .ahfb-svg-iconset svg rect {
 	fill: var( --ast-customizer-primary-color );
 }
 
-#customize-control-astra-settings-header-trigger-icon input[type="radio"]:checked + label .ahfb-svg-iconset svg rect:first-child {
+#customize-control-divino-settings-header-trigger-icon input[type="radio"]:checked + label .ahfb-svg-iconset svg rect:first-child {
 	stroke: var( --ast-customizer-primary-color );
 }
 
-#customize-control-astra-settings-header-trigger-icon input[type="radio"]:checked + label .ahfb-svg-iconset svg rect:not( :first-child ) {
+#customize-control-divino-settings-header-trigger-icon input[type="radio"]:checked + label .ahfb-svg-iconset svg rect:not( :first-child ) {
 	fill: var( --ast-customizer-secondary-text-color );
 }
 
@@ -4226,14 +4226,14 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	height: 100%;
 }
 
-.customize-control-ast-radio-image:not( #customize-control-astra-settings-header-trigger-icon ) > .image {
+.customize-control-ast-radio-image:not( #customize-control-divino-settings-header-trigger-icon ) > .image {
 	display: grid;
 	grid-template-columns: repeat( 3, 1fr );
 	grid-column-gap: 5px;
 	grid-row-gap: 5px;
 }
 
-.customize-control-ast-radio-image:not( #customize-control-astra-settings-header-trigger-icon ) > .modern-layout,
+.customize-control-ast-radio-image:not( #customize-control-divino-settings-header-trigger-icon ) > .modern-layout,
 .components-button-group.ahfb-radio-container-control {
 	display: grid;
 	grid-template-columns: repeat( 2, 1fr );
@@ -4241,7 +4241,7 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	grid-row-gap: 20px;
 }
 
-.customize-control-ast-radio-image:not( #customize-control-astra-settings-header-trigger-icon ) > .ast-divide-four {
+.customize-control-ast-radio-image:not( #customize-control-divino-settings-header-trigger-icon ) > .ast-divide-four {
 	grid-template-columns: repeat( 4, 1fr );
 	grid-column-gap: 14px;
 	grid-row-gap: 10px;
@@ -4327,7 +4327,7 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	stroke: var(--ast-customizer-color-1);
 }
 
-#customize-control-astra-settings-shop-style.customize-control-ast-radio-image .modern-layout input:checked + label svg g rect:first-of-type, #customize-control-astra-settings-shop-style.customize-control-ast-radio-image  .modern-layout  input:checked + label svg g rect:nth-child(3) {
+#customize-control-divino-settings-shop-style.customize-control-ast-radio-image .modern-layout input:checked + label svg g rect:first-of-type, #customize-control-divino-settings-shop-style.customize-control-ast-radio-image  .modern-layout  input:checked + label svg g rect:nth-child(3) {
     stroke: #f8dbdf08;
 }
 
@@ -4335,11 +4335,11 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
     position: relative;
 }
 
-#customize-control-astra-settings-header-trigger-icon label:hover .ahfb-svg-iconset svg {
+#customize-control-divino-settings-header-trigger-icon label:hover .ahfb-svg-iconset svg {
     background: var( --ast-customizer-color-13);
 }
 
-#customize-control-astra-settings-header-trigger-icon label:nth-of-type(3):hover .ahfb-svg-iconset svg rect {
+#customize-control-divino-settings-header-trigger-icon label:nth-of-type(3):hover .ahfb-svg-iconset svg rect {
     fill: var( --ast-customizer-color-13);
 }
 .customize-control-ast-responsive-background {
@@ -4458,7 +4458,7 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	min-height: 30px;
 }
 
-.customize-control-ast-responsive-background .customize-control-content .astra-color-picker-wrap {
+.customize-control-ast-responsive-background .customize-control-content .divino-color-picker-wrap {
 	width: 100%;
 }
 
@@ -4482,7 +4482,7 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	height: 32px;
 }
 
-.astra-popover-tabs .components-button.upload-button.button-add-media {
+.divino-popover-tabs .components-button.upload-button.button-add-media {
 	width: 100%;
 	position: relative;
 	text-align: center;
@@ -4494,46 +4494,46 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	line-height: 1.6;
 }
 
-.astra-popover-tabs .components-button.upload-button.button-add-media:hover {
+.divino-popover-tabs .components-button.upload-button.button-add-media:hover {
 	color: #555d66;
 	box-sizing: border-box;
 	box-shadow: unset;
 	border-color: #0185ba;
 }
 
-.astra-popover-tabs [ID*="-gradient-view"] {
+.divino-popover-tabs [ID*="-gradient-view"] {
 	padding: 0 15px 15px 15px;
 }
 
-.astra-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear {
+.divino-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear {
 	flex: unset;
 	box-shadow: unset;
 	width: auto;
 	padding: 0 5px;
 }
 
-.astra-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear:hover {
+.divino-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear:hover {
 	box-shadow: unset;
 }
 
-.astra-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear:active {
+.divino-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear:active {
 	box-shadow: unset;
 }
 
-.astra-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear:focus {
+.divino-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear:focus {
 	box-shadow: unset;
 }
 
-.astra-popover-tabs #tab-panel-0-image-view > div {
+.divino-popover-tabs #tab-panel-0-image-view > div {
 	text-align: center;
 }
 
-.astra-popover-tabs #tab-panel-0-image-view > div img {
+.divino-popover-tabs #tab-panel-0-image-view > div img {
 	width: 200px;
 	margin-bottom: 18px;
 }
 
-.astra-popover-tabs #tab-panel-0-image-view > div .media-position-setting {
+.divino-popover-tabs #tab-panel-0-image-view > div .media-position-setting {
 	text-align: left;
 }
 
@@ -4545,32 +4545,32 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	margin-bottom: 5px;
 }
 
-.astra-popover-color .components-circular-option-picker {
+.divino-popover-color .components-circular-option-picker {
 	position: relative;
 	margin-top: 0;
 }
 
-.astra-popover-color .components-circular-option-picker .components-circular-option-picker__custom-clear-wrapper {
+.divino-popover-color .components-circular-option-picker .components-circular-option-picker__custom-clear-wrapper {
 	margin-top: 10px;
 	justify-content: flex-start;
 }
 
 @media screen and ( -ms-high-contrast: active ), ( -ms-high-contrast: none ) {
-	.astra-popover-color .components-circular-option-picker .components-circular-option-picker__custom-clear-wrapper {
+	.divino-popover-color .components-circular-option-picker .components-circular-option-picker__custom-clear-wrapper {
 		width: 50px;
 	}
 }
 
-.astra-popover-color [ID*="-color-view"] .components-circular-option-picker {
+.divino-popover-color [ID*="-color-view"] .components-circular-option-picker {
 	width: auto;
 }
 
-.astra-popover-color .ast-color-palette {
+.divino-popover-color .ast-color-palette {
 	width: auto;
 	padding: 16px 0px 0px 14px;
 }
 
-.astra-popover-color .ast-color-palette .components-circular-option-picker__option {
+.divino-popover-color .ast-color-palette .components-circular-option-picker__option {
 	width: 100%;
 	height: 100%;
 	border-radius: 100%;
@@ -4578,21 +4578,21 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	box-shadow: inset 0px 0px 0px 1px #0003;
 }
 
-.astra-popover-color .ast-color-palette .components-button.is-pressed:focus:not( :disabled ) {
+.divino-popover-color .ast-color-palette .components-button.is-pressed:focus:not( :disabled ) {
 	box-shadow: none;
 	border: none;
 }
 
-.astra-popover-color .components-custom-gradient-picker {
+.divino-popover-color .components-custom-gradient-picker {
 	margin-top: 0;
 }
 
-.astra-popover-color .components-custom-gradient-picker__gradient-bar {
+.divino-popover-color .components-custom-gradient-picker__gradient-bar {
 	box-sizing: border-box;
 	opacity: 1;
 }
 
-.astra-popover-color .components-custom-gradient-picker__type-picker .components-base-control__label {
+.divino-popover-color .components-custom-gradient-picker__type-picker .components-base-control__label {
 	display: block;
 }
 
@@ -4612,7 +4612,7 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	display: none;
 }
 
-.media-position-setting .astra-popover-tabs [ID*="-gradient-view"] {
+.media-position-setting .divino-popover-tabs [ID*="-gradient-view"] {
 	padding: 0 0 15px 0;
 }
 
@@ -4627,7 +4627,7 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	top: 4px;
 }
 
-.ast-field-settings-modal .customize-control-content .astra-color-picker-wrap {
+.ast-field-settings-modal .customize-control-content .divino-color-picker-wrap {
 	margin-left: 0;
 	margin-top: 0;
 }
@@ -4677,12 +4677,12 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	margin-top: 5px;
 }
 
-.customize-control-ast-responsive-color .customize-control-content .ast-color-picker-alpha .astra-color-picker-wrap .components-color-picker__saturation-black {
+.customize-control-ast-responsive-color .customize-control-content .ast-color-picker-alpha .divino-color-picker-wrap .components-color-picker__saturation-black {
 	border-radius: 4px 4px 0 0;
 }
 
-.customize-control-ast-responsive-color .customize-control-content .ast-color-picker-alpha .astra-color-picker-wrap .components-color-picker__saturation-color,
-.customize-control-ast-responsive-color .customize-control-content .ast-color-picker-alpha .astra-color-picker-wrap .components-color-picker__saturation-white {
+.customize-control-ast-responsive-color .customize-control-content .ast-color-picker-alpha .divino-color-picker-wrap .components-color-picker__saturation-color,
+.customize-control-ast-responsive-color .customize-control-content .ast-color-picker-alpha .divino-color-picker-wrap .components-color-picker__saturation-white {
 	border-radius: 3px;
 }
 
@@ -4700,7 +4700,7 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	top: -3px;
 }
 
-.ast-field-settings-modal .customize-control-ast-responsive-color .customize-control-content .astra-color-picker-wrap {
+.ast-field-settings-modal .customize-control-ast-responsive-color .customize-control-content .divino-color-picker-wrap {
 	margin-left: 0px;
 	margin-bottom: 10px;
 	margin-top: 10px;
@@ -5362,7 +5362,7 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	background: var( --ast-customizer-icon-background );
 }
 
-#customize-control-astra-color-palettes .ast-adv-toggle-icon:before {
+#customize-control-divino-color-palettes .ast-adv-toggle-icon:before {
 	display: none;
 }
 
@@ -5586,17 +5586,17 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 /**
  * Popover Tab Structure.
  */
-.astra-popover-tabs {
+.divino-popover-tabs {
 	position: relative;
 }
 
-.astra-popover-tabs .components-tab-panel__tabs {
+.divino-popover-tabs .components-tab-panel__tabs {
 	display: flex;
 	padding: 15px;
 	border: none;
 }
 
-.astra-popover-tabs .components-tab-panel__tabs .components-tab-panel__tabs-item {
+.divino-popover-tabs .components-tab-panel__tabs .components-tab-panel__tabs-item {
 	color: #555d66;
 	font-size: 13px;
 	font-weight: 400;
@@ -5608,20 +5608,20 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	border: 1px solid rgba( 0, 0, 0, 0.1 );
 }
 
-.astra-popover-tabs .components-tab-panel__tabs .components-tab-panel__tabs-item:active {
+.divino-popover-tabs .components-tab-panel__tabs .components-tab-panel__tabs-item:active {
 	box-shadow: unset;
 }
 
-.astra-popover-tabs .components-tab-panel__tabs .components-tab-panel__tabs-item:focus {
+.divino-popover-tabs .components-tab-panel__tabs .components-tab-panel__tabs-item:focus {
 	box-shadow: unset;
 }
 
-.astra-popover-tabs [ID*="-image-view"] {
+.divino-popover-tabs [ID*="-image-view"] {
 	padding: 15px;
 	border: none;
 }
 
-.astra-popover-tabs .components-button {
+.divino-popover-tabs .components-button {
 	align-items: center;
 	flex: 1 1 auto;
 	justify-content: center;
@@ -5631,36 +5631,36 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	transition: background-color 140ms linear;
 }
 
-.astra-popover-tabs .components-tab-panel__tabs-item:first-child {
+.divino-popover-tabs .components-tab-panel__tabs-item:first-child {
 	border-radius: 3px 0px 0px 3px;
 }
 
-.astra-popover-tabs .components-tab-panel__tabs-item:last-child {
+.divino-popover-tabs .components-tab-panel__tabs-item:last-child {
 	border-radius: 0px 3px 3px 0px;
 }
 
-.astra-popover-tabs .components-tab-panel__tabs-item:not( :first-child ) {
+.divino-popover-tabs .components-tab-panel__tabs-item:not( :first-child ) {
 	border-left-width: 0;
 }
 
-.astra-popover-tabs .components-tab-panel__tabs-item.active-tab {
+.divino-popover-tabs .components-tab-panel__tabs-item.active-tab {
 	background-color: #0185ba;
 	color: #ffffff;
 }
-.astra-popover-tabs .components-tab-panel__tabs .components-tab-panel__tabs-item {
+.divino-popover-tabs .components-tab-panel__tabs .components-tab-panel__tabs-item {
 	height: 32px !important;
 }
-.astra-popover-tabs.astra-media-tab .components-tab-panel__tabs,
-.astra-popover-tabs.astra-media-tab .components-tab-panel__tab-content {
+.divino-popover-tabs.divino-media-tab .components-tab-panel__tabs,
+.divino-popover-tabs.divino-media-tab .components-tab-panel__tab-content {
 	padding: 0;
 }
 
-.astra-popover-tabs.astra-media-tab .components-tab-panel__tabs-item.active-tab {
+.divino-popover-tabs.divino-media-tab .components-tab-panel__tabs-item.active-tab {
 	border-color: var( --ast-customizer-color-3 );
 	background: var( --ast-customizer-color-1 );
 }
 
-.astra-popover-tabs.astra-media-tab .components-tab-panel__tab-content .ast-social-icon-picker-label {
+.divino-popover-tabs.divino-media-tab .components-tab-panel__tab-content .ast-social-icon-picker-label {
 	text-align: left;
 }
 
@@ -5671,12 +5671,12 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
     font-size:11px;
 }
 
-.astra-media-tab .astra-media-image {
+.divino-media-tab .divino-media-image {
 	width: 100%;
 	margin-bottom: 0;
 }
 
-.astra-media-tab .ast-media-btn {
+.divino-media-tab .ast-media-btn {
 	display: block;
 	width: 100%;
 	border: 1px dashed var( --ast-customizer-color-7 );
@@ -5687,16 +5687,16 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	text-decoration: none;
 }
 
-.astra-media-tab .ast-danger-btn {
+.divino-media-tab .ast-danger-btn {
 	color: var( --ast-customizer-color-14 );
 	margin-top: 10px;
 }
 
-.astra-media-tab .ast-media-btn:hover {
+.divino-media-tab .ast-media-btn:hover {
 	border-color: var( --ast-customizer-color-3 );
 }
 
-.astra-media-tab .ast-danger-btn:hover {
+.divino-media-tab .ast-danger-btn:hover {
 	border-color: var( --ast-customizer-color-14 );
 }
 
@@ -5719,11 +5719,11 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	color: var( --ast-customizer-color-5 );
 }
 
-.astra-popover-color .astra-popover-tabs .components-tab-panel__tabs button.components-tab-panel__tabs-item.active-tab:not( .is-primary ):not( .is-tertiary ):not( .is-link ):hover {
+.divino-popover-color .divino-popover-tabs .components-tab-panel__tabs button.components-tab-panel__tabs-item.active-tab:not( .is-primary ):not( .is-tertiary ):not( .is-link ):hover {
 	color: #fff;
 }
 
-.components-popover.astra-popover-color .components-popover__content {
+.components-popover.divino-popover-color .components-popover__content {
 	min-width: 310px;
 	max-height: 60vh;
 	padding: 0;
@@ -5731,12 +5731,12 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	box-shadow: 0 2px 15px rgba( 0, 0, 0, 0.3 );
 }
 
-.ast-field-settings-modal .components-popover.astra-popover-color .components-popover__content {
+.ast-field-settings-modal .components-popover.divino-popover-color .components-popover__content {
 	min-width: 320px;
 	min-height: 325px;
 }
 
-.ast-field-settings-modal .background-wrapper .components-popover.astra-popover-color .components-popover__content {
+.ast-field-settings-modal .background-wrapper .components-popover.divino-popover-color .components-popover__content {
 	min-height: 385px;
 }
 
@@ -5818,7 +5818,7 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	white-space: nowrap;
 }
 
-#customize-control-astra-settings-secondary-theme-button-bg-color-group {
+#customize-control-divino-settings-secondary-theme-button-bg-color-group {
 	margin-top: 8px;
 }
 .customize-control-ast-slider .wrapper {
@@ -6127,7 +6127,7 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	text-transform: uppercase;
 }
 
-.ast-sortable-subfields-wrap .customize-control-ast-color .ast-control-wrap .astra-popover-color {
+.ast-sortable-subfields-wrap .customize-control-ast-color .ast-control-wrap .divino-popover-color {
 	margin-left: -10px;
 	margin-right: 10px;
 	width: calc( 100% + 15px );
@@ -6204,7 +6204,7 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	display: block;
 }
 
-.ast-sortable-item .customize-control-ast-color .astra-color-picker-wrap {
+.ast-sortable-item .customize-control-ast-color .divino-color-picker-wrap {
 	position: relative;
 	top: 8px;
 }
@@ -6375,7 +6375,7 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	background: var( --ast-customizer-primary-color );
 }
 
-#customize-control-astra-typography-presets .ast-tooltip[data-title]::after {
+#customize-control-divino-typography-presets .ast-tooltip[data-title]::after {
 	min-width: 10em;
 }
 
@@ -6481,7 +6481,7 @@ li#customize-control-astra-settings-header-preset-style .customizer-text {
 	right: 60px;
 }
 
-#customize-control-astra-settings-header-logo-color .dashicons-editor-help[data-title]+.ast-tooltip[data-title]::before {
+#customize-control-divino-settings-header-logo-color .dashicons-editor-help[data-title]+.ast-tooltip[data-title]::before {
 	right: 58px;
 }
 #customize-control-ast-dynamic-single-post-article-featured-image-position-layout-2 .dashicons-editor-help[data-title]+.ast-tooltip[data-title]::before, #customize-control-ast-dynamic-single-page-article-featured-image-position-layout-1 .dashicons-editor-help[data-title]+.ast-tooltip[data-title]::before {
@@ -6730,10 +6730,10 @@ a.ast-upgrade-trigger:active {
 	font-weight: 600;
 }
 
-.ahfb-header-builder-active li#customize-control-astra-settings-builder-header:not( .ast-pro-available ),
-.ahfb-header-builder-active li#customize-control-astra-settings-builder-header:not( .ast-pro-available ) *,
-.ahfb-footer-builder-active li#customize-control-astra-settings-builder-footer:not( .ast-pro-available ),
-.ahfb-footer-builder-active li#customize-control-astra-settings-builder-footer:not( .ast-pro-available ) * {
+.ahfb-header-builder-active li#customize-control-divino-settings-builder-header:not( .ast-pro-available ),
+.ahfb-header-builder-active li#customize-control-divino-settings-builder-header:not( .ast-pro-available ) *,
+.ahfb-footer-builder-active li#customize-control-divino-settings-builder-footer:not( .ast-pro-available ),
+.ahfb-footer-builder-active li#customize-control-divino-settings-builder-footer:not( .ast-pro-available ) * {
 	color: var( --ast-customizer-color-9 );
 	background: var( --ast-customizer-color-1 );
 }
@@ -6764,8 +6764,8 @@ a.ast-upgrade-trigger:active {
 	border-bottom: 1px dashed #d4d4d4;
 }
 
-li#customize-control-astra-settings-header-builder-pro-items .ast-upgrade-pro-wrap:not( :has( .ast-upgrade-modal-view-wrapper ) ),
-li#customize-control-astra-settings-footer-builder-pro-items .ast-upgrade-pro-wrap:not( :has( .ast-upgrade-modal-view-wrapper ) ) {
+li#customize-control-divino-settings-header-builder-pro-items .ast-upgrade-pro-wrap:not( :has( .ast-upgrade-modal-view-wrapper ) ),
+li#customize-control-divino-settings-footer-builder-pro-items .ast-upgrade-pro-wrap:not( :has( .ast-upgrade-modal-view-wrapper ) ) {
 	padding-left: 12px;
 	padding-right: 12px;
 }
@@ -6936,61 +6936,61 @@ li#customize-control-astra-settings-footer-builder-pro-items .ast-upgrade-pro-wr
 	background: #4E26BF;
 }
 
-#customize-control-astra-settings-site-layout-outside-bg-obj-responsive,#customize-control-astra-settings-content-bg-obj-responsive, #customize-control-astra-settings-theme-color-divider-reset {
+#customize-control-divino-settings-site-layout-outside-bg-obj-responsive,#customize-control-divino-settings-content-bg-obj-responsive, #customize-control-divino-settings-theme-color-divider-reset {
     margin-top: 8px;
 }
 
 /* container spacing adjustmenet  */
-#customize-control-astra-settings-site-layout {
+#customize-control-divino-settings-site-layout {
 	margin-bottom: 0;
 }
 
 /* container spacing adjustmenet  */
-#customize-control-astra-settings-site-layout {
+#customize-control-divino-settings-site-layout {
 	margin-bottom: 0;
 }
 
-#customize-control-astra-settings-ast-dynamic-single-page-layout, #customize-control-astra-settings-archive-post-ast-content-layout, #customize-control-astra-settings-archive-post-content-structure-divider, #customize-control-astra-settings-blog-pagination, #customize-control-astra-settings-ast-search-content-layout, #customize-control-astra-settings-woocommerce-ast-content-layout, #customize-control-astra-settings-shop-grids {
+#customize-control-divino-settings-ast-dynamic-single-page-layout, #customize-control-divino-settings-archive-post-ast-content-layout, #customize-control-divino-settings-archive-post-content-structure-divider, #customize-control-divino-settings-blog-pagination, #customize-control-divino-settings-ast-search-content-layout, #customize-control-divino-settings-woocommerce-ast-content-layout, #customize-control-divino-settings-shop-grids {
     margin-bottom: 0;
 }
 
-#customize-control-astra-settings-section-single-page-padding, #customize-control-astra-settings-section-blog-single-spacing-divider, #customize-control-astra-settings-header-menu1-text-colors {
+#customize-control-divino-settings-section-single-page-padding, #customize-control-divino-settings-section-blog-single-spacing-divider, #customize-control-divino-settings-header-menu1-text-colors {
   margin-top: 16px;
 }
 
-#customize-control-astra-settings-section-hb-html-1-typography, #customize-control-astra-settings-mobile-header-toggle-btn-style, #customize-control-astra-settings-shop-hover-style, #customize-control-astra-settings-breadcrumb-bg-color, #customize-control-astra-settings-breadcrumb-spacing, #customize-control-astra-settings-site-sidebar-width, #customize-control-astra-settings-font-size-sidebar-content, #customize-control-astra-settings-shop-grids, #customize-control-woocommerce_shop_page_display {
+#customize-control-divino-settings-section-hb-html-1-typography, #customize-control-divino-settings-mobile-header-toggle-btn-style, #customize-control-divino-settings-shop-hover-style, #customize-control-divino-settings-breadcrumb-bg-color, #customize-control-divino-settings-breadcrumb-spacing, #customize-control-divino-settings-site-sidebar-width, #customize-control-divino-settings-font-size-sidebar-content, #customize-control-divino-settings-shop-grids, #customize-control-woocommerce_shop_page_display {
 margin-top: 0px;
 }
 
-#customize-control-astra-settings-section-header-mobile-menu-margin, #customize-control-astra-settings-font-size-section-footer-copyright {
+#customize-control-divino-settings-section-header-mobile-menu-margin, #customize-control-divino-settings-font-size-section-footer-copyright {
 	margin-top: 0;
 }
 
-#customize-control-astra-settings-mobile-header-toggle-btn-style, #customize-control-astra-settings-woo-header-cart-icon-radius-fields{
+#customize-control-divino-settings-mobile-header-toggle-btn-style, #customize-control-divino-settings-woo-header-cart-icon-radius-fields{
 	margin-bottom: 0;
 }
 
-#customize-control-astra-settings-header-menu2-submenu-border, #customize-control-astra-settings-header-menu1-submenu-border, #customize-control-astra-settings-font-size-sidebar-title {
+#customize-control-divino-settings-header-menu2-submenu-border, #customize-control-divino-settings-header-menu1-submenu-border, #customize-control-divino-settings-font-size-sidebar-title {
 padding-bottom: 16px;
 }
 
-#customize-control-astra-settings-shop-product-structure, #customize-control-astra-settings-sidebar-spacing-divider {
+#customize-control-divino-settings-shop-product-structure, #customize-control-divino-settings-sidebar-spacing-divider {
 margin-top: 16px;
 }
 
-#customize-control-astra-settings-header-search-width, #customize-control-astra-settings-enable-related-posts-excerpt,#customize-control-astra-settings-ast-search-live-search-post-types, #customize-control-astra-settings-single-product-sticky-product-image {
+#customize-control-divino-settings-header-search-width, #customize-control-divino-settings-enable-related-posts-excerpt,#customize-control-divino-settings-ast-search-live-search-post-types, #customize-control-divino-settings-single-product-sticky-product-image {
 margin-top: 24px;
 }
 
- #customize-control-astra-settings-archive-product-content-style {
+ #customize-control-divino-settings-archive-product-content-style {
   padding-top:16px;
 }
 
-#customize-control-astra-settings-header-social-1-bg-space, #customize-control-astra-settings-header-social-1-space, #customize-control-astra-settings-header-social-1-size, #customize-control-astra-settings-header-menu2-submenu-border-radius-fields,  #customize-control-astra-settings-shop-grids {
+#customize-control-divino-settings-header-social-1-bg-space, #customize-control-divino-settings-header-social-1-space, #customize-control-divino-settings-header-social-1-size, #customize-control-divino-settings-header-menu2-submenu-border-radius-fields,  #customize-control-divino-settings-shop-grids {
 padding-bottom: 16px;
 }
 
-#customize-control-astra-settings-section-single-page-padding {
+#customize-control-divino-settings-section-single-page-padding {
 	margin-bottom: 0;
 }
 

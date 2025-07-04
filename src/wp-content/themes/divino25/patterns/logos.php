@@ -1,3 +1,4 @@
+<!-- logos.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Logos

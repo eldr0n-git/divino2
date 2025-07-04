@@ -1,10 +1,10 @@
 <?php
 /**
- * Astra functions and definitions
+ * divino functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Astra
+ * @package divino
  * @since 1.0.0
  */
 
@@ -16,14 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Define Constants
  */
 define( 'divino_THEME_VERSION', '4.11.5' );
-define( 'divino_THEME_SETTINGS', 'astra-settings' );
+define( 'divino_THEME_SETTINGS', 'divino-settings' );
 define( 'divino_THEME_DIR', trailingslashit( get_template_directory() ) );
 define( 'divino_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 define( 'divino_THEME_ORG_VERSION', file_exists( divino_THEME_DIR . 'inc/w-org-version.php' ) );
 
 /**
- * Minimum Version requirement of the Astra Pro addon.
- * This constant will be used to display the notice asking user to update the Astra addon to the version defined below.
+ * Minimum Version requirement of the divino Pro addon.
+ * This constant will be used to display the notice asking user to update the divino addon to the version defined below.
  */
 define( 'divino_EXT_MIN_VER', '4.11.1' );
 
@@ -35,64 +35,64 @@ if ( divino_THEME_ORG_VERSION ) {
 }
 
 /**
- * Setup helper functions of Astra.
+ * Setup helper functions of divino.
  */
-require_once divino_THEME_DIR . 'inc/core/class-astra-theme-options.php';
+require_once divino_THEME_DIR . 'inc/core/class-divino-theme-options.php';
 require_once divino_THEME_DIR . 'inc/core/class-theme-strings.php';
 require_once divino_THEME_DIR . 'inc/core/common-functions.php';
-require_once divino_THEME_DIR . 'inc/core/class-astra-icons.php';
+require_once divino_THEME_DIR . 'inc/core/class-divino-icons.php';
 
-define( 'divino_WEBSITE_BASE_URL', 'https://wpastra.com' );
+define( 'divino_WEBSITE_BASE_URL', 'https://divino.kz' );
 
 /**
  * ToDo: Deprecate constants in future versions as they are no longer used in the codebase.
  */
-define( 'divino_PRO_UPGRADE_URL', divino_THEME_ORG_VERSION ? divino_get_pro_url( '/pricing/', 'free-theme', 'dashboard', 'upgrade' ) : 'https://woocommerce.com/products/astra-pro/' );
-define( 'divino_PRO_CUSTOMIZER_UPGRADE_URL', divino_THEME_ORG_VERSION ? divino_get_pro_url( '/pricing/', 'free-theme', 'customizer', 'upgrade' ) : 'https://woocommerce.com/products/astra-pro/' );
+define( 'divino_PRO_UPGRADE_URL', divino_THEME_ORG_VERSION ? divino_get_pro_url( '/pricing/', 'free-theme', 'dashboard', 'upgrade' ) : 'https://woocommerce.com/products/divino-pro/' );
+define( 'divino_PRO_CUSTOMIZER_UPGRADE_URL', divino_THEME_ORG_VERSION ? divino_get_pro_url( '/pricing/', 'free-theme', 'customizer', 'upgrade' ) : 'https://woocommerce.com/products/divino-pro/' );
 
 /**
  * Update theme
  */
-require_once divino_THEME_DIR . 'inc/theme-update/astra-update-functions.php';
-require_once divino_THEME_DIR . 'inc/theme-update/class-astra-theme-background-updater.php';
+require_once divino_THEME_DIR . 'inc/theme-update/divino-update-functions.php';
+require_once divino_THEME_DIR . 'inc/theme-update/class-divino-theme-background-updater.php';
 
 /**
  * Fonts Files
  */
-require_once divino_THEME_DIR . 'inc/customizer/class-astra-font-families.php';
+require_once divino_THEME_DIR . 'inc/customizer/class-divino-font-families.php';
 if ( is_admin() ) {
-	require_once divino_THEME_DIR . 'inc/customizer/class-astra-fonts-data.php';
+	require_once divino_THEME_DIR . 'inc/customizer/class-divino-fonts-data.php';
 }
 
-require_once divino_THEME_DIR . 'inc/lib/webfont/class-astra-webfont-loader.php';
-require_once divino_THEME_DIR . 'inc/lib/docs/class-astra-docs-loader.php';
-require_once divino_THEME_DIR . 'inc/customizer/class-astra-fonts.php';
+require_once divino_THEME_DIR . 'inc/lib/webfont/class-divino-webfont-loader.php';
+require_once divino_THEME_DIR . 'inc/lib/docs/class-divino-docs-loader.php';
+require_once divino_THEME_DIR . 'inc/customizer/class-divino-fonts.php';
 
 require_once divino_THEME_DIR . 'inc/dynamic-css/custom-menu-old-header.php';
 require_once divino_THEME_DIR . 'inc/dynamic-css/container-layouts.php';
-require_once divino_THEME_DIR . 'inc/dynamic-css/astra-icons.php';
-require_once divino_THEME_DIR . 'inc/core/class-astra-walker-page.php';
-require_once divino_THEME_DIR . 'inc/core/class-astra-enqueue-scripts.php';
+require_once divino_THEME_DIR . 'inc/dynamic-css/divino-icons.php';
+require_once divino_THEME_DIR . 'inc/core/class-divino-walker-page.php';
+require_once divino_THEME_DIR . 'inc/core/class-divino-enqueue-scripts.php';
 require_once divino_THEME_DIR . 'inc/core/class-gutenberg-editor-css.php';
-require_once divino_THEME_DIR . 'inc/core/class-astra-wp-editor-css.php';
+require_once divino_THEME_DIR . 'inc/core/class-divino-wp-editor-css.php';
 require_once divino_THEME_DIR . 'inc/dynamic-css/block-editor-compatibility.php';
 require_once divino_THEME_DIR . 'inc/dynamic-css/inline-on-mobile.php';
 require_once divino_THEME_DIR . 'inc/dynamic-css/content-background.php';
 require_once divino_THEME_DIR . 'inc/dynamic-css/dark-mode.php';
-require_once divino_THEME_DIR . 'inc/class-astra-dynamic-css.php';
-require_once divino_THEME_DIR . 'inc/class-astra-global-palette.php';
+require_once divino_THEME_DIR . 'inc/class-divino-dynamic-css.php';
+require_once divino_THEME_DIR . 'inc/class-divino-global-palette.php';
 
 // Enable NPS Survey only if the starter templates version is < 4.3.7 or > 4.4.4 to prevent fatal error.
 if ( ! defined( 'divino_SITES_VER' ) || version_compare( divino_SITES_VER, '4.3.7', '<' ) || version_compare( divino_SITES_VER, '4.4.4', '>' ) ) {
 	// NPS Survey Integration
-	require_once divino_THEME_DIR . 'inc/lib/class-astra-nps-notice.php';
-	require_once divino_THEME_DIR . 'inc/lib/class-astra-nps-survey.php';
+	require_once divino_THEME_DIR . 'inc/lib/class-divino-nps-notice.php';
+	require_once divino_THEME_DIR . 'inc/lib/class-divino-nps-survey.php';
 }
 
 /**
  * Custom template tags for this theme.
  */
-require_once divino_THEME_DIR . 'inc/core/class-astra-attr.php';
+require_once divino_THEME_DIR . 'inc/core/class-divino-attr.php';
 require_once divino_THEME_DIR . 'inc/template-tags.php';
 
 require_once divino_THEME_DIR . 'inc/widgets.php';
@@ -113,90 +113,90 @@ require_once divino_THEME_DIR . 'inc/blog/single-blog.php';
  * Markup Files
  */
 require_once divino_THEME_DIR . 'inc/template-parts.php';
-require_once divino_THEME_DIR . 'inc/class-astra-loop.php';
-require_once divino_THEME_DIR . 'inc/class-astra-mobile-header.php';
+require_once divino_THEME_DIR . 'inc/class-divino-loop.php';
+require_once divino_THEME_DIR . 'inc/class-divino-mobile-header.php';
 
 /**
  * Functions and definitions.
  */
-require_once divino_THEME_DIR . 'inc/class-astra-after-setup-theme.php';
+require_once divino_THEME_DIR . 'inc/class-divino-after-setup-theme.php';
 
 // Required files.
-require_once divino_THEME_DIR . 'inc/core/class-astra-admin-helper.php';
+require_once divino_THEME_DIR . 'inc/core/class-divino-admin-helper.php';
 
-require_once divino_THEME_DIR . 'inc/schema/class-astra-schema.php';
+require_once divino_THEME_DIR . 'inc/schema/class-divino-schema.php';
 
 /* Setup API */
-require_once divino_THEME_DIR . 'admin/includes/class-astra-api-init.php';
+require_once divino_THEME_DIR . 'admin/includes/class-divino-api-init.php';
 
 if ( is_admin() ) {
 	/**
 	 * Admin Menu Settings
 	 */
-	require_once divino_THEME_DIR . 'inc/core/class-astra-admin-settings.php';
-	require_once divino_THEME_DIR . 'admin/class-astra-admin-loader.php';
-	require_once divino_THEME_DIR . 'inc/lib/astra-notices/class-astra-notices.php';
+	require_once divino_THEME_DIR . 'inc/core/class-divino-admin-settings.php';
+	require_once divino_THEME_DIR . 'admin/class-divino-admin-loader.php';
+	require_once divino_THEME_DIR . 'inc/lib/divino-notices/class-divino-notices.php';
 }
 
 /**
  * Metabox additions.
  */
-require_once divino_THEME_DIR . 'inc/metabox/class-astra-meta-boxes.php';
-require_once divino_THEME_DIR . 'inc/metabox/class-astra-meta-box-operations.php';
-require_once divino_THEME_DIR . 'inc/metabox/class-astra-elementor-editor-settings.php';
+require_once divino_THEME_DIR . 'inc/metabox/class-divino-meta-boxes.php';
+require_once divino_THEME_DIR . 'inc/metabox/class-divino-meta-box-operations.php';
+require_once divino_THEME_DIR . 'inc/metabox/class-divino-elementor-editor-settings.php';
 
 /**
  * Customizer additions.
  */
-require_once divino_THEME_DIR . 'inc/customizer/class-astra-customizer.php';
+require_once divino_THEME_DIR . 'inc/customizer/class-divino-customizer.php';
 
 /**
- * Astra Modules.
+ * divino Modules.
  */
-require_once divino_THEME_DIR . 'inc/modules/posts-structures/class-astra-post-structures.php';
-require_once divino_THEME_DIR . 'inc/modules/related-posts/class-astra-related-posts.php';
+require_once divino_THEME_DIR . 'inc/modules/posts-structures/class-divino-post-structures.php';
+require_once divino_THEME_DIR . 'inc/modules/related-posts/class-divino-related-posts.php';
 
 /**
  * Compatibility
  */
-require_once divino_THEME_DIR . 'inc/compatibility/class-astra-gutenberg.php';
-require_once divino_THEME_DIR . 'inc/compatibility/class-astra-jetpack.php';
-require_once divino_THEME_DIR . 'inc/compatibility/woocommerce/class-astra-woocommerce.php';
-require_once divino_THEME_DIR . 'inc/compatibility/edd/class-astra-edd.php';
-require_once divino_THEME_DIR . 'inc/compatibility/lifterlms/class-astra-lifterlms.php';
-require_once divino_THEME_DIR . 'inc/compatibility/learndash/class-astra-learndash.php';
-require_once divino_THEME_DIR . 'inc/compatibility/class-astra-beaver-builder.php';
-require_once divino_THEME_DIR . 'inc/compatibility/class-astra-bb-ultimate-addon.php';
-require_once divino_THEME_DIR . 'inc/compatibility/class-astra-contact-form-7.php';
-require_once divino_THEME_DIR . 'inc/compatibility/class-astra-visual-composer.php';
-require_once divino_THEME_DIR . 'inc/compatibility/class-astra-site-origin.php';
-require_once divino_THEME_DIR . 'inc/compatibility/class-astra-gravity-forms.php';
-require_once divino_THEME_DIR . 'inc/compatibility/class-astra-bne-flyout.php';
-require_once divino_THEME_DIR . 'inc/compatibility/class-astra-ubermeu.php';
-require_once divino_THEME_DIR . 'inc/compatibility/class-astra-divi-builder.php';
-require_once divino_THEME_DIR . 'inc/compatibility/class-astra-amp.php';
-require_once divino_THEME_DIR . 'inc/compatibility/class-astra-yoast-seo.php';
-require_once divino_THEME_DIR . 'inc/compatibility/surecart/class-astra-surecart.php';
-require_once divino_THEME_DIR . 'inc/compatibility/class-astra-starter-content.php';
-require_once divino_THEME_DIR . 'inc/addons/transparent-header/class-astra-ext-transparent-header.php';
-require_once divino_THEME_DIR . 'inc/addons/breadcrumbs/class-astra-breadcrumbs.php';
-require_once divino_THEME_DIR . 'inc/addons/scroll-to-top/class-astra-scroll-to-top.php';
-require_once divino_THEME_DIR . 'inc/addons/heading-colors/class-astra-heading-colors.php';
-require_once divino_THEME_DIR . 'inc/builder/class-astra-builder-loader.php';
+require_once divino_THEME_DIR . 'inc/compatibility/class-divino-gutenberg.php';
+require_once divino_THEME_DIR . 'inc/compatibility/class-divino-jetpack.php';
+require_once divino_THEME_DIR . 'inc/compatibility/woocommerce/class-divino-woocommerce.php';
+require_once divino_THEME_DIR . 'inc/compatibility/edd/class-divino-edd.php';
+require_once divino_THEME_DIR . 'inc/compatibility/lifterlms/class-divino-lifterlms.php';
+require_once divino_THEME_DIR . 'inc/compatibility/learndash/class-divino-learndash.php';
+require_once divino_THEME_DIR . 'inc/compatibility/class-divino-beaver-builder.php';
+require_once divino_THEME_DIR . 'inc/compatibility/class-divino-bb-ultimate-addon.php';
+require_once divino_THEME_DIR . 'inc/compatibility/class-divino-contact-form-7.php';
+require_once divino_THEME_DIR . 'inc/compatibility/class-divino-visual-composer.php';
+require_once divino_THEME_DIR . 'inc/compatibility/class-divino-site-origin.php';
+require_once divino_THEME_DIR . 'inc/compatibility/class-divino-gravity-forms.php';
+require_once divino_THEME_DIR . 'inc/compatibility/class-divino-bne-flyout.php';
+require_once divino_THEME_DIR . 'inc/compatibility/class-divino-ubermeu.php';
+require_once divino_THEME_DIR . 'inc/compatibility/class-divino-divi-builder.php';
+require_once divino_THEME_DIR . 'inc/compatibility/class-divino-amp.php';
+require_once divino_THEME_DIR . 'inc/compatibility/class-divino-yoast-seo.php';
+require_once divino_THEME_DIR . 'inc/compatibility/surecart/class-divino-surecart.php';
+require_once divino_THEME_DIR . 'inc/compatibility/class-divino-starter-content.php';
+require_once divino_THEME_DIR . 'inc/addons/transparent-header/class-divino-ext-transparent-header.php';
+require_once divino_THEME_DIR . 'inc/addons/breadcrumbs/class-divino-breadcrumbs.php';
+require_once divino_THEME_DIR . 'inc/addons/scroll-to-top/class-divino-scroll-to-top.php';
+require_once divino_THEME_DIR . 'inc/addons/heading-colors/class-divino-heading-colors.php';
+require_once divino_THEME_DIR . 'inc/builder/class-divino-builder-loader.php';
 
 // Elementor Compatibility requires PHP 5.4 for namespaces.
 if ( version_compare( PHP_VERSION, '5.4', '>=' ) ) {
-	require_once divino_THEME_DIR . 'inc/compatibility/class-astra-elementor.php';
-	require_once divino_THEME_DIR . 'inc/compatibility/class-astra-elementor-pro.php';
-	require_once divino_THEME_DIR . 'inc/compatibility/class-astra-web-stories.php';
+	require_once divino_THEME_DIR . 'inc/compatibility/class-divino-elementor.php';
+	require_once divino_THEME_DIR . 'inc/compatibility/class-divino-elementor-pro.php';
+	require_once divino_THEME_DIR . 'inc/compatibility/class-divino-web-stories.php';
 }
 
 // Beaver Themer compatibility requires PHP 5.3 for anonymous functions.
 if ( version_compare( PHP_VERSION, '5.3', '>=' ) ) {
-	require_once divino_THEME_DIR . 'inc/compatibility/class-astra-beaver-themer.php';
+	require_once divino_THEME_DIR . 'inc/compatibility/class-divino-beaver-themer.php';
 }
 
-require_once divino_THEME_DIR . 'inc/core/markup/class-astra-markup.php';
+require_once divino_THEME_DIR . 'inc/core/markup/class-divino-markup.php';
 
 /**
  * Load deprecated functions

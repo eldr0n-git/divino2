@@ -4,13 +4,13 @@
  * here. Your javascript should grab settings from customizer controls, and
  * then make any necessary changes to the page using jQuery.
  *
- * @package Astra HF Builder.
+ * @package divino HF Builder.
  * @since 3.0.0
  */
 
 ( function( $ ) {
 
-    wp.customize( 'astra-settings[different-mobile-logo]', function ( value ) {
+    wp.customize( 'divino-settings[different-mobile-logo]', function ( value ) {
         value.bind( function ( newval ) {
 
 			if ( '1' == newval ) {
@@ -22,7 +22,7 @@
 	} );
 
 	// Margin.
-    wp.customize( 'astra-settings[title_tagline-margin]', function( value ) {
+    wp.customize( 'divino-settings[title_tagline-margin]', function( value ) {
 		value.bind( function( margin ) {
 			if(
 				margin.desktop.bottom != '' || margin.desktop.top != '' || margin.desktop.left != '' || margin.desktop.right != '' ||
@@ -31,8 +31,8 @@
             ) {
                 var dynamicStyle = '',
                     selector = '.ast-builder-layout-element .ast-site-identity',
-                    tablet_break_point    = astraBuilderPreview.tablet_break_point || 768,
-                    mobile_break_point    = astraBuilderPreview.mobile_break_point || 544;
+                    tablet_break_point    = divinoBuilderPreview.tablet_break_point || 768,
+                    mobile_break_point    = divinoBuilderPreview.mobile_break_point || 544;
 
                 dynamicStyle += selector + ' {';
                 dynamicStyle += 'margin-left: ' + margin['desktop']['left'] + margin['desktop-unit'] + ';';

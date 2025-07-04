@@ -2,7 +2,7 @@
 /**
  * Lifter LMS Compatibility File.
  *
- * @package Astra
+ * @package divino
  * @since 1.2.0
  */
 
@@ -12,12 +12,12 @@ if ( ! class_exists( 'LifterLMS' ) ) {
 }
 
 /**
- * Astra Lifter LMS Compatibility
+ * divino Lifter LMS Compatibility
  */
 if ( ! class_exists( 'divino_LifterLMS' ) ) {
 
 	/**
-	 * Astra Lifter LMS Compatibility
+	 * divino Lifter LMS Compatibility
 	 *
 	 * @since 1.2.0
 	 */
@@ -173,14 +173,14 @@ if ( ! class_exists( 'divino_LifterLMS' ) ) {
 			/**
 			 * Register Sections & Panels
 			 */
-			require divino_THEME_DIR . 'inc/compatibility/lifterlms/customizer/class-astra-liferlms-section-configs.php';
+			require divino_THEME_DIR . 'inc/compatibility/lifterlms/customizer/class-divino-liferlms-section-configs.php';
 
 			/**
 			 * Sections
 			 */
-			require divino_THEME_DIR . 'inc/compatibility/lifterlms/customizer/sections/class-astra-lifter-container-configs.php';
-			require divino_THEME_DIR . 'inc/compatibility/lifterlms/customizer/sections/class-astra-lifter-sidebar-configs.php';
-			require divino_THEME_DIR . 'inc/compatibility/lifterlms/customizer/sections/layout/class-astra-lifter-general-configs.php';
+			require divino_THEME_DIR . 'inc/compatibility/lifterlms/customizer/sections/class-divino-lifter-container-configs.php';
+			require divino_THEME_DIR . 'inc/compatibility/lifterlms/customizer/sections/class-divino-lifter-sidebar-configs.php';
+			require divino_THEME_DIR . 'inc/compatibility/lifterlms/customizer/sections/layout/class-divino-lifter-general-configs.php';
 			// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 		}
 
@@ -231,7 +231,7 @@ if ( ! class_exists( 'divino_LifterLMS' ) ) {
 			if ( get_post_meta( get_the_ID(), '_llms_display_reviews', true ) ) {
 				?>
 				<div id="old_reviews">
-				<h3><?php echo apply_filters( 'lifterlms_reviews_section_title', _e( 'What Others Have Said', 'astra' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound ?></h3>
+				<h3><?php echo apply_filters( 'lifterlms_reviews_section_title', _e( 'What Others Have Said', 'divino' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound ?></h3>
 				<?php
 				$args = array(
 					'posts_per_page'   => get_post_meta( get_the_ID(), '_llms_num_reviews', true ), // phpcs:ignore WPThemeReview.CoreFunctionality.PostsPerPage.posts_per_page_posts_per_page, WordPress.WP.PostsPerPage.posts_per_page_posts_per_page
@@ -262,7 +262,7 @@ if ( ! class_exists( 'divino_LifterLMS' ) ) {
 					<div class="llms_review" style="background-color:<?php echo esc_attr( $styles['background-color'] ); ?>;">
 						<h5 style="color:<?php echo esc_attr( $styles['title-color'] ); ?>;"><strong><?php echo esc_html( get_the_title( $post->ID ) ); ?></strong></h5>
 						<?php /* translators: 1 Author Name. */ ?>
-						<h6 style="color:<?php echo esc_attr( $styles['text-color'] ); ?>;"><?php echo esc_html( sprintf( __( 'By: %s', 'astra' ), get_the_author_meta( 'display_name', get_post_field( 'post_author', $post->ID ) ) ) ); ?></h6>
+						<h6 style="color:<?php echo esc_attr( $styles['text-color'] ); ?>;"><?php echo esc_html( sprintf( __( 'By: %s', 'divino' ), get_the_author_meta( 'display_name', get_post_field( 'post_author', $post->ID ) ) ) ); ?></h6>
 						<p style="color:<?php echo esc_attr( $styles['text-color'] ); ?>;"><?php echo get_post_field( 'post_content', $post->ID ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 					</div>
 					<?php
@@ -299,25 +299,25 @@ if ( ! class_exists( 'divino_LifterLMS' ) ) {
 				if ( get_post_meta( get_the_ID(), '_llms_multiple_reviews_disabled', true ) && $posts_array ) {
 					?>
 					<div id="thank_you_box">
-						<h2><?php echo apply_filters( 'llms_review_thank_you_text', __( 'Thank you for your review!', 'astra' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound ?></h2>
+						<h2><?php echo apply_filters( 'llms_review_thank_you_text', __( 'Thank you for your review!', 'divino' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound ?></h2>
 					</div>
 					<?php
 				} else {
 					$post_id = absint( get_the_ID() );
 					?>
 					<div class="review_box" id="review_box">
-					<h3><?php esc_html_e( 'Write a Review', 'astra' ); ?></h3>
-						<input type="text" name="review_title" placeholder="<?php esc_attr_e( 'Review Title', 'astra' ); ?>" id="review_title">
-						<h5 style="color:red; display:none" id="review_title_error"><?php esc_html_e( 'Review Title is required.', 'astra' ); ?></h5>
-						<textarea name="review_text" placeholder="<?php esc_attr_e( 'Review Text', 'astra' ); ?>" id="review_text"></textarea>
-						<h5 style="color:red; display:none" id="review_text_error"><?php esc_html_e( 'Review Text is required.', 'astra' ); ?></h5>
+					<h3><?php esc_html_e( 'Write a Review', 'divino' ); ?></h3>
+						<input type="text" name="review_title" placeholder="<?php esc_attr_e( 'Review Title', 'divino' ); ?>" id="review_title">
+						<h5 style="color:red; display:none" id="review_title_error"><?php esc_html_e( 'Review Title is required.', 'divino' ); ?></h5>
+						<textarea name="review_text" placeholder="<?php esc_attr_e( 'Review Text', 'divino' ); ?>" id="review_text"></textarea>
+						<h5 style="color:red; display:none" id="review_text_error"><?php esc_html_e( 'Review Text is required.', 'divino' ); ?></h5>
 						<?php wp_nonce_field( 'submit_review', 'submit_review_nonce_code' ); ?>
 						<input name="action" value="submit_review" type="hidden">
 						<input name="post_ID" value="<?php /** @psalm-suppress InvalidScalarArgument */ echo esc_attr( $post_id ); ?>" type="hidden" id="post_ID">
-						<input type="submit" class="button" value="<?php esc_attr_e( 'Leave Review', 'astra' ); ?>" id="llms_review_submit_button">
+						<input type="submit" class="button" value="<?php esc_attr_e( 'Leave Review', 'divino' ); ?>" id="llms_review_submit_button">
 					</div>
 					<div id="thank_you_box" style="display:none;">
-						<h2><?php echo apply_filters( 'llms_review_thank_you_text', __( 'Thank you for your review!', 'astra' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound ?></h2>
+						<h2><?php echo apply_filters( 'llms_review_thank_you_text', __( 'Thank you for your review!', 'divino' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped, WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound ?></h2>
 					</div>
 					<?php
 				}
@@ -603,7 +603,7 @@ if ( ! class_exists( 'divino_LifterLMS' ) ) {
 		 * @return array List of updated assets.
 		 */
 		public function add_styles( $assets ) {
-			$assets['css']['astra-lifterlms'] = ! divino_Builder_Helper::apply_flex_based_css() ? 'compatibility/lifterlms' : 'compatibility/lifterlms-flex';
+			$assets['css']['divino-lifterlms'] = ! divino_Builder_Helper::apply_flex_based_css() ? 'compatibility/lifterlms' : 'compatibility/lifterlms-flex';
 			return $assets;
 		}
 
@@ -743,7 +743,7 @@ if ( ! class_exists( 'divino_LifterLMS' ) ) {
 			$disable_fields[] = array(
 				'attribute' => 'ast-main-header-display',
 				'id'        => 'ast-main-header-display',
-				'label'     => esc_html__( 'Disable Primary Header', 'astra' ),
+				'label'     => esc_html__( 'Disable Primary Header', 'divino' ),
 				'switch_on' => 'disabled',
 				'type'      => 'switch',
 			);
@@ -753,7 +753,7 @@ if ( ! class_exists( 'divino_LifterLMS' ) ) {
 			$disable_fields[] = array(
 				'attribute' => 'ast-hfb-above-header-display',
 				'id'        => 'ast-hfb-above-header-display',
-				'label'     => esc_html__( 'Disable Above Header', 'astra' ),
+				'label'     => esc_html__( 'Disable Above Header', 'divino' ),
 				'switch_on' => 'disabled',
 				'type'      => 'switch',
 			);
@@ -763,7 +763,7 @@ if ( ! class_exists( 'divino_LifterLMS' ) ) {
 			$disable_fields[] = array(
 				'attribute' => 'ast-hfb-below-header-display',
 				'id'        => 'ast-hfb-below-header-display',
-				'label'     => esc_html__( 'Disable Below Header', 'astra' ),
+				'label'     => esc_html__( 'Disable Below Header', 'divino' ),
 				'switch_on' => 'disabled',
 				'type'      => 'switch',
 			);
@@ -773,7 +773,7 @@ if ( ! class_exists( 'divino_LifterLMS' ) ) {
 			$disable_fields[] = array(
 				'attribute' => 'ast-hfb-mobile-header-display',
 				'id'        => 'ast-hfb-mobile-header-display',
-				'label'     => esc_html__( 'Disable Mobile Header', 'astra' ),
+				'label'     => esc_html__( 'Disable Mobile Header', 'divino' ),
 				'switch_on' => 'disabled',
 				'type'      => 'switch',
 			);
@@ -781,7 +781,7 @@ if ( ! class_exists( 'divino_LifterLMS' ) ) {
 				$disable_fields[] = array(
 					'attribute' => 'site-post-title',
 					'id'        => 'site-post-title',
-					'label'     => esc_html__( 'Disable Title', 'astra' ),
+					'label'     => esc_html__( 'Disable Title', 'divino' ),
 					'switch_on' => 'disabled',
 					'type'      => 'switch',
 				);
@@ -790,7 +790,7 @@ if ( ! class_exists( 'divino_LifterLMS' ) ) {
 				$disable_fields[] = array(
 					'attribute' => 'footer-adv-display',
 					'id'        => 'footer-adv-display',
-					'label'     => esc_html__( 'Disable Footer Widgets', 'astra' ),
+					'label'     => esc_html__( 'Disable Footer Widgets', 'divino' ),
 					'switch_on' => 'disabled',
 					'type'      => 'switch',
 				);
@@ -799,7 +799,7 @@ if ( ! class_exists( 'divino_LifterLMS' ) ) {
 				$disable_fields[] = array(
 					'attribute' => 'footer-sml-layout',
 					'id'        => 'footer-sml-layout',
-					'label'     => esc_html__( 'Disable Footer', 'astra' ),
+					'label'     => esc_html__( 'Disable Footer', 'divino' ),
 					'switch_on' => 'disabled',
 					'type'      => 'switch',
 				);
@@ -807,7 +807,7 @@ if ( ! class_exists( 'divino_LifterLMS' ) ) {
 
 			$fields                         = array();
 			$fields['divino_theme_settings'] = array(
-				'title'      => __( 'Astra Settings', 'astra' ),
+				'title'      => __( 'divino Settings', 'divino' ),
 				'toggleable' => true,
 				'fields'     => apply_filters(
 					'divino_theme_lifterlms_settings',
@@ -816,26 +816,26 @@ if ( ! class_exists( 'divino_LifterLMS' ) ) {
 							array(
 								'attribute' => 'site-sidebar-layout',
 								'id'        => 'site-sidebar-layout',
-								'label'     => esc_html__( 'Sidebar', 'astra' ),
+								'label'     => esc_html__( 'Sidebar', 'divino' ),
 								'type'      => 'ast-select',
 								'options'   => array(
-									'default'       => esc_html__( 'Customizer Setting', 'astra' ),
-									'left-sidebar'  => esc_html__( 'Left Sidebar', 'astra' ),
-									'right-sidebar' => esc_html__( 'Right Sidebar', 'astra' ),
-									'no-sidebar'    => esc_html__( 'No Sidebar', 'astra' ),
+									'default'       => esc_html__( 'Customizer Setting', 'divino' ),
+									'left-sidebar'  => esc_html__( 'Left Sidebar', 'divino' ),
+									'right-sidebar' => esc_html__( 'Right Sidebar', 'divino' ),
+									'no-sidebar'    => esc_html__( 'No Sidebar', 'divino' ),
 								),
 							),
 							array(
 								'attribute' => 'site-content-layout',
 								'id'        => 'site-content-layout',
-								'label'     => esc_html__( 'Content Layout', 'astra' ),
+								'label'     => esc_html__( 'Content Layout', 'divino' ),
 								'type'      => 'ast-select',
 								'options'   => array(
-									'default'         => esc_html__( 'Customizer Setting', 'astra' ),
-									'boxed-container' => esc_html__( 'Boxed', 'astra' ),
-									'content-boxed-container' => esc_html__( 'Content Boxed', 'astra' ),
-									'plain-container' => esc_html__( 'Full Width / Contained', 'astra' ),
-									'page-builder'    => esc_html__( 'Full Width / Stretched', 'astra' ),
+									'default'         => esc_html__( 'Customizer Setting', 'divino' ),
+									'boxed-container' => esc_html__( 'Boxed', 'divino' ),
+									'content-boxed-container' => esc_html__( 'Content Boxed', 'divino' ),
+									'plain-container' => esc_html__( 'Full Width / Contained', 'divino' ),
+									'page-builder'    => esc_html__( 'Full Width / Stretched', 'divino' ),
 								),
 							),
 						),

@@ -1,3 +1,4 @@
+<!-- comments.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Comments

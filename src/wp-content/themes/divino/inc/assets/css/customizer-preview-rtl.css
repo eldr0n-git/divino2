@@ -67,7 +67,7 @@ body.customize-partial-edit-shortcuts-shown .customize-partial-edit-shortcut but
     opacity: 1;
 }
 
-.customize-partial-edit-shortcut-astra-settings-disable-primary-nav, .customize-partial-edit-shortcut-custom_logo {
+.customize-partial-edit-shortcut-divino-settings-disable-primary-nav, .customize-partial-edit-shortcut-custom_logo {
     display: none;
 }
 
@@ -121,24 +121,24 @@ body.customize-partial-edit-shortcuts-shown .customize-partial-edit-shortcut but
 /**
  * Customizer Edit pencil - Set Position
  */
- .customize-partial-edit-shortcut-blogname button.customize-partial-edit-shortcut-button, .customize-partial-edit-shortcut-blogdescription button.customize-partial-edit-shortcut-button, .customize-partial-edit-shortcut-astra-settings-display-site-title-responsive button.customize-partial-edit-shortcut-button, .customize-partial-edit-shortcut-astra-settings-display-site-tagline-responsive button.customize-partial-edit-shortcut-button, .customize-partial-edit-shortcut-custom_logo button.customize-partial-edit-shortcut-button, .customize-partial-edit-shortcut-astra-settings-disable-primary-nav button.customize-partial-edit-shortcut-button, .ast-related-posts-title .customize-partial-edit-shortcut-button {
+ .customize-partial-edit-shortcut-blogname button.customize-partial-edit-shortcut-button, .customize-partial-edit-shortcut-blogdescription button.customize-partial-edit-shortcut-button, .customize-partial-edit-shortcut-divino-settings-display-site-title-responsive button.customize-partial-edit-shortcut-button, .customize-partial-edit-shortcut-divino-settings-display-site-tagline-responsive button.customize-partial-edit-shortcut-button, .customize-partial-edit-shortcut-custom_logo button.customize-partial-edit-shortcut-button, .customize-partial-edit-shortcut-divino-settings-disable-primary-nav button.customize-partial-edit-shortcut-button, .ast-related-posts-title .customize-partial-edit-shortcut-button {
 	display: none;
 }
-.ast-site-title-wrap:hover .customize-partial-edit-shortcut-blogname button.customize-partial-edit-shortcut-button, .ast-site-title-wrap:hover .customize-partial-edit-shortcut-blogdescription button.customize-partial-edit-shortcut-button, .site-logo-img:hover .customize-partial-edit-shortcut-custom_logo button.customize-partial-edit-shortcut-button, .main-navigation:hover .customize-partial-edit-shortcut-astra-settings-disable-primary-nav button.customize-partial-edit-shortcut-button, .ast-related-posts-title:hover .customize-partial-edit-shortcut-button {
+.ast-site-title-wrap:hover .customize-partial-edit-shortcut-blogname button.customize-partial-edit-shortcut-button, .ast-site-title-wrap:hover .customize-partial-edit-shortcut-blogdescription button.customize-partial-edit-shortcut-button, .site-logo-img:hover .customize-partial-edit-shortcut-custom_logo button.customize-partial-edit-shortcut-button, .main-navigation:hover .customize-partial-edit-shortcut-divino-settings-disable-primary-nav button.customize-partial-edit-shortcut-button, .ast-related-posts-title:hover .customize-partial-edit-shortcut-button {
 	display: inline-block;
 }
 
 /* Sticky Header CSS */
-.ast-primary-sticky-header-active .customize-partial-edit-shortcut-astra-settings-header-main-stick .customize-partial-edit-shortcut-button {
+.ast-primary-sticky-header-active .customize-partial-edit-shortcut-divino-settings-header-main-stick .customize-partial-edit-shortcut-button {
     right: 100px;
 }
 
-.ast-primary-sticky-header-active.ast-full-width-header .customize-partial-edit-shortcut-astra-settings-header-main-stick .customize-partial-edit-shortcut-button {
+.ast-primary-sticky-header-active.ast-full-width-header .customize-partial-edit-shortcut-divino-settings-header-main-stick .customize-partial-edit-shortcut-button {
     right: 5px;
 }
 
 /* Primary Header common CSS */
-.customize-partial-edit-shortcut-astra-settings-disable-primary-nav .customize-partial-edit-shortcut-button {
+.customize-partial-edit-shortcut-divino-settings-disable-primary-nav .customize-partial-edit-shortcut-button {
 	top: 15px;
 }
 
@@ -147,14 +147,14 @@ body.customize-partial-edit-shortcuts-shown .customize-partial-edit-shortcut but
 	top: 0.3em;
 }
 
-.customize-partial-edit-shortcut-astra-settings-above-header-layout .customize-partial-edit-shortcut-button,
-.customize-partial-edit-shortcut-astra-settings-below-header-layout .customize-partial-edit-shortcut-button {
+.customize-partial-edit-shortcut-divino-settings-above-header-layout .customize-partial-edit-shortcut-button,
+.customize-partial-edit-shortcut-divino-settings-below-header-layout .customize-partial-edit-shortcut-button {
   right: -60px;
 }
 
-.customize-partial-edit-shortcut-astra-settings-header-desktop-items,
-.customize-partial-edit-shortcut-astra-settings-header-mobile-items,
-.customize-partial-edit-shortcut-astra-settings-header-mobile-popup-items {
+.customize-partial-edit-shortcut-divino-settings-header-desktop-items,
+.customize-partial-edit-shortcut-divino-settings-header-mobile-items,
+.customize-partial-edit-shortcut-divino-settings-header-mobile-popup-items {
 	display: none;
 }
 
@@ -170,7 +170,7 @@ body.customize-partial-edit-shortcuts-shown .customize-partial-edit-shortcut but
 }
 
 /*Hiding footer builder pencil icon as we converted section into builder layout, so no longer this needed.*/
-.customize-partial-edit-shortcut-astra-settings-footer-desktop-items > button.customize-partial-edit-shortcut-button {
+.customize-partial-edit-shortcut-divino-settings-footer-desktop-items > button.customize-partial-edit-shortcut-button {
 	display: none;
 }
 

@@ -1,9 +1,9 @@
 <?php
 /**
- * Styling Options for Astra Theme.
+ * Styling Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       1.4.3
  */
 
@@ -20,10 +20,10 @@ if ( ! class_exists( 'divino_Footer_Colors_Configs' ) ) {
 		/**
 		 * Register Footer Color Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 			$_configs = array(
@@ -38,7 +38,7 @@ if ( ! class_exists( 'divino_Footer_Colors_Configs' ) ) {
 					'parent'   => divino_THEME_SETTINGS . '[footer-bar-content-group]',
 					'section'  => 'section-footer-small',
 					'control'  => 'ast-color',
-					'title'    => __( 'Text Color', 'astra' ),
+					'title'    => __( 'Text Color', 'divino' ),
 					'default'  => divino_get_option( 'footer-color' ),
 				),
 
@@ -53,7 +53,7 @@ if ( ! class_exists( 'divino_Footer_Colors_Configs' ) ) {
 					'section'  => 'section-footer-small',
 					'control'  => 'ast-color',
 					'default'  => divino_get_option( 'footer-link-color' ),
-					'title'    => __( 'Normal', 'astra' ),
+					'title'    => __( 'Normal', 'divino' ),
 				),
 
 				/**
@@ -66,7 +66,7 @@ if ( ! class_exists( 'divino_Footer_Colors_Configs' ) ) {
 					'parent'   => divino_THEME_SETTINGS . '[footer-bar-link-color-group]',
 					'section'  => 'section-footer-small',
 					'control'  => 'ast-color',
-					'title'    => __( 'Hover', 'astra' ),
+					'title'    => __( 'Hover', 'divino' ),
 					'default'  => divino_get_option( 'section-footer-small' ),
 				),
 
@@ -83,7 +83,7 @@ if ( ! class_exists( 'divino_Footer_Colors_Configs' ) ) {
 					'control'           => 'ast-background',
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_background_obj' ),
 					'default'           => divino_get_option( 'footer-bg-obj' ),
-					'label'             => __( 'Background', 'astra' ),
+					'label'             => __( 'Background', 'divino' ),
 				),
 			);
 

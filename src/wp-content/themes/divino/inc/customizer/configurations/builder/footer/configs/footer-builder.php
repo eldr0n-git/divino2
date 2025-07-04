@@ -2,8 +2,8 @@
 /**
  * Footer Builder Configuration.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       4.5.2
  */
 
@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Register builder footer builder Customizer Configurations.
  *
- * @param array $configurations Astra Customizer Configurations.
+ * @param array $configurations divino Customizer Configurations.
  * @since 4.5.2
- * @return array Astra Customizer Configurations with updated configurations.
+ * @return array divino Customizer Configurations with updated configurations.
  */
 function divino_builder_footer_configuration( $configurations = array() ) {
 	$cloned_component_track         = divino_Builder_Helper::$component_count_array;
@@ -135,7 +135,7 @@ function divino_builder_footer_configuration( $configurations = array() ) {
 			'name'     => 'panel-footer-builder-group',
 			'type'     => 'panel',
 			'priority' => 60,
-			'title'    => __( 'Footer', 'astra' ),
+			'title'    => __( 'Footer', 'divino' ),
 		),
 
 		/**
@@ -145,7 +145,7 @@ function divino_builder_footer_configuration( $configurations = array() ) {
 			'name'     => 'section-footer-builder-layout',
 			'type'     => 'section',
 			'priority' => 5,
-			'title'    => __( 'Footer Layout', 'astra' ),
+			'title'    => __( 'Footer Layout', 'divino' ),
 			'panel'    => 'panel-footer-builder-group',
 		),
 
@@ -168,7 +168,7 @@ function divino_builder_footer_configuration( $configurations = array() ) {
 			'name'     => 'section-footer-builder',
 			'type'     => 'section',
 			'priority' => 5,
-			'title'    => __( 'Footer', 'astra' ),
+			'title'    => __( 'Footer', 'divino' ),
 			'panel'    => 'panel-footer-builder-group',
 			'context'  => array(
 				array(
@@ -202,7 +202,7 @@ function divino_builder_footer_configuration( $configurations = array() ) {
 			'section'   => 'section-footer-builder-layout',
 			'transport' => 'postMessage',
 			'priority'  => 70,
-			'title'     => __( 'Background Color-Image', 'astra' ),
+			'title'     => __( 'Background Color-Image', 'divino' ),
 			'context'   => divino_Builder_Helper::$design_tab,
 			'divider'   => array( 'ast_class' => 'ast-section-spacing' ),
 		),
@@ -215,7 +215,7 @@ function divino_builder_footer_configuration( $configurations = array() ) {
 			'section'  => 'section-footer-builder-layout',
 			'priority' => 71,
 			'label'    => '',
-			'help'     => __( 'If this color setting is not reflecting, check if colors are set from dedicated above, below or primary footer settings.', 'astra' ),
+			'help'     => __( 'If this color setting is not reflecting, check if colors are set from dedicated above, below or primary footer settings.', 'divino' ),
 			'context'  => divino_Builder_Helper::$design_tab,
 		),
 
@@ -227,7 +227,7 @@ function divino_builder_footer_configuration( $configurations = array() ) {
 			'section'     => 'section-footer-builder',
 			'type'        => 'control',
 			'control'     => 'ast-builder',
-			'title'       => __( 'Footer Builder', 'astra' ),
+			'title'       => __( 'Footer Builder', 'divino' ),
 			'priority'    => 10,
 			'default'     => divino_get_option( 'footer-desktop-items' ),
 			'choices'     => divino_Builder_Helper::$footer_desktop_items,
@@ -296,26 +296,26 @@ function divino_builder_footer_configuration( $configurations = array() ) {
 			'campaign' => 'footer-builder',
 			'choices'  => array(
 				'two'   => array(
-					'title' => __( 'Divider element', 'astra' ),
+					'title' => __( 'Divider element', 'divino' ),
 				),
 				'three' => array(
-					'title' => __( 'Language Switcher element', 'astra' ),
+					'title' => __( 'Language Switcher element', 'divino' ),
 				),
 				'five'  => array(
-					'title' => __( 'Clone, Delete element options', 'astra' ),
+					'title' => __( 'Clone, Delete element options', 'divino' ),
 				),
 				'six'   => array(
-					'title' => __( 'Increased element count', 'astra' ),
+					'title' => __( 'Increased element count', 'divino' ),
 				),
 				'seven' => array(
-					'title' => __( 'More design options', 'astra' ),
+					'title' => __( 'More design options', 'divino' ),
 				),
 			),
 			'section'  => 'section-footer-builder-layout',
 			'default'  => '',
 			'context'  => array(),
 			'priority' => 999,
-			'title'    => __( 'Finish your page on a high with amazing website footers', 'astra' ),
+			'title'    => __( 'Finish your page on a high with amazing website footers', 'divino' ),
 			'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),
 		);
 	}

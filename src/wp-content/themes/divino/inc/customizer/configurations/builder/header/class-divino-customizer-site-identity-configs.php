@@ -1,9 +1,9 @@
 <?php
 /**
- * Astra Theme Customizer Configuration Site Identity.
+ * divino Theme Customizer Configuration Site Identity.
  *
- * @package     astra-builder
- * @link        https://wpastra.com/
+ * @package     divino-builder
+ * @link        https://wpdivino.com/
  * @since       3.0.0
  */
 
@@ -23,15 +23,15 @@ if ( class_exists( 'divino_Customizer_Config_Base' ) ) {
 		/**
 		 * Register Builder Site Identity Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 3.0.0
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 			$_configs = divino_header_site_identity_configuration();
 
-			$wp_customize->remove_control( 'astra-settings[divider-section-site-identity-logo]' );
+			$wp_customize->remove_control( 'divino-settings[divider-section-site-identity-logo]' );
 
 			return array_merge( $configurations, $_configs );
 		}

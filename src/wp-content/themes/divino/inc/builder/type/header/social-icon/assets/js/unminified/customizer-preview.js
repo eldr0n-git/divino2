@@ -4,12 +4,12 @@
  * here. Your javascript should grab settings from customizer controls, and
  * then make any necessary changes to the page using jQuery.
  *
- * @package Astra
+ * @package divino
  * @since 3.0.0
  */
 
 ( function( $ ) {
 
-	divino_builder_social_css( 'header', astraBuilderHeaderSocial.component_limit );
+	divino_builder_social_css( 'header', divinoBuilderHeaderSocial.component_limit );
 
 } )( jQuery );

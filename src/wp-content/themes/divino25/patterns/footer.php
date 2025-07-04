@@ -1,3 +1,4 @@
+<!-- footer.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Footer
@@ -85,3 +86,5 @@
 	<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
+
+<!-- footer.php from divino25 theme  patterns-->

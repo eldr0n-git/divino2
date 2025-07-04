@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra WordPress-5.8 compatibility - Dynamic CSS.
+ * divino WordPress-5.8 compatibility - Dynamic CSS.
  *
- * @package astra
+ * @package divino
  * @since 3.6.5
  */
 
@@ -57,7 +57,7 @@ function divino_get_block_editor_required_css() {
 }
 
 /**
- * Astra WordPress compatibility - Dynamic CSS.
+ * divino WordPress compatibility - Dynamic CSS.
  *
  * @param string $dynamic_css Dynamic CSS.
  * @since 3.6.5
@@ -169,7 +169,7 @@ function divino_block_editor_compatibility_css( $dynamic_css ) {
 }
 
 /**
- * Astra block editor 2.0 Spectra compatibility - Dynamic CSS.
+ * divino block editor 2.0 Spectra compatibility - Dynamic CSS.
  *
  * @param string $dynamic_css Dynamic CSS.
  * @return string $dynamic_css Dynamic CSS.

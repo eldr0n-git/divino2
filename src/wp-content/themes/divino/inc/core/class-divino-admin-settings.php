@@ -4,9 +4,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 
 	/**
-	 * Astra Admin Settings
+	 * divino Admin Settings
 	 */
 	class divino_Admin_Settings {
 		/**
@@ -33,10 +33,10 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 		 * @since 2.3.2
 		 * @var array $starter_templates_slug
 		 */
-		public static $starter_templates_slug = 'astra-sites';
+		public static $starter_templates_slug = 'divino-sites';
 
 		/**
-		 * Astra Addon supported versions map array.
+		 * divino Addon supported versions map array.
 		 *
 		 * @var array
 		 * @since 4.3.0
@@ -86,7 +86,7 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 
 			add_action( 'customize_controls_enqueue_scripts', self::class . '::customizer_scripts' );
 
-			add_action( 'divino_notice_before_markup_astra-sites-on-active', self::class . '::load_divino_admin_script' );
+			add_action( 'divino_notice_before_markup_divino-sites-on-active', self::class . '::load_divino_admin_script' );
 
 			add_action( 'admin_init', self::class . '::register_notices' );
 			add_action( 'divino_notice_before_markup', self::class . '::notice_assets' );
@@ -114,19 +114,19 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 		public static function add_custom_fields( $id, $item, $depth, $args ) {
 			?>
 				<p class="description description-wide">
-					<button class="button button-secondary button-large astra-megamenu-opts-btn" style="margin: 8px 8px 8px 0;" disabled>
-						<?php echo esc_html__( 'Astra Menu Settings', 'astra' ); ?>
+					<button class="button button-secondary button-large divino-megamenu-opts-btn" style="margin: 8px 8px 8px 0;" disabled>
+						<?php echo esc_html__( 'divino Menu Settings', 'divino' ); ?>
 						<svg width="17" height="16" style="vertical-align: sub; opacity: 0.5;" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M12.5002 7.2001H11.7002V4.8001C11.7002 3.0401 10.2602 1.6001 8.5002 1.6001C6.7402 1.6001 5.3002 3.0401 5.3002 4.8001V7.2001H4.5002C4.1002 7.2001 3.7002 7.6001 3.7002 8.0001V13.6001C3.7002 14.0001 4.1002 14.4001 4.5002 14.4001H12.5002C12.9002 14.4001 13.3002 14.0001 13.3002 13.6001V8.0001C13.3002 7.6001 12.9002 7.2001 12.5002 7.2001ZM9.3002 12.8001H7.7002L8.0202 11.0401C7.6202 10.8801 7.3002 10.4001 7.3002 10.0001C7.3002 9.3601 7.8602 8.8001 8.5002 8.8001C9.1402 8.8001 9.7002 9.3601 9.7002 10.0001C9.7002 10.4801 9.4602 10.8801 8.9802 11.0401L9.3002 12.8001ZM10.1002 7.2001H6.9002V4.8001C6.9002 3.9201 7.6202 3.2001 8.5002 3.2001C9.3802 3.2001 10.1002 3.9201 10.1002 4.8001V7.2001Z" fill="#0284C7"></path> </svg>
 					</button>
-					<a href="<?php echo esc_url( divino_get_upgrade_url( 'dashboard' ) ); ?>" target="_blank" title="<?php echo esc_attr__( 'Unlock with Astra Pro', 'astra' ); ?>">
-						<?php echo esc_html__( 'Unlock', 'astra' ); ?>
+					<a href="<?php echo esc_url( divino_get_upgrade_url( 'dashboard' ) ); ?>" target="_blank" title="<?php echo esc_attr__( 'Unlock with divino Pro', 'divino' ); ?>">
+						<?php echo esc_html__( 'Unlock', 'divino' ); ?>
 					</a>
 				</p>
 			<?php
 		}
 
 		/**
-		 * Get register & enqueue astra-admin scripts.
+		 * Get register & enqueue divino-admin scripts.
 		 *
 		 * @since 3.6.6
 		 */
@@ -136,22 +136,22 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 				return;
 			}
 
-			wp_register_script( 'astra-admin-settings', divino_THEME_URI . 'inc/assets/js/astra-admin-menu-settings.js', array( 'jquery', 'wp-util', 'updates' ), divino_THEME_VERSION, false );
+			wp_register_script( 'divino-admin-settings', divino_THEME_URI . 'inc/assets/js/divino-admin-menu-settings.js', array( 'jquery', 'wp-util', 'updates' ), divino_THEME_VERSION, false );
 
 			$localize = array(
 				'ajaxUrl'                            => admin_url( 'admin-ajax.php' ),
-				'astraSitesLink'                     => admin_url( 'themes.php?page=starter-templates' ),
-				'recommendedPluiginActivatingText'   => __( 'Activating', 'astra' ) . '&hellip;',
-				'recommendedPluiginDeactivatingText' => __( 'Deactivating', 'astra' ) . '&hellip;',
-				'recommendedPluiginActivateText'     => __( 'Activate', 'astra' ),
-				'recommendedPluiginDeactivateText'   => __( 'Deactivate', 'astra' ),
-				'recommendedPluiginSettingsText'     => __( 'Settings', 'astra' ),
-				'astraPluginManagerNonce'            => wp_create_nonce( 'divino_plugin_manager_nonce' ),
+				'divinoSitesLink'                     => admin_url( 'themes.php?page=starter-templates' ),
+				'recommendedPluiginActivatingText'   => __( 'Activating', 'divino' ) . '&hellip;',
+				'recommendedPluiginDeactivatingText' => __( 'Deactivating', 'divino' ) . '&hellip;',
+				'recommendedPluiginActivateText'     => __( 'Activate', 'divino' ),
+				'recommendedPluiginDeactivateText'   => __( 'Deactivate', 'divino' ),
+				'recommendedPluiginSettingsText'     => __( 'Settings', 'divino' ),
+				'divinoPluginManagerNonce'            => wp_create_nonce( 'divino_plugin_manager_nonce' ),
 			);
-			wp_localize_script( 'astra-admin-settings', 'astra', apply_filters( 'divino_theme_js_localize', $localize ) );
+			wp_localize_script( 'divino-admin-settings', 'divino', apply_filters( 'divino_theme_js_localize', $localize ) );
 
 			// Script.
-			wp_enqueue_script( 'astra-admin-settings' );
+			wp_enqueue_script( 'divino-admin-settings' );
 		}
 
 		/**
@@ -171,8 +171,8 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 			$current_slug = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash( $_GET['page'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			/** @psalm-suppress PossiblyInvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
-			// Force Astra welcome notice on theme activation.
-			if ( current_user_can( 'install_plugins' ) && ! defined( 'divino_SITES_NAME' ) && '1' == get_option( 'fresh_site' ) && ! in_array( $current_slug, array( 'astra-advanced-hook', 'divino_adv_header' ), true ) ) {
+			// Force divino welcome notice on theme activation.
+			if ( current_user_can( 'install_plugins' ) && ! defined( 'divino_SITES_NAME' ) && '1' == get_option( 'fresh_site' ) && ! in_array( $current_slug, array( 'divino-advanced-hook', 'divino_adv_header' ), true ) ) {
 
 				// Do not display admin welcome banner notice on theme upload page.
 				/** @psalm-suppress InvalidGlobal */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
@@ -183,24 +183,24 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 					return;
 				}
 
-				$image_path                          = divino_THEME_URI . 'inc/assets/images/astra-banner.png';
+				$image_path                          = divino_THEME_URI . 'inc/assets/images/divino-banner.png';
 				$gb_image_path                       = divino_THEME_URI . 'inc/assets/images/gb-logo.svg';
 				$ele_image_path                      = divino_THEME_URI . 'inc/assets/images/ele-logo.svg';
 				$ai_image_path                       = divino_THEME_URI . 'inc/assets/images/ai-logo.svg';
 				$ast_sites_notice_btn                = self::divino_sites_notice_button();
-				$ast_sites_notice_btn['button_text'] = __( 'Let’s Get Started with Starter Templates', 'astra' );
+				$ast_sites_notice_btn['button_text'] = __( 'Let’s Get Started with Starter Templates', 'divino' );
 
-				if ( file_exists( WP_PLUGIN_DIR . '/astra-sites/astra-sites.php' ) && is_plugin_inactive( 'astra-sites/astra-sites.php' ) && is_plugin_inactive( 'astra-pro-sites/astra-pro-sites.php' ) ) {
+				if ( file_exists( WP_PLUGIN_DIR . '/divino-sites/divino-sites.php' ) && is_plugin_inactive( 'divino-sites/divino-sites.php' ) && is_plugin_inactive( 'divino-pro-sites/divino-pro-sites.php' ) ) {
 					$ast_sites_notice_btn['class'] .= ' button button-primary';
-				} elseif ( ! file_exists( WP_PLUGIN_DIR . '/astra-sites/astra-sites.php' ) && is_plugin_inactive( 'astra-pro-sites/astra-pro-sites.php' ) ) {
+				} elseif ( ! file_exists( WP_PLUGIN_DIR . '/divino-sites/divino-sites.php' ) && is_plugin_inactive( 'divino-pro-sites/divino-pro-sites.php' ) ) {
 					$ast_sites_notice_btn['class'] .= ' button button-primary';
-					// Astra Premium Sites - Active.
+					// divino Premium Sites - Active.
 				} else {
-					$ast_sites_notice_btn['class'] = ' button button-primary astra-notice-close';
+					$ast_sites_notice_btn['class'] = ' button button-primary divino-notice-close';
 				}
 
 				$divino_sites_notice_args = array(
-					'id'                         => 'astra-sites-on-active',
+					'id'                         => 'divino-sites-on-active',
 					'type'                       => 'info',
 					'message'                    => sprintf(
 						'<div class="ast-welcome-banner">
@@ -211,7 +211,7 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 									<div class="notice-actions">
 										<button class="%4$s" %5$s %6$s %7$s %8$s %9$s %10$s> %11$s </button>
 									</div>
-									<p class="sub-notice-description astra-notice-close">%13$s</p>
+									<p class="sub-notice-description divino-notice-close">%13$s</p>
 								</div>
 								<div class="ast-col-right">
 									<img src="%12$s" alt="Starter Templates" />
@@ -223,9 +223,9 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 									</div>
 								</div>
 							</div>',
-						__( 'Thank you for choosing the Astra theme!', 'astra' ),
-						__( 'Build Your Dream Site in Minutes With AI 🚀', 'astra' ),
-						__( 'Say goodbye to the days of spending weeks designing and building your website. With Astra and our Starter Templates plugin, you can now create professional-grade websites in minutes.', 'astra' ),
+						__( 'Thank you for choosing the divino theme!', 'divino' ),
+						__( 'Build Your Dream Site in Minutes With AI 🚀', 'divino' ),
+						__( 'Say goodbye to the days of spending weeks designing and building your website. With divino and our Starter Templates plugin, you can now create professional-grade websites in minutes.', 'divino' ),
 						esc_attr( $ast_sites_notice_btn['class'] ),
 						'href="' . divino_get_prop( $ast_sites_notice_btn, 'link', '' ) . '"',
 						'data-slug="' . divino_get_prop( $ast_sites_notice_btn, 'data_slug', '' ) . '"',
@@ -235,8 +235,8 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 						'data-activating-text="' . divino_get_prop( $ast_sites_notice_btn, 'activating_text', '' ) . '"',
 						esc_html( $ast_sites_notice_btn['button_text'] ),
 						$image_path,
-						__( 'I want to build this website from scratch', 'astra' ),
-						__( '300+ Templates', 'astra' ),
+						__( 'I want to build this website from scratch', 'divino' ),
+						__( '300+ Templates', 'divino' ),
 						$gb_image_path,
 						$ele_image_path,
 						$ai_image_path,
@@ -253,7 +253,7 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 		}
 
 		/**
-		 * Upgrade to Pro notice for Astra on WooCommerce pages.
+		 * Upgrade to Pro notice for divino on WooCommerce pages.
 		 *
 		 * @since 3.9.4
 		 */
@@ -264,29 +264,29 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 
 			if ( '' !== $current_slug && function_exists( 'WC' ) && in_array( $current_slug, array( 'wc-admin', 'wc-reports', 'wc-status', 'wc-addons', 'wc-settings' ), true ) ) {
 
-				$image_path = divino_THEME_URI . 'inc/assets/images/astra-logo.svg';
+				$image_path = divino_THEME_URI . 'inc/assets/images/divino-logo.svg';
 
 				$divino_sites_notice_args = array(
-					'id'                         => 'astra-upgrade-pro-wc',
+					'id'                         => 'divino-upgrade-pro-wc',
 					'type'                       => 'info',
 					'message'                    => sprintf(
 						'<div class="notice-image">
-							<img src="%1$s" class="custom-logo" alt="Astra" itemprop="logo"></div>
+							<img src="%1$s" class="custom-logo" alt="divino" itemprop="logo"></div>
 							<div class="notice-content">
 								<h2 class="notice-heading">
 									%2$s
 								</h2>
 								<p>%3$s</p>
-								<div class="astra-review-notice-container">
+								<div class="divino-review-notice-container">
 									<a class="%4$s" %5$s> %6$s </a>
 								</div>
 							</div>',
 						$image_path,
-						__( 'Astra Works Seamlessly with WooCommerce!', 'astra' ),
-						__( 'Use every tool at your disposal to optimize your online store for conversion. All the advantages you need to make more profit!', 'astra' ),
+						__( 'divino Works Seamlessly with WooCommerce!', 'divino' ),
+						__( 'Use every tool at your disposal to optimize your online store for conversion. All the advantages you need to make more profit!', 'divino' ),
 						esc_attr( 'button button-primary' ),
 						'href="' . divino_get_pro_url( '/pricing/', 'free-theme', 'dashboard', 'woocommerce' ) . '" target="_blank"',
-						__( 'Upgrade Now', 'astra' )
+						__( 'Upgrade Now', 'divino' )
 					),
 					'priority'                   => 5,
 					'show_if'                    => is_admin() ? true : false,
@@ -300,7 +300,7 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 		}
 
 		/**
-		 * Display notice for minimun version for Astra addon.
+		 * Display notice for minimun version for divino addon.
 		 *
 		 * @since 2.0.0
 		 */
@@ -314,7 +314,7 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 
 				$message = sprintf(
 					/* translators: %1$s: Theme Name, %2$s: Minimum Required version of the addon */
-					__( 'Please update the %1$s to version %2$s or higher. Ignore if already updated.', 'astra' ),
+					__( 'Please update the %1$s to version %2$s or higher. Ignore if already updated.', 'divino' ),
 					divino_get_addon_name(),
 					divino_EXT_MIN_VER
 				);
@@ -345,8 +345,8 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 		}
 
 		/**
-		 * Get minimum supported version for Astra addon.
-		 * This function will be used to inform the user about incompatible version of Astra addon.
+		 * Get minimum supported version for divino addon.
+		 * This function will be used to inform the user about incompatible version of divino addon.
 		 *
 		 * @param string $input_version Input version of the addon.
 		 *
@@ -377,7 +377,7 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 		}
 
 		/**
-		 * This constant will be used to inform the user about incompatible version of Astra addon.
+		 * This constant will be used to inform the user about incompatible version of divino addon.
 		 *
 		 * @since 4.3.0
 		 */
@@ -426,7 +426,7 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 		}
 
 		/**
-		 * Enqueue Astra Notices CSS.
+		 * Enqueue divino Notices CSS.
 		 *
 		 * @since 2.0.0
 		 *
@@ -434,14 +434,14 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 		 */
 		public static function notice_assets() {
 			if ( is_rtl() ) {
-				wp_enqueue_style( 'astra-custom-notices-rtl', divino_THEME_URI . 'inc/assets/css/astra-notices-rtl.css', array(), divino_THEME_VERSION );
+				wp_enqueue_style( 'divino-custom-notices-rtl', divino_THEME_URI . 'inc/assets/css/divino-notices-rtl.css', array(), divino_THEME_VERSION );
 			} else {
-				wp_enqueue_style( 'astra-custom-notices', divino_THEME_URI . 'inc/assets/css/astra-notices.css', array(), divino_THEME_VERSION );
+				wp_enqueue_style( 'divino-custom-notices', divino_THEME_URI . 'inc/assets/css/divino-notices.css', array(), divino_THEME_VERSION );
 			}
 		}
 
 		/**
-		 * Render button for Astra Site notices
+		 * Render button for divino Site notices
 		 *
 		 * @since 1.6.5
 		 * @return array $ast_sites_notice_btn Rendered button
@@ -451,7 +451,7 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 			$ast_sites_notice_btn = array();
 
 			// Any of the Starter Templtes plugin - Active.
-			if ( is_plugin_active( 'astra-pro-sites/astra-pro-sites.php' ) || is_plugin_active( 'astra-sites/astra-sites.php' ) ) {
+			if ( is_plugin_active( 'divino-pro-sites/divino-pro-sites.php' ) || is_plugin_active( 'divino-sites/divino-sites.php' ) ) {
 				$ast_sites_notice_btn['class'] = 'active';
 				$ast_sites_notice_btn['link']  = admin_url( 'themes.php?page=' . self::$starter_templates_slug );
 
@@ -459,39 +459,39 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 			}
 
 			// Starter Templates PRO Plugin - Installed but Inactive.
-			if ( file_exists( WP_PLUGIN_DIR . '/astra-pro-sites/astra-pro-sites.php' ) && is_plugin_inactive( 'astra-pro-sites/astra-pro-sites.php' ) ) {
-				$ast_sites_notice_btn['class']                   = 'astra-activate-recommended-plugin';
-				$ast_sites_notice_btn['data_slug']               = 'astra-pro-sites';
-				$ast_sites_notice_btn['data_init']               = '/astra-pro-sites/astra-pro-sites.php';
+			if ( file_exists( WP_PLUGIN_DIR . '/divino-pro-sites/divino-pro-sites.php' ) && is_plugin_inactive( 'divino-pro-sites/divino-pro-sites.php' ) ) {
+				$ast_sites_notice_btn['class']                   = 'divino-activate-recommended-plugin';
+				$ast_sites_notice_btn['data_slug']               = 'divino-pro-sites';
+				$ast_sites_notice_btn['data_init']               = '/divino-pro-sites/divino-pro-sites.php';
 				$ast_sites_notice_btn['data_settings_link']      = admin_url( 'themes.php?page=' . self::$starter_templates_slug );
-				$ast_sites_notice_btn['data_settings_link_text'] = __( 'See Library &#187;', 'astra' );
-				$ast_sites_notice_btn['activating_text']         = __( 'Activating Importer Plugin ', 'astra' ) . '&hellip;';
+				$ast_sites_notice_btn['data_settings_link_text'] = __( 'See Library &#187;', 'divino' );
+				$ast_sites_notice_btn['activating_text']         = __( 'Activating Importer Plugin ', 'divino' ) . '&hellip;';
 
 				return $ast_sites_notice_btn;
 			}
 
 			// Starter Templates FREE Plugin - Installed but Inactive.
-			if ( file_exists( WP_PLUGIN_DIR . '/astra-sites/astra-sites.php' ) && is_plugin_inactive( 'astra-sites/astra-sites.php' ) ) {
-				$ast_sites_notice_btn['class']                   = 'astra-activate-recommended-plugin';
-				$ast_sites_notice_btn['data_slug']               = 'astra-sites';
-				$ast_sites_notice_btn['data_init']               = '/astra-sites/astra-sites.php';
+			if ( file_exists( WP_PLUGIN_DIR . '/divino-sites/divino-sites.php' ) && is_plugin_inactive( 'divino-sites/divino-sites.php' ) ) {
+				$ast_sites_notice_btn['class']                   = 'divino-activate-recommended-plugin';
+				$ast_sites_notice_btn['data_slug']               = 'divino-sites';
+				$ast_sites_notice_btn['data_init']               = '/divino-sites/divino-sites.php';
 				$ast_sites_notice_btn['data_settings_link']      = admin_url( 'themes.php?page=' . self::$starter_templates_slug );
-				$ast_sites_notice_btn['data_settings_link_text'] = __( 'See Library &#187;', 'astra' );
-				$ast_sites_notice_btn['activating_text']         = __( 'Activating Importer Plugin ', 'astra' ) . '&hellip;';
+				$ast_sites_notice_btn['data_settings_link_text'] = __( 'See Library &#187;', 'divino' );
+				$ast_sites_notice_btn['activating_text']         = __( 'Activating Importer Plugin ', 'divino' ) . '&hellip;';
 
 				return $ast_sites_notice_btn;
 			}
 
 			// Any of the Starter Templates plugin not available.
-			if ( ! file_exists( WP_PLUGIN_DIR . '/astra-sites/astra-sites.php' ) || ! file_exists( WP_PLUGIN_DIR . '/astra-pro-sites/astra-pro-sites.php' ) ) {
-				$ast_sites_notice_btn['class']                   = 'astra-install-recommended-plugin';
-				$ast_sites_notice_btn['data_slug']               = 'astra-sites';
-				$ast_sites_notice_btn['data_init']               = '/astra-sites/astra-sites.php';
+			if ( ! file_exists( WP_PLUGIN_DIR . '/divino-sites/divino-sites.php' ) || ! file_exists( WP_PLUGIN_DIR . '/divino-pro-sites/divino-pro-sites.php' ) ) {
+				$ast_sites_notice_btn['class']                   = 'divino-install-recommended-plugin';
+				$ast_sites_notice_btn['data_slug']               = 'divino-sites';
+				$ast_sites_notice_btn['data_init']               = '/divino-sites/divino-sites.php';
 				$ast_sites_notice_btn['data_settings_link']      = admin_url( 'themes.php?page=' . self::$starter_templates_slug );
-				$ast_sites_notice_btn['data_settings_link_text'] = __( 'See Library &#187;', 'astra' );
-				$ast_sites_notice_btn['detail_link_class']       = 'plugin-detail thickbox open-plugin-details-modal astra-starter-sites-detail-link';
-				$ast_sites_notice_btn['detail_link']             = network_admin_url( 'plugin-install.php?tab=plugin-information&plugin=astra-sites&TB_iframe=true&width=772&height=400' );
-				$ast_sites_notice_btn['detail_link_text']        = __( 'Details &#187;', 'astra' );
+				$ast_sites_notice_btn['data_settings_link_text'] = __( 'See Library &#187;', 'divino' );
+				$ast_sites_notice_btn['detail_link_class']       = 'plugin-detail thickbox open-plugin-details-modal divino-starter-sites-detail-link';
+				$ast_sites_notice_btn['detail_link']             = network_admin_url( 'plugin-install.php?tab=plugin-information&plugin=divino-sites&TB_iframe=true&width=772&height=400' );
+				$ast_sites_notice_btn['detail_link_text']        = __( 'Details &#187;', 'divino' );
 
 				return $ast_sites_notice_btn;
 			}
@@ -544,7 +544,7 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 				// Check if block editor is enabled or not.
 				if ( null !== $post_type && is_callable( 'use_block_editor_for_post_type' ) && use_block_editor_for_post_type( $post_type ) && in_array( $post_type, (array) $post_types ) ) {
 
-					echo '<style class="astra-meta-box-style">
+					echo '<style class="divino-meta-box-style">
 						.block-editor-page #side-sortables #divino_settings_meta_box select { min-width: 84%; padding: 3px 24px 3px 8px; height: 20px; }
 						.block-editor-page #normal-sortables #divino_settings_meta_box select { min-width: 200px; }
 						.block-editor-page .edit-post-meta-boxes-area #poststuff #divino_settings_meta_box h2.hndle { border-bottom: 0; }
@@ -562,7 +562,7 @@ if ( ! class_exists( 'divino_Admin_Settings' ) ) {
 					 *
 					 * @since 3.7.9
 					 */
-					wp_enqueue_script( 'astra-column-block-comp-js', divino_THEME_URI . 'inc/assets/js/column-block-compatibility.js', array( 'wp-util', 'wp-hooks', 'wp-blocks' ), divino_THEME_VERSION, false );
+					wp_enqueue_script( 'divino-column-block-comp-js', divino_THEME_URI . 'inc/assets/js/column-block-compatibility.js', array( 'wp-util', 'wp-hooks', 'wp-blocks' ), divino_THEME_VERSION, false );
 				}
 			}
 		}

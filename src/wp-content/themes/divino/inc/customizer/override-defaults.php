@@ -2,9 +2,9 @@
 /**
  * Override default customizer panels, sections, settings or controls.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

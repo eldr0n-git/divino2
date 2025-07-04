@@ -1,10 +1,10 @@
 <?php
 /**
- * Hero section layout for Astra theme.
+ * Hero section layout for divino theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 4.0.0
+ * @since       divino 4.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

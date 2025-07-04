@@ -1,10 +1,10 @@
 <?php
 /**
- * Related Posts for Astra theme.
+ * Related Posts for divino theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 3.5.0
+ * @since       divino 3.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -27,8 +27,8 @@ class divino_Related_Posts {
 	public function __construct() {
 
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once divino_RELATED_POSTS_DIR . 'class-astra-related-posts-loader.php';
-		require_once divino_RELATED_POSTS_DIR . 'class-astra-related-posts-markup.php';
+		require_once divino_RELATED_POSTS_DIR . 'class-divino-related-posts-loader.php';
+		require_once divino_RELATED_POSTS_DIR . 'class-divino-related-posts-markup.php';
 		// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 
 		// Include front end files.

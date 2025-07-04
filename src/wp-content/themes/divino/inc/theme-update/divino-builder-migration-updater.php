@@ -1,10 +1,10 @@
 <?php
 /**
- * Astra builder migration updates
+ * divino builder migration updates
  *
  * Functions for updating data while old-new builder migration.
  *
- * @package Astra
+ * @package divino
  * @version 3.8.3
  */
 
@@ -22,7 +22,7 @@ function divino_header_builder_migration() {
 	/**
 	 * All theme options.
 	 */
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 
 	// WordPress sidebar_widgets option.
 	$widget_options = get_option( 'sidebars_widgets', array() );
@@ -73,7 +73,7 @@ function divino_header_builder_migration() {
 
 	$theme_options['v3-option-migration'] = true;
 
-	update_option( 'astra-settings', $theme_options );
+	update_option( 'divino-settings', $theme_options );
 	update_option( 'sidebars_widgets', $widget_options );
 }
 

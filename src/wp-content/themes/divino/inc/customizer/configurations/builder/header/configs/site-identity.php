@@ -2,8 +2,8 @@
 /**
  * Site identity Header Configuration.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       4.5.2
  */
 
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register site identity header builder Customizer Configurations.
  *
  * @since 4.5.2
- * @return array Astra Customizer Configurations with updated configurations.
+ * @return array divino Customizer Configurations with updated configurations.
  */
 function divino_header_site_identity_configuration() {
 	$_section = 'title_tagline';
@@ -31,23 +31,23 @@ function divino_header_site_identity_configuration() {
 			'name'     => 'title_tagline',
 			'type'     => 'section',
 			'priority' => 100,
-			'title'    => __( 'Logo', 'astra' ),
+			'title'    => __( 'Logo', 'divino' ),
 			'panel'    => 'panel-header-builder-group',
 		),
 
 		/**
-		 * Link to the astra logo and site title settings.
+		 * Link to the divino logo and site title settings.
 		 */
 		array(
 			'name'           => divino_THEME_SETTINGS . '[logo-title-settings-link]',
 			'type'           => 'control',
 			'control'        => 'ast-customizer-link',
-			'section'        => 'astra-site-identity',
+			'section'        => 'divino-site-identity',
 			'priority'       => 100,
 			'link_type'      => 'section',
 			'is_button_link' => true,
 			'linked'         => 'title_tagline',
-			'link_text'      => __( 'Site Title & Logo Settings', 'astra' ),
+			'link_text'      => __( 'Site Title & Logo Settings', 'divino' ),
 		),
 
 		/**
@@ -73,8 +73,8 @@ function divino_header_site_identity_configuration() {
 			'section'     => 'title_tagline',
 			'priority'    => 5,
 			'context'     => divino_Builder_Helper::$design_tab,
-			'title'       => __( 'Logo Color', 'astra' ),
-			'description' => __( 'Use it with transparent images for optimal results.', 'astra' ),
+			'title'       => __( 'Logo Color', 'divino' ),
+			'description' => __( 'Use it with transparent images for optimal results.', 'divino' ),
 		),
 
 		// Option: Site Title Color.
@@ -87,7 +87,7 @@ function divino_header_site_identity_configuration() {
 			'priority'  => 5,
 			'default'   => divino_get_option( 'header-color-site-title' ),
 			'transport' => 'postMessage',
-			'title'     => __( 'Normal', 'astra' ),
+			'title'     => __( 'Normal', 'divino' ),
 			'context'   => divino_Builder_Helper::$design_tab,
 		),
 
@@ -101,7 +101,7 @@ function divino_header_site_identity_configuration() {
 			'priority'  => 10,
 			'transport' => 'postMessage',
 			'default'   => divino_get_option( 'header-color-h-site-title' ),
-			'title'     => __( 'Hover', 'astra' ),
+			'title'     => __( 'Hover', 'divino' ),
 			'context'   => divino_Builder_Helper::$design_tab,
 		),
 
@@ -111,7 +111,7 @@ function divino_header_site_identity_configuration() {
 		array(
 			'name'     => divino_THEME_SETTINGS . '[' . $_section . '-margin-divider]',
 			'section'  => $_section,
-			'title'    => __( 'Spacing', 'astra' ),
+			'title'    => __( 'Spacing', 'divino' ),
 			'type'     => 'control',
 			'control'  => 'ast-heading',
 			'priority' => 220,
@@ -132,14 +132,14 @@ function divino_header_site_identity_configuration() {
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 			'section'           => $_section,
 			'priority'          => 220,
-			'title'             => __( 'Margin', 'astra' ),
+			'title'             => __( 'Margin', 'divino' ),
 			'linked_choices'    => true,
 			'unit_choices'      => array( 'px', 'em', '%' ),
 			'choices'           => array(
-				'top'    => __( 'Top', 'astra' ),
-				'right'  => __( 'Right', 'astra' ),
-				'bottom' => __( 'Bottom', 'astra' ),
-				'left'   => __( 'Left', 'astra' ),
+				'top'    => __( 'Top', 'divino' ),
+				'right'  => __( 'Right', 'divino' ),
+				'bottom' => __( 'Bottom', 'divino' ),
+				'left'   => __( 'Left', 'divino' ),
 			),
 			'context'           => divino_Builder_Helper::$design_tab,
 			'divider'           => array( 'ast_class' => 'ast-section-spacing' ),
@@ -159,7 +159,7 @@ function divino_header_site_identity_configuration() {
 			'default'           => divino_get_option( 'font-size-site-title' ),
 			'transport'         => 'postMessage',
 			'priority'          => 12,
-			'title'             => __( 'Font Size', 'astra' ),
+			'title'             => __( 'Font Size', 'divino' ),
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
 			'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
 			'input_attrs'       => array(
@@ -194,7 +194,7 @@ function divino_header_site_identity_configuration() {
 			'default'           => divino_get_option( 'font-size-site-tagline' ),
 			'transport'         => 'postMessage',
 			'priority'          => 16,
-			'title'             => __( 'Font Size', 'astra' ),
+			'title'             => __( 'Font Size', 'divino' ),
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
 			'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
 			'input_attrs'       => array(
@@ -229,7 +229,7 @@ function divino_header_site_identity_configuration() {
 			'transport'         => 'postMessage',
 			'control'           => 'ast-responsive-slider',
 			'priority'          => true === divino_Builder_Helper::$is_header_footer_builder_active ? 16 : 8,
-			'title'             => __( 'Title Font Size', 'astra' ),
+			'title'             => __( 'Title Font Size', 'divino' ),
 			'is_font'           => true,
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
 			'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
@@ -310,7 +310,7 @@ function divino_header_site_identity_configuration() {
 			'default'           => divino_get_option( 'font-size-site-tagline' ),
 			'transport'         => 'postMessage',
 			'priority'          => true === divino_Builder_Helper::$is_header_footer_builder_active ? 20 : 12,
-			'title'             => __( 'Tagline Font Size', 'astra' ),
+			'title'             => __( 'Tagline Font Size', 'divino' ),
 			'is_font'           => true,
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
 			'suffix'            => array( 'px', 'em', 'vw', 'rem' ),

@@ -2,7 +2,7 @@
 /**
  * Site Origin Compatibility File.
  *
- * @package Astra
+ * @package divino
  */
 
 // If plugin - 'Site Origin' not exist then return.
@@ -11,12 +11,12 @@ if ( ! class_exists( 'SiteOrigin_Panels_Settings' ) ) {
 }
 
 /**
- * Astra Site Origin Compatibility
+ * divino Site Origin Compatibility
  */
 if ( ! class_exists( 'divino_Site_Origin' ) ) {
 
 	/**
-	 * Astra Site Origin Compatibility
+	 * divino Site Origin Compatibility
 	 *
 	 * @since 1.0.0
 	 */
@@ -53,7 +53,7 @@ if ( ! class_exists( 'divino_Site_Origin' ) ) {
 		 * @since 1.0.0
 		 */
 		public function add_styles( $assets ) {
-			$assets['css']['astra-site-origin'] = 'compatibility/site-origin';
+			$assets['css']['divino-site-origin'] = 'compatibility/site-origin';
 			return $assets;
 		}
 

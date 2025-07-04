@@ -1,3 +1,4 @@
+<!-- cta-newsletter.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Newsletter sign-up

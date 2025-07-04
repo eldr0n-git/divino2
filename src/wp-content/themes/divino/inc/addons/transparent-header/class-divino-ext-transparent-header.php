@@ -2,7 +2,7 @@
 /**
  * Sticky Header Extension
  *
- * @package Astra
+ * @package divino
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -43,8 +43,8 @@ if ( ! class_exists( 'divino_Ext_Transparent_Header' ) ) {
 		public function __construct() {
 
 			// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-			require_once divino_THEME_TRANSPARENT_HEADER_DIR . 'classes/class-astra-ext-transparent-header-loader.php';
-			require_once divino_THEME_TRANSPARENT_HEADER_DIR . 'classes/class-astra-ext-transparent-header-markup.php';
+			require_once divino_THEME_TRANSPARENT_HEADER_DIR . 'classes/class-divino-ext-transparent-header-loader.php';
+			require_once divino_THEME_TRANSPARENT_HEADER_DIR . 'classes/class-divino-ext-transparent-header-markup.php';
 
 			// Include front end files.
 			if ( ! is_admin() ) {

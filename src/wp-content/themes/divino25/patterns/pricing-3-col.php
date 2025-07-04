@@ -1,3 +1,4 @@
+<!-- pricing-3-col.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Pricing, 3 columns

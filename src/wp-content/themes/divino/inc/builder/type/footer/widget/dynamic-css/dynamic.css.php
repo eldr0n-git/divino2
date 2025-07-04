@@ -2,7 +2,7 @@
 /**
  * WIdget control - Dynamic CSS
  *
- * @package Astra Builder
+ * @package divino Builder
  * @since 3.0.0
  */
 
@@ -31,8 +31,8 @@ function divino_support_footer_widget_right_margin() {
 /**
  * Dynamic CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
- * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+ * @param  string $dynamic_css          divino Dynamic CSS.
+ * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
  * @return String Generated dynamic CSS for Heading Colors.
  *
  * @since 3.0.0

@@ -1,3 +1,4 @@
+<!-- hero-book.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Hero book

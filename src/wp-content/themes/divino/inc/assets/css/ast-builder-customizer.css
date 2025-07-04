@@ -23,7 +23,7 @@
     border-radius: 0;
 }
 
-#customize-control-astra-settings-builder-header, #customize-control-astra-settings-builder-footer {
+#customize-control-divino-settings-builder-header, #customize-control-divino-settings-builder-footer {
     background: #eee;
     backface-visibility: hidden;
     z-index: 10;
@@ -31,12 +31,12 @@
     border-top: 1px solid #ddd;
 }
 
-.ahfb-builder-hide #customize-control-astra-settings-builder-header, .ahfb-builder-hide #customize-control-astra-settings-builder-footer {
+.ahfb-builder-hide #customize-control-divino-settings-builder-header, .ahfb-builder-hide #customize-control-divino-settings-builder-footer {
     transform: translateY(-628%);
     overflow: visible;
 }
 
-#customize-control-astra-settings-builder-header .ast-customize-control-description, #customize-control-astra-settings-builder-footer .ast-customize-control-description {
+#customize-control-divino-settings-builder-header .ast-customize-control-description, #customize-control-divino-settings-builder-footer .ast-customize-control-description {
     margin: 0px;
     text-align: right;
 }
@@ -77,21 +77,21 @@
     top: auto;
 }
 
-#customize-control-astra-settings-builder-header,
-#customize-control-astra-settings-builder-footer {
+#customize-control-divino-settings-builder-header,
+#customize-control-divino-settings-builder-footer {
     display: flex !important;
     justify-content: space-between;
 }
 
-#customize-control-astra-settings-builder-header .ast-customize-control-title,
-#customize-control-astra-settings-builder-footer .ast-customize-control-title {
+#customize-control-divino-settings-builder-header .ast-customize-control-title,
+#customize-control-divino-settings-builder-footer .ast-customize-control-title {
     padding: 0 25px;
     text-align: center;
     color: #888;
 }
 
-#customize-control-astra-settings-builder-header .ast-customize-control-title .dashicons,
-#customize-control-astra-settings-builder-footer .ast-customize-control-title .dashicons {
+#customize-control-divino-settings-builder-header .ast-customize-control-title .dashicons,
+#customize-control-divino-settings-builder-footer .ast-customize-control-title .dashicons {
     margin-right: 10px;
 }
 
@@ -237,8 +237,8 @@
 
 /*------------------------------------------------------------------------------------------------------------------*/
 
-#customize-control-astra-settings-header-sticky-link + #customize-control-astra-settings-header-transparant-link,
-#customize-control-astra-settings-header-transparant-link + #customize-control-astra-settings-header-sticky-link {
+#customize-control-divino-settings-header-sticky-link + #customize-control-divino-settings-header-transparant-link,
+#customize-control-divino-settings-header-transparant-link + #customize-control-divino-settings-header-sticky-link {
     margin-top: 0;
 }
 
@@ -301,8 +301,8 @@
     margin-left: 0;
 }
 
-#customize-control-astra-settings-header-desktop-items .popup-vertical-group .ahfb-row-actions,
-#customize-control-astra-settings-header-mobile-items .popup-vertical-group .ahfb-row-actions {
+#customize-control-divino-settings-header-desktop-items .popup-vertical-group .ahfb-row-actions,
+#customize-control-divino-settings-header-mobile-items .popup-vertical-group .ahfb-row-actions {
     position: inherit;
     height: 30px;
     width: 100%;
@@ -314,16 +314,16 @@
     margin: 4px;
 }
 
-#customize-control-astra-settings-header-desktop-items .popup-vertical-group .ahfb-builder-item:first-child,
-#customize-control-astra-settings-header-mobile-items .popup-vertical-group .ahfb-builder-item:first-child {
+#customize-control-divino-settings-header-desktop-items .popup-vertical-group .ahfb-builder-item:first-child,
+#customize-control-divino-settings-header-mobile-items .popup-vertical-group .ahfb-builder-item:first-child {
     margin-top: 8px;
 }
-#customize-control-astra-settings-header-desktop-items .popup-vertical-group .ahfb-builder-item:last-child,
-#customize-control-astra-settings-header-mobile-items .popup-vertical-group .ahfb-builder-item:last-child {
+#customize-control-divino-settings-header-desktop-items .popup-vertical-group .ahfb-builder-item:last-child,
+#customize-control-divino-settings-header-mobile-items .popup-vertical-group .ahfb-builder-item:last-child {
     margin-bottom: 8px;
 }
-#customize-control-astra-settings-header-mobile-items .popup-vertical-group .ahfb-builder-item,
-#customize-control-astra-settings-header-desktop-items .popup-vertical-group .ahfb-builder-item {
+#customize-control-divino-settings-header-mobile-items .popup-vertical-group .ahfb-builder-item,
+#customize-control-divino-settings-header-desktop-items .popup-vertical-group .ahfb-builder-item {
 	margin: 4px;
 }
 
@@ -709,8 +709,8 @@
     font-size: 10px;
 }
 
-#customize-control-astra-settings-header-desktop-items .popup-vertical-group .ahfb-row-actions .dashicon,
-#customize-control-astra-settings-header-mobile-items .popup-vertical-group .ahfb-row-actions .dashicon {
+#customize-control-divino-settings-header-desktop-items .popup-vertical-group .ahfb-row-actions .dashicon,
+#customize-control-divino-settings-header-mobile-items .popup-vertical-group .ahfb-row-actions .dashicon {
     margin-left: 10px;
     margin-right: 5px;
 }
@@ -963,7 +963,7 @@
     overflow: visible;
 }
 
-li#customize-control-astra-settings-header-desktop-items, li#customize-control-astra-settings-header-mobile-items, li#customize-control-astra-settings-footer-desktop-items {
+li#customize-control-divino-settings-header-desktop-items, li#customize-control-divino-settings-header-mobile-items, li#customize-control-divino-settings-footer-desktop-items {
     transition: all 0.3s;
     background: #eeeeee;
     border-top: 1px solid #dddddd;
@@ -1154,7 +1154,7 @@ li#customize-control-astra-settings-header-desktop-items, li#customize-control-a
 .ahfb-radio-container-control .components-button.is-tertiary:not(:disabled):not([aria-disabled=true]):hover, .ahfb-radio-container-control .components-button.is-tertiary:not(:disabled):not([aria-disabled=true]):active {
     color: #191e23;
     box-shadow: 0px 8px 48px -8px #00000029;
-    border-color: #E5E7EB;    
+    border-color: #E5E7EB;
     background: transparent;
     border-radius: 6px;
 }
@@ -1383,22 +1383,22 @@ li#customize-control-astra-settings-header-desktop-items, li#customize-control-a
     height: 50px;
 } */
 
-#customize-control-astra-settings-header-trigger-icon .components-button.is-tertiary.active-radio svg, #customize-control-astra-settings-header-trigger-icon .components-button.is-tertiary svg,
-#customize-control-astra-settings-header-trigger-icon svg {
+#customize-control-divino-settings-header-trigger-icon .components-button.is-tertiary.active-radio svg, #customize-control-divino-settings-header-trigger-icon .components-button.is-tertiary svg,
+#customize-control-divino-settings-header-trigger-icon svg {
 	width: 52px;
 	height: 50px;
 	margin-right: 10px;
 }
 
-#customize-control-astra-settings-header-trigger-icon input:checked + label .ahfb-svg-iconset.ast-inline-flex::after {
+#customize-control-divino-settings-header-trigger-icon input:checked + label .ahfb-svg-iconset.ast-inline-flex::after {
     display: none;
 }
 
-#customize-control-astra-settings-header-trigger-icon input:checked + label .ahfb-svg-iconset.ast-inline-flex svg path {
+#customize-control-divino-settings-header-trigger-icon input:checked + label .ahfb-svg-iconset.ast-inline-flex svg path {
     fill: red;
 }
 
-#customize-control-astra-settings-header-trigger-icon .components-button-group {
+#customize-control-divino-settings-header-trigger-icon .components-button-group {
     display: inline-flex;
 }
 
@@ -1718,7 +1718,7 @@ button.components-button.ahfb-sorter-item-expand {
     display: block;
 }
 
-.ahfb-radio-icon-control .components-button-group.ahfb-radio-container-control .components-button.is-tertiary, #customize-control-astra-settings-header-trigger-icon .components-button-group.ahfb-radio-container-control .components-button.is-tertiary {
+.ahfb-radio-icon-control .components-button-group.ahfb-radio-container-control .components-button.is-tertiary, #customize-control-divino-settings-header-trigger-icon .components-button-group.ahfb-radio-container-control .components-button.is-tertiary {
     min-width: 25%;
     padding: 0;
     margin-right: 12px;
@@ -1729,15 +1729,15 @@ button.components-button.ahfb-sorter-item-expand {
     background: unset;
 }
 
-#customize-control-astra-settings-hba-footer-layout .components-button .ahfb-radio-icon svg,
-#customize-control-astra-settings-hb-footer-layout .components-button .ahfb-radio-icon svg,
-#customize-control-astra-settings-hbb-footer-layout .components-button .ahfb-radio-icon svg {
+#customize-control-divino-settings-hba-footer-layout .components-button .ahfb-radio-icon svg,
+#customize-control-divino-settings-hb-footer-layout .components-button .ahfb-radio-icon svg,
+#customize-control-divino-settings-hbb-footer-layout .components-button .ahfb-radio-icon svg {
     fill: none;
 }
 
-#customize-control-astra-settings-hba-footer-layout .components-button-group.ahfb-radio-container-control .active-radio.ast-radio-img-svg svg rect, 
-#customize-control-astra-settings-hb-footer-layout  .components-button-group.ahfb-radio-container-control .active-radio.ast-radio-img-svg svg rect,
-#customize-control-astra-settings-hbb-footer-layout  .components-button-group.ahfb-radio-container-control .active-radio.ast-radio-img-svg svg rect {
+#customize-control-divino-settings-hba-footer-layout .components-button-group.ahfb-radio-container-control .active-radio.ast-radio-img-svg svg rect,
+#customize-control-divino-settings-hb-footer-layout  .components-button-group.ahfb-radio-container-control .active-radio.ast-radio-img-svg svg rect,
+#customize-control-divino-settings-hbb-footer-layout  .components-button-group.ahfb-radio-container-control .active-radio.ast-radio-img-svg svg rect {
     stroke: var(--ast-customizer-color-1);
 }
 
@@ -1751,7 +1751,7 @@ button.components-button.ahfb-sorter-item-expand {
     box-shadow: 0 0 3px 0px rgba(0, 133, 186, 0.67);
 }
 
-#customize-control-astra-settings-header-trigger-icon .ahfb-radio-container-control .components-button.is-tertiary:not(:disabled):not([aria-disabled=true]):hover, #customize-control-astra-settings-header-trigger-icon .ahfb-radio-container-control .components-button.is-tertiary:not(:disabled):not([aria-disabled=true]):active,
+#customize-control-divino-settings-header-trigger-icon .ahfb-radio-container-control .components-button.is-tertiary:not(:disabled):not([aria-disabled=true]):hover, #customize-control-divino-settings-header-trigger-icon .ahfb-radio-container-control .components-button.is-tertiary:not(:disabled):not([aria-disabled=true]):active,
 .ahfb-radio-icon-control .components-button-group.ahfb-radio-container-control .components-button.is-tertiary:not(:disabled):not([aria-disabled=true]):hover,
 .ahfb-radio-icon-control .ahfb-radio-container-control .components-button.is-tertiary:not(:disabled):not([aria-disabled=true]):active {
     border: none;
@@ -1759,15 +1759,15 @@ button.components-button.ahfb-sorter-item-expand {
 }
 
 .ahfb-icon-set svg,
-#customize-control-astra-settings-header-trigger-icon span.ahfb-svg-iconset.svg-baseline svg path, span.ahfb-svg-iconset.svg-baseline svg circle {
+#customize-control-divino-settings-header-trigger-icon span.ahfb-svg-iconset.svg-baseline svg path, span.ahfb-svg-iconset.svg-baseline svg circle {
     fill: var(--ast-customizer-sub-text-color);
 }
 
-.active-radio .ahfb-icon-set svg, .active-radio .ahfb-icon-set svg, #customize-control-astra-settings-header-trigger-icon input:checked + .ast-radio-img-svg svg path, #customize-control-astra-settings-header-trigger-icon input:checked + .ast-radio-img-svg svg circle {
+.active-radio .ahfb-icon-set svg, .active-radio .ahfb-icon-set svg, #customize-control-divino-settings-header-trigger-icon input:checked + .ast-radio-img-svg svg path, #customize-control-divino-settings-header-trigger-icon input:checked + .ast-radio-img-svg svg circle {
     fill: var(--ast-customizer-secondary-text-color);
 }
 
-#customize-control-astra-settings-header-trigger-icon input:checked + .ast-radio-img-svg svg > path {
+#customize-control-divino-settings-header-trigger-icon input:checked + .ast-radio-img-svg svg > path {
 	fill: var(--ast-customizer-color-1);
 }
 
@@ -2048,19 +2048,19 @@ button.components-button.ahfb-sorter-item-expand {
 	opacity: 1;
 	visibility: visible;
 }
-.rtl #astra-reset.button {
+.rtl #divino-reset.button {
 	margin-left: 45px;
 }
 .rtl .customize-control-ast-builder .components-popover[data-x-axis="right"] .components-popover__content {
 	right: unset;
 }
 
-#customize-control-astra-settings-header-desktop-items .popup-vertical-group .ahfb-builder-area-content .sortable-ghost[data-id="mobile-trigger"],
-#customize-control-astra-settings-header-desktop-items .popup-vertical-group .ahfb-builder-area-content .sortable-ghost[data-id^="menu-"],
-#customize-control-astra-settings-header-mobile-items .popup-vertical-group .ahfb-builder-area-content .sortable-ghost[data-id="mobile-trigger"],
-#customize-control-astra-settings-header-mobile-items .popup-vertical-group .ahfb-builder-area-content .sortable-ghost[data-id^="menu-"],
-#customize-control-astra-settings-header-desktop-items .ahfb-builder-row-items .sortable-ghost[data-id="mobile-menu"],
-#customize-control-astra-settings-header-mobile-items .ahfb-builder-row-items .sortable-ghost[data-id="mobile-menu"] {
+#customize-control-divino-settings-header-desktop-items .popup-vertical-group .ahfb-builder-area-content .sortable-ghost[data-id="mobile-trigger"],
+#customize-control-divino-settings-header-desktop-items .popup-vertical-group .ahfb-builder-area-content .sortable-ghost[data-id^="menu-"],
+#customize-control-divino-settings-header-mobile-items .popup-vertical-group .ahfb-builder-area-content .sortable-ghost[data-id="mobile-trigger"],
+#customize-control-divino-settings-header-mobile-items .popup-vertical-group .ahfb-builder-area-content .sortable-ghost[data-id^="menu-"],
+#customize-control-divino-settings-header-desktop-items .ahfb-builder-row-items .sortable-ghost[data-id="mobile-menu"],
+#customize-control-divino-settings-header-mobile-items .ahfb-builder-row-items .sortable-ghost[data-id="mobile-menu"] {
     background: #fff;
 }
 /* Box Shadow Control Style */
@@ -2141,8 +2141,8 @@ button.components-button.ahfb-sorter-item-expand {
 .customize-control-ast-box-shadow .ast-box-shadow-wrapper {
     display: flex;
     gap: 8px;
-  }  
-  
+  }
+
   .ast-active-design-tab .customize-control-header-button1-box-shadow-position.customize-control-ast-select, .ast-active-design-tab .customize-control-header-button2-box-shadow-position.customize-control-ast-select {
     display: flex;
     gap: 20px;
@@ -2259,9 +2259,9 @@ li#accordion-section-ast-archive-post, li#accordion-section-ast-archive-product 
 }
 
 
-#customize-control-astra-settings-shop-skin-section-link .ahfb-builder-item-start,
-#customize-control-astra-settings-footer-create-menu-link .ahfb-builder-item-start,
-#customize-control-astra-settings-header-mobile-menu-create-menu-link .ahfb-builder-item-start {
+#customize-control-divino-settings-shop-skin-section-link .ahfb-builder-item-start,
+#customize-control-divino-settings-footer-create-menu-link .ahfb-builder-item-start,
+#customize-control-divino-settings-header-mobile-menu-create-menu-link .ahfb-builder-item-start {
 	margin-bottom: 0;
 }
 
@@ -2354,7 +2354,7 @@ li#customize-control-site_icon {
 }
 
 .components-popover__content {
-    padding: 4px; 
+    padding: 4px;
     gap: 4px;
     border-radius: 8px;
 }
@@ -2374,7 +2374,7 @@ li#customize-control-site_icon {
     left: -8px;
     width: 8px;
     height: 100%;
-    pointer-events: auto; 
+    pointer-events: auto;
   }
 
   .ahfb-popover-builder-list .bottom-shadow {

@@ -1,10 +1,10 @@
 <?php
 /**
- * Post Structures loader for Astra theme.
+ * Post Structures loader for divino theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 4.0.0
+ * @since       divino 4.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -38,7 +38,7 @@ class divino_Posts_Structure_Loader {
 	 */
 	public function __construct() {
 		/**
-		 * Update Astra default color and typography values. To not update directly on existing users site, added backwards.
+		 * Update divino default color and typography values. To not update directly on existing users site, added backwards.
 		 *
 		 * @since 4.0.0
 		 */
@@ -236,10 +236,10 @@ class divino_Posts_Structure_Loader {
 		 * Register Config control in Related Posts.
 		 */
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once divino_THEME_POST_STRUCTURE_DIR . 'customizer/class-astra-posts-structures-configs.php';
-		require_once divino_THEME_POST_STRUCTURE_DIR . 'customizer/class-astra-posts-single-structures-configs.php';
-		require_once divino_THEME_POST_STRUCTURE_DIR . 'customizer/class-astra-posts-archive-structures-configs.php';
-		require_once divino_THEME_POST_STRUCTURE_DIR . 'customizer/class-astra-posts-special-archive-structures-configs.php';
+		require_once divino_THEME_POST_STRUCTURE_DIR . 'customizer/class-divino-posts-structures-configs.php';
+		require_once divino_THEME_POST_STRUCTURE_DIR . 'customizer/class-divino-posts-single-structures-configs.php';
+		require_once divino_THEME_POST_STRUCTURE_DIR . 'customizer/class-divino-posts-archive-structures-configs.php';
+		require_once divino_THEME_POST_STRUCTURE_DIR . 'customizer/class-divino-posts-special-archive-structures-configs.php';
 		// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	}
 
@@ -290,12 +290,12 @@ class divino_Posts_Structure_Loader {
 		$file_prefix = SCRIPT_DEBUG ? '' : '.min';
 		/** @psalm-suppress RedundantCondition */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
-		wp_enqueue_script( 'astra-post-strctures-customizer-preview', divino_THEME_POST_STRUCTURE_URI . 'assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'astra-customizer-preview-js' ), divino_THEME_VERSION, true );
+		wp_enqueue_script( 'divino-post-strctures-customizer-preview', divino_THEME_POST_STRUCTURE_URI . 'assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'divino-customizer-preview-js' ), divino_THEME_VERSION, true );
 
 		// Localize variables for further JS.
 		wp_localize_script(
-			'astra-post-strctures-customizer-preview',
-			'AstraPostStrcturesData',
+			'divino-post-strctures-customizer-preview',
+			'divinoPostStrcturesData',
 			array(
 				'post_types'           => self::get_supported_post_types(),
 				'special_pages'        => self::get_special_page_types(),

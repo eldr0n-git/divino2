@@ -1,3 +1,4 @@
+<!-- template-single-vertical-header-blog.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Right-aligned single post

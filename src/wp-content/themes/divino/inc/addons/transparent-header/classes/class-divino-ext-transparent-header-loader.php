@@ -2,7 +2,7 @@
 /**
  * Transparent Header - Customizer.
  *
- * @package Astra
+ * @package divino
  * @since 1.0.0
  */
 
@@ -48,7 +48,7 @@ if ( ! class_exists( 'divino_Ext_Transparent_Header_Loader' ) ) {
 		/**
 		 * Set Options Default Values
 		 *
-		 * @param  array $defaults  Astra options default value array.
+		 * @param  array $defaults  divino options default value array.
 		 * @return array
 		 */
 		public function theme_defaults( $defaults ) {
@@ -188,14 +188,14 @@ if ( ! class_exists( 'divino_Ext_Transparent_Header_Loader' ) ) {
 			/**
 			 * Register Panel & Sections
 			 */
-			require_once divino_THEME_TRANSPARENT_HEADER_DIR . 'classes/class-astra-transparent-header-panels-and-sections.php';
+			require_once divino_THEME_TRANSPARENT_HEADER_DIR . 'classes/class-divino-transparent-header-panels-and-sections.php';
 
 			/**
 			 * Sections
 			 */
-			require_once divino_THEME_TRANSPARENT_HEADER_DIR . 'classes/sections/class-astra-customizer-colors-transparent-header-configs.php';
+			require_once divino_THEME_TRANSPARENT_HEADER_DIR . 'classes/sections/class-divino-customizer-colors-transparent-header-configs.php';
 			// Check Transparent Header is activated.
-			require_once divino_THEME_TRANSPARENT_HEADER_DIR . 'classes/sections/class-astra-customizer-transparent-header-configs.php';
+			require_once divino_THEME_TRANSPARENT_HEADER_DIR . 'classes/sections/class-divino-customizer-transparent-header-configs.php';
 			// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 		}
 
@@ -209,12 +209,12 @@ if ( ! class_exists( 'divino_Ext_Transparent_Header_Loader' ) ) {
 			/* Directory and Extension */
 			$dir_name    = SCRIPT_DEBUG ? 'unminified' : 'minified';
 			$file_prefix = SCRIPT_DEBUG ? '' : '.min';
-			wp_enqueue_script( 'astra-transparent-header-customizer-preview-js', divino_THEME_TRANSPARENT_HEADER_URI . 'assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'astra-customizer-preview-js' ), divino_THEME_VERSION, true );
+			wp_enqueue_script( 'divino-transparent-header-customizer-preview-js', divino_THEME_TRANSPARENT_HEADER_URI . 'assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'divino-customizer-preview-js' ), divino_THEME_VERSION, true );
 
 			// Localize variables for further JS.
 			wp_localize_script(
-				'astra-transparent-header-customizer-preview-js',
-				'AstraBuilderTransparentData',
+				'divino-transparent-header-customizer-preview-js',
+				'divinoBuilderTransparentData',
 				array(
 					'is_divino_hf_builder_active' => divino_Builder_Helper::$is_header_footer_builder_active,
 					'is_flex_based_css'          => divino_Builder_Helper::apply_flex_based_css(),

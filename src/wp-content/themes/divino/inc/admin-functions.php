@@ -2,7 +2,7 @@
 /**
  * Admin functions - Functions that add some functionality to WordPress admin panel
  *
- * @package Astra
+ * @package divino
  * @since 1.0.0
  */
 
@@ -27,7 +27,7 @@ if ( ! function_exists( 'divino_register_menu_locations' ) ) {
 		 */
 		register_nav_menus(
 			array(
-				'primary' => esc_html__( 'Primary Menu', 'astra' ),
+				'primary' => esc_html__( 'Primary Menu', 'divino' ),
 			)
 		);
 
@@ -38,8 +38,8 @@ if ( ! function_exists( 'divino_register_menu_locations' ) ) {
 			 */
 			register_nav_menus(
 				array(
-					'secondary_menu' => esc_html__( 'Secondary Menu', 'astra' ),
-					'mobile_menu'    => esc_html__( 'Off-Canvas Menu', 'astra' ),
+					'secondary_menu' => esc_html__( 'Secondary Menu', 'divino' ),
+					'mobile_menu'    => esc_html__( 'Off-Canvas Menu', 'divino' ),
 				)
 			);
 
@@ -53,7 +53,7 @@ if ( ! function_exists( 'divino_register_menu_locations' ) ) {
 
 				register_nav_menus(
 					array(
-						'menu_' . $index => esc_html__( 'Menu ', 'astra' ) . $index,
+						'menu_' . $index => esc_html__( 'Menu ', 'divino' ) . $index,
 					)
 				);
 			}
@@ -63,7 +63,7 @@ if ( ! function_exists( 'divino_register_menu_locations' ) ) {
 			 */
 			register_nav_menus(
 				array(
-					'loggedin_account_menu' => esc_html__( 'Logged In Account Menu', 'astra' ),
+					'loggedin_account_menu' => esc_html__( 'Logged In Account Menu', 'divino' ),
 				)
 			);
 
@@ -74,7 +74,7 @@ if ( ! function_exists( 'divino_register_menu_locations' ) ) {
 		 */
 		register_nav_menus(
 			array(
-				'footer_menu' => esc_html__( 'Footer Menu', 'astra' ),
+				'footer_menu' => esc_html__( 'Footer Menu', 'divino' ),
 			)
 		);
 	}

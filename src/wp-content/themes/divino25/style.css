@@ -396,6 +396,10 @@ footer {
     color: #fff;
 }
 
-.wp-block-post-featured-image img{
-
+.product-card-image {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 260 / 370;
+	object-fit: cover;
+	display: block;
 }

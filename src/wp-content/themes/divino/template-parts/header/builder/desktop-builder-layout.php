@@ -2,7 +2,7 @@
 /**
  * Template part for displaying header row.
  *
- * @package Astra Builder
+ * @package divino Builder
  */
 
 $divino_mobile_header_type = divino_get_option( 'mobile-header-type' );
@@ -17,17 +17,17 @@ if ( 'full-width' === $divino_mobile_header_type ) {
 	divino_main_header_bar_top();
 
 	/**
-	 * Astra Top Header
+	 * divino Top Header
 	 */
 	do_action( 'divino_above_header' );
 
 	/**
-	 * Astra Main Header
+	 * divino Main Header
 	 */
 	do_action( 'divino_primary_header' );
 
 	/**
-	 * Astra Bottom Header
+	 * divino Bottom Header
 	 */
 	do_action( 'divino_below_header' );
 
@@ -59,7 +59,7 @@ if ( 'full-width' === $divino_mobile_header_type ) {
 </div> <!-- Main Header Bar Wrap -->
 <?php
 /**
- * Astra Mobile Header
+ * divino Mobile Header
  */
 do_action( 'divino_mobile_header' );
 ?>

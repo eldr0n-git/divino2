@@ -1,3 +1,4 @@
+<!-- banner-with-description-and-images-grid.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Banner with description and images grid

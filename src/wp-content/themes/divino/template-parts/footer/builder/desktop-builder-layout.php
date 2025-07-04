@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Astra
+ * @package divino
  * @since 1.0.0
  */
 
@@ -30,15 +30,15 @@ echo wp_kses_post(
 	?>
 		<?php
 		/**
-		 * Astra Top footer
+		 * divino Top footer
 		 */
 		do_action( 'divino_above_footer' );
 		/**
-		 * Astra Middle footer
+		 * divino Middle footer
 		 */
 		do_action( 'divino_primary_footer' );
 		/**
-		 * Astra Bottom footer
+		 * divino Bottom footer
 		 */
 		do_action( 'divino_below_footer' );
 		?>

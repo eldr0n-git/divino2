@@ -1,10 +1,10 @@
 <?php
 /**
- * Astra Global color palette
+ * divino Global color palette
  *
- * @package     Astra
+ * @package     divino
  * @subpackage  Class
- * @link        https://wpastra.com/
+ * @link        https://divino.kz/
  * @since       3.7.0
  */
 
@@ -293,26 +293,26 @@ class divino_Global_Palette {
 		$color_palette_reorganize = divino_Dynamic_CSS::divino_4_8_9_compatibility();
 		$new_color_palette_labels = apply_filters( 'divino_new_color_labels', $color_palette_reorganize || isset( $divino_settings['new-color-labels'] ) );
 
-		$color_1_label = __( 'Brand', 'astra' );
-		$color_2_label = __( 'Alternate Brand', 'astra' );
-		$color_3_label = __( 'Headings', 'astra' );
-		$color_4_label = __( 'Text', 'astra' );
-		$color_5_label = $color_palette_reorganize ? __( 'Primary Background', 'astra' ) : __( 'Secondary Background', 'astra' );
-		$color_6_label = $color_palette_reorganize ? __( 'Secondary Background', 'astra' ) : __( 'Primary Background', 'astra' );
-		$color_7_label = $color_palette_reorganize ? __( 'Alternate Background', 'astra' ) : __( 'Subtle Background', 'astra' );
-		$color_8_label = $color_palette_reorganize ? __( 'Subtle Background', 'astra' ) : __( 'Alternate Background', 'astra' );
-		$color_9_label = __( 'Other Supporting', 'astra' );
+		$color_1_label = __( 'Brand', 'divino' );
+		$color_2_label = __( 'Alternate Brand', 'divino' );
+		$color_3_label = __( 'Headings', 'divino' );
+		$color_4_label = __( 'Text', 'divino' );
+		$color_5_label = $color_palette_reorganize ? __( 'Primary Background', 'divino' ) : __( 'Secondary Background', 'divino' );
+		$color_6_label = $color_palette_reorganize ? __( 'Secondary Background', 'divino' ) : __( 'Primary Background', 'divino' );
+		$color_7_label = $color_palette_reorganize ? __( 'Alternate Background', 'divino' ) : __( 'Subtle Background', 'divino' );
+		$color_8_label = $color_palette_reorganize ? __( 'Subtle Background', 'divino' ) : __( 'Alternate Background', 'divino' );
+		$color_9_label = __( 'Other Supporting', 'divino' );
 
 		return array(
-			$new_color_palette_labels ? $color_1_label : __( 'Color 1', 'astra' ),
-			$new_color_palette_labels ? $color_2_label : __( 'Color 2', 'astra' ),
-			$new_color_palette_labels ? $color_3_label : __( 'Color 3', 'astra' ),
-			$new_color_palette_labels ? $color_4_label : __( 'Color 4', 'astra' ),
-			$new_color_palette_labels ? $color_5_label : __( 'Color 5', 'astra' ),
-			$new_color_palette_labels ? $color_6_label : __( 'Color 6', 'astra' ),
-			$new_color_palette_labels ? $color_7_label : __( 'Color 7', 'astra' ),
-			$new_color_palette_labels ? $color_8_label : __( 'Color 8', 'astra' ),
-			$new_color_palette_labels ? $color_9_label : __( 'Color 9', 'astra' ),
+			$new_color_palette_labels ? $color_1_label : __( 'Color 1', 'divino' ),
+			$new_color_palette_labels ? $color_2_label : __( 'Color 2', 'divino' ),
+			$new_color_palette_labels ? $color_3_label : __( 'Color 3', 'divino' ),
+			$new_color_palette_labels ? $color_4_label : __( 'Color 4', 'divino' ),
+			$new_color_palette_labels ? $color_5_label : __( 'Color 5', 'divino' ),
+			$new_color_palette_labels ? $color_6_label : __( 'Color 6', 'divino' ),
+			$new_color_palette_labels ? $color_7_label : __( 'Color 7', 'divino' ),
+			$new_color_palette_labels ? $color_8_label : __( 'Color 8', 'divino' ),
+			$new_color_palette_labels ? $color_9_label : __( 'Color 9', 'divino' ),
 		);
 	}
 
@@ -395,7 +395,7 @@ class divino_Global_Palette {
 	 *
 	 * @since 3.9.0
 	 *
-	 * @param  string $dynamic_css          Astra Dynamic CSS.
+	 * @param  string $dynamic_css          divino Dynamic CSS.
 	 *
 	 * @return String Generated dynamic CSS for global border.
 	 */

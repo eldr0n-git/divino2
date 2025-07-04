@@ -2,8 +2,8 @@
 /**
  * Social Header Configuration.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       4.5.2
  */
 
@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Register social header builder Customizer Configurations.
  *
- * @param array $configurations Astra Customizer Configurations.
+ * @param array $configurations divino Customizer Configurations.
  * @since 4.5.2
- * @return array Astra Customizer Configurations with updated configurations.
+ * @return array divino Customizer Configurations with updated configurations.
  */
 function divino_header_social_configuration( $configurations = array() ) {
 

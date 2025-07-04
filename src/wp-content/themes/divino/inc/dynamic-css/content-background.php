@@ -2,7 +2,7 @@
 /**
  * Content Background - Dynamic CSS
  *
- * @package astra
+ * @package divino
  * @since 3.7.0
  */
 
@@ -15,7 +15,7 @@ add_filter( 'divino_dynamic_theme_css', 'divino_content_background_css', 11 );
 /**
  * Content Background - Dynamic CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
+ * @param  string $dynamic_css          divino Dynamic CSS.
  * @return String Generated dynamic CSS for content background.
  *
  * @since 3.2.0

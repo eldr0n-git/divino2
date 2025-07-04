@@ -1,10 +1,10 @@
 <?php
 /**
- * WooCommerce Options for Astra Theme.
+ * WooCommerce Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.1.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,12 +18,12 @@ if ( ! class_exists( 'divino_Woo_Shop_Cart_Layout_Configs' ) ) {
 	 */
 	class divino_Woo_Shop_Cart_Layout_Configs extends divino_Customizer_Config_Base {
 		/**
-		 * Register Astra-WooCommerce Shop Cart Layout Customizer Configurations.
+		 * Register divino-WooCommerce Shop Cart Layout Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -36,8 +36,8 @@ if ( ! class_exists( 'divino_Woo_Shop_Cart_Layout_Configs' ) ) {
 					'default'     => divino_get_option( 'woo-enable-cart-button-text' ),
 					'type'        => 'control',
 					'section'     => 'section-woo-shop-cart',
-					'title'       => __( 'Change Cart Button Text', 'astra' ),
-					'description' => __( 'Add custom text for cart button', 'astra' ),
+					'title'       => __( 'Change Cart Button Text', 'divino' ),
+					'description' => __( 'Add custom text for cart button', 'divino' ),
 					'control'     => 'ast-toggle-control',
 					'priority'    => 2,
 				),
@@ -50,7 +50,7 @@ if ( ! class_exists( 'divino_Woo_Shop_Cart_Layout_Configs' ) ) {
 					'default'  => divino_get_option( 'woo-cart-button-text' ),
 					'type'     => 'control',
 					'section'  => 'section-woo-shop-cart',
-					'title'    => __( 'Cart Button Text', 'astra' ),
+					'title'    => __( 'Cart Button Text', 'divino' ),
 					'context'  => array(
 						divino_Builder_Helper::$general_tab_config,
 						array(
@@ -74,7 +74,7 @@ if ( ! class_exists( 'divino_Woo_Shop_Cart_Layout_Configs' ) ) {
 					'type'     => 'control',
 					'control'  => 'ast-toggle-control',
 					'default'  => divino_get_option( 'enable-cart-upsells' ),
-					'title'    => __( 'Enable Cross-sells', 'astra' ),
+					'title'    => __( 'Enable Cross-sells', 'divino' ),
 					'priority' => 2.7,
 				),
 			);
@@ -87,7 +87,7 @@ if ( ! class_exists( 'divino_Woo_Shop_Cart_Layout_Configs' ) ) {
 					'section'  => 'section-woo-shop-cart',
 					'priority' => 1,
 					'label'    => '',
-					'help'     => '<strong>' . __( 'Note:', 'astra' ) . '</strong>' . __( ' Certain Cart page options may not work smoothly on the block editor based Cart page. For best results with these features, prefer using a shortcode based Cart page.', 'astra' ),
+					'help'     => '<strong>' . __( 'Note:', 'divino' ) . '</strong>' . __( ' Certain Cart page options may not work smoothly on the block editor based Cart page. For best results with these features, prefer using a shortcode based Cart page.', 'divino' ),
 				);
 
 				$_configs[] = array(
@@ -97,12 +97,12 @@ if ( ! class_exists( 'divino_Woo_Shop_Cart_Layout_Configs' ) ) {
 					'section'  => 'woocommerce_checkout',
 					'priority' => 1,
 					'label'    => '',
-					'help'     => '<strong>' . __( 'Note:', 'astra' ) . '</strong>' . __( ' Certain Checkout page options may not work smoothly on the block editor based Checkout page. For best results with these features, prefer using a shortcode-based Checkout page.', 'astra' ),
+					'help'     => '<strong>' . __( 'Note:', 'divino' ) . '</strong>' . __( ' Certain Checkout page options may not work smoothly on the block editor based Checkout page. For best results with these features, prefer using a shortcode-based Checkout page.', 'divino' ),
 				);
 			}
 
 			if ( divino_showcase_upgrade_notices() ) {
-				// Learn More link if Astra Pro is not activated.
+				// Learn More link if divino Pro is not activated.
 				$_configs[] = array(
 					'name'     => divino_THEME_SETTINGS . '[ast-woo-cart-pro-items]',
 					'type'     => 'control',
@@ -110,19 +110,19 @@ if ( ! class_exists( 'divino_Woo_Shop_Cart_Layout_Configs' ) ) {
 					'campaign' => 'woocommerce',
 					'choices'  => array(
 						'two'   => array(
-							'title' => __( 'Modern cart layout', 'astra' ),
+							'title' => __( 'Modern cart layout', 'divino' ),
 						),
 						'one'   => array(
-							'title' => __( 'Sticky cart totals', 'astra' ),
+							'title' => __( 'Sticky cart totals', 'divino' ),
 						),
 						'three' => array(
-							'title' => __( 'Real-time quantity updater', 'astra' ),
+							'title' => __( 'Real-time quantity updater', 'divino' ),
 						),
 					),
 					'section'  => 'section-woo-shop-cart',
 					'default'  => '',
 					'priority' => 999,
-					'title'    => __( 'Convert more, earn more with extensive cart conversion features', 'astra' ),
+					'title'    => __( 'Convert more, earn more with extensive cart conversion features', 'divino' ),
 					'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),
 					'context'  => array(),
 				);
@@ -134,40 +134,40 @@ if ( ! class_exists( 'divino_Woo_Shop_Cart_Layout_Configs' ) ) {
 					'campaign' => 'woocommerce',
 					'choices'  => array(
 						'two'   => array(
-							'title' => __( 'Modern layout', 'astra' ),
+							'title' => __( 'Modern layout', 'divino' ),
 						),
 						'one'   => array(
-							'title' => __( 'Multi-column layouts', 'astra' ),
+							'title' => __( 'Multi-column layouts', 'divino' ),
 						),
 						'three' => array(
-							'title' => __( 'Modern order received layout', 'astra' ),
+							'title' => __( 'Modern order received layout', 'divino' ),
 						),
 						'four'  => array(
-							'title' => __( 'Sticky order review', 'astra' ),
+							'title' => __( 'Sticky order review', 'divino' ),
 						),
 						'five'  => array(
-							'title' => __( 'Two-step checkout', 'astra' ),
+							'title' => __( 'Two-step checkout', 'divino' ),
 						),
 						'six'   => array(
-							'title' => __( 'Order note, Coupon field control', 'astra' ),
+							'title' => __( 'Order note, Coupon field control', 'divino' ),
 						),
 						'seven' => array(
-							'title' => __( 'Distraction free checkout', 'astra' ),
+							'title' => __( 'Distraction free checkout', 'divino' ),
 						),
 						'eight' => array(
-							'title' => __( 'Persistent checkout form data', 'astra' ),
+							'title' => __( 'Persistent checkout form data', 'divino' ),
 						),
 						'nine'  => array(
-							'title' => __( 'Text form options', 'astra' ),
+							'title' => __( 'Text form options', 'divino' ),
 						),
 						'ten'   => array(
-							'title' => __( 'Summary, Payment background', 'astra' ),
+							'title' => __( 'Summary, Payment background', 'divino' ),
 						),
 					),
 					'section'  => 'woocommerce_checkout',
 					'default'  => '',
 					'priority' => 999,
-					'title'    => __( 'Encourage last-minute purchases with extra conversion options at checkout', 'astra' ),
+					'title'    => __( 'Encourage last-minute purchases with extra conversion options at checkout', 'divino' ),
 					'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),
 					'context'  => array(),
 				);

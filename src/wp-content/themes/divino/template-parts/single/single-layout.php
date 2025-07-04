@@ -2,9 +2,9 @@
 /**
  * Template for Single post
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 ?>
@@ -50,7 +50,7 @@
 			divino_edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'astra' ),
+					esc_html__( 'Edit %s', 'divino' ),
 					the_title( '<span class="screen-reader-text">"', '"</span>', false )
 				),
 				'<span class="edit-link">',

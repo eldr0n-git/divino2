@@ -529,7 +529,7 @@ class divino_WebFont_Loader {
 	 * @return string
 	 */
 	public function get_local_stylesheet_filename() {
-		return apply_filters( 'divino_local_font_file_name', 'astra-local-fonts' );
+		return apply_filters( 'divino_local_font_file_name', 'divino-local-fonts' );
 	}
 
 	/**
@@ -587,7 +587,7 @@ class divino_WebFont_Loader {
 	 */
 	public function get_subfolder_name() {
 		if ( ! $this->subfolder_name ) {
-			$this->subfolder_name = apply_filters( 'divino_local_fonts_directory_name', 'astra-local-fonts' );
+			$this->subfolder_name = apply_filters( 'divino_local_fonts_directory_name', 'divino-local-fonts' );
 		}
 		return $this->subfolder_name;
 	}

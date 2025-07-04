@@ -1,3 +1,4 @@
+<!-- template-query-loop-news-blog.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: News blog query loop

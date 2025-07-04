@@ -1,10 +1,10 @@
 <?php
 /**
- * Breadcrumbs for Astra theme.
+ * Breadcrumbs for divino theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 1.8.0
+ * @since       divino 1.8.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -45,7 +45,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Markup' ) ) {
 		}
 
 		/**
-		 * Astra Breadcrumbs Template
+		 * divino Breadcrumbs Template
 		 *
 		 * Loads template based on the style option selected in options panel for Breadcrumbs.
 		 *
@@ -75,7 +75,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Markup' ) ) {
 		}
 
 		/**
-		 * Astra Hook Breadcrumb Position
+		 * divino Hook Breadcrumb Position
 		 *
 		 * Hook breadcrumb to position of selected option
 		 *
@@ -98,7 +98,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Markup' ) ) {
 		}
 
 		/**
-		 * Astra Breadcrumbs Rules
+		 * divino Breadcrumbs Rules
 		 *
 		 * Checks the rules defined for displaying Breadcrumb on different pages.
 		 *

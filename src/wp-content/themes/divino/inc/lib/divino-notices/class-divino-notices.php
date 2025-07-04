@@ -1,10 +1,10 @@
 <?php
 /**
- * Astra Notices
+ * divino Notices
  *
  * An easy to use PHP Library to add dismissible admin notices in the WordPress admin.
  *
- * @package Astra Notices
+ * @package divino Notices
  * @since 1.0.0
  */
 
@@ -69,7 +69,7 @@ if ( ! class_exists( 'divino_Notices' ) ) :
 		public function __construct() {
 			add_action( 'admin_notices', array( $this, 'show_notices' ), 30 );
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
-			add_action( 'wp_ajax_astra-notice-dismiss', array( $this, 'dismiss_notice' ) );
+			add_action( 'wp_ajax_divino-notice-dismiss', array( $this, 'dismiss_notice' ) );
 			add_filter( 'wp_kses_allowed_html', array( $this, 'add_data_attributes' ), 10, 2 );
 		}
 
@@ -137,20 +137,20 @@ if ( ! class_exists( 'divino_Notices' ) ) :
 				'session_tokens',
 			);
 
-			// if $notice_id does not start with astra-notices-id and notice_id is not from the allowed notices, then return.
-			if ( strpos( $notice_id, 'astra-notices-id-' ) !== 0 && ( ! in_array( $notice_id, $allowed_notices, true ) ) ) {
+			// if $notice_id does not start with divino-notices-id and notice_id is not from the allowed notices, then return.
+			if ( strpos( $notice_id, 'divino-notices-id-' ) !== 0 && ( ! in_array( $notice_id, $allowed_notices, true ) ) ) {
 				return;
 			}
 
-			if ( false === wp_verify_nonce( $nonce, 'astra-notices' ) ) {
-				wp_send_json_error( esc_html_e( 'WordPress Nonce not validated.', 'astra' ) );
+			if ( false === wp_verify_nonce( $nonce, 'divino-notices' ) ) {
+				wp_send_json_error( esc_html_e( 'WordPress Nonce not validated.', 'divino' ) );
 			}
 
 			// Valid inputs?
 			if ( ! empty( $notice_id ) ) {
 
 				if ( in_array( $notice_id, $wp_default_meta_keys, true ) ) {
-					wp_send_json_error( esc_html_e( 'Invalid notice ID.', 'astra' ) );
+					wp_send_json_error( esc_html_e( 'Invalid notice ID.', 'divino' ) );
 				}
 
 				if ( ! empty( $repeat_notice_after ) ) {
@@ -172,13 +172,13 @@ if ( ! class_exists( 'divino_Notices' ) ) :
 		 * @return void
 		 */
 		public function enqueue_scripts() {
-			wp_register_style( 'astra-notices', self::get_url() . 'notices.css', array(), self::$version );
-			wp_register_script( 'astra-notices', self::get_url() . 'notices.js', array( 'jquery' ), self::$version, true );
+			wp_register_style( 'divino-notices', self::get_url() . 'notices.css', array(), self::$version );
+			wp_register_script( 'divino-notices', self::get_url() . 'notices.js', array( 'jquery' ), self::$version, true );
 			wp_localize_script(
-				'astra-notices',
-				'astraNotices',
+				'divino-notices',
+				'divinoNotices',
 				array(
-					'_notice_nonce' => wp_create_nonce( 'astra-notices' ),
+					'_notice_nonce' => wp_create_nonce( 'divino-notices' ),
 				)
 			);
 		}
@@ -246,7 +246,7 @@ if ( ! class_exists( 'divino_Notices' ) ) :
 		 */
 		public function show_notices() {
 			$defaults = array(
-				'id'                         => '',      // Optional, Notice ID. If empty it set `astra-notices-id-<$array-index>`.
+				'id'                         => '',      // Optional, Notice ID. If empty it set `divino-notices-id-<$array-index>`.
 				'type'                       => 'info',  // Optional, Notice type. Default `info`. Expected [info, warning, notice, error].
 				'message'                    => '',      // Optional, Message.
 				'show_if'                    => true,    // Optional, Show notice on custom condition. E.g. 'show_if' => if( is_admin() ) ? true, false, .
@@ -299,16 +299,16 @@ if ( ! class_exists( 'divino_Notices' ) ) :
 		 * @return void
 		 */
 		public static function markup( $notice = array() ) {
-			wp_enqueue_script( 'astra-notices' );
-			wp_enqueue_style( 'astra-notices' );
+			wp_enqueue_script( 'divino-notices' );
+			wp_enqueue_style( 'divino-notices' );
 
 			do_action( 'divino_notice_before_markup' );
 
 			do_action( "divino_notice_before_markup_{$notice['id']}" );
 
 			?>
-			<div id="<?php echo esc_attr( $notice['id'] ); ?>" class="<?php echo 'astra-notice-wrapper ' . esc_attr( $notice['classes'] ); ?>" data-repeat-notice-after="<?php echo esc_attr( $notice['repeat-notice-after'] ); ?>">
-				<div class="astra-notice-container">
+			<div id="<?php echo esc_attr( $notice['id'] ); ?>" class="<?php echo 'divino-notice-wrapper ' . esc_attr( $notice['classes'] ); ?>" data-repeat-notice-after="<?php echo esc_attr( $notice['repeat-notice-after'] ); ?>">
+				<div class="divino-notice-container">
 					<?php do_action( "divino_notice_inside_markup_{$notice['id']}" ); ?>
 					<?php echo wp_kses_post( $notice['message'] ); ?>
 				</div>
@@ -329,7 +329,7 @@ if ( ! class_exists( 'divino_Notices' ) ) :
 		 * @return array       Notice wrapper classes.
 		 */
 		private static function get_wrap_classes( $notice ) {
-			$classes = array( 'astra-notice', 'notice' );
+			$classes = array( 'divino-notice', 'notice' );
 
 			if ( $notice['is_dismissible'] ) {
 				$classes[] = 'is-dismissible';
@@ -357,7 +357,7 @@ if ( ! class_exists( 'divino_Notices' ) ) :
 				return $notice['id'];
 			}
 
-			return 'astra-notices-id-' . $key;
+			return 'divino-notices-id-' . $key;
 		}
 
 		/**
@@ -396,7 +396,7 @@ if ( ! class_exists( 'divino_Notices' ) ) :
 		}
 
 		/**
-		 * Get base URL for the astra-notices.
+		 * Get base URL for the divino-notices.
 		 *
 		 * @return mixed URL.
 		 */

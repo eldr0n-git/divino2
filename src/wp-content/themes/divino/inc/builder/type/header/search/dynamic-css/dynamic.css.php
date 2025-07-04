@@ -2,7 +2,7 @@
 /**
  * Search - Dynamic CSS
  *
- * @package Astra
+ * @package divino
  * @since 3.0.0
  */
 
@@ -18,8 +18,8 @@ add_filter( 'divino_dynamic_theme_css', 'divino_hb_search_dynamic_css' );
 /**
  * Dynamic CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
- * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+ * @param  string $dynamic_css          divino Dynamic CSS.
+ * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
  * @return String Generated dynamic CSS for Search.
  *
  * @since 3.0.0
@@ -66,7 +66,7 @@ function divino_hb_search_dynamic_css( $dynamic_css, $dynamic_css_filtered = '' 
 		'.ast-builder-layout-element.ast-header-search' => array(
 			'height' => 'auto',
 		),
-		$selector . ' .astra-search-icon'               => array(
+		$selector . ' .divino-search-icon'               => array(
 			'color'     => esc_attr( $icon_color_desktop ),
 			'font-size' => divino_get_css_value( $icon_size_desktop, 'px' ),
 		),
@@ -96,7 +96,7 @@ function divino_hb_search_dynamic_css( $dynamic_css, $dynamic_css_filtered = '' 
 
 	$css_output_tablet = array(
 
-		$selector . ' .astra-search-icon' => array(
+		$selector . ' .divino-search-icon' => array(
 			'color'     => esc_attr( $icon_color_tablet ),
 			'font-size' => divino_get_css_value( $icon_size_tablet, 'px' ),
 		),
@@ -126,7 +126,7 @@ function divino_hb_search_dynamic_css( $dynamic_css, $dynamic_css_filtered = '' 
 
 	$css_output_mobile = array(
 
-		$selector . ' .astra-search-icon' => array(
+		$selector . ' .divino-search-icon' => array(
 			'color'     => esc_attr( $icon_color_mobile ),
 			'font-size' => divino_get_css_value( $icon_size_mobile, 'px' ),
 		),

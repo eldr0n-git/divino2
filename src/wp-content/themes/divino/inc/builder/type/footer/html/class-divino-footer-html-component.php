@@ -2,9 +2,9 @@
 /**
  * HTML component.
  *
- * @package     Astra Builder
+ * @package     divino Builder
  * @link        https://www.brainstormforce.com
- * @since       Astra 3.0.0
+ * @since       divino 3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -26,7 +26,7 @@ class divino_Footer_Html_Component {
 	public function __construct() {
 
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once divino_BUILDER_FOOTER_HTML_DIR . '/class-astra-footer-html-component-loader.php';
+		require_once divino_BUILDER_FOOTER_HTML_DIR . '/class-divino-footer-html-component-loader.php';
 
 		// Include front end files.
 		if ( ! is_admin() || divino_Builder_Customizer::divino_collect_customizer_builder_data() ) {

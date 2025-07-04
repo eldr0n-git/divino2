@@ -1,3 +1,4 @@
+<!-- template-single-news-blog.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: News blog single post with sidebar

@@ -2,7 +2,7 @@
 /**
  * Transparent Header Markup
  *
- * @package Astra
+ * @package divino
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -85,7 +85,7 @@ if ( ! class_exists( 'divino_ExtTransparenty_Header_Markup' ) ) {
 		}
 
 		/**
-		 * Astra check if transparent header is enabled.
+		 * divino check if transparent header is enabled.
 		 *
 		 * @return bool true/false.
 		 */
@@ -268,7 +268,7 @@ if ( ! class_exists( 'divino_ExtTransparenty_Header_Markup' ) ) {
 				$file_extension = $file_type['ext'];
 
 				if ( 'svg' === $file_extension ) {
-					$attr['class'] = 'astra-logo-svg';
+					$attr['class'] = 'divino-logo-svg';
 				}
 
 				$diff_retina_logo = divino_get_option( 'different-transparent-retina-logo' );
@@ -332,12 +332,12 @@ if ( ! class_exists( 'divino_ExtTransparenty_Header_Markup' ) ) {
 			<?php if ( $show_meta_field ) { ?>
 				<div class="transparent-header-wrapper">
 					<p class="post-attributes-label-wrapper">
-						<strong> <?php esc_html_e( 'Transparent Header', 'astra' ); ?> </strong><br/>
+						<strong> <?php esc_html_e( 'Transparent Header', 'divino' ); ?> </strong><br/>
 					</p>
 					<select name="theme-transparent-header-meta" id="theme-transparent-header-meta">
-						<option value="default" <?php selected( $trans_header_meta, 'default' ); ?>> <?php esc_html_e( 'Customizer Setting', 'astra' ); ?> </option>
-						<option value="enabled" <?php selected( $trans_header_meta, 'enabled' ); ?>> <?php esc_html_e( 'Enabled', 'astra' ); ?> </option>
-						<option value="disabled" <?php selected( $trans_header_meta, 'disabled' ); ?>> <?php esc_html_e( 'Disabled', 'astra' ); ?> </option>
+						<option value="default" <?php selected( $trans_header_meta, 'default' ); ?>> <?php esc_html_e( 'Customizer Setting', 'divino' ); ?> </option>
+						<option value="enabled" <?php selected( $trans_header_meta, 'enabled' ); ?>> <?php esc_html_e( 'Enabled', 'divino' ); ?> </option>
+						<option value="disabled" <?php selected( $trans_header_meta, 'disabled' ); ?>> <?php esc_html_e( 'Disabled', 'divino' ); ?> </option>
 					</select>
 				</div>
 			<?php } ?>

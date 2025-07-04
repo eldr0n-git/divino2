@@ -1,10 +1,10 @@
 <?php
 /**
- * Heading Colors for Astra theme.
+ * Heading Colors for divino theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 2.1.4
+ * @since       divino 2.1.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -27,7 +27,7 @@ if ( ! class_exists( 'divino_Heading_Colors' ) ) {
 		 */
 		public function __construct() {
 
-			require_once divino_THEME_HEADING_COLORS_DIR . 'class-astra-heading-colors-loader.php';// phpcs:ignore: WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+			require_once divino_THEME_HEADING_COLORS_DIR . 'class-divino-heading-colors-loader.php';// phpcs:ignore: WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 
 			// Include front end files.
 			if ( ! is_admin() ) {

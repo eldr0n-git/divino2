@@ -1,9 +1,9 @@
 <?php
 /**
- * Site_Identity for Astra theme.
+ * Site_Identity for divino theme.
  *
- * @package     astra-builder
- * @link        https://wpastra.com/
+ * @package     divino-builder
+ * @link        https://wpdivino.com/
  * @since       3.0.0
  */
 
@@ -25,7 +25,7 @@ class divino_Header_Site_Identity_Component {
 	 */
 	public function __construct() {
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once divino_HEADER_SITE_IDENTITY_DIR . '/class-astra-header-site-identity-component-loader.php';
+		require_once divino_HEADER_SITE_IDENTITY_DIR . '/class-divino-header-site-identity-component-loader.php';
 
 		// Include front end files.
 		if ( ! is_admin() || divino_Builder_Customizer::divino_collect_customizer_builder_data() ) {

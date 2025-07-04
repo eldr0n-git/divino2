@@ -1,8 +1,8 @@
 <?php
 /**
- * [Header] options for astra theme.
+ * [Header] options for divino theme.
  *
- * @package     Astra Header Footer Builder
+ * @package     divino Header Footer Builder
  * @link        https://www.brainstormforce.com
  * @since       3.0.0
  */
@@ -21,10 +21,10 @@ if ( class_exists( 'divino_Customizer_Config_Base' ) ) {
 		/**
 		 * Register Button control for Header/Footer Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 3.0.0
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 			return divino_header_button_configuration( $configurations );

@@ -2,7 +2,7 @@
 /**
  * Heading Colors - Dynamic CSS
  *
- * @package astra-builder
+ * @package divino-builder
  * @since 3.0.0
  */
 
@@ -18,8 +18,8 @@ add_filter( 'divino_dynamic_theme_css', 'divino_hb_menu_dynamic_css' );
 /**
  * Dynamic CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
- * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+ * @param  string $dynamic_css          divino Dynamic CSS.
+ * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
  * @return String Generated dynamic CSS for Heading Colors.
  *
  * @since 3.0.0
@@ -168,10 +168,10 @@ function divino_hb_menu_dynamic_css( $dynamic_css, $dynamic_css_filtered = '' ) 
 			$selector . ' .sub-menu .sub-menu'           => array(
 				'top' => divino_get_css_value( strval( -1 * intval( $sub_menu_border_top ) ), 'px' ),
 			),
-			$selector . ' .main-header-menu > .menu-item > .sub-menu, ' . $selector . ' .main-header-menu > .menu-item > .astra-full-megamenu-wrapper' => array(
+			$selector . ' .main-header-menu > .menu-item > .sub-menu, ' . $selector . ' .main-header-menu > .menu-item > .divino-full-megamenu-wrapper' => array(
 				'margin-top' => divino_get_css_value( $sub_menu_top_offset, 'px' ),
 			),
-			'.ast-desktop ' . $selector . ' .main-header-menu > .menu-item > .sub-menu:before, .ast-desktop ' . $selector . ' .main-header-menu > .menu-item > .astra-full-megamenu-wrapper:before' => array(
+			'.ast-desktop ' . $selector . ' .main-header-menu > .menu-item > .sub-menu:before, .ast-desktop ' . $selector . ' .main-header-menu > .menu-item > .divino-full-megamenu-wrapper:before' => array(
 				'height' => divino_calculate_spacing( $sub_menu_top_offset . 'px', '+', intval( $sub_menu_border_top ) . 'px + 5', 'px' ),
 			),
 			$selector . ' .menu-item.menu-item-has-children > .ast-menu-toggle' => array(
@@ -260,7 +260,7 @@ function divino_hb_menu_dynamic_css( $dynamic_css, $dynamic_css_filtered = '' ) 
 				'margin-left'   => divino_responsive_spacing( $margin, 'left', 'tablet' ),
 				'margin-right'  => divino_responsive_spacing( $margin, 'right', 'tablet' ),
 			),
-			$selector . ' .main-header-menu > .menu-item > .sub-menu, ' . $selector . ' .main-header-menu > .menu-item > .astra-full-megamenu-wrapper' => array(
+			$selector . ' .main-header-menu > .menu-item > .sub-menu, ' . $selector . ' .main-header-menu > .menu-item > .divino-full-megamenu-wrapper' => array(
 				'margin-top' => '0',
 			),
 		);
@@ -316,7 +316,7 @@ function divino_hb_menu_dynamic_css( $dynamic_css, $dynamic_css_filtered = '' ) 
 				'margin-left'   => divino_responsive_spacing( $margin, 'left', 'mobile' ),
 				'margin-right'  => divino_responsive_spacing( $margin, 'right', 'mobile' ),
 			),
-			$selector . ' .main-header-menu > .menu-item > .sub-menu, ' . $selector . ' .main-header-menu > .menu-item > .astra-full-megamenu-wrapper' => array(
+			$selector . ' .main-header-menu > .menu-item > .sub-menu, ' . $selector . ' .main-header-menu > .menu-item > .divino-full-megamenu-wrapper' => array(
 				'margin-top' => '0',
 			),
 		);

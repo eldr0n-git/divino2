@@ -2,8 +2,8 @@
 /**
  * EDD Cart Header Configuration.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       4.5.2
  */
 
@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Register EDD Cart header builder Customizer Configurations.
  *
- * @param array $configurations Astra Customizer Configurations.
+ * @param array $configurations divino Customizer Configurations.
  * @since 4.5.2
- * @return array Astra Customizer Configurations with updated configurations.
+ * @return array divino Customizer Configurations with updated configurations.
  */
 function divino_edd_cart_header_configuration( $configurations = array() ) {
 	$_section = true === divino_Builder_Helper::$is_header_footer_builder_active ? 'section-header-edd-cart' : 'section-edd-general';
@@ -33,7 +33,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 			'name'     => $_section,
 			'type'     => 'section',
 			'priority' => 5,
-			'title'    => __( 'EDD Cart', 'astra' ),
+			'title'    => __( 'EDD Cart', 'divino' ),
 			'panel'    => 'panel-header-builder-group',
 		),
 
@@ -46,7 +46,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 			'default'   => divino_get_option( 'edd-header-cart-total-display' ),
 			'type'      => 'control',
 			'section'   => $_section,
-			'title'     => __( 'Display Cart Total', 'astra' ),
+			'title'     => __( 'Display Cart Total', 'divino' ),
 			'priority'  => 50,
 			'transport' => 'postMessage',
 			'partial'   => array(
@@ -67,7 +67,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 			'default'   => divino_get_option( 'edd-header-cart-title-display' ),
 			'type'      => 'control',
 			'section'   => $_section,
-			'title'     => __( 'Display Cart Title', 'astra' ),
+			'title'     => __( 'Display Cart Title', 'divino' ),
 			'priority'  => 55,
 			'transport' => 'postMessage',
 			'partial'   => array(
@@ -87,12 +87,12 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 			'type'       => 'control',
 			'transport'  => 'postMessage',
 			'section'    => $_section,
-			'title'      => __( 'Style', 'astra' ),
+			'title'      => __( 'Style', 'divino' ),
 			'control'    => 'ast-selector',
 			'priority'   => 40,
 			'choices'    => array(
-				'outline' => __( 'Outline', 'astra' ),
-				'fill'    => __( 'Fill', 'astra' ),
+				'outline' => __( 'Outline', 'divino' ),
+				'fill'    => __( 'Fill', 'divino' ),
 			),
 			'divider'    => array( 'ast_class' => 'ast-bottom-divider' ),
 			'responsive' => false,
@@ -109,7 +109,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 			'type'              => 'control',
 			'control'           => 'ast-color',
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
-			'title'             => __( 'Color', 'astra' ),
+			'title'             => __( 'Color', 'divino' ),
 			'transport'         => 'postMessage',
 			'section'           => $_section,
 			'context'           => array(
@@ -140,7 +140,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 					'value'    => 'none',
 				),
 			),
-			'title'       => __( 'Border Radius', 'astra' ),
+			'title'       => __( 'Border Radius', 'divino' ),
 			'suffix'      => 'px',
 			'control'     => 'ast-slider',
 			'priority'    => 47,
@@ -162,7 +162,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 			'control'           => 'ast-color',
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 			'transport'         => 'postMessage',
-			'title'             => __( 'EDD Cart Icon Color', 'astra' ),
+			'title'             => __( 'EDD Cart Icon Color', 'divino' ),
 			'context'           => array(
 				divino_Builder_Helper::$design_tab_config,
 				array(
@@ -195,7 +195,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 				'type'     => 'control',
 				'control'  => 'ast-heading',
 				'section'  => $_section,
-				'title'    => __( 'Cart Tray', 'astra' ),
+				'title'    => __( 'Cart Tray', 'divino' ),
 				'priority' => 60,
 				'settings' => array(),
 				'context'  => divino_Builder_Helper::$design_tab,
@@ -211,7 +211,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 				'transport'  => 'postMessage',
 				'name'       => 'header-edd-cart-text-color',
 				'default'    => divino_get_option( 'header-edd-cart-text-color' ),
-				'title'      => __( 'Text Color', 'astra' ),
+				'title'      => __( 'Text Color', 'divino' ),
 				'responsive' => true,
 				'rgba'       => true,
 				'priority'   => 65,
@@ -227,7 +227,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 				'transport'  => 'postMessage',
 				'name'       => 'header-edd-cart-link-color',
 				'default'    => divino_get_option( 'header-edd-cart-link-color' ),
-				'title'      => __( 'Link Color', 'astra' ),
+				'title'      => __( 'Link Color', 'divino' ),
 				'responsive' => true,
 				'rgba'       => true,
 				'priority'   => 65,
@@ -242,7 +242,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 				'transport'  => 'postMessage',
 				'name'       => divino_THEME_SETTINGS . '[header-edd-cart-background-color]',
 				'default'    => divino_get_option( 'header-edd-cart-background-color' ),
-				'title'      => __( 'Background Color', 'astra' ),
+				'title'      => __( 'Background Color', 'divino' ),
 				'responsive' => true,
 				'rgba'       => true,
 				'priority'   => 65,
@@ -258,7 +258,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 				'transport'  => 'postMessage',
 				'name'       => divino_THEME_SETTINGS . '[header-edd-cart-separator-color]',
 				'default'    => divino_get_option( 'header-edd-cart-separator-color' ),
-				'title'      => __( 'Separator Color', 'astra' ),
+				'title'      => __( 'Separator Color', 'divino' ),
 				'responsive' => true,
 				'rgba'       => true,
 				'priority'   => 65,
@@ -271,7 +271,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 				'default'    => divino_get_option( 'header-edd-checkout-button-text-colors' ),
 				'type'       => 'control',
 				'control'    => 'ast-color-group',
-				'title'      => __( 'Button Text', 'astra' ),
+				'title'      => __( 'Button Text', 'divino' ),
 				'section'    => $_section,
 				'transport'  => 'postMessage',
 				'priority'   => 75,
@@ -279,7 +279,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 				'responsive' => true,
 				'divider'    => array(
 					'ast_class' => 'ast-top-divider',
-					'ast_title' => __( 'Checkout', 'astra' ),
+					'ast_title' => __( 'Checkout', 'divino' ),
 				),
 			),
 			array(
@@ -287,7 +287,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 				'default'    => divino_get_option( 'header-edd-checkout-button-background-colors' ),
 				'type'       => 'control',
 				'control'    => 'ast-color-group',
-				'title'      => __( 'Button Background', 'astra' ),
+				'title'      => __( 'Button Background', 'divino' ),
 				'section'    => $_section,
 				'transport'  => 'postMessage',
 				'priority'   => 75,
@@ -303,7 +303,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 				'transport'  => 'postMessage',
 				'name'       => 'header-edd-checkout-btn-text-color',
 				'default'    => divino_get_option( 'header-edd-checkout-btn-text-color' ),
-				'title'      => __( 'Normal', 'astra' ),
+				'title'      => __( 'Normal', 'divino' ),
 				'responsive' => true,
 				'rgba'       => true,
 				'priority'   => 75,
@@ -319,7 +319,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 				'transport'  => 'postMessage',
 				'name'       => 'header-edd-checkout-btn-background-color',
 				'default'    => divino_get_option( 'header-edd-checkout-btn-background-color' ),
-				'title'      => __( 'Normal', 'astra' ),
+				'title'      => __( 'Normal', 'divino' ),
 				'responsive' => true,
 				'rgba'       => true,
 				'priority'   => 75,
@@ -335,7 +335,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 				'transport'  => 'postMessage',
 				'name'       => 'header-edd-checkout-btn-text-hover-color',
 				'default'    => divino_get_option( 'header-edd-checkout-btn-text-hover-color' ),
-				'title'      => __( 'Hover', 'astra' ),
+				'title'      => __( 'Hover', 'divino' ),
 				'responsive' => true,
 				'rgba'       => true,
 				'priority'   => 75,
@@ -351,7 +351,7 @@ function divino_edd_cart_header_configuration( $configurations = array() ) {
 				'section'    => $_section,
 				'name'       => 'header-edd-checkout-btn-bg-hover-color',
 				'default'    => divino_get_option( 'header-edd-checkout-btn-bg-hover-color' ),
-				'title'      => __( 'Hover', 'astra' ),
+				'title'      => __( 'Hover', 'divino' ),
 				'responsive' => true,
 				'rgba'       => true,
 				'priority'   => 75,

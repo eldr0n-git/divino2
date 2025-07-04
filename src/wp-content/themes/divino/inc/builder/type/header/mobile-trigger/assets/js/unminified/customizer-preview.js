@@ -4,32 +4,32 @@
  * here. Your javascript should grab settings from customizer controls, and
  * then make any necessary changes to the page using jQuery.
  *
- * @package Astra
+ * @package divino
  * @since 3.0.0
  */
 
 ( function( $ ) {
 
-	var tablet_break_point    = astraBuilderPreview.tablet_break_point || 768,
-        mobile_break_point    = astraBuilderPreview.mobile_break_point || 544;
+	var tablet_break_point    = divinoBuilderPreview.tablet_break_point || 768,
+        mobile_break_point    = divinoBuilderPreview.mobile_break_point || 544;
 
 	// Trigger Icon Color.
 	divino_css(
-		'astra-settings[mobile-header-toggle-btn-color]',
+		'divino-settings[mobile-header-toggle-btn-color]',
 		'fill',
 		'[data-section="section-header-mobile-trigger"] .ast-button-wrap .mobile-menu-toggle-icon .ast-mobile-svg'
 	);
 
 	// Trigger Label Color.
 	divino_css(
-		'astra-settings[mobile-header-toggle-btn-color]',
+		'divino-settings[mobile-header-toggle-btn-color]',
 		'color',
 		'[data-section="section-header-mobile-trigger"] .ast-button-wrap .mobile-menu-wrap .mobile-menu'
 	);
 
 	// Trigger Icon Width.
 	divino_css(
-		'astra-settings[mobile-header-toggle-icon-size]',
+		'divino-settings[mobile-header-toggle-icon-size]',
 		'width',
 		'[data-section="section-header-mobile-trigger"] .ast-button-wrap .mobile-menu-toggle-icon .ast-mobile-svg',
 		'px'
@@ -37,7 +37,7 @@
 
 	// Trigger Icon Height.
 	divino_css(
-		'astra-settings[mobile-header-toggle-icon-size]',
+		'divino-settings[mobile-header-toggle-icon-size]',
 		'height',
 		'[data-section="section-header-mobile-trigger"] .ast-button-wrap .mobile-menu-toggle-icon .ast-mobile-svg',
 		'px'
@@ -45,13 +45,13 @@
 
 	// Trigger Button Background Color.
 	divino_css(
-		'astra-settings[mobile-header-toggle-btn-bg-color]',
+		'divino-settings[mobile-header-toggle-btn-bg-color]',
 		'background',
 		'[data-section="section-header-mobile-trigger"] .ast-button-wrap .menu-toggle.ast-mobile-menu-trigger-fill'
 	);
 
 	// Border Size for Trigger Button.
-	wp.customize( 'astra-settings[mobile-header-toggle-btn-border-size]', function( setting ) {
+	wp.customize( 'divino-settings[mobile-header-toggle-btn-border-size]', function( setting ) {
 		setting.bind( function( border ) {
 			var dynamicStyle = '[data-section="section-header-mobile-trigger"] .ast-button-wrap .menu-toggle.main-header-menu-toggle {';
 				dynamicStyle += 'border-top-width:'  + border.top + 'px;';
@@ -59,12 +59,12 @@
 				dynamicStyle += 'border-left-width:'   + border.left + 'px;';
 				dynamicStyle += 'border-bottom-width:'   + border.bottom + 'px;';
 				dynamicStyle += '} ';
-			divino_add_dynamic_css( 'astra-settings[mobile-header-toggle-btn-border-size]', dynamicStyle );
+			divino_add_dynamic_css( 'divino-settings[mobile-header-toggle-btn-border-size]', dynamicStyle );
 		} );
 	} );
 
 	// Border Radius Fields.
-	wp.customize( 'astra-settings[mobile-header-toggle-border-radius-fields]', function( setting ) {
+	wp.customize( 'divino-settings[mobile-header-toggle-border-radius-fields]', function( setting ) {
 		setting.bind( function( border ) {
 			let globalSelector = '[data-section="section-header-mobile-trigger"] .ast-button-wrap .menu-toggle.main-header-menu-toggle';
 
@@ -80,19 +80,19 @@
 					+ '; border-bottom-right-radius :' + border['mobile']['bottom'] + border['mobile-unit'] + '; border-bottom-left-radius :'
 					+ border['mobile']['left'] + border['mobile-unit'] + '; border-top-right-radius :' + border['mobile']['right'] + border['mobile-unit'] + '; } } ';
 
-			divino_add_dynamic_css( 'astra-settings[mobile-header-toggle-border-radius-fields]', dynamicStyle );
+			divino_add_dynamic_css( 'divino-settings[mobile-header-toggle-border-radius-fields]', dynamicStyle );
 		} );
 	} );
 
 	// Border Color.
 	divino_css(
-		'astra-settings[mobile-header-toggle-border-color]',
+		'divino-settings[mobile-header-toggle-border-color]',
 		'border-color',
 		'[data-section="section-header-mobile-trigger"] .ast-button-wrap .menu-toggle.ast-mobile-menu-trigger-outline, [data-section="section-header-mobile-trigger"] .ast-button-wrap .menu-toggle.ast-mobile-menu-trigger-fill'
 	);
 
 	// Margin.
-    wp.customize( 'astra-settings[section-header-mobile-trigger' + '-margin]', function( value ) {
+    wp.customize( 'divino-settings[section-header-mobile-trigger' + '-margin]', function( value ) {
         value.bind( function( margin ) {
             if(
                 margin.desktop.bottom != '' || margin.desktop.top != '' || margin.desktop.left != '' || margin.desktop.right != '' ||
@@ -132,7 +132,7 @@
 
 	// Trigger Typography.
 	divino_css(
-		'astra-settings[mobile-header-label-font-size]',
+		'divino-settings[mobile-header-label-font-size]',
 		'font-size',
 		'[data-section="section-header-mobile-trigger"] .ast-button-wrap .mobile-menu-wrap .mobile-menu',
 		'px'

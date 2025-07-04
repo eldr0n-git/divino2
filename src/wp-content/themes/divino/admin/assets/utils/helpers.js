@@ -12,7 +12,7 @@ import DOMPurify from 'dompurify';
 const classNames = ( ...classes ) => classes.filter( Boolean ).join( ' ' );
 
 /**
- * Handles the Astra Pro CTA button click event, opening the upgrade URL in a new tab.
+ * Handles the divino Pro CTA button click event, opening the upgrade URL in a new tab.
  * This function also handles the display of a spinner during the upgrade process.
  *
  * @param {Event} e - The event object.
@@ -22,7 +22,7 @@ const classNames = ( ...classes ) => classes.filter( Boolean ).join( ' ' );
  * @param {boolean} options.disableSpinner - Optional. Disables the spinner if true.
  * @param {string} options.spinnerPosition - Optional. The position of the spinner.
  */
-const handleGetAstraPro = (
+const handleGetdivinoPro = (
 	e,
 	{ url = divino_admin.upgrade_url, campaign = '', disableSpinner = false, spinnerPosition = 'right' } = {}
 ) => {
@@ -52,7 +52,7 @@ const handleGetAstraPro = (
 	const formData = new window.FormData();
 	formData.append( 'action', 'divino_recommended_plugin_activate' );
 	formData.append( 'security', divino_admin.plugin_manager_nonce );
-	formData.append( 'init', 'astra-addon/astra-addon.php' );
+	formData.append( 'init', 'divino-addon/divino-addon.php' );
 
 	apiFetch( {
 		url: divino_admin.ajax_url,
@@ -66,7 +66,7 @@ const handleGetAstraPro = (
 			}
 		} )
 		.catch( ( error ) => {
-			e.target.innerText = __( 'Activation failed. Please try again.', 'astra' );
+			e.target.innerText = __( 'Activation failed. Please try again.', 'divino' );
 			e.target.disabled = false;
 			console.error( 'Error during API request:', error );
 			// Optionally, notify the user about the error or handle it appropriately.
@@ -99,22 +99,22 @@ const debounce = ( func, delay ) => {
 };
 
 /**
- * Returns the Astra Pro title.
+ * Returns the divino Pro title.
  *
- * @return {string} Returns the Astra Pro title.
+ * @return {string} Returns the divino Pro title.
  */
-const getAstraProTitle = () => {
-	return divino_admin.pro_installed_status ? __( 'Activate Now', 'astra' ) : __( 'Upgrade Now', 'astra' );
+const getdivinoProTitle = () => {
+	return divino_admin.pro_installed_status ? __( 'Activate Now', 'divino' ) : __( 'Upgrade Now', 'divino' );
 };
 
 
 /**
- * Returns the Astra Pro title.
+ * Returns the divino Pro title.
  *
- * @return {string} Returns the Astra Pro title.
+ * @return {string} Returns the divino Pro title.
  */
-const getAstraProTitleFreePage = () => {
-	return divino_admin.pro_installed_status ? __( 'Activate Now', 'astra' ) : __( 'See all Astra Pro Features', 'astra' );
+const getdivinoProTitleFreePage = () => {
+	return divino_admin.pro_installed_status ? __( 'Activate Now', 'divino' ) : __( 'See all divino Pro Features', 'divino' );
 };
 
 /**
@@ -132,7 +132,7 @@ const getSpinner = () => {
 };
 
 /**
- * A function to save astra admin settings.
+ * A function to save divino admin settings.
  *
  * @function
  *
@@ -174,7 +174,7 @@ const saveSetting = debounce(
 			.then( () => {
 				dispatch( {
 					type: 'UPDATE_SETTINGS_SAVED_NOTIFICATION',
-					payload: __( 'Successfully saved!', 'astra' ),
+					payload: __( 'Successfully saved!', 'divino' ),
 				} );
 			} )
 			.catch( ( error ) => {
@@ -185,11 +185,11 @@ const saveSetting = debounce(
 				console.error( 'Error during API request:', error );
 				dispatch( {
 					type: 'UPDATE_SETTINGS_SAVED_NOTIFICATION',
-					payload: __( 'An error occurred while saving.', 'astra' ),
+					payload: __( 'An error occurred while saving.', 'divino' ),
 				} );
 			} );
 	},
 	300
 );
 
-export { classNames, handleGetAstraPro, debounce, getAstraProTitle, getAstraProTitleFreePage, getSpinner, saveSetting };
+export { classNames, handleGetdivinoPro, debounce, getdivinoProTitle, getdivinoProTitleFreePage, getSpinner, saveSetting };

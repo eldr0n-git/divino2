@@ -1,10 +1,10 @@
 <?php
 /**
- * Search Form for Astra theme.
+ * Search Form for divino theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 3.3.0
+ * @since       divino 3.3.0
  */
 
 /**
@@ -24,17 +24,17 @@ $autocomplete_attr = $live_search ? 'autocomplete="off"' : '';
 ?>
 <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<label for="search-field">
-		<span class="screen-reader-text"><?php echo esc_html__( 'Search for:', 'astra' ); ?></span>
+		<span class="screen-reader-text"><?php echo esc_html__( 'Search for:', 'divino' ); ?></span>
 		<input type="search" id="search-field" class="search-field" <?php echo esc_attr( $autocomplete_attr ); ?> <?php echo esc_attr( $divino_search_data_attrs ); ?> placeholder="<?php echo esc_attr( $divino_search_input_placeholder ); ?>" value="<?php echo esc_attr( $divino_search_input_value ); ?>" name="s" tabindex="-1">
 		<?php if ( class_exists( 'divino_Icons' ) && divino_Icons::is_svg_icons() ) { ?>
-			<button class="search-submit ast-search-submit" aria-label="<?php echo esc_attr__( 'Search Submit', 'astra' ); ?>">
-				<span hidden><?php echo esc_html__( 'Search', 'astra' ); ?></span>
+			<button class="search-submit ast-search-submit" aria-label="<?php echo esc_attr__( 'Search Submit', 'divino' ); ?>">
+				<span hidden><?php echo esc_html__( 'Search', 'divino' ); ?></span>
 				<i><?php divino_Icons::get_icons( 'search', true ); ?></i>
 			</button>
 		<?php } ?>
 	</label>
 	<?php if ( $divino_search_show_input_submit ) { ?>
-		<input type="submit" class="search-submit" value="<?php echo esc_attr__( 'Search', 'astra' ); ?>">
+		<input type="submit" class="search-submit" value="<?php echo esc_attr__( 'Search', 'divino' ); ?>">
 	<?php } ?>
 </form>
 <?php

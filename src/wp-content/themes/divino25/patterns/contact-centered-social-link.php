@@ -1,3 +1,4 @@
+<!-- contact-centered-social-link.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Centered link and social links

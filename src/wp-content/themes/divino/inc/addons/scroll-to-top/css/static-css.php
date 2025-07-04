@@ -2,7 +2,7 @@
 /**
  * Scroll to Top - Static CSS
  *
- * @package Astra
+ * @package divino
  *
  * @since 4.0.0
  */
@@ -16,7 +16,7 @@ add_filter( 'divino_dynamic_theme_css', 'divino_scroll_to_top_static_css', 11 );
 /**
  * Scroll to Top - Static CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
+ * @param  string $dynamic_css          divino Dynamic CSS.
  * @return String Generated dynamic CSS for Scroll to Top.
  *
  * @since 4.0.0

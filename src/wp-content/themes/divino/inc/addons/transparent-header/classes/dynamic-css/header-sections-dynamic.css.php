@@ -2,7 +2,7 @@
 /**
  * Transparent Header - Dynamic CSS
  *
- * @package Astra
+ * @package divino
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -17,8 +17,8 @@ add_filter( 'divino_dynamic_theme_css', 'divino_ext_transparent_above_header_sec
 /**
  * Dynamic CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
- * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+ * @param  string $dynamic_css          divino Dynamic CSS.
+ * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
  * @return String Generated dynamic CSS for above header transparent header.
  */
 function divino_ext_transparent_above_header_sections_dynamic_css( $dynamic_css, $dynamic_css_filtered = '' ) {
@@ -267,8 +267,8 @@ add_filter( 'divino_dynamic_theme_css', 'divino_ext_transparent_below_header_sec
 /**
  * Dynamic CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
- * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+ * @param  string $dynamic_css          divino Dynamic CSS.
+ * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
  * @return String Generated dynamic CSS.
  */
 function divino_ext_transparent_below_header_sections_dynamic_css( $dynamic_css, $dynamic_css_filtered = '' ) {

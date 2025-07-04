@@ -2,7 +2,7 @@
 /**
  * Primary Header - Dynamic CSS
  *
- * @package Astra
+ * @package divino
  * @since 3.0.0
  */
 
@@ -18,8 +18,8 @@ add_filter( 'divino_dynamic_theme_css', 'divino_primary_header_breakpoint_style'
 /**
  * Dynamic CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
- * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+ * @param  string $dynamic_css          divino Dynamic CSS.
+ * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
  * @return String Generated dynamic CSS for Heading Colors.
  *
  * @since 3.0.0
@@ -212,7 +212,7 @@ function divino_primary_header_breakpoint_style( $dynamic_css, $dynamic_css_filt
 	$parse_css .= apply_filters( 'divino_addon_colors_dynamic_css_mobile', divino_parse_css( $mobile_colors, '', divino_get_mobile_breakpoint() ) );
 
 	/**
-	 * Tweak - $remove_bottom_sire_brancing - Search in Astra Pro.
+	 * Tweak - $remove_bottom_sire_brancing - Search in divino Pro.
 	 */
 
 	// Trim white space for faster page loading.

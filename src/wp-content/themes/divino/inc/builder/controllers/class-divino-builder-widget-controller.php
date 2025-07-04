@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Builder Widget Controller.
+ * divino Builder Widget Controller.
  *
- * @package astra-builder
+ * @package divino-builder
  */
 
 // No direct access, please.
@@ -65,7 +65,7 @@ if ( ! class_exists( 'divino_Builder_Widget_Controller' ) ) {
 		}
 
 		/**
-		 * Initiate Astra Widgets.
+		 * Initiate divino Widgets.
 		 */
 		public function widget_init() {
 
@@ -108,7 +108,7 @@ if ( ! class_exists( 'divino_Builder_Widget_Controller' ) ) {
 					array(
 						'name'          => ucfirst( $builder_type ) . ' Builder Widget ' . $index,
 						'id'            => $builder_type . '-widget-' . $index,
-						'description'   => esc_html__( 'Add widgets here:', 'astra' ),
+						'description'   => esc_html__( 'Add widgets here:', 'divino' ),
 						'before_widget' => '<section id="%1$s" class="widget %2$s">',
 						'after_widget'  => '</section>',
 						'before_title'  => '<h2 class="widget-title">',

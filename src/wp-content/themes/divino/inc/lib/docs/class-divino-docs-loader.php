@@ -2,7 +2,7 @@
 /**
  * Download Docs locally.
  *
- * @package Astra
+ * @package divino
  * @since 4.6.0
  */
 

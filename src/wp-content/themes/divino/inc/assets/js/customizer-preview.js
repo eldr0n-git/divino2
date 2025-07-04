@@ -106,19 +106,19 @@
 								 */
 								if ( reference ) {
 									switch (itemId) {
-										case 'astra-color-palettes':
-											defaultTarget.wp.customize.control( itemId ).container.find( '.components-button.astra-color-icon-indicate.open').click(); // Close all other opened pickers first.
-											defaultTarget.wp.customize.control( itemId ).container.find( '.' + reference + ' .components-button.astra-color-icon-indicate').click();
+										case 'divino-color-palettes':
+											defaultTarget.wp.customize.control( itemId ).container.find( '.components-button.divino-color-icon-indicate.open').click(); // Close all other opened pickers first.
+											defaultTarget.wp.customize.control( itemId ).container.find( '.' + reference + ' .components-button.divino-color-icon-indicate').click();
 										break;
 
-										case 'astra-settings[ast-headings-font-settings]':
-										case 'astra-settings[ast-body-font-settings]':
-										case 'astra-settings[ast-heading-h1-typo]':
-										case 'astra-settings[ast-heading-h2-typo]':
-										case 'astra-settings[ast-heading-h3-typo]':
-										case 'astra-settings[ast-heading-h4-typo]':
-										case 'astra-settings[ast-heading-h5-typo]':
-										case 'astra-settings[ast-heading-h6-typo]':
+										case 'divino-settings[ast-headings-font-settings]':
+										case 'divino-settings[ast-body-font-settings]':
+										case 'divino-settings[ast-heading-h1-typo]':
+										case 'divino-settings[ast-heading-h2-typo]':
+										case 'divino-settings[ast-heading-h3-typo]':
+										case 'divino-settings[ast-heading-h4-typo]':
+										case 'divino-settings[ast-heading-h5-typo]':
+										case 'divino-settings[ast-heading-h6-typo]':
 											defaultTarget.wp.customize.control( itemId ).container.find( '.ast-adv-toggle-icon.open').click(); // Close all other opened settings group first.
 											defaultTarget.wp.customize.control( itemId ).container.find( '.' + reference + ' .ast-adv-toggle-icon').click();
 										break;
@@ -140,7 +140,7 @@
 						break;
 					}
 
-					defaultTarget.wp.customize.state('astra-customizer-tab').set( context );
+					defaultTarget.wp.customize.state('divino-customizer-tab').set( context );
 				}
 			}
 		);
@@ -148,7 +148,7 @@
         /**
          * Ajax quantity input show.
          */
-        wp.customize( 'astra-settings[woo-header-cart-click-action]', function( setting ) {
+        wp.customize( 'divino-settings[woo-header-cart-click-action]', function( setting ) {
             setting.bind( function( action ) {
                 $( document.body ).trigger( 'wc_fragment_refresh' );
             } );
@@ -158,7 +158,7 @@
 		 * Register partial refresh events at once asynchronously.
 		 */
 		wp.customize.preview.bind( 'active', function() {
-			var partials = $.extend({}, astraCustomizer.dynamic_partial_options), key;
+			var partials = $.extend({}, divinoCustomizer.dynamic_partial_options), key;
 			var register_partial = async function () {
 				for ( const key in partials ) {
 					wp.customize.selectiveRefresh.partial.add(
@@ -178,7 +178,7 @@
     /**
      * Inline logo and title css only.
      */
-    wp.customize( 'astra-settings[logo-title-inline]', function( value ) {
+    wp.customize( 'divino-settings[logo-title-inline]', function( value ) {
         value.bind( function( is_checked ) {
            jQuery('#masthead').toggleClass( 'ast-logo-title-inline', is_checked );
            jQuery('.ast-sg-logo-section').toggleClass( 'ast-logo-title-inline', is_checked );
@@ -189,10 +189,10 @@
 
 
 // Single Post Content Width
-wp.customize( 'astra-settings[blog-single-width]', function( value ) {
+wp.customize( 'divino-settings[blog-single-width]', function( value ) {
     value.bind( function( value ) {
 
-        var single_post_max_width = wp.customize('astra-settings[blog-single-max-width]').get();
+        var single_post_max_width = wp.customize('divino-settings[blog-single-max-width]').get();
 
         var dynamicStyle = '';
 
@@ -210,10 +210,10 @@ wp.customize( 'astra-settings[blog-single-width]', function( value ) {
 } );
 
 // Blog Post Content Width
-wp.customize( 'astra-settings[blog-width]', function( value ) {
+wp.customize( 'divino-settings[blog-width]', function( value ) {
     value.bind( function( value ) {
 
-        var blog_max_width = wp.customize('astra-settings[blog-max-width]').get();
+        var blog_max_width = wp.customize('divino-settings[blog-max-width]').get();
 
         var dynamicStyle = '';
 
@@ -231,7 +231,7 @@ wp.customize( 'astra-settings[blog-width]', function( value ) {
 } );
 
 // Blog Post Content Width
-wp.customize( 'astra-settings[edd-archive-grids]', function( value ) {
+wp.customize( 'divino-settings[edd-archive-grids]', function( value ) {
     value.bind( function( value ) {
 
         for ( var i = 1; i < 7; i++ ) {
@@ -251,10 +251,10 @@ wp.customize( 'astra-settings[edd-archive-grids]', function( value ) {
 
 
 // Blog Post Content Width
-wp.customize( 'astra-settings[edd-archive-width]', function( value ) {
+wp.customize( 'divino-settings[edd-archive-width]', function( value ) {
     value.bind( function( value ) {
 
-        var edd_archive_max_width = wp.customize('astra-settings[edd-archive-max-width]').get();
+        var edd_archive_max_width = wp.customize('divino-settings[edd-archive-max-width]').get();
         edd_archive_max_width = ( 'custom' === value ) ? edd_archive_max_width : edd_archive_max_width + 40;
 
         var dynamicStyle = '';
@@ -267,11 +267,11 @@ wp.customize( 'astra-settings[edd-archive-width]', function( value ) {
 } );
 
 // WooCommerce store notice color configs.
-divino_css( 'astra-settings[store-notice-text-color]', 'color', 'body p.demo_store, body .woocommerce-store-notice, body p.demo_store a, body .woocommerce-store-notice a' );
-divino_css( 'astra-settings[store-notice-background-color]', 'background-color', 'body p.demo_store, body .woocommerce-store-notice, body p.demo_store a, body .woocommerce-store-notice a' );
+divino_css( 'divino-settings[store-notice-text-color]', 'color', 'body p.demo_store, body .woocommerce-store-notice, body p.demo_store a, body .woocommerce-store-notice a' );
+divino_css( 'divino-settings[store-notice-background-color]', 'background-color', 'body p.demo_store, body .woocommerce-store-notice, body p.demo_store a, body .woocommerce-store-notice a' );
 
 // WooCommerce store notice position preview.
-wp.customize( 'astra-settings[store-notice-position]', function( setting ) {
+wp.customize( 'divino-settings[store-notice-position]', function( setting ) {
     setting.bind( function( position ) {
 		if( 'hang-over-top' === position ) {
 			wp.customize.preview.send( 'refresh' );
@@ -283,41 +283,41 @@ wp.customize( 'astra-settings[store-notice-position]', function( setting ) {
     } );
 } );
 
-wp.customize( 'astra-settings[blog-meta-date-type]', function( setting ) {
+wp.customize( 'divino-settings[blog-meta-date-type]', function( setting ) {
 	setting.bind( function( val ) {
 		wp.customize.preview.send( 'refresh' );
 	} );
 } );
-wp.customize( 'astra-settings[blog-meta-date-format]', function( setting ) {
+wp.customize( 'divino-settings[blog-meta-date-format]', function( setting ) {
 	setting.bind( function( val ) {
 		wp.customize.preview.send( 'refresh' );
 	} );
 } );
 
 divino_refresh_customizer(
-    'astra-settings[blog-hover-effect]'
+    'divino-settings[blog-hover-effect]'
 );
 
 divino_refresh_customizer(
-    'astra-settings[blog-image-ratio-type]'
+    'divino-settings[blog-image-ratio-type]'
 );
 
 divino_refresh_customizer(
-    'astra-settings[blog-image-size]'
+    'divino-settings[blog-image-size]'
 );
 
 divino_refresh_customizer(
-    'astra-settings[blog-image-ratio-pre-scale]'
+    'divino-settings[blog-image-ratio-pre-scale]'
 );
 
 divino_refresh_customizer(
-    'astra-settings[blog-image-custom-scale-width]'
+    'divino-settings[blog-image-custom-scale-width]'
 );
 
 divino_refresh_customizer(
-    'astra-settings[blog-image-custom-scale-height]'
+    'divino-settings[blog-image-custom-scale-height]'
 );
 
 divino_refresh_customizer(
-    'astra-settings[blog-post-per-page]'
+    'divino-settings[blog-post-per-page]'
 );

@@ -2,7 +2,7 @@
 /**
  * Gravity Forms File.
  *
- * @package Astra
+ * @package divino
  */
 
 // If plugin - 'Gravity Forms' not exist then return.
@@ -11,12 +11,12 @@ if ( ! class_exists( 'GFForms' ) ) {
 }
 
 /**
- * Astra Gravity Forms
+ * divino Gravity Forms
  */
 if ( ! class_exists( 'divino_Gravity_Forms' ) ) {
 
 	/**
-	 * Astra Gravity Forms
+	 * divino Gravity Forms
 	 *
 	 * @since 1.0.0
 	 */
@@ -63,7 +63,7 @@ if ( ! class_exists( 'divino_Gravity_Forms' ) ) {
 
 			$css_file = divino_THEME_URI . 'assets/css/' . $dir_name . '/compatibility/gravity-forms' . $file_prefix . '.css';
 
-			wp_enqueue_style( 'astra-gravity-forms', $css_file, array(), divino_THEME_VERSION, 'all' );
+			wp_enqueue_style( 'divino-gravity-forms', $css_file, array(), divino_THEME_VERSION, 'all' );
 		}
 
 	}

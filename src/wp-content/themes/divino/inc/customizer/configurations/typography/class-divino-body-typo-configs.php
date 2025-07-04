@@ -1,10 +1,10 @@
 <?php
 /**
- * Styling Options for Astra Theme.
+ * Styling Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.15
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.15
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,10 +20,10 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 		/**
 		 * Register Body Typography Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -37,7 +37,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 				array(
 					'name'     => divino_THEME_SETTINGS . '[ast-body-font-settings-divider]',
 					'section'  => $typo_section,
-					'title'    => __( 'Base Font', 'astra' ),
+					'title'    => __( 'Base Font', 'divino' ),
 					'type'     => 'control',
 					'control'  => 'ast-heading',
 					'priority' => 6,
@@ -54,7 +54,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'type'      => 'control',
 					'control'   => 'ast-settings-group',
 					'is_font'   => true,
-					'title'     => __( 'Body Font', 'astra' ),
+					'title'     => __( 'Body Font', 'divino' ),
 					'section'   => $typo_section,
 					'transport' => 'postMessage',
 					'priority'  => 6,
@@ -69,11 +69,11 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'type'        => 'sub-control',
 					'control'     => 'ast-font',
 					'font_type'   => 'ast-font-family',
-					'ast_inherit' => __( 'Default System Font', 'astra' ),
+					'ast_inherit' => __( 'Default System Font', 'divino' ),
 					'default'     => divino_get_option( 'body-font-family' ),
 					'section'     => $typo_section,
 					'priority'    => 6,
-					'title'       => __( 'Font Family', 'astra' ),
+					'title'       => __( 'Font Family', 'divino' ),
 					'connect'     => divino_THEME_SETTINGS . '[body-font-weight]',
 					'variant'     => divino_THEME_SETTINGS . '[body-font-variant]',
 					'divider'     => array( 'ast_class' => 'ast-sub-bottom-divider' ),
@@ -89,7 +89,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'control'           => 'ast-font-variant',
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_variant' ),
 					'default'           => divino_get_option( 'body-font-variant' ),
-					'ast_inherit'       => __( 'Default', 'astra' ),
+					'ast_inherit'       => __( 'Default', 'divino' ),
 					'section'           => $typo_section,
 					'priority'          => 15,
 					'title'             => '',
@@ -116,10 +116,10 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'font_type'         => 'ast-font-weight',
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
 					'default'           => divino_get_option( 'body-font-weight' ),
-					'ast_inherit'       => __( 'Default', 'astra' ),
+					'ast_inherit'       => __( 'Default', 'divino' ),
 					'section'           => $typo_section,
 					'priority'          => 14,
-					'title'             => __( 'Font Weight', 'astra' ),
+					'title'             => __( 'Font Weight', 'divino' ),
 					'connect'           => 'body-font-family',
 				),
 
@@ -135,7 +135,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'default'     => divino_get_option( 'font-size-body' ),
 					'priority'    => 15,
 					'lazy'        => true,
-					'title'       => __( 'Font Size', 'astra' ),
+					'title'       => __( 'Font Size', 'divino' ),
 					'suffix'      => array( 'px', 'em', 'vw', 'rem' ),
 					'input_attrs' => array(
 						'px'  => array(
@@ -172,7 +172,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'section'  => $typo_section,
 					'priority' => 25,
 					'default'  => divino_get_option( 'body-font-extras' ),
-					'title'    => __( 'Font Extras', 'astra' ),
+					'title'    => __( 'Font Extras', 'divino' ),
 				),
 
 				/**
@@ -183,7 +183,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'default'   => divino_get_option( 'ast-headings-font-settings' ),
 					'type'      => 'control',
 					'control'   => 'ast-settings-group',
-					'title'     => __( 'Headings Font', 'astra' ),
+					'title'     => __( 'Headings Font', 'divino' ),
 					'section'   => $typo_section,
 					'is_font'   => true,
 					'transport' => 'postMessage',
@@ -197,7 +197,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 				array(
 					'name'     => divino_THEME_SETTINGS . '[ast-headings-font-settings-divider]',
 					'section'  => $typo_section,
-					'title'    => __( 'Heading Font', 'astra' ),
+					'title'    => __( 'Heading Font', 'divino' ),
 					'type'     => 'control',
 					'control'  => 'ast-heading',
 					'priority' => 10,
@@ -215,7 +215,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'control'   => 'ast-font',
 					'font_type' => 'ast-font-family',
 					'default'   => divino_get_option( 'headings-font-family' ),
-					'title'     => __( 'Font Family', 'astra' ),
+					'title'     => __( 'Font Family', 'divino' ),
 					'section'   => $typo_section,
 					'priority'  => 26,
 					'connect'   => divino_THEME_SETTINGS . '[headings-font-weight]',
@@ -234,7 +234,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'font_type'         => 'ast-font-weight',
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
 					'default'           => divino_get_option( 'headings-font-weight' ),
-					'title'             => __( 'Font Weight', 'astra' ),
+					'title'             => __( 'Font Weight', 'divino' ),
 					'section'           => $typo_section,
 					'priority'          => 26,
 					'connect'           => 'headings-font-family',
@@ -250,7 +250,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'control'           => 'ast-font-variant',
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_variant' ),
 					'default'           => divino_get_option( 'headings-font-variant' ),
-					'ast_inherit'       => __( 'Default', 'astra' ),
+					'ast_inherit'       => __( 'Default', 'divino' ),
 					'section'           => $typo_section,
 					'priority'          => 26,
 					'variant'           => divino_THEME_SETTINGS . '[headings-font-family]',
@@ -275,7 +275,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'section'   => $typo_section,
 					'priority'  => 26,
 					'default'   => divino_get_option( 'headings-font-extras' ),
-					'title'     => __( 'Font Extras', 'astra' ),
+					'title'     => __( 'Font Extras', 'divino' ),
 					'divider'   => array( 'ast_class' => 'ast-sub-top-divider' ),
 				),
 
@@ -291,7 +291,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'transport'         => 'postMessage',
 					'section'           => $typo_section,
 					'priority'          => 31,
-					'title'             => __( 'Paragraph Margin Bottom', 'astra' ),
+					'title'             => __( 'Paragraph Margin Bottom', 'divino' ),
 					'suffix'            => 'em',
 					'lazy'              => true,
 					'input_attrs'       => array(
@@ -313,7 +313,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'section'   => $typo_section,
 					'priority'  => 32,
 					'divider'   => array( 'ast_class' => 'ast-top-divider' ),
-					'title'     => __( 'Underline Content Links', 'astra' ),
+					'title'     => __( 'Underline Content Links', 'divino' ),
 					'transport' => 'postMessage',
 				),
 			);
@@ -328,7 +328,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'default'   => divino_get_option( 'ast-heading-h1-typo' ),
 					'type'      => 'control',
 					'control'   => 'ast-settings-group',
-					'title'     => __( 'H1 Font', 'astra' ),
+					'title'     => __( 'H1 Font', 'divino' ),
 					'is_font'   => true,
 					'section'   => $typo_section,
 					'transport' => 'postMessage',
@@ -343,7 +343,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'default'   => divino_get_option( 'ast-heading-h2-typo' ),
 					'type'      => 'control',
 					'control'   => 'ast-settings-group',
-					'title'     => __( 'H2 Font', 'astra' ),
+					'title'     => __( 'H2 Font', 'divino' ),
 					'is_font'   => true,
 					'section'   => $typo_section,
 					'transport' => 'postMessage',
@@ -358,7 +358,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'default'   => divino_get_option( 'ast-heading-h3-typo' ),
 					'type'      => 'control',
 					'control'   => 'ast-settings-group',
-					'title'     => __( 'H3 Font', 'astra' ),
+					'title'     => __( 'H3 Font', 'divino' ),
 					'is_font'   => true,
 					'section'   => $typo_section,
 					'transport' => 'postMessage',
@@ -374,7 +374,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'type'      => 'control',
 					'control'   => 'ast-settings-group',
 					'is_font'   => true,
-					'title'     => __( 'H4 Font', 'astra' ),
+					'title'     => __( 'H4 Font', 'divino' ),
 					'section'   => $typo_section,
 					'transport' => 'postMessage',
 					'priority'  => 30,
@@ -388,7 +388,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'default'   => divino_get_option( 'ast-heading-h5-typo' ),
 					'type'      => 'control',
 					'control'   => 'ast-settings-group',
-					'title'     => __( 'H5 Font', 'astra' ),
+					'title'     => __( 'H5 Font', 'divino' ),
 					'is_font'   => true,
 					'section'   => $typo_section,
 					'transport' => 'postMessage',
@@ -403,7 +403,7 @@ if ( ! class_exists( 'divino_Body_Typo_Configs' ) ) {
 					'default'   => divino_get_option( 'ast-heading-h6-typo' ),
 					'type'      => 'control',
 					'control'   => 'ast-settings-group',
-					'title'     => __( 'H6 Font', 'astra' ),
+					'title'     => __( 'H6 Font', 'divino' ),
 					'is_font'   => true,
 					'section'   => $typo_section,
 					'transport' => 'postMessage',

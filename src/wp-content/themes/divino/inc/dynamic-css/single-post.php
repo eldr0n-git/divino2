@@ -2,7 +2,7 @@
 /**
  * Single Post UI Improvement - Dynamic CSS
  *
- * @package astra-builder
+ * @package divino-builder
  * @since 4.6.0
  */
 
@@ -17,7 +17,7 @@ if ( apply_filters( 'divino_improvise_single_post_design', divino_Dynamic_CSS::d
 /**
  * Single Post UI Improvement - Dynamic CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
+ * @param  string $dynamic_css          divino Dynamic CSS.
  * @return String Generated dynamic CSS for Pagination.
  *
  * @since 4.6.0

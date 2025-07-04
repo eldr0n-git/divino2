@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Builder Controller.
+ * divino Builder Controller.
  *
- * @package astra-builder
+ * @package divino-builder
  * @since 3.0.0
  */
 
@@ -35,11 +35,11 @@ final class divino_Builder_Customizer {
 			return;
 		}
 
-		require_once divino_THEME_DIR . 'inc/customizer/configurations/builder/class-astra-builder-base-configuration.php';
+		require_once divino_THEME_DIR . 'inc/customizer/configurations/builder/class-divino-builder-base-configuration.php';
 		// Base Config Files.
-		require_once divino_THEME_DIR . 'inc/customizer/configurations/builder/base/class-astra-social-icon-component-configs.php';
-		require_once divino_THEME_DIR . 'inc/customizer/configurations/builder/base/class-astra-html-component-configs.php';
-		require_once divino_THEME_DIR . 'inc/customizer/configurations/builder/base/class-astra-button-component-configs.php';
+		require_once divino_THEME_DIR . 'inc/customizer/configurations/builder/base/class-divino-social-icon-component-configs.php';
+		require_once divino_THEME_DIR . 'inc/customizer/configurations/builder/base/class-divino-html-component-configs.php';
+		require_once divino_THEME_DIR . 'inc/customizer/configurations/builder/base/class-divino-button-component-configs.php';
 
 		define( 'divino_HEADER_BUILDER_CONFIGS_DIR', divino_THEME_DIR . 'inc/customizer/configurations/builder/header/configs/' );
 		foreach ( scandir( divino_HEADER_BUILDER_CONFIGS_DIR ) as $config_file ) {
@@ -149,7 +149,7 @@ final class divino_Builder_Customizer {
 	 */
 	public function builder_customizer_preview_styles() {
 		/**
-		 * Added Astra Pro dependent customizer style.
+		 * Added divino Pro dependent customizer style.
 		 */
 		if ( is_customize_preview() ) {
 			echo '<style type="text/css">
@@ -158,7 +158,7 @@ final class divino_Builder_Customizer {
 				}
 			</style>';
 			if ( divino_wp_version_compare( '6.1', '<' ) ) {
-				echo '<style type="text/css" class="astra-wp-6-0-builder-popover-compatibility">
+				echo '<style type="text/css" class="divino-wp-6-0-builder-popover-compatibility">
 					.components-popover.ahfb-popover-add-builder {
 						left: 50% !important;
 						top: 0 !important;
@@ -184,7 +184,7 @@ final class divino_Builder_Customizer {
 				';
 			}
 			if ( divino_wp_version_compare( '6.2', '>=' ) ) {
-				echo '<style type="text/css" class="astra-wp-6-2-builder-popover-compatibility">
+				echo '<style type="text/css" class="divino-wp-6-2-builder-popover-compatibility">
 					.popup-vertical-group .components-popover.ahfb-popover-add-builder {
 						left: 18% !important;
 					}
@@ -200,7 +200,7 @@ final class divino_Builder_Customizer {
 	 * @since 3.0.0
 	 */
 	public function enqueue_customizer_preview_scripts() {
-		// Bail early if it is not astra customizer.
+		// Bail early if it is not divino customizer.
 		if ( ! divino_Customizer::is_divino_customizer() ) {
 			return;
 		}
@@ -231,10 +231,10 @@ final class divino_Builder_Customizer {
 			true
 		);
 
-		// Localize variables for Astra Breakpoints JS.
+		// Localize variables for divino Breakpoints JS.
 		wp_localize_script(
 			'ahfb-base-customizer-preview',
-			'astraBuilderPreview',
+			'divinoBuilderPreview',
 			array(
 				'tablet_break_point' => divino_get_tablet_breakpoint(),
 				'mobile_break_point' => divino_get_mobile_breakpoint(),
@@ -243,10 +243,10 @@ final class divino_Builder_Customizer {
 
 		wp_localize_script(
 			'ahfb-customizer-preview',
-			'astraBuilderCustomizer',
+			'divinoBuilderCustomizer',
 			array(
 				'ajaxurl'    => admin_url( 'admin-ajax.php' ),
-				'ajax_nonce' => wp_create_nonce( 'astra-builder-customizer-nonce' ),
+				'ajax_nonce' => wp_create_nonce( 'divino-builder-customizer-nonce' ),
 			)
 		);
 	}
@@ -258,8 +258,8 @@ final class divino_Builder_Customizer {
 	 */
 	public function load_extended_components() {
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once divino_THEME_DIR . 'inc/customizer/class-astra-extended-base-configuration.php';
-		require_once divino_THEME_DIR . 'inc/class-astra-extended-base-dynamic-css.php';
+		require_once divino_THEME_DIR . 'inc/customizer/class-divino-extended-base-configuration.php';
+		require_once divino_THEME_DIR . 'inc/class-divino-extended-base-dynamic-css.php';
 		// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	}
 
@@ -269,13 +269,13 @@ final class divino_Builder_Customizer {
 	public function load_base_components() {
 
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once divino_THEME_DIR . 'inc/builder/type/class-astra-builder-base-dynamic-css.php';
+		require_once divino_THEME_DIR . 'inc/builder/type/class-divino-builder-base-dynamic-css.php';
 
 		// Base Dynamic CSS Files.
-		require_once divino_THEME_DIR . 'inc/builder/type/base/dynamic-css/html/class-astra-html-component-dynamic-css.php';
-		require_once divino_THEME_DIR . 'inc/builder/type/base/dynamic-css/social/class-astra-social-component-dynamic-css.php';
-		require_once divino_THEME_DIR . 'inc/builder/type/base/dynamic-css/button/class-astra-button-component-dynamic-css.php';
-		require_once divino_THEME_DIR . 'inc/builder/type/base/dynamic-css/widget/class-astra-widget-component-dynamic-css.php';
+		require_once divino_THEME_DIR . 'inc/builder/type/base/dynamic-css/html/class-divino-html-component-dynamic-css.php';
+		require_once divino_THEME_DIR . 'inc/builder/type/base/dynamic-css/social/class-divino-social-component-dynamic-css.php';
+		require_once divino_THEME_DIR . 'inc/builder/type/base/dynamic-css/button/class-divino-button-component-dynamic-css.php';
+		require_once divino_THEME_DIR . 'inc/builder/type/base/dynamic-css/widget/class-divino-widget-component-dynamic-css.php';
 
 		$this->load_header_components();
 		$this->load_footer_components();
@@ -290,28 +290,28 @@ final class divino_Builder_Customizer {
 	public function load_header_components() {
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 		$header_components_path = divino_THEME_DIR . 'inc/builder/type/header';
-		require_once $header_components_path . '/site-identity/class-astra-header-site-identity-component.php';
-		require_once $header_components_path . '/off-canvas/class-astra-off-canvas.php';
-		require_once $header_components_path . '/primary-header/class-astra-primary-header.php';
-		require_once $header_components_path . '/button/class-astra-header-button-component.php';
-		require_once $header_components_path . '/menu/class-astra-header-menu-component.php';
-		require_once $header_components_path . '/html/class-astra-header-html-component.php';
-		require_once $header_components_path . '/search/class-astra-header-search-component.php';
-		require_once $header_components_path . '/account/class-astra-header-account-component.php';
-		require_once $header_components_path . '/social-icon/class-astra-header-social-icon-component.php';
-		require_once $header_components_path . '/widget/class-astra-header-widget-component.php';
-		require_once $header_components_path . '/mobile-trigger/class-astra-mobile-trigger.php';
-		require_once $header_components_path . '/mobile-menu/class-astra-mobile-menu-component.php';
+		require_once $header_components_path . '/site-identity/class-divino-header-site-identity-component.php';
+		require_once $header_components_path . '/off-canvas/class-divino-off-canvas.php';
+		require_once $header_components_path . '/primary-header/class-divino-primary-header.php';
+		require_once $header_components_path . '/button/class-divino-header-button-component.php';
+		require_once $header_components_path . '/menu/class-divino-header-menu-component.php';
+		require_once $header_components_path . '/html/class-divino-header-html-component.php';
+		require_once $header_components_path . '/search/class-divino-header-search-component.php';
+		require_once $header_components_path . '/account/class-divino-header-account-component.php';
+		require_once $header_components_path . '/social-icon/class-divino-header-social-icon-component.php';
+		require_once $header_components_path . '/widget/class-divino-header-widget-component.php';
+		require_once $header_components_path . '/mobile-trigger/class-divino-mobile-trigger.php';
+		require_once $header_components_path . '/mobile-menu/class-divino-mobile-menu-component.php';
 
-		require_once $header_components_path . '/above-header/class-astra-above-header.php';
-		require_once $header_components_path . '/below-header/class-astra-below-header.php';
+		require_once $header_components_path . '/above-header/class-divino-above-header.php';
+		require_once $header_components_path . '/below-header/class-divino-below-header.php';
 
 		if ( class_exists( 'divino_Woocommerce' ) ) {
-			require_once $header_components_path . '/woo-cart/class-astra-header-woo-cart-component.php';
+			require_once $header_components_path . '/woo-cart/class-divino-header-woo-cart-component.php';
 		}
 
 		if ( class_exists( 'Easy_Digital_Downloads' ) ) {
-			require_once $header_components_path . '/edd-cart/class-astra-header-edd-cart-component.php';
+			require_once $header_components_path . '/edd-cart/class-divino-header-edd-cart-component.php';
 		}
 
 		// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
@@ -325,15 +325,15 @@ final class divino_Builder_Customizer {
 	public function load_footer_components() {
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 		$footer_components_path = divino_THEME_DIR . 'inc/builder/type/footer';
-		require_once $footer_components_path . '/below-footer/class-astra-below-footer.php';
-		require_once $footer_components_path . '/menu/class-astra-footer-menu-component.php';
-		require_once $footer_components_path . '/html/class-astra-footer-html-component.php';
-		require_once $footer_components_path . '/button/class-astra-footer-button-component.php';
-		require_once $footer_components_path . '/copyright/class-astra-footer-copyright-component.php';
-		require_once $footer_components_path . '/social-icon/class-astra-footer-social-icons-component.php';
-		require_once $footer_components_path . '/above-footer/class-astra-above-footer.php';
-		require_once $footer_components_path . '/primary-footer/class-astra-primary-footer.php';
-		require_once $footer_components_path . '/widget/class-astra-footer-widget-component.php';
+		require_once $footer_components_path . '/below-footer/class-divino-below-footer.php';
+		require_once $footer_components_path . '/menu/class-divino-footer-menu-component.php';
+		require_once $footer_components_path . '/html/class-divino-footer-html-component.php';
+		require_once $footer_components_path . '/button/class-divino-footer-button-component.php';
+		require_once $footer_components_path . '/copyright/class-divino-footer-copyright-component.php';
+		require_once $footer_components_path . '/social-icon/class-divino-footer-social-icons-component.php';
+		require_once $footer_components_path . '/above-footer/class-divino-above-footer.php';
+		require_once $footer_components_path . '/primary-footer/class-divino-primary-footer.php';
+		require_once $footer_components_path . '/widget/class-divino-footer-widget-component.php';
 		// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	}
 
@@ -347,9 +347,9 @@ final class divino_Builder_Customizer {
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 		$builder_config_path = divino_THEME_DIR . 'inc/customizer/configurations/builder/';
 		// Header Builder.
-		require_once $builder_config_path . '/header/class-astra-customizer-header-builder-configs.php';
+		require_once $builder_config_path . '/header/class-divino-customizer-header-builder-configs.php';
 		// Footer Builder.
-		require_once $builder_config_path . '/footer/class-astra-customizer-footer-builder-configs.php';
+		require_once $builder_config_path . '/footer/class-divino-customizer-footer-builder-configs.php';
 		// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	}
 
@@ -362,30 +362,30 @@ final class divino_Builder_Customizer {
 	public function header_configs( $wp_customize ) {
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 		$header_config_path = divino_THEME_DIR . 'inc/customizer/configurations/builder/header';
-		require_once $header_config_path . '/class-astra-customizer-above-header-configs.php';
-		require_once $header_config_path . '/class-astra-customizer-below-header-configs.php';
-		require_once $header_config_path . '/class-astra-customizer-header-builder-configs.php';
-		require_once $header_config_path . '/class-astra-customizer-header-widget-configs.php';
-		require_once $header_config_path . '/class-astra-customizer-mobile-trigger-configs.php';
-		require_once $header_config_path . '/class-astra-customizer-off-canvas-configs.php';
-		require_once $header_config_path . '/class-astra-customizer-primary-header-configs.php';
-		require_once $header_config_path . '/class-astra-customizer-site-identity-configs.php';
-		require_once $header_config_path . '/class-astra-header-button-component-configs.php';
-		require_once $header_config_path . '/class-astra-header-html-component-configs.php';
-		require_once $header_config_path . '/class-astra-header-menu-component-configs.php';
-		require_once $header_config_path . '/class-astra-header-search-component-configs.php';
-		require_once $header_config_path . '/class-astra-header-account-component-configs.php';
-		require_once $header_config_path . '/class-astra-header-social-icon-component-configs.php';
+		require_once $header_config_path . '/class-divino-customizer-above-header-configs.php';
+		require_once $header_config_path . '/class-divino-customizer-below-header-configs.php';
+		require_once $header_config_path . '/class-divino-customizer-header-builder-configs.php';
+		require_once $header_config_path . '/class-divino-customizer-header-widget-configs.php';
+		require_once $header_config_path . '/class-divino-customizer-mobile-trigger-configs.php';
+		require_once $header_config_path . '/class-divino-customizer-off-canvas-configs.php';
+		require_once $header_config_path . '/class-divino-customizer-primary-header-configs.php';
+		require_once $header_config_path . '/class-divino-customizer-site-identity-configs.php';
+		require_once $header_config_path . '/class-divino-header-button-component-configs.php';
+		require_once $header_config_path . '/class-divino-header-html-component-configs.php';
+		require_once $header_config_path . '/class-divino-header-menu-component-configs.php';
+		require_once $header_config_path . '/class-divino-header-search-component-configs.php';
+		require_once $header_config_path . '/class-divino-header-account-component-configs.php';
+		require_once $header_config_path . '/class-divino-header-social-icon-component-configs.php';
 
 		if ( class_exists( 'divino_Woocommerce' ) ) {
-			require_once $header_config_path . '/class-astra-customizer-woo-cart-configs.php';
+			require_once $header_config_path . '/class-divino-customizer-woo-cart-configs.php';
 		}
 
 		if ( class_exists( 'Easy_Digital_Downloads' ) ) {
-			require_once $header_config_path . '/class-astra-customizer-edd-cart-configs.php';
+			require_once $header_config_path . '/class-divino-customizer-edd-cart-configs.php';
 		}
 
-		require_once $header_config_path . '/class-astra-mobile-menu-component-configs.php';
+		require_once $header_config_path . '/class-divino-mobile-menu-component-configs.php';
 		// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	}
 
@@ -398,16 +398,16 @@ final class divino_Builder_Customizer {
 	public function footer_configs( $wp_customize ) {
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 		$footer_config_path = divino_THEME_DIR . 'inc/customizer/configurations/builder/footer';
-		require_once $footer_config_path . '/class-astra-customizer-above-footer-configs.php';
-		require_once $footer_config_path . '/class-astra-customizer-below-footer-configs.php';
-		require_once $footer_config_path . '/class-astra-customizer-copyright-configs.php';
-		require_once $footer_config_path . '/class-astra-customizer-footer-builder-configs.php';
-		require_once $footer_config_path . '/class-astra-customizer-footer-menu-configs.php';
-		require_once $footer_config_path . '/class-astra-customizer-footer-social-icons-configs.php';
-		require_once $footer_config_path . '/class-astra-customizer-primary-footer-configs.php';
-		require_once $footer_config_path . '/class-astra-footer-html-component-configs.php';
-		require_once $footer_config_path . '/class-astra-footer-button-component-configs.php';
-		require_once $footer_config_path . '/class-astra-footer-widget-component-configs.php';
+		require_once $footer_config_path . '/class-divino-customizer-above-footer-configs.php';
+		require_once $footer_config_path . '/class-divino-customizer-below-footer-configs.php';
+		require_once $footer_config_path . '/class-divino-customizer-copyright-configs.php';
+		require_once $footer_config_path . '/class-divino-customizer-footer-builder-configs.php';
+		require_once $footer_config_path . '/class-divino-customizer-footer-menu-configs.php';
+		require_once $footer_config_path . '/class-divino-customizer-footer-social-icons-configs.php';
+		require_once $footer_config_path . '/class-divino-customizer-primary-footer-configs.php';
+		require_once $footer_config_path . '/class-divino-footer-html-component-configs.php';
+		require_once $footer_config_path . '/class-divino-footer-button-component-configs.php';
+		require_once $footer_config_path . '/class-divino-footer-widget-component-configs.php';
 		// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	}
 
@@ -422,11 +422,11 @@ final class divino_Builder_Customizer {
 		$header_config_path = divino_THEME_DIR . 'inc/customizer/configurations/builder/header';
 
 		if ( class_exists( 'divino_Woocommerce' ) ) {
-			require_once $header_config_path . '/class-astra-customizer-woo-cart-configs.php';
+			require_once $header_config_path . '/class-divino-customizer-woo-cart-configs.php';
 		}
 
 		if ( class_exists( 'Easy_Digital_Downloads' ) ) {
-			require_once $header_config_path . '/class-astra-customizer-edd-cart-configs.php';
+			require_once $header_config_path . '/class-divino-customizer-edd-cart-configs.php';
 		}
 		// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	}

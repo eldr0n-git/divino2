@@ -2,9 +2,9 @@
 /**
  * Register customizer panels & sections for SureCart CPT.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 4.6.13
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 4.6.13
  * @since       4.6.9 Changed to using divino_Customizer API
  */
 
@@ -21,10 +21,10 @@ if ( ! class_exists( 'divino_Customizer_Register_Surecart_Section' ) ) {
 		/**
 		 * Register Panels and Sections for Customizer.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 4.6.13
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -33,7 +33,7 @@ if ( ! class_exists( 'divino_Customizer_Register_Surecart_Section' ) ) {
 						'name'     => 'ast-surecart',
 						'type'     => 'section',
 						'priority' => 68,
-						'title'    => __( 'SureCart', 'astra' ),
+						'title'    => __( 'SureCart', 'divino' ),
 					),
 				);
 
@@ -42,21 +42,21 @@ if ( ! class_exists( 'divino_Customizer_Register_Surecart_Section' ) ) {
 						'name'     => 'section-posttype-sc_product',
 						'type'     => 'section',
 						'section'  => 'ast-surecart',
-						'title'    => __( 'Products', 'astra' ),
+						'title'    => __( 'Products', 'divino' ),
 						'priority' => 69,
 					),
 					'sc_collection' => array(
 						'name'     => 'section-posttype-sc_collection',
 						'type'     => 'section',
 						'section'  => 'ast-surecart',
-						'title'    => __( 'Collections', 'astra' ),
+						'title'    => __( 'Collections', 'divino' ),
 						'priority' => 70,
 					),
 					'sc_upsell'     => array(
 						'name'     => 'section-posttype-sc_upsell',
 						'type'     => 'section',
 						'section'  => 'ast-surecart',
-						'title'    => __( 'Upsells', 'astra' ),
+						'title'    => __( 'Upsells', 'divino' ),
 						'priority' => 71,
 					),
 				);

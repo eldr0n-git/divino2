@@ -1,9 +1,9 @@
 <?php
 /**
- * Menu Styling Loader for Astra theme.
+ * Menu Styling Loader for divino theme.
  *
- * @package     astra-builder
- * @link        https://wpastra.com/
+ * @package     divino-builder
+ * @link        https://wpdivino.com/
  * @since       3.0.0
  */
 
@@ -64,12 +64,12 @@ class divino_Header_Menu_Component_Loader {
 		/* Directory and Extension */
 		$dir_name    = SCRIPT_DEBUG ? 'unminified' : 'minified';
 		$file_prefix = SCRIPT_DEBUG ? '' : '.min';
-		wp_enqueue_script( 'astra-heading-menu-customizer-preview-js', divino_HEADER_MENU_URI . '/assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'astra-customizer-preview-js' ), divino_THEME_VERSION, true );
+		wp_enqueue_script( 'divino-heading-menu-customizer-preview-js', divino_HEADER_MENU_URI . '/assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'divino-customizer-preview-js' ), divino_THEME_VERSION, true );
 
 		// Localize variables for Menu JS.
 		wp_localize_script(
-			'astra-heading-menu-customizer-preview-js',
-			'AstraBuilderMenuData',
+			'divino-heading-menu-customizer-preview-js',
+			'divinoBuilderMenuData',
 			array(
 				'component_limit'    => defined( 'divino_EXT_VER' ) ? divino_Builder_Helper::$component_limit : divino_Builder_Helper::$num_of_header_menu,
 				'nav_menu_enabled'   => defined( 'divino_EXT_VER' ) && divino_Ext_Extension::is_active( 'nav-menu' ) ? true : false,

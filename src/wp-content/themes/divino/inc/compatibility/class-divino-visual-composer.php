@@ -2,7 +2,7 @@
 /**
  * Visual Composer Compatibility File.
  *
- * @package Astra
+ * @package divino
  */
 
 // If plugin - 'Visual Composer' not exist then return.
@@ -11,12 +11,12 @@ if ( ! class_exists( 'Vc_Manager' ) ) {
 }
 
 /**
- * Astra Visual Composer Compatibility
+ * divino Visual Composer Compatibility
  */
 if ( ! class_exists( 'divino_Visual_Composer' ) ) {
 
 	/**
-	 * Astra Visual Composer Compatibility
+	 * divino Visual Composer Compatibility
 	 *
 	 * @since 1.0.0
 	 */
@@ -126,7 +126,7 @@ if ( ! class_exists( 'divino_Visual_Composer' ) ) {
 		 */
 		public function add_styles( $assets ) {
 			if ( ! empty( $assets['css'] ) ) {
-				$assets['css'] = array( 'astra-vc-builder' => 'compatibility/page-builder/vc-plugin' ) + $assets['css'];
+				$assets['css'] = array( 'divino-vc-builder' => 'compatibility/page-builder/vc-plugin' ) + $assets['css'];
 			}
 			return $assets;
 		}

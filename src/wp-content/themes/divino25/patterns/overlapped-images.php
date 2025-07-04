@@ -1,3 +1,4 @@
+<!-- overlapped-images.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Overlapping images and paragraph on right

@@ -1,10 +1,10 @@
 <?php
 /**
- * Deprecated Filters of Astra Theme.
+ * Deprecated Filters of divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.23
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.23
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 add_filter( 'divino_color_palettes', 'divino_deprecated_color_palette', 10, 1 );
 
 /**
- * Astra Color Palettes
+ * divino Color Palettes
  *
  * @since 1.0.23
  * @param array $color_palette  customizer color palettes.
@@ -29,7 +29,7 @@ function divino_deprecated_color_palette( $color_palette ) {
 add_filter( 'divino_single_post_navigation_enabled', 'divino_deprecated_sigle_post_navigation_enabled', 10, 1 );
 
 /**
- * Astra Single Post Navigation
+ * divino Single Post Navigation
  *
  * @since 1.0.27
  * @param bool $post_nav true | false.
@@ -43,7 +43,7 @@ function divino_deprecated_sigle_post_navigation_enabled( $post_nav ) {
 add_filter( 'divino_header_section_elements', 'divino_deprecated_primary_header_main_rt_section', 10, 2 );
 
 /**
- * Astra Header elements.
+ * divino Header elements.
  *
  * @since 1.2.2
  * @param array  $elements List of elements.
@@ -56,7 +56,7 @@ function divino_deprecated_primary_header_main_rt_section( $elements, $header ) 
 
 if ( ! function_exists( 'divino_apply_filters_deprecated' ) ) {
 	/**
-	 * Astra Filter Deprecated
+	 * divino Filter Deprecated
 	 *
 	 * @since 1.1.1
 	 * @param string $tag         The name of the filter hook.

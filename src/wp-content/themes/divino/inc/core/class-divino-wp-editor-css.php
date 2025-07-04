@@ -4,9 +4,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package     Astra
- * @link        http://wpastra.com/
- * @since       Astra 3.8.0
+ * @package     divino
+ * @link        http://wpdivino.com/
+ * @since       divino 3.8.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class divino_WP_Editor_CSS {
 	/**
-	 * Astra block editor block editor - padding preset CSS.
+	 * divino block editor block editor - padding preset CSS.
 	 *
 	 * @return array Devices specific padding spacings.
 	 *
@@ -658,29 +658,29 @@ class divino_WP_Editor_CSS {
 		}
 
 		if ( $is_dark_palette ) {
-			$desktop_css['.astra-dark-mode-enable #learndash_lessons, .astra-dark-mode-enable #learndash_quizzes, .astra-dark-mode-enable #learndash_profile, .astra-dark-mode-enable #learndash_lesson_topics_list > div, .astra-dark-mode-enable .learndash-wrapper .ld-table-list .ld-table-list-item .ld-table-list-title a, .astra-dark-mode-enable .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-name, .astra-dark-mode-enable .learndash-wrapper .ld-table-list .ld-table-list-header a, .astra-dark-mode-enable .learndash-wrapper .ld-table-list .ld-table-list-item-preview a'] = array(
+			$desktop_css['.divino-dark-mode-enable #learndash_lessons, .divino-dark-mode-enable #learndash_quizzes, .divino-dark-mode-enable #learndash_profile, .divino-dark-mode-enable #learndash_lesson_topics_list > div, .divino-dark-mode-enable .learndash-wrapper .ld-table-list .ld-table-list-item .ld-table-list-title a, .divino-dark-mode-enable .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-name, .divino-dark-mode-enable .learndash-wrapper .ld-table-list .ld-table-list-header a, .divino-dark-mode-enable .learndash-wrapper .ld-table-list .ld-table-list-item-preview a'] = array(
 				'background' => 'var( --ast-global-color-primary, --ast-global-color-4 )',
 				'color'      => 'var(--ast-global-color-2)',
 			);
-			$desktop_css['.astra-dark-mode-enable #learndash_lessons #lesson_heading, .astra-dark-mode-enable #learndash_profile .learndash_profile_heading, .astra-dark-mode-enable #learndash_quizzes #quiz_heading, .astra-dark-mode-enable #learndash_lesson_topics_list div > strong '] = array(
+			$desktop_css['.divino-dark-mode-enable #learndash_lessons #lesson_heading, .divino-dark-mode-enable #learndash_profile .learndash_profile_heading, .divino-dark-mode-enable #learndash_quizzes #quiz_heading, .divino-dark-mode-enable #learndash_lesson_topics_list div > strong '] = array(
 				'background' => 'var(--ast-global-color-0)',
 				'color'      => 'var(--ast-global-color-2)',
 			);
-			$desktop_css['.astra-dark-mode-enable #learndash_profile '] = array(
+			$desktop_css['.divino-dark-mode-enable #learndash_profile '] = array(
 				'color' => 'var(--ast-global-color-0)',
 			);
-			$desktop_css['.astra-dark-mode-enable .learndash-wrapper .ld-item-list .ld-item-list-item, .astra-dark-mode-enable .learndash-wrapper .ld-table-list .ld-table-list-footer '] = array(
+			$desktop_css['.divino-dark-mode-enable .learndash-wrapper .ld-item-list .ld-item-list-item, .divino-dark-mode-enable .learndash-wrapper .ld-table-list .ld-table-list-footer '] = array(
 				'background'   => 'var( --ast-global-color-primary, --ast-global-color-4 )',
 				'color'        => 'var(--ast-global-color-2)',
 				'border-color' => 'var(--ast-border-color)',
 			);
-			$desktop_css['.astra-dark-mode-enable .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-list-item-expanded .ld-progress, .astra-dark-mode-enable .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-list-item-expanded:before '] = array(
+			$desktop_css['.divino-dark-mode-enable .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-list-item-expanded .ld-progress, .divino-dark-mode-enable .learndash-wrapper .ld-item-list .ld-item-list-item .ld-item-list-item-expanded:before '] = array(
 				'background' => 'var( --ast-global-color-alternate-background, --ast-global-color-6 )',
 			);
-			$desktop_css[' html.astra-dark-mode-enable :where(.editor-styles-wrapper) ']               = array(
+			$desktop_css[' html.divino-dark-mode-enable :where(.editor-styles-wrapper) ']               = array(
 				'color' => 'var(--ast-global-color-2)',
 			);
-			$desktop_css[' .astra-dark-mode-enable .post-type-sureforms_form .editor-styles-wrapper '] = array(
+			$desktop_css[' .divino-dark-mode-enable .post-type-sureforms_form .editor-styles-wrapper '] = array(
 				'background' => 'initial',
 			);
 		}
@@ -1024,7 +1024,7 @@ class divino_WP_Editor_CSS {
 		 * Core blocks custom spacing support.
 		 * Case :- Do not apply custom padding for custom layout group, cover & column blocks.
 		 */
-		if ( 'astra-advanced-hook' !== $post_type ) {
+		if ( 'divino-advanced-hook' !== $post_type ) {
 			$desktop_css['.block-editor-block-list__layout.is-root-container > .wp-block-group, .block-editor-block-list__layout.is-root-container > [data-align="wide"] > .wp-block-group, .block-editor-block-list__layout.is-root-container > [data-align="full"] > .wp-block-group, .block-editor-block-list__layout.is-root-container > .wp-block-cover, .block-editor-block-list__layout.is-root-container > [data-align="wide"] > .wp-block-cover, .block-editor-block-list__layout.is-root-container > [data-align="full"] > .wp-block-cover, .block-editor-block-list__layout.is-root-container > .wp-block-columns, .block-editor-block-list__layout.is-root-container > [data-align="wide"] > .wp-block-columns, .block-editor-block-list__layout.is-root-container > [data-align="full"] > .wp-block-columns'] = array(
 				'padding-top'    => 'var(--wp--custom--ast-default-block-top-padding)',
 				'padding-right'  => 'var(--wp--custom--ast-default-block-right-padding)',

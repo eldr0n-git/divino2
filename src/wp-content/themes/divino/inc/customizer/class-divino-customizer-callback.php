@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Theme Customizer Callback
+ * divino Theme Customizer Callback
  *
- * @package Astra Theme
+ * @package divino Theme
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

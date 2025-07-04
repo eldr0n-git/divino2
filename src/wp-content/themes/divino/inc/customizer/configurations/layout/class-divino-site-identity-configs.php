@@ -1,10 +1,10 @@
 <?php
 /**
- * Bottom Footer Options for Astra Theme.
+ * Bottom Footer Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,16 +14,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 
 	/**
-	 * Register Astra Customizerr Site identity Customizer Configurations.
+	 * Register divino Customizerr Site identity Customizer Configurations.
 	 */
 	class divino_Site_Identity_Configs extends divino_Customizer_Config_Base {
 		/**
-		 * Register Astra Customizerr Site identity Customizer Configurations.
+		 * Register divino Customizerr Site identity Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -70,7 +70,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 							'value'    => true,
 						),
 					),
-					'link_text'       => '<u>' . __( 'Customize Transparent Header', 'astra' ) . '</u>',
+					'link_text'       => '<u>' . __( 'Customize Transparent Header', 'divino' ) . '</u>',
 					'active_callback' => array( $this, 'is_transparent_header_enabled' ),
 				),
 
@@ -82,7 +82,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 					'type'      => 'control',
 					'control'   => 'ast-toggle-control',
 					'section'   => $_section,
-					'title'     => __( 'Different Logo For Retina Devices?', 'astra' ),
+					'title'     => __( 'Different Logo For Retina Devices?', 'divino' ),
 					'default'   => divino_get_option( 'different-retina-logo' ),
 					'priority'  => 5,
 					'transport' => 'postMessage',
@@ -126,7 +126,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 						divino_Builder_Helper::$general_tab_config,
 					),
 					'priority'          => 5.5,
-					'title'             => __( 'Retina Logo', 'astra' ),
+					'title'             => __( 'Retina Logo', 'divino' ),
 					'library_filter'    => array( 'gif', 'jpg', 'jpeg', 'png', 'ico' ),
 					'transport'         => 'postMessage',
 					'partial'           => array(
@@ -145,7 +145,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 					'control'   => 'ast-toggle-control',
 					'default'   => divino_get_option( 'different-mobile-logo' ),
 					'section'   => 'title_tagline',
-					'title'     => __( 'Different Logo For Mobile Devices?', 'astra' ),
+					'title'     => __( 'Different Logo For Mobile Devices?', 'divino' ),
 					'priority'  => 5.5,
 					'context'   => array(
 						array(
@@ -180,7 +180,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 					'sanitize_callback' => 'esc_url_raw',
 					'section'           => 'title_tagline',
 					'priority'          => 6,
-					'title'             => __( 'Mobile Logo (optional)', 'astra' ),
+					'title'             => __( 'Mobile Logo (optional)', 'divino' ),
 					'library_filter'    => array( 'gif', 'jpg', 'jpeg', 'png', 'ico' ),
 					'divider'           => array( 'ast_class' => 'ast-bottom-divider' ),
 					'context'           => array(
@@ -208,7 +208,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 					'control'   => 'ast-toggle-control',
 					'divider'   => array( 'ast_class' => 'ast-top-section-divider' ),
 					'section'   => $_section,
-					'title'     => __( 'Use Logo SVG Icon', 'astra' ),
+					'title'     => __( 'Use Logo SVG Icon', 'divino' ),
 					'priority'  => 6,
 					'transport' => 'postMessage',
 					'partial'   => array(
@@ -237,9 +237,9 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_logo_svg_icon' ),
 					'section'           => $_section,
 					'default'           => divino_get_option( 'logo-svg-icon' ),
-					'description'       => __( 'When using Custom SVG code, do not include few attributes such as "width", "height", and "fill" in your custom svg code to utilize existing customizer controls.', 'astra' ),
+					'description'       => __( 'When using Custom SVG code, do not include few attributes such as "width", "height", and "fill" in your custom svg code to utilize existing customizer controls.', 'divino' ),
 					'priority'          => 6,
-					'title'             => __( 'Logo SVG Icon', 'astra' ),
+					'title'             => __( 'Logo SVG Icon', 'divino' ),
 					'divider'           => array( 'ast_class' => 'ast-top-divider' ),
 					'transport'         => 'postMessage',
 					'partial'           => array(
@@ -275,7 +275,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 					'transport'         => 'postMessage',
 					'default'           => divino_get_option( 'logo-svg-site-title-gap' ),
 					'priority'          => 7,
-					'title'             => __( 'Logo SVG Gap', 'astra' ),
+					'title'             => __( 'Logo SVG Gap', 'divino' ),
 					'suffix'            => 'px',
 					'input_attrs'       => array(
 						'min'  => 0,
@@ -310,7 +310,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 					'transport'         => 'postMessage',
 					'default'           => divino_get_option( 'ast-header-responsive-logo-width' ),
 					'priority'          => 7,
-					'title'             => __( 'Logo Width', 'astra' ),
+					'title'             => __( 'Logo Width', 'divino' ),
 					'suffix'            => 'px',
 					'input_attrs'       => array(
 						'min'  => 0,
@@ -327,7 +327,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 					'control'   => 'ast-multi-selector',
 					'section'   => $_section,
 					'priority'  => 8,
-					'title'     => __( 'Site Title Visibility', 'astra' ),
+					'title'     => __( 'Site Title Visibility', 'divino' ),
 					'context'   => divino_Builder_Helper::$general_tab,
 					'transport' => 'postMessage',
 					'choices'   => array(
@@ -348,7 +348,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 					'control'   => 'ast-multi-selector',
 					'section'   => $_section,
 					'priority'  => 12,
-					'title'     => __( 'Site Tagline Visibility', 'astra' ),
+					'title'     => __( 'Site Tagline Visibility', 'divino' ),
 					'context'   => divino_Builder_Helper::$general_tab,
 					'transport' => 'postMessage',
 					'choices'   => array(
@@ -370,7 +370,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 					'control'   => 'ast-toggle-control',
 					'divider'   => array( 'ast_class' => 'ast-top-divider logo-inline' ),
 					'section'   => $_section,
-					'title'     => __( 'Inline Logo & Site Title', 'astra' ),
+					'title'     => __( 'Inline Logo & Site Title', 'divino' ),
 					'priority'  => 8,
 					'transport' => 'postMessage',
 					'partial'   => array(
@@ -390,7 +390,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 						'default'    => divino_get_option( 'site-identity-title-color-group' ),
 						'type'       => 'control',
 						'control'    => 'ast-color-group',
-						'title'      => divino_Builder_Helper::$is_header_footer_builder_active ? __( 'Title Color', 'astra' ) : __( 'Colors', 'astra' ),
+						'title'      => divino_Builder_Helper::$is_header_footer_builder_active ? __( 'Title Color', 'divino' ) : __( 'Colors', 'divino' ),
 						'section'    => $_section,
 						'responsive' => false,
 						'transport'  => 'postMessage',
@@ -408,7 +408,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 						'priority'  => 5,
 						'default'   => divino_get_option( 'header-color-site-title' ),
 						'transport' => 'postMessage',
-						'title'     => __( 'Normal', 'astra' ),
+						'title'     => __( 'Normal', 'divino' ),
 						'context'   => divino_Builder_Helper::$design_tab,
 					),
 
@@ -418,7 +418,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 						'default'    => divino_get_option( 'logo-svg-icon-color-group' ),
 						'type'       => 'control',
 						'control'    => 'ast-color-group',
-						'title'      => __( 'Logo SVG Icon Color', 'astra' ),
+						'title'      => __( 'Logo SVG Icon Color', 'divino' ),
 						'section'    => $_section,
 						'responsive' => false,
 						'transport'  => 'postMessage',
@@ -447,7 +447,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 						'control'   => 'ast-color',
 						'priority'  => 5,
 						'default'   => divino_get_option( 'logo-svg-icon-color' ),
-						'title'     => __( 'Normal', 'astra' ),
+						'title'     => __( 'Normal', 'divino' ),
 						'transport' => 'postMessage',
 						'context'   => array(
 							array(
@@ -474,7 +474,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 						'control'   => 'ast-color',
 						'priority'  => 10,
 						'default'   => divino_get_option( 'logo-svg-icon-hover-color' ),
-						'title'     => __( 'Hover', 'astra' ),
+						'title'     => __( 'Hover', 'divino' ),
 						'transport' => 'postMessage',
 						'context'   => array(
 							array(
@@ -501,7 +501,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 						'priority'  => 10,
 						'transport' => 'postMessage',
 						'default'   => divino_get_option( 'header-color-h-site-title' ),
-						'title'     => __( 'Hover', 'astra' ),
+						'title'     => __( 'Hover', 'divino' ),
 						'context'   => divino_Builder_Helper::$design_tab,
 					),
 
@@ -512,7 +512,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 						'control'   => 'ast-color',
 						'transport' => 'postMessage',
 						'default'   => divino_get_option( 'header-color-site-tagline' ),
-						'title'     => true === divino_Builder_Helper::$is_header_footer_builder_active ? __( 'Tagline', 'astra' ) : __( 'Color', 'astra' ),
+						'title'     => true === divino_Builder_Helper::$is_header_footer_builder_active ? __( 'Tagline', 'divino' ) : __( 'Color', 'divino' ),
 						'section'   => 'title_tagline',
 						'priority'  => true === divino_Builder_Helper::$is_header_footer_builder_active ? 8 : 12,
 						'context'   => true === divino_Builder_Helper::$is_header_footer_builder_active ? array( divino_Builder_Helper::$design_tab_config ) : '',
@@ -550,7 +550,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 							'priority'        => 1,
 							'link_type'       => 'section',
 							'linked'          => 'section-transparent-header',
-							'link_text'       => '<u>' . __( 'Customize Transparent Header', 'astra' ) . '</u>',
+							'link_text'       => '<u>' . __( 'Customize Transparent Header', 'divino' ) . '</u>',
 							'active_callback' => array( $this, 'is_transparent_header_enabled' ),
 						),
 
@@ -566,7 +566,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 							'link_type'      => 'control',
 							'is_button_link' => true,
 							'linked'         => 'site_icon',
-							'link_text'      => __( 'Site Icon', 'astra' ),
+							'link_text'      => __( 'Site Icon', 'divino' ),
 							'divider'        => array( 'ast_class' => 'ast-bottom-divider' ),
 						),
 					)
@@ -585,7 +585,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 						'default'   => divino_get_option( 'site-title-typography' ),
 						'type'      => 'control',
 						'control'   => 'ast-settings-group',
-						'title'     => true === divino_Builder_Helper::$is_header_footer_builder_active ? __( 'Title Font', 'astra' ) : __( 'Typography', 'astra' ),
+						'title'     => true === divino_Builder_Helper::$is_header_footer_builder_active ? __( 'Title Font', 'divino' ) : __( 'Typography', 'divino' ),
 						'is_font'   => true,
 						'section'   => $_section,
 						'transport' => 'postMessage',
@@ -601,7 +601,7 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 						'default'   => divino_get_option( 'site-tagline-typography' ),
 						'type'      => 'control',
 						'control'   => 'ast-settings-group',
-						'title'     => true === divino_Builder_Helper::$is_header_footer_builder_active ? __( 'Tagline Font', 'astra' ) : __( 'Typography', 'astra' ),
+						'title'     => true === divino_Builder_Helper::$is_header_footer_builder_active ? __( 'Tagline Font', 'divino' ) : __( 'Typography', 'divino' ),
 						'section'   => $_section,
 						'transport' => 'postMessage',
 						'is_font'   => true,
@@ -638,10 +638,10 @@ if ( ! class_exists( 'divino_Site_Identity_Configs' ) ) {
 
 			switch ( $context ) {
 				case 'transparent-header':
-					$notice = __( 'Logo is set in the Transparent Header Section. Click below to customize it.', 'astra' );
+					$notice = __( 'Logo is set in the Transparent Header Section. Click below to customize it.', 'divino' );
 					break;
 				case 'transparent-meta':
-					$notice = __( 'This page uses the Transparent Header. Click below to customize it.', 'astra' );
+					$notice = __( 'This page uses the Transparent Header. Click below to customize it.', 'divino' );
 					break;
 				default:
 					$notice = '';

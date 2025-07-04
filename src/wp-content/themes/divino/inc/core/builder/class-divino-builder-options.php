@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Builder Options default values.
+ * divino Builder Options default values.
  *
- * @package astra-builder
+ * @package divino-builder
  */
 
 // No direct access, please.
@@ -27,7 +27,7 @@ function divino_hf_builder_customizer_defaults( $defaults ) {
 	$is_dark_palette                            = divino_Global_Palette::is_dark_palette();
 
 	/**
-	 * Update Astra default color and typography values. To not update directly on existing users site, added backwards.
+	 * Update divino default color and typography values. To not update directly on existing users site, added backwards.
 	 *
 	 * @since 4.0.0
 	 */
@@ -665,7 +665,7 @@ function divino_hf_builder_customizer_defaults( $defaults ) {
 	/**
 	 * Footer Copyright.
 	 */
-	$defaults['footer-copyright-editor']              = __( 'Copyright [copyright] [current_year] [site_title] | Powered by [theme_author]', 'astra' );
+	$defaults['footer-copyright-editor']              = __( 'Copyright [copyright] [current_year] [site_title] | Powered by [theme_author]', 'divino' );
 	$defaults['footer-copyright-color']               = $apply_new_default_color_typo_values ? 'var(--ast-global-color-3)' : '';
 	$defaults['line-height-section-footer-copyright'] = 2;
 	$defaults['footer-copyright-alignment']           = array(
@@ -1258,8 +1258,8 @@ function divino_hf_builder_customizer_defaults( $defaults ) {
 	$defaults['header-account-link-type']                             = 'default';
 	$defaults['header-account-logout-style']                          = 'icon';
 	$defaults['header-account-logout-style-extend-text-profile-type'] = 'default';
-	$defaults['header-account-logged-out-text']                       = __( 'Log In', 'astra' );
-	$defaults['header-account-logged-in-text']                        = __( 'My Account', 'astra' );
+	$defaults['header-account-logged-out-text']                       = __( 'Log In', 'divino' );
+	$defaults['header-account-logged-in-text']                        = __( 'My Account', 'divino' );
 	$defaults['header-account-logout-action']                         = 'link';
 	$defaults['header-account-image-width']                           = array(
 		'desktop' => '40',
@@ -1326,7 +1326,7 @@ function divino_prepare_divider_defaults( $defaults, $index ) {
 function divino_prepare_button_defaults( $defaults, $index ) {
 
 	/**
-	 * Update Astra default color and typography values. To not update directly on existing users site, added backwards.
+	 * Update divino default color and typography values. To not update directly on existing users site, added backwards.
 	 *
 	 * @since 4.0.0
 	 */
@@ -1336,9 +1336,9 @@ function divino_prepare_button_defaults( $defaults, $index ) {
 
 	$_prefix = 'button' . $index;
 
-	$defaults[ 'header-' . $_prefix . '-text' ]                 = __( 'Button', 'astra' );
+	$defaults[ 'header-' . $_prefix . '-text' ]                 = __( 'Button', 'divino' );
 	$defaults[ 'header-' . $_prefix . '-link-option' ]          = array(
-		'url'      => apply_filters( 'divino_site_url', 'https://www.wpastra.com' ),
+		'url'      => apply_filters( 'divino_site_url', 'https://www.wpdivino.com' ),
 		'new_tab'  => false,
 		'link_rel' => '',
 	);
@@ -1505,9 +1505,9 @@ function divino_prepare_button_defaults( $defaults, $index ) {
 
 	$_prefix = 'button' . $index;
 
-	$defaults[ 'footer-' . $_prefix . '-text' ]                 = __( 'Button', 'astra' );
+	$defaults[ 'footer-' . $_prefix . '-text' ]                 = __( 'Button', 'divino' );
 	$defaults[ 'footer-' . $_prefix . '-link-option' ]          = array(
-		'url'      => apply_filters( 'divino_site_url', 'https://www.wpastra.com' ),
+		'url'      => apply_filters( 'divino_site_url', 'https://www.wpdivino.com' ),
 		'new_tab'  => false,
 		'link_rel' => '',
 	);
@@ -1681,7 +1681,7 @@ function divino_prepare_html_defaults( $defaults, $index ) {
 
 	$_section = 'section-hb-html-' . $index;
 
-	$defaults[ 'header-html-' . $index ]                  = __( 'Insert HTML text here.', 'astra' );
+	$defaults[ 'header-html-' . $index ]                  = __( 'Insert HTML text here.', 'divino' );
 	$defaults[ 'header-html-' . $index . 'color' ]        = array(
 		'desktop' => '',
 		'tablet'  => '',
@@ -1720,7 +1720,7 @@ function divino_prepare_html_defaults( $defaults, $index ) {
 
 	$_section = 'section-fb-html-' . $index;
 
-	$defaults[ 'footer-html-' . $index ]                  = __( 'Insert HTML text here.', 'astra' );
+	$defaults[ 'footer-html-' . $index ]                  = __( 'Insert HTML text here.', 'divino' );
 	$defaults[ 'footer-html-' . $index . 'color' ]        = array(
 		'desktop' => '',
 		'tablet'  => '',
@@ -2098,7 +2098,7 @@ function divino_prepare_widget_defaults( $defaults, $index ) {
 function divino_prepare_menu_defaults( $defaults, $index ) {
 
 	/**
-	 * Update Astra default color and typography values. To not update directly on existing users site, added backwards.
+	 * Update divino default color and typography values. To not update directly on existing users site, added backwards.
 	 *
 	 * @since 4.0.0
 	 */

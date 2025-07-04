@@ -2,9 +2,9 @@
 /**
  * Content Spacing Options for our theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 1.2.0
+ * @since       divino 1.2.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,17 +18,17 @@ if ( ! class_exists( 'divino_Lifter_Sidebar_Configs' ) ) {
 	 */
 	class divino_Lifter_Sidebar_Configs extends divino_Customizer_Config_Base {
 		/**
-		 * Register Astra-LifterLMS Sidebar Customizer Configurations.
+		 * Register divino-LifterLMS Sidebar Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
-			$common_title                    = __( 'Sidebar Layout', 'astra' );
+			$common_title                    = __( 'Sidebar Layout', 'divino' );
 			$common_section                  = 'section-lifterlms';
-			$common_lifter_lms_sidebar_style = __( 'Sidebar Style', 'astra' );
+			$common_lifter_lms_sidebar_style = __( 'Sidebar Style', 'divino' );
 			$lifter_lms_section_divider      = true;
 
 			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
@@ -43,10 +43,10 @@ if ( ! class_exists( 'divino_Lifter_Sidebar_Configs' ) ) {
 			} else {
 				$section_general                        = $common_section;
 				$section_courses                        = $common_section;
-				$title_lifter_lms                       = __( 'Global Sidebar Layout', 'astra' );
-				$title_lifter_lms_courses               = __( 'Course/Lesson Sidebar Layout', 'astra' );
-				$title_lifter_lms_sidebar_style         = __( 'Global Sidebar Style', 'astra' );
-				$title_lifter_lms_courses_sidebar_style = __( 'Course/Lesson Sidebar Style', 'astra' );
+				$title_lifter_lms                       = __( 'Global Sidebar Layout', 'divino' );
+				$title_lifter_lms_courses               = __( 'Course/Lesson Sidebar Layout', 'divino' );
+				$title_lifter_lms_sidebar_style         = __( 'Global Sidebar Style', 'divino' );
+				$title_lifter_lms_courses_sidebar_style = __( 'Course/Lesson Sidebar Style', 'divino' );
 			}
 
 			$_configs = array(
@@ -65,23 +65,23 @@ if ( ! class_exists( 'divino_Lifter_Sidebar_Configs' ) ) {
 					'title'             => $title_lifter_lms,
 					'choices'           => array(
 						'default'       => array(
-							'label' => __( 'Default', 'astra' ),
+							'label' => __( 'Default', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'layout-default', false ) : '',
 						),
 						'no-sidebar'    => array(
-							'label' => __( 'No Sidebar', 'astra' ),
+							'label' => __( 'No Sidebar', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'no-sidebar', false ) : '',
 						),
 						'left-sidebar'  => array(
-							'label' => __( 'Left Sidebar', 'astra' ),
+							'label' => __( 'Left Sidebar', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'left-sidebar', false ) : '',
 						),
 						'right-sidebar' => array(
-							'label' => __( 'Right Sidebar', 'astra' ),
+							'label' => __( 'Right Sidebar', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'right-sidebar', false ) : '',
 						),
 					),
-					'description'       => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
+					'description'       => __( 'Sidebar will only apply when container layout is set to normal.', 'divino' ),
 					'divider'           => array( 'ast_class' => 'ast-top-section-divider' ),
 				),
 
@@ -97,9 +97,9 @@ if ( ! class_exists( 'divino_Lifter_Sidebar_Configs' ) ) {
 					'priority'   => 1,
 					'title'      => $title_lifter_lms_sidebar_style,
 					'choices'    => array(
-						'default' => __( 'Default', 'astra' ),
-						'unboxed' => __( 'Unboxed', 'astra' ),
-						'boxed'   => __( 'Boxed', 'astra' ),
+						'default' => __( 'Default', 'divino' ),
+						'unboxed' => __( 'Unboxed', 'divino' ),
+						'boxed'   => __( 'Boxed', 'divino' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -120,23 +120,23 @@ if ( ! class_exists( 'divino_Lifter_Sidebar_Configs' ) ) {
 					'title'             => $title_lifter_lms_courses,
 					'choices'           => array(
 						'default'       => array(
-							'label' => __( 'Default', 'astra' ),
+							'label' => __( 'Default', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'layout-default', false ) : '',
 						),
 						'no-sidebar'    => array(
-							'label' => __( 'No Sidebar', 'astra' ),
+							'label' => __( 'No Sidebar', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'no-sidebar', false ) : '',
 						),
 						'left-sidebar'  => array(
-							'label' => __( 'Left Sidebar', 'astra' ),
+							'label' => __( 'Left Sidebar', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'left-sidebar', false ) : '',
 						),
 						'right-sidebar' => array(
-							'label' => __( 'Right Sidebar', 'astra' ),
+							'label' => __( 'Right Sidebar', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'right-sidebar', false ) : '',
 						),
 					),
-					'description'       => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
+					'description'       => __( 'Sidebar will only apply when container layout is set to normal.', 'divino' ),
 					'divider'           => $lifter_lms_section_divider ? array( 'ast_class' => 'ast-section-spacing ast-top-section-divider' ) : array( 'ast_class' => 'ast-section-spacing' ),
 				),
 
@@ -152,9 +152,9 @@ if ( ! class_exists( 'divino_Lifter_Sidebar_Configs' ) ) {
 					'priority'   => 1,
 					'title'      => $title_lifter_lms_courses_sidebar_style,
 					'choices'    => array(
-						'default' => __( 'Default', 'astra' ),
-						'unboxed' => __( 'Unboxed', 'astra' ),
-						'boxed'   => __( 'Boxed', 'astra' ),
+						'default' => __( 'Default', 'divino' ),
+						'unboxed' => __( 'Unboxed', 'divino' ),
+						'boxed'   => __( 'Boxed', 'divino' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',

@@ -2,9 +2,9 @@
 /**
  * Content Spacing Options for our theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 1.0
+ * @since       divino 1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,12 +18,12 @@ if ( ! class_exists( 'divino_Woo_Shop_Sidebar_Configs' ) ) {
 	 */
 	class divino_Woo_Shop_Sidebar_Configs extends divino_Customizer_Config_Base {
 		/**
-		 * Register Astra-WooCommerce Shop Sidebar Configurations.
+		 * Register divino-WooCommerce Shop Sidebar Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -40,26 +40,26 @@ if ( ! class_exists( 'divino_Woo_Shop_Sidebar_Configs' ) ) {
 					'section'           => 'section-woo-general',
 					'default'           => divino_get_option( 'woocommerce-sidebar-layout' ),
 					'priority'          => 5,
-					'title'             => __( 'Sidebar Layout', 'astra' ),
+					'title'             => __( 'Sidebar Layout', 'divino' ),
 					'choices'           => array(
 						'default'       => array(
-							'label' => __( 'Default', 'astra' ),
+							'label' => __( 'Default', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'layout-default', false ) : '',
 						),
 						'no-sidebar'    => array(
-							'label' => __( 'No Sidebar', 'astra' ),
+							'label' => __( 'No Sidebar', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'no-sidebar', false ) : '',
 						),
 						'left-sidebar'  => array(
-							'label' => __( 'Left Sidebar', 'astra' ),
+							'label' => __( 'Left Sidebar', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'left-sidebar', false ) : '',
 						),
 						'right-sidebar' => array(
-							'label' => __( 'Right Sidebar', 'astra' ),
+							'label' => __( 'Right Sidebar', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'right-sidebar', false ) : '',
 						),
 					),
-					'description'       => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
+					'description'       => __( 'Sidebar will only apply when container layout is set to normal.', 'divino' ),
 					'divider'           => array( 'ast_class' => 'ast-top-section-divider' ),
 				),
 
@@ -73,11 +73,11 @@ if ( ! class_exists( 'divino_Woo_Shop_Sidebar_Configs' ) ) {
 					'section'    => 'section-woo-general',
 					'default'    => divino_get_option( 'woocommerce-sidebar-style', 'default' ),
 					'priority'   => 5,
-					'title'      => __( 'Sidebar Style', 'astra' ),
+					'title'      => __( 'Sidebar Style', 'divino' ),
 					'choices'    => array(
-						'default' => __( 'Default', 'astra' ),
-						'unboxed' => __( 'Unboxed', 'astra' ),
-						'boxed'   => __( 'Boxed', 'astra' ),
+						'default' => __( 'Default', 'divino' ),
+						'unboxed' => __( 'Unboxed', 'divino' ),
+						'boxed'   => __( 'Boxed', 'divino' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -90,7 +90,7 @@ if ( ! class_exists( 'divino_Woo_Shop_Sidebar_Configs' ) ) {
 				array(
 					'name'     => divino_THEME_SETTINGS . '[shop-display-options-divider]',
 					'section'  => 'woocommerce_product_catalog',
-					'title'    => __( 'Shop Display Options', 'astra' ),
+					'title'    => __( 'Shop Display Options', 'divino' ),
 					'type'     => 'control',
 					'control'  => 'ast-heading',
 					'priority' => 9.5,

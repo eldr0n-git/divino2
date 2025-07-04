@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Icons - Dynamic CSS.
+ * divino Icons - Dynamic CSS.
  *
- * @package astra
+ * @package divino
  * @since 3.5.0
  */
 
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 add_filter( 'divino_dynamic_theme_css', 'divino_icons_static_css' );
 
 /**
- * Astra Icons - Dynamic CSS.
+ * divino Icons - Dynamic CSS.
  *
  * @param string $dynamic_css Dynamic CSS.
  * @since 3.5.0
@@ -22,61 +22,61 @@ function divino_icons_static_css( $dynamic_css ) {
 
 	if ( false === divino_Icons::is_svg_icons() ) {
 		$divino_icons         = '
-        .astra-icon-down_arrow::after {
+        .divino-icon-down_arrow::after {
             content: "\e900";
-            font-family: Astra;
+            font-family: divino;
         }
-        .astra-icon-close::after {
+        .divino-icon-close::after {
             content: "\e5cd";
-            font-family: Astra;
+            font-family: divino;
         }
-        .astra-icon-drag_handle::after {
+        .divino-icon-drag_handle::after {
             content: "\e25d";
-            font-family: Astra;
+            font-family: divino;
         }
-        .astra-icon-format_align_justify::after {
+        .divino-icon-format_align_justify::after {
             content: "\e235";
-            font-family: Astra;
+            font-family: divino;
         }
-        .astra-icon-menu::after {
+        .divino-icon-menu::after {
             content: "\e5d2";
-            font-family: Astra;
+            font-family: divino;
         }
-        .astra-icon-reorder::after {
+        .divino-icon-reorder::after {
             content: "\e8fe";
-            font-family: Astra;
+            font-family: divino;
         }
-        .astra-icon-search::after {
+        .divino-icon-search::after {
             content: "\e8b6";
-            font-family: Astra;
+            font-family: divino;
         }
-        .astra-icon-zoom_in::after {
+        .divino-icon-zoom_in::after {
             content: "\e56b";
-            font-family: Astra;
+            font-family: divino;
         }
-        .astra-icon-check-circle::after {
+        .divino-icon-check-circle::after {
             content: "\e901";
-            font-family: Astra;
+            font-family: divino;
         }
-        .astra-icon-shopping-cart::after {
+        .divino-icon-shopping-cart::after {
             content: "\f07a";
-            font-family: Astra;
+            font-family: divino;
         }
-        .astra-icon-shopping-bag::after {
+        .divino-icon-shopping-bag::after {
             content: "\f290";
-            font-family: Astra;
+            font-family: divino;
         }
-        .astra-icon-shopping-basket::after {
+        .divino-icon-shopping-basket::after {
             content: "\f291";
-            font-family: Astra;
+            font-family: divino;
         }
-        .astra-icon-circle-o::after {
+        .divino-icon-circle-o::after {
             content: "\e903";
-            font-family: Astra;
+            font-family: divino;
         }
-        .astra-icon-certificate::after {
+        .divino-icon-certificate::after {
             content: "\e902";
-            font-family: Astra;
+            font-family: divino;
         }';
 		return $dynamic_css .= divino_Enqueue_Scripts::trim_css( $divino_icons );
 	}

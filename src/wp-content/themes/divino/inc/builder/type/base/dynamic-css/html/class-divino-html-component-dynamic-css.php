@@ -1,9 +1,9 @@
 <?php
 /**
- * Astra HTML Component Dynamic CSS.
+ * divino HTML Component Dynamic CSS.
  *
- * @package     astra-builder
- * @link        https://wpastra.com/
+ * @package     divino-builder
+ * @link        https://wpdivino.com/
  * @since       3.0.0
  */
 

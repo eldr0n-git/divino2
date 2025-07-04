@@ -1,10 +1,10 @@
 <?php
 /**
- * Astra Theme Customizer Controls.
+ * divino Theme Customizer Controls.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 $divino_control_dir = divino_THEME_DIR . 'inc/customizer/custom-controls';
 
 // @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-require $divino_control_dir . '/class-astra-customizer-control-base.php';
-require $divino_control_dir . '/typography/class-astra-control-typography.php';
-require_once $divino_control_dir . '/logo-svg-icon/class-astra-control-logo-svg-icon.php';
-require $divino_control_dir . '/description/class-astra-control-description.php';
-require $divino_control_dir . '/customizer-link/class-astra-control-customizer-link.php';
+require $divino_control_dir . '/class-divino-customizer-control-base.php';
+require $divino_control_dir . '/typography/class-divino-control-typography.php';
+require_once $divino_control_dir . '/logo-svg-icon/class-divino-control-logo-svg-icon.php';
+require $divino_control_dir . '/description/class-divino-control-description.php';
+require $divino_control_dir . '/customizer-link/class-divino-control-customizer-link.php';
 // @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound

@@ -1,3 +1,4 @@
+<!-- page-link-in-bio-wide-margins.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Link in bio with profile, links and wide margins

@@ -2,11 +2,11 @@
 /**
  * Yoast SEO Compatibility File.
  *
- * @package Astra
+ * @package divino
  */
 
 /**
- * Astra Yoast SEO Compatibility
+ * divino Yoast SEO Compatibility
  *
  * @since 2.1.2
  */
@@ -26,7 +26,7 @@ class divino_Yoast_SEO {
 	 * @since 2.1.2
 	 */
 	public function sitemap_exclude_post_type( $value, $post_type ) {
-		return 'astra-advanced-hook' === $post_type;
+		return 'divino-advanced-hook' === $post_type;
 	}
 
 }

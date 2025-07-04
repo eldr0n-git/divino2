@@ -1,9 +1,9 @@
 <?php
 /**
- * Site_Identity Styling Loader for Astra theme.
+ * Site_Identity Styling Loader for divino theme.
  *
- * @package     astra-builder
- * @link        https://wpastra.com/
+ * @package     divino-builder
+ * @link        https://wpdivino.com/
  * @since 3.0.0
  */
 
@@ -38,7 +38,7 @@ class divino_Header_Site_Identity_Component_Loader {
 		/* Directory and Extension */
 		$dir_name    = SCRIPT_DEBUG ? 'unminified' : 'minified';
 		$file_prefix = SCRIPT_DEBUG ? '' : '.min';
-		wp_enqueue_script( 'astra-site-identity-customizer-preview-js', divino_HEADER_SITE_IDENTITY_URI . '/assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'astra-customizer-preview-js' ), divino_THEME_VERSION, true );
+		wp_enqueue_script( 'divino-site-identity-customizer-preview-js', divino_HEADER_SITE_IDENTITY_URI . '/assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'divino-customizer-preview-js' ), divino_THEME_VERSION, true );
 	}
 }
 

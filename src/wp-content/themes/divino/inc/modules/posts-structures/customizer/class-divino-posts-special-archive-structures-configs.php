@@ -4,9 +4,9 @@
  *
  * 1. Search page.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 4.6.0
+ * @since       divino 4.6.0
  */
 
 // Block direct access to the file.
@@ -28,25 +28,25 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 	/**
 	 * Register Posts Structures Customizer Configurations.
 	 *
-	 * @param array                $configurations Astra Customizer Configurations.
+	 * @param array                $configurations divino Customizer Configurations.
 	 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 	 * @since 4.6.0
-	 * @return Array Astra Customizer Configurations with updated configurations.
+	 * @return Array divino Customizer Configurations with updated configurations.
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {
 		$section = 'ast-section-search-page';
 
 		$blog_layout = array(
 			'blog-layout-4' => array(
-				'label' => __( 'Grid', 'astra' ),
+				'label' => __( 'Grid', 'divino' ),
 				'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-4', false ) : '',
 			),
 			'blog-layout-5' => array(
-				'label' => __( 'List', 'astra' ),
+				'label' => __( 'List', 'divino' ),
 				'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-5', false ) : '',
 			),
 			'blog-layout-6' => array(
-				'label' => __( 'Cover', 'astra' ),
+				'label' => __( 'Cover', 'divino' ),
 				'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-6', false ) : '',
 			),
 		);
@@ -61,16 +61,16 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 				'is_parent'   => true,
 				'main_index'  => $title_section . '-title',
 				'clone_limit' => 2,
-				'title'       => __( 'Heading', 'astra' ),
+				'title'       => __( 'Heading', 'divino' ),
 			);
 			$archive_structure_choices[ $title_section . '-description' ] = array(
 				'clone'       => false,
 				'is_parent'   => true,
 				'main_index'  => $title_section . '-description',
 				'clone_limit' => 2,
-				'title'       => __( 'Subheading', 'astra' ),
+				'title'       => __( 'Subheading', 'divino' ),
 			);
-			$archive_structure_choices[ $title_section . '-breadcrumb' ]  = __( 'Breadcrumb', 'astra' );
+			$archive_structure_choices[ $title_section . '-breadcrumb' ]  = __( 'Breadcrumb', 'divino' );
 
 			$_configs = array(
 
@@ -86,7 +86,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 
 				array(
 					'name'     => $title_section,
-					'title'    => ucfirst( $special_type ) . __( ' Page Title', 'astra' ),
+					'title'    => ucfirst( $special_type ) . __( ' Page Title', 'divino' ),
 					'type'     => 'section',
 					'section'  => $section,
 					'panel'    => '',
@@ -101,7 +101,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'section'  => $section,
 					'priority' => 2,
 					'linked'   => $title_section,
-					'linkText' => ucfirst( $special_type ) . __( ' Page Title', 'astra' ),
+					'linkText' => ucfirst( $special_type ) . __( ' Page Title', 'divino' ),
 					'divider'  => array( 'ast_class' => 'ast-bottom-divider ast-bottom-section-divider' ),
 				),
 
@@ -114,15 +114,15 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'default'                => divino_get_option( $title_section . '-layout', 'layout-1' ),
 					'priority'               => 5,
 					'context'                => divino_Builder_Helper::$general_tab,
-					'title'                  => __( 'Banner Layout', 'astra' ),
+					'title'                  => __( 'Banner Layout', 'divino' ),
 					'divider'                => array( 'ast_class' => 'ast-section-spacing' ),
 					'choices'                => array(
 						'layout-1' => array(
-							'label' => __( 'Layout 1', 'astra' ),
+							'label' => __( 'Layout 1', 'divino' ),
 							'path'  => divino_Builder_UI_Controller::fetch_svg_icon( 'banner-layout-1' ),
 						),
 						'layout-2' => array(
-							'label' => __( 'Layout 2', 'astra' ),
+							'label' => __( 'Layout 2', 'divino' ),
 							'path'  => divino_Builder_UI_Controller::fetch_svg_icon( 'banner-layout-2' ),
 						),
 					),
@@ -142,10 +142,10 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'section'    => $title_section,
 					'default'    => divino_get_option( $title_section . '-banner-width-type', 'fullwidth' ),
 					'priority'   => 10,
-					'title'      => __( 'Container Width', 'astra' ),
+					'title'      => __( 'Container Width', 'divino' ),
 					'choices'    => array(
-						'fullwidth' => __( 'Full Width', 'astra' ),
-						'custom'    => __( 'Custom', 'astra' ),
+						'fullwidth' => __( 'Full Width', 'divino' ),
+						'custom'    => __( 'Custom', 'divino' ),
 					),
 					'divider'    => array( 'ast_class' => 'ast-top-divider ast-bottom-spacing' ),
 					'responsive' => false,
@@ -183,7 +183,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 						),
 					),
 					'priority'    => 15,
-					'title'       => __( 'Custom Width', 'astra' ),
+					'title'       => __( 'Custom Width', 'divino' ),
 					'suffix'      => 'px',
 					'input_attrs' => array(
 						'min'  => 768,
@@ -201,7 +201,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'context'           => divino_Builder_Helper::$general_tab,
 					'default'           => divino_get_option( $title_section . '-structure' ),
 					'priority'          => 20,
-					'title'             => __( 'Structure', 'astra' ),
+					'title'             => __( 'Structure', 'divino' ),
 					'choices'           => $archive_structure_choices,
 				),
 
@@ -215,7 +215,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'settings' => array(),
 					'section'  => $title_section,
 					'priority' => 1,
-					'title'    => __( 'Text', 'astra' ),
+					'title'    => __( 'Text', 'divino' ),
 				),
 
 				array(
@@ -230,7 +230,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					),
 					'section'     => $title_section,
 					'priority'    => 1,
-					'title'       => __( 'When Results Found', 'astra' ),
+					'title'       => __( 'When Results Found', 'divino' ),
 				),
 
 				array(
@@ -245,7 +245,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					),
 					'section'     => $title_section,
 					'priority'    => 1,
-					'title'       => __( 'When Results Not Found', 'astra' ),
+					'title'       => __( 'When Results Not Found', 'divino' ),
 				),
 
 				array(
@@ -255,7 +255,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'control'   => 'ast-selector',
 					'section'   => $title_section,
 					'priority'  => 21,
-					'title'     => __( 'Horizontal Alignment', 'astra' ),
+					'title'     => __( 'Horizontal Alignment', 'divino' ),
 					'context'   => divino_Builder_Helper::$general_tab,
 					'transport' => 'postMessage',
 					'choices'   => array(
@@ -272,11 +272,11 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'control'    => 'ast-selector',
 					'section'    => $title_section,
 					'priority'   => 22,
-					'title'      => __( 'Vertical Alignment', 'astra' ),
+					'title'      => __( 'Vertical Alignment', 'divino' ),
 					'choices'    => array(
-						'flex-start' => __( 'Top', 'astra' ),
-						'center'     => __( 'Middle', 'astra' ),
-						'flex-end'   => __( 'Bottom', 'astra' ),
+						'flex-start' => __( 'Top', 'divino' ),
+						'center'     => __( 'Middle', 'divino' ),
+						'flex-end'   => __( 'Bottom', 'divino' ),
 					),
 					'divider'    => array( 'ast_class' => 'ast-top-divider ast-section-spacing' ),
 					'context'    => array(
@@ -310,7 +310,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 						),
 					),
 					'priority'          => 1,
-					'title'             => __( 'Banner Min Height', 'astra' ),
+					'title'             => __( 'Banner Min Height', 'divino' ),
 					'suffix'            => 'px',
 					'input_attrs'       => array(
 						'min'  => 0,
@@ -328,7 +328,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'default'     => divino_get_option( $title_section . '-elements-gap', 10 ),
 					'context'     => divino_Builder_Helper::$design_tab,
 					'priority'    => 5,
-					'title'       => __( 'Inner Elements Spacing', 'astra' ),
+					'title'       => __( 'Inner Elements Spacing', 'divino' ),
 					'suffix'      => 'px',
 					'input_attrs' => array(
 						'min'  => 0,
@@ -345,10 +345,10 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'default'    => divino_get_option( $title_section . '-banner-image-type', 'none' ),
 					'priority'   => 5,
 					'context'    => divino_Builder_Helper::$design_tab,
-					'title'      => __( 'Container Background', 'astra' ),
+					'title'      => __( 'Container Background', 'divino' ),
 					'choices'    => array(
-						'none'   => __( 'None', 'astra' ),
-						'custom' => __( 'Custom', 'astra' ),
+						'none'   => __( 'None', 'divino' ),
+						'custom' => __( 'Custom', 'divino' ),
 					),
 					'divider'    => array( 'ast_class' => 'ast-section-spacing' ),
 					'responsive' => false,
@@ -360,7 +360,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'type'      => 'control',
 					'control'   => 'ast-responsive-background',
 					'section'   => $title_section,
-					'title'     => __( 'Background', 'astra' ),
+					'title'     => __( 'Background', 'divino' ),
 					'transport' => 'postMessage',
 					'priority'  => 5,
 					'context'   => array(
@@ -381,7 +381,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'default'   => divino_get_option( $title_section . '-banner-title-color' ),
 					'transport' => 'postMessage',
 					'priority'  => 9,
-					'title'     => __( 'Title Color', 'astra' ),
+					'title'     => __( 'Title Color', 'divino' ),
 					'divider'   => array( 'ast_class' => 'ast-top-divider ast-top-spacing' ),
 					'context'   => divino_Builder_Helper::$design_tab,
 				),
@@ -392,7 +392,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'section'   => $title_section,
 					'default'   => divino_get_option( $title_section . '-banner-text-color' ),
 					'priority'  => 10,
-					'title'     => __( 'Text Color', 'astra' ),
+					'title'     => __( 'Text Color', 'divino' ),
 					'transport' => 'postMessage',
 					'context'   => divino_Builder_Helper::$design_tab,
 				),
@@ -404,7 +404,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'default'   => divino_get_option( $title_section . '-banner-link-color' ),
 					'transport' => 'postMessage',
 					'priority'  => 15,
-					'title'     => __( 'Link Color', 'astra' ),
+					'title'     => __( 'Link Color', 'divino' ),
 					'context'   => divino_Builder_Helper::$design_tab,
 				),
 				array(
@@ -415,7 +415,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'default'   => divino_get_option( $title_section . '-banner-link-hover-color' ),
 					'transport' => 'postMessage',
 					'priority'  => 20,
-					'title'     => __( 'Link Hover Color', 'astra' ),
+					'title'     => __( 'Link Hover Color', 'divino' ),
 					'context'   => divino_Builder_Helper::$design_tab,
 					'divider'   => array( 'ast_class' => 'ast-bottom-spacing' ),
 				),
@@ -434,7 +434,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 						),
 					),
 					'divider'   => array( 'ast_class' => 'ast-top-divider' ),
-					'title'     => __( 'Title Font', 'astra' ),
+					'title'     => __( 'Title Font', 'divino' ),
 					'is_font'   => true,
 					'section'   => $title_section,
 					'transport' => 'postMessage',
@@ -445,7 +445,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'priority'  => 25,
 					'control'   => 'ast-settings-group',
 					'context'   => divino_Builder_Helper::$design_tab,
-					'title'     => __( 'Text Font', 'astra' ),
+					'title'     => __( 'Text Font', 'divino' ),
 					'is_font'   => true,
 					'divider'   => array( 'ast_class' => 'ast-bottom-spacing' ),
 					'section'   => $title_section,
@@ -459,7 +459,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'control'   => 'ast-font',
 					'font_type' => 'ast-font-family',
 					'default'   => divino_get_option( $title_section . '-text-font-family', 'inherit' ),
-					'title'     => __( 'Font Family', 'astra' ),
+					'title'     => __( 'Font Family', 'divino' ),
 					'connect'   => divino_THEME_SETTINGS . '[' . $title_section . '-text-font-weight]',
 					'divider'   => array( 'ast_class' => 'ast-sub-bottom-divider' ),
 				),
@@ -472,7 +472,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'font_type'         => 'ast-font-weight',
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
 					'default'           => divino_get_option( $title_section . '-text-font-weight', 'inherit' ),
-					'title'             => __( 'Font Weight', 'astra' ),
+					'title'             => __( 'Font Weight', 'divino' ),
 					'connect'           => $title_section . '-text-font-family',
 					'divider'           => array( 'ast_class' => 'ast-sub-bottom-divider' ),
 				),
@@ -484,7 +484,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'control'           => 'ast-responsive-slider',
 					'default'           => divino_get_option( $title_section . '-text-font-size', divino_Posts_Structure_Loader::get_customizer_default( 'font-size' ) ),
 					'transport'         => 'postMessage',
-					'title'             => __( 'Font Size', 'astra' ),
+					'title'             => __( 'Font Size', 'divino' ),
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
 					'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
 					'input_attrs'       => array(
@@ -518,7 +518,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'type'    => 'sub-control',
 					'control' => 'ast-font-extras',
 					'default' => divino_get_option( $title_section . '-text-font-extras', divino_Posts_Structure_Loader::get_customizer_default( 'font-extras' ) ),
-					'title'   => __( 'Font Extras', 'astra' ),
+					'title'   => __( 'Font Extras', 'divino' ),
 				),
 				array(
 					'name'      => $title_section . '-title-font-family',
@@ -528,7 +528,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'control'   => 'ast-font',
 					'font_type' => 'ast-font-family',
 					'default'   => divino_get_option( $title_section . '-title-font-family', 'inherit' ),
-					'title'     => __( 'Font Family', 'astra' ),
+					'title'     => __( 'Font Family', 'divino' ),
 					'connect'   => divino_THEME_SETTINGS . '[' . $title_section . '-title-font-weight]',
 					'divider'   => array( 'ast_class' => 'ast-sub-bottom-divider' ),
 				),
@@ -541,7 +541,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'font_type'         => 'ast-font-weight',
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
 					'default'           => divino_get_option( $title_section . '-title-font-weight' ),
-					'title'             => __( 'Font Weight', 'astra' ),
+					'title'             => __( 'Font Weight', 'divino' ),
 					'connect'           => $title_section . '-title-font-family',
 					'divider'           => array( 'ast_class' => 'ast-sub-bottom-divider' ),
 				),
@@ -553,7 +553,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'control'           => 'ast-responsive-slider',
 					'default'           => divino_get_option( $title_section . '-title-font-size' ),
 					'transport'         => 'postMessage',
-					'title'             => __( 'Font Size', 'astra' ),
+					'title'             => __( 'Font Size', 'divino' ),
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
 					'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
 					'input_attrs'       => array(
@@ -586,7 +586,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'type'    => 'sub-control',
 					'control' => 'ast-font-extras',
 					'default' => divino_get_option( $title_section . '-title-font-extras', divino_Posts_Structure_Loader::get_customizer_default( 'font-extras' ) ),
-					'title'   => __( 'Font Extras', 'astra' ),
+					'title'   => __( 'Font Extras', 'divino' ),
 				),
 				array(
 					'name'              => divino_THEME_SETTINGS . '[' . $title_section . '-banner-margin]',
@@ -595,15 +595,15 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'control'           => 'ast-responsive-spacing',
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 					'section'           => $title_section,
-					'title'             => __( 'Margin', 'astra' ),
+					'title'             => __( 'Margin', 'divino' ),
 					'linked_choices'    => true,
 					'transport'         => 'postMessage',
 					'unit_choices'      => array( 'px', 'em', '%' ),
 					'choices'           => array(
-						'top'    => __( 'Top', 'astra' ),
-						'right'  => __( 'Right', 'astra' ),
-						'bottom' => __( 'Bottom', 'astra' ),
-						'left'   => __( 'Left', 'astra' ),
+						'top'    => __( 'Top', 'divino' ),
+						'right'  => __( 'Right', 'divino' ),
+						'bottom' => __( 'Bottom', 'divino' ),
+						'left'   => __( 'Left', 'divino' ),
 					),
 					'context'           => divino_Builder_Helper::$design_tab,
 					'priority'          => 100,
@@ -617,15 +617,15 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'control'           => 'ast-responsive-spacing',
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 					'section'           => $title_section,
-					'title'             => __( 'Padding', 'astra' ),
+					'title'             => __( 'Padding', 'divino' ),
 					'linked_choices'    => true,
 					'transport'         => 'postMessage',
 					'unit_choices'      => array( 'px', 'em', '%' ),
 					'choices'           => array(
-						'top'    => __( 'Top', 'astra' ),
-						'right'  => __( 'Right', 'astra' ),
-						'bottom' => __( 'Bottom', 'astra' ),
-						'left'   => __( 'Left', 'astra' ),
+						'top'    => __( 'Top', 'divino' ),
+						'right'  => __( 'Right', 'divino' ),
+						'bottom' => __( 'Bottom', 'divino' ),
+						'left'   => __( 'Left', 'divino' ),
 					),
 					'context'           => divino_Builder_Helper::$design_tab,
 					'priority'          => 120,
@@ -640,22 +640,22 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'section'           => $section,
 					'default'           => divino_get_option( 'ast-' . $special_type . '-content-layout', 'default' ),
 					'priority'          => 3,
-					'title'             => __( 'Container Layout', 'astra' ),
+					'title'             => __( 'Container Layout', 'divino' ),
 					'choices'           => array(
 						'default'                => array(
-							'label' => __( 'Default', 'astra' ),
+							'label' => __( 'Default', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'layout-default', false ) : '',
 						),
 						'normal-width-container' => array(
-							'label' => __( 'Normal', 'astra' ),
+							'label' => __( 'Normal', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'normal-width-container', false ) : '',
 						),
 						'narrow-width-container' => array(
-							'label' => __( 'Narrow', 'astra' ),
+							'label' => __( 'Narrow', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'narrow-width-container', false ) : '',
 						),
 						'full-width-container'   => array(
-							'label' => __( 'Full Width', 'astra' ),
+							'label' => __( 'Full Width', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'full-width-container', false ) : '',
 						),
 					),
@@ -669,12 +669,12 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'section'     => $section,
 					'default'     => divino_get_option( 'ast-' . $special_type . '-content-style', 'default' ),
 					'priority'    => 3,
-					'title'       => __( 'Container Style', 'astra' ),
-					'description' => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
+					'title'       => __( 'Container Style', 'divino' ),
+					'description' => __( 'Container style will apply only when layout is set to either normal or narrow.', 'divino' ),
 					'choices'     => array(
-						'default' => __( 'Default', 'astra' ),
-						'unboxed' => __( 'Unboxed', 'astra' ),
-						'boxed'   => __( 'Boxed', 'astra' ),
+						'default' => __( 'Default', 'divino' ),
+						'unboxed' => __( 'Unboxed', 'divino' ),
+						'boxed'   => __( 'Boxed', 'divino' ),
 					),
 					'renderAs'    => 'text',
 					'responsive'  => false,
@@ -688,25 +688,25 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_choices' ),
 					'section'           => $section,
 					'default'           => divino_get_option( 'ast-' . $special_type . '-sidebar-layout', 'default' ),
-					'description'       => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
+					'description'       => __( 'Sidebar will only apply when container layout is set to normal.', 'divino' ),
 					'priority'          => 3,
-					'title'             => __( 'Sidebar Layout', 'astra' ),
+					'title'             => __( 'Sidebar Layout', 'divino' ),
 					'divider'           => array( 'ast_class' => 'ast-top-section-divider' ),
 					'choices'           => array(
 						'default'       => array(
-							'label' => __( 'Default', 'astra' ),
+							'label' => __( 'Default', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'layout-default', false ) : '',
 						),
 						'no-sidebar'    => array(
-							'label' => __( 'No Sidebar', 'astra' ),
+							'label' => __( 'No Sidebar', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'no-sidebar', false ) : '',
 						),
 						'left-sidebar'  => array(
-							'label' => __( 'Left Sidebar', 'astra' ),
+							'label' => __( 'Left Sidebar', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'left-sidebar', false ) : '',
 						),
 						'right-sidebar' => array(
-							'label' => __( 'Right Sidebar', 'astra' ),
+							'label' => __( 'Right Sidebar', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'right-sidebar', false ) : '',
 						),
 					),
@@ -719,11 +719,11 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'section'    => $section,
 					'default'    => divino_get_option( 'ast-' . $special_type . '-sidebar-style', 'default' ),
 					'priority'   => 3,
-					'title'      => __( 'Sidebar Style', 'astra' ),
+					'title'      => __( 'Sidebar Style', 'divino' ),
 					'choices'    => array(
-						'default' => __( 'Default', 'astra' ),
-						'unboxed' => __( 'Unboxed', 'astra' ),
-						'boxed'   => __( 'Boxed', 'astra' ),
+						'default' => __( 'Default', 'divino' ),
+						'unboxed' => __( 'Unboxed', 'divino' ),
+						'boxed'   => __( 'Boxed', 'divino' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -739,7 +739,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'default'           => divino_get_option( 'ast-' . $special_type . '-results-style' ),
 					'priority'          => 14,
 					'divider'           => array( 'ast_class' => 'ast-top-section-divider' ),
-					'title'             => __( 'Results Layout', 'astra' ),
+					'title'             => __( 'Results Layout', 'divino' ),
 					'choices'           => $blog_layout,
 				),
 
@@ -750,7 +750,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'control'      => 'ast-number',
 					'qty_selector' => true,
 					'section'      => $section,
-					'title'        => __( 'Post Per Page', 'astra' ),
+					'title'        => __( 'Post Per Page', 'divino' ),
 					'priority'     => 14,
 					'responsive'   => false,
 					'input_attrs'  => array(
@@ -767,8 +767,8 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'type'        => 'control',
 					'control'     => 'ast-toggle-control',
 					'section'     => $section,
-					'description' => __( 'This option activates Live Search support for the search box on the no results page.', 'astra' ),
-					'title'       => __( 'Live Search', 'astra' ),
+					'description' => __( 'This option activates Live Search support for the search box on the no results page.', 'divino' ),
+					'title'       => __( 'Live Search', 'divino' ),
 					'priority'    => 15,
 					'context'     => divino_Builder_Helper::$general_tab,
 					'divider'     => array( 'ast_class' => 'ast-top-divider' ),
@@ -781,7 +781,7 @@ class divino_Posts_Special_Archive_Structures_Configs extends divino_Customizer_
 					'section'     => $section,
 					'control'     => 'ast-multi-selector',
 					'priority'    => 15,
-					'title'       => __( 'Search Within Post Types', 'astra' ),
+					'title'       => __( 'Search Within Post Types', 'divino' ),
 					'context'     => array(
 						divino_Builder_Helper::$general_tab_config,
 						array(

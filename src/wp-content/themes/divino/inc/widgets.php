@@ -2,9 +2,9 @@
 /**
  * Widget and sidebars related functions
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -90,7 +90,7 @@ if ( ! function_exists( 'divino_widgets_init' ) ) {
 			apply_filters(
 				'divino_widgets_init',
 				array(
-					'name' => esc_html__( 'Main Sidebar', 'astra' ),
+					'name' => esc_html__( 'Main Sidebar', 'divino' ),
 					'id'   => 'sidebar-1',
 				) + $default_args
 			)
@@ -104,7 +104,7 @@ if ( ! function_exists( 'divino_widgets_init' ) ) {
 				apply_filters(
 					'divino_header_widgets_init',
 					array(
-						'name' => esc_html__( 'Header', 'astra' ),
+						'name' => esc_html__( 'Header', 'divino' ),
 						'id'   => 'header-widget',
 					) + $default_args
 				)
@@ -118,7 +118,7 @@ if ( ! function_exists( 'divino_widgets_init' ) ) {
 			apply_filters(
 				'divino_footer_1_widgets_init',
 				array(
-					'name' => esc_html__( 'Footer Bar Section 1', 'astra' ),
+					'name' => esc_html__( 'Footer Bar Section 1', 'divino' ),
 					'id'   => 'footer-widget-1',
 				) + $default_args
 			)
@@ -127,7 +127,7 @@ if ( ! function_exists( 'divino_widgets_init' ) ) {
 			apply_filters(
 				'divino_footer_2_widgets_init',
 				array(
-					'name' => esc_html__( 'Footer Bar Section 2', 'astra' ),
+					'name' => esc_html__( 'Footer Bar Section 2', 'divino' ),
 					'id'   => 'footer-widget-2',
 				) + $default_args
 			)
@@ -143,7 +143,7 @@ if ( ! function_exists( 'divino_widgets_init' ) ) {
 			apply_filters(
 				'divino_advanced_footer_widget_1_args',
 				array(
-					'name' => esc_html__( 'Footer Widget Area 1', 'astra' ),
+					'name' => esc_html__( 'Footer Widget Area 1', 'divino' ),
 					'id'   => 'advanced-footer-widget-1',
 				) + $default_args
 			)
@@ -152,7 +152,7 @@ if ( ! function_exists( 'divino_widgets_init' ) ) {
 			apply_filters(
 				'divino_advanced_footer_widget_2_args',
 				array(
-					'name' => esc_html__( 'Footer Widget Area 2', 'astra' ),
+					'name' => esc_html__( 'Footer Widget Area 2', 'divino' ),
 					'id'   => 'advanced-footer-widget-2',
 				) + $default_args
 			)
@@ -161,7 +161,7 @@ if ( ! function_exists( 'divino_widgets_init' ) ) {
 			apply_filters(
 				'divino_advanced_footer_widget_3_args',
 				array(
-					'name' => esc_html__( 'Footer Widget Area 3', 'astra' ),
+					'name' => esc_html__( 'Footer Widget Area 3', 'divino' ),
 					'id'   => 'advanced-footer-widget-3',
 				) + $default_args
 			)
@@ -170,7 +170,7 @@ if ( ! function_exists( 'divino_widgets_init' ) ) {
 			apply_filters(
 				'divino_advanced_footer_widget_4_args',
 				array(
-					'name' => esc_html__( 'Footer Widget Area 4', 'astra' ),
+					'name' => esc_html__( 'Footer Widget Area 4', 'divino' ),
 					'id'   => 'advanced-footer-widget-4',
 				) + $default_args
 			)

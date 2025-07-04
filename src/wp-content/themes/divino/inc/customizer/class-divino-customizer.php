@@ -1,10 +1,10 @@
 <?php
 /**
- * Astra Theme Customizer
+ * divino Theme Customizer
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -118,9 +118,9 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 		}
 
 		/**
-		 * Check if the current customizer request belongs to Astra theme.
+		 * Check if the current customizer request belongs to divino theme.
 		 *
-		 * @return bool True if it is Astra customizer, false otherwise.
+		 * @return bool True if it is divino customizer, false otherwise.
 		 *
 		 * @since 4.8.3
 		 */
@@ -142,7 +142,7 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 				return false;
 			}
 
-			// Default to Astra customizer.
+			// Default to divino customizer.
 			return true;
 		}
 		/**
@@ -152,14 +152,14 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 
 			add_action( 'divino_style_guide_site_icon', array( $this, 'site_icon_update' ) );
 
-			// Hooks that are necessary even if it is not Astra's customizer.
+			// Hooks that are necessary even if it is not divino's customizer.
 			if ( is_admin() || is_customize_preview() ) {
 				add_action( 'customize_register', array( $this, 'include_configurations' ), 2 );
 				add_action( 'customize_register', array( $this, 'divino_pro_upgrade_configurations' ), 2 );
 			}
 			add_action( 'customize_register', array( $this, 'customize_register_panel' ), 2 );
 
-			// Bail early if it is not astra customizer.
+			// Bail early if it is not divino customizer.
 			if ( ! self::is_divino_customizer() ) {
 				return;
 			}
@@ -197,7 +197,7 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 
 			add_action( 'wp_footer', array( $this, 'style_guide_template' ) );
 
-			// Handles the AJAX request for astra SVG icons.
+			// Handles the AJAX request for divino SVG icons.
 			add_action( 'wp_ajax_divino_logo_svg_icons', array( $this, 'logo_svg_icons' ) );
 		}
 
@@ -221,31 +221,31 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 				'priority'       => 80,
 				'capability'     => 'edit_theme_options',
 				'theme_supports' => '',
-				'title'          => __( 'Site Identity', 'astra' ),
+				'title'          => __( 'Site Identity', 'divino' ),
 				'description'    => '',
 			);
 			// Register panel.
 			/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-			$wp_customize->add_panel( 'astra-site-identity', $panel_arr );
+			$wp_customize->add_panel( 'divino-site-identity', $panel_arr );
 			/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
 			$section_arr = array(
 				'priority'       => 80,
 				'capability'     => 'edit_theme_options',
 				'theme_supports' => '',
-				'title'          => __( 'Site Identity', 'astra' ),
+				'title'          => __( 'Site Identity', 'divino' ),
 				'description'    => '',
 			);
 
 			// Register Section.
-			$wp_customize->add_section( 'astra-site-identity', $section_arr );
+			$wp_customize->add_section( 'divino-site-identity', $section_arr );
 
 			/** @psalm-suppress PossiblyNullPropertyAssignment */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-			$wp_customize->get_control( 'site_icon' )->section = 'astra-site-identity';
+			$wp_customize->get_control( 'site_icon' )->section = 'divino-site-identity';
 			/** @psalm-suppress PossiblyNullPropertyAssignment */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
 			/** @psalm-suppress PossiblyNullPropertyAssignment */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-			$wp_customize->get_control( 'site_icon' )->description = __( 'Site Icons are what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. Upload one here! Site Icons should be square and at least 512 × 512 pixels.', 'astra' );
+			$wp_customize->get_control( 'site_icon' )->description = __( 'Site Icons are what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. Upload one here! Site Icons should be square and at least 512 × 512 pixels.', 'divino' );
 			/** @psalm-suppress PossiblyNullPropertyAssignment */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		}
 
@@ -268,13 +268,13 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 				$flushed           = $local_font_loader->divino_delete_fonts_folder();
 
 				if ( ! $flushed ) {
-					$response_data = array( 'message' => __( 'Failed to Flush, try again later.', 'astra' ) );
+					$response_data = array( 'message' => __( 'Failed to Flush, try again later.', 'divino' ) );
 					wp_send_json_error( $response_data );
 				}
 				wp_send_json_success();
 			}
 
-			$response_data = array( 'message' => __( 'Local font files not present.', 'astra' ) );
+			$response_data = array( 'message' => __( 'Local font files not present.', 'divino' ) );
 			wp_send_json_error( $response_data );
 		}
 
@@ -396,7 +396,7 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 		 */
 		private function get_default_value( $setting_key, $default_values ) {
 			$return = '';
-			preg_match( '#astra-settings\[(.*?)\]#', $setting_key, $match );
+			preg_match( '#divino-settings\[(.*?)\]#', $setting_key, $match );
 			if ( ! empty( $match ) && isset( $match[1] ) ) {
 				$return = isset( $default_values[ $match[1] ] ) ? $default_values[ $match[1] ] : '';
 			}
@@ -603,25 +603,25 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 					break;
 				case 'ast-font-weight':
 					$configuration['ast_all_font_weight'] = array(
-						'100'       => __( 'Thin 100', 'astra' ),
-						'100italic' => __( '100 Italic', 'astra' ),
-						'200'       => __( 'Extra-Light 200', 'astra' ),
-						'200italic' => __( '200 Italic', 'astra' ),
-						'300'       => __( 'Light 300', 'astra' ),
-						'300italic' => __( '300 Italic', 'astra' ),
-						'400'       => __( 'Normal 400', 'astra' ),
-						'normal'    => __( 'Normal 400', 'astra' ),
-						'italic'    => __( '400 Italic', 'astra' ),
-						'500'       => __( 'Medium 500', 'astra' ),
-						'500italic' => __( '500 Italic', 'astra' ),
-						'600'       => __( 'Semi-Bold 600', 'astra' ),
-						'600italic' => __( '600 Italic', 'astra' ),
-						'700'       => __( 'Bold 700', 'astra' ),
-						'700italic' => __( '700 Italic', 'astra' ),
-						'800'       => __( 'Extra-Bold 800', 'astra' ),
-						'800italic' => __( '800 Italic', 'astra' ),
-						'900'       => __( 'Ultra-Bold 900', 'astra' ),
-						'900italic' => __( '900 Italic', 'astra' ),
+						'100'       => __( 'Thin 100', 'divino' ),
+						'100italic' => __( '100 Italic', 'divino' ),
+						'200'       => __( 'Extra-Light 200', 'divino' ),
+						'200italic' => __( '200 Italic', 'divino' ),
+						'300'       => __( 'Light 300', 'divino' ),
+						'300italic' => __( '300 Italic', 'divino' ),
+						'400'       => __( 'Normal 400', 'divino' ),
+						'normal'    => __( 'Normal 400', 'divino' ),
+						'italic'    => __( '400 Italic', 'divino' ),
+						'500'       => __( 'Medium 500', 'divino' ),
+						'500italic' => __( '500 Italic', 'divino' ),
+						'600'       => __( 'Semi-Bold 600', 'divino' ),
+						'600italic' => __( '600 Italic', 'divino' ),
+						'700'       => __( 'Bold 700', 'divino' ),
+						'700italic' => __( '700 Italic', 'divino' ),
+						'800'       => __( 'Extra-Bold 800', 'divino' ),
+						'800italic' => __( '800 Italic', 'divino' ),
+						'900'       => __( 'Ultra-Bold 900', 'divino' ),
+						'900italic' => __( '900 Italic', 'divino' ),
 					);
 					break;
 				case 'ast-sortable':
@@ -699,12 +699,12 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 		public function logo_svg_icons() {
 			// Check if the current user has the capability to edit theme options.
 			if ( ! current_user_can( 'edit_theme_options' ) ) {
-				wp_send_json_error( __( 'You are not allowed to access this resource.', 'astra' ) );
+				wp_send_json_error( __( 'You are not allowed to access this resource.', 'divino' ) );
 			}
 
 			// Check if the current request is an AJAX request and if it is being done in the Customizer screen.
 			if ( ! is_admin() || ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) {
-				wp_send_json_error( __( 'This request is only allowed in the Customizer screen.', 'astra' ) );
+				wp_send_json_error( __( 'This request is only allowed in the Customizer screen.', 'divino' ) );
 			}
 
 			wp_send_json_success(
@@ -745,7 +745,7 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 			$config['type']            = isset( $config['ast_type'] ) ? $config['ast_type'] : 'ast_section';
 			$config['active']          = true;
 			$config['id']              = $section_name;
-			$config['customizeAction'] = sprintf( __( 'Customizing ▸ %s', 'astra' ), divino_get_prop( $config, 'title' ) );
+			$config['customizeAction'] = sprintf( __( 'Customizing ▸ %s', 'divino' ), divino_get_prop( $config, 'title' ) );
 
 			if ( isset( $config['clone_type'] ) && isset( $config['clone_index'] ) ) {
 
@@ -1148,8 +1148,8 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 		public function enqueue_customizer_scripts() {
 			// Localize variables for Dev mode > Customizer JS.
 			wp_localize_script(
-				'astra-custom-control-script',
-				'AstraBuilderCustomizerData',
+				'divino-custom-control-script',
+				'divinoBuilderCustomizerData',
 				array(
 					'contexts'                => self::get_contexts(),
 					'dynamic_setting_options' => self::$dynamic_options['settings'],
@@ -1171,7 +1171,7 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 						'woocommerce'    => divino_get_pro_url( '/pricing/', 'free-theme', 'customizer', 'woocommerce' ),
 						'blog-single'    => divino_get_pro_url( '/pricing/', 'free-theme', 'customizer', 'blog-single' ),
 						'blog-archive'   => divino_get_pro_url( '/pricing/', 'free-theme', 'customizer', 'blog-archive' ),
-						'hfb-pro-widget' => divino_get_pro_url( '/pricing/', 'free-theme', 'astra-header-footer', 'unlock-pro-widget' ),
+						'hfb-pro-widget' => divino_get_pro_url( '/pricing/', 'free-theme', 'divino-header-footer', 'unlock-pro-widget' ),
 					),
 					/** @psalm-suppress RedundantCondition */
 					'is_woo_market_zip'       => ! divino_THEME_ORG_VERSION,
@@ -1274,36 +1274,36 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 		 */
 		public function include_configurations() {
 			// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-			require divino_THEME_DIR . 'inc/customizer/configurations/class-astra-customizer-config-base.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/class-divino-customizer-config-base.php';
 
 			/**
 			 * Register Sections & Panels
 			 */
-			require divino_THEME_DIR . 'inc/customizer/class-astra-customizer-register-sections-panels.php';
-			require divino_THEME_DIR . 'inc/customizer/configurations/buttons/class-astra-customizer-button-configs.php';
-			require divino_THEME_DIR . 'inc/customizer/configurations/layout/class-astra-site-layout-configs.php';
-			require divino_THEME_DIR . 'inc/customizer/configurations/layout/class-astra-site-identity-configs.php';
-			require divino_THEME_DIR . 'inc/customizer/configurations/layout/class-astra-blog-layout-configs.php';
-			require divino_THEME_DIR . 'inc/customizer/configurations/layout/class-astra-blog-single-layout-configs.php';
-			require divino_THEME_DIR . 'inc/customizer/configurations/layout/class-astra-sidebar-layout-configs.php';
-			require divino_THEME_DIR . 'inc/customizer/configurations/layout/class-astra-site-container-layout-configs.php';
-			require divino_THEME_DIR . 'inc/customizer/configurations/colors-background/class-astra-body-colors-configs.php';
-			require divino_THEME_DIR . 'inc/customizer/configurations/typography/class-astra-archive-typo-configs.php';
-			require divino_THEME_DIR . 'inc/customizer/configurations/typography/class-astra-body-typo-configs.php';
-			require divino_THEME_DIR . 'inc/customizer/configurations/block-editor/class-astra-block-editor-configs.php';
-			require divino_THEME_DIR . 'inc/customizer/configurations/comments/class-astra-comments-configs.php';
-			require divino_THEME_DIR . 'inc/customizer/configurations/typography/class-astra-headings-typo-configs.php';
-			require divino_THEME_DIR . 'inc/customizer/configurations/typography/class-astra-single-typo-configs.php';
-			require divino_THEME_DIR . 'inc/customizer/configurations/typography/class-astra-global-typo-configs.php';
-			require divino_THEME_DIR . 'inc/customizer/configurations/global-misc/class-astra-global-misc-configs.php';
-			require divino_THEME_DIR . 'inc/customizer/configurations/accessibility/class-astra-accessibility-configs.php';
+			require divino_THEME_DIR . 'inc/customizer/class-divino-customizer-register-sections-panels.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/buttons/class-divino-customizer-button-configs.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/layout/class-divino-site-layout-configs.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/layout/class-divino-site-identity-configs.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/layout/class-divino-blog-layout-configs.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/layout/class-divino-blog-single-layout-configs.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/layout/class-divino-sidebar-layout-configs.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/layout/class-divino-site-container-layout-configs.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/colors-background/class-divino-body-colors-configs.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/typography/class-divino-archive-typo-configs.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/typography/class-divino-body-typo-configs.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/block-editor/class-divino-block-editor-configs.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/comments/class-divino-comments-configs.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/typography/class-divino-headings-typo-configs.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/typography/class-divino-single-typo-configs.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/typography/class-divino-global-typo-configs.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/global-misc/class-divino-global-misc-configs.php';
+			require divino_THEME_DIR . 'inc/customizer/configurations/accessibility/class-divino-accessibility-configs.php';
 
 			if ( divino_existing_header_footer_configs() ) {
-				require divino_THEME_DIR . 'inc/customizer/configurations/buttons/class-astra-existing-button-configs.php';
-				require divino_THEME_DIR . 'inc/customizer/configurations/layout/class-astra-header-layout-configs.php';
-				require divino_THEME_DIR . 'inc/customizer/configurations/layout/class-astra-footer-layout-configs.php';
-				require divino_THEME_DIR . 'inc/customizer/configurations/colors-background/class-astra-advanced-footer-colors-configs.php';
-				require divino_THEME_DIR . 'inc/customizer/configurations/colors-background/class-astra-footer-colors-configs.php';
+				require divino_THEME_DIR . 'inc/customizer/configurations/buttons/class-divino-existing-button-configs.php';
+				require divino_THEME_DIR . 'inc/customizer/configurations/layout/class-divino-header-layout-configs.php';
+				require divino_THEME_DIR . 'inc/customizer/configurations/layout/class-divino-footer-layout-configs.php';
+				require divino_THEME_DIR . 'inc/customizer/configurations/colors-background/class-divino-advanced-footer-colors-configs.php';
+				require divino_THEME_DIR . 'inc/customizer/configurations/colors-background/class-divino-footer-colors-configs.php';
 			}
 			// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 		}
@@ -1337,9 +1337,9 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 			}
 
 			// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-			require divino_THEME_DIR . 'inc/customizer/extend-customizer/class-astra-wp-customize-panel.php';
-			require divino_THEME_DIR . 'inc/customizer/extend-customizer/class-astra-wp-customize-section.php';
-			require divino_THEME_DIR . 'inc/customizer/extend-customizer/class-astra-wp-customize-separator.php';
+			require divino_THEME_DIR . 'inc/customizer/extend-customizer/class-divino-wp-customize-panel.php';
+			require divino_THEME_DIR . 'inc/customizer/extend-customizer/class-divino-wp-customize-section.php';
+			require divino_THEME_DIR . 'inc/customizer/extend-customizer/class-divino-wp-customize-separator.php';
 			require divino_THEME_DIR . 'inc/customizer/customizer-controls.php';
 			// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 
@@ -1391,9 +1391,9 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 			 * Helper files
 			 */
 			// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-			require divino_THEME_DIR . 'inc/customizer/class-astra-customizer-partials.php';
-			require divino_THEME_DIR . 'inc/customizer/class-astra-customizer-callback.php';
-			require divino_THEME_DIR . 'inc/customizer/class-astra-customizer-sanitizes.php';
+			require divino_THEME_DIR . 'inc/customizer/class-divino-customizer-partials.php';
+			require divino_THEME_DIR . 'inc/customizer/class-divino-customizer-callback.php';
+			require divino_THEME_DIR . 'inc/customizer/class-divino-customizer-sanitizes.php';
 			// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 		}
 
@@ -1409,7 +1409,7 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 				<p class="ast-sg-site-icon-wrap">
 					<span class="ast-sg-site-icon-aside-divider"></span>
 					<span class="ast-sg-site-icon-inner-wrap">
-						<img class="ast-sg-site-icon" alt="<?php esc_attr_e( 'Site Icon', 'astra' ); ?>" src="<?php echo esc_url( $site_icon_url ); ?>" />
+						<img class="ast-sg-site-icon" alt="<?php esc_attr_e( 'Site Icon', 'divino' ); ?>" src="<?php echo esc_url( $site_icon_url ); ?>" />
 						<span class="ast-sg-site-title"> <?php echo esc_html( get_bloginfo( 'name' ) ); ?> </span>
 						<span class="ast-sg-site-blogdescription"> <?php echo esc_attr( ! empty( get_bloginfo( 'description' ) ) ? ' - ' . get_bloginfo( 'description' ) : '' ); ?> </span>
 					</span>
@@ -1441,8 +1441,8 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 		public function divino_pro_upgrade_configurations( $wp_customize ) {
 
 			if ( ! defined( 'divino_EXT_VER' ) ) {
-				require divino_THEME_DIR . 'inc/customizer/astra-pro/class-astra-pro-customizer.php';// phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-				require divino_THEME_DIR . 'inc/customizer/astra-pro/class-astra-pro-upgrade-link-configs.php';// phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+				require divino_THEME_DIR . 'inc/customizer/divino-pro/class-divino-pro-customizer.php';// phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+				require divino_THEME_DIR . 'inc/customizer/divino-pro/class-divino-pro-upgrade-link-configs.php';// phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 			}
 		}
 
@@ -1470,22 +1470,22 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 			wp_enqueue_style( 'thickbox' );
 
 			// Customizer Core.
-			wp_enqueue_script( 'astra-customizer-controls-toggle-js', divino_THEME_URI . 'assets/js/' . $dir . '/customizer-controls-toggle' . $js_prefix, array(), divino_THEME_VERSION, true );
+			wp_enqueue_script( 'divino-customizer-controls-toggle-js', divino_THEME_URI . 'assets/js/' . $dir . '/customizer-controls-toggle' . $js_prefix, array(), divino_THEME_VERSION, true );
 
-			wp_enqueue_script( 'astra-customizer-controls-js', divino_THEME_URI . 'assets/js/' . $dir . '/customizer-controls' . $js_prefix, array( 'astra-customizer-controls-toggle-js' ), divino_THEME_VERSION, true );
+			wp_enqueue_script( 'divino-customizer-controls-js', divino_THEME_URI . 'assets/js/' . $dir . '/customizer-controls' . $js_prefix, array( 'divino-customizer-controls-toggle-js' ), divino_THEME_VERSION, true );
 			// Extended Customizer Assets - Panel extended.
-			wp_enqueue_style( 'astra-extend-customizer-css', divino_THEME_URI . 'assets/css/minified/extend-customizer' . $css_prefix, null, divino_THEME_VERSION );
-			wp_enqueue_script( 'astra-extend-customizer-js', divino_THEME_URI . 'assets/js/' . $dir . '/extend-customizer' . $js_prefix, array(), divino_THEME_VERSION, true );
+			wp_enqueue_style( 'divino-extend-customizer-css', divino_THEME_URI . 'assets/css/minified/extend-customizer' . $css_prefix, null, divino_THEME_VERSION );
+			wp_enqueue_script( 'divino-extend-customizer-js', divino_THEME_URI . 'assets/js/' . $dir . '/extend-customizer' . $js_prefix, array(), divino_THEME_VERSION, true );
 
 			// Customizer Controls.
-			wp_enqueue_style( 'astra-customizer-controls-css', divino_THEME_URI . 'assets/css/minified/customizer-controls' . $css_prefix, null, divino_THEME_VERSION );
+			wp_enqueue_style( 'divino-customizer-controls-css', divino_THEME_URI . 'assets/css/minified/customizer-controls' . $css_prefix, null, divino_THEME_VERSION );
 
-			wp_enqueue_script( 'astra-customizer-style-guide-js', divino_THEME_URI . 'assets/js/' . $dir . '/customizer-style-guide' . $js_prefix, array( 'jquery', 'astra-customizer-controls-toggle-js' ), divino_THEME_VERSION, true );
+			wp_enqueue_script( 'divino-customizer-style-guide-js', divino_THEME_URI . 'assets/js/' . $dir . '/customizer-style-guide' . $js_prefix, array( 'jquery', 'divino-customizer-controls-toggle-js' ), divino_THEME_VERSION, true );
 			wp_localize_script(
-				'astra-customizer-style-guide-js',
-				'astraStyleGuide',
+				'divino-customizer-style-guide-js',
+				'divinoStyleGuide',
 				array(
-					'title' => __( 'Style Guide', 'astra' ),
+					'title' => __( 'Style Guide', 'divino' ),
 				)
 			);
 
@@ -1502,8 +1502,8 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 			</div>';
 
 			wp_localize_script(
-				'astra-customizer-controls-toggle-js',
-				'astra',
+				'divino-customizer-controls-toggle-js',
+				'divino',
 				apply_filters(
 					'divino_theme_customizer_js_localize',
 					array(
@@ -1557,7 +1557,7 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 		 */
 		public function get_style_guide_shortcut_trigger( $type, $name, $context = 'general', $extras = '' ) {
 			if ( 'control' === $type ) {
-				$name = 'astra-color-palettes' === $name ? 'astra-color-palettes' : esc_attr( divino_THEME_SETTINGS ) . $name;
+				$name = 'divino-color-palettes' === $name ? 'divino-color-palettes' : esc_attr( divino_THEME_SETTINGS ) . $name;
 			}
 			return '<span class="ast-quick-tour-item" data-type="' . $type . '" data-name="' . $name . '" data-context="' . $context . '" ' . $extras . '> <span class="ast-sg-customizer-shortcut"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M0.5 6C0.5 2.96243 2.96243 0.5 6 0.5H18C21.0376 0.5 23.5 2.96243 23.5 6V18C23.5 21.0376 21.0376 23.5 18 23.5H6C2.96243 23.5 0.5 21.0376 0.5 18V6Z" fill="white" fill-opacity="0.8"/> <path d="M0.5 6C0.5 2.96243 2.96243 0.5 6 0.5H18C21.0376 0.5 23.5 2.96243 23.5 6V18C23.5 21.0376 21.0376 23.5 18 23.5H6C2.96243 23.5 0.5 21.0376 0.5 18V6Z" stroke="#E2E8F0"/> <g clip-path="url(#clip0_8460_9362)"> <path d="M14.5 7.50081C14.6273 7.35032 14.7849 7.22784 14.9625 7.14115C15.1402 7.05446 15.334 7.00547 15.5318 6.99731C15.7296 6.98915 15.9269 7.022 16.1112 7.09375C16.2955 7.1655 16.4627 7.27459 16.6022 7.41407C16.7416 7.55354 16.8503 7.72034 16.9213 7.90383C16.9922 8.08732 17.0239 8.28347 17.0143 8.4798C17.0047 8.67612 16.954 8.8683 16.8654 9.04409C16.7769 9.21988 16.6524 9.37542 16.5 9.50081L9.75 16.2508L7 17.0008L7.75 14.2508L14.5 7.50081Z" stroke="#020617" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path d="M13.5 8.5L15.5 10.5" stroke="#020617" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> </g> <defs> <clipPath id="clip0_8460_9362"> <rect width="12" height="12" fill="white" transform="translate(6 6)"/> </clipPath> </defs> </svg> </span> </span>';
 		}
@@ -1602,39 +1602,39 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 				array(
 					'colors' => array(
 						'color-0' => array(
-							'title' => __( 'Brand', 'astra' ),
+							'title' => __( 'Brand', 'divino' ),
 							'code'  => 'var(--ast-global-color-0)',
 						),
 						'color-1' => array(
-							'title' => __( 'Alt Brand', 'astra' ),
+							'title' => __( 'Alt Brand', 'divino' ),
 							'code'  => 'var(--ast-global-color-1)',
 						),
 						'color-2' => array(
-							'title' => __( 'Heading', 'astra' ),
+							'title' => __( 'Heading', 'divino' ),
 							'code'  => 'var(--ast-global-color-2)',
 						),
 						'color-3' => array(
-							'title' => __( 'Text', 'astra' ),
+							'title' => __( 'Text', 'divino' ),
 							'code'  => 'var(--ast-global-color-3)',
 						),
 						'color-4' => array(
-							'title' => __( 'Primary', 'astra' ),
+							'title' => __( 'Primary', 'divino' ),
 							'code'  => 'var(--ast-global-color-4)',
 						),
 						'color-5' => array(
-							'title' => __( 'Secondary', 'astra' ),
+							'title' => __( 'Secondary', 'divino' ),
 							'code'  => 'var(--ast-global-color-5)',
 						),
 						'color-6' => array(
-							'title' => __( 'Border', 'astra' ),
+							'title' => __( 'Border', 'divino' ),
 							'code'  => 'var(--ast-global-color-6)',
 						),
 						'color-7' => array(
-							'title' => __( 'Subtle BG', 'astra' ),
+							'title' => __( 'Subtle BG', 'divino' ),
 							'code'  => 'var(--ast-global-color-7)',
 						),
 						'color-8' => array(
-							'title' => __( 'Extra', 'astra' ),
+							'title' => __( 'Extra', 'divino' ),
 							'code'  => 'var(--ast-global-color-8)',
 						),
 					),
@@ -1644,14 +1644,14 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 			ob_start();
 			?>
 				<button class="ast-close-tour" type="button">
-					<span class="screen-reader-text"><?php esc_html_e( 'Close', 'astra' ); ?></span>
+					<span class="screen-reader-text"><?php esc_html_e( 'Close', 'divino' ); ?></span>
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M13 11.8l6.1-6.3-1-1-6.1 6.2-6.1-6.2-1 1 6.1 6.3-6.5 6.7 1 1 6.5-6.6 6.5 6.6 1-1z"></path></svg>
 				</button>
 				<div class="ast-tour-inner-wrap">
 					<div class="ast-quick-tour-body">
 						<div class="ast-sg-2-col-grid">
 							<div class="ast-styler-card">
-								<p class="ast-sg-card-title"> <?php esc_html_e( 'Site Title & Logo', 'astra' ); ?>
+								<p class="ast-sg-card-title"> <?php esc_html_e( 'Site Title & Logo', 'divino' ); ?>
 								<div class="ast-sg-element-wrap ast-sg-logo-section <?php echo esc_attr( divino_get_option( 'logo-title-inline' ) ? 'ast-logo-title-inline' : '' ); ?>">
 									<?php echo do_shortcode( $this->get_style_guide_shortcut_trigger( 'section', 'title_tagline' ) ); ?>
 									<?php do_action( 'divino_site_identity' ); ?>
@@ -1659,23 +1659,23 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 							</div>
 							<div class="ast-sg-1-col-grid">
 								<div class="ast-styler-card">
-									<p class="ast-sg-card-title"> <?php esc_html_e( 'Site Icon', 'astra' ); ?>
+									<p class="ast-sg-card-title"> <?php esc_html_e( 'Site Icon', 'divino' ); ?>
 									<div class="ast-sg-element-wrap">
-										<?php echo do_shortcode( $this->get_style_guide_shortcut_trigger( 'section', 'astra-site-identity' ) ); ?>
+										<?php echo do_shortcode( $this->get_style_guide_shortcut_trigger( 'section', 'divino-site-identity' ) ); ?>
 										<?php do_action( 'divino_style_guide_site_icon' ); ?>
 									</div>
 								</div>
 
 								<div class="ast-styler-card">
-									<p class="ast-sg-card-title"> <?php esc_html_e( 'Buttons', 'astra' ); ?>
+									<p class="ast-sg-card-title"> <?php esc_html_e( 'Buttons', 'divino' ); ?>
 									<div class="ast-sg-button-element-wrap">
 										<div class="ast-sg-element-wrap">
 											<?php echo do_shortcode( $this->get_style_guide_shortcut_trigger( 'control', '[button-preset-style]' ) ); ?>
-											<button class="ast-button"> <?php esc_html_e( 'Primary', 'astra' ); ?> </button>
+											<button class="ast-button"> <?php esc_html_e( 'Primary', 'divino' ); ?> </button>
 										</div>
 										<div class="ast-sg-element-wrap">
 											<?php echo do_shortcode( $this->get_style_guide_shortcut_trigger( 'control', '[secondary-button-preset-style]', 'design' ) ); ?>
-											<button class="ast-outline-button"> <?php esc_html_e( 'Secondary', 'astra' ); ?> </button>
+											<button class="ast-outline-button"> <?php esc_html_e( 'Secondary', 'divino' ); ?> </button>
 										</div>
 									</div>
 								</div>
@@ -1683,13 +1683,13 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 						</div>
 
 						<div class="ast-sg-colors-section ast-styler-card">
-							<p class="ast-sg-card-title"> <?php esc_html_e( 'Colors', 'astra' ); ?>
+							<p class="ast-sg-card-title"> <?php esc_html_e( 'Colors', 'divino' ); ?>
 							<div class="ast-sg-colors-section-wrap">
 								<?php
 								foreach ( $settings['colors'] as $key => $data_attrs ) {
 									?>
 									<div class="ast-sg-color-item-wrap">
-										<?php echo do_shortcode( $this->get_style_guide_shortcut_trigger( 'control', 'astra-color-palettes', 'general', 'data-reference="ast-' . esc_attr( $key ) . '"' ) ); ?>
+										<?php echo do_shortcode( $this->get_style_guide_shortcut_trigger( 'control', 'divino-color-palettes', 'general', 'data-reference="ast-' . esc_attr( $key ) . '"' ) ); ?>
 										<span class="ast-sg-color-picker" style="background:<?php echo esc_attr( $data_attrs['code'] ); ?>"> </span>
 										<span class="ast-sg-field-title"> <?php echo esc_html( $data_attrs['title'] ); ?>
 									</div>
@@ -1700,73 +1700,73 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 								</div>
 
 						<div class="ast-sg-content-section-wrap ast-styler-card">
-							<p class="ast-sg-card-title"> <?php esc_html_e( 'Typography', 'astra' ); ?>
+							<p class="ast-sg-card-title"> <?php esc_html_e( 'Typography', 'divino' ); ?>
 							<div class="ast-sg-content-inner-wrap">
 								<div class="ast-sg-heading-section">
 									<?php echo do_shortcode( $this->get_style_guide_shortcut_trigger( 'control', '[ast-headings-font-settings]', 'general', 'data-reference="ast-toggle-desc-wrap"' ) ); ?>
-									<h1> <?php esc_html_e( 'Headings', 'astra' ); ?> </h1>
+									<h1> <?php esc_html_e( 'Headings', 'divino' ); ?> </h1>
 									<h2 class="sub-heading"> A a B b C c D d E e F f G g H h I i J j K k L l M m N n O o P p Q q R r S s T t U u V v W w X x Y y Z z </h2>
 								</div>
 								<div class="ast-sg-content-section">
 									<?php echo do_shortcode( $this->get_style_guide_shortcut_trigger( 'control', '[ast-body-font-settings]', 'general', 'data-reference="ast-toggle-desc-wrap"' ) ); ?>
-									<p> <?php esc_html_e( 'Here\'s how the body text will look like on your website. You can customize the typography to match your brand personality. Whether you aim for a modern and sleek appearance or a more traditional and elegant feel, the right typography sets the tone for your content.', 'astra' ); ?> </p>
+									<p> <?php esc_html_e( 'Here\'s how the body text will look like on your website. You can customize the typography to match your brand personality. Whether you aim for a modern and sleek appearance or a more traditional and elegant feel, the right typography sets the tone for your content.', 'divino' ); ?> </p>
 								</div>
 
 								<div class="ast-sg-heading-more-section">
 									<div class="ast-sg-heading-card">
 										<?php echo do_shortcode( $this->get_style_guide_shortcut_trigger( 'control', '[ast-heading-h1-typo]', 'general', 'data-reference="ast-toggle-desc-wrap"' ) ); ?>
 										<?php echo wp_kses_post( $this->get_formatted_font_style( 'h1' ) ); ?>
-										<h1 class="ast-sg-heading"> <?php esc_html_e( 'Heading 1', 'astra' ); ?> </h1>
+										<h1 class="ast-sg-heading"> <?php esc_html_e( 'Heading 1', 'divino' ); ?> </h1>
 									</div>
 
 									<div class="ast-sg-heading-card">
 										<?php echo do_shortcode( $this->get_style_guide_shortcut_trigger( 'control', '[ast-heading-h2-typo]', 'general', 'data-reference="ast-toggle-desc-wrap"' ) ); ?>
 										<?php echo wp_kses_post( $this->get_formatted_font_style( 'h2' ) ); ?>
-										<h2 class="ast-sg-heading"> <?php esc_html_e( 'Heading 2', 'astra' ); ?> </h2>
+										<h2 class="ast-sg-heading"> <?php esc_html_e( 'Heading 2', 'divino' ); ?> </h2>
 									</div>
 
 									<div class="ast-sg-heading-card">
 										<?php echo do_shortcode( $this->get_style_guide_shortcut_trigger( 'control', '[ast-heading-h3-typo]', 'general', 'data-reference="ast-toggle-desc-wrap"' ) ); ?>
 										<?php echo wp_kses_post( $this->get_formatted_font_style( 'h3' ) ); ?>
-										<h3 class="ast-sg-heading"> <?php esc_html_e( 'Heading 3', 'astra' ); ?> </h3>
+										<h3 class="ast-sg-heading"> <?php esc_html_e( 'Heading 3', 'divino' ); ?> </h3>
 									</div>
 
 									<div class="ast-sg-heading-card">
 										<?php echo do_shortcode( $this->get_style_guide_shortcut_trigger( 'control', '[ast-heading-h4-typo]', 'general', 'data-reference="ast-toggle-desc-wrap"' ) ); ?>
 										<?php echo wp_kses_post( $this->get_formatted_font_style( 'h4' ) ); ?>
-										<h4 class="ast-sg-heading"> <?php esc_html_e( 'Heading 4', 'astra' ); ?> </h4>
+										<h4 class="ast-sg-heading"> <?php esc_html_e( 'Heading 4', 'divino' ); ?> </h4>
 									</div>
 
 									<div class="ast-sg-heading-card">
 										<?php echo do_shortcode( $this->get_style_guide_shortcut_trigger( 'control', '[ast-heading-h5-typo]', 'general', 'data-reference="ast-toggle-desc-wrap"' ) ); ?>
 										<?php echo wp_kses_post( $this->get_formatted_font_style( 'h5' ) ); ?>
-										<h5 class="ast-sg-heading"> <?php esc_html_e( 'Heading 5', 'astra' ); ?> </h5>
+										<h5 class="ast-sg-heading"> <?php esc_html_e( 'Heading 5', 'divino' ); ?> </h5>
 									</div>
 
 									<div class="ast-sg-heading-card">
 										<?php echo do_shortcode( $this->get_style_guide_shortcut_trigger( 'control', '[ast-heading-h6-typo]', 'general', 'data-reference="ast-toggle-desc-wrap"' ) ); ?>
 										<?php echo wp_kses_post( $this->get_formatted_font_style( 'h6' ) ); ?>
-										<h6 class="ast-sg-heading"> <?php esc_html_e( 'Heading 6', 'astra' ); ?> </h6>
+										<h6 class="ast-sg-heading"> <?php esc_html_e( 'Heading 6', 'divino' ); ?> </h6>
 									</div>
 								</div>
 
 								<div class="ast-sg-content-section">
 									<?php echo do_shortcode( $this->get_style_guide_shortcut_trigger( 'control', '[ast-body-font-settings]', 'general', 'data-reference="ast-toggle-desc-wrap"' ) ); ?>
-									<p> <?php esc_html_e( 'Explore different font families, sizes, weights, and styles to find the perfect combination that encapsulates the essence of your brand. With each adjustment, see how your message transforms, becoming a powerful reflection of your identity and vision.', 'astra' ); ?> </p>
+									<p> <?php esc_html_e( 'Explore different font families, sizes, weights, and styles to find the perfect combination that encapsulates the essence of your brand. With each adjustment, see how your message transforms, becoming a powerful reflection of your identity and vision.', 'divino' ); ?> </p>
 
-									<p class="ast-sg-card-title"> <?php esc_html_e( 'Quote', 'astra' ); ?>
+									<p class="ast-sg-card-title"> <?php esc_html_e( 'Quote', 'divino' ); ?>
 									<blockquote>
-										<p> <?php esc_html_e( 'The future will belongs to those who believe in the beauty of their dreams.', 'astra' ); ?> </p> <br/>
+										<p> <?php esc_html_e( 'The future will belongs to those who believe in the beauty of their dreams.', 'divino' ); ?> </p> <br/>
 										<footer> Elanor Rosevelt </footer>
 									</blockquote>
 
 									<p class="ast-sg-content-divider"></p>
 
-									<p class="ast-sg-card-title"> <?php esc_html_e( 'Unordered List', 'astra' ); ?>
+									<p class="ast-sg-card-title"> <?php esc_html_e( 'Unordered List', 'divino' ); ?>
 									<ul>
-										<li> <?php esc_html_e( 'List Item 1', 'astra' ); ?> </li>
-										<li> <?php esc_html_e( 'List Item 2', 'astra' ); ?> </li>
-										<li> <?php esc_html_e( 'List Item 3', 'astra' ); ?> </li>
+										<li> <?php esc_html_e( 'List Item 1', 'divino' ); ?> </li>
+										<li> <?php esc_html_e( 'List Item 2', 'divino' ); ?> </li>
+										<li> <?php esc_html_e( 'List Item 3', 'divino' ); ?> </li>
 									</ul>
 								</div>
 							</div>
@@ -1795,7 +1795,7 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 				$dir       = 'unminified';
 			}
 
-			wp_enqueue_script( 'astra-style-guide-previewer-js', divino_THEME_URI . 'assets/js/' . $dir . '/style-guide-previewer' . $js_prefix, array( 'jquery' ), divino_THEME_VERSION, true );
+			wp_enqueue_script( 'divino-style-guide-previewer-js', divino_THEME_URI . 'assets/js/' . $dir . '/style-guide-previewer' . $js_prefix, array( 'jquery' ), divino_THEME_VERSION, true );
 
 			?>
 				<div class="ast-style-guide-wrapper">
@@ -1814,9 +1814,9 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 			ob_start();
 			?>
 
-			<option value="inherit"><?php esc_html_e( 'Default System Font', 'astra' ); ?></option>
+			<option value="inherit"><?php esc_html_e( 'Default System Font', 'divino' ); ?></option>
 
-			<optgroup label="<?php echo esc_attr_e( 'Other System Fonts', 'astra' ); ?>">
+			<optgroup label="<?php echo esc_attr_e( 'Other System Fonts', 'divino' ); ?>">
 				<?php
 				$system_fonts = divino_Font_Families::get_system_fonts();
 				$google_fonts = divino_Font_Families::get_google_fonts();
@@ -1869,7 +1869,7 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 				$dir       = 'unminified';
 			}
 
-			wp_enqueue_script( 'astra-customizer-preview-js', divino_THEME_URI . 'assets/js/' . $dir . '/customizer-preview' . $js_prefix, array( 'customize-preview' ), divino_THEME_VERSION, null );
+			wp_enqueue_script( 'divino-customizer-preview-js', divino_THEME_URI . 'assets/js/' . $dir . '/customizer-preview' . $js_prefix, array( 'customize-preview' ), divino_THEME_VERSION, null );
 
 			// Get current container layout.
 			$content_layout   = divino_get_content_layout();
@@ -1901,7 +1901,7 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 				'is_dark_palette'                      => divino_Global_Palette::is_dark_palette(),
 			);
 
-			wp_localize_script( 'astra-customizer-preview-js', 'astraCustomizer', $localize_array );
+			wp_localize_script( 'divino-customizer-preview-js', 'divinoCustomizer', $localize_array );
 		}
 
 		/**
@@ -2001,17 +2001,17 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 			if ( is_customize_preview() ) {
 				$rtl = is_rtl() ? '-rtl' : '';
 
-				wp_enqueue_style( 'astra-style-guide-css', divino_THEME_URI . 'assets/css/minified/style-guide' . $rtl . '.min.css', array(), divino_THEME_VERSION );
+				wp_enqueue_style( 'divino-style-guide-css', divino_THEME_URI . 'assets/css/minified/style-guide' . $rtl . '.min.css', array(), divino_THEME_VERSION );
 
-				wp_enqueue_style( 'astra-style-guide-font', 'https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap', array(), divino_THEME_VERSION ); // Styles.
+				wp_enqueue_style( 'divino-style-guide-font', 'https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap', array(), divino_THEME_VERSION ); // Styles.
 
-				echo '<style class="astra-custom-shortcut-edit-icons">
-					.customize-partial-edit-shortcut-astra-settings-footer-adv {
+				echo '<style class="divino-custom-shortcut-edit-icons">
+					.customize-partial-edit-shortcut-divino-settings-footer-adv {
 						position: relative;
 					    top: -1em;
 					    left: -1.8em;
 					}
-					.customize-partial-edit-shortcut-astra-settings-breadcrumb-position .customize-partial-edit-shortcut-button{
+					.customize-partial-edit-shortcut-divino-settings-breadcrumb-position .customize-partial-edit-shortcut-button{
 						display: none;
 					}
 					.ast-small-footer-section-1 .ast-footer-widget-1-area .customize-partial-edit-shortcut,
@@ -2024,18 +2024,18 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 						position: absolute;
 					    left: 42%;
 					}
-					.ast-small-footer-section-1.ast-small-footer-section-equally .ast-footer-widget-1-area .ast-no-widget-row .customize-partial-edit-shortcut-astra-settings-footer-sml-section-1 {
+					.ast-small-footer-section-1.ast-small-footer-section-equally .ast-footer-widget-1-area .ast-no-widget-row .customize-partial-edit-shortcut-divino-settings-footer-sml-section-1 {
 						position: absolute;
 					    left: 1em;
 					}
-					.ast-small-footer-section-2.ast-small-footer-section-equally .ast-footer-widget-2-area .ast-no-widget-row .customize-partial-edit-shortcut-astra-settings-footer-sml-section-2 {
+					.ast-small-footer-section-2.ast-small-footer-section-equally .ast-footer-widget-2-area .ast-no-widget-row .customize-partial-edit-shortcut-divino-settings-footer-sml-section-2 {
 						left: 83.5%;
 					}
-					.ast-small-footer-section-1.ast-small-footer-section-equally .nav-menu .customize-partial-edit-shortcut-astra-settings-footer-sml-section-1 {
+					.ast-small-footer-section-1.ast-small-footer-section-equally .nav-menu .customize-partial-edit-shortcut-divino-settings-footer-sml-section-1 {
 						position: absolute;
 					    left: 1em;
 					}
-					.ast-small-footer-section-2.ast-small-footer-section-equally .nav-menu .customize-partial-edit-shortcut-astra-settings-footer-sml-section-2 {
+					.ast-small-footer-section-2.ast-small-footer-section-equally .nav-menu .customize-partial-edit-shortcut-divino-settings-footer-sml-section-2 {
 						position: absolute;
 					    left: 44.5%;
 					}
@@ -2043,7 +2043,7 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 					.ast-small-footer .ast-container .ast-small-footer-section-2 .footer-primary-navigation > .customize-partial-edit-shortcut{
 						display: none;
 					}
-					.ast-small-footer .customize-partial-edit-shortcut-astra-settings-footer-sml-layout {
+					.ast-small-footer .customize-partial-edit-shortcut-divino-settings-footer-sml-layout {
 						    position: absolute;
 						    top: 3%;
 						    left: 10%;
@@ -2055,9 +2055,9 @@ if ( ! class_exists( 'divino_Customizer' ) ) {
 						display: none;
 					}
 				</style>';
-				echo '<style class="astra-theme-custom-shortcut-edit-icons">
-					.ast-replace-site-logo-transparent.ast-theme-transparent-header .customize-partial-edit-shortcut-astra-settings-transparent-header-logo,
-					.ast-replace-site-logo-transparent.ast-theme-transparent-header .customize-partial-edit-shortcut-astra-settings-transparent-header-enable {
+				echo '<style class="divino-theme-custom-shortcut-edit-icons">
+					.ast-replace-site-logo-transparent.ast-theme-transparent-header .customize-partial-edit-shortcut-divino-settings-transparent-header-logo,
+					.ast-replace-site-logo-transparent.ast-theme-transparent-header .customize-partial-edit-shortcut-divino-settings-transparent-header-enable {
 					    z-index: 6;
 					}
 				</style>';

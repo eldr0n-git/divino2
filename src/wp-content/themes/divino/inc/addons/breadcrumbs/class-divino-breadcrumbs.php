@@ -1,10 +1,10 @@
 <?php
 /**
- * Breadcrumbs for Astra theme.
+ * Breadcrumbs for divino theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 1.7.0
+ * @since       divino 1.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -45,9 +45,9 @@ if ( ! class_exists( 'divino_Breadcrumbs' ) ) {
 		public function __construct() {
 
 			// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-			require_once divino_THEME_BREADCRUMBS_DIR . 'class-astra-breadcrumbs-loader.php';
-			require_once divino_THEME_BREADCRUMBS_DIR . 'class-astra-breadcrumbs-markup.php';
-			require_once divino_THEME_BREADCRUMBS_DIR . 'class-astra-breadcrumb-trail.php';
+			require_once divino_THEME_BREADCRUMBS_DIR . 'class-divino-breadcrumbs-loader.php';
+			require_once divino_THEME_BREADCRUMBS_DIR . 'class-divino-breadcrumbs-markup.php';
+			require_once divino_THEME_BREADCRUMBS_DIR . 'class-divino-breadcrumb-trail.php';
 			// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 
 			// Third Party plugins in the breadcrumb options.

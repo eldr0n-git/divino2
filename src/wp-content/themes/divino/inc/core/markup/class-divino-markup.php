@@ -1,10 +1,10 @@
 <?php
 /**
- * Astra Generate Markup Class.
+ * divino Generate Markup Class.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 3.3.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 3.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

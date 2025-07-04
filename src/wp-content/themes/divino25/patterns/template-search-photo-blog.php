@@ -1,3 +1,4 @@
+<!-- template-search-photo-blog.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Photo blog search results

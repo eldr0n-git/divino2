@@ -1,10 +1,10 @@
 <?php
 /**
- * WIDGET Styling Loader for Astra theme.
+ * WIDGET Styling Loader for divino theme.
  *
- * @package     Astra Builder
+ * @package     divino Builder
  * @link        https://www.brainstormforce.com
- * @since       Astra 3.0.0
+ * @since       divino 3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -38,12 +38,12 @@ class divino_Footer_Widget_Component_Loader {
 		/* Directory and Extension */
 		$dir_name    = SCRIPT_DEBUG ? 'unminified' : 'minified';
 		$file_prefix = SCRIPT_DEBUG ? '' : '.min';
-		wp_enqueue_script( 'astra-footer-widget-customizer-preview-js', divino_BUILDER_FOOTER_WIDGET_URI . '/assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'astra-customizer-preview-js' ), divino_THEME_VERSION, true );
+		wp_enqueue_script( 'divino-footer-widget-customizer-preview-js', divino_BUILDER_FOOTER_WIDGET_URI . '/assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'divino-customizer-preview-js' ), divino_THEME_VERSION, true );
 
 		// Localize variables for WIDGET JS.
 		wp_localize_script(
-			'astra-footer-widget-customizer-preview-js',
-			'AstraBuilderWidgetData',
+			'divino-footer-widget-customizer-preview-js',
+			'divinoBuilderWidgetData',
 			array(
 				'footer_widget_count' => defined( 'divino_EXT_VER' ) ? divino_Builder_Helper::$component_limit : divino_Builder_Helper::$num_of_footer_widgets,
 				'tablet_break_point'  => divino_get_tablet_breakpoint(),

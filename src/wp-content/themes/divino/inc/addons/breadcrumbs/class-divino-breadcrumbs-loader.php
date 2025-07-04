@@ -1,10 +1,10 @@
 <?php
 /**
- * Breadcrumbs Loader for Astra theme.
+ * Breadcrumbs Loader for divino theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 1.7.0
+ * @since       divino 1.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -62,7 +62,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Loader' ) ) {
 		/**
 		 * Set Options Default Values
 		 *
-		 * @param  array $defaults  Astra options default value array.
+		 * @param  array $defaults  divino options default value array.
 		 * @return array
 		 */
 		public function theme_defaults( $defaults ) {
@@ -169,9 +169,9 @@ if ( ! class_exists( 'divino_Breadcrumbs_Loader' ) ) {
 			 * Register Panel & Sections
 			 */
 			// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-			require_once divino_THEME_BREADCRUMBS_DIR . 'customizer/class-astra-breadcrumbs-configs.php';
-			require_once divino_THEME_BREADCRUMBS_DIR . 'customizer/class-astra-breadcrumbs-color-configs.php';
-			require_once divino_THEME_BREADCRUMBS_DIR . 'customizer/class-astra-breadcrumbs-typo-configs.php';
+			require_once divino_THEME_BREADCRUMBS_DIR . 'customizer/class-divino-breadcrumbs-configs.php';
+			require_once divino_THEME_BREADCRUMBS_DIR . 'customizer/class-divino-breadcrumbs-color-configs.php';
+			require_once divino_THEME_BREADCRUMBS_DIR . 'customizer/class-divino-breadcrumbs-typo-configs.php';
 			// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 		}
 
@@ -185,7 +185,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Loader' ) ) {
 			/* Directory and Extension */
 			$dir_name    = SCRIPT_DEBUG ? 'unminified' : 'minified';
 			$file_prefix = SCRIPT_DEBUG ? '' : '.min';
-			wp_enqueue_script( 'astra-breadcrumbs-customizer-preview-js', divino_THEME_BREADCRUMBS_URI . 'assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'astra-customizer-preview-js' ), divino_THEME_VERSION, true );
+			wp_enqueue_script( 'divino-breadcrumbs-customizer-preview-js', divino_THEME_BREADCRUMBS_URI . 'assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'divino-customizer-preview-js' ), divino_THEME_VERSION, true );
 		}
 	}
 }

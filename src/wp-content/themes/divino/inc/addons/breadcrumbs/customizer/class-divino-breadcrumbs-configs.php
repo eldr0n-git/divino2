@@ -1,10 +1,10 @@
 <?php
 /**
- * Breadcrumbs Options for Astra theme.
+ * Breadcrumbs Options for divino theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 1.7.0
+ * @since       divino 1.7.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,19 +18,19 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 	 */
 	class divino_Breadcrumbs_Configs extends divino_Customizer_Config_Base {
 		/**
-		 * Register Astra-Breadcrumbs Settings.
+		 * Register divino-Breadcrumbs Settings.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.7.0
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
 			$breadcrumb_source_list = apply_filters(
 				'divino_breadcrumb_source_list',
 				array(
-					'default' => __( 'Default', 'astra' ),
+					'default' => __( 'Default', 'divino' ),
 				),
 				'breadcrumb-list'
 			);
@@ -38,18 +38,18 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 			$_section = 'section-breadcrumb';
 
 			$positions = array(
-				'none'                      => __( 'None', 'astra' ),
-				'divino_masthead_content'    => __( 'Inside', 'astra' ),
-				'divino_header_markup_after' => __( 'After Header', 'astra' ),
-				'divino_entry_top'           => __( 'Before Title', 'astra' ),
+				'none'                      => __( 'None', 'divino' ),
+				'divino_masthead_content'    => __( 'Inside', 'divino' ),
+				'divino_header_markup_after' => __( 'After Header', 'divino' ),
+				'divino_entry_top'           => __( 'Before Title', 'divino' ),
 			);
 
 			if ( true === divino_Builder_Helper::$is_header_footer_builder_active ) {
 				$positions = array(
-					'none'                                 => __( 'None', 'astra' ),
-					'divino_header_primary_container_after' => __( 'Inside', 'astra' ),
-					'divino_header_after'                   => __( 'After', 'astra' ),
-					'divino_entry_top'                      => __( 'Before Title', 'astra' ),
+					'none'                                 => __( 'None', 'divino' ),
+					'divino_header_primary_container_after' => __( 'Inside', 'divino' ),
+					'divino_header_after'                   => __( 'After', 'divino' ),
+					'divino_entry_top'                      => __( 'Before Title', 'divino' ),
 				);
 			}
 
@@ -63,16 +63,16 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 					'type'               => 'section',
 					'section'            => 'section-general-group',
 					'priority'           => 20,
-					'title'              => __( 'Breadcrumb', 'astra' ),
+					'title'              => __( 'Breadcrumb', 'divino' ),
 					'description_hidden' => true,
 					'description'        => $this->section_get_description(
 						array(
-							'description' => '<p><b>' . __( 'Helpful Information', 'astra' ) . '</b></p>',
+							'description' => '<p><b>' . __( 'Helpful Information', 'divino' ) . '</b></p>',
 							'links'       => array(
 								array(
-									'text'  => __( 'Breadcrumb Overview', 'astra' ) . ' &#187;',
+									'text'  => __( 'Breadcrumb Overview', 'divino' ) . ' &#187;',
 									'attrs' => array(
-										'href' => divino_get_pro_url( '/docs/add-breadcrumbs-with-astra/', 'free-theme', 'customizer', 'helpful_information' ),
+										'href' => divino_get_pro_url( '/docs/add-breadcrumbs-with-divino/', 'free-theme', 'customizer', 'helpful_information' ),
 									),
 								),
 							),
@@ -87,7 +87,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 					'name'       => divino_THEME_SETTINGS . '[breadcrumb-position]',
 					'default'    => divino_get_option( 'breadcrumb-position', 'none' ),
 					'section'    => $_section,
-					'title'      => __( 'Header Position', 'astra' ),
+					'title'      => __( 'Header Position', 'divino' ),
 					'type'       => 'control',
 					'control'    => 'ast-select',
 					'priority'   => 5,
@@ -110,7 +110,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 					'section'  => $_section,
 					'priority' => 5,
 					'label'    => '',
-					'help'     => __( 'Note: To get design settings in action make sure to select Header Position other than None.', 'astra' ),
+					'help'     => __( 'Note: To get design settings in action make sure to select Header Position other than None.', 'divino' ),
 					'context'  => array(
 						array(
 							'setting'  => divino_THEME_SETTINGS . '[breadcrumb-position]',
@@ -128,7 +128,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 				array(
 					'name'     => divino_THEME_SETTINGS . '[breadcrumb-disable-layout-divider]',
 					'section'  => $_section,
-					'title'    => __( 'Display Settings', 'astra' ),
+					'title'    => __( 'Display Settings', 'divino' ),
 					'type'     => 'control',
 					'control'  => 'ast-heading',
 					'priority' => 25,
@@ -145,7 +145,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 				array(
 					'name'     => divino_THEME_SETTINGS . '[breadcrumb-disable-on]',
 					'section'  => $_section,
-					'title'    => __( 'Enable on', 'astra' ),
+					'title'    => __( 'Enable on', 'divino' ),
 					'type'     => 'control',
 					'control'  => 'ast-multiselect-checkbox-group',
 					'priority' => 25,
@@ -172,7 +172,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 					'parent'   => divino_THEME_SETTINGS . '[breadcrumb-disable-on]',
 					'type'     => 'sub-control',
 					'section'  => $_section,
-					'title'    => __( 'Home Page?', 'astra' ),
+					'title'    => __( 'Home Page?', 'divino' ),
 					'priority' => 25,
 					'control'  => 'ast-toggle-control',
 					'divider'  => array( 'ast_class' => 'ast-section-spacing' ),
@@ -187,8 +187,8 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 					'parent'      => divino_THEME_SETTINGS . '[breadcrumb-disable-on]',
 					'type'        => 'sub-control',
 					'section'     => $_section,
-					'description' => __( 'Latest posts page or when any page is selected as blog page', 'astra' ),
-					'title'       => __( 'Blog / Posts Page?', 'astra' ),
+					'description' => __( 'Latest posts page or when any page is selected as blog page', 'divino' ),
+					'title'       => __( 'Blog / Posts Page?', 'divino' ),
 					'priority'    => 25,
 					'control'     => 'ast-toggle-control',
 				),
@@ -202,7 +202,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 					'parent'   => divino_THEME_SETTINGS . '[breadcrumb-disable-on]',
 					'type'     => 'sub-control',
 					'section'  => $_section,
-					'title'    => __( 'Search?', 'astra' ),
+					'title'    => __( 'Search?', 'divino' ),
 					'priority' => 30,
 					'control'  => 'ast-toggle-control',
 				),
@@ -216,7 +216,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 					'parent'   => divino_THEME_SETTINGS . '[breadcrumb-disable-on]',
 					'type'     => 'sub-control',
 					'section'  => $_section,
-					'title'    => __( 'Archive?', 'astra' ),
+					'title'    => __( 'Archive?', 'divino' ),
 					'priority' => 35,
 					'control'  => 'ast-toggle-control',
 				),
@@ -230,7 +230,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 					'parent'   => divino_THEME_SETTINGS . '[breadcrumb-disable-on]',
 					'type'     => 'sub-control',
 					'section'  => $_section,
-					'title'    => __( 'Single Page?', 'astra' ),
+					'title'    => __( 'Single Page?', 'divino' ),
 					'priority' => 40,
 					'control'  => 'ast-toggle-control',
 				),
@@ -244,7 +244,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 					'parent'   => divino_THEME_SETTINGS . '[breadcrumb-disable-on]',
 					'type'     => 'sub-control',
 					'section'  => $_section,
-					'title'    => __( 'Single Post?', 'astra' ),
+					'title'    => __( 'Single Post?', 'divino' ),
 					'priority' => 45,
 					'control'  => 'ast-toggle-control',
 				),
@@ -258,8 +258,8 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 					'parent'      => divino_THEME_SETTINGS . '[breadcrumb-disable-on]',
 					'type'        => 'sub-control',
 					'section'     => $_section,
-					'description' => __( 'All Pages, All Posts, All Attachments', 'astra' ),
-					'title'       => __( 'Singular?', 'astra' ),
+					'description' => __( 'All Pages, All Posts, All Attachments', 'divino' ),
+					'title'       => __( 'Singular?', 'divino' ),
 					'priority'    => 50,
 					'control'     => 'ast-toggle-control',
 				),
@@ -273,7 +273,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 					'parent'   => divino_THEME_SETTINGS . '[breadcrumb-disable-on]',
 					'type'     => 'sub-control',
 					'section'  => $_section,
-					'title'    => __( '404 Page?', 'astra' ),
+					'title'    => __( '404 Page?', 'divino' ),
 					'priority' => 55,
 					'control'  => 'ast-toggle-control',
 				),
@@ -286,7 +286,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 					'default'    => divino_get_option( 'breadcrumb-alignment', 'left' ),
 					'section'    => $_section,
 					'transport'  => 'postMessage',
-					'title'      => __( 'Alignment', 'astra' ),
+					'title'      => __( 'Alignment', 'divino' ),
 					'type'       => 'control',
 					'control'    => 'ast-selector',
 					'priority'   => 24,
@@ -318,14 +318,14 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 					'control'           => 'ast-responsive-spacing',
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 					'priority'          => 83,
-					'title'             => __( 'Spacing', 'astra' ),
+					'title'             => __( 'Spacing', 'divino' ),
 					'linked_choices'    => true,
 					'unit_choices'      => array( 'px', 'em', '%' ),
 					'choices'           => array(
-						'top'    => __( 'Top', 'astra' ),
-						'right'  => __( 'Right', 'astra' ),
-						'bottom' => __( 'Bottom', 'astra' ),
-						'left'   => __( 'Left', 'astra' ),
+						'top'    => __( 'Top', 'divino' ),
+						'right'  => __( 'Right', 'divino' ),
+						'bottom' => __( 'Bottom', 'divino' ),
+						'left'   => __( 'Left', 'divino' ),
 					),
 
 					'section'           => $_section,
@@ -347,7 +347,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 					'name'     => divino_THEME_SETTINGS . '[select-breadcrumb-source]',
 					'default'  => divino_get_option( 'select-breadcrumb-source', 'default' ),
 					'section'  => $_section,
-					'title'    => __( 'Breadcrumb Source', 'astra' ),
+					'title'    => __( 'Breadcrumb Source', 'divino' ),
 					'type'     => 'control',
 					'control'  => 'ast-select',
 					'priority' => 10,
@@ -377,23 +377,23 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_choices' ),
 					'default'           => divino_get_option( 'breadcrumb-separator-selector' ),
 					'priority'          => 15,
-					'title'             => __( 'Separator', 'astra' ),
+					'title'             => __( 'Separator', 'divino' ),
 					'section'           => $_section,
 					'choices'           => array(
 						'\003E'   => array(
-							'label' => __( 'Type 1', 'astra' ),
+							'label' => __( 'Type 1', 'divino' ),
 							'path'  => divino_Builder_UI_Controller::fetch_svg_icon( 'breadcrumb-separator-1' ),
 						),
 						'\00BB'   => array(
-							'label' => __( 'Type 2', 'astra' ),
+							'label' => __( 'Type 2', 'divino' ),
 							'path'  => divino_Builder_UI_Controller::fetch_svg_icon( 'breadcrumb-separator-2' ),
 						),
 						'\002F'   => array(
-							'label' => __( 'Type 3', 'astra' ),
+							'label' => __( 'Type 3', 'divino' ),
 							'path'  => divino_Builder_UI_Controller::fetch_svg_icon( 'breadcrumb-separator-3' ),
 						),
 						'unicode' => array(
-							'label' => __( 'Custom separator', 'astra' ),
+							'label' => __( 'Custom separator', 'divino' ),
 							'path'  => divino_Builder_UI_Controller::fetch_svg_icon( 'breadcrumb-separator-unicode' ),
 						),
 					),
@@ -421,7 +421,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Configs' ) ) {
 					'section'   => $_section,
 					'default'   => divino_get_option( 'breadcrumb-separator' ),
 					'priority'  => 15,
-					'title'     => __( 'Unicode', 'astra' ),
+					'title'     => __( 'Unicode', 'divino' ),
 					'context'   => array(
 						array(
 							'setting'  => divino_THEME_SETTINGS . '[breadcrumb-position]',

@@ -2,9 +2,9 @@
 /**
  * Colors - Breadcrumbs Options for theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 1.7.0
+ * @since       divino 1.7.0
  */
 
 // Block direct access to the file.
@@ -31,10 +31,10 @@ if ( ! class_exists( 'divino_Breadcrumbs_Color_Configs' ) ) {
 		/**
 		 * Register Colors and Background - Breadcrumbs Options Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.7.0
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -46,7 +46,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Color_Configs' ) ) {
 				array(
 					'name'     => divino_THEME_SETTINGS . '[breadcrumb-color-section-divider]',
 					'section'  => 'section-breadcumb',
-					'title'    => __( 'Colors', 'astra' ),
+					'title'    => __( 'Colors', 'divino' ),
 					'type'     => 'control',
 					'control'  => 'ast-heading',
 					'priority' => 72,
@@ -72,7 +72,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Color_Configs' ) ) {
 					'section'    => 'section-breadcrumb',
 					'transport'  => 'postMessage',
 					'control'    => 'ast-responsive-color',
-					'title'      => __( 'Background Color', 'astra' ),
+					'title'      => __( 'Background Color', 'divino' ),
 					'responsive' => true,
 					'rgba'       => true,
 					'context'    => array(
@@ -93,7 +93,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Color_Configs' ) ) {
 					'section'    => 'section-breadcrumb',
 					'transport'  => 'postMessage',
 					'control'    => 'ast-responsive-color',
-					'title'      => __( 'Text Color', 'astra' ),
+					'title'      => __( 'Text Color', 'divino' ),
 					'responsive' => true,
 					'rgba'       => true,
 					'context'    => array(
@@ -114,7 +114,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Color_Configs' ) ) {
 					'section'    => 'section-breadcrumb',
 					'transport'  => 'postMessage',
 					'control'    => 'ast-responsive-color',
-					'title'      => __( 'Separator Color', 'astra' ),
+					'title'      => __( 'Separator Color', 'divino' ),
 					'responsive' => true,
 					'rgba'       => true,
 					'context'    => array(
@@ -134,7 +134,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Color_Configs' ) ) {
 					'default'    => divino_get_option( 'section-breadcrumb-color' ),
 					'type'       => 'control',
 					'control'    => 'ast-color-group',
-					'title'      => __( 'Content Link Color', 'astra' ),
+					'title'      => __( 'Content Link Color', 'divino' ),
 					'section'    => 'section-breadcrumb',
 					'transport'  => 'postMessage',
 					'priority'   => 72,
@@ -158,9 +158,9 @@ if ( ! class_exists( 'divino_Breadcrumbs_Color_Configs' ) ) {
 					'parent'     => divino_THEME_SETTINGS . '[section-breadcrumb-link-color]',
 					'section'    => 'section-breadcrumb',
 					'transport'  => 'postMessage',
-					'tab'        => __( 'Normal', 'astra' ),
+					'tab'        => __( 'Normal', 'divino' ),
 					'control'    => 'ast-responsive-color',
-					'title'      => __( 'Normal', 'astra' ),
+					'title'      => __( 'Normal', 'divino' ),
 					'responsive' => true,
 					'rgba'       => true,
 					'priority'   => 15,
@@ -173,9 +173,9 @@ if ( ! class_exists( 'divino_Breadcrumbs_Color_Configs' ) ) {
 					'parent'     => divino_THEME_SETTINGS . '[section-breadcrumb-link-color]',
 					'section'    => 'section-breadcrumb',
 					'transport'  => 'postMessage',
-					'tab'        => __( 'Hover', 'astra' ),
+					'tab'        => __( 'Hover', 'divino' ),
 					'control'    => 'ast-responsive-color',
-					'title'      => __( 'Hover', 'astra' ),
+					'title'      => __( 'Hover', 'divino' ),
 					'responsive' => true,
 					'rgba'       => true,
 					'priority'   => 20,
@@ -194,7 +194,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Color_Configs' ) ) {
 						'type'     => 'control',
 						'control'  => 'ast-heading',
 						'section'  => 'section-breadcrumb',
-						'title'    => __( 'Colors', 'astra' ),
+						'title'    => __( 'Colors', 'divino' ),
 						'priority' => 71,
 						'settings' => array(),
 						'context'  => array(

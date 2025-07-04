@@ -2,7 +2,7 @@
 /**
  * Class divino_API_Init.
  *
- * @package Astra
+ * @package divino
  * @since 4.0.0
  */
 
@@ -46,7 +46,7 @@ class divino_API_Init extends WP_REST_Controller {
 	 *
 	 * @var string
 	 */
-	protected $namespace = 'astra/v1';
+	protected $namespace = 'divino/v1';
 
 	/**
 	 * Route base.
@@ -139,7 +139,7 @@ class divino_API_Init extends WP_REST_Controller {
 	public function get_permissions_check( $request ) {
 
 		if ( ! current_user_can( 'edit_theme_options' ) ) {
-			return new WP_Error( 'divino_rest_cannot_view', esc_html__( 'Sorry, you cannot list resources.', 'astra' ), array( 'status' => rest_authorization_required_code() ) );
+			return new WP_Error( 'divino_rest_cannot_view', esc_html__( 'Sorry, you cannot list resources.', 'divino' ), array( 'status' => rest_authorization_required_code() ) );
 		}
 
 		return true;

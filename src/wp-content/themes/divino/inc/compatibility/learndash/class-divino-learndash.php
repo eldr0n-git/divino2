@@ -2,7 +2,7 @@
 /**
  * LearnDash Compatibility File.
  *
- * @package Astra
+ * @package divino
  * @since 1.3.0
  */
 
@@ -12,12 +12,12 @@ if ( ! class_exists( 'SFWD_LMS' ) ) {
 }
 
 /**
- * Astra LearnDash Compatibility
+ * divino LearnDash Compatibility
  */
 if ( ! class_exists( 'divino_LearnDash' ) ) {
 
 	/**
-	 * Astra LearnDash Compatibility
+	 * divino LearnDash Compatibility
 	 *
 	 * @since 1.3.0
 	 */
@@ -59,8 +59,8 @@ if ( ! class_exists( 'divino_LearnDash' ) ) {
 		/**
 		 * Enqueue styles
 		 *
-		 * @param  String $dynamic_css          Astra Dynamic CSS.
-		 * @param  String $dynamic_css_filtered Astra Dynamic CSS Filters.
+		 * @param  String $dynamic_css          divino Dynamic CSS.
+		 * @param  String $dynamic_css_filtered divino Dynamic CSS Filters.
 		 * @since 1.3.0
 		 * @return String Dynamic CSS.
 		 */
@@ -275,16 +275,16 @@ if ( ! class_exists( 'divino_LearnDash' ) ) {
 			/**
 			 * Register Sections & Panels
 			 */
-			require divino_THEME_DIR . 'inc/compatibility/learndash/customizer/class-astra-customizer-register-learndash-section.php';
+			require divino_THEME_DIR . 'inc/compatibility/learndash/customizer/class-divino-customizer-register-learndash-section.php';
 
 			/**
 			 * Sections
 			 */
-			require divino_THEME_DIR . 'inc/compatibility/learndash/customizer/sections/class-astra-learndash-container-configs.php';
-			require divino_THEME_DIR . 'inc/compatibility/learndash/customizer/sections/class-astra-learndash-sidebar-configs.php';
+			require divino_THEME_DIR . 'inc/compatibility/learndash/customizer/sections/class-divino-learndash-container-configs.php';
+			require divino_THEME_DIR . 'inc/compatibility/learndash/customizer/sections/class-divino-learndash-sidebar-configs.php';
 
 			if ( 'ld30' !== $active_ld_theme ) {
-				require divino_THEME_DIR . 'inc/compatibility/learndash/customizer/sections/layout/class-astra-learndash-general-configs.php';
+				require divino_THEME_DIR . 'inc/compatibility/learndash/customizer/sections/layout/class-divino-learndash-general-configs.php';
 			}
 			// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 		}
@@ -319,7 +319,7 @@ if ( ! class_exists( 'divino_LearnDash' ) ) {
 		 * @return array List of updated assets.
 		 */
 		public function add_styles( $assets ) {
-			$assets['css']['astra-learndash'] = 'compatibility/learndash';
+			$assets['css']['divino-learndash'] = 'compatibility/learndash';
 			return $assets;
 		}
 
@@ -453,7 +453,7 @@ if ( ! class_exists( 'divino_LearnDash' ) ) {
 				#learndash_profile .notcompleted:before {
 					content: "\e903";
 					display: inline-block;
-					font-family: "Astra";
+					font-family: "divino";
 					text-rendering: auto;
 					-webkit-font-smoothing: antialiased;
 					-moz-osx-font-smoothing: grayscale;
@@ -489,7 +489,7 @@ if ( ! class_exists( 'divino_LearnDash' ) ) {
 				.learndash .topic-notcompleted span:before {
 					content: "\e903";
 					display: inline-block;
-					font-family: "Astra";
+					font-family: "divino";
 					text-rendering: auto;
 					-webkit-font-smoothing: antialiased;
 					-moz-osx-font-smoothing: grayscale;
@@ -631,7 +631,7 @@ if ( ! class_exists( 'divino_LearnDash' ) ) {
 				.learndash .topic-notcompleted span:before {
 					content: "\e903";
 					display: inline-block;
-					font-family: "Astra";
+					font-family: "divino";
 					text-rendering: auto;
 					-webkit-font-smoothing: antialiased;
 					-moz-osx-font-smoothing: grayscale;
@@ -676,7 +676,7 @@ if ( ! class_exists( 'divino_LearnDash' ) ) {
 				body .learndash_topic_dots ul .topic-notcompleted span:before {
 				  content: "\e903";
 				  display: inline-block;
-				  font-family: "Astra";
+				  font-family: "divino";
 				  text-rendering: auto;
 				  -webkit-font-smoothing: antialiased;
 				  -moz-osx-font-smoothing: grayscale;

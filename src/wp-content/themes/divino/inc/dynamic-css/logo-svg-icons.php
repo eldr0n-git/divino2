@@ -2,7 +2,7 @@
 /**
  * Logo SVG Icons - Dynamic CSS
  *
- * @package Astra
+ * @package divino
  * @since 4.7.0
  */
 

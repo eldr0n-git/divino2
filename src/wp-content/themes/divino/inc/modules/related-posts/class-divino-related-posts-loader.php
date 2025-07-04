@@ -1,10 +1,10 @@
 <?php
 /**
- * Related Posts Loader for Astra theme.
+ * Related Posts Loader for divino theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 3.5.0
+ * @since       divino 3.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -62,13 +62,13 @@ class divino_Related_Posts_Loader {
 	/**
 	 * Set Options Default Values
 	 *
-	 * @param  array $defaults  Astra options default value array.
+	 * @param  array $defaults  divino options default value array.
 	 * @return array
 	 */
 	public function theme_defaults( $defaults ) {
 
 		/**
-		 * Update Astra default color and typography values. To not update directly on existing users site, added backwards.
+		 * Update divino default color and typography values. To not update directly on existing users site, added backwards.
 		 *
 		 * @since 4.0.0
 		 */
@@ -79,7 +79,7 @@ class divino_Related_Posts_Loader {
 
 		// Related Posts.
 		$defaults['enable-related-posts']                    = false;
-		$defaults['related-posts-title']                     = __( 'Related Posts', 'astra' );
+		$defaults['related-posts-title']                     = __( 'Related Posts', 'divino' );
 		$defaults['releted-posts-title-alignment']           = 'left';
 		$defaults['related-posts-total-count']               = 2;
 		$defaults['enable-related-posts-excerpt']            = false;
@@ -272,7 +272,7 @@ class divino_Related_Posts_Loader {
 		 * Register Config control in Related Posts.
 		 */
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once divino_RELATED_POSTS_DIR . 'customizer/class-astra-related-posts-configs.php';
+		require_once divino_RELATED_POSTS_DIR . 'customizer/class-divino-related-posts-configs.php';
 		// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	}
 

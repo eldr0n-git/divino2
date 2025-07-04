@@ -1,10 +1,10 @@
 <?php
 /**
- * General Options for Astra Theme.
+ * General Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,16 +14,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'divino_Site_Container_Layout_Configs' ) ) {
 
 	/**
-	 * Register Astra Site Container Layout Customizer Configurations.
+	 * Register divino Site Container Layout Customizer Configurations.
 	 */
 	class divino_Site_Container_Layout_Configs extends divino_Customizer_Config_Base {
 		/**
-		 * Register Astra Site Container Layout Customizer Configurations.
+		 * Register divino Site Container Layout Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -46,19 +46,19 @@ if ( ! class_exists( 'divino_Site_Container_Layout_Configs' ) ) {
 					'section'           => 'section-container-layout',
 					'default'           => divino_get_option( 'ast-site-content-layout', 'normal-width-container' ),
 					'priority'          => 9,
-					'title'             => __( 'Container Layout', 'astra' ),
+					'title'             => __( 'Container Layout', 'divino' ),
 					'transport'         => 'refresh',
 					'choices'           => array(
 						'normal-width-container' => array(
-							'label' => __( 'Normal', 'astra' ),
+							'label' => __( 'Normal', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'normal-width-container', false ) : '',
 						),
 						'narrow-width-container' => array(
-							'label' => __( 'Narrow', 'astra' ),
+							'label' => __( 'Narrow', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'narrow-width-container', false ) : '',
 						),
 						'full-width-container'   => array(
-							'label' => __( 'Full Width', 'astra' ),
+							'label' => __( 'Full Width', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'full-width-container', false ) : '',
 						),
 					),
@@ -75,11 +75,11 @@ if ( ! class_exists( 'divino_Site_Container_Layout_Configs' ) ) {
 					'section'     => 'section-container-layout',
 					'default'     => divino_get_option( 'site-content-style', 'boxed' ),
 					'priority'    => 9,
-					'description' => __( 'Container style will apply only when layout is set to either normal or narrow.', 'astra' ),
-					'title'       => __( 'Container Style', 'astra' ),
+					'description' => __( 'Container style will apply only when layout is set to either normal or narrow.', 'divino' ),
+					'title'       => __( 'Container Style', 'divino' ),
 					'choices'     => array(
-						'unboxed' => __( 'Unboxed', 'astra' ),
-						'boxed'   => __( 'Boxed', 'astra' ),
+						'unboxed' => __( 'Unboxed', 'divino' ),
+						'boxed'   => __( 'Boxed', 'divino' ),
 					),
 					'responsive'  => false,
 					'renderAs'    => 'text',
@@ -91,7 +91,7 @@ if ( ! class_exists( 'divino_Site_Container_Layout_Configs' ) ) {
 				array(
 					'name'        => divino_THEME_SETTINGS . '[surface-colors-title]',
 					'section'     => $_section,
-					'title'       => __( 'Surface Color', 'astra' ),
+					'title'       => __( 'Surface Color', 'divino' ),
 					'type'        => 'control',
 					'control'     => 'ast-group-title',
 					'priority'    => 25,
@@ -120,7 +120,7 @@ if ( ! class_exists( 'divino_Site_Container_Layout_Configs' ) ) {
 					'input_attrs' => array(
 						'ignore_responsive_btns' => true,
 					),
-					'title'       => __( 'Site Background', 'astra' ),
+					'title'       => __( 'Site Background', 'divino' ),
 				),
 			);
 
@@ -132,7 +132,7 @@ if ( ! class_exists( 'divino_Site_Container_Layout_Configs' ) ) {
 					'type'        => 'control',
 					'control'     => 'ast-responsive-background',
 					'section'     => $_section,
-					'title'       => __( 'Content Background', 'astra' ),
+					'title'       => __( 'Content Background', 'divino' ),
 					'transport'   => 'postMessage',
 					'input_attrs' => array(
 						'ignore_responsive_btns' => true,
@@ -144,7 +144,7 @@ if ( ! class_exists( 'divino_Site_Container_Layout_Configs' ) ) {
 
 			$configurations = array_merge( $configurations, $_configs );
 
-			// Learn More link if Astra Pro is not activated.
+			// Learn More link if divino Pro is not activated.
 			if ( divino_showcase_upgrade_notices() ) {
 				$config = array(
 					array(
@@ -154,22 +154,22 @@ if ( ! class_exists( 'divino_Site_Container_Layout_Configs' ) ) {
 						'campaign' => 'global',
 						'choices'  => array(
 							'one'   => array(
-								'title' => __( 'Full Width layout', 'astra' ),
+								'title' => __( 'Full Width layout', 'divino' ),
 							),
 							'two'   => array(
-								'title' => __( 'Padded layout', 'astra' ),
+								'title' => __( 'Padded layout', 'divino' ),
 							),
 							'three' => array(
-								'title' => __( 'Fluid layout', 'astra' ),
+								'title' => __( 'Fluid layout', 'divino' ),
 							),
 							'four'  => array(
-								'title' => __( 'Container spacings', 'astra' ),
+								'title' => __( 'Container spacings', 'divino' ),
 							),
 						),
 						'section'  => 'section-container-layout',
 						'default'  => '',
 						'priority' => 999,
-						'title'    => __( 'Use containers to their maximum potential with Astra Pro', 'astra' ),
+						'title'    => __( 'Use containers to their maximum potential with divino Pro', 'divino' ),
 						'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),
 					),
 				);

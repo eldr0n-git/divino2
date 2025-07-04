@@ -2,9 +2,9 @@
 /**
  * Typography - Breadcrumbs Options for theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 1.7.0
+ * @since       divino 1.7.0
  */
 
 // Block direct access to the file.
@@ -31,10 +31,10 @@ if ( ! class_exists( 'divino_Breadcrumbs_Typo_Configs' ) ) {
 		/**
 		 * Register Colors and Background - Breadcrumbs Options Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.7.0
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -49,7 +49,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Typo_Configs' ) ) {
 					'type'      => 'control',
 					'control'   => 'ast-settings-group',
 					'is_font'   => true,
-					'title'     => esc_html__( 'Content Font', 'astra' ),
+					'title'     => esc_html__( 'Content Font', 'divino' ),
 					'section'   => 'section-breadcrumb',
 					'transport' => 'postMessage',
 					'priority'  => 71,
@@ -76,7 +76,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Typo_Configs' ) ) {
 					'section'   => 'section-breadcrumb',
 					'control'   => 'ast-font',
 					'font_type' => 'ast-font-family',
-					'title'     => esc_html__( 'Font Family', 'astra' ),
+					'title'     => esc_html__( 'Font Family', 'divino' ),
 					'connect'   => 'breadcrumb-font-weight',
 					'priority'  => 5,
 					'divider'   => array( 'ast_class' => 'ast-sub-bottom-divider' ),
@@ -94,7 +94,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Typo_Configs' ) ) {
 					'font_type'         => 'ast-font-weight',
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
 					'default'           => divino_get_option( 'breadcrumb-font-weight' ),
-					'title'             => esc_html__( 'Font Weight', 'astra' ),
+					'title'             => esc_html__( 'Font Weight', 'divino' ),
 					'connect'           => 'breadcrumb-font-family',
 					'priority'          => 10,
 					'divider'           => array( 'ast_class' => 'ast-sub-bottom-divider' ),
@@ -112,7 +112,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Typo_Configs' ) ) {
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
 					'section'           => 'section-breadcrumb',
 					'transport'         => 'postMessage',
-					'title'             => esc_html__( 'Font Size', 'astra' ),
+					'title'             => esc_html__( 'Font Size', 'divino' ),
 					'priority'          => 10,
 					'default'           => divino_get_option( 'breadcrumb-font-size' ),
 					'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
@@ -151,7 +151,7 @@ if ( ! class_exists( 'divino_Breadcrumbs_Typo_Configs' ) ) {
 					'section'  => 'section-breadcrumb',
 					'priority' => 25,
 					'default'  => divino_get_option( 'breadcrumb-font-extras' ),
-					'title'    => esc_html__( 'Line Height', 'astra' ),
+					'title'    => esc_html__( 'Line Height', 'divino' ),
 				),
 
 			);

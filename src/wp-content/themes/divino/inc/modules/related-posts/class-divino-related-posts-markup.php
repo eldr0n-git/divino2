@@ -1,10 +1,10 @@
 <?php
 /**
- * Related Posts for Astra theme.
+ * Related Posts for divino theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 3.5.0
+ * @since       divino 3.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,7 +25,7 @@ class divino_Related_Posts_Markup {
 	}
 
 	/**
-	 * Initialize related posts module in Astra.
+	 * Initialize related posts module in divino.
 	 *
 	 * @since 4.6.0
 	 */
@@ -68,7 +68,7 @@ class divino_Related_Posts_Markup {
 	public function divino_get_related_posts() {
 		global $post;
 		$post_id                   = $post->ID;
-		$related_posts_title       = divino_get_i18n_option( 'related-posts-title', _x( '%astra%', 'Single Blog/Post Related Posts: Title', 'astra' ) );
+		$related_posts_title       = divino_get_i18n_option( 'related-posts-title', _x( '%divino%', 'Single Blog/Post Related Posts: Title', 'divino' ) );
 		$related_post_meta         = divino_get_option( 'related-posts-meta-structure' );
 		$related_post_structure    = divino_get_option_meta( 'related-posts-structure' );
 		$exclude_ids               = apply_filters( 'divino_related_posts_exclude_post_ids', array( $post_id ), $post_id );
@@ -214,7 +214,7 @@ class divino_Related_Posts_Markup {
 
 		$target = apply_filters( 'divino_related_post_cta_target', '_self' );
 
-		$cta_text = apply_filters( 'divino_related_post_read_more_text', divino_get_i18n_option( 'blog-read-more-text', _x( '%astra%', 'Blogs: Read More Text', 'astra' ) ) );
+		$cta_text = apply_filters( 'divino_related_post_read_more_text', divino_get_i18n_option( 'blog-read-more-text', _x( '%divino%', 'Blogs: Read More Text', 'divino' ) ) );
 
 		$blog_read_more_as_button = divino_get_option( 'blog-read-more-as-button' );
 		$show_read_more_as_button = apply_filters( 'divino_related_post_read_more_as_button', $blog_read_more_as_button );
@@ -231,7 +231,7 @@ class divino_Related_Posts_Markup {
 
 		?>
 			<p class="ast-related-post-cta read-more">
-				<a class="ast-related-post-link <?php echo esc_attr( $custom_class ); ?>" href="<?php echo esc_url( apply_filters( 'divino_related_post_link', get_the_permalink(), $current_post_id ) ); ?>" aria-label="<?php echo esc_attr__( 'Related post link', 'astra' ); ?>" target="<?php echo esc_attr( $target ); ?>" rel="bookmark noopener noreferrer"><?php echo esc_html( $cta_text ); ?></a>
+				<a class="ast-related-post-link <?php echo esc_attr( $custom_class ); ?>" href="<?php echo esc_url( apply_filters( 'divino_related_post_link', get_the_permalink(), $current_post_id ) ); ?>" aria-label="<?php echo esc_attr__( 'Related post link', 'divino' ); ?>" target="<?php echo esc_attr( $target ); ?>" rel="bookmark noopener noreferrer"><?php echo esc_html( $cta_text ); ?></a>
 			</p>
 		<?php
 
@@ -350,7 +350,7 @@ class divino_Related_Posts_Markup {
 					'echo'  => false,
 					'attrs' => array(
 						'class'      => '',
-						'aria-label' => sprintf( __( 'Read more about %s', 'astra' ), esc_attr( get_the_title( $current_post_id ) ) ),
+						'aria-label' => sprintf( __( 'Read more about %s', 'divino' ), esc_attr( get_the_title( $current_post_id ) ) ),
 						'href'       => esc_url( get_permalink() ),
 					),
 				)

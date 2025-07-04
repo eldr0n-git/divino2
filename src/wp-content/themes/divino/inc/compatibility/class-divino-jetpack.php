@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.me/
  *
- * @package Astra
+ * @package divino
  */
 
 // If plugin - 'Jetpack' not exist then return.
@@ -13,12 +13,12 @@ if ( ! class_exists( 'Jetpack' ) ) {
 }
 
 /**
- * Astra Jetpack Compatibility
+ * divino Jetpack Compatibility
  */
 if ( ! class_exists( 'divino_Jetpack' ) ) {
 
 	/**
-	 * Astra Jetpack Compatibility
+	 * divino Jetpack Compatibility
 	 *
 	 * @since 1.0.0
 	 */

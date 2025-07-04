@@ -1,10 +1,10 @@
 <?php
 /**
- * Social Icons Styling Loader for Astra theme.
+ * Social Icons Styling Loader for divino theme.
  *
- * @package     Astra Builder
+ * @package     divino Builder
  * @link        https://www.brainstormforce.com
- * @since       Astra 3.0.0
+ * @since       divino 3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -38,12 +38,12 @@ class divino_Footer_Social_Icons_Component_Loader {
 		/* Directory and Extension */
 		$dir_name    = SCRIPT_DEBUG ? 'unminified' : 'minified';
 		$file_prefix = SCRIPT_DEBUG ? '' : '.min';
-		wp_enqueue_script( 'astra-footer-social-icons-customizer-preview-js', divino_BUILDER_FOOTER_SOCIAL_ICONS_URI . '/assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'astra-customizer-preview-js' ), divino_THEME_VERSION, true );
+		wp_enqueue_script( 'divino-footer-social-icons-customizer-preview-js', divino_BUILDER_FOOTER_SOCIAL_ICONS_URI . '/assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'divino-customizer-preview-js' ), divino_THEME_VERSION, true );
 
-		// Localize variables for Astra Breakpoints JS.
+		// Localize variables for divino Breakpoints JS.
 		wp_localize_script(
-			'astra-footer-social-icons-customizer-preview-js',
-			'astraBuilderFooterSocial',
+			'divino-footer-social-icons-customizer-preview-js',
+			'divinoBuilderFooterSocial',
 			array(
 				'tablet_break_point' => divino_get_tablet_breakpoint(),
 				'mobile_break_point' => divino_get_mobile_breakpoint(),

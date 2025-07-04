@@ -1,3 +1,4 @@
+<!-- template-single-offset.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Offset post without featured image

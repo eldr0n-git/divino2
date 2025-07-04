@@ -2,9 +2,9 @@
 /**
  * Schema markup.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 2.1.3
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 2.1.3
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Astra CreativeWork Schema Markup.
+ * divino CreativeWork Schema Markup.
  *
  * @since 2.1.3
  */

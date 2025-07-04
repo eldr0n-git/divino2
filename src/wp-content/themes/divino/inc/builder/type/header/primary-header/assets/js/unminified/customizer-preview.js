@@ -4,16 +4,16 @@
  * here. Your javascript should grab settings from customizer controls, and
  * then make any necessary changes to the page using jQuery.
  *
- * @package Astra
+ * @package divino
  * @since 3.0.0
  */
 
 ( function( $ ) {
 
-	var tablet_break_point    = AstraBuilderPrimaryHeaderData.tablet_break_point || 768,
-		mobile_break_point    = AstraBuilderPrimaryHeaderData.mobile_break_point || 544;
+	var tablet_break_point    = divinoBuilderPrimaryHeaderData.tablet_break_point || 768,
+		mobile_break_point    = divinoBuilderPrimaryHeaderData.mobile_break_point || 544;
 
-	wp.customize( 'astra-settings[hb-header-height]', function( value ) {
+	wp.customize( 'divino-settings[hb-header-height]', function( value ) {
 		value.bind( function( size ) {
 
 			if( size.desktop != '' || size.tablet != '' || size.mobile != '' ) {
@@ -43,7 +43,7 @@
 	} );
 
 	// Primary Header - Layout > Content Width.
-	wp.customize( 'astra-settings[hb-header-main-layout-width]', function( setting ) {
+	wp.customize( 'divino-settings[hb-header-main-layout-width]', function( setting ) {
 		setting.bind( function( layout ) {
 
 			var dynamicStyle = '';
@@ -63,7 +63,7 @@
 				dynamicStyle += '} ';
 			}
 
-			dynamicStyle +=  '@media (max-width: ' + AstraBuilderPrimaryHeaderData.header_break_point + 'px) {';
+			dynamicStyle +=  '@media (max-width: ' + divinoBuilderPrimaryHeaderData.header_break_point + 'px) {';
 			dynamicStyle += '#masthead .ast-mobile-header-wrap .ast-above-header-bar, #masthead .ast-mobile-header-wrap .ast-primary-header-bar, #masthead .ast-mobile-header-wrap .ast-below-header-bar {';
 			dynamicStyle += 'padding-left: 20px;';
 			dynamicStyle += 'padding-right: 20px;';
@@ -75,10 +75,10 @@
 	} );
 
 	// Border Bottom width.
-	wp.customize( 'astra-settings[hb-header-main-sep]', function( value ) {
+	wp.customize( 'divino-settings[hb-header-main-sep]', function( value ) {
 		value.bind( function( border ) {
 
-			var color = wp.customize( 'astra-settings[hb-header-main-sep-color]' ).get(),
+			var color = wp.customize( 'divino-settings[hb-header-main-sep-color]' ).get(),
 				dynamicStyle = '';
 
 			dynamicStyle += '.ast-header-break-point .ast-primary-header-bar, .ast-primary-header-bar {';
@@ -94,15 +94,15 @@
 
 	// Border Color.
 	divino_css(
-		'astra-settings[hb-header-main-sep-color]',
+		'divino-settings[hb-header-main-sep-color]',
 		'border-color',
 		'.ast-header-break-point .ast-primary-header-bar, .ast-primary-header-bar'
 	);
 
 	// Responsive BG styles > Primary Header Row.
-	divino_apply_responsive_background_css( 'astra-settings[hb-header-bg-obj-responsive]', '.main-header-bar', 'desktop' );
-	divino_apply_responsive_background_css( 'astra-settings[hb-header-bg-obj-responsive]', '.ast-primary-header.main-header-bar', 'tablet' );
-	divino_apply_responsive_background_css( 'astra-settings[hb-header-bg-obj-responsive]', '.ast-primary-header.main-header-bar', 'mobile' );
+	divino_apply_responsive_background_css( 'divino-settings[hb-header-bg-obj-responsive]', '.main-header-bar', 'desktop' );
+	divino_apply_responsive_background_css( 'divino-settings[hb-header-bg-obj-responsive]', '.ast-primary-header.main-header-bar', 'tablet' );
+	divino_apply_responsive_background_css( 'divino-settings[hb-header-bg-obj-responsive]', '.ast-primary-header.main-header-bar', 'mobile' );
 
 	const iframe = document.querySelector('#customize-preview iframe');
 
@@ -113,9 +113,9 @@
 		var mainHeaderWrap = desktopHeader.querySelector( '.ast-main-header-wrap.main-header-bar-wrap' );
 
 		if (mainHeaderWrap && mainHeaderWrap.querySelector(".site-logo-img")) {
-			divino_apply_responsive_background_css( "astra-settings[hb-header-bg-obj-responsive]", ".ast-sg-element-wrap.ast-sg-logo-section, .main-header-bar", "desktop" );
-			divino_apply_responsive_background_css( "astra-settings[hb-header-bg-obj-responsive]", ".ast-sg-element-wrap.ast-sg-logo-section, .ast-primary-header.main-header-bar", "tablet" );
-			divino_apply_responsive_background_css( "astra-settings[hb-header-bg-obj-responsive]", ".ast-sg-element-wrap.ast-sg-logo-section, .ast-primary-header.main-header-bar", "mobile" );
+			divino_apply_responsive_background_css( "divino-settings[hb-header-bg-obj-responsive]", ".ast-sg-element-wrap.ast-sg-logo-section, .main-header-bar", "desktop" );
+			divino_apply_responsive_background_css( "divino-settings[hb-header-bg-obj-responsive]", ".ast-sg-element-wrap.ast-sg-logo-section, .ast-primary-header.main-header-bar", "tablet" );
+			divino_apply_responsive_background_css( "divino-settings[hb-header-bg-obj-responsive]", ".ast-sg-element-wrap.ast-sg-logo-section, .ast-primary-header.main-header-bar", "mobile" );
 		}
 	}
 
@@ -126,7 +126,7 @@
 	divino_builder_visibility_css( 'section-primary-header-builder', '.ast-primary-header-bar', 'grid' );
 
 	// Advanced CSS for Header Builder - Margin.
-	wp.customize( 'astra-settings[section-header-builder-layout-margin]', function( value ) {
+	wp.customize( 'divino-settings[section-header-builder-layout-margin]', function( value ) {
         value.bind( function( margin ) {
             if(
                 margin.desktop.bottom != '' || margin.desktop.top != '' || margin.desktop.left != '' || margin.desktop.right != '' ||

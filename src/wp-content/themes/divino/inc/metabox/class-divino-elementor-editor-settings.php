@@ -4,8 +4,8 @@
  *
  * Adds custom React-based settings to the Elementor editor page settings panel.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       4.11.3
  */
 
@@ -70,7 +70,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 			add_action( 'elementor/documents/register_controls', array( $this, 'register_document_controls' ) );
 			add_action( 'elementor/editor/after_enqueue_styles', array( $this, 'add_custom_control_style' ) );
 
-			// Hook into Elementor's document saving process to persist Astra-specific settings.
+			// Hook into Elementor's document saving process to persist divino-specific settings.
 			add_action( 'elementor/document/after_save', array( $this, 'sync_save_settings' ) );
 
 			// Hook into the template redirect action to handle Elementor preview.
@@ -78,7 +78,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 		}
 
 		/**
-		 * Get array of setting keys for Astra Elementor settings.
+		 * Get array of setting keys for divino Elementor settings.
 		 *
 		 * @since 4.11.3
 		 *
@@ -106,11 +106,11 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 			);
 
 			/**
-			 * Filter to modify the Astra Elementor setting keys.
+			 * Filter to modify the divino Elementor setting keys.
 			 *
 			 * @since 4.11.3
 			 *
-			 * @param array $keys Array of Astra Elementor setting keys.
+			 * @param array $keys Array of divino Elementor setting keys.
 			 */
 			return apply_filters( 'divino_elementor_page_setting_keys', $settings );
 		}
@@ -127,7 +127,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 				return;
 			}
 
-			$handle = 'astra-elementor-meta-settings';
+			$handle = 'divino-elementor-meta-settings';
 			$path   = divino_THEME_URI . '/inc/metabox/extend-metabox/build/elementor.js';
 
 			// Get the script dependencies from the asset file.
@@ -148,20 +148,20 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 			);
 
 			/**
-			 * Filter to modify the localized data for Astra astraElementor editor settings.
+			 * Filter to modify the localized data for divino divinoElementor editor settings.
 			 *
 			 * @since 4.11.3
-			 * @param array $localize_data Localized data for astraElementor editor settings.
+			 * @param array $localize_data Localized data for divinoElementor editor settings.
 			 */
 			$localize_data = apply_filters(
 				'divino_elementor_editor_localize_data',
 				array(
 					'themeName'    => divino_get_theme_name(),
-					'themeIconUrl' => esc_url( apply_filters( 'divino_admin_menu_icon', divino_THEME_URI . 'inc/assets/images/astra-logo.svg' ) ),
+					'themeIconUrl' => esc_url( apply_filters( 'divino_admin_menu_icon', divino_THEME_URI . 'inc/assets/images/divino-logo.svg' ) ),
 				)
 			);
 
-			wp_localize_script( $handle, 'astraElementorEditor', $localize_data );
+			wp_localize_script( $handle, 'divinoElementorEditor', $localize_data );
 		}
 
 		/**
@@ -253,7 +253,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 		 * Register additional document controls.
 		 *
 		 * Adds a new section and control to the Elementor Page Settings panel,
-		 * providing a placeholder div for the React-powered Astra Settings UI.
+		 * providing a placeholder div for the React-powered divino Settings UI.
 		 *
 		 * @param \Elementor\Core\DocumentTypes\PageBase $document The PageBase document instance.
 		 *
@@ -279,7 +279,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 			$document->start_controls_section(
 				'divino_section',
 				array(
-					'label' => esc_html__( 'Astra Settings', 'astra' ),
+					'label' => esc_html__( 'divino Settings', 'divino' ),
 					'tab'   => \Elementor\Controls_Manager::TAB_SETTINGS,
 				)
 			);
@@ -287,7 +287,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 			// $document->start_controls_section(
 			// 'ast_container_section',
 			// [
-			// 'label' => __('Container', 'astra'),
+			// 'label' => __('Container', 'divino'),
 			// 'tab' => \Elementor\Controls_Manager::TAB_SETTINGS,
 			// ]
 			// );
@@ -296,7 +296,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 			$document->add_control(
 				'ast-container-heading',
 				array(
-					'label' => __( 'Container', 'astra' ),
+					'label' => __( 'Container', 'divino' ),
 					'type'  => \Elementor\Controls_Manager::HEADING,
 				)
 			);
@@ -306,7 +306,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 				'ast-site-content-layout',
 				array(
 					'classes' => 'ast-layout-control',
-					'label'   => __( 'Container Layout', 'astra' ),
+					'label'   => __( 'Container Layout', 'divino' ),
 					'type'    => \Elementor\Controls_Manager::CHOOSE,
 					'options' => self::get_formatted_container_layout_options(),
 					'default' => get_post_meta( $id, 'ast-site-content-layout', true ),
@@ -319,11 +319,11 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 				'site-content-style',
 				array(
 					'classes'     => 'ast-selector-control',
-					'label'       => __( 'Container Style', 'astra' ),
+					'label'       => __( 'Container Style', 'divino' ),
 					'type'        => \Elementor\Controls_Manager::CHOOSE,
 					'options'     => self::get_formatted_container_style_options(),
 					'default'     => get_post_meta( $id, 'site-content-style', true ),
-					'description' => __( 'Container style will apply only when layout is set to either Normal or Narrow.', 'astra' ),
+					'description' => __( 'Container style will apply only when layout is set to either Normal or Narrow.', 'divino' ),
 					'toggle'      => false,
 				)
 			);
@@ -334,7 +334,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 			// $document->start_controls_section(
 			// 'sidebar_section',
 			// [
-			// 'label' => __( 'Sidebar', 'astra' ),
+			// 'label' => __( 'Sidebar', 'divino' ),
 			// 'tab'   => \Elementor\Controls_Manager::TAB_SETTINGS,
 			// ]
 			// );
@@ -343,7 +343,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 			$document->add_control(
 				'ast-sidebar-heading',
 				array(
-					'label'     => __( 'Sidebar', 'astra' ),
+					'label'     => __( 'Sidebar', 'divino' ),
 					'type'      => \Elementor\Controls_Manager::HEADING,
 					'separator' => 'before',
 				)
@@ -353,11 +353,11 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 				'site-sidebar-layout',
 				array(
 					'classes'     => 'ast-layout-control',
-					'label'       => __( 'Sidebar Layout', 'astra' ),
+					'label'       => __( 'Sidebar Layout', 'divino' ),
 					'type'        => \Elementor\Controls_Manager::CHOOSE,
 					'options'     => self::get_formatted_sidebar_layout_options(),
 					'default'     => get_post_meta( $id, 'site-sidebar-layout', true ),
-					'description' => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
+					'description' => __( 'Sidebar will only apply when container layout is set to normal.', 'divino' ),
 					'toggle'      => false,
 				)
 			);
@@ -366,7 +366,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 				'site-sidebar-style',
 				array(
 					'classes' => 'ast-selector-control',
-					'label'   => __( 'Sidebar Style', 'astra' ),
+					'label'   => __( 'Sidebar Style', 'divino' ),
 					'type'    => \Elementor\Controls_Manager::CHOOSE,
 					'options' => self::get_formatted_sidebar_style_options(),
 					'default' => get_post_meta( $id, 'site-sidebar-style', true ),
@@ -380,7 +380,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 			// $document->start_controls_section(
 			// 'disable_elements_section',
 			// [
-			// 'label' => __( 'Disable Elements', 'astra' ),
+			// 'label' => __( 'Disable Elements', 'divino' ),
 			// 'tab'   => \Elementor\Controls_Manager::TAB_SETTINGS,
 			// ]
 			// );
@@ -389,7 +389,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 			$document->add_control(
 				'ast-disable-elements-heading',
 				array(
-					'label'     => __( 'Disable Elements', 'astra' ),
+					'label'     => __( 'Disable Elements', 'divino' ),
 					'type'      => \Elementor\Controls_Manager::HEADING,
 					'separator' => 'before',
 				)
@@ -411,7 +411,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 			$document->add_control(
 				'ast-advanced-settings-heading',
 				array(
-					'label'     => __( 'Advanced Settings', 'astra' ),
+					'label'     => __( 'Advanced Settings', 'divino' ),
 					'type'      => \Elementor\Controls_Manager::HEADING,
 					'separator' => 'before',
 				)
@@ -422,7 +422,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 				array(
 					'classes' => 'ast-popover-control',
 					'type'    => \Elementor\Controls_Manager::POPOVER_TOGGLE,
-					'label'   => __( 'Header Rows', 'astra' ),
+					'label'   => __( 'Header Rows', 'divino' ),
 				)
 			);
 
@@ -447,7 +447,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 				'theme-transparent-header-meta',
 				array(
 					'classes' => 'ast-selector-control',
-					'label'   => __( 'Transparent Header', 'astra' ),
+					'label'   => __( 'Transparent Header', 'divino' ),
 					'type'    => \Elementor\Controls_Manager::CHOOSE,
 					'options' => self::get_formatted_header_enabled_options(),
 					'default' => get_post_meta( $id, 'theme-transparent-header-meta', true ),
@@ -460,7 +460,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 					'stick-header-meta',
 					array(
 						'classes' => 'ast-selector-control',
-						'label'   => __( 'Sticky Header', 'astra' ),
+						'label'   => __( 'Sticky Header', 'divino' ),
 						'type'    => \Elementor\Controls_Manager::CHOOSE,
 						'options' => self::get_formatted_header_enabled_options(),
 						'default' => get_post_meta( $id, 'stick-header-meta', true ),
@@ -473,7 +473,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 					array(
 						'classes'   => 'ast-popover-control',
 						'type'      => \Elementor\Controls_Manager::POPOVER_TOGGLE,
-						'label'     => __( 'Sticky Header Rows', 'astra' ),
+						'label'     => __( 'Sticky Header Rows', 'divino' ),
 						'condition' => array(
 							'stick-header-meta' => 'enabled', // show only when Sticky Header is enabled.
 						),
@@ -503,7 +503,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 				array(
 					'type'        => \Elementor\Controls_Manager::NOTICE,
 					'notice_type' => 'warning',
-					'content'     => __( 'Make sure to update your post for changes to take effect.', 'astra' ),
+					'content'     => __( 'Make sure to update your post for changes to take effect.', 'divino' ),
 				)
 			);
 
@@ -513,8 +513,8 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 				array(
 					'type'        => \Elementor\Controls_Manager::BUTTON,
 					'button_type' => 'success',
-					'text'        => esc_html__( 'Preview Changes', 'astra' ),
-					'event'       => 'namespace:editor:astraRefresh',
+					'text'        => esc_html__( 'Preview Changes', 'divino' ),
+					'event'       => 'namespace:editor:divinoRefresh',
 					'disabled'    => true,
 				)
 			);
@@ -526,14 +526,14 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 						'type' => \Elementor\Controls_Manager::RAW_HTML,
 						'raw'  => sprintf(
 							'<div class="ast-pro-upgrade-cta-wrapper">
-								<img src="%1$s" alt="Astra Logo">
+								<img src="%1$s" alt="divino Logo">
 								<p class="elementor-control-field-description">%2$s</p>
 								<a href="%3$s" class="ast-pro-upgrade-link" target="_blank">%4$s</a>
 							</div>',
-							esc_url( divino_THEME_URI . 'inc/assets/images/astra-logo.svg' ),
-							__( 'Unlock your full design potential and build a website to be proud of with Astra Pro.', 'astra' ),
+							esc_url( divino_THEME_URI . 'inc/assets/images/divino-logo.svg' ),
+							__( 'Unlock your full design potential and build a website to be proud of with divino Pro.', 'divino' ),
 							divino_get_pro_url( '/pricing/', 'free-theme', 'elementor-editor', 'upgrade' ),
-							__( 'Upgrade Now', 'astra' ),
+							__( 'Upgrade Now', 'divino' ),
 						),
 					)
 				);
@@ -543,7 +543,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 		}
 
 		/**
-		 * Adds inline styles to enhance Astra controls in Elementor Page Settings.
+		 * Adds inline styles to enhance divino controls in Elementor Page Settings.
 		 *
 		 * Optimizes layout and display of CHOOSE controls (like container and sidebar settings).
 		 * by using grid layouts and ensuring button labels are visible.
@@ -659,7 +659,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 		}
 
 		/**
-		 * Handle Elementor template redirect for previewing Astra settings changes.
+		 * Handle Elementor template redirect for previewing divino settings changes.
 		 *
 		 * @since 4.11.3
 		 */
@@ -714,7 +714,7 @@ if ( ! class_exists( 'divino_Elementor_Editor_Settings' ) ) {
 		}
 
 		/**
-		 * Sync specific Astra settings from Elementor's Page Settings to post meta.
+		 * Sync specific divino settings from Elementor's Page Settings to post meta.
 		 *
 		 * This function checks if certain custom Elementor controls are enabled (like disabling the header, footer,
 		 * or banner area) and updates the corresponding post meta values accordingly. If the setting is not enabled,

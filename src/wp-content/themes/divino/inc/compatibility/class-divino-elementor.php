@@ -2,7 +2,7 @@
 /**
  * Elementor Compatibility File.
  *
- * @package Astra
+ * @package divino
  */
 
 // phpcs:disable PHPCompatibility.Keywords.NewKeywords.t_namespaceFound, WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedNamespaceFound
@@ -21,12 +21,12 @@ if ( ! class_exists( '\Elementor\Plugin' ) ) {
 }
 
 /**
- * Astra Elementor Compatibility
+ * divino Elementor Compatibility
  */
 if ( ! class_exists( 'divino_Elementor' ) ) {
 
 	/**
-	 * Astra Elementor Compatibility
+	 * divino Elementor Compatibility
 	 *
 	 * @since 1.0.0
 	 */
@@ -77,7 +77,7 @@ if ( ! class_exists( 'divino_Elementor' ) ) {
 		}
 
 		/**
-		 * Astra post layout 2 disable compatibility.
+		 * divino post layout 2 disable compatibility.
 		 *
 		 * @param array $classes Array of elementor edit mode check.
 		 *
@@ -106,8 +106,8 @@ if ( ! class_exists( 'divino_Elementor' ) ) {
 		 *
 		 * That's why adding this CSS fix to headings by setting bottom-margin to 0.
 		 *
-		 * @param  string $dynamic_css Astra Dynamic CSS.
-		 * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+		 * @param  string $dynamic_css divino Dynamic CSS.
+		 * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
 		 * @return string $dynamic_css Generated CSS.
 		 *
 		 * @since  2.4.5
@@ -461,7 +461,7 @@ if ( ! class_exists( 'divino_Elementor' ) ) {
 				$dynamic_css           .= divino_parse_css( $palette_style );
 			}
 
-			// Apply Astra Mini Cart CSS if Elementor Mini Cart Template is disabled.
+			// Apply divino Mini Cart CSS if Elementor Mini Cart Template is disabled.
 			$is_site_rtl = is_rtl();
 			$ltr_left    = $is_site_rtl ? 'right' : 'left';
 			$ltr_right   = $is_site_rtl ? 'left' : 'right';
@@ -539,7 +539,7 @@ if ( ! class_exists( 'divino_Elementor' ) ) {
 			$theme              = $editor_preferences->get_model()->get_settings( 'ui_theme' );
 			$style              = 'dark' === $theme ? '-dark' : '';
 
-			wp_enqueue_style( 'astra-elementor-editor-style', divino_THEME_URI . 'inc/assets/css/ast-elementor-editor' . $style . '.css', array(), divino_THEME_VERSION );
+			wp_enqueue_style( 'divino-elementor-editor-style', divino_THEME_URI . 'inc/assets/css/ast-elementor-editor' . $style . '.css', array(), divino_THEME_VERSION );
 		}
 	}
 

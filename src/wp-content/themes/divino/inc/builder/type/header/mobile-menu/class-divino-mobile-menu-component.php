@@ -2,9 +2,9 @@
 /**
  * Header Navigation Menu component.
  *
- * @package     Astra Builder
+ * @package     divino Builder
  * @link        https://www.brainstormforce.com
- * @since       Astra 3.0.0
+ * @since       divino 3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -26,7 +26,7 @@ class divino_Mobile_Menu_Component {
 	public function __construct() {
 
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once divino_BUILDER_MOBILE_MENU_DIR . '/class-astra-mobile-menu-component-loader.php';
+		require_once divino_BUILDER_MOBILE_MENU_DIR . '/class-divino-mobile-menu-component-loader.php';
 
 		// Include front end files.
 		if ( ! is_admin() || divino_Builder_Customizer::divino_collect_customizer_builder_data() ) {
@@ -51,7 +51,7 @@ class divino_Mobile_Menu_Component {
 		// Menu Animation.
 		$menu_animation = divino_get_option( 'header-mobile-menu-submenu-container-animation' );
 		if ( ! empty( $menu_animation ) ) {
-			$submenu_class .= ' astra-menu-animation-' . esc_attr( $menu_animation ) . ' ';
+			$submenu_class .= ' divino-menu-animation-' . esc_attr( $menu_animation ) . ' ';
 		}
 
 		// Resolving duplicate ID for 'ast-hf-mobile-menu' in W3C Validator.
@@ -75,7 +75,7 @@ class divino_Mobile_Menu_Component {
 			array(
 				'id'         => 'ast-' . esc_attr( $device ) . '-site-navigation',
 				'class'      => 'site-navigation ast-flex-grow-1 navigation-accessibility site-header-focus-item',
-				'aria-label' => esc_attr__( 'Site Navigation: ', 'astra' ) . $menu_name,
+				'aria-label' => esc_attr__( 'Site Navigation: ', 'divino' ) . $menu_name,
 			)
 		);
 		$items_wrap .= '>';
@@ -128,7 +128,7 @@ class divino_Mobile_Menu_Component {
 					array(
 						'id'         => 'ast-' . esc_attr( $device ) . '-site-navigation',
 						'class'      => 'site-navigation ast-flex-grow-1 navigation-accessibility',
-						'aria-label' => esc_attr__( 'Site Navigation', 'astra' ),
+						'aria-label' => esc_attr__( 'Site Navigation', 'divino' ),
 					)
 				)
 			);

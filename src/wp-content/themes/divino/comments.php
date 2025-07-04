@@ -7,7 +7,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Astra
+ * @package divino
  * @since 1.0.0
  */
 
@@ -55,7 +55,7 @@ if ( is_customize_preview() && is_callable( 'divino_Builder_UI_Controller::rende
 					'divino_comment_form_title',
 					sprintf( // WPCS: XSS OK.
 						/* translators: 1: number of comments */
-						esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'astra' ) ),
+						esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'divino' ) ),
 						number_format_i18n( get_comments_number() ),
 						get_the_title()
 					)
@@ -68,7 +68,7 @@ if ( is_customize_preview() && is_callable( 'divino_Builder_UI_Controller::rende
 		divino_markup_close( 'comment-count-wrapper' );
 		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
 			?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" aria-label="<?php esc_attr_e( 'Comments Navigation', 'astra' ); ?>">
+		<nav id="comment-nav-above" class="navigation comment-navigation" aria-label="<?php esc_attr_e( 'Comments Navigation', 'divino' ); ?>">
 			<h3 class="screen-reader-text"><?php echo esc_html( divino_default_strings( 'string-comment-navigation-next', false ) ); ?></h3>
 			<div class="nav-links">
 
@@ -91,7 +91,7 @@ if ( is_customize_preview() && is_callable( 'divino_Builder_UI_Controller::rende
 		</ol><!-- .ast-comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" aria-label="<?php esc_attr_e( 'Comments Navigation', 'astra' ); ?>">
+		<nav id="comment-nav-below" class="navigation comment-navigation" aria-label="<?php esc_attr_e( 'Comments Navigation', 'divino' ); ?>">
 			<h3 class="screen-reader-text"><?php echo esc_html( divino_default_strings( 'string-comment-navigation-next', false ) ); ?></h3>
 			<div class="nav-links">
 

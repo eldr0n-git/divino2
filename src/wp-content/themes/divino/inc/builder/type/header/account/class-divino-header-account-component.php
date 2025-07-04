@@ -1,9 +1,9 @@
 <?php
 /**
- * Account for Astra theme.
+ * Account for divino theme.
  *
- * @package     astra-builder
- * @link        https://wpastra.com/
+ * @package     divino-builder
+ * @link        https://wpdivino.com/
  * @since       3.0.0
  */
 
@@ -28,7 +28,7 @@ if ( ! class_exists( 'divino_Header_Account_Component' ) ) {
 		public function __construct() {
 
 			// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-			require_once divino_HEADER_ACCOUNT_DIR . '/class-astra-header-account-component-loader.php';
+			require_once divino_HEADER_ACCOUNT_DIR . '/class-divino-header-account-component-loader.php';
 
 			// Include front end files.
 			if ( ! is_admin() || divino_Builder_Customizer::divino_collect_customizer_builder_data() ) {
@@ -60,7 +60,7 @@ if ( ! class_exists( 'divino_Header_Account_Component' ) ) {
 				array(
 					'id'         => 'account-site-navigation',
 					'class'      => 'site-navigation ast-flex-grow-1 navigation-accessibility site-header-focus-item',
-					'aria-label' => esc_attr__( 'Site Navigation', 'astra' ),
+					'aria-label' => esc_attr__( 'Site Navigation', 'divino' ),
 				)
 			);
 			$items_wrap .= '>';
@@ -113,7 +113,7 @@ if ( ! class_exists( 'divino_Header_Account_Component' ) ) {
 								)
 							)
 						);
-						echo ' class="ast-flex-grow-1 navigation-accessibility site-header-focus-item" aria-label="' . esc_attr__( 'Account Woo Navigation', 'astra' ) . '">';
+						echo ' class="ast-flex-grow-1 navigation-accessibility site-header-focus-item" aria-label="' . esc_attr__( 'Account Woo Navigation', 'divino' ) . '">';
 
 				ob_start();
 				if ( class_exists( 'woocommerce' ) ) {
@@ -145,7 +145,7 @@ if ( ! class_exists( 'divino_Header_Account_Component' ) ) {
 									array(
 										'id'         => 'account-site-navigation',
 										'class'      => 'site-navigation ast-flex-grow-1 navigation-accessibility',
-										'aria-label' => esc_attr__( 'Site Navigation', 'astra' ),
+										'aria-label' => esc_attr__( 'Site Navigation', 'divino' ),
 									)
 								)
 							);

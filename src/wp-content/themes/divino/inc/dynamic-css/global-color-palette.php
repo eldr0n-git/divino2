@@ -2,7 +2,7 @@
 /**
  * Global color palette - Dynamic CSS
  *
- * @package astra-builder
+ * @package divino-builder
  * @since 3.7.0
  */
 

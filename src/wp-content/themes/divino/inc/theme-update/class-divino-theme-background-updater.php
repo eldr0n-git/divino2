@@ -2,8 +2,8 @@
 /**
  * Theme Batch Update
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since 2.1.3
  */
 
@@ -128,9 +128,9 @@ if ( ! class_exists( 'divino_Theme_Background_Updater' ) ) {
 			}
 
 			// Core Helpers - Batch Processing.
-			require_once divino_THEME_DIR . 'inc/lib/batch-processing/class-astra-wp-async-request.php';// phpcs:ignore: WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-			require_once divino_THEME_DIR . 'inc/lib/batch-processing/class-astra-wp-background-process.php';// phpcs:ignore: WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-			require_once divino_THEME_DIR . 'inc/theme-update/class-astra-theme-wp-background-process.php';// phpcs:ignore: WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+			require_once divino_THEME_DIR . 'inc/lib/batch-processing/class-divino-wp-async-request.php';// phpcs:ignore: WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+			require_once divino_THEME_DIR . 'inc/lib/batch-processing/class-divino-wp-background-process.php';// phpcs:ignore: WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+			require_once divino_THEME_DIR . 'inc/theme-update/class-divino-theme-wp-background-process.php';// phpcs:ignore: WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 
 			self::$background_updater = new divino_Theme_WP_Background_Process();
 		}
@@ -156,7 +156,7 @@ if ( ! class_exists( 'divino_Theme_Background_Updater' ) ) {
 				return true;
 			}
 
-			$cached_status = get_transient( 'astra-theme-cron-test-ok' );
+			$cached_status = get_transient( 'divino-theme-cron-test-ok' );
 
 			if ( $cached_status ) {
 				return false;
@@ -183,7 +183,7 @@ if ( ! class_exists( 'divino_Theme_Background_Updater' ) ) {
 				return true;
 			}
 
-			set_transient( 'astra-theme-cron-test-ok', 1, 3600 );
+			set_transient( 'divino-theme-cron-test-ok', 1, 3600 );
 			return false;
 		}
 
@@ -282,14 +282,14 @@ if ( ! class_exists( 'divino_Theme_Background_Updater' ) ) {
 			/** @psalm-suppress DocblockTypeContradiction */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			if ( ! $is_db_version_updated ) {
 
-				$db_migrated = get_transient( 'astra-theme-db-migrated' );
+				$db_migrated = get_transient( 'divino-theme-db-migrated' );
 
 				if ( ! $db_migrated ) {
 					$db_migrated = array();
 				}
 
 				array_push( $db_migrated, $is_db_version_updated );
-				set_transient( 'astra-theme-db-migrated', $db_migrated, 3600 );
+				set_transient( 'divino-theme-db-migrated', $db_migrated, 3600 );
 
 				$db_migrate_count = count( $db_migrated );
 				if ( $db_migrate_count >= 5 ) {
@@ -301,11 +301,11 @@ if ( ! class_exists( 'divino_Theme_Background_Updater' ) ) {
 		}
 
 		/**
-		 * Checks if astra addon version is updated in the database
+		 * Checks if divino addon version is updated in the database
 		 *
 		 * @since 2.3.1
 		 *
-		 * @return true if astra addon version is updated.
+		 * @return true if divino addon version is updated.
 		 */
 		public function is_db_version_updated() {
 			// Get auto saved version number.
@@ -352,7 +352,7 @@ if ( ! class_exists( 'divino_Theme_Background_Updater' ) ) {
 		/**
 		 * Update DB version to current.
 		 *
-		 * @param string|null $version New Astra theme version or null.
+		 * @param string|null $version New divino theme version or null.
 		 */
 		public static function update_db_version( $version = null ) {
 
@@ -399,7 +399,7 @@ if ( ! class_exists( 'divino_Theme_Background_Updater' ) ) {
 			// Update variables.
 			divino_Theme_Options::refresh();
 
-			delete_transient( 'astra-addon-db-migrated' );
+			delete_transient( 'divino-addon-db-migrated' );
 
 			do_action( 'divino_theme_update_after' );
 		}

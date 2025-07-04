@@ -2,7 +2,7 @@
 /**
  * Header Menu Colors - Dynamic CSS
  *
- * @package astra-builder
+ * @package divino-builder
  * @since 3.0.0
  */
 
@@ -18,8 +18,8 @@ add_filter( 'divino_dynamic_theme_css', 'divino_hb_mobile_menu_dynamic_css', 11 
 /**
  * Dynamic CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
- * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+ * @param  string $dynamic_css          divino Dynamic CSS.
+ * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
  * @return String Generated dynamic CSS for Header Menu Colors.
  *
  * @since 3.0.0

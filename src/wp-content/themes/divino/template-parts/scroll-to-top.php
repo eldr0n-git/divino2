@@ -2,11 +2,11 @@
 /**
  * Scroll To Top Template
  *
- * @package Astra
+ * @package divino
  * @since 4.0.0
  */
 
-// Bail early if it is not astra customizer.
+// Bail early if it is not divino customizer.
 if ( is_customize_preview() && ! divino_Customizer::is_divino_customizer() ) {
 	return;
 }
@@ -21,5 +21,5 @@ $divino_addon_scroll_top_devices   = divino_get_option( 'scroll-to-top-on-device
 		divino_Icons::get_icons( 'arrow', true );
 	}
 	?>
-	<span class="screen-reader-text"><?php esc_html_e( 'Scroll to Top', 'astra' ); ?></span>
+	<span class="screen-reader-text"><?php esc_html_e( 'Scroll to Top', 'divino' ); ?></span>
 </div>

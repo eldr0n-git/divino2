@@ -5,7 +5,7 @@
  * @link https://Ubermenu.me/
  * @since  1.1.7
  *
- * @package Astra
+ * @package divino
  */
 
 // If plugin - 'Ubermenu' not exist then return.
@@ -14,12 +14,12 @@ if ( ! class_exists( 'UberMenu' ) ) {
 }
 
 /**
- * Astra Ubermenu Compatibility
+ * divino Ubermenu Compatibility
  */
 if ( ! class_exists( 'divino_Ubermeu' ) ) {
 
 	/**
-	 * Astra Ubermenu Compatibility
+	 * divino Ubermenu Compatibility
 	 *
 	 * @since 1.0.0
 	 */
@@ -53,7 +53,7 @@ if ( ! class_exists( 'divino_Ubermeu' ) ) {
 		}
 
 		/**
-		 * Disable the Mobile Menu toggles from Astra if Uber Menu is used.
+		 * Disable the Mobile Menu toggles from divino if Uber Menu is used.
 		 *
 		 * @since  1.1.7
 		 * @param  bool $status Status if the mobile menu toggels are enaled or disaled.

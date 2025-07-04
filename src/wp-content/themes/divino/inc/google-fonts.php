@@ -2,9 +2,9 @@
 /**
  * Google fonts array file.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 2.5.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 2.5.0
  */
 
 /**

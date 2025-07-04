@@ -1,3 +1,4 @@
+<!-- cta-centered-heading.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Centered heading

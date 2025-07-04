@@ -35,4 +35,5 @@ _deprecated_file(
 
 		<?php wp_footer(); ?>
 </body>
+<!-- fallback for themes that don't have a footer.php -->
 </html>

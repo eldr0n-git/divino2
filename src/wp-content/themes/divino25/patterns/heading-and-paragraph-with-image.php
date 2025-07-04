@@ -1,3 +1,4 @@
+<!-- heading-and-paragraph-with-image.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Heading and paragraph with image on the right

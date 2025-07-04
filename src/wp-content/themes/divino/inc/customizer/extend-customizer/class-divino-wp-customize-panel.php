@@ -4,8 +4,8 @@
  *
  * Creates a jQuery color control.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       1.0.0
  */
 

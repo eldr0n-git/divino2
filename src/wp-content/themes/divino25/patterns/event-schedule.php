@@ -1,3 +1,4 @@
+<!-- event-schedule.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Event schedule

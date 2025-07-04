@@ -1,9 +1,9 @@
 <?php
 /**
- * Astra Theme Customizer Configuration Above Header.
+ * divino Theme Customizer Configuration Above Header.
  *
- * @package     astra-builder
- * @link        https://wpastra.com/
+ * @package     divino-builder
+ * @link        https://wpdivino.com/
  * @since       3.0.0
  */
 
@@ -23,10 +23,10 @@ if ( class_exists( 'divino_Customizer_Config_Base' ) ) {
 		/**
 		 * Register Builder Above Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 3.0.0
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 			$_configs = divino_above_header_configuration();

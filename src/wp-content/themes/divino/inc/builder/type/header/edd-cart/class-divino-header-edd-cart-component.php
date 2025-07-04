@@ -1,9 +1,9 @@
 <?php
 /**
- * EDD Cart for Astra theme.
+ * EDD Cart for divino theme.
  *
- * @package     astra-builder
- * @link        https://wpastra.com/
+ * @package     divino-builder
+ * @link        https://wpdivino.com/
  * @since       3.0.0
  */
 
@@ -28,7 +28,7 @@ if ( ! class_exists( 'divino_Header_Edd_Cart_Component' ) ) {
 		public function __construct() {
 
 			// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-			require_once divino_HEADER_EDD_CART_DIR . '/class-astra-header-edd-cart-loader.php';
+			require_once divino_HEADER_EDD_CART_DIR . '/class-divino-header-edd-cart-loader.php';
 
 			// Include front end files.
 			if ( ! is_admin() || divino_Builder_Customizer::divino_collect_customizer_builder_data() ) {

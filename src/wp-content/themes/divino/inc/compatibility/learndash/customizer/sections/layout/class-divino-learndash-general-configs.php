@@ -2,7 +2,7 @@
 /**
  * LifterLMS General Options for our theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
  * @since       1.3.0
  */
@@ -20,10 +20,10 @@ if ( ! class_exists( 'divino_Learndash_General_Configs' ) ) {
 		/**
 		 * Register LearnDash General Layout settings.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -38,11 +38,11 @@ if ( ! class_exists( 'divino_Learndash_General_Configs' ) ) {
 					'type'     => 'control',
 					'control'  => 'ast-toggle-control',
 					'default'  => divino_get_option( 'learndash-lesson-serial-number' ),
-					'title'    => __( 'Display Serial Number', 'astra' ),
+					'title'    => __( 'Display Serial Number', 'divino' ),
 					'priority' => 25,
 					'divider'  => array(
 						'ast_class' => 'ast-top-divider',
-						'ast_title' => __( 'Course Content Table', 'astra' ),
+						'ast_title' => __( 'Course Content Table', 'divino' ),
 					),
 				),
 
@@ -55,7 +55,7 @@ if ( ! class_exists( 'divino_Learndash_General_Configs' ) ) {
 					'type'     => 'control',
 					'control'  => 'ast-toggle-control',
 					'section'  => 'section-leandash-general',
-					'title'    => __( 'Differentiate Rows', 'astra' ),
+					'title'    => __( 'Differentiate Rows', 'divino' ),
 					'priority' => 30,
 				),
 			);

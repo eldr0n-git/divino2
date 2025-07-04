@@ -5,9 +5,9 @@
  * Eventually, some of the functionality here could be replaced by core features.
  * All the functions here generate some kind of Markup for the frontend.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 2.5.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 2.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -80,7 +80,7 @@ if ( ! function_exists( 'divino_body_classes' ) ) {
 		}
 
 		if ( divino_Global_Palette::is_dark_palette() ) {
-			$classes[] = 'astra-dark-mode-enable';
+			$classes[] = 'divino-dark-mode-enable';
 		}
 
 		if ( divino_is_amp_endpoint() ) {
@@ -106,7 +106,7 @@ if ( ! function_exists( 'divino_body_classes' ) ) {
 
 			// Narrow meta migration case.
 			$meta_old_layout = divino_get_option_meta( 'site-content-layout', '', true );
-			$meta_key        = divino_get_option_meta( 'astra-migrate-meta-layouts', '', true );
+			$meta_key        = divino_get_option_meta( 'divino-migrate-meta-layouts', '', true );
 			$migrated_user   = ! divino_Dynamic_CSS::divino_fullwidth_sidebar_support();
 			if ( 'narrow-container' === $meta_old_layout && 'set' !== $meta_key && $migrated_user ) {
 				$is_boxed = false;
@@ -123,8 +123,8 @@ if ( ! function_exists( 'divino_body_classes' ) ) {
 		$page_layout    = 'ast-' . $sidebar_layout;
 		$classes[]      = esc_attr( $page_layout );
 
-		// Current Astra verion.
-		$classes[] = esc_attr( 'astra-' . divino_THEME_VERSION );
+		// Current divino verion.
+		$classes[] = esc_attr( 'divino-' . divino_THEME_VERSION );
 
 		if ( ! divino_Builder_Helper::$is_header_footer_builder_active ) {
 			$menu_item    = divino_get_option( 'header-main-rt-section' );
@@ -395,7 +395,7 @@ function divino_apply_boxed_layouts( $content_layout, $is_boxed, $is_sidebar_box
 	$meta_old_layout = is_singular() ? divino_get_option_meta( 'site-content-layout', '', true ) : '';
 
 	// To check whether migrated user or not.
-	$meta_key      = divino_get_option_meta( 'astra-migrate-meta-layouts', '', true );
+	$meta_key      = divino_get_option_meta( 'divino-migrate-meta-layouts', '', true );
 	$migrated_user = ! divino_Dynamic_CSS::divino_fullwidth_sidebar_support();
 
 	$sidebar_layout = divino_page_layout();
@@ -403,7 +403,7 @@ function divino_apply_boxed_layouts( $content_layout, $is_boxed, $is_sidebar_box
 	// Editor compatibility.
 	if ( $post_id ) {
 		$meta_old_layout = get_post_meta( $post_id, 'site-content-layout', true );
-		$meta_key        = get_post_meta( $post_id, 'astra-migrate-meta-layouts', true );
+		$meta_key        = get_post_meta( $post_id, 'divino-migrate-meta-layouts', true );
 		$post_type       = strval( get_post_type() );
 		$sidebar_layout  = divino_get_sidebar_layout_for_editor( $post_type );
 	}
@@ -412,7 +412,7 @@ function divino_apply_boxed_layouts( $content_layout, $is_boxed, $is_sidebar_box
 	$third_party_meta_page = divino_third_party_archive_meta( 'site-content-layout' );
 	if ( false !== $third_party_meta_page && $migrated_user ) {
 		$meta_old_layout = $third_party_meta_page;
-		$meta_key        = divino_third_party_archive_meta( 'astra-migrate-meta-layouts' );
+		$meta_key        = divino_third_party_archive_meta( 'divino-migrate-meta-layouts' );
 	}
 
 	// Migrate old user existing container layout option to new layout options.
@@ -495,12 +495,12 @@ function divino_third_party_archive_meta( $option ) {
 }
 
 /**
- * Astra Pagination
+ * divino Pagination
  */
 if ( ! function_exists( 'divino_number_pagination' ) ) {
 
 	/**
-	 * Astra Pagination
+	 * divino Pagination
 	 *
 	 * @since 1.0.0
 	 * @return void            Generate & echo pagination markup.
@@ -523,7 +523,7 @@ if ( ! function_exists( 'divino_number_pagination' ) ) {
 				'next_text'          => divino_default_strings( 'string-blog-navigation-next', false ),
 				'taxonomy'           => 'category',
 				'in_same_term'       => true,
-				'screen_reader_text' => esc_html__( 'Post pagination', 'astra' ),
+				'screen_reader_text' => esc_html__( 'Post pagination', 'divino' ),
 			)
 		);
 		/** @psalm-suppress ArgumentTypeCoercion */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
@@ -872,8 +872,8 @@ if ( ! function_exists( 'divino_get_search' ) ) {
 		<div class="ast-search-menu-icon slide-search" <?php echo apply_filters( 'divino_search_slide_toggle_data_attrs', '' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 		<?php divino_get_search_form(); ?>
 			<div class="ast-search-icon">
-				<a class="slide-search astra-search-icon" role="button" tabindex="0" aria-label="<?php esc_attr_e( 'Search button', 'astra' ); ?>" href="#">
-					<span class="screen-reader-text"><?php esc_html_e( 'Search', 'astra' ); ?></span>
+				<a class="slide-search divino-search-icon" role="button" tabindex="0" aria-label="<?php esc_attr_e( 'Search button', 'divino' ); ?>" href="#">
+					<span class="screen-reader-text"><?php esc_html_e( 'Search', 'divino' ); ?></span>
 					<?php echo do_shortcode( divino_get_search_icon( $option, $device ) ); ?>
 				</a>
 			</div>
@@ -900,12 +900,12 @@ if ( ! function_exists( 'divino_get_custom_html' ) ) {
 	function divino_get_custom_html( $option_name = '' ) {
 
 		$custom_html         = '';
-		$custom_html_content = divino_get_i18n_option( $option_name, _x( '%astra%', 'Primary Menu: Custom Menu Text / HTML for Last Item in Menu', 'astra' ) );
+		$custom_html_content = divino_get_i18n_option( $option_name, _x( '%divino%', 'Primary Menu: Custom Menu Text / HTML for Last Item in Menu', 'divino' ) );
 
 		if ( ! empty( $custom_html_content ) ) {
 			$custom_html = '<div class="ast-custom-html">' . do_shortcode( wp_kses_post( $custom_html_content ) ) . '</div>';
 		} elseif ( current_user_can( 'edit_theme_options' ) ) {
-			$custom_html = '<a href="' . esc_url( admin_url( 'customize.php?autofocus[control]=' . divino_THEME_SETTINGS . '[' . $option_name . ']' ) ) . '">' . esc_html__( 'Add Custom HTML', 'astra' ) . '</a>';
+			$custom_html = '<a href="' . esc_url( admin_url( 'customize.php?autofocus[control]=' . divino_THEME_SETTINGS . '[' . $option_name . ']' ) ) . '">' . esc_html__( 'Add Custom HTML', 'divino' ) . '</a>';
 		}
 
 		return $custom_html;
@@ -1058,11 +1058,11 @@ if ( ! function_exists( 'divino_get_small_footer_custom_text' ) ) {
 
 		if ( '' != $option ) {
 			$translatable_strings = array(
-				'footer-sml-section-1-credit' => _x( '%astra%', 'Footer small section 1 credit', 'astra' ),
-				'footer-sml-section-2-credit' => _x( '%astra%', 'Footer small section 2 credit', 'astra' ),
+				'footer-sml-section-1-credit' => _x( '%divino%', 'Footer small section 1 credit', 'divino' ),
+				'footer-sml-section-2-credit' => _x( '%divino%', 'Footer small section 2 credit', 'divino' ),
 			);
 
-			$translated_text = isset( $translatable_strings[ $option ] ) ? $translatable_strings[ $option ] : '%astra%';
+			$translated_text = isset( $translatable_strings[ $option ] ) ? $translatable_strings[ $option ] : '%divino%';
 
 			$output = divino_get_i18n_option( $option, $translated_text );
 			$output = str_replace( '[current_year]', date_i18n( 'Y' ), $output );
@@ -1071,7 +1071,7 @@ if ( ! function_exists( 'divino_get_small_footer_custom_text' ) ) {
 			$theme_author = apply_filters(
 				'divino_theme_author',
 				array(
-					'theme_name'       => 'Astra ' . esc_html__( 'WordPress Theme', 'astra' ),
+					'theme_name'       => 'divino ' . esc_html__( 'WordPress Theme', 'divino' ),
 					'theme_author_url' => divino_WEBSITE_BASE_URL,
 				)
 			);
@@ -1112,7 +1112,7 @@ if ( ! function_exists( 'divino_get_small_footer_menu' ) ) {
 		} else {
 			if ( is_user_logged_in() && current_user_can( 'edit_theme_options' ) ) {
 				?>
-					<a href="<?php echo esc_url( admin_url( '/nav-menus.php?action=locations' ) ); ?>"><?php esc_html_e( 'Assign Footer Menu', 'astra' ); ?></a>
+					<a href="<?php echo esc_url( admin_url( '/nav-menus.php?action=locations' ) ); ?>"><?php esc_html_e( 'Assign Footer Menu', 'divino' ); ?></a>
 				<?php
 			}
 		}
@@ -1304,7 +1304,7 @@ if ( ! function_exists( 'divino_primary_navigation_markup' ) ) {
 			// Menu Animation.
 			$menu_animation = divino_get_option( 'header-main-submenu-container-animation' );
 			if ( ! empty( $menu_animation ) ) {
-				$submenu_class .= ' astra-menu-animation-' . esc_attr( $menu_animation ) . ' ';
+				$submenu_class .= ' divino-menu-animation-' . esc_attr( $menu_animation ) . ' ';
 			}
 
 			/**
@@ -1332,7 +1332,7 @@ if ( ! function_exists( 'divino_primary_navigation_markup' ) ) {
 				array(
 					'id'         => 'primary-site-navigation',
 					'class'      => 'site-navigation ast-flex-grow-1 navigation-accessibility',
-					'aria-label' => esc_attr__( 'Site Navigation', 'astra' ),
+					'aria-label' => esc_attr__( 'Site Navigation', 'divino' ),
 				)
 			);
 			$items_wrap .= '>';
@@ -1368,7 +1368,7 @@ if ( ! function_exists( 'divino_primary_navigation_markup' ) ) {
 								array(
 									'id'         => 'primary-site-navigation',
 									'class'      => 'site-navigation ast-flex-grow-1 navigation-accessibility',
-									'aria-label' => esc_attr__( 'Site Navigation', 'astra' ),
+									'aria-label' => esc_attr__( 'Site Navigation', 'divino' ),
 								)
 							)
 						);
@@ -1696,25 +1696,25 @@ if ( ! function_exists( 'divino_comment_form_default_fields_markup' ) ) {
 		$fields['author'] = '<div class="ast-comment-formwrap ast-row">
 			<p class="comment-form-author ' . divino_attr( 'comment-form-grid-class' ) . '">
 				<label for="author" class="screen-reader-text">' . esc_html( $name_label ) . '</label>
-				<input id="author" name="author" type="text" 
-					value="' . esc_attr( $commenter['comment_author'] ) . '" 
-					placeholder="' . esc_attr( $name_label ) . '" 
+				<input id="author" name="author" type="text"
+					value="' . esc_attr( $commenter['comment_author'] ) . '"
+					placeholder="' . esc_attr( $name_label ) . '"
 					size="30"' . $aria_req . ' autocomplete="name" />
 			</p>';
 
 		$fields['email'] = '<p class="comment-form-email ' . divino_attr( 'comment-form-grid-class' ) . '">
 			<label for="email" class="screen-reader-text">' . esc_html( $email_label ) . '</label>
-			<input id="email" name="email" type="text" 
-				value="' . esc_attr( $commenter['comment_author_email'] ) . '" 
-				placeholder="' . esc_attr( $email_label ) . '" 
+			<input id="email" name="email" type="text"
+				value="' . esc_attr( $commenter['comment_author_email'] ) . '"
+				placeholder="' . esc_attr( $email_label ) . '"
 				size="30"' . $aria_req . ' autocomplete="email" />
 		</p>';
 
 		$fields['url'] = '<p class="comment-form-url ' . divino_attr( 'comment-form-grid-class' ) . '">
 			<label for="url" class="screen-reader-text">' . esc_html( $website_label ) . '</label>
-			<input id="url" name="url" type="text" 
-				value="' . esc_url( $commenter['comment_author_url'] ) . '" 
-				placeholder="' . esc_attr( $website_label ) . '" 
+			<input id="url" name="url" type="text"
+				value="' . esc_url( $commenter['comment_author_url'] ) . '"
+				placeholder="' . esc_attr( $website_label ) . '"
 				size="30" autocomplete="url" />
 		</p>
 		</div>';
@@ -1739,7 +1739,7 @@ if ( ! function_exists( 'divino_comment_form_default_markup' ) ) {
 	 */
 	function divino_comment_form_default_markup( $args ) {
 		/**
-		 * Filter to enabled Astra comment for all Post Types where the commnets are enabled.
+		 * Filter to enabled divino comment for all Post Types where the commnets are enabled.
 		 *
 		 * @since 1.5.0
 		 *
@@ -1810,7 +1810,7 @@ if ( ! function_exists( 'divino_get_sidebar' ) ) {
 			<div class="widget ast-no-widget-row">
 				<p class='no-widget-text'>
 					<a href='<?php echo esc_url( admin_url( 'widgets.php' ) ); ?>'>
-						<?php esc_html_e( 'Add Widget', 'astra' ); ?>
+						<?php esc_html_e( 'Add Widget', 'divino' ); ?>
 					</a>
 				</p>
 			</div>
@@ -1850,7 +1850,7 @@ if ( ! function_exists( 'divino_get_footer_widget' ) ) {
 				<?php } ?>
 						<p class='no-widget-text'>
 							<a href='<?php echo esc_url( admin_url( 'widgets.php' ) ); ?>'>
-								<?php esc_html_e( 'Click here to assign a widget for this area.', 'astra' ); ?>
+								<?php esc_html_e( 'Click here to assign a widget for this area.', 'divino' ); ?>
 							</a>
 						</p>
 				<?php if ( is_customize_preview() ) { ?>
@@ -1863,12 +1863,12 @@ if ( ! function_exists( 'divino_get_footer_widget' ) ) {
 }
 
 /**
- * Astra entry header class.
+ * divino entry header class.
  */
 if ( ! function_exists( 'divino_entry_header_class' ) ) {
 
 	/**
-	 * Astra entry header class
+	 * divino entry header class
 	 *
 	 * @param bool $echo output being echoed or not.
 	 *
@@ -1938,12 +1938,12 @@ if ( ! function_exists( 'divino_entry_header_class' ) ) {
 }
 
 /**
- * Astra get post thumbnail image.
+ * divino get post thumbnail image.
  */
 if ( ! function_exists( 'divino_get_post_thumbnail' ) ) {
 
 	/**
-	 * Astra get post thumbnail image
+	 * divino get post thumbnail image
 	 *
 	 * @since 1.0.15
 	 * @param string $before Markup before thumbnail image.
@@ -1996,7 +1996,7 @@ if ( ! function_exists( 'divino_get_post_thumbnail' ) ) {
 				);
 
 				if ( '' != $post_thumb ) {
-					$post_title = esc_html( get_the_title() ?: __( 'Untitled Post', 'astra' ) );
+					$post_title = esc_html( get_the_title() ?: __( 'Untitled Post', 'divino' ) );
 					$output    .= '<div class="post-thumb-img-content post-thumb">';
 					if ( ! $check_is_singular ) {
 						$output .= apply_filters(
@@ -2006,7 +2006,7 @@ if ( ! function_exists( 'divino_get_post_thumbnail' ) ) {
 								array(
 									'class'      => '',
 									'href'       => esc_url( get_permalink() ),
-									'aria-label' => esc_attr( sprintf( __( 'Read: %s', 'astra' ), esc_html( $post_title ) ) ),
+									'aria-label' => esc_attr( sprintf( __( 'Read: %s', 'divino' ), esc_html( $post_title ) ) ),
 								)
 							) . ' >'
 						);
@@ -2072,7 +2072,7 @@ if ( ! function_exists( 'divino_replace_header_attr' ) ) {
 
 			if ( 'svg' === $file_extension ) {
 				$existing_classes = isset( $attr['class'] ) ? $attr['class'] : '';
-				$attr['class']    = $existing_classes . ' astra-logo-svg';
+				$attr['class']    = $existing_classes . ' divino-logo-svg';
 			}
 			if ( 'gif' === $file_extension ) {
 				$attr['srcset'] = $attachment->guid;
@@ -2110,12 +2110,12 @@ if ( ! function_exists( 'divino_replace_header_attr' ) ) {
 add_filter( 'wp_get_attachment_image_attributes', 'divino_replace_header_attr', 10, 3 );
 
 /**
- * Astra Color Palletes.
+ * divino Color Palletes.
  */
 if ( ! function_exists( 'divino_color_palette' ) ) {
 
 	/**
-	 * Astra Color Palletes.
+	 * divino Color Palletes.
 	 *
 	 * @return array Color Palletes.
 	 */
@@ -2145,7 +2145,7 @@ if ( ! function_exists( 'divino_get_theme_name' ) ) {
 	 */
 	function divino_get_theme_name() {
 
-		$theme_name = 'Astra';
+		$theme_name = 'divino';
 
 		return apply_filters( 'divino_theme_name', $theme_name );
 	}
@@ -2160,14 +2160,14 @@ if ( ! function_exists( 'divino_get_addon_name' ) ) {
 	 */
 	function divino_get_addon_name() {
 
-		$pro_name = 'Astra Pro';
+		$pro_name = 'divino Pro';
 		// If addon is not updated & White Label added for Addon then show the updated addon name.
 		if ( class_exists( 'divino_Ext_White_Label_Markup' ) ) {
 
 			$plugin_data = divino_Ext_White_Label_Markup::$branding;
 
-			if ( '' != $plugin_data['astra-pro']['name'] ) {
-				$pro_name = $plugin_data['astra-pro']['name'];
+			if ( '' != $plugin_data['divino-pro']['name'] ) {
+				$pro_name = $plugin_data['divino-pro']['name'];
 			}
 		}
 

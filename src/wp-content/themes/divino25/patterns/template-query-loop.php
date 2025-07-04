@@ -1,3 +1,4 @@
+<!-- template-query-loop.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: List of posts, 1 column

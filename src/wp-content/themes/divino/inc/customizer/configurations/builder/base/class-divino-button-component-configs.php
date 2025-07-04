@@ -1,9 +1,9 @@
 <?php
 /**
- * Astra Theme Customizer Configuration Builder.
+ * divino Theme Customizer Configuration Builder.
  *
- * @package     astra-builder
- * @link        https://wpastra.com/
+ * @package     divino-builder
+ * @link        https://wpdivino.com/
  * @since       3.0.0
  */
 
@@ -26,7 +26,7 @@ class divino_Button_Component_Configs {
 	 * @param string $section Section.
 	 *
 	 * @since 3.0.0
-	 * @return array $configurations Astra Customizer Configurations with updated configurations.
+	 * @return array $configurations divino Customizer Configurations with updated configurations.
 	 */
 	public static function register_configuration( $configurations, $builder_type = 'header', $section = 'section-hb-button-' ) {
 
@@ -61,7 +61,7 @@ class divino_Button_Component_Configs {
 					'type'        => 'section',
 					'priority'    => 50,
 					/* translators: %s Index */
-					'title'       => 1 === $number_of_button ? __( 'Button', 'astra' ) : sprintf( __( 'Button %s', 'astra' ), $index ),
+					'title'       => 1 === $number_of_button ? __( 'Button', 'divino' ) : sprintf( __( 'Button %s', 'divino' ), $index ),
 					'panel'       => 'panel-' . $builder_type . '-builder-group',
 					'clone_index' => $index,
 					'clone_type'  => $builder_type . '-button',
@@ -90,7 +90,7 @@ class divino_Button_Component_Configs {
 					'control'   => 'text',
 					'section'   => $_section,
 					'priority'  => 20,
-					'title'     => __( 'Text', 'astra' ),
+					'title'     => __( 'Text', 'divino' ),
 					'transport' => 'postMessage',
 					'partial'   => array(
 						'selector'            => '.ast-' . $builder_type . '-button-' . $index,
@@ -112,7 +112,7 @@ class divino_Button_Component_Configs {
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_link' ),
 					'section'           => $_section,
 					'priority'          => 30,
-					'title'             => __( 'Link', 'astra' ),
+					'title'             => __( 'Link', 'divino' ),
 					'transport'         => 'postMessage',
 					'partial'           => array(
 						'selector'            => '.ast-' . $builder_type . '-button-' . $index,
@@ -131,7 +131,7 @@ class divino_Button_Component_Configs {
 					'default'    => divino_get_option( $builder_type . '-' . $_prefix . '-color-group' ),
 					'type'       => 'control',
 					'control'    => 'ast-color-group',
-					'title'      => __( 'Text Color', 'astra' ),
+					'title'      => __( 'Text Color', 'divino' ),
 					'section'    => $_section,
 					'transport'  => 'postMessage',
 					'priority'   => 70,
@@ -144,7 +144,7 @@ class divino_Button_Component_Configs {
 					'default'    => divino_get_option( $builder_type . '-' . $_prefix . '-color-group' ),
 					'type'       => 'control',
 					'control'    => 'ast-color-group',
-					'title'      => __( 'Background Color', 'astra' ),
+					'title'      => __( 'Background Color', 'divino' ),
 					'section'    => $_section,
 					'transport'  => 'postMessage',
 					'priority'   => 70,
@@ -162,13 +162,13 @@ class divino_Button_Component_Configs {
 					'type'       => 'sub-control',
 					'parent'     => divino_THEME_SETTINGS . '[' . $builder_type . '-' . $_prefix . '-text-color-group]',
 					'section'    => $_section,
-					'tab'        => __( 'Normal', 'astra' ),
+					'tab'        => __( 'Normal', 'divino' ),
 					'control'    => 'ast-responsive-color',
 					'responsive' => true,
 					'rgba'       => true,
 					'priority'   => 9,
 					'context'    => divino_Builder_Helper::$design_tab,
-					'title'      => __( 'Normal', 'astra' ),
+					'title'      => __( 'Normal', 'divino' ),
 				),
 
 				/**
@@ -181,13 +181,13 @@ class divino_Button_Component_Configs {
 					'type'       => 'sub-control',
 					'parent'     => divino_THEME_SETTINGS . '[' . $builder_type . '-' . $_prefix . '-text-color-group]',
 					'section'    => $_section,
-					'tab'        => __( 'Hover', 'astra' ),
+					'tab'        => __( 'Hover', 'divino' ),
 					'control'    => 'ast-responsive-color',
 					'responsive' => true,
 					'rgba'       => true,
 					'priority'   => 9,
 					'context'    => divino_Builder_Helper::$design_tab,
-					'title'      => __( 'Hover', 'astra' ),
+					'title'      => __( 'Hover', 'divino' ),
 				),
 
 				/**
@@ -200,13 +200,13 @@ class divino_Button_Component_Configs {
 					'type'       => 'sub-control',
 					'parent'     => divino_THEME_SETTINGS . '[' . $builder_type . '-' . $_prefix . '-background-color-group]',
 					'section'    => $_section,
-					'tab'        => __( 'Normal', 'astra' ),
+					'tab'        => __( 'Normal', 'divino' ),
 					'control'    => 'ast-responsive-color',
 					'responsive' => true,
 					'rgba'       => true,
 					'priority'   => 10,
 					'context'    => divino_Builder_Helper::$design_tab,
-					'title'      => __( 'Normal', 'astra' ),
+					'title'      => __( 'Normal', 'divino' ),
 				),
 
 				/**
@@ -219,20 +219,20 @@ class divino_Button_Component_Configs {
 					'type'       => 'sub-control',
 					'parent'     => divino_THEME_SETTINGS . '[' . $builder_type . '-' . $_prefix . '-background-color-group]',
 					'section'    => $_section,
-					'tab'        => __( 'Hover', 'astra' ),
+					'tab'        => __( 'Hover', 'divino' ),
 					'control'    => 'ast-responsive-color',
 					'responsive' => true,
 					'rgba'       => true,
 					'priority'   => 10,
 					'context'    => divino_Builder_Helper::$design_tab,
-					'title'      => __( 'Hover', 'astra' ),
+					'title'      => __( 'Hover', 'divino' ),
 				),
 
 				array(
 					'name'       => divino_THEME_SETTINGS . '[' . $builder_type . '-' . $_prefix . '-builder-button-border-colors-group]',
 					'type'       => 'control',
 					'control'    => 'ast-color-group',
-					'title'      => __( 'Border Color', 'astra' ),
+					'title'      => __( 'Border Color', 'divino' ),
 					'section'    => $_section,
 					'priority'   => 70,
 					'transport'  => 'postMessage',
@@ -256,7 +256,7 @@ class divino_Button_Component_Configs {
 					'rgba'       => true,
 					'priority'   => 70,
 					'context'    => divino_Builder_Helper::$design_tab,
-					'title'      => __( 'Normal', 'astra' ),
+					'title'      => __( 'Normal', 'divino' ),
 				),
 
 				/**
@@ -274,7 +274,7 @@ class divino_Button_Component_Configs {
 					'rgba'       => true,
 					'priority'   => 70,
 					'context'    => divino_Builder_Helper::$design_tab,
-					'title'      => __( 'Hover', 'astra' ),
+					'title'      => __( 'Hover', 'divino' ),
 				),
 
 				/**
@@ -289,13 +289,13 @@ class divino_Button_Component_Configs {
 					'transport'      => 'postMessage',
 					'linked_choices' => true,
 					'priority'       => 99,
-					'title'          => __( 'Border Width', 'astra' ),
+					'title'          => __( 'Border Width', 'divino' ),
 					'context'        => divino_Builder_Helper::$design_tab,
 					'choices'        => array(
-						'top'    => __( 'Top', 'astra' ),
-						'right'  => __( 'Right', 'astra' ),
-						'bottom' => __( 'Bottom', 'astra' ),
-						'left'   => __( 'Left', 'astra' ),
+						'top'    => __( 'Top', 'divino' ),
+						'right'  => __( 'Right', 'divino' ),
+						'bottom' => __( 'Bottom', 'divino' ),
+						'left'   => __( 'Left', 'divino' ),
 					),
 					'divider'        => array( 'ast_class' => 'ast-top-section-divider' ),
 				),
@@ -310,15 +310,15 @@ class divino_Button_Component_Configs {
 					'control'           => 'ast-responsive-spacing',
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 					'section'           => $_section,
-					'title'             => __( 'Border Radius', 'astra' ),
+					'title'             => __( 'Border Radius', 'divino' ),
 					'linked_choices'    => true,
 					'transport'         => 'postMessage',
 					'unit_choices'      => array( 'px', 'em', '%' ),
 					'choices'           => array(
-						'top'    => __( 'Top', 'astra' ),
-						'right'  => __( 'Right', 'astra' ),
-						'bottom' => __( 'Bottom', 'astra' ),
-						'left'   => __( 'Left', 'astra' ),
+						'top'    => __( 'Top', 'divino' ),
+						'right'  => __( 'Right', 'divino' ),
+						'bottom' => __( 'Bottom', 'divino' ),
+						'left'   => __( 'Left', 'divino' ),
 					),
 					'priority'          => 99,
 					'context'           => divino_Builder_Helper::$design_tab,
@@ -335,7 +335,7 @@ class divino_Button_Component_Configs {
 					'type'      => 'control',
 					'control'   => 'ast-settings-group',
 					'is_font'   => true,
-					'title'     => __( 'Font', 'astra' ),
+					'title'     => __( 'Font', 'divino' ),
 					'section'   => $_section,
 					'transport' => 'postMessage',
 					'context'   => divino_Builder_Helper::$design_tab,
@@ -353,7 +353,7 @@ class divino_Button_Component_Configs {
 					'section'   => $_section,
 					'control'   => 'ast-font',
 					'font_type' => 'ast-font-family',
-					'title'     => __( 'Font Family', 'astra' ),
+					'title'     => __( 'Font Family', 'divino' ),
 					'context'   => divino_Builder_Helper::$general_tab,
 					'connect'   => $builder_type . '-' . $_prefix . '-font-weight',
 					'priority'  => 1,
@@ -371,7 +371,7 @@ class divino_Button_Component_Configs {
 					'section'           => $_section,
 					'control'           => 'ast-font',
 					'font_type'         => 'ast-font-weight',
-					'title'             => __( 'Font Weight', 'astra' ),
+					'title'             => __( 'Font Weight', 'divino' ),
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
 					'connect'           => $builder_type . '-' . $_prefix . '-font-family',
 					'priority'          => 2,
@@ -388,7 +388,7 @@ class divino_Button_Component_Configs {
 					'default'           => divino_get_option( $builder_type . '-' . $_prefix . '-font-size' ),
 					'parent'            => divino_THEME_SETTINGS . '[' . $builder_type . '-' . $_prefix . '-text-typography]',
 					'transport'         => 'postMessage',
-					'title'             => __( 'Font Size', 'astra' ),
+					'title'             => __( 'Font Size', 'divino' ),
 					'type'              => 'sub-control',
 					'section'           => $_section,
 					'control'           => 'ast-responsive-slider',
@@ -432,7 +432,7 @@ class divino_Button_Component_Configs {
 					'priority' => 5,
 					'default'  => divino_get_option( 'breadcrumb-font-extras' ),
 					'context'  => divino_Builder_Helper::$general_tab,
-					'title'    => __( 'Font Extras', 'astra' ),
+					'title'    => __( 'Font Extras', 'divino' ),
 				),
 			);
 
@@ -446,7 +446,7 @@ class divino_Button_Component_Configs {
 						'control'   => 'ast-selector',
 						'section'   => $_section,
 						'priority'  => 35,
-						'title'     => __( 'Alignment', 'astra' ),
+						'title'     => __( 'Alignment', 'divino' ),
 						'context'   => divino_Builder_Helper::$general_tab,
 						'transport' => 'postMessage',
 						'choices'   => array(

@@ -1,3 +1,4 @@
+<!-- cta-book-locations.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Call to action with locations

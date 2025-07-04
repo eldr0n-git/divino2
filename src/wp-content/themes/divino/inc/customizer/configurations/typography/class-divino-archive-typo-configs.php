@@ -1,10 +1,10 @@
 <?php
 /**
- * Styling Options for Astra Theme.
+ * Styling Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.15
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.15
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,22 +20,22 @@ if ( ! class_exists( 'divino_Archive_Typo_Configs' ) ) {
 		/**
 		 * Register Archive Typography Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
 			$_configs = array();
 
-			// Learn More link if Astra Pro is not activated.
+			// Learn More link if divino Pro is not activated.
 			if ( divino_showcase_upgrade_notices() ) {
 
 				$_configs = array(
 
 					/**
-					 * Option: Astra Pro items for blog pro.
+					 * Option: divino Pro items for blog pro.
 					 */
 					array(
 						'name'     => divino_THEME_SETTINGS . '[ast-blog-pro-items]',
@@ -44,41 +44,41 @@ if ( ! class_exists( 'divino_Archive_Typo_Configs' ) ) {
 						'campaign' => 'blog-archive',
 						'choices'  => array(
 							'one'    => array(
-								'title' => __( 'Posts Filter', 'astra' ),
+								'title' => __( 'Posts Filter', 'divino' ),
 							),
 							'eleven' => array(
-								'title' => __( 'Posts Reveal Effect', 'astra' ),
+								'title' => __( 'Posts Reveal Effect', 'divino' ),
 							),
 							'two'    => array(
-								'title' => __( 'Grid, Masonry layout', 'astra' ),
+								'title' => __( 'Grid, Masonry layout', 'divino' ),
 							),
 							'twelve' => array(
-								'title' => __( 'Extended Meta Options', 'astra' ),
+								'title' => __( 'Extended Meta Options', 'divino' ),
 							),
 							'three'  => array(
-								'title' => __( 'Custom image size', 'astra' ),
+								'title' => __( 'Custom image size', 'divino' ),
 							),
 							'four'   => array(
-								'title' => __( 'Archive pagination', 'astra' ),
+								'title' => __( 'Archive pagination', 'divino' ),
 							),
 							'six'    => array(
-								'title' => __( 'Extended typography', 'astra' ),
+								'title' => __( 'Extended typography', 'divino' ),
 							),
 							'seven'  => array(
-								'title' => __( 'Extended spacing', 'astra' ),
+								'title' => __( 'Extended spacing', 'divino' ),
 							),
 							'eight'  => array(
-								'title' => __( 'Archive read time', 'astra' ),
+								'title' => __( 'Archive read time', 'divino' ),
 							),
 							'nine'   => array(
-								'title' => __( 'Archive excerpt', 'astra' ),
+								'title' => __( 'Archive excerpt', 'divino' ),
 							),
 						),
 						'section'  => 'section-blog',
 						'default'  => '',
 						'priority' => 999,
 						'context'  => array(),
-						'title'    => __( 'Take your blog to the next level with powerful design features.', 'astra' ),
+						'title'    => __( 'Take your blog to the next level with powerful design features.', 'divino' ),
 						'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),
 					),
 				);
@@ -96,7 +96,7 @@ if ( ! class_exists( 'divino_Archive_Typo_Configs' ) ) {
 						'section'           => 'section-blog',
 						'type'              => 'control',
 						'transport'         => 'postMessage',
-						'title'             => __( 'Post Title Size', 'astra' ),
+						'title'             => __( 'Post Title Size', 'divino' ),
 						'priority'          => 140,
 						'default'           => divino_get_option( 'font-size-page-title' ),
 						'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
@@ -132,7 +132,7 @@ if ( ! class_exists( 'divino_Archive_Typo_Configs' ) ) {
 						'section'           => 'section-blog',
 						'type'              => 'control',
 						'transport'         => 'postMessage',
-						'title'             => __( 'Meta Font Size', 'astra' ),
+						'title'             => __( 'Meta Font Size', 'divino' ),
 						'is_font'           => true,
 						'priority'          => 140,
 						'default'           => divino_get_option( 'font-size-post-meta' ),
@@ -169,7 +169,7 @@ if ( ! class_exists( 'divino_Archive_Typo_Configs' ) ) {
 						'section'           => 'section-blog',
 						'type'              => 'control',
 						'transport'         => 'postMessage',
-						'title'             => __( 'Taxonomy Font', 'astra' ),
+						'title'             => __( 'Taxonomy Font', 'divino' ),
 						'is_font'           => true,
 						'priority'          => 140,
 						'default'           => divino_get_option( 'font-size-post-tax' ),

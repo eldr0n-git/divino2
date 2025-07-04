@@ -1,3 +1,4 @@
+<!-- testimonials-2-col.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: 2 columns with avatar

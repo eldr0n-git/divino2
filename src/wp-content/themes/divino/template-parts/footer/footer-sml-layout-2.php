@@ -2,9 +2,9 @@
 /**
  * Template for Small Footer Layout 2
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 $divino_footer_section_1 = divino_get_small_footer( 'footer-sml-section-1' );

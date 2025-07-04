@@ -2,7 +2,7 @@
 /**
  * Post Navigation - Dynamic CSS
  *
- * @package Astra
+ * @package divino
  * @since 4.6.0
  */
 
@@ -15,7 +15,7 @@ add_filter( 'divino_dynamic_theme_css', 'divino_navigation_css', 11 );
 /**
  * Post Navigation - Dynamic CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
+ * @param  string $dynamic_css          divino Dynamic CSS.
  * @return String Generated dynamic CSS for Post Navigation.
  *
  * @since 4.6.0

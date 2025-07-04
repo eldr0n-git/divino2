@@ -1,3 +1,4 @@
+<!-- template-home-news-blog.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: News blog home

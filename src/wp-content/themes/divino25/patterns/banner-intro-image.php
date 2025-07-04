@@ -1,3 +1,4 @@
+<!-- banner-intro-image.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Short heading and paragraph and image on the left

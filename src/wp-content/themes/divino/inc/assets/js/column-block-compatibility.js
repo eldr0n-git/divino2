@@ -2,7 +2,7 @@ const updatingBlock = ['core/group'];
 
 wp.hooks.addFilter(
 	'blocks.registerBlockType',
-	'astra/meta/groupLayoutSettings',
+	'divino/meta/groupLayoutSettings',
 	(settings, name) => {
 		if (!updatingBlock.includes(name)) {
 			return settings;

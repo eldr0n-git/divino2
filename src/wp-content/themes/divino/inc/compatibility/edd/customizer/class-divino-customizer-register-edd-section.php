@@ -2,9 +2,9 @@
 /**
  * Register customizer panels & sections for Easy Digital Downloads.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.5.5
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.5.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,10 +20,10 @@ if ( ! class_exists( 'divino_Customizer_Register_Edd_Section' ) ) {
 		/**
 		 * Register Panels and Sections for Customizer.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.5.5
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -34,13 +34,13 @@ if ( ! class_exists( 'divino_Customizer_Register_Edd_Section' ) ) {
 				array(
 					'name'     => 'section-edd-group',
 					'type'     => 'section',
-					'title'    => __( 'Easy Digital Downloads', 'astra' ),
+					'title'    => __( 'Easy Digital Downloads', 'divino' ),
 					'priority' => 60,
 				),
 
 				array(
 					'name'     => 'section-edd-general',
-					'title'    => __( 'General', 'astra' ),
+					'title'    => __( 'General', 'divino' ),
 					'type'     => 'section',
 					'section'  => 'section-edd-group',
 					'priority' => 10,
@@ -48,7 +48,7 @@ if ( ! class_exists( 'divino_Customizer_Register_Edd_Section' ) ) {
 
 				array(
 					'name'     => 'section-edd-archive',
-					'title'    => __( 'Product Archive', 'astra' ),
+					'title'    => __( 'Product Archive', 'divino' ),
 					'type'     => 'section',
 					'section'  => 'section-edd-group',
 					'priority' => 10,
@@ -57,7 +57,7 @@ if ( ! class_exists( 'divino_Customizer_Register_Edd_Section' ) ) {
 				array(
 					'name'     => 'section-edd-single',
 					'type'     => 'section',
-					'title'    => __( 'Single Product', 'astra' ),
+					'title'    => __( 'Single Product', 'divino' ),
 					'section'  => 'section-edd-group',
 					'priority' => 15,
 				),

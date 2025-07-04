@@ -2,7 +2,7 @@
 /**
  * Post Strctures Extension
  *
- * @package Astra
+ * @package divino
  * @since 4.0.0
  */
 
@@ -25,8 +25,8 @@ class divino_Post_Structures {
 	public function __construct() {
 
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once divino_THEME_POST_STRUCTURE_DIR . 'class-astra-posts-structure-loader.php';
-		require_once divino_THEME_POST_STRUCTURE_DIR . 'class-astra-posts-structure-markup.php';
+		require_once divino_THEME_POST_STRUCTURE_DIR . 'class-divino-posts-structure-loader.php';
+		require_once divino_THEME_POST_STRUCTURE_DIR . 'class-divino-posts-structure-markup.php';
 
 		// Include front end files.
 		if ( ! is_admin() ) {

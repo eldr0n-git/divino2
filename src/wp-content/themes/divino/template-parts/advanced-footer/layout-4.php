@@ -2,8 +2,8 @@
 /**
  * Footer Layout 4
  *
- * @package Astra
- * @since   Astra 1.0.12
+ * @package divino
+ * @since   divino 1.0.12
  */
 
 /**

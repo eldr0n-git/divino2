@@ -4,14 +4,14 @@
  * here. Your javascript should grab settings from customizer controls, and
  * then make any necessary changes to the page using jQuery.
  *
- * @package Astra
+ * @package divino
  * @since 3.0.0
  */
 
 ( function( $ ) {
 
-	var tablet_break_point    = astraBuilderPreview.tablet_break_point || 768,
-		mobile_break_point    = astraBuilderPreview.mobile_break_point || 544;
+	var tablet_break_point    = divinoBuilderPreview.tablet_break_point || 768,
+		mobile_break_point    = divinoBuilderPreview.mobile_break_point || 544;
 
 	var selector = '.ast-header-search';
     var section = 'section-header-search';
@@ -19,36 +19,36 @@
 	// Icon Color.
 	divino_color_responsive_css(
 		'header-search-icon-color',
-		'astra-settings[header-search-icon-color]',
+		'divino-settings[header-search-icon-color]',
 		'color',
-		selector + ' .astra-search-icon, ' + selector + ' .search-field::placeholder,' + selector + ' .ast-icon'
+		selector + ' .divino-search-icon, ' + selector + ' .search-field::placeholder,' + selector + ' .ast-icon'
 	);
 
 	// Icon Size.
 	divino_css(
-		'astra-settings[header-search-icon-space]',
+		'divino-settings[header-search-icon-space]',
 		'font-size',
-		selector + ' .astra-search-icon',
+		selector + ' .divino-search-icon',
 		'px'
 	);
 
 	// Icon Size.
-	wp.customize( 'astra-settings[header-search-icon-space]', function( value ) {
+	wp.customize( 'divino-settings[header-search-icon-space]', function( value ) {
 		value.bind( function( size ) {
 			if( size.desktop != '' || size.tablet != '' || size.mobile != '' ) {
 				var dynamicStyle = '';
-				dynamicStyle += selector + ' .astra-search-icon {';
+				dynamicStyle += selector + ' .divino-search-icon {';
 				dynamicStyle += 'font-size: ' + size.desktop + 'px' + ';';
 				dynamicStyle += '} ';
 
 				dynamicStyle +=  '@media (max-width: ' + tablet_break_point + 'px) {';
-				dynamicStyle += selector + ' .astra-search-icon {';
+				dynamicStyle += selector + ' .divino-search-icon {';
 				dynamicStyle += 'font-size: ' + size.tablet + 'px' + ';';
 				dynamicStyle += '} ';
 				dynamicStyle += '} ';
 
 				dynamicStyle +=  '@media (max-width: ' + mobile_break_point + 'px) {';
-				dynamicStyle += selector + ' .astra-search-icon {';
+				dynamicStyle += selector + ' .divino-search-icon {';
 				dynamicStyle += 'font-size: ' + size.mobile + 'px' + ';';
 				dynamicStyle += '} ';
 				dynamicStyle += '} ';
@@ -57,7 +57,7 @@
 		} );
 	} );
 
-	wp.customize( 'astra-settings[header-search-width]', function( setting ) {
+	wp.customize( 'divino-settings[header-search-width]', function( setting ) {
 		setting.bind( function( width ) {
 		if ( width['desktop'] != '' || width['tablet'] != '' || width['mobile'] != '' ) {
 				var dynamicStyle = '.ast-header-search form.search-form .search-field, .ast-header-search .ast-dropdown-active.ast-search-menu-icon.slide-search input.search-field {';
@@ -71,13 +71,13 @@
 					dynamicStyle += '.ast-header-search form.search-form .search-field, .ast-header-search .ast-dropdown-active.ast-search-menu-icon.slide-search input.search-field, .ast-mobile-header-content .ast-search-menu-icon .search-form {';
 					dynamicStyle += 'width:'  + width['mobile'] + 'px;';
 					dynamicStyle += '} }';
-				divino_add_dynamic_css( 'astra-settings[header-search-width]', dynamicStyle );
+				divino_add_dynamic_css( 'divino-settings[header-search-width]', dynamicStyle );
 			}
 		});
 	});
 
 	// Margin.
-    wp.customize( 'astra-settings[section-header-search-margin]', function( value ) {
+    wp.customize( 'divino-settings[section-header-search-margin]', function( value ) {
         value.bind( function( margin ) {
             if(
                 margin.desktop.bottom != '' || margin.desktop.top != '' || margin.desktop.left != '' || margin.desktop.right != '' ||

@@ -1,10 +1,10 @@
 <?php
 /**
- * Deprecated Hooks of Astra Theme.
+ * Deprecated Hooks of divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.23
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.23
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! function_exists( 'divino_do_action_deprecated' ) ) {
 	/**
-	 * Astra Filter Deprecated
+	 * divino Filter Deprecated
 	 *
 	 * @since 1.1.1
 	 * @param string $tag         The name of the filter hook.

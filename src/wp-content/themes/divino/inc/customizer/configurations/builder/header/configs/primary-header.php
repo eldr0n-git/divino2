@@ -2,8 +2,8 @@
 /**
  * Primary Header Configuration.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       4.5.2
  */
 
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register Primary header builder Customizer Configurations.
  *
  * @since 4.5.2
- * @return array Astra Customizer Configurations with updated configurations.
+ * @return array divino Customizer Configurations with updated configurations.
  */
 function divino_primary_header_configuration() {
 	$_section = 'section-primary-header-builder';
@@ -31,14 +31,14 @@ function divino_primary_header_configuration() {
 			'name'     => 'panel-header-builder-group',
 			'type'     => 'panel',
 			'priority' => 20,
-			'title'    => __( 'Header', 'astra' ),
+			'title'    => __( 'Header', 'divino' ),
 		),
 
 		// Section: Primary Header.
 		array(
 			'name'     => $_section,
 			'type'     => 'section',
-			'title'    => __( 'Primary Header', 'astra' ),
+			'title'    => __( 'Primary Header', 'divino' ),
 			'panel'    => 'panel-header-builder-group',
 			'priority' => 20,
 		),
@@ -62,7 +62,7 @@ function divino_primary_header_configuration() {
 			'transport'         => 'postMessage',
 			'default'           => divino_get_option( 'hb-header-height' ),
 			'priority'          => 3,
-			'title'             => __( 'Height', 'astra' ),
+			'title'             => __( 'Height', 'divino' ),
 			'type'              => 'control',
 			'control'           => 'ast-responsive-slider',
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
@@ -89,8 +89,8 @@ function divino_primary_header_configuration() {
 				'name' => 'hb-header-bg-obj-responsive',
 			),
 			'default'     => divino_get_option( 'hb-header-bg-obj-responsive' ),
-			'title'       => __( 'Background', 'astra' ),
-			'description' => __( 'It would not be effective if transparent header is enabled.', 'astra' ),
+			'title'       => __( 'Background', 'divino' ),
+			'description' => __( 'It would not be effective if transparent header is enabled.', 'divino' ),
 			'divider'     => array( 'ast_class' => 'ast-section-spacing' ),
 		),
 
@@ -104,7 +104,7 @@ function divino_primary_header_configuration() {
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 			'section'           => $_section,
 			'priority'          => 5,
-			'title'             => __( 'Bottom Border Color', 'astra' ),
+			'title'             => __( 'Bottom Border Color', 'divino' ),
 			'context'           => array(
 				divino_Builder_Helper::$design_tab_config,
 				array(
@@ -124,7 +124,7 @@ function divino_primary_header_configuration() {
 			'control'     => 'ast-slider',
 			'section'     => $_section,
 			'priority'    => 5,
-			'title'       => __( 'Bottom Border Size', 'astra' ),
+			'title'       => __( 'Bottom Border Size', 'divino' ),
 			'suffix'      => 'px',
 			'input_attrs' => array(
 				'min'  => 0,

@@ -1,9 +1,9 @@
 <?php
 /**
- * Astra Button Component Dynamic CSS.
+ * divino Button Component Dynamic CSS.
  *
- * @package     astra-builder
- * @link        https://wpastra.com/
+ * @package     divino-builder
+ * @link        https://wpdivino.com/
  * @since       3.0.0
  */
 

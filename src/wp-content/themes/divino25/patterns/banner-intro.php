@@ -1,3 +1,4 @@
+<!-- banner-intro.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Intro with left-aligned description

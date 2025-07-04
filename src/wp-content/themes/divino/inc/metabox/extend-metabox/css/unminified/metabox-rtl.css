@@ -464,7 +464,7 @@ a.ast-pro-upgrade-link {
     min-height: 30px;
   }
 
-  .customize-control-ast-responsive-background .customize-control-content .astra-color-picker-wrap {
+  .customize-control-ast-responsive-background .customize-control-content .divino-color-picker-wrap {
     width: 300px;
   }
 
@@ -488,7 +488,7 @@ a.ast-pro-upgrade-link {
     height: 32px;
   }
 
-  .astra-popover-tabs .components-button.upload-button.button-add-media {
+  .divino-popover-tabs .components-button.upload-button.button-add-media {
     width: 100%;
     position: relative;
     text-align: center;
@@ -500,41 +500,41 @@ a.ast-pro-upgrade-link {
     line-height: 1.6;
   }
 
-  .astra-popover-tabs .components-button.upload-button.button-add-media:hover {
+  .divino-popover-tabs .components-button.upload-button.button-add-media:hover {
     color: #555d66;
     box-sizing: border-box;
     box-shadow: unset;
     border-color: #0185ba;
   }
 
-  .astra-popover-tabs [ID*="-gradient-view"] {
+  .divino-popover-tabs [ID*="-gradient-view"] {
     padding: 0 15px 15px 15px;
   }
 
-  .astra-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear {
+  .divino-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear {
     flex: unset;
     box-shadow: unset;
     width: auto;
     padding: 0 5px;
   }
 
-  .astra-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear:hover {
+  .divino-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear:hover {
     box-shadow: unset;
   }
 
-  .astra-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear:active {
+  .divino-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear:active {
     box-shadow: unset;
   }
 
-  .astra-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear:focus {
+  .divino-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear:focus {
     box-shadow: unset;
   }
 
-  .astra-popover-tabs #tab-panel-0-image-view > div {
+  .divino-popover-tabs #tab-panel-0-image-view > div {
     text-align: center;
   }
 
-  .astra-popover-tabs #tab-panel-0-image-view > div .media-position-setting {
+  .divino-popover-tabs #tab-panel-0-image-view > div .media-position-setting {
     text-align: right;
   }
 
@@ -546,52 +546,52 @@ a.ast-pro-upgrade-link {
       margin-bottom: 5px;
   }
 
-  .astra-popover-color .components-circular-option-picker {
+  .divino-popover-color .components-circular-option-picker {
     position: relative;
     margin-top: 0;
   }
 
-  .astra-popover-color .components-circular-option-picker .components-circular-option-picker__custom-clear-wrapper {
+  .divino-popover-color .components-circular-option-picker .components-circular-option-picker__custom-clear-wrapper {
     margin-top: 10px;
     justify-content: flex-start;
   }
 
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    .astra-popover-color .components-circular-option-picker .components-circular-option-picker__custom-clear-wrapper {
+    .divino-popover-color .components-circular-option-picker .components-circular-option-picker__custom-clear-wrapper {
       width: 50px;
     }
   }
 
-  .astra-popover-color [ID*="-color-view"] .components-circular-option-picker {
+  .divino-popover-color [ID*="-color-view"] .components-circular-option-picker {
     width: auto;
   }
 
-  .astra-popover-color .ast-color-palette {
+  .divino-popover-color .ast-color-palette {
     width: auto;
     padding: 16px 14px 0px 0px;
   }
 
-  .astra-popover-color .ast-color-palette .components-circular-option-picker__option {
+  .divino-popover-color .ast-color-palette .components-circular-option-picker__option {
     width: 100%;
     height: 100%;
     border-radius: 100%;
   }
 
-  .astra-popover-color .ast-color-palette .components-button.is-pressed:focus:not(:disabled) {
+  .divino-popover-color .ast-color-palette .components-button.is-pressed:focus:not(:disabled) {
       box-shadow: none;
       border: none;
   }
 
-  .astra-popover-color .components-custom-gradient-picker {
+  .divino-popover-color .components-custom-gradient-picker {
     margin-top: 0;
   }
 
-  .astra-popover-color .components-custom-gradient-picker__gradient-bar {
+  .divino-popover-color .components-custom-gradient-picker__gradient-bar {
     box-sizing: border-box;
     opacity: 1;
   }
 
-  .astra-popover-color .components-custom-gradient-picker__type-picker .components-base-control__label {
+  .divino-popover-color .components-custom-gradient-picker__type-picker .components-base-control__label {
     display: block;
   }
 
@@ -611,7 +611,7 @@ a.ast-pro-upgrade-link {
     display: none;
   }
 
-  .media-position-setting .astra-popover-tabs [ID*="-gradient-view"] {
+  .media-position-setting .divino-popover-tabs [ID*="-gradient-view"] {
       padding: 0 0 15px 0;
   }
 
@@ -626,7 +626,7 @@ a.ast-pro-upgrade-link {
     top: 4px;
   }
 
-  .ast-field-settings-modal .customize-control-content .astra-color-picker-wrap {
+  .ast-field-settings-modal .customize-control-content .divino-color-picker-wrap {
     margin-right: 0;
     margin-top: 0;
   }
@@ -667,12 +667,12 @@ a.ast-pro-upgrade-link {
     margin-top: 5px;
   }
 
-  .customize-control-ast-responsive-color .customize-control-content .ast-color-picker-alpha .astra-color-picker-wrap .components-color-picker__saturation-black {
+  .customize-control-ast-responsive-color .customize-control-content .ast-color-picker-alpha .divino-color-picker-wrap .components-color-picker__saturation-black {
     border-radius: 4px 4px 0 0;
   }
 
-  .customize-control-ast-responsive-color .customize-control-content .ast-color-picker-alpha .astra-color-picker-wrap .components-color-picker__saturation-color,
-  .customize-control-ast-responsive-color .customize-control-content .ast-color-picker-alpha .astra-color-picker-wrap .components-color-picker__saturation-white {
+  .customize-control-ast-responsive-color .customize-control-content .ast-color-picker-alpha .divino-color-picker-wrap .components-color-picker__saturation-color,
+  .customize-control-ast-responsive-color .customize-control-content .ast-color-picker-alpha .divino-color-picker-wrap .components-color-picker__saturation-white {
     border-radius: 3px;
   }
 
@@ -690,7 +690,7 @@ a.ast-pro-upgrade-link {
     top: -3px;
   }
 
-  .ast-field-settings-modal .customize-control-ast-responsive-color .customize-control-content .astra-color-picker-wrap {
+  .ast-field-settings-modal .customize-control-ast-responsive-color .customize-control-content .divino-color-picker-wrap {
     margin-right: 0px;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -733,20 +733,20 @@ a.ast-pro-upgrade-link {
 
    /** Remove Button Color */
 
-.astra-control-field.astra-color-control {
+.divino-control-field.divino-color-control {
     display: flex;
 }
 
-.astra-control-field {
+.divino-control-field {
     position: relative;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.astra-control-field.astra-color-control .customize-control-title {
+.divino-control-field.divino-color-control .customize-control-title {
     flex-grow: 2;
 }
-.astra-control-field .customize-control-title {
+.divino-control-field .customize-control-title {
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 0;
@@ -763,7 +763,7 @@ a.ast-pro-upgrade-link {
     margin-bottom: 4px;
 }
 
-.astra-globe-dashicon {
+.divino-globe-dashicon {
     color: #ffffff;
     background: rgba(0,0,0,0.4);
     border-radius: 100%;
@@ -771,7 +771,7 @@ a.ast-pro-upgrade-link {
     opacity: 0.78;
 }
 
-.components-button.astra-color-icon-indicate .component-color-indicator.astra-advanced-color-indicate {
+.components-button.divino-color-icon-indicate .component-color-indicator.divino-advanced-color-indicate {
     width: 28px;
     height: 28px;
     border-radius: 50%;
@@ -779,11 +779,11 @@ a.ast-pro-upgrade-link {
 	background: inherit;
 }
 
-.astra-advanced-color-indicate.component-color-indicator {
+.divino-advanced-color-indicate.component-color-indicator {
 	border: none;
 }
 
-.astra-color-icon-indicate.components-button {
+.divino-color-icon-indicate.components-button {
     height: auto;
     position: relative;
     transform: scale(1);
@@ -796,25 +796,25 @@ a.ast-pro-upgrade-link {
 }
 
 /** Color */
-.astra-popover-color .components-popover__content .components-focal-point-picker-wrapper {
+.divino-popover-color .components-popover__content .components-focal-point-picker-wrapper {
     box-sizing: border-box;
 }
-.astra-popover-color .components-popover__content .components-focal-point-picker_position-display-container input[type="number"].components-text-control__input {
+.divino-popover-color .components-popover__content .components-focal-point-picker_position-display-container input[type="number"].components-text-control__input {
     min-height: 16px;
     line-height: 16px;
     font-size: 12px;
     width: 50px;
     font-weight: normal;
 }
-.astra-popover-color .components-popover__content .components-focal-point-picker_position-display-container .components-base-control {
+.divino-popover-color .components-popover__content .components-focal-point-picker_position-display-container .components-base-control {
     flex: 1;
     margin-bottom: 0;
 }
-.astra-popover-color .components-popover__content .components-focal-point-picker_position-display-container .components-base-control .components-base-control__label {
+.divino-popover-color .components-popover__content .components-focal-point-picker_position-display-container .components-base-control .components-base-control__label {
     margin-bottom: 0;
     margin-left: 0.2em;
 }
-.astra-popover-color .components-popover__content .components-focal-point-picker_position-display-container .components-base-control__field {
+.divino-popover-color .components-popover__content .components-focal-point-picker_position-display-container .components-base-control__field {
     display: flex;
     align-items: center;
     font-size: 8px;
@@ -822,19 +822,19 @@ a.ast-pro-upgrade-link {
     font-style: normal;
     text-transform: uppercase;
 }
-.astra-popover-color .components-popover__content .components-focal-point-picker_position-display-container .components-base-control:last-child .components-base-control__field {
+.divino-popover-color .components-popover__content .components-focal-point-picker_position-display-container .components-base-control:last-child .components-base-control__field {
     justify-content: flex-end;
 }
-.astra-popover-color .components-popover__content .actions {
+.divino-popover-color .components-popover__content .actions {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
 }
-.astra-popover-color .components-popover__content .actions .button {
+.divino-popover-color .components-popover__content .actions .button {
     flex: 1;
     margin-top: 10px;
 }
-.astra-background-picker-wrap .astra-popover-color .components-popover__content {
+.divino-background-picker-wrap .divino-popover-color .components-popover__content {
     min-width: 300px;
     min-height: 340px;
     max-height: 60vh;
@@ -849,7 +849,7 @@ a.ast-pro-upgrade-link {
     height: 28px;
     width: 28px;
 }
-.components-button.astra-color-icon-indicate .astra-advanced-color-indicate:after {
+.components-button.divino-color-icon-indicate .divino-advanced-color-indicate:after {
     content: "";
     position: absolute;
     top: -1px;
@@ -859,7 +859,7 @@ a.ast-pro-upgrade-link {
     border-radius: 50%;
     border: 1px solid transparent;
 }
-.components-button.astra-background-icon-indicate {
+.components-button.divino-background-icon-indicate {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -873,7 +873,7 @@ a.ast-pro-upgrade-link {
     background-size: 10px 10px;
     background-position: 100% 0, 100% 5px, 5px -5px, -5px 0;
 }
-.components-button.astra-background-icon-indicate .component-color-indicator.astra-advanced-color-indicate {
+.components-button.divino-background-icon-indicate .component-color-indicator.divino-advanced-color-indicate {
     width: 100%;
     height: 100%;
     border-radius: 4px;
@@ -883,7 +883,7 @@ a.ast-pro-upgrade-link {
     border: 0;
     top: 0;
 }
-.components-button.astra-background-icon-indicate > svg.dashicon {
+.components-button.divino-background-icon-indicate > svg.dashicon {
     position: absolute;
     transform: translate(50%, -50%);
     right: 50%;
@@ -895,10 +895,10 @@ a.ast-pro-upgrade-link {
     height: 16px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.components-button.astra-background-icon-indicate > svg.dashicon path {
+.components-button.divino-background-icon-indicate > svg.dashicon path {
     transform: translate(-1px, 1px);
 }
-.components-button.astra-background-icon-indicate img.astra-background-image-preview {
+.components-button.divino-background-icon-indicate img.divino-background-image-preview {
     display: flex;
     object-fit: cover;
     min-width: 100%;
@@ -906,16 +906,16 @@ a.ast-pro-upgrade-link {
     position: absolute;
     top: 0;
 }
-.components-button.astra-background-icon-indicate:hover {
+.components-button.divino-background-icon-indicate:hover {
     box-shadow: none !important;
 }
-.astra-control-field.astra-color-control {
+.divino-control-field.divino-color-control {
     display: flex;
 }
-.astra-control-field.astra-color-control .customize-control-title {
+.divino-control-field.divino-color-control .customize-control-title {
     flex-grow: 2;
 }
-.components-popover.astra-popover-color .components-popover__content {
+.components-popover.divino-popover-color .components-popover__content {
     padding: 15px 15px 0px;
     box-sizing: initial;
     background: #fff;
@@ -927,19 +927,19 @@ a.ast-pro-upgrade-link {
 .customize-control-ast-color.customize-control > * {
     display: inline;
 }
-.components-popover.astra-popover-color .components-popover__content .sketch-picker {
+.components-popover.divino-popover-color .components-popover__content .sketch-picker {
     padding: 0 0 5px !important;
     box-shadow: none !important;
     border-radius: 0px !important;
 }
-.components-popover.astra-popover-color .components-popover__content .attachment-media-view {
+.components-popover.divino-popover-color .components-popover__content .attachment-media-view {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.astra-swatches-wrap .astra-swatche-item-wrap:hover {
+.divino-swatches-wrap .divino-swatche-item-wrap:hover {
     transform: scale(1.1) !important;
 }
-.astra-swatches-wrap .astra-swatche-item-wrap .astra-swatch-item {
+.divino-swatches-wrap .divino-swatche-item-wrap .divino-swatch-item {
     background-image: linear-gradient(-45deg, #ddd 25%, transparent 0), linear-gradient(45deg, #ddd 25%, transparent 0), linear-gradient(-45deg, transparent 75%, #ddd 0), linear-gradient(45deg, transparent 75%, #ddd 0);
     background-size: 10px 10px;
     background-position: 100% 0, 100% 5px, 5px -5px, -5px 0;
@@ -947,13 +947,13 @@ a.ast-pro-upgrade-link {
     display: flex;
     justify-content: center;
 }
-.astra-swatches-wrap .astra-swatche-item-wrap .astra-swatch-item .dashicon {
+.divino-swatches-wrap .divino-swatche-item-wrap .divino-swatch-item .dashicon {
     display: none;
 }
-.astra-swatches-wrap .astra-swatche-item-wrap .astra-swatch-item.swatch-active {
+.divino-swatches-wrap .divino-swatche-item-wrap .divino-swatch-item.swatch-active {
     box-shadow: 0 0 0 8px inset !important;
 }
-.astra-swatches-wrap .astra-swatche-item-wrap .astra-swatch-item.swatch-active .dashicon {
+.divino-swatches-wrap .divino-swatche-item-wrap .divino-swatch-item.swatch-active .dashicon {
     display: block;
     color: white;
     background: rgba(0, 0, 0, 0.6);
@@ -962,10 +962,10 @@ a.ast-pro-upgrade-link {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 100%;
 }
-.astra-swatches-wrap .astra-swatche-item-wrap .astra-swatch-item.swatch-active .dashicon path {
+.divino-swatches-wrap .divino-swatche-item-wrap .divino-swatch-item.swatch-active .dashicon path {
     transform: translate(-1px, 1px);
 }
-.components-button.astra-color-icon-indicate > .dashicon {
+.components-button.divino-color-icon-indicate > .dashicon {
     position: absolute;
     transform: translate(50%, -50%);
     right: 50%;
@@ -978,40 +978,40 @@ a.ast-pro-upgrade-link {
     font-size: 24px;
     border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.astra-popover-color {
+.divino-popover-color {
 	margin: 5px -5px 0;
 	background-color: #ffffff;
 	border-radius: 4px;
 	box-shadow: 0px 1px 16px -4px rgba(30, 41, 59, 0.16);
 }
 
-.astra-popover-color .components-h-stack.ast-color-palette {
+.divino-popover-color .components-h-stack.ast-color-palette {
     padding: 14px 5px;
 }
 
-.customize-control-ast-responsive-background .astra-popover-color .components-h-stack.ast-color-palette,
-.customize-control-ast-color-group .astra-popover-color .astra-background-tabs .components-h-stack.ast-color-palette {
+.customize-control-ast-responsive-background .divino-popover-color .components-h-stack.ast-color-palette,
+.customize-control-ast-color-group .divino-popover-color .divino-background-tabs .components-h-stack.ast-color-palette {
     padding: 0 5px 14px;
 }
 
-.astra-popover-color .components-h-stack .components-button {
+.divino-popover-color .components-h-stack .components-button {
     flex: inherit;
 }
 
-.astra-popover-color .components-h-stack .components-circular-option-picker__option-wrapper{
+.divino-popover-color .components-h-stack .components-circular-option-picker__option-wrapper{
     margin-left: 0;
 }
 
-.astra-popover-color .components-color-picker .react-colorful__hue,
-.astra-popover-color .components-color-picker .react-colorful__alpha {
+.divino-popover-color .components-color-picker .react-colorful__hue,
+.divino-popover-color .components-color-picker .react-colorful__alpha {
     width: 90%;
 }
 
-.ast-field-settings-modal .astra-popover-color {
+.ast-field-settings-modal .divino-popover-color {
     margin-right: 0px;
 	border: 1px solid #dedede;
 }
-.ast-field-settings-modal .astra-popover-color .components-tab-panel__tabs {
+.ast-field-settings-modal .divino-popover-color .components-tab-panel__tabs {
 	padding: 8px;
 }
 .components-color-picker__saturation-black {
@@ -1023,7 +1023,7 @@ a.ast-pro-upgrade-link {
 .components-color-picker__saturation-white {
 	border-radius: 3px;
 }
-.astra-color-picker-wrap {
+.divino-color-picker-wrap {
     position: absolute;
     z-index: 2;
 	top: 30px;
@@ -1033,22 +1033,22 @@ a.ast-pro-upgrade-link {
 	display: none;
 }
 
-.astra-color-picker-wrap .astra-popover-color .components-color-picker,
-.astra-color-picker-wrap .astra-popover-color .react-colorful {
+.divino-color-picker-wrap .divino-popover-color .components-color-picker,
+.divino-color-picker-wrap .divino-popover-color .react-colorful {
     width: 100%;
 }
 
-.astra-popover-color .components-custom-gradient-picker{
+.divino-popover-color .components-custom-gradient-picker{
     z-index: 1;
 }
-.astra-popover-color .components-custom-gradient-picker__ui-line{
+.divino-popover-color .components-custom-gradient-picker__ui-line{
     z-index: -1;
 }
 
-.astra-color-picker-wrap.picker-open{
+.divino-color-picker-wrap.picker-open{
 	display: block;
 }
-.ast-field-settings-modal .astra-color-picker-wrap {
+.ast-field-settings-modal .divino-color-picker-wrap {
     position: relative;
 	top: 10px;
 }
@@ -1064,23 +1064,23 @@ a.ast-pro-upgrade-link {
     top: 1.5px;
     left: 65px;
 }
-.ast-color-btn-clear-wrap .astra-color-clear-button.components-button {
+.ast-color-btn-clear-wrap .divino-color-clear-button.components-button {
 	padding: 10px 3px;
 	width: 20px;
 	height: 20px;
 }
 .ast-clear-btn-inside-picker.components-button,
 .ast-reset-btn-inside-picker.components-button,
-.astra-popover-tabs .ast-clear-btn-inside-picker.components-button {
+.divino-popover-tabs .ast-clear-btn-inside-picker.components-button {
 	margin: 5px 15px 20px 20px;
 	padding: 0 8px;
 	border: 1px solid #ccc;
 	box-shadow: none;
 }
-.ast-clear-btn-inside-picker.components-button:hover, .astra-popover-tabs .ast-clear-btn-inside-picker.components-button:hover,
-.ast-clear-btn-inside-picker.components-button:focus, .astra-popover-tabs .ast-clear-btn-inside-picker.components-button:focus,
-.ast-clear-btn-inside-picker.components-button:active, .astra-popover-tabs .ast-clear-btn-inside-picker.components-button:active,
-.astra-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear:active {
+.ast-clear-btn-inside-picker.components-button:hover, .divino-popover-tabs .ast-clear-btn-inside-picker.components-button:hover,
+.ast-clear-btn-inside-picker.components-button:focus, .divino-popover-tabs .ast-clear-btn-inside-picker.components-button:focus,
+.ast-clear-btn-inside-picker.components-button:active, .divino-popover-tabs .ast-clear-btn-inside-picker.components-button:active,
+.divino-popover-tabs [ID*="-gradient-view"] .components-circular-option-picker__clear:active {
     box-shadow: none !important;
     background: transparent !important;
 }
@@ -1102,7 +1102,7 @@ a.ast-pro-upgrade-link {
 	box-shadow: none !important;
 	cursor: pointer;
 }
-.astra-color-clear-button.components-button:focus:not(:disabled) {
+.divino-color-clear-button.components-button:focus:not(:disabled) {
 	outline: unset;
 	border: none;
 }
@@ -1112,13 +1112,13 @@ a.ast-pro-upgrade-link {
 	border: none;
 	background: transparent;
 }
-.astra-color-clear-button.components-button.is-secondary:hover:not(:disabled),
-.astra-color-clear-button.components-button:focus:not(:disabled) {
+.divino-color-clear-button.components-button.is-secondary:hover:not(:disabled),
+.divino-color-clear-button.components-button:focus:not(:disabled) {
 	box-shadow: 0 0 black;
 	padding: 1.5px;
 	border: none;
 }
-.astra-color-clear-button.components-button.is-secondary:disabled, .ast-reset-btn.components-button.is-secondary:disabled span {
+.divino-color-clear-button.components-button.is-secondary:disabled, .ast-reset-btn.components-button.is-secondary:disabled span {
     color: var(--ast-customizer-color-6);
 }
 /** Inside Setting group popup - Colors */
@@ -1136,7 +1136,7 @@ a.ast-pro-upgrade-link {
 .ast-field-settings-modal .customize-control-ast-color.customize-control:first-child {
     margin-top: 25px;
 }
-.astra-color-picker-wrap .components-color-picker__inputs-wrapper {
+.divino-color-picker-wrap .components-color-picker__inputs-wrapper {
 	min-width: unset;
 }
 /** Gradient Color Picker */
@@ -1147,31 +1147,31 @@ a.ast-pro-upgrade-link {
     align-items: center;
     flex-direction: inherit;
 }
-.astra-color-picker-wrap .components-popover__content {
+.divino-color-picker-wrap .components-popover__content {
     width: max-content;
 }
 
-.astra-color-picker-wrap .components-custom-gradient-picker__inserter .components-color-picker,
-.astra-color-picker-wrap .astra-popover-color .ast-gradient-ui .components-color-picker,
-.astra-color-picker-wrap .astra-popover-color .ast-gradient-ui .react-colorful {
+.divino-color-picker-wrap .components-custom-gradient-picker__inserter .components-color-picker,
+.divino-color-picker-wrap .divino-popover-color .ast-gradient-ui .components-color-picker,
+.divino-color-picker-wrap .divino-popover-color .ast-gradient-ui .react-colorful {
     width: 216px;
 }
 
-.astra-color-picker-wrap .ast-gradient-ui .components-select-control.components-custom-gradient-picker__type-picker {
+.divino-color-picker-wrap .ast-gradient-ui .components-select-control.components-custom-gradient-picker__type-picker {
     flex-direction: column;
     align-items: start;
 }
 
-.astra-color-picker-wrap .ast-gradient-ui .components-angle-picker-control {
+.divino-color-picker-wrap .ast-gradient-ui .components-angle-picker-control {
     margin-bottom: 0;
 }
 
-.astra-color-picker-wrap .ast-gradient-ui .components-custom-gradient-picker__remove-control-point {
+.divino-color-picker-wrap .ast-gradient-ui .components-custom-gradient-picker__remove-control-point {
     padding: 0 16px 16px 16px;
     border: 0;
 }
 
-.astra-color-picker-wrap .ast-gradient-ui .components-custom-gradient-picker__remove-control-point:focus {
+.divino-color-picker-wrap .ast-gradient-ui .components-custom-gradient-picker__remove-control-point:focus {
     box-shadow: none;
     outline: none;
 }
@@ -1199,11 +1199,11 @@ a.ast-pro-upgrade-link {
 	top: 0;
 	mix-blend-mode: difference;
 }
-.astra-popover-color .components-circular-option-picker .components-circular-option-picker__swatches {
+.divino-popover-color .components-circular-option-picker .components-circular-option-picker__swatches {
     gap: 4px;
 	justify-content: center;
 }
-.astra-popover-color .components-circular-option-picker__option-wrapper:hover {
+.divino-popover-color .components-circular-option-picker__option-wrapper:hover {
     transform: scale(1.1);
 }
 
@@ -1232,11 +1232,11 @@ a.ast-pro-upgrade-link {
 	}
 }
 
-.astra-color-icon-indicate.components-button:focus:not(:disabled) {
+.divino-color-icon-indicate.components-button:focus:not(:disabled) {
     box-shadow: unset;
     outline: unset;
 }
-.astra-color-icon-indicate.components-button:hover {
+.divino-color-icon-indicate.components-button:hover {
     transform: scale(1.05);
 }
 
@@ -1523,18 +1523,18 @@ a.ast-pro-upgrade-link {
   /**
    * Popover Tab Structure.
    */
-  .astra-popover-tabs {
+  .divino-popover-tabs {
     position: relative;
     top: 5px;
   }
 
-  .astra-popover-tabs .components-tab-panel__tabs {
+  .divino-popover-tabs .components-tab-panel__tabs {
     display: flex;
     padding: 15px;
     border: none;
   }
 
-  .astra-popover-tabs .components-tab-panel__tabs .components-tab-panel__tabs-item {
+  .divino-popover-tabs .components-tab-panel__tabs .components-tab-panel__tabs-item {
     color: #555d66;
     font-size: 13px;
     font-weight: 400;
@@ -1546,20 +1546,20 @@ a.ast-pro-upgrade-link {
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
 
-  .astra-popover-tabs .components-tab-panel__tabs .components-tab-panel__tabs-item:active {
+  .divino-popover-tabs .components-tab-panel__tabs .components-tab-panel__tabs-item:active {
     box-shadow: unset;
   }
 
-  .astra-popover-tabs .components-tab-panel__tabs .components-tab-panel__tabs-item:focus {
+  .divino-popover-tabs .components-tab-panel__tabs .components-tab-panel__tabs-item:focus {
     box-shadow: unset;
   }
 
-  .astra-popover-tabs [ID*="-image-view"] {
+  .divino-popover-tabs [ID*="-image-view"] {
     padding: 15px;
     border: none;
   }
 
-  .astra-popover-tabs .components-button {
+  .divino-popover-tabs .components-button {
     align-items: center;
     flex: 1 1 auto;
     justify-content: center;
@@ -1569,43 +1569,43 @@ a.ast-pro-upgrade-link {
     transition: background-color 140ms linear;
   }
 
-  .astra-popover-tabs .components-tab-panel__tabs-item:first-child {
+  .divino-popover-tabs .components-tab-panel__tabs-item:first-child {
     border-radius: 0px 3px 3px 0px;
   }
 
-  .astra-popover-tabs .components-tab-panel__tabs-item:last-child {
+  .divino-popover-tabs .components-tab-panel__tabs-item:last-child {
     border-radius: 3px 0px 0px 3px;
   }
 
-  .astra-popover-tabs .components-tab-panel__tabs-item:not(:first-child) {
+  .divino-popover-tabs .components-tab-panel__tabs-item:not(:first-child) {
     border-right-width: 0;
   }
 
-  .astra-popover-tabs .components-tab-panel__tabs-item.active-tab {
+  .divino-popover-tabs .components-tab-panel__tabs-item.active-tab {
     background-color: #0185BA;
     color: #ffffff;
   }
 
-  .astra-popover-tabs.astra-media-tab .components-tab-panel__tabs,
-  .astra-popover-tabs.astra-media-tab .components-tab-panel__tab-content {
+  .divino-popover-tabs.divino-media-tab .components-tab-panel__tabs,
+  .divino-popover-tabs.divino-media-tab .components-tab-panel__tab-content {
     padding: 0;
   }
 
-  .astra-popover-tabs.astra-media-tab .components-tab-panel__tabs-item.active-tab {
+  .divino-popover-tabs.divino-media-tab .components-tab-panel__tabs-item.active-tab {
     border-color: var(--ast-customizer-color-3);
     background: var(--ast-customizer-color-1);
   }
 
-  .astra-popover-tabs.astra-media-tab .components-tab-panel__tab-content .ast-social-icon-picker-label {
+  .divino-popover-tabs.divino-media-tab .components-tab-panel__tab-content .ast-social-icon-picker-label {
     text-align: right;
   }
 
-  .astra-media-tab .astra-media-image {
+  .divino-media-tab .divino-media-image {
     width: 100%;
     margin-bottom: 0;
   }
 
-  .astra-media-tab .ast-media-btn {
+  .divino-media-tab .ast-media-btn {
     display: block;
     width: 100%;
     border: 1px dashed var(--ast-customizer-color-7);
@@ -1616,16 +1616,16 @@ a.ast-pro-upgrade-link {
     text-decoration: none;
   }
 
-  .astra-media-tab .ast-danger-btn {
+  .divino-media-tab .ast-danger-btn {
     color: var(--ast-customizer-color-14);
     margin-top: 10px;
   }
 
-  .astra-media-tab .ast-media-btn:hover {
+  .divino-media-tab .ast-media-btn:hover {
     border-color: var(--ast-customizer-color-3);
   }
 
-  .astra-media-tab .ast-danger-btn:hover {
+  .divino-media-tab .ast-danger-btn:hover {
     border-color: var(--ast-customizer-color-14);
   }
 
@@ -1648,11 +1648,11 @@ a.ast-pro-upgrade-link {
     color: var(--ast-customizer-color-5);
   }
 
-  .astra-popover-color .astra-popover-tabs .components-tab-panel__tabs button.components-tab-panel__tabs-item.active-tab:not(.is-primary):not(.is-tertiary):not(.is-link):hover {
+  .divino-popover-color .divino-popover-tabs .components-tab-panel__tabs button.components-tab-panel__tabs-item.active-tab:not(.is-primary):not(.is-tertiary):not(.is-link):hover {
     color: #fff;
   }
 
-  .components-popover.astra-popover-color .components-popover__content {
+  .components-popover.divino-popover-color .components-popover__content {
     min-width: 310px;
     max-height: 60vh;
     padding: 0;
@@ -1660,12 +1660,12 @@ a.ast-pro-upgrade-link {
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
   }
 
-  .ast-field-settings-modal .components-popover.astra-popover-color .components-popover__content {
+  .ast-field-settings-modal .components-popover.divino-popover-color .components-popover__content {
     min-width: 320px;
     min-height: 325px;
   }
 
-  .ast-field-settings-modal .background-wrapper .components-popover.astra-popover-color .components-popover__content {
+  .ast-field-settings-modal .background-wrapper .components-popover.divino-popover-color .components-popover__content {
     min-height: 385px;
   }
 
@@ -1695,12 +1695,12 @@ a.ast-pro-upgrade-link {
 
   /** Color Pallete CSS **/
 
-  #customize-control-astra-color-palettes .ast-color-palette-wrap > div {
+  #customize-control-divino-color-palettes .ast-color-palette-wrap > div {
 	margin-bottom: 8px;
 	position: relative;
 }
 
-#customize-control-astra-color-palettes .color-button-wrap {
+#customize-control-divino-color-palettes .color-button-wrap {
 	display: unset;
 	position: relative;
 	left: unset;
@@ -1709,7 +1709,7 @@ a.ast-pro-upgrade-link {
 	z-index: 10;
 }
 
-#customize-control-astra-color-palettes .astra-color-picker-wrap {
+#customize-control-divino-color-palettes .divino-color-picker-wrap {
 	position: absolute;
 	z-index: 999;
 	left: 0;
@@ -1718,23 +1718,23 @@ a.ast-pro-upgrade-link {
 	margin-top: 10px;
 }
 
-#customize-control-astra-color-palettes .astra-color-picker-wrap.picker-open{
+#customize-control-divino-color-palettes .divino-color-picker-wrap.picker-open{
 	display: block;
 }
 
-#customize-control-astra-color-palettes .ast-color-palette-label {
+#customize-control-divino-color-palettes .ast-color-palette-label {
 	width: 65%;
 	display: inline-block;
 	margin-left: 10px;
 	vertical-align: top;
 }
 
-#customize-control-astra-color-palettes .ast-color-palette-label input {
+#customize-control-divino-color-palettes .ast-color-palette-label input {
 	background: none;
 	border: none;
 }
 
-#customize-control-astra-color-palettes .ast-color-palette-label input:focus {
+#customize-control-divino-color-palettes .ast-color-palette-label input:focus {
 	border: 1px solid black;
 	outline: none;
 	box-shadow: none;
@@ -1750,36 +1750,36 @@ a.ast-pro-upgrade-link {
 }
 
 .ast-single-palette-wrap
-	.components-button.astra-color-icon-indicate
-	.component-color-indicator.astra-advanced-color-indicate {
+	.components-button.divino-color-icon-indicate
+	.component-color-indicator.divino-advanced-color-indicate {
 	width: 25px;
 	height: 25px;
 }
 
-#customize-control-astra-color-palettes
+#customize-control-divino-color-palettes
 	.ast-color-palette-wrapper
 	.ast-color-picker-wrap:first-child {
 	margin-right: 0;
 }
 
-#customize-control-astra-color-palettes
+#customize-control-divino-color-palettes
 	.ast-color-palette-wrapper
 	.ast-color-picker-wrap {
 	margin-top: 12px;
 	cursor: pointer;
 }
 
-#customize-control-astra-color-palettes .ast-reset-btn:disabled {
+#customize-control-divino-color-palettes .ast-reset-btn:disabled {
 	opacity: 0.6;
 }
 
-#customize-control-astra-color-palettes .ast-single-color-container {
+#customize-control-divino-color-palettes .ast-single-color-container {
 	width: 25%;
 	height: 48px;
 	display: inline-block;
 }
 
-#customize-control-astra-color-palettes .ast-color-palette-wrap > section {
+#customize-control-divino-color-palettes .ast-color-palette-wrap > section {
     text-align: center;
 	outline: none;
 	border-radius: 3px;
@@ -1796,7 +1796,7 @@ a.ast-pro-upgrade-link {
 	row-gap: 16px;
 }
 
-#customize-control-astra-color-palettes .ast-field-settings-modal {
+#customize-control-divino-color-palettes .ast-field-settings-modal {
 	display: none;
 	padding: 16px;
 }
@@ -1807,7 +1807,7 @@ a.ast-pro-upgrade-link {
     box-shadow: 0px 12px 20px -8px rgb(30 41 59 / 16%);
 }
 
-#customize-control-astra-color-palettes .ast-color-palette-wrapper {
+#customize-control-divino-color-palettes .ast-color-palette-wrapper {
 	clear: both;
 }
 
@@ -1815,18 +1815,18 @@ a.ast-pro-upgrade-link {
     z-index: 99;
 }
 
-#customize-control-astra-color-palettes .ast-palette-selection-wrapper {
+#customize-control-divino-color-palettes .ast-palette-selection-wrapper {
 	overflow: hidden;
 	padding: 2px;
 }
 
 @media (min-width: 1800px) {
-	#customize-control-astra-color-palettes .astra-color-picker-wrap {
+	#customize-control-divino-color-palettes .divino-color-picker-wrap {
 		width: auto;
 	}
 }
 
-#customize-control-astra-color-palettes .ast-color-palette-wrap.active > section {
+#customize-control-divino-color-palettes .ast-color-palette-wrap.active > section {
     box-shadow: 0 0 0 1px #334155;
 }
 .ast-palette-label-wrap{
@@ -1850,15 +1850,15 @@ a.ast-pro-upgrade-link {
     color: #334155;
 }
 
-#customize-control-astra-color-palettes .ast-field-settings-modal {
+#customize-control-divino-color-palettes .ast-field-settings-modal {
     margin-top: -35px;
 }
 
-.astra-advanced-color-indicate .global-color{
+.divino-advanced-color-indicate .global-color{
 	display: none;
 }
 
-.color-button-wrap.has-global-palette-color .astra-advanced-color-indicate .global-color{
+.color-button-wrap.has-global-palette-color .divino-advanced-color-indicate .global-color{
     color: #fff;
     display: block;
     opacity: 1;
@@ -1869,13 +1869,13 @@ a.ast-pro-upgrade-link {
     text-align: center;
     transform: translate(50%, -50%);
 }
-.color-button-wrap.has-global-palette-color .astra-advanced-color-indicate .global-color svg{
+.color-button-wrap.has-global-palette-color .divino-advanced-color-indicate .global-color svg{
     width: 10px;
     height: 10px;
     transform: scale(1.5);
 }
 
-#customize-control-astra-color-palettes .ast-adv-toggle-icon {
+#customize-control-divino-color-palettes .ast-adv-toggle-icon {
 	top: -5px;
 }
 
@@ -2027,7 +2027,7 @@ a.ast-pro-upgrade-link {
 
 /** Custom CSS for Page Background **/
 
-.astra-popover-tabs img {
+.divino-popover-tabs img {
     width: 100%;
     max-width: 300px;
 }
@@ -2053,11 +2053,11 @@ a.ast-pro-upgrade-link {
   max-height: 19.5px;
 }
 
-#customize-control-astra-settings-content-bg-obj-responsive .ast-bg-control-left {
+#customize-control-divino-settings-content-bg-obj-responsive .ast-bg-control-left {
   width: 57%;
 }
 
-#customize-control-astra-settings-content-bg-obj-responsive {
+#customize-control-divino-settings-content-bg-obj-responsive {
   margin-top: 2em;
   margin-bottom: 1em;
 }
@@ -2081,7 +2081,7 @@ a.ast-pro-upgrade-link {
 }
 
 @media (min-width: 782px) {
-    div#astra-theme-layout\:theme-meta-panel .components-panel__header+.interface-complementary-area-header {
+    div#divino-theme-layout\:theme-meta-panel .components-panel__header+.interface-complementary-area-header {
         margin-bottom: -2px;
     }
 }

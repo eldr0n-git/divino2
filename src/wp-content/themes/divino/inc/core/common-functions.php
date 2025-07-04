@@ -1,10 +1,10 @@
 <?php
 /**
- * Functions for Astra Theme.
+ * Functions for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -491,12 +491,12 @@ if ( ! function_exists( 'divino_parse_css' ) ) {
 }
 
 /**
- * Return theme options from astra-settings option key.
+ * Return theme options from divino-settings option key.
  */
 if ( ! function_exists( 'divino_get_options' ) ) {
 
 	/**
-	 * Retrieve Astra theme options array.
+	 * Retrieve divino theme options array.
 	 *
 	 * @return array The theme options array.
 	 *
@@ -509,7 +509,7 @@ if ( ! function_exists( 'divino_get_options' ) ) {
 		}
 
 		/**
-		 * Filter to bypass the cached Astra options.
+		 * Filter to bypass the cached divino options.
 		 *
 		 * Example usage:
 		 *     add_filter( 'divino_get_options_nocache', '__return_true' );
@@ -532,7 +532,7 @@ if ( ! function_exists( 'divino_get_options' ) ) {
 		}
 
 		/**
-		 * Filter the options array for Astra Settings.
+		 * Filter the options array for divino Settings.
 		 *
 		 * @since 4.8.9
 		 * @return array The theme options array.
@@ -563,7 +563,7 @@ if ( ! function_exists( 'divino_get_option' ) ) {
 		$theme_options = divino_Theme_Options::get_options();
 
 		/**
-		 * Filter the options array for Astra Settings.
+		 * Filter the options array for divino Settings.
 		 *
 		 * @since  1.0.20
 		 * @var Array
@@ -574,7 +574,7 @@ if ( ! function_exists( 'divino_get_option' ) ) {
 
 		/**
 		 * Dynamic filter divino_get_option_$option.
-		 * $option is the name of the Astra Setting, Refer divino_Theme_Options::defaults() for option names from the theme.
+		 * $option is the name of the divino Setting, Refer divino_Theme_Options::defaults() for option names from the theme.
 		 *
 		 * @since  1.0.20
 		 * @var Mixed.
@@ -589,7 +589,7 @@ if ( ! function_exists( 'divino_get_option' ) ) {
 if ( ! function_exists( 'divino_get_i18n_option' ) ) {
 
 	/**
-	 * Returns translated string for strings saved in Astra settings.
+	 * Returns translated string for strings saved in divino settings.
 	 *
 	 * This function retrieves a theme option value and checks if it needs translation.
 	 * If the option's translation is needed, it looks it up based on the provided context.
@@ -597,10 +597,10 @@ if ( ! function_exists( 'divino_get_i18n_option' ) ) {
 	 *
 	 * Usage examples:
 	 * - Retrieve translated theme option with a context description:
-	 *      $value = divino_get_i18n_option( 'astra-option-key', esc_html_x( '%astra%', 'Context Description', 'astra-addon' ) );
+	 *      $value = divino_get_i18n_option( 'divino-option-key', esc_html_x( '%divino%', 'Context Description', 'divino-addon' ) );
 	 *
 	 * - Retrieve translated theme option with a different context:
-	 *      $value = divino_get_i18n_option( 'astra-option-key', _x( '%astra%', 'Context Description', 'astra-addon' ) );
+	 *      $value = divino_get_i18n_option( 'divino-option-key', _x( '%divino%', 'Context Description', 'divino-addon' ) );
 	 *
 	 * @param  string $option       Option key.
 	 * @param  string $translated   Default translation flag.
@@ -612,8 +612,8 @@ if ( ! function_exists( 'divino_get_i18n_option' ) ) {
 	 * @since 4.8.1
 	 */
 	function divino_get_i18n_option( $option, $translated, $default = '', $deprecated = '' ) {
-		// #%astra%# is for TranslatePress compatibility.
-		$is_translated = '%astra%' !== $translated && ! strpos( $translated, '#%astra%#' );
+		// #%divino%# is for TranslatePress compatibility.
+		$is_translated = '%divino%' !== $translated && ! strpos( $translated, '#%divino%#' );
 		return $is_translated ? $translated : divino_get_option( $option, $default, $deprecated );
 	}
 }
@@ -631,10 +631,10 @@ if ( ! function_exists( 'divino_get_i18n_string' ) ) {
 	 *
 	 * Usage examples:
 	 * - Retrieve translated theme option with a context description:
-	 *      $value = divino_get_i18n_string( $default, esc_html_x( '%astra%', 'Context Description', 'astra-addon' ) );
+	 *      $value = divino_get_i18n_string( $default, esc_html_x( '%divino%', 'Context Description', 'divino-addon' ) );
 	 *
 	 * - Retrieve translated theme option with a different context:
-	 *      $value = divino_get_i18n_string( $default, _x( '%astra%', 'Context Description', 'astra-addon' ) );
+	 *      $value = divino_get_i18n_string( $default, _x( '%divino%', 'Context Description', 'divino-addon' ) );
 	 *
 	 * @param  string $default      Default string value.
 	 * @param  string $translated   Default translation flag.
@@ -644,8 +644,8 @@ if ( ! function_exists( 'divino_get_i18n_string' ) ) {
 	 * @since 4.8.1
 	 */
 	function divino_get_i18n_string( $default, $translated ) {
-		// #%astra%# is for TranslatePress compatibility.
-		$is_translated = '%astra%' !== $translated && ! strpos( $translated, '#%astra%#' );
+		// #%divino%# is for TranslatePress compatibility.
+		$is_translated = '%divino%' !== $translated && ! strpos( $translated, '#%divino%#' );
 		return $is_translated ? $translated : $default;
 	}
 }
@@ -740,7 +740,7 @@ if ( ! function_exists( 'divino_get_option_meta' ) ) {
 
 		/**
 		 * Dynamic filter divino_get_option_meta_$option.
-		 * $option_id is the name of the Astra Meta Setting.
+		 * $option_id is the name of the divino Meta Setting.
 		 *
 		 * @since  1.0.20
 		 * @var Mixed.
@@ -982,7 +982,7 @@ if ( ! function_exists( 'divino_the_search_page_title' ) ) {
 			sprintf(
 				/* translators: 1: search title, 2: search string */
 				'%1$s %2$s',
-				divino_get_i18n_option( 'section-search-page-title-custom-title', _x( '%astra%', 'Search Page Title: Heading - Text', 'astra' ) ),
+				divino_get_i18n_option( 'section-search-page-title-custom-title', _x( '%divino%', 'Search Page Title: Heading - Text', 'divino' ) ),
 				'<span>' . get_search_query() . '</span>'
 			)
 		);
@@ -1062,13 +1062,13 @@ if ( ! function_exists( 'divino_get_the_title' ) ) {
 		} else {
 			if ( is_front_page() && is_home() ) {
 				// Default homepage.
-				$title = apply_filters( 'divino_the_default_home_page_title', esc_html__( 'Home', 'astra' ) );
+				$title = apply_filters( 'divino_the_default_home_page_title', esc_html__( 'Home', 'divino' ) );
 			} elseif ( is_home() ) {
 				// blog page.
 				$title = apply_filters( 'divino_the_blog_home_page_title', get_the_title( get_option( 'page_for_posts', true ) ) );
 			} elseif ( is_404() ) {
 				// for 404 page - title always display.
-				$title = apply_filters( 'divino_the_404_page_title', esc_html__( 'This page doesn\'t seem to exist.', 'astra' ) );
+				$title = apply_filters( 'divino_the_404_page_title', esc_html__( 'This page doesn\'t seem to exist.', 'divino' ) );
 
 				// for search page - title always display.
 			} elseif ( is_search() ) {
@@ -1149,8 +1149,8 @@ function divino_get_taxonomy_banner_legacy_layout() {
 						do_action( 'divino_before_archive_description' );
 						if ( is_search() ) {
 							$title = have_posts()
-								? divino_get_i18n_option( 'section-search-page-title-found-custom-description', _x( '%astra%', 'Search Page Custom `When Results Found` Text', 'astra' ) )
-								: divino_get_i18n_option( 'section-search-page-title-not-found-custom-description', _x( '%astra%', 'Search Page Custom `When Results Not Found` Text', 'astra' ) );
+								? divino_get_i18n_option( 'section-search-page-title-found-custom-description', _x( '%divino%', 'Search Page Custom `When Results Found` Text', 'divino' ) )
+								: divino_get_i18n_option( 'section-search-page-title-not-found-custom-description', _x( '%divino%', 'Search Page Custom `When Results Not Found` Text', 'divino' ) );
 							echo wp_kses_post( wpautop( $title ) );
 						} else {
 							echo wp_kses_post( wpautop( get_the_archive_description() ) );
@@ -1181,7 +1181,7 @@ if ( ! function_exists( 'divino_archive_page_info' ) ) {
 			// Author.
 			if ( is_author() ) {
 				$author_name        = get_the_author() ? esc_attr( strval( get_the_author() ) ) : '';
-				$author_name_html   = true === divino_check_is_structural_setup() && $author_name ? __( 'Author name: ', 'astra' ) . $author_name : $author_name;
+				$author_name_html   = true === divino_check_is_structural_setup() && $author_name ? __( 'Author name: ', 'divino' ) . $author_name : $author_name;
 				$author_description = get_the_author_meta( 'description' );
 				/** @psalm-suppress RedundantConditionGivenDocblockType */
 				?>
@@ -1333,8 +1333,8 @@ if ( ! function_exists( 'divino_enable_page_builder_compatibility' ) ) {
 	/**
 	 * Allow filter to enable/disable page builder compatibility.
 	 *
-	 * @see  https://wpastra.com/docs/recommended-settings-beaver-builder-astra/
-	 * @see  https://wpastra.com/docs/recommended-settings-for-elementor/
+	 * @see  https://wpdivino.com/docs/recommended-settings-beaver-builder-divino/
+	 * @see  https://wpdivino.com/docs/recommended-settings-for-elementor/
 	 *
 	 * @since  1.2.2
 	 * @return  bool True - If the page builder compatibility is enabled. False - IF the page builder compatibility is disabled.
@@ -1366,7 +1366,7 @@ if ( ! function_exists( 'divino_get_pro_url' ) ) {
 
 		// Modify the utm_source parameter using the UTM ready link function to include tracking information.
 		if ( is_callable( 'BSF_UTM_Analytics::get_utm_ready_link' ) ) {
-			$divino_pro_url = BSF_UTM_Analytics::get_utm_ready_link( $divino_pro_url, 'astra' );
+			$divino_pro_url = BSF_UTM_Analytics::get_utm_ready_link( $divino_pro_url, 'divino' );
 		}
 
 		// Set up our URL if we have a medium.
@@ -1405,7 +1405,7 @@ if ( ! function_exists( 'divino_get_search_form' ) ) {
 
 		$form = get_search_form(
 			array(
-				'input_placeholder' => apply_filters( 'divino_search_field_placeholder', esc_attr_x( 'Search...', 'placeholder', 'astra' ) ),
+				'input_placeholder' => apply_filters( 'divino_search_field_placeholder', esc_attr_x( 'Search...', 'placeholder', 'divino' ) ),
 				'data_attributes'   => apply_filters( 'divino_search_field_toggle_data_attrs', '' ),
 				'input_value'       => get_search_query(),
 				'show_input_submit' => false,
@@ -1529,7 +1529,7 @@ function divino_get_mobile_breakpoint( $min = '', $max = '' ) {
 if ( ! function_exists( 'divino_color_responsive_css' ) ) {
 
 	/**
-	 * Astra Responsive Colors
+	 * divino Responsive Colors
 	 *
 	 * @param  array  $setting      Responsive colors.
 	 * @param  string $css_property CSS property.
@@ -1575,7 +1575,7 @@ if ( ! function_exists( 'divino_check_is_bb_themer_layout' ) ) {
 if ( ! function_exists( 'divino_is_white_labelled' ) ) {
 
 	/**
-	 * Check if white label option is enabled in astra pro plugin
+	 * Check if white label option is enabled in divino pro plugin
 	 */
 	function divino_is_white_labelled() {
 
@@ -1759,7 +1759,7 @@ function divino_check_current_post_comment_enabled() {
  */
 function divino_zero_font_size_case() {
 	$divino_settings = divino_get_options();
-	return apply_filters( 'divino_zero_font_size_case', isset( $divino_settings['astra-zero-font-size-case-css'] ) ? false : true );
+	return apply_filters( 'divino_zero_font_size_case', isset( $divino_settings['divino-zero-font-size-case-css'] ) ? false : true );
 }
 
 /**
@@ -1802,7 +1802,7 @@ function divino_check_is_structural_setup() {
  */
 function divino_check_old_sidebar_user() {
 	$divino_settings = divino_get_options();
-	return apply_filters( 'divino_old_global_sidebar_defaults', isset( $divino_settings['astra-old-global-sidebar-default'] ) ? false : true );
+	return apply_filters( 'divino_old_global_sidebar_defaults', isset( $divino_settings['divino-old-global-sidebar-default'] ) ? false : true );
 }
 
 /**
@@ -2106,7 +2106,7 @@ function divino_get_post_type() {
 }
 
 /**
- * Get Astra's upgrade URL based on org or woo package version.
+ * Get divino's upgrade URL based on org or woo package version.
  *
  * @param string $type Type of upgrade URL.
  * @since 4.8.4
@@ -2116,7 +2116,7 @@ function divino_get_upgrade_url( $type = 'pro' ) {
 	/** @psalm-suppress TypeDoesNotContainType */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 	if ( ! divino_THEME_ORG_VERSION ) {
 		/** @psalm-suppress TypeDoesNotContainType */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-		return 'https://woo.com/products/astra-pro/';
+		return 'https://woo.com/products/divino-pro/';
 	}
 
 	switch ( $type ) {

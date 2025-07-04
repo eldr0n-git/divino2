@@ -1,3 +1,4 @@
+<!-- page-coming-soon.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Coming soon

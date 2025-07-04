@@ -2,9 +2,9 @@
 /**
  * Posts Structures Options for our theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 4.0.0
+ * @since       divino 4.0.0
  */
 
 // Block direct access to the file.
@@ -53,10 +53,10 @@ class divino_Posts_Structures_Configs extends divino_Customizer_Config_Base {
 	/**
 	 * Register Posts Structures Customizer Configurations.
 	 *
-	 * @param Array                $configurations Astra Customizer Configurations.
+	 * @param Array                $configurations divino Customizer Configurations.
 	 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 	 * @since 4.0.0
-	 * @return Array Astra Customizer Configurations with updated configurations.
+	 * @return Array divino Customizer Configurations with updated configurations.
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {
 
@@ -70,7 +70,7 @@ class divino_Posts_Structures_Configs extends divino_Customizer_Config_Base {
 					'type'     => 'section',
 					'section'  => 'section-blog-group',
 					'priority' => 69,
-					'title'    => __( 'Custom Post Types', 'astra' ),
+					'title'    => __( 'Custom Post Types', 'divino' ),
 				),
 			);
 
@@ -110,7 +110,7 @@ class divino_Posts_Structures_Configs extends divino_Customizer_Config_Base {
 					$_configs[] = array(
 						'name'     => 'archive-posttype-' . $label,
 						'type'     => 'section',
-						'title'    => __( 'Archive', 'astra' ) . ' ' . $section_title,
+						'title'    => __( 'Archive', 'divino' ) . ' ' . $section_title,
 						'section'  => 'section-posttype-' . $label,
 						'priority' => 5,
 					);
@@ -119,7 +119,7 @@ class divino_Posts_Structures_Configs extends divino_Customizer_Config_Base {
 					$_configs[] = array(
 						'name'     => 'single-posttype-' . $label,
 						'type'     => 'section',
-						'title'    => __( 'Single', 'astra' ) . ' ' . $section_title,
+						'title'    => __( 'Single', 'divino' ) . ' ' . $section_title,
 						'section'  => 'section-posttype-' . $label,
 						'priority' => 10,
 					);

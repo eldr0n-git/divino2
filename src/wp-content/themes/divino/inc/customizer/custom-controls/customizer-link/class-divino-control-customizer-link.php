@@ -2,8 +2,8 @@
 /**
  * Customizer Control: Customizer Link
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       1.0.0
  */
 

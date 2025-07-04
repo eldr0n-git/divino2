@@ -2,9 +2,9 @@
 /**
  * Post Meta Box
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -144,7 +144,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 
 			$metabox_name = sprintf(
 				// Translators: %s is the theme name.
-				__( '%s Settings', 'astra' ),
+				__( '%s Settings', 'divino' ),
 				divino_get_theme_name()
 			);
 
@@ -235,7 +235,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 			) : '';
 			$show_meta_field         = ! self::is_bb_themer_layout();
 			$old_meta_layout         = isset( $meta['site-content-layout']['default'] ) ? $meta['site-content-layout']['default'] : '';
-			$meta_key                = isset( $meta['astra-migrate-meta-layouts']['default'] ) ? $meta['astra-migrate-meta-layouts']['default'] : '';
+			$meta_key                = isset( $meta['divino-migrate-meta-layouts']['default'] ) ? $meta['divino-migrate-meta-layouts']['default'] : '';
 			$migrated_user           = ! divino_Dynamic_CSS::divino_fullwidth_sidebar_support();
 			do_action( 'divino_meta_box_markup_before', $meta );
 
@@ -282,15 +282,15 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 			?>
 			<div class="ast-site-content-layout-meta-wrap components-base-control__field">
 				<p class="post-attributes-label-wrapper" >
-					<strong> <?php esc_html_e( 'Container Layout', 'astra' ); ?> </strong>
+					<strong> <?php esc_html_e( 'Container Layout', 'divino' ); ?> </strong>
 				</p>
 				<select name="ast-site-content-layout" id="ast-site-content-layout">
-					<option value="default" <?php selected( $new_site_content_layout, 'default' ); ?> > <?php esc_html_e( 'Customizer Setting', 'astra' ); ?></option>
-					<option value="normal-width-container" <?php selected( $new_site_content_layout, 'normal-width-container' ); ?> > <?php esc_html_e( 'Normal', 'astra' ); ?></option>
+					<option value="default" <?php selected( $new_site_content_layout, 'default' ); ?> > <?php esc_html_e( 'Customizer Setting', 'divino' ); ?></option>
+					<option value="normal-width-container" <?php selected( $new_site_content_layout, 'normal-width-container' ); ?> > <?php esc_html_e( 'Normal', 'divino' ); ?></option>
 					<?php if ( ! $exclude_cpt ) { ?>
-						<option value="narrow-width-container" <?php selected( $new_site_content_layout, 'narrow-width-container' ); ?> > <?php esc_html_e( 'Narrow', 'astra' ); ?></option>
+						<option value="narrow-width-container" <?php selected( $new_site_content_layout, 'narrow-width-container' ); ?> > <?php esc_html_e( 'Narrow', 'divino' ); ?></option>
 					<?php } ?>
-						<option value="full-width-container" <?php selected( $new_site_content_layout, 'full-width-container' ); ?> > <?php esc_html_e( 'Full Width', 'astra' ); ?></option>
+						<option value="full-width-container" <?php selected( $new_site_content_layout, 'full-width-container' ); ?> > <?php esc_html_e( 'Full Width', 'divino' ); ?></option>
 					</select>
 			</div>
 			<?php
@@ -300,12 +300,12 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 			?>
 			<div class="site-content-style-meta-wrap components-base-control__field">
 				<p class="post-attributes-label-wrapper" >
-					<strong> <?php esc_html_e( 'Container Style', 'astra' ); ?> </strong>
+					<strong> <?php esc_html_e( 'Container Style', 'divino' ); ?> </strong>
 				</p>
 				<select name="site-content-style" id="site-content-style">
-					<option value="default" <?php selected( $site_content_style, 'default' ); ?> > <?php esc_html_e( 'Customizer Setting', 'astra' ); ?></option>
-					<option value="unboxed" <?php selected( $site_content_style, 'unboxed' ); ?> > <?php esc_html_e( 'Unboxed', 'astra' ); ?></option>
-					<option value="boxed" <?php selected( $site_content_style, 'boxed' ); ?> > <?php esc_html_e( 'Boxed', 'astra' ); ?></option>
+					<option value="default" <?php selected( $site_content_style, 'default' ); ?> > <?php esc_html_e( 'Customizer Setting', 'divino' ); ?></option>
+					<option value="unboxed" <?php selected( $site_content_style, 'unboxed' ); ?> > <?php esc_html_e( 'Unboxed', 'divino' ); ?></option>
+					<option value="boxed" <?php selected( $site_content_style, 'boxed' ); ?> > <?php esc_html_e( 'Boxed', 'divino' ); ?></option>
 				</select>
 			</div>
 			<?php
@@ -315,13 +315,13 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 			?>
 			<div class="site-sidebar-layout-meta-wrap components-base-control__field">
 				<p class="post-attributes-label-wrapper" >
-					<strong> <?php esc_html_e( 'Sidebar Layout', 'astra' ); ?> </strong>
+					<strong> <?php esc_html_e( 'Sidebar Layout', 'divino' ); ?> </strong>
 				</p>
 				<select name="site-sidebar-layout" id="site-sidebar-layout">
-					<option value="default" <?php selected( $site_sidebar, 'default' ); ?> > <?php esc_html_e( 'Customizer Setting', 'astra' ); ?></option>
-					<option value="left-sidebar" <?php selected( $site_sidebar, 'left-sidebar' ); ?> > <?php esc_html_e( 'Left Sidebar', 'astra' ); ?></option>
-					<option value="right-sidebar" <?php selected( $site_sidebar, 'right-sidebar' ); ?> > <?php esc_html_e( 'Right Sidebar', 'astra' ); ?></option>
-					<option value="no-sidebar" <?php selected( $site_sidebar, 'no-sidebar' ); ?> > <?php esc_html_e( 'No Sidebar', 'astra' ); ?></option>
+					<option value="default" <?php selected( $site_sidebar, 'default' ); ?> > <?php esc_html_e( 'Customizer Setting', 'divino' ); ?></option>
+					<option value="left-sidebar" <?php selected( $site_sidebar, 'left-sidebar' ); ?> > <?php esc_html_e( 'Left Sidebar', 'divino' ); ?></option>
+					<option value="right-sidebar" <?php selected( $site_sidebar, 'right-sidebar' ); ?> > <?php esc_html_e( 'Right Sidebar', 'divino' ); ?></option>
+					<option value="no-sidebar" <?php selected( $site_sidebar, 'no-sidebar' ); ?> > <?php esc_html_e( 'No Sidebar', 'divino' ); ?></option>
 				</select>
 			</div>
 			<?php
@@ -331,12 +331,12 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 			?>
 			<div class="site-sidebar-style-meta-wrap components-base-control__field">
 				<p class="post-attributes-label-wrapper" >
-					<strong> <?php esc_html_e( 'Sidebar Style', 'astra' ); ?> </strong>
+					<strong> <?php esc_html_e( 'Sidebar Style', 'divino' ); ?> </strong>
 				</p>
 				<select name="site-sidebar-style" id="site-sidebar-style">
-					<option value="default" <?php selected( $site_sidebar_style, 'default' ); ?> > <?php esc_html_e( 'Customizer Setting', 'astra' ); ?></option>
-					<option value="unboxed" <?php selected( $site_sidebar_style, 'unboxed' ); ?> > <?php esc_html_e( 'Unboxed', 'astra' ); ?></option>
-					<option value="boxed" <?php selected( $site_sidebar_style, 'boxed' ); ?> > <?php esc_html_e( 'Boxed', 'astra' ); ?></option>
+					<option value="default" <?php selected( $site_sidebar_style, 'default' ); ?> > <?php esc_html_e( 'Customizer Setting', 'divino' ); ?></option>
+					<option value="unboxed" <?php selected( $site_sidebar_style, 'unboxed' ); ?> > <?php esc_html_e( 'Unboxed', 'divino' ); ?></option>
+					<option value="boxed" <?php selected( $site_sidebar_style, 'boxed' ); ?> > <?php esc_html_e( 'Boxed', 'divino' ); ?></option>
 				</select>
 			</div>
 			<?php
@@ -346,7 +346,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 			?>
 			<div class="disable-section-meta-wrap components-base-control__field">
 				<p class="post-attributes-label-wrapper">
-					<strong> <?php esc_html_e( 'Disable Sections', 'astra' ); ?> </strong>
+					<strong> <?php esc_html_e( 'Disable Sections', 'divino' ); ?> </strong>
 				</p>
 				<div class="disable-section-meta">
 					<?php do_action( 'divino_meta_box_markup_disable_sections_before', $meta ); ?>
@@ -358,7 +358,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 						?>
 					<div class="ast-hfb-above-header-display-option-wrap">
 						<input type="checkbox" id="ast-hfb-above-header-display" name="ast-hfb-above-header-display" value="disabled" <?php checked( $above_header, 'disabled' ); ?> />
-						<label for="ast-hfb-above-header-display"><?php esc_html_e( 'Disable Above Header', 'astra' ); ?></label> <br />
+						<label for="ast-hfb-above-header-display"><?php esc_html_e( 'Disable Above Header', 'divino' ); ?></label> <br />
 					</div>
 					<?php } ?>
 
@@ -370,7 +370,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 					<div class="ast-main-header-display-option-wrap">
 						<label for="ast-main-header-display">
 							<input type="checkbox" id="ast-main-header-display" name="ast-main-header-display" value="disabled" <?php checked( $primary_header, 'disabled' ); ?> />
-						<?php esc_html_e( 'Disable Primary Header', 'astra' ); ?>
+						<?php esc_html_e( 'Disable Primary Header', 'divino' ); ?>
 						</label>
 					</div>
 					<?php } ?>
@@ -382,7 +382,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 						?>
 					<div class="ast-hfb-below-header-display-option-wrap">
 						<input type="checkbox" id="ast-hfb-below-header-display" name="ast-hfb-below-header-display" value="disabled" <?php checked( $below_header, 'disabled' ); ?> />
-						<label for="ast-hfb-below-header-display"><?php esc_html_e( 'Disable Below Header', 'astra' ); ?></label> <br />
+						<label for="ast-hfb-below-header-display"><?php esc_html_e( 'Disable Below Header', 'divino' ); ?></label> <br />
 					</div>
 					<?php } ?>
 					<?php
@@ -393,7 +393,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 
 					<div class="ast-hfb-mobile-header-display-option-wrap">
 						<input type="checkbox" id="ast-hfb-mobile-header-display" name="ast-hfb-mobile-header-display" value="disabled" <?php checked( $mobile_header, 'disabled' ); ?> />
-						<label for="ast-hfb-mobile-header-display"><?php esc_html_e( 'Disable Mobile Header', 'astra' ); ?></label> <br />
+						<label for="ast-hfb-mobile-header-display"><?php esc_html_e( 'Disable Mobile Header', 'divino' ); ?></label> <br />
 					</div>
 					<?php } ?>
 
@@ -402,7 +402,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 						<div class="site-post-title-option-wrap">
 							<label for="site-post-title">
 								<input type="checkbox" id="site-post-title" name="site-post-title" value="disabled" <?php checked( $site_post_title, 'disabled' ); ?> />
-								<?php esc_html_e( 'Disable Title', 'astra' ); ?>
+								<?php esc_html_e( 'Disable Title', 'divino' ); ?>
 							</label>
 						</div>
 						<?php
@@ -412,7 +412,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 					<div class="ast-breadcrumbs-content-option-wrap">
 						<label for="ast-breadcrumbs-content">
 							<input type="checkbox" id="ast-breadcrumbs-content" name="ast-breadcrumbs-content" value="disabled" <?php checked( $breadcrumbs_content, 'disabled' ); ?> />
-							<?php esc_html_e( 'Disable Breadcrumb', 'astra' ); ?>
+							<?php esc_html_e( 'Disable Breadcrumb', 'divino' ); ?>
 						</label>
 					</div>
 						<?php } ?>
@@ -420,7 +420,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 						<div class="ast-featured-img-option-wrap">
 							<label for="ast-featured-img">
 								<input type="checkbox" id="ast-featured-img" name="ast-featured-img" value="disabled" <?php checked( $ast_featured_img, 'disabled' ); ?> />
-								<?php esc_html_e( 'Disable Featured Image', 'astra' ); ?>
+								<?php esc_html_e( 'Disable Featured Image', 'divino' ); ?>
 							</label>
 						</div>
 
@@ -433,7 +433,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 							<div class="ast-banner-title-visibility-option-wrap">
 								<label for="ast-banner-title-visibility">
 									<input type="checkbox" id="ast-banner-title-visibility" name="ast-banner-title-visibility" value="disabled" <?php checked( $ast_banner_visibility, 'disabled' ); ?> />
-								<?php esc_html_e( 'Disable Banner Area', 'astra' ); ?>
+								<?php esc_html_e( 'Disable Banner Area', 'divino' ); ?>
 								</label>
 							</div>
 								<?php
@@ -451,7 +451,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 					<div class="footer-adv-display-option-wrap">
 						<label for="footer-adv-display">
 							<input type="checkbox" id="footer-adv-display" name="footer-adv-display" value="disabled" <?php checked( $footer_widgets, 'disabled' ); ?> />
-							<?php esc_html_e( 'Disable Footer Widgets', 'astra' ); ?>
+							<?php esc_html_e( 'Disable Footer Widgets', 'divino' ); ?>
 						</label>
 					</div>
 
@@ -463,7 +463,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 					<div class="footer-sml-layout-option-wrap">
 						<label for="footer-sml-layout">
 							<input type="checkbox" id="footer-sml-layout" name="footer-sml-layout" value="disabled" <?php checked( $footer_bar, 'disabled' ); ?> />
-							<?php esc_html_e( 'Disable Footer', 'astra' ); ?>
+							<?php esc_html_e( 'Disable Footer', 'divino' ); ?>
 						</label>
 					</div>
 						<?php
@@ -539,7 +539,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 					update_post_meta( $post_id, $key, $meta_value );
 
 					// Update meta key (flag) as old user migration is already completed at this point.
-					update_post_meta( $post_id, 'astra-migrate-meta-layouts', 'set' );
+					update_post_meta( $post_id, 'divino-migrate-meta-layouts', 'set' );
 				} else {
 
 					/** @psalm-suppress InvalidArgument */
@@ -554,7 +554,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 		public function register_script() {
 			$path = get_template_directory_uri() . '/inc/metabox/extend-metabox/build/index.js';
 			wp_register_script(
-				'astra-meta-settings',
+				'divino-meta-settings',
 				$path,
 				array( 'wp-plugins', 'wp-edit-post', 'wp-i18n', 'wp-element' ),
 				divino_THEME_VERSION,
@@ -577,7 +577,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 
 			$metabox_name = sprintf(
 				// Translators: %s is the theme name.
-				__( '%s Settings', 'astra' ),
+				__( '%s Settings', 'divino' ),
 				divino_get_theme_name()
 			);
 
@@ -589,10 +589,10 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 			$dir_name     = true === SCRIPT_DEBUG ? 'unminified' : 'minified';
 			$css_uri      = divino_THEME_URI . '/inc/metabox/extend-metabox/css/' . $dir_name;
 
-			wp_enqueue_style( 'astra-meta-box', $css_uri . '/metabox' . $file_prefix . '.css', array(), divino_THEME_VERSION );
+			wp_enqueue_style( 'divino-meta-box', $css_uri . '/metabox' . $file_prefix . '.css', array(), divino_THEME_VERSION );
 
-			wp_enqueue_script( 'astra-meta-settings' );
-			wp_set_script_translations( 'astra-meta-settings', 'astra' );
+			wp_enqueue_script( 'divino-meta-settings' );
+			wp_set_script_translations( 'divino-meta-settings', 'divino' );
 			$divino_ext_extension_class_exists = class_exists( 'divino_Ext_Extension' ) ? true : false;
 
 			$ast_content_layout_sidebar = false;
@@ -609,34 +609,34 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 				/* translators: 1: Post type, 2: Background string */
 				'%1$s %2$s',
 				ucfirst( strval( $post_type ) ),
-				__( 'Background', 'astra' )
+				__( 'Background', 'divino' )
 			);
-			$page_bg_dynamic_title = ( $post_type ? $bg_updated_title : __( 'Page Background', 'astra' ) );
+			$page_bg_dynamic_title = ( $post_type ? $bg_updated_title : __( 'Page Background', 'divino' ) );
 			$global_palette        = divino_get_option( 'global-color-palette' );
 			$reorder_color_seq     = divino_Dynamic_CSS::divino_4_8_9_compatibility();
 
-			/* Created a new array specifically designed for storing post types that don't require Astra's meta settings.*/
+			/* Created a new array specifically designed for storing post types that don't require divino's meta settings.*/
 			$register_divino_metabox = ! in_array( $post_type, array( 'wp_block' ), true );
 
 			wp_localize_script(
-				'astra-meta-settings',
+				'divino-meta-settings',
 				'astMetaParams',
 				array(
 					'post_type'                      => $post_type,
 					'title'                          => $settings_title,
 					'sidebar_options'                => $this->get_sidebar_options(),
-					'sidebar_title'                  => __( 'Sidebar', 'astra' ),
+					'sidebar_title'                  => __( 'Sidebar', 'divino' ),
 					'content_layout'                 => $this->get_content_layout_options(),
 					'content_style'                  => $this->get_content_style_options(),
 					'sidebar_style'                  => $this->get_sidebar_style_options(),
-					'content_layout_title'           => __( 'Content Layout', 'astra' ),
-					'disable_sections_title'         => __( 'Disable Sections', 'astra' ),
+					'content_layout_title'           => __( 'Content Layout', 'divino' ),
+					'disable_sections_title'         => __( 'Disable Sections', 'divino' ),
 					'disable_sections'               => $this->get_disable_section_fields(),
 					'isWhiteLabelled'                => divino_is_white_labelled(),
-					'sticky_header_title'            => __( 'Sticky Header', 'astra' ),
+					'sticky_header_title'            => __( 'Sticky Header', 'divino' ),
 					'sticky_header_options'          => $this->get_sticky_header_options(),
-					'transparent_header_title'       => __( 'Transparent Header', 'astra' ),
-					'page_header_title'              => __( 'Page Header', 'astra' ),
+					'transparent_header_title'       => __( 'Transparent Header', 'divino' ),
+					'page_header_title'              => __( 'Page Header', 'divino' ),
 					'page_header_edit_link'          => esc_url( admin_url( 'edit.php?post_type=divino_adv_header' ) ),
 					'header_options'                 => $this->get_header_enabled_options(),
 					'headers_meta_options'           => $this->get_header_disable_meta_fields(),
@@ -741,16 +741,16 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 						),
 					),
 					'isWP_5_9'                       => divino_wp_version_compare( '5.8.99', '>=' ),
-					'ast_page_bg_title'              => __( 'Surface Colors', 'astra' ),
+					'ast_page_bg_title'              => __( 'Surface Colors', 'divino' ),
 					'page_bg_toggle_options'         => $this->get_page_bg_toggle_options(),
-					'surface_color_help_text'        => __( 'Enabling this option will override global > colors > surface color options', 'astra' ),
+					'surface_color_help_text'        => __( 'Enabling this option will override global > colors > surface color options', 'divino' ),
 					'page_bg_dynamic_title'          => $page_bg_dynamic_title,
 					'global_color_palette'           => $global_palette,
 					'color_palette_labels'           => divino_Global_Palette::get_palette_labels(),
 				)
 			);
 
-			wp_enqueue_script( 'astra-metabox-cf-compatibility', divino_THEME_URI . 'inc/assets/js/custom-fields-priority.js', array(), divino_THEME_VERSION, false );
+			wp_enqueue_script( 'divino-metabox-cf-compatibility', divino_THEME_URI . 'inc/assets/js/custom-fields-priority.js', array(), divino_THEME_VERSION, false );
 		}
 
 		/**
@@ -760,10 +760,10 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 		 */
 		public function get_sidebar_options() {
 			return array(
-				'default'       => __( 'Customizer Setting', 'astra' ),
-				'no-sidebar'    => __( 'No Sidebar', 'astra' ),
-				'left-sidebar'  => __( 'Left Sidebar', 'astra' ),
-				'right-sidebar' => __( 'Right Sidebar', 'astra' ),
+				'default'       => __( 'Customizer Setting', 'divino' ),
+				'no-sidebar'    => __( 'No Sidebar', 'divino' ),
+				'left-sidebar'  => __( 'Left Sidebar', 'divino' ),
+				'right-sidebar' => __( 'Right Sidebar', 'divino' ),
 			);
 		}
 
@@ -796,16 +796,16 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 			);
 			if ( divino_with_third_party() || $exclude_cpt ) {
 				return array(
-					'default'                => __( 'Customizer Setting', 'astra' ),
-					'normal-width-container' => __( 'Normal', 'astra' ),
-					'full-width-container'   => __( 'Full Width', 'astra' ),
+					'default'                => __( 'Customizer Setting', 'divino' ),
+					'normal-width-container' => __( 'Normal', 'divino' ),
+					'full-width-container'   => __( 'Full Width', 'divino' ),
 				);
 			}
 			return array(
-				'default'                => __( 'Customizer Setting', 'astra' ),
-				'normal-width-container' => __( 'Normal', 'astra' ),
-				'narrow-width-container' => __( 'Narrow', 'astra' ),
-				'full-width-container'   => __( 'Full Width', 'astra' ),
+				'default'                => __( 'Customizer Setting', 'divino' ),
+				'normal-width-container' => __( 'Normal', 'divino' ),
+				'narrow-width-container' => __( 'Narrow', 'divino' ),
+				'full-width-container'   => __( 'Full Width', 'divino' ),
 			);
 		}
 
@@ -815,9 +815,9 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 		 */
 		public function get_content_style_options() {
 			return array(
-				'default' => __( 'Default', 'astra' ),
-				'unboxed' => __( 'Unboxed', 'astra' ),
-				'boxed'   => __( 'Boxed', 'astra' ),
+				'default' => __( 'Default', 'divino' ),
+				'unboxed' => __( 'Unboxed', 'divino' ),
+				'boxed'   => __( 'Boxed', 'divino' ),
 			);
 		}
 
@@ -827,9 +827,9 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 		 */
 		public function get_sidebar_style_options() {
 			return array(
-				'default' => __( 'Default', 'astra' ),
-				'unboxed' => __( 'Unboxed', 'astra' ),
-				'boxed'   => __( 'Boxed', 'astra' ),
+				'default' => __( 'Default', 'divino' ),
+				'unboxed' => __( 'Unboxed', 'divino' ),
+				'boxed'   => __( 'Boxed', 'divino' ),
 			);
 		}
 
@@ -844,21 +844,21 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 			if ( divino_Builder_Helper::is_row_empty( 'above', 'header', 'desktop' ) ) {
 				$divino_header_options[] = array(
 					'key'   => 'ast-hfb-above-header-display',
-					'label' => __( 'Disable Above Header', 'astra' ),
+					'label' => __( 'Disable Above Header', 'divino' ),
 				);
 			}
 
 			if ( divino_Builder_Helper::is_row_empty( 'primary', 'header', 'desktop' ) ) {
 				$divino_header_options[] = array(
 					'key'   => 'ast-main-header-display',
-					'label' => __( 'Disable Primary Header', 'astra' ),
+					'label' => __( 'Disable Primary Header', 'divino' ),
 				);
 			}
 
 			if ( divino_Builder_Helper::is_row_empty( 'below', 'header', 'desktop' ) ) {
 				$divino_header_options[] = array(
 					'key'   => 'ast-hfb-below-header-display',
-					'label' => __( 'Disable Below Header', 'astra' ),
+					'label' => __( 'Disable Below Header', 'divino' ),
 				);
 			}
 
@@ -869,7 +869,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 			) {
 				$divino_header_options[] = array(
 					'key'   => 'ast-hfb-mobile-header-display',
-					'label' => __( 'Disable Mobile Header', 'astra' ),
+					'label' => __( 'Disable Mobile Header', 'divino' ),
 				);
 			}
 
@@ -886,11 +886,11 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 			$divino_page_meta_elements = array(
 				array(
 					'key'   => 'ast-global-header-display',
-					'label' => __( 'Disable Header', 'astra' ),
+					'label' => __( 'Disable Header', 'divino' ),
 				),
 				array(
 					'key'   => 'footer-sml-layout',
-					'label' => __( 'Disable Footer', 'astra' ),
+					'label' => __( 'Disable Footer', 'divino' ),
 				),
 			);
 
@@ -900,7 +900,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 				if ( ! ( class_exists( 'WooCommerce' ) && absint( divino_get_post_id() ) === wc_get_page_id( 'shop' ) ) ) {
 					$divino_page_meta_elements[] = array(
 						'key'   => 'ast-banner-title-visibility',
-						'label' => __( 'Disable Banner Area', 'astra' ),
+						'label' => __( 'Disable Banner Area', 'divino' ),
 					);
 				}
 			}
@@ -908,7 +908,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 			if ( 'none' !== divino_get_option( 'breadcrumb-position', 'none' ) ) {
 				$divino_page_meta_elements[] = array(
 					'key'   => 'ast-breadcrumbs-content',
-					'label' => __( 'Disable Breadcrumb', 'astra' ),
+					'label' => __( 'Disable Breadcrumb', 'divino' ),
 				);
 			}
 
@@ -950,21 +950,21 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 			if ( $sticky_above_header_condition ) {
 				$divino_sticky_header_options[] = array(
 					'key'   => 'header-above-stick-meta',
-					'label' => __( 'Stick Above Header', 'astra' ),
+					'label' => __( 'Stick Above Header', 'divino' ),
 				);
 			}
 
 			if ( $sticky_primary_header_condition ) {
 				$divino_sticky_header_options[] = array(
 					'key'   => 'header-main-stick-meta',
-					'label' => __( 'Stick Primary Header', 'astra' ),
+					'label' => __( 'Stick Primary Header', 'divino' ),
 				);
 			}
 
 			if ( $sticky_below_header_condition ) {
 				$divino_sticky_header_options[] = array(
 					'key'   => 'header-below-stick-meta',
-					'label' => __( 'Stick Below Header', 'astra' ),
+					'label' => __( 'Stick Below Header', 'divino' ),
 				);
 			}
 
@@ -978,9 +978,9 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 		 */
 		public function get_header_enabled_options() {
 			return array(
-				'default'  => __( 'Inherit', 'astra' ),
-				'enabled'  => __( 'Enabled', 'astra' ),
-				'disabled' => __( 'Disabled', 'astra' ),
+				'default'  => __( 'Inherit', 'divino' ),
+				'enabled'  => __( 'Enabled', 'divino' ),
+				'disabled' => __( 'Disabled', 'divino' ),
 			);
 		}
 
@@ -991,8 +991,8 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 		 */
 		public function get_page_bg_toggle_options() {
 			return array(
-				'default' => __( 'Inherit', 'astra' ),
-				'enabled' => __( 'Enabled', 'astra' ),
+				'default' => __( 'Inherit', 'divino' ),
+				'enabled' => __( 'Enabled', 'divino' ),
 			);
 		}
 
@@ -1035,7 +1035,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			if ( empty( $header_options ) ) {
 				$header_options = array(
-					'' => __( 'No Page Headers Found', 'astra' ),
+					'' => __( 'No Page Headers Found', 'divino' ),
 				);
 			}
 
@@ -1284,11 +1284,11 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 
 			register_post_meta(
 				'',
-				'astra-migrate-meta-layouts',
+				'divino-migrate-meta-layouts',
 				array(
 					'show_in_rest'  => true,
 					'single'        => true,
-					'default'       => isset( $meta['astra-migrate-meta-layouts']['default'] ) ? $meta['astra-migrate-meta-layouts']['default'] : '',
+					'default'       => isset( $meta['divino-migrate-meta-layouts']['default'] ) ? $meta['divino-migrate-meta-layouts']['default'] : '',
 					'type'          => 'string',
 					'auth_callback' => '__return_true',
 				)
@@ -1679,7 +1679,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 		}
 
 		/**
-		 * Setup meta options for Astra meta settings.
+		 * Setup meta options for divino meta settings.
 		 *
 		 * @since 3.7.8
 		 */
@@ -1733,7 +1733,7 @@ if ( ! class_exists( 'divino_Meta_Boxes' ) ) {
 						'default'  => 'default',
 						'sanitize' => 'FILTER_DEFAULT',
 					),
-					'astra-migrate-meta-layouts'    => array(
+					'divino-migrate-meta-layouts'    => array(
 						'default'  => 'default',
 						'sanitize' => 'FILTER_DEFAULT',
 					),

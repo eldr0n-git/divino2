@@ -1,3 +1,4 @@
+<!-- event-3-col.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Events, 3 columns with event images and titles

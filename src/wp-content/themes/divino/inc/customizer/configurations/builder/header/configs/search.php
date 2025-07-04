@@ -2,8 +2,8 @@
 /**
  * Search Header Configuration.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       4.5.2
  */
 
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register search header builder Customizer Configurations.
  *
  * @since 4.5.2
- * @return array Astra Customizer Configurations with updated configurations.
+ * @return array divino Customizer Configurations with updated configurations.
  */
 function divino_header_search_configuration() {
 	$_section = 'section-header-search';
@@ -29,7 +29,7 @@ function divino_header_search_configuration() {
 			'name'     => $_section,
 			'type'     => 'section',
 			'priority' => 80,
-			'title'    => __( 'Search', 'astra' ),
+			'title'    => __( 'Search', 'divino' ),
 			'panel'    => 'panel-header-builder-group',
 		),
 
@@ -58,7 +58,7 @@ function divino_header_search_configuration() {
 			'control'    => 'ast-responsive-color',
 			'responsive' => true,
 			'rgba'       => true,
-			'title'      => __( 'Icon Color', 'astra' ),
+			'title'      => __( 'Icon Color', 'divino' ),
 			'context'    => divino_Builder_Helper::$design_tab,
 			'divider'    => array( 'ast_class' => 'ast-section-spacing' ),
 		),
@@ -72,7 +72,7 @@ function divino_header_search_configuration() {
 			'priority'          => 3,
 			'transport'         => 'postMessage',
 			'default'           => divino_get_option( 'header-search-icon-space' ),
-			'title'             => __( 'Icon Size', 'astra' ),
+			'title'             => __( 'Icon Size', 'divino' ),
 			'suffix'            => 'px',
 			'type'              => 'control',
 			'control'           => 'ast-responsive-slider',
@@ -95,7 +95,7 @@ function divino_header_search_configuration() {
 			'priority'    => 2,
 			'transport'   => 'postMessage',
 			'default'     => divino_get_option( 'header-search-width' ),
-			'title'       => __( 'Search Width', 'astra' ),
+			'title'       => __( 'Search Width', 'divino' ),
 			'suffix'      => 'px',
 			'type'        => 'control',
 			'control'     => 'ast-responsive-slider',
@@ -125,7 +125,7 @@ function divino_header_search_configuration() {
 			'control'  => 'ast-toggle-control',
 			'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),
 			'section'  => $_section,
-			'title'    => __( 'Live Search', 'astra' ),
+			'title'    => __( 'Live Search', 'divino' ),
 			'priority' => 5,
 			'context'  => divino_Builder_Helper::$general_tab,
 		),
@@ -140,7 +140,7 @@ function divino_header_search_configuration() {
 			'control'     => 'ast-multi-selector',
 			'section'     => $_section,
 			'priority'    => 5,
-			'title'       => __( 'Search Within Post Types', 'astra' ),
+			'title'       => __( 'Search Within Post Types', 'divino' ),
 			'context'     => array(
 				divino_Builder_Helper::$general_tab_config,
 				array(
@@ -168,7 +168,7 @@ function divino_header_search_configuration() {
 			'control'      => 'ast-number',
 			'qty_selector' => true,
 			'section'      => $_section,
-			'title'        => __( 'Visible Search Result', 'astra' ),
+			'title'        => __( 'Visible Search Result', 'divino' ),
 			'priority'     => 5,
 			'responsive'   => false,
 			'input_attrs'  => array(
@@ -192,7 +192,7 @@ function divino_header_search_configuration() {
 		array(
 			'name'     => divino_THEME_SETTINGS . '[' . $_section . '-margin-divider]',
 			'section'  => $_section,
-			'title'    => __( 'Spacing', 'astra' ),
+			'title'    => __( 'Spacing', 'divino' ),
 			'type'     => 'control',
 			'control'  => 'ast-heading',
 			'priority' => 220,
@@ -213,14 +213,14 @@ function divino_header_search_configuration() {
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 			'section'           => $_section,
 			'priority'          => 220,
-			'title'             => __( 'Margin', 'astra' ),
+			'title'             => __( 'Margin', 'divino' ),
 			'linked_choices'    => true,
 			'unit_choices'      => array( 'px', 'em', '%' ),
 			'choices'           => array(
-				'top'    => __( 'Top', 'astra' ),
-				'right'  => __( 'Right', 'astra' ),
-				'bottom' => __( 'Bottom', 'astra' ),
-				'left'   => __( 'Left', 'astra' ),
+				'top'    => __( 'Top', 'divino' ),
+				'right'  => __( 'Right', 'divino' ),
+				'bottom' => __( 'Bottom', 'divino' ),
+				'left'   => __( 'Left', 'divino' ),
 			),
 			'context'           => divino_Builder_Helper::$design_tab,
 			'divider'           => array( 'ast_class' => 'ast-section-spacing' ),

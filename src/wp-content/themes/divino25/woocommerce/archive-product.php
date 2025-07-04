@@ -87,6 +87,7 @@ if ( woocommerce_product_loop() ) {
  */
 do_action( 'woocommerce_after_main_content' );
 
+echo '<!-- using divino25 archive-product.php -->';
 /**
  * Hook: woocommerce_sidebar.
  *
@@ -95,5 +96,3 @@ do_action( 'woocommerce_after_main_content' );
 do_action( 'woocommerce_sidebar' );
 
 get_footer( 'shop' );
-
-echo '<!-- using divino25 archive-product.php -->';

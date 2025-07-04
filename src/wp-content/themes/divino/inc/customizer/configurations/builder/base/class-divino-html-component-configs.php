@@ -1,9 +1,9 @@
 <?php
 /**
- * Astra Theme Customizer Configuration Builder.
+ * divino Theme Customizer Configuration Builder.
  *
- * @package     astra-builder
- * @link        https://wpastra.com/
+ * @package     divino-builder
+ * @link        https://wpdivino.com/
  * @since       3.0.0
  */
 
@@ -26,7 +26,7 @@ class divino_Html_Component_Configs {
 	 * @param string $section Section.
 	 *
 	 * @since 3.0.0
-	 * @return array $configurations Astra Customizer Configurations with updated configurations.
+	 * @return array $configurations divino Customizer Configurations with updated configurations.
 	 */
 	public static function register_configuration( $configurations, $builder_type = 'header', $section = 'section-hb-html-' ) {
 
@@ -66,7 +66,7 @@ class divino_Html_Component_Configs {
 					'type'        => 'section',
 					'priority'    => 60,
 					/* translators: %s Index */
-					'title'       => sprintf( __( 'HTML %s', 'astra' ), $index ),
+					'title'       => sprintf( __( 'HTML %s', 'divino' ), $index ),
 					'panel'       => 'panel-' . $builder_type . '-builder-group',
 					'clone_index' => $index,
 					'clone_type'  => $builder_type . '-html',
@@ -109,7 +109,7 @@ class divino_Html_Component_Configs {
 					'control'    => 'ast-responsive-color',
 					'responsive' => true,
 					'rgba'       => true,
-					'title'      => __( 'Text Color', 'astra' ),
+					'title'      => __( 'Text Color', 'divino' ),
 					'context'    => divino_Builder_Helper::$design_tab,
 					'divider'    => array( 'ast_class' => 'ast-section-spacing' ),
 				),
@@ -118,7 +118,7 @@ class divino_Html_Component_Configs {
 					'default'    => divino_get_option( $builder_type . '-html-' . $index . '-color-group' ),
 					'type'       => 'control',
 					'control'    => 'ast-color-group',
-					'title'      => __( 'Link Color', 'astra' ),
+					'title'      => __( 'Link Color', 'divino' ),
 					'section'    => $_section,
 					'transport'  => 'postMessage',
 					'priority'   => 8,
@@ -141,7 +141,7 @@ class divino_Html_Component_Configs {
 					'responsive' => true,
 					'rgba'       => true,
 					'parent'     => divino_THEME_SETTINGS . '[' . $builder_type . '-html-' . $index . '-link-group]',
-					'title'      => __( 'Normal', 'astra' ),
+					'title'      => __( 'Normal', 'divino' ),
 					'context'    => divino_Builder_Helper::$design_tab,
 					'divider'    => array( 'ast_class' => 'ast-bottom-section-divider' ),
 				),
@@ -160,7 +160,7 @@ class divino_Html_Component_Configs {
 					'responsive' => true,
 					'rgba'       => true,
 					'parent'     => divino_THEME_SETTINGS . '[' . $builder_type . '-html-' . $index . '-link-group]',
-					'title'      => __( 'Hover', 'astra' ),
+					'title'      => __( 'Hover', 'divino' ),
 					'context'    => divino_Builder_Helper::$design_tab,
 				),
 
@@ -170,7 +170,7 @@ class divino_Html_Component_Configs {
 				array(
 					'name'     => divino_THEME_SETTINGS . '[' . $_section . '-margin-divider]',
 					'section'  => $_section,
-					'title'    => __( 'Spacing', 'astra' ),
+					'title'    => __( 'Spacing', 'divino' ),
 					'type'     => 'control',
 					'control'  => 'ast-heading',
 					'priority' => 109,
@@ -191,15 +191,15 @@ class divino_Html_Component_Configs {
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 					'section'           => $_section,
 					'priority'          => 109,
-					'title'             => __( 'Margin', 'astra' ),
+					'title'             => __( 'Margin', 'divino' ),
 					'divider'           => array( 'ast_class' => 'ast-section-spacing' ),
 					'linked_choices'    => true,
 					'unit_choices'      => array( 'px', 'em', '%' ),
 					'choices'           => array(
-						'top'    => __( 'Top', 'astra' ),
-						'right'  => __( 'Right', 'astra' ),
-						'bottom' => __( 'Bottom', 'astra' ),
-						'left'   => __( 'Left', 'astra' ),
+						'top'    => __( 'Top', 'divino' ),
+						'right'  => __( 'Right', 'divino' ),
+						'bottom' => __( 'Bottom', 'divino' ),
+						'left'   => __( 'Left', 'divino' ),
 					),
 					'context'           => divino_Builder_Helper::$design_tab,
 				),
@@ -213,7 +213,7 @@ class divino_Html_Component_Configs {
 					'control'   => 'ast-selector',
 					'section'   => $_section,
 					'priority'  => 6,
-					'title'     => __( 'Alignment', 'astra' ),
+					'title'     => __( 'Alignment', 'divino' ),
 					'context'   => divino_Builder_Helper::$general_tab,
 					'transport' => 'postMessage',
 					'choices'   => array(

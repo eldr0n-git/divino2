@@ -2,7 +2,7 @@
 /**
  * WooCommerce Cart - Dynamic CSS
  *
- * @package Astra
+ * @package divino
  * @since 3.0.0
  */
 
@@ -63,8 +63,8 @@ if ( ! function_exists( 'divino_cart_position' ) ) {
 /**
  * Dynamic CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
- * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+ * @param  string $dynamic_css          divino Dynamic CSS.
+ * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
  * @return String Generated dynamic CSS for Search.
  *
  * @since 3.0.0
@@ -210,7 +210,7 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 		$selector . ' .ast-woo-header-cart-info-wrap' => array(
 			'color' => esc_attr( $icon_color ),
 		),
-		$selector . ' .ast-addon-cart-wrap i.astra-icon:after' => array(
+		$selector . ' .ast-addon-cart-wrap i.divino-icon:after' => array(
 			'color'            => esc_attr( $theme_h_color ),
 			'background-color' => esc_attr( $icon_color ),
 		),
@@ -218,7 +218,7 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 			'height' => divino_get_css_value( $cart_icon_size_desktop, 'px' ),
 			'width'  => divino_get_css_value( $cart_icon_size_desktop, 'px' ),
 		),
-		'.ast-cart-menu-wrap, i.astra-icon.ast-icon-shopping-' . $header_woo_cart_list => array(
+		'.ast-cart-menu-wrap, i.divino-icon.ast-icon-shopping-' . $header_woo_cart_list => array(
 			'font-size' => divino_get_css_value( $cart_icon_size_desktop, 'px' ),
 		),
 		$selector . ' a.cart-container *'             => array(
@@ -228,28 +228,28 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 		/**
 		 * General Woo Cart tray color for widget
 		 */
-		'.ast-site-header-cart .ast-site-header-cart-data .widget_shopping_cart_content a:not(.button), .astra-cart-drawer .widget_shopping_cart_content a:not(.button)' => array(
+		'.ast-site-header-cart .ast-site-header-cart-data .widget_shopping_cart_content a:not(.button), .divino-cart-drawer .widget_shopping_cart_content a:not(.button)' => array(
 			'color' => esc_attr( $cart_link_color_desktop ),
 		),
 		'.ast-site-header-cart-data span, .ast-site-header-cart-data strong, .ast-site-header-cart-data .woocommerce-mini-cart__empty-message, .ast-site-header-cart-data .total .woocommerce-Price-amount, .ast-site-header-cart-data .total .woocommerce-Price-amount .woocommerce-Price-currencySymbol, .ast-header-woo-cart .ast-site-header-cart .ast-site-header-cart-data .widget_shopping_cart .mini_cart_item a.remove' => array(
 			'color' => esc_attr( $cart_text_color_desktop ),
 		),
-		'.ast-site-header-cart .ast-site-header-cart-data .widget_shopping_cart_content a:not(.button):hover, .astra-cart-drawer .widget_shopping_cart_content a:not(.button):hover' => array(
+		'.ast-site-header-cart .ast-site-header-cart-data .widget_shopping_cart_content a:not(.button):hover, .divino-cart-drawer .widget_shopping_cart_content a:not(.button):hover' => array(
 			'color' => esc_attr( $cart_h_link_color_desktop ),
 		),
-		'.ast-site-header-cart .woocommerce.widget_shopping_cart, div.astra-cart-drawer ' => array(
+		'.ast-site-header-cart .woocommerce.widget_shopping_cart, div.divino-cart-drawer ' => array(
 			'background-color' => esc_attr( $cart_bg_color_desktop ),
 			'border-color'     => esc_attr( $cart_bg_color_desktop ),
 		),
-		'.ast-site-header-cart .widget_shopping_cart:hover, .astra-cart-drawer:hover' => array(
+		'.ast-site-header-cart .widget_shopping_cart:hover, .divino-cart-drawer:hover' => array(
 			'background-color' => esc_attr( $cart_h_bg_color_desktop ),
 			'border-color'     => esc_attr( $cart_h_bg_color_desktop ),
 		),
-		'.ast-site-header-cart .widget_shopping_cart .woocommerce-mini-cart__total, .astra-cart-drawer .astra-cart-drawer-, .woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__total, .astra-cart-drawer .astra-cart-drawer-header' => array(
+		'.ast-site-header-cart .widget_shopping_cart .woocommerce-mini-cart__total, .divino-cart-drawer .divino-cart-drawer-, .woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__total, .divino-cart-drawer .divino-cart-drawer-header' => array(
 			'border-top-color'    => esc_attr( $cart_separator_color_desktop ),
 			'border-bottom-color' => esc_attr( $cart_separator_color_desktop ),
 		),
-		'.ast-site-header-cart .widget_shopping_cart .mini_cart_item,.astra-cart-drawer .astra-cart-drawer-content .widget_shopping_cart_content ul li' => array(
+		'.ast-site-header-cart .widget_shopping_cart .mini_cart_item,.divino-cart-drawer .divino-cart-drawer-content .widget_shopping_cart_content ul li' => array(
 			'border-bottom-color' => $cart_separator_color_desktop ? divino_hex_to_rgba( $cart_separator_color_desktop ) : '',
 		),
 		'.ast-site-header-cart .widget_shopping_cart:before, .ast-site-header-cart .widget_shopping_cart:after, .open-preview-woocommerce-cart .ast-site-header-cart .widget_shopping_cart:before' => array(
@@ -280,11 +280,11 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 		/**
 		 * Cart button color for widget
 		 */
-		'.ast-site-header-cart .ast-site-header-cart-data .widget_shopping_cart_content a.button.wc-forward:not(.checkout), .woocommerce-js .astra-cart-drawer .widget_shopping_cart_content a.button.wc-forward:not(.checkout), .ast-site-header-cart .ast-site-header-cart-data .widget_shopping_cart_content a.button.wc-forward:not(.checkout),  .woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping)' => array(
+		'.ast-site-header-cart .ast-site-header-cart-data .widget_shopping_cart_content a.button.wc-forward:not(.checkout), .woocommerce-js .divino-cart-drawer .widget_shopping_cart_content a.button.wc-forward:not(.checkout), .ast-site-header-cart .ast-site-header-cart-data .widget_shopping_cart_content a.button.wc-forward:not(.checkout),  .woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping)' => array(
 			'color'            => esc_attr( $cart_button_text_color_desktop ),
 			'background-color' => esc_attr( $cart_button_bg_color_desktop ),
 		),
-		'.ast-site-header-cart .ast-site-header-cart-data .widget_shopping_cart_content a.button.wc-forward:not(.checkout):hover, .woocommerce-js .astra-cart-drawer .widget_shopping_cart_content a.button.wc-forward:not(.checkout):hover, .woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping):hover' => array(
+		'.ast-site-header-cart .ast-site-header-cart-data .widget_shopping_cart_content a.button.wc-forward:not(.checkout):hover, .woocommerce-js .divino-cart-drawer .widget_shopping_cart_content a.button.wc-forward:not(.checkout):hover, .woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping):hover' => array(
 			'color'            => esc_attr( $cart_button_text_h_color_desktop ),
 			'background-color' => esc_attr( $cart_button_bg_h_color_desktop ),
 		),
@@ -292,17 +292,17 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 		/**
 		 * Checkout button color for widget
 		 */
-		'.ast-site-header-cart .ast-site-header-cart-data .widget_shopping_cart_content a.button.checkout.wc-forward, .astra-cart-drawer .widget_shopping_cart_content a.button.checkout.wc-forward' => array(
+		'.ast-site-header-cart .ast-site-header-cart-data .widget_shopping_cart_content a.button.checkout.wc-forward, .divino-cart-drawer .widget_shopping_cart_content a.button.checkout.wc-forward' => array(
 			'color'            => esc_attr( $checkout_button_text_color_desktop ),
 			'border-color'     => esc_attr( $checkout_button_bg_color_desktop ),
 			'background-color' => esc_attr( $checkout_button_bg_color_desktop ),
 		),
-		'.ast-site-header-cart .ast-site-header-cart-data .widget_shopping_cart_content a.button.checkout.wc-forward:hover, .astra-cart-drawer .widget_shopping_cart_content a.button.checkout.wc-forward:hover' => array(
+		'.ast-site-header-cart .ast-site-header-cart-data .widget_shopping_cart_content a.button.checkout.wc-forward:hover, .divino-cart-drawer .widget_shopping_cart_content a.button.checkout.wc-forward:hover' => array(
 			'color'            => esc_attr( $checkout_button_text_h_color_desktop ),
 			'background-color' => esc_attr( $checkout_button_bg_h_color_desktop ),
 		),
 
-		'.ast-site-header-cart .ast-addon-cart-wrap i.astra-icon:after, .ast-theme-transparent-header .ast-site-header-cart .ast-addon-cart-wrap i.astra-icon:after' => array(
+		'.ast-site-header-cart .ast-addon-cart-wrap i.divino-icon:after, .ast-theme-transparent-header .ast-site-header-cart .ast-addon-cart-wrap i.divino-icon:after' => array(
 			'color' => esc_attr( $cart_products_count_color ),
 		),
 	);
@@ -322,15 +322,15 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 			'opacity'    => '0',
 			'visibility' => 'hidden',
 		);
-		$css_output_desktop['.ast-desktop .astra-cart-drawer'] = array(
+		$css_output_desktop['.ast-desktop .divino-cart-drawer'] = array(
 			'width' => divino_get_css_value( $flyout_cart_width_desktop, $flyout_cart_width_desktop_unit ),
 		);
 		if ( 'left' === $desktop_flyout_cart_direction ) {
-			$css_output_desktop['.ast-desktop .astra-cart-drawer']        = array(
+			$css_output_desktop['.ast-desktop .divino-cart-drawer']        = array(
 				'width' => divino_get_css_value( $flyout_cart_width_desktop, $flyout_cart_width_desktop_unit ),
 				'left'  => '-' . divino_get_css_value( $flyout_cart_width_desktop, $flyout_cart_width_desktop_unit ),
 			);
-			$css_output_desktop['.ast-desktop .astra-cart-drawer.active'] = array(
+			$css_output_desktop['.ast-desktop .divino-cart-drawer.active'] = array(
 				'left' => divino_get_css_value( $flyout_cart_width_desktop, $flyout_cart_width_desktop_unit ),
 			);
 		}
@@ -338,24 +338,24 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 
 	/* Parse CSS from array() */
 	$css_output          = divino_parse_css( $css_output_desktop );
-	$responsive_selector = '.astra-cart-drawer';
+	$responsive_selector = '.divino-cart-drawer';
 
 	$css_output_mobile = array(
-		$responsive_selector . ' .astra-cart-drawer-title, ' . $responsive_selector . ' .widget_shopping_cart_content span, ' . $responsive_selector . ' .widget_shopping_cart_content strong,' . $responsive_selector . ' .woocommerce-mini-cart__empty-message, .astra-cart-drawer .woocommerce-mini-cart *' => array(
+		$responsive_selector . ' .divino-cart-drawer-title, ' . $responsive_selector . ' .widget_shopping_cart_content span, ' . $responsive_selector . ' .widget_shopping_cart_content strong,' . $responsive_selector . ' .woocommerce-mini-cart__empty-message, .divino-cart-drawer .woocommerce-mini-cart *' => array(
 			'color' => esc_attr( $cart_text_color_mobile ),
 		),
 		$responsive_selector . ' .widget_shopping_cart .mini_cart_item a.remove' => array(
 			'border-color' => esc_attr( $cart_text_color_mobile ),
 		),
-		$responsive_selector . '#astra-mobile-cart-drawer' => array(
+		$responsive_selector . '#divino-mobile-cart-drawer' => array(
 			'background-color' => esc_attr( $cart_bg_color_mobile ),
 			'border-color'     => esc_attr( $cart_bg_color_mobile ),
 		),
-		$responsive_selector . '#astra-mobile-cart-drawer:hover' => array(
+		$responsive_selector . '#divino-mobile-cart-drawer:hover' => array(
 			'background-color' => esc_attr( $cart_h_bg_color_mobile ),
 			'border-color'     => esc_attr( $cart_h_bg_color_mobile ),
 		),
-		'#astra-mobile-cart-drawer:hover .widget_shopping_cart:before, #astra-mobile-cart-drawer:hover .widget_shopping_cart:after, .open-preview-woocommerce-cart #astra-mobile-cart-drawer .widget_shopping_cart:before' => array(
+		'#divino-mobile-cart-drawer:hover .widget_shopping_cart:before, #divino-mobile-cart-drawer:hover .widget_shopping_cart:after, .open-preview-woocommerce-cart #divino-mobile-cart-drawer .widget_shopping_cart:before' => array(
 			'border-bottom-color' => esc_attr( $cart_bg_color_mobile ),
 		),
 		$responsive_selector . ' .widget_shopping_cart .mini_cart_item a.remove:hover,' . $responsive_selector . ' .widget_shopping_cart .mini_cart_item:hover > a.remove' => array(
@@ -366,11 +366,11 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 		$responsive_selector . ' .widget_shopping_cart_content a:not(.button)' => array(
 			'color' => esc_attr( $cart_link_color_mobile ),
 		),
-		'#astra-mobile-cart-drawer .widget_shopping_cart .woocommerce-mini-cart__total, .astra-cart-drawer .astra-cart-drawer-header' => array(
+		'#divino-mobile-cart-drawer .widget_shopping_cart .woocommerce-mini-cart__total, .divino-cart-drawer .divino-cart-drawer-header' => array(
 			'border-top-color'    => esc_attr( $cart_separator_color_mobile ),
 			'border-bottom-color' => esc_attr( $cart_separator_color_mobile ),
 		),
-		'#astra-mobile-cart-drawer .widget_shopping_cart .mini_cart_item' => array(
+		'#divino-mobile-cart-drawer .widget_shopping_cart .mini_cart_item' => array(
 			'border-bottom-color' => $cart_separator_color_mobile ? divino_hex_to_rgba( $cart_separator_color_mobile ) : '',
 		),
 		$responsive_selector . ' .widget_shopping_cart_content a:not(.button):hover' => array(
@@ -380,7 +380,7 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 			'height' => divino_get_css_value( $cart_icon_size_mobile, 'px' ),
 			'width'  => divino_get_css_value( $cart_icon_size_mobile, 'px' ),
 		),
-		'.ast-header-break-point.ast-hfb-header .ast-cart-menu-wrap, i.astra-icon.ast-icon-shopping-' . $header_woo_cart_list => array(
+		'.ast-header-break-point.ast-hfb-header .ast-cart-menu-wrap, i.divino-icon.ast-icon-shopping-' . $header_woo_cart_list => array(
 			'font-size' => divino_get_css_value( $cart_icon_size_mobile, 'px' ),
 		),
 
@@ -407,11 +407,11 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 		/**
 		 * Cart button color for widget
 		 */
-		'.woocommerce-js ' . $responsive_selector . ' .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping)' => array(
+		'.woocommerce-js ' . $responsive_selector . ' .divino-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping)' => array(
 			'color'            => esc_attr( $cart_button_text_color_mobile ),
 			'background-color' => esc_attr( $cart_button_bg_color_mobile ),
 		),
-		'.woocommerce-js ' . $responsive_selector . ' .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping):hover' => array(
+		'.woocommerce-js ' . $responsive_selector . ' .divino-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping):hover' => array(
 			'color'            => esc_attr( $cart_button_text_h_color_mobile ),
 			'background-color' => esc_attr( $cart_button_bg_h_color_mobile ),
 		),
@@ -419,21 +419,21 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 	);
 
 	$css_output_tablet = array(
-		$responsive_selector . ' .astra-cart-drawer-title, ' . $responsive_selector . ' .widget_shopping_cart_content span, ' . $responsive_selector . ' .widget_shopping_cart_content strong,' . $responsive_selector . ' .woocommerce-mini-cart__empty-message, .astra-cart-drawer .woocommerce-mini-cart *' => array(
+		$responsive_selector . ' .divino-cart-drawer-title, ' . $responsive_selector . ' .widget_shopping_cart_content span, ' . $responsive_selector . ' .widget_shopping_cart_content strong,' . $responsive_selector . ' .woocommerce-mini-cart__empty-message, .divino-cart-drawer .woocommerce-mini-cart *' => array(
 			'color' => esc_attr( $cart_text_color_tablet ),
 		),
 		$responsive_selector . ' .widget_shopping_cart .mini_cart_item a.remove' => array(
 			'border-color' => esc_attr( $cart_text_color_tablet ),
 		),
-		$responsive_selector . '#astra-mobile-cart-drawer' => array(
+		$responsive_selector . '#divino-mobile-cart-drawer' => array(
 			'background-color' => esc_attr( $cart_bg_color_tablet ),
 			'border-color'     => esc_attr( $cart_bg_color_tablet ),
 		),
-		$responsive_selector . '#astra-mobile-cart-drawer:hover' => array(
+		$responsive_selector . '#divino-mobile-cart-drawer:hover' => array(
 			'background-color' => esc_attr( $cart_h_bg_color_tablet ),
 			'border-color'     => esc_attr( $cart_h_bg_color_tablet ),
 		),
-		'#astra-mobile-cart-drawer:hover .widget_shopping_cart:before, #astra-mobile-cart-drawer:hover .widget_shopping_cart:after, .open-preview-woocommerce-cart #astra-mobile-cart-drawer .widget_shopping_cart:before' => array(
+		'#divino-mobile-cart-drawer:hover .widget_shopping_cart:before, #divino-mobile-cart-drawer:hover .widget_shopping_cart:after, .open-preview-woocommerce-cart #divino-mobile-cart-drawer .widget_shopping_cart:before' => array(
 			'border-bottom-color' => esc_attr( $cart_bg_color_tablet ),
 		),
 		$responsive_selector . ' .widget_shopping_cart .mini_cart_item a.remove:hover,' . $responsive_selector . ' .widget_shopping_cart .mini_cart_item:hover > a.remove' => array(
@@ -444,11 +444,11 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 		$responsive_selector . ' .widget_shopping_cart_content a:not(.button)' => array(
 			'color' => esc_attr( $cart_link_color_tablet ),
 		),
-		'#astra-mobile-cart-drawer .widget_shopping_cart .woocommerce-mini-cart__total, .astra-cart-drawer .astra-cart-drawer-header' => array(
+		'#divino-mobile-cart-drawer .widget_shopping_cart .woocommerce-mini-cart__total, .divino-cart-drawer .divino-cart-drawer-header' => array(
 			'border-top-color'    => esc_attr( $cart_separator_color_tablet ),
 			'border-bottom-color' => esc_attr( $cart_separator_color_tablet ),
 		),
-		'#astra-mobile-cart-drawer .widget_shopping_cart .mini_cart_item' => array(
+		'#divino-mobile-cart-drawer .widget_shopping_cart .mini_cart_item' => array(
 			'border-bottom-color' => $cart_separator_color_tablet ? divino_hex_to_rgba( $cart_separator_color_tablet ) : '',
 		),
 		$responsive_selector . ' .widget_shopping_cart_content a:not(.button):hover' => array(
@@ -458,7 +458,7 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 			'height' => divino_get_css_value( $cart_icon_size_tablet, 'px' ),
 			'width'  => divino_get_css_value( $cart_icon_size_tablet, 'px' ),
 		),
-		'.ast-header-break-point.ast-hfb-header .ast-cart-menu-wrap, i.astra-icon.ast-icon-shopping-' . $header_woo_cart_list => array(
+		'.ast-header-break-point.ast-hfb-header .ast-cart-menu-wrap, i.divino-icon.ast-icon-shopping-' . $header_woo_cart_list => array(
 			'font-size' => divino_get_css_value( $cart_icon_size_tablet, 'px' ),
 		),
 
@@ -485,11 +485,11 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 		/**
 		 * Cart button color for widget
 		 */
-		'.woocommerce-js ' . $responsive_selector . ' .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping)' => array(
+		'.woocommerce-js ' . $responsive_selector . ' .divino-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping)' => array(
 			'color'            => esc_attr( $cart_button_text_color_tablet ),
 			'background-color' => esc_attr( $cart_button_bg_color_tablet ),
 		),
-		'.woocommerce-js ' . $responsive_selector . ' .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping):hover' => array(
+		'.woocommerce-js ' . $responsive_selector . ' .divino-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping):hover' => array(
 			'color'            => esc_attr( $cart_button_text_h_color_tablet ),
 			'background-color' => esc_attr( $cart_button_bg_h_color_tablet ),
 		),
@@ -599,7 +599,7 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 		),
 
 		// Fill icon hover Color.
-		'.ast-menu-cart-fill .ast-site-header-cart-li:hover .ast-cart-menu-wrap .count, .ast-menu-cart-fill .ast-site-header-cart-li:hover .ast-cart-menu-wrap, .ast-menu-cart-fill .ast-site-header-cart-li:hover .ast-addon-cart-wrap, .ast-menu-cart-fill .ast-site-header-cart-li:hover .ast-addon-cart-wrap .ast-woo-header-cart-info-wrap, .ast-menu-cart-fill .ast-site-header-cart-li:hover .ast-addon-cart-wrap i.astra-icon:after' => array(
+		'.ast-menu-cart-fill .ast-site-header-cart-li:hover .ast-cart-menu-wrap .count, .ast-menu-cart-fill .ast-site-header-cart-li:hover .ast-cart-menu-wrap, .ast-menu-cart-fill .ast-site-header-cart-li:hover .ast-addon-cart-wrap, .ast-menu-cart-fill .ast-site-header-cart-li:hover .ast-addon-cart-wrap .ast-woo-header-cart-info-wrap, .ast-menu-cart-fill .ast-site-header-cart-li:hover .ast-addon-cart-wrap i.divino-icon:after' => array(
 			'background-color' => $icon_hover_color,
 			'color'            => esc_attr( $cart_h_color ),
 		),
@@ -613,13 +613,13 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 			'color' => $icon_hover_color,
 		),
 
-		$selector . ' .ast-site-header-cart-li:hover .ast-addon-cart-wrap i.astra-icon:after' => array(
+		$selector . ' .ast-site-header-cart-li:hover .ast-addon-cart-wrap i.divino-icon:after' => array(
 			'color'            => esc_attr( $theme_h_color ),
 			'background-color' => $icon_hover_color,
 		),
 
 		// Label/Fill icon hover Color.
-		'.ast-site-header-cart-li:hover .ast-woo-header-cart-info-wrap,' . $selector . ' .ast-site-header-cart-li:hover .ast-addon-cart-wrap, .ast-menu-cart-outline .ast-site-header-cart-li:hover .ast-addon-cart-wrap .astra-icon' => array(
+		'.ast-site-header-cart-li:hover .ast-woo-header-cart-info-wrap,' . $selector . ' .ast-site-header-cart-li:hover .ast-addon-cart-wrap, .ast-menu-cart-outline .ast-site-header-cart-li:hover .ast-addon-cart-wrap .divino-icon' => array(
 			'color' => $icon_hover_color,
 		),
 
@@ -628,7 +628,7 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 			'border-color' => $icon_hover_color,
 		),
 
-		'.ast-site-header-cart.ast-menu-cart-fill .ast-site-header-cart-li:hover .astra-icon' => array(
+		'.ast-site-header-cart.ast-menu-cart-fill .ast-site-header-cart-li:hover .divino-icon' => array(
 			'color' => $cart_h_color,
 		),
 
@@ -648,7 +648,7 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 	}
 
 	$remove_when_tp_header = array(
-		'.ast-site-header-cart .ast-site-header-cart-li:hover .ast-addon-cart-wrap i.astra-icon:after, .ast-theme-transparent-header .ast-site-header-cart .ast-site-header-cart-li:hover .ast-addon-cart-wrap i.astra-icon:after' => array(
+		'.ast-site-header-cart .ast-site-header-cart-li:hover .ast-addon-cart-wrap i.divino-icon:after, .ast-theme-transparent-header .ast-site-header-cart .ast-site-header-cart-li:hover .ast-addon-cart-wrap i.divino-icon:after' => array(
 			'color' => esc_attr( $cart_products_count_color_hover ),
 		),
 	);
@@ -673,7 +673,7 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 		$trans_header_selector . ' .ast-woo-header-cart-info-wrap' => array(
 			'color' => esc_attr( $transparent_header_icon_color ),
 		),
-		$trans_header_selector . ' .ast-addon-cart-wrap i.astra-icon:after' => array(
+		$trans_header_selector . ' .ast-addon-cart-wrap i.divino-icon:after' => array(
 			'color'            => esc_attr( $transparent_header_cart_h_color ),
 			'background-color' => esc_attr( $transparent_header_icon_color ),
 		),
@@ -737,7 +737,7 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 	 */
 	if ( false === $cart_badge_display ) {
 		$css_badge_output = array(
-			'.astra-icon.astra-icon::after' => array(
+			'.divino-icon.divino-icon::after' => array(
 				'display' => 'none',
 			),
 			'.ast-count-text'               => array(
@@ -758,7 +758,7 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 				'display'     => 'flex',
 				'align-items' => 'center',
 			),
-			'.astra-icon'                           => array(
+			'.divino-icon'                           => array(
 				'line-height' => 0.1,
 			),
 		);
@@ -769,7 +769,7 @@ function divino_hb_woo_cart_dynamic_css( $dynamic_css, $dynamic_css_filtered = '
 	if ( 'default' !== $header_woo_cart_list ) {
 
 		$svg_cart_icon_not_transparent = array(
-			'.ast-site-header-cart .ast-site-header-cart-li:hover .ast-addon-cart-wrap i.astra-icon:after' => array(
+			'.ast-site-header-cart .ast-site-header-cart-li:hover .ast-addon-cart-wrap i.divino-icon:after' => array(
 				'color' => esc_attr( $cart_products_count_color_hover ),
 			),
 		);

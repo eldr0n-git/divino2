@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Builder Loader.
+ * divino Builder Loader.
  *
- * @package astra-builder
+ * @package divino-builder
  */
 
 // No direct access, please.
@@ -460,7 +460,7 @@ if ( ! class_exists( 'divino_Builder_Header' ) ) {
 			$classes[] = 'ast-hfb-header';
 
 			if ( defined( 'divino_EXT_VER' ) && version_compare( divino_EXT_VER, '3.2.0', '<' ) ) {
-				$classes[] = 'astra-hfb-header';
+				$classes[] = 'divino-hfb-header';
 			}
 			return $classes;
 		}

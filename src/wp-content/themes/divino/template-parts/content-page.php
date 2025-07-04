@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Astra
+ * @package divino
  * @since 1.0.0
  */
 
@@ -31,7 +31,7 @@
 		divino_edit_post_link(
 			sprintf(
 				/* translators: %s: Name of current post */
-				esc_html__( 'Edit %s', 'astra' ),
+				esc_html__( 'Edit %s', 'divino' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			),
 			'<footer class="entry-footer"><span class="edit-link">',

@@ -2,9 +2,9 @@
 /**
  * Schema markup.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 2.1.3
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 2.1.3
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Astra Schema Markup.
+ * divino Schema Markup.
  *
  * @since 2.1.3
  */
@@ -41,14 +41,14 @@ class divino_Schema {
 	 */
 	private function include_schemas() {
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once divino_THEME_DIR . 'inc/schema/class-astra-creativework-schema.php';
-		require_once divino_THEME_DIR . 'inc/schema/class-astra-wpheader-schema.php';
-		require_once divino_THEME_DIR . 'inc/schema/class-astra-wpfooter-schema.php';
-		require_once divino_THEME_DIR . 'inc/schema/class-astra-wpsidebar-schema.php';
-		require_once divino_THEME_DIR . 'inc/schema/class-astra-person-schema.php';
-		require_once divino_THEME_DIR . 'inc/schema/class-astra-organization-schema.php';
-		require_once divino_THEME_DIR . 'inc/schema/class-astra-site-navigation-schema.php';
-		require_once divino_THEME_DIR . 'inc/schema/class-astra-breadcrumb-schema.php';
+		require_once divino_THEME_DIR . 'inc/schema/class-divino-creativework-schema.php';
+		require_once divino_THEME_DIR . 'inc/schema/class-divino-wpheader-schema.php';
+		require_once divino_THEME_DIR . 'inc/schema/class-divino-wpfooter-schema.php';
+		require_once divino_THEME_DIR . 'inc/schema/class-divino-wpsidebar-schema.php';
+		require_once divino_THEME_DIR . 'inc/schema/class-divino-person-schema.php';
+		require_once divino_THEME_DIR . 'inc/schema/class-divino-organization-schema.php';
+		require_once divino_THEME_DIR . 'inc/schema/class-divino-site-navigation-schema.php';
+		require_once divino_THEME_DIR . 'inc/schema/class-divino-breadcrumb-schema.php';
 		// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 	}
 

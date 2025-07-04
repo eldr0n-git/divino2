@@ -2,7 +2,7 @@
 /**
  * Template part for displaying the Mobile Header
  *
- * @package Astra Builder
+ * @package divino Builder
  */
 
 $divino_mobile_header_type = divino_get_option( 'mobile-header-type' );
@@ -18,17 +18,17 @@ if ( 'full-width' === $divino_mobile_header_type ) {
 	do_action( 'divino_mobile_header_bar_top' );
 
 	/**
-	 * Astra Top Header
+	 * divino Top Header
 	 */
 	do_action( 'divino_mobile_above_header' );
 
 	/**
-	 * Astra Main Header
+	 * divino Main Header
 	 */
 	do_action( 'divino_mobile_primary_header' );
 
 	/**
-	 * Astra Mobile Bottom Header
+	 * divino Mobile Bottom Header
 	 */
 	do_action( 'divino_mobile_below_header' );
 

@@ -4,7 +4,7 @@
  *
  * @link https://woocommerce.com/
  *
- * @package Astra
+ * @package divino
  */
 
 // If plugin - 'WooCommerce' not exist then return.
@@ -13,12 +13,12 @@ if ( ! class_exists( 'WooCommerce' ) ) {
 }
 
 /**
- * Astra WooCommerce Compatibility
+ * divino WooCommerce Compatibility
  */
 if ( ! class_exists( 'divino_Woocommerce' ) ) {
 
 	/**
-	 * Astra WooCommerce Compatibility
+	 * divino WooCommerce Compatibility
 	 *
 	 * @since 1.0.0
 	 */
@@ -183,7 +183,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 		}
 
 		/**
-		 * As WooCommerce-Astra pro options moved to theme, decide here to load from theme's end after 3.9.2 version.
+		 * As WooCommerce-divino pro options moved to theme, decide here to load from theme's end after 3.9.2 version.
 		 *
 		 * @since 3.9.2
 		 * @return bool true|false.
@@ -289,7 +289,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 		}
 
 		/**
-		 * Astra Sale flash markup.
+		 * divino Sale flash markup.
 		 *
 		 * @param string $sale_notification sale bubble type.
 		 * @param string $product Product.
@@ -297,7 +297,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 		 * @return mixed HTML markup.
 		 */
 		public function get_sale_flash_markup( $sale_notification, $product ) {
-			$text = __( 'Sale!', 'astra' ); // Default text.
+			$text = __( 'Sale!', 'divino' ); // Default text.
 
 			// CSS classes.
 			$classes = array();
@@ -355,9 +355,9 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 		 */
 		public function store_widgets_dynamic() {
 			$shop_filter_array = array(
-				'name'          => esc_html__( 'WooCommerce Sidebar', 'astra' ),
-				'id'            => 'astra-woo-shop-sidebar',
-				'description'   => __( 'This sidebar will be used on Product archive, Cart, Checkout and My Account pages.', 'astra' ),
+				'name'          => esc_html__( 'WooCommerce Sidebar', 'divino' ),
+				'id'            => 'divino-woo-shop-sidebar',
+				'description'   => __( 'This sidebar will be used on Product archive, Cart, Checkout and My Account pages.', 'divino' ),
 				'before_widget' => '<div id="%1$s" class="ast-woo-sidebar-widget widget %2$s">',
 				'after_widget'  => '</div>',
 			);
@@ -384,7 +384,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 		}
 
 		/**
-		 * Update WooCommerce store notice. Extending this function to add custom data-attr as per Astra's configuration.
+		 * Update WooCommerce store notice. Extending this function to add custom data-attr as per divino's configuration.
 		 *
 		 * @since 3.9.0
 		 *
@@ -404,7 +404,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 		 */
 		public function woocommerce_shipping_text() {
 			if ( divino_get_option( 'single-product-enable-shipping' ) ) {
-				$shipping_text = divino_get_i18n_option( 'single-product-shipping-text', _x( '%astra%', 'WooCommerce Single Product: Shipping Text', 'astra' ), false );
+				$shipping_text = divino_get_i18n_option( 'single-product-shipping-text', _x( '%divino%', 'WooCommerce Single Product: Shipping Text', 'divino' ), false );
 				/** @psalm-suppress RedundantCondition */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 				if ( false !== $shipping_text ) {
 					echo ' <span class="ast-shipping-text">' . esc_html( $shipping_text ) . '</span>';
@@ -417,8 +417,8 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 		 *
 		 * @since 3.9.0
 		 *
-		 * @param  string $dynamic_css          Astra Dynamic CSS.
-		 * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+		 * @param  string $dynamic_css          divino Dynamic CSS.
+		 * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
 		 *
 		 * @return string $dynamic_css Generated dynamic CSS for WooCommerce store.
 		 */
@@ -465,7 +465,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 				$notice = get_option( 'woocommerce_demo_store_notice' );
 
 				if ( empty( $notice ) ) {
-					$notice = __( 'This is a demo store for testing purposes &mdash; no orders shall be fulfilled.', 'astra' );
+					$notice = __( 'This is a demo store for testing purposes &mdash; no orders shall be fulfilled.', 'divino' );
 				}
 
 				// deepcode ignore InsecureHash: WooCommerce uses the md5 function to generate the store notice ID. This is an acceptable risk due to the WooCommerce dependency.
@@ -539,7 +539,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 		 */
 		public function header_cart_icon_markup() {
 
-			$woo_cart_icon_new_user = divino_get_option( 'astra-woocommerce-cart-icons-flag', true );
+			$woo_cart_icon_new_user = divino_get_option( 'divino-woocommerce-cart-icons-flag', true );
 			/** @psalm-suppress DocblockTypeContradiction */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			if ( apply_filters( 'divino_woocommerce_cart_icon', $woo_cart_icon_new_user ) ) {
 				if ( false === divino_Builder_Helper::$is_header_footer_builder_active ) {
@@ -554,7 +554,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 			$defaults           = apply_filters( 'divino_woocommerce_cart_icon', $woo_cart_icon_new_user ) ? 'bag' : 'default';
 			$icon               = divino_get_option( 'woo-header-cart-icon', $defaults );
 			$cart_count_display = apply_filters( 'divino_header_cart_count', true );
-			$cart_title         = apply_filters( 'divino_header_cart_title', __( 'Cart', 'astra' ) );
+			$cart_title         = apply_filters( 'divino_header_cart_title', __( 'Cart', 'divino' ) );
 
 			$cart_title_markup         = '<span class="ast-woo-header-cart-title">' . esc_html( $cart_title ) . '</span>';
 			$cart_total_label_position = divino_get_option( 'woo-header-cart-icon-total-label-position' );
@@ -581,7 +581,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 			if ( function_exists( 'get_woocommerce_currency_symbol' ) && $cart_check_total ) {
 				$cart_cur_sym_markup = '<span class="ast-woo-header-cart-cur-symbol">' . get_woocommerce_currency_symbol() . '</span>';
 			}
-			$display_cart_label = divino_get_i18n_option( 'woo-header-cart-label-display', _x( '%astra%', 'Header Builder: Cart Widget - Cart Label', 'astra' ) );
+			$display_cart_label = divino_get_i18n_option( 'woo-header-cart-label-display', _x( '%divino%', 'Header Builder: Cart Widget - Cart Label', 'divino' ) );
 
 			$shortcode_label       = array( '{cart_total_currency_symbol}', '{cart_title}', '{cart_total}', '{cart_currency_name}', '{cart_currency_symbol}' );
 			$shortcode_label_value = array( $cart_total_markup, $cart_title_markup, $cart_total_only_markup, $cart_cur_name_markup, $cart_cur_sym_markup );
@@ -603,7 +603,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 
 			// Cart Icon markup with total number of items.
 			$cart_icon = sprintf(
-				'<i class="astra-icon ast-icon-shopping-%1$s %2$s"
+				'<i class="divino-icon ast-icon-shopping-%1$s %2$s"
 							%3$s
 						>%4$s</i>',
 				$icon ? $icon : '',
@@ -650,7 +650,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 
 		/**
 		 * Remove body schema when using WooCommerce template.
-		 * WooCommerce adds it's own product schema hence schema data from Astra should be disabled here.
+		 * WooCommerce adds it's own product schema hence schema data from divino should be disabled here.
 		 *
 		 * @since 1.8.0
 		 * @param String $schema Schema markup.
@@ -689,15 +689,15 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 				$html .= '</div>';
 
 				if ( $review_count > 0 && divino_get_option( 'shop-ratings-product-archive' ) === 'count_string' && ! is_product() ) {
-					$single_caption = __( ' review', 'astra' );
-					$plural_caption = __( ' reviews', 'astra' );
+					$single_caption = __( ' review', 'divino' );
+					$plural_caption = __( ' reviews', 'divino' );
 
 					$counter_html = sprintf(
 						_n(
 							'<span class="count">%1$s</span>' . $single_caption,
 							'<span class="count">%1$s</span>' . $plural_caption,
 							$review_count,
-							'astra'
+							'divino'
 						),
 						$review_count
 					);
@@ -806,7 +806,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 
 			// Check if the current post/page content contains the WooCommerce Cart or Checkout block.
 			if ( has_block( 'woocommerce/cart' ) || has_block( 'woocommerce/checkout' ) ) {
-				$styles['astra-woocommerce-blocks'] = array(
+				$styles['divino-woocommerce-blocks'] = array(
 					'src'     => $css_uri . 'woocommerce-blocks' . $file_prefix . '.css',
 					'deps'    => '',
 					'version' => divino_THEME_VERSION,
@@ -827,7 +827,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 				( function_exists( 'dokan_get_option' ) && is_page( dokan_get_option( 'dashboard', 'dokan_pages' ) ) ) || // Custom Dokan dashboard page.
 				is_page( get_option( 'woocommerce_myaccount_page_id' ) ) // WooCommerce My Account page.
 			) {
-				$styles['astra-wc-dokan-compatibility'] = array(
+				$styles['divino-wc-dokan-compatibility'] = array(
 					'src'     => $css_uri . 'dokan-compatibility' . $file_prefix . '.css',
 					'deps'    => '',
 					'version' => divino_THEME_VERSION,
@@ -850,7 +850,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 
 			$content = sprintf( // WPCS: XSS OK.
 					/* translators: 1: number of products */
-				_nx( '%1$s Product', '%1$s Products', $category->count, 'product categories', 'astra' ),
+				_nx( '%1$s Product', '%1$s Products', $category->count, 'product categories', 'divino' ),
 				number_format_i18n( $category->count )
 			);
 
@@ -865,10 +865,10 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 		 */
 		public function theme_defaults( $defaults ) {
 
-			$theme_options = get_option( 'astra-settings' );
+			$theme_options = get_option( 'divino-settings' );
 
 			// Backward compatibility.
-			$defaults['astra-woocommerce-cart-icons-flag'] = true;
+			$defaults['divino-woocommerce-cart-icons-flag'] = true;
 
 			// Container.
 			$defaults['woocommerce-ast-content-layout'] = 'normal-width-container';
@@ -922,12 +922,12 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 
 			/* Free shipping */
 			$defaults['single-product-tabs-display']          = false;
-			$defaults['single-product-shipping-text']         = __( '& Free Shipping', 'astra' );
+			$defaults['single-product-shipping-text']         = __( '& Free Shipping', 'divino' );
 			$defaults['single-product-variation-tabs-layout'] = 'vertical';
 
 			/* Cart button*/
 			$defaults['woo-enable-cart-button-text'] = false;
-			$defaults['woo-cart-button-text']        = __( 'Proceed to checkout', 'astra' );
+			$defaults['woo-cart-button-text']        = __( 'Proceed to checkout', 'divino' );
 
 			/* Single product */
 			$defaults['single-product-structure'] = array(
@@ -967,7 +967,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 
 			// Single Product Payments.
 			$defaults['single-product-payment-icon-color'] = 'inherit';
-			$defaults['single-product-payment-text']       = __( 'Guaranteed Safe Checkout', 'astra' );
+			$defaults['single-product-payment-text']       = __( 'Guaranteed Safe Checkout', 'divino' );
 
 			$defaults['single-product-payment-list'] = array(
 				'items' => array(
@@ -977,7 +977,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 						'source'  => 'icon',
 						'icon'    => 'cc-visa',
 						'image'   => '',
-						'label'   => __( 'Visa', 'astra' ),
+						'label'   => __( 'Visa', 'divino' ),
 					),
 					array(
 						'id'      => 'item-2',
@@ -985,7 +985,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 						'source'  => 'icon',
 						'icon'    => 'cc-mastercard',
 						'image'   => '',
-						'label'   => __( 'Mastercard', 'astra' ),
+						'label'   => __( 'Mastercard', 'divino' ),
 					),
 					array(
 						'id'      => 'item-3',
@@ -993,7 +993,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 						'source'  => 'icon',
 						'icon'    => 'cc-amex',
 						'image'   => '',
-						'label'   => __( 'Amex', 'astra' ),
+						'label'   => __( 'Amex', 'divino' ),
 					),
 					array(
 						'id'      => 'item-4',
@@ -1001,7 +1001,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 						'source'  => 'icon',
 						'icon'    => 'cc-discover',
 						'image'   => '',
-						'label'   => __( 'Discover', 'astra' ),
+						'label'   => __( 'Discover', 'divino' ),
 					),
 				),
 			);
@@ -1191,9 +1191,9 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 				apply_filters(
 					'divino_woocommerce_shop_sidebar_init',
 					array(
-						'name'          => esc_html__( 'WooCommerce Sidebar', 'astra' ),
-						'id'            => 'astra-woo-shop-sidebar',
-						'description'   => __( 'This sidebar will be used on Product archive, Cart, Checkout and My Account pages.', 'astra' ),
+						'name'          => esc_html__( 'WooCommerce Sidebar', 'divino' ),
+						'id'            => 'divino-woo-shop-sidebar',
+						'description'   => __( 'This sidebar will be used on Product archive, Cart, Checkout and My Account pages.', 'divino' ),
 						'before_widget' => '<div id="%1$s" class="widget %2$s">',
 						'after_widget'  => '</div>',
 						'before_title'  => '<h2 class="widget-title">',
@@ -1205,9 +1205,9 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 				apply_filters(
 					'divino_woocommerce_single_sidebar_init',
 					array(
-						'name'          => esc_html__( 'Product Sidebar', 'astra' ),
-						'id'            => 'astra-woo-single-sidebar',
-						'description'   => __( 'This sidebar will be used on Single Product page.', 'astra' ),
+						'name'          => esc_html__( 'Product Sidebar', 'divino' ),
+						'id'            => 'divino-woo-single-sidebar',
+						'description'   => __( 'This sidebar will be used on Single Product page.', 'divino' ),
 						'before_widget' => '<div id="%1$s" class="widget %2$s">',
 						'after_widget'  => '</div>',
 						'before_title'  => '<h2 class="widget-title">',
@@ -1227,9 +1227,9 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 		public function replace_store_sidebar( $sidebar ) {
 
 			if ( is_shop() || is_product_taxonomy() || is_checkout() || is_cart() || is_account_page() ) {
-				$sidebar = 'astra-woo-shop-sidebar';
+				$sidebar = 'divino-woo-shop-sidebar';
 			} elseif ( is_product() ) {
-				$sidebar = 'astra-woo-single-sidebar';
+				$sidebar = 'divino-woo-single-sidebar';
 			}
 
 			return $sidebar;
@@ -1496,7 +1496,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 			}
 		}
 		/**
-		 * Astra update default font size and font weight.
+		 * divino update default font size and font weight.
 		 *
 		 * @since 4.6.0
 		 * @return bool
@@ -1816,14 +1816,14 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 					'content'     => '"\e900"',
 					'padding'     => '0 5px 0 5px',
 					'display'     => 'inline-block',
-					'font-family' => 'Astra',
+					'font-family' => 'divino',
 					'transform'   => 'rotate(-90deg)',
 					'font-size'   => '11px',
 					'font-size'   => '0.7rem',
 				);
 
-				$css_desktop_output['.ast-site-header-cart i.astra-icon:before'] = array(
-					'font-family' => 'Astra',
+				$css_desktop_output['.ast-site-header-cart i.divino-icon:before'] = array(
+					'font-family' => 'divino',
 				);
 
 				$css_desktop_output['.ast-icon-shopping-cart:before'] = array(
@@ -1895,15 +1895,15 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 				'line-height' => '1',
 			);
 
-			$css_desktop_output['.ast-site-header-cart.ast-menu-cart-fill i.astra-icon'] = array(
+			$css_desktop_output['.ast-site-header-cart.ast-menu-cart-fill i.divino-icon'] = array(
 				' font-size' => '1.1em',
 			);
 
-			$css_desktop_output['.ast-site-header-cart.ast-menu-cart-fill i.astra-icon'] = array(
+			$css_desktop_output['.ast-site-header-cart.ast-menu-cart-fill i.divino-icon'] = array(
 				' font-size' => '1.1em',
 			);
 
-			$css_desktop_output['li.woocommerce-custom-menu-item .ast-site-header-cart i.astra-icon:after'] = array(
+			$css_desktop_output['li.woocommerce-custom-menu-item .ast-site-header-cart i.divino-icon:after'] = array(
 				' padding-left' => '2px',
 			);
 
@@ -1915,7 +1915,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 				' display' => 'none',
 			);
 
-			$css_desktop_output['.ast-site-header-cart i.astra-icon:after'] = array(
+			$css_desktop_output['.ast-site-header-cart i.divino-icon:after'] = array(
 				' background' => $header_cart_count_color,
 			);
 
@@ -2904,7 +2904,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 						border-color: transparent transparent transparent var(--ast-global-color-2);
 					}
 
-					.astra-shop-thumbnail-wrap:hover .ast-on-card-button:not(.ast-onsale-card) {
+					.divino-shop-thumbnail-wrap:hover .ast-on-card-button:not(.ast-onsale-card) {
 						opacity: 1;
 						visibility: visible;
 					}
@@ -3333,18 +3333,18 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 			/**
 			 * Register Sections & Panels
 			 */
-			require divino_THEME_DIR . 'inc/compatibility/woocommerce/customizer/class-astra-customizer-register-woo-section.php';
+			require divino_THEME_DIR . 'inc/compatibility/woocommerce/customizer/class-divino-customizer-register-woo-section.php';
 
 			/**
 			 * Sections
 			 */
-			require divino_THEME_DIR . 'inc/compatibility/woocommerce/customizer/sections/class-astra-woo-shop-container-configs.php';
-			require divino_THEME_DIR . 'inc/compatibility/woocommerce/customizer/sections/class-astra-woo-shop-sidebar-configs.php';
-			require divino_THEME_DIR . 'inc/compatibility/woocommerce/customizer/sections/layout/class-astra-woo-shop-layout-configs.php';
-			require divino_THEME_DIR . 'inc/compatibility/woocommerce/customizer/sections/layout/class-astra-woo-shop-single-layout-configs.php';
-			require divino_THEME_DIR . 'inc/compatibility/woocommerce/customizer/sections/layout/class-astra-woo-shop-cart-layout-configs.php';
-			require divino_THEME_DIR . 'inc/compatibility/woocommerce/customizer/sections/layout/class-astra-woo-shop-misc-layout-configs.php';
-			require divino_THEME_DIR . 'inc/compatibility/woocommerce/customizer/sections/class-astra-woo-store-notice-configs.php';
+			require divino_THEME_DIR . 'inc/compatibility/woocommerce/customizer/sections/class-divino-woo-shop-container-configs.php';
+			require divino_THEME_DIR . 'inc/compatibility/woocommerce/customizer/sections/class-divino-woo-shop-sidebar-configs.php';
+			require divino_THEME_DIR . 'inc/compatibility/woocommerce/customizer/sections/layout/class-divino-woo-shop-layout-configs.php';
+			require divino_THEME_DIR . 'inc/compatibility/woocommerce/customizer/sections/layout/class-divino-woo-shop-single-layout-configs.php';
+			require divino_THEME_DIR . 'inc/compatibility/woocommerce/customizer/sections/layout/class-divino-woo-shop-cart-layout-configs.php';
+			require divino_THEME_DIR . 'inc/compatibility/woocommerce/customizer/sections/layout/class-divino-woo-shop-misc-layout-configs.php';
+			require divino_THEME_DIR . 'inc/compatibility/woocommerce/customizer/sections/class-divino-woo-store-notice-configs.php';
 			// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 		}
 
@@ -3504,11 +3504,11 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 				?>
 					<div class="ast-mini-cart-empty">
 						<div class="ast-mini-cart-message">
-							<p class="woocommerce-mini-cart__empty-message"><?php echo esc_html( apply_filters( 'divino_mini_cart_empty_msg', __( 'No products in the cart.', 'astra' ) ) ); ?></p>
+							<p class="woocommerce-mini-cart__empty-message"><?php echo esc_html( apply_filters( 'divino_mini_cart_empty_msg', __( 'No products in the cart.', 'divino' ) ) ); ?></p>
 						</div>
 						<?php do_action( 'divino_empty_cart_content' ); ?>
 						<div class="woocommerce-mini-cart__buttons">
-							<a href="<?php /** @psalm-suppress PossiblyFalseArgument */  echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>" class="button wc-forward ast-continue-shopping"><?php esc_html_e( 'Continue Shopping', 'astra' ); ?></a> <?php // phpcs:ignore Generic.Commenting.DocComment.MissingShort ?>
+							<a href="<?php /** @psalm-suppress PossiblyFalseArgument */  echo esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ); ?>" class="button wc-forward ast-continue-shopping"><?php esc_html_e( 'Continue Shopping', 'divino' ); ?></a> <?php // phpcs:ignore Generic.Commenting.DocComment.MissingShort ?>
 						</div>
 					</div>
 				<?php
@@ -3543,7 +3543,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 		public function woocommerce_proceed_to_checkout_button() {
 
 			$enable_cart_button_text = divino_get_option( 'woo-enable-cart-button-text' );
-			$cart_button_text        = divino_get_i18n_option( 'woo-cart-button-text', _x( '%astra%', 'WooCommerce Cart: Cart Button Text', 'astra' ) );
+			$cart_button_text        = divino_get_i18n_option( 'woo-cart-button-text', _x( '%divino%', 'WooCommerce Cart: Cart Button Text', 'divino' ) );
 
 			if ( $cart_button_text && $enable_cart_button_text ) {
 				remove_action( 'woocommerce_proceed_to_checkout', 'woocommerce_button_proceed_to_checkout', 20 );
@@ -3588,7 +3588,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 
 				$customize_node = array(
 					'id'    => 'customize',
-					'title' => __( 'Customize', 'astra' ),
+					'title' => __( 'Customize', 'divino' ),
 					'href'  => $customize_link,
 					'meta'  => array(
 						'class' => 'hide-if-no-customize',
@@ -3648,7 +3648,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 		 * @return void
 		 */
 		public function woocommerce_product_single_payments() {
-			$section_title    = divino_get_i18n_option( 'single-product-payment-text', _x( '%astra%', 'WooCommerce Single Product: Payments - Payment Title.', 'astra' ) );
+			$section_title    = divino_get_i18n_option( 'single-product-payment-text', _x( '%divino%', 'WooCommerce Single Product: Payments - Payment Title.', 'divino' ) );
 			$if_color_version = divino_get_option( 'single-product-payment-icon-color' );
 
 			ob_start();
@@ -3816,7 +3816,7 @@ if ( ! class_exists( 'divino_Woocommerce' ) ) {
 				if ( ( $product->is_purchasable() && ( $product->is_in_stock() || $product->backorders_allowed() ) ) || $product->is_type( 'external' ) ) {
 				// @codingStandardsIgnoreEnd
 					if ( is_customize_preview() ) {
-						echo '<div class="ast-sticky-add-to-cart customizer-item-block-preview customizer-navigate-on-focus ' . esc_attr( $sticky_position ) . '" data-section="astra-settings[single-product-sticky-add-to-cart]" data-type="control">';
+						echo '<div class="ast-sticky-add-to-cart customizer-item-block-preview customizer-navigate-on-focus ' . esc_attr( $sticky_position ) . '" data-section="divino-settings[single-product-sticky-add-to-cart]" data-type="control">';
 						/** @psalm-suppress TooManyArguments */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 						divino_Builder_UI_Controller::render_customizer_edit_button( 'row-editor-shortcut' );
 					} else {

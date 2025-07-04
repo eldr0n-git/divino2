@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Loop
+ * divino Loop
  *
- * @package Astra
+ * @package divino
  * @since 1.4.0
  */
 
@@ -74,7 +74,7 @@ if ( ! class_exists( 'divino_Mobile_Header' ) ) {
 				array_push( $menu_locations, 'menu_' . $index );
 			}
 
-			// Add toggle button if menu is from Astra.
+			// Add toggle button if menu is from divino.
 			if ( true === is_object( $args ) ) {
 				if ( isset( $args->theme_location ) && in_array( $args->theme_location, $menu_locations ) ) {
 					if ( isset( $item->classes ) && in_array( 'menu-item-has-children', $item->classes ) ) {
@@ -107,7 +107,7 @@ if ( ! class_exists( 'divino_Mobile_Header' ) ) {
 					'aria-expanded' => 'false',
 				),
 				$item
-			) . '><span class="screen-reader-text">' . esc_html__( 'Menu Toggle', 'astra' ) . '</span>' . divino_Icons::get_icons( 'arrow' ) . '</button>';
+			) . '><span class="screen-reader-text">' . esc_html__( 'Menu Toggle', 'divino' ) . '</span>' . divino_Icons::get_icons( 'arrow' ) . '</button>';
 
 			return $item_output;
 		}

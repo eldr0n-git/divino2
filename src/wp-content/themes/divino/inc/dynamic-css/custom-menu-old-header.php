@@ -2,7 +2,7 @@
 /**
  * Old Header Menu Last Item - Dynamic CSS
  *
- * @package astra
+ * @package divino
  * @since 3.5.0
  */
 

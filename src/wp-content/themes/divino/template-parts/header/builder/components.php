@@ -2,7 +2,7 @@
 /**
  * Template part for header component.
  *
- * @package Astra
+ * @package divino
  */
 
 $divino_header_component_args = array();

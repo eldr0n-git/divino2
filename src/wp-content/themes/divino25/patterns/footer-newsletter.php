@@ -1,3 +1,4 @@
+<!-- footer-newsletter.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Footer with newsletter signup

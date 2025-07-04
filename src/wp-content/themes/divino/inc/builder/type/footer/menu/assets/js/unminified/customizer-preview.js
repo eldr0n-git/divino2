@@ -4,58 +4,58 @@
  * here. Your javascript should grab settings from customizer controls, and
  * then make any necessary changes to the page using jQuery.
  *
- * @package Astra
+ * @package divino
  * @since 3.0.0
  */
 
 ( function( $ ) {
 
-    var selector = '#astra-footer-menu';
+    var selector = '#divino-footer-menu';
     var visibility_selector = '.footer-widget-area[data-section="section-footer-menu"]';
 
-    var tablet_break_point    = astraBuilderPreview.tablet_break_point || 768,
-        mobile_break_point    = astraBuilderPreview.mobile_break_point || 544;
+    var tablet_break_point    = divinoBuilderPreview.tablet_break_point || 768,
+        mobile_break_point    = divinoBuilderPreview.mobile_break_point || 544;
 
-    wp.customize( 'astra-settings[footer-menu-alignment]', function( value ) {
+    wp.customize( 'divino-settings[footer-menu-alignment]', function( value ) {
         value.bind( function( alignment ) {
             if( alignment.desktop != '' || alignment.tablet != '' || alignment.mobile != '' ) {
                 var dynamicStyle = '';
-                dynamicStyle += '.footer-widget-area[data-section="section-footer-menu"] .astra-footer-vertical-menu .menu-item {';
+                dynamicStyle += '.footer-widget-area[data-section="section-footer-menu"] .divino-footer-vertical-menu .menu-item {';
                 dynamicStyle += 'align-items: ' + alignment['desktop'] + ';';
                 dynamicStyle += '} ';
 
-                dynamicStyle += '.footer-widget-area[data-section="section-footer-menu"] .astra-footer-horizontal-menu {';
+                dynamicStyle += '.footer-widget-area[data-section="section-footer-menu"] .divino-footer-horizontal-menu {';
                 dynamicStyle += 'justify-content: ' + alignment['desktop'] + ';';
                 dynamicStyle += '} ';
 
                 dynamicStyle +=  '@media (max-width: ' + tablet_break_point + 'px) {';
-                dynamicStyle += '.footer-widget-area[data-section="section-footer-menu"] .astra-footer-tablet-vertical-menu {';
+                dynamicStyle += '.footer-widget-area[data-section="section-footer-menu"] .divino-footer-tablet-vertical-menu {';
                 dynamicStyle +=  'justify-content:' +  alignment['tablet'] + ';';
                 dynamicStyle += '} ';
-                dynamicStyle += '.footer-widget-area[data-section="section-footer-menu"] .astra-footer-tablet-vertical-menu .menu-item {';
+                dynamicStyle += '.footer-widget-area[data-section="section-footer-menu"] .divino-footer-tablet-vertical-menu .menu-item {';
                 dynamicStyle +=  'display:' + 'grid;';
                 dynamicStyle +=  'justify-content:' +  alignment['tablet'] + ';';
                 dynamicStyle +=  'align-items: ' + alignment['tablet'] + ';';
                 dynamicStyle += '} ';
-                dynamicStyle += '.footer-widget-area[data-section="section-footer-menu"] .astra-footer-tablet-horizontal-menu {';
+                dynamicStyle += '.footer-widget-area[data-section="section-footer-menu"] .divino-footer-tablet-horizontal-menu {';
                 dynamicStyle += 'justify-content: ' + alignment['tablet'] + ';';
                 dynamicStyle += 'display: flex;';
                 dynamicStyle += '} ';
                 dynamicStyle += '} ';
 
                 dynamicStyle +=  '@media (max-width: ' + mobile_break_point + 'px) {';
-                dynamicStyle += '.footer-widget-area[data-section="section-footer-menu"] .astra-footer-mobile-vertical-menu {';
+                dynamicStyle += '.footer-widget-area[data-section="section-footer-menu"] .divino-footer-mobile-vertical-menu {';
                 dynamicStyle +=  'display:' + 'grid;';
                 dynamicStyle +=  'justify-content:' +  alignment['mobile'] + ';';
                 dynamicStyle += '} ';
 
-                dynamicStyle += '.footer-widget-area[data-section="section-footer-menu"] .astra-footer-mobile-vertical-menu .menu-item {';
+                dynamicStyle += '.footer-widget-area[data-section="section-footer-menu"] .divino-footer-mobile-vertical-menu .menu-item {';
                 dynamicStyle +=  'justify-content:' +  alignment['mobile'] + ';';
 
                 dynamicStyle += 'align-items: ' + alignment['mobile'] + ';';
                 dynamicStyle += '} ';
 
-                dynamicStyle += '.footer-widget-area[data-section="section-footer-menu"] .astra-footer-mobile-horizontal-menu {';
+                dynamicStyle += '.footer-widget-area[data-section="section-footer-menu"] .divino-footer-mobile-horizontal-menu {';
                 dynamicStyle += 'justify-content: ' + alignment['mobile'] + ';';
                 dynamicStyle += 'display: flex;';
                 dynamicStyle += '} ';
@@ -70,7 +70,7 @@
      * Typography CSS.
      */
     divino_responsive_font_size(
-        'astra-settings[footer-menu-font-size]',
+        'divino-settings[footer-menu-font-size]',
         selector + ' .menu-item > a'
     );
 
@@ -78,45 +78,45 @@
      * Menu - Colors
      */
     divino_color_responsive_css(
-        'astra-footer-menu-preview',
-        'astra-settings[footer-menu-color-responsive]',
+        'divino-footer-menu-preview',
+        'divino-settings[footer-menu-color-responsive]',
         'color',
         selector + ' .menu-item > a'
     );
 
     // Menu - Hover Color
     divino_color_responsive_css(
-        'astra-footer-menu-preview',
-        'astra-settings[footer-menu-h-color-responsive]',
+        'divino-footer-menu-preview',
+        'divino-settings[footer-menu-h-color-responsive]',
         'color',
         selector + ' .menu-item:hover > a'
     );
 
     // Menu - Active Color
     divino_color_responsive_css(
-        'astra-footer-menu-preview',
-        'astra-settings[footer-menu-a-color-responsive]',
+        'divino-footer-menu-preview',
+        'divino-settings[footer-menu-a-color-responsive]',
         'color',
         selector + ' .menu-item.current-menu-item > a'
     );
 
     // Responsive BG styles > Footer Menu.
-	divino_apply_responsive_background_css( 'astra-settings[footer-menu-bg-obj-responsive]', selector, 'desktop' );
-	divino_apply_responsive_background_css( 'astra-settings[footer-menu-bg-obj-responsive]', selector, 'tablet' );
-	divino_apply_responsive_background_css( 'astra-settings[footer-menu-bg-obj-responsive]', selector, 'mobile' );
+	divino_apply_responsive_background_css( 'divino-settings[footer-menu-bg-obj-responsive]', selector, 'desktop' );
+	divino_apply_responsive_background_css( 'divino-settings[footer-menu-bg-obj-responsive]', selector, 'tablet' );
+	divino_apply_responsive_background_css( 'divino-settings[footer-menu-bg-obj-responsive]', selector, 'mobile' );
 
     // Menu - Hover Background
     divino_color_responsive_css(
-        'astra-footer-menu-preview',
-        'astra-settings[footer-menu-h-bg-color-responsive]',
+        'divino-footer-menu-preview',
+        'divino-settings[footer-menu-h-bg-color-responsive]',
         'background',
         selector + ' .menu-item:hover > a'
     );
 
     // Menu - Active Background
     divino_color_responsive_css(
-        'astra-footer-menu-preview',
-        'astra-settings[footer-menu-a-bg-color-responsive]',
+        'divino-footer-menu-preview',
+        'divino-settings[footer-menu-a-bg-color-responsive]',
         'background',
         selector + ' .menu-item.current-menu-item > a'
     );
@@ -124,7 +124,7 @@
     /**
      * Spacing CSS.
      */
-    wp.customize( 'astra-settings[footer-main-menu-spacing]', function( value ) {
+    wp.customize( 'divino-settings[footer-main-menu-spacing]', function( value ) {
         value.bind( function( padding ) {
             if(
                 padding.desktop.bottom != '' || padding.desktop.top != '' || padding.desktop.left != '' || padding.desktop.right != '' ||
@@ -163,7 +163,7 @@
     } );
 
     // Margin.
-    wp.customize( 'astra-settings[section-footer-menu-margin]', function( value ) {
+    wp.customize( 'divino-settings[section-footer-menu-margin]', function( value ) {
         value.bind( function( margin ) {
             if(
                 margin.desktop.bottom != '' || margin.desktop.top != '' || margin.desktop.left != '' || margin.desktop.right != '' ||

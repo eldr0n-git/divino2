@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Builder Base Configuration.
+ * divino Builder Base Configuration.
  *
- * @package astra-builder
+ * @package divino-builder
  */
 
 // No direct access, please.
@@ -60,7 +60,7 @@ final class divino_Builder_Base_Configuration {
 					'default'   => divino_get_option( $section_id . '-typography' ),
 					'type'      => 'control',
 					'control'   => 'ast-settings-group',
-					'title'     => __( 'Text Font', 'astra' ),
+					'title'     => __( 'Text Font', 'divino' ),
 					'is_font'   => true,
 					'section'   => $section_id,
 					'divider'   => $divider_setup,
@@ -82,7 +82,7 @@ final class divino_Builder_Base_Configuration {
 					'default'           => divino_get_option( 'font-size-' . $section_id ),
 					'transport'         => 'postMessage',
 					'priority'          => 15,
-					'title'             => __( 'Font Size', 'astra' ),
+					'title'             => __( 'Font Size', 'divino' ),
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
 					'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
 					'input_attrs'       => array(
@@ -126,7 +126,7 @@ final class divino_Builder_Base_Configuration {
 					'transport'         => 'postMessage',
 					'control'           => 'ast-responsive-slider',
 					'priority'          => 16,
-					'title'             => __( 'Font Size', 'astra' ),
+					'title'             => __( 'Font Size', 'divino' ),
 					'context'           => empty( $required_condition ) ? divino_Builder_Helper::$design_tab : $required_condition,
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
 					'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
@@ -186,7 +186,7 @@ final class divino_Builder_Base_Configuration {
 				'control'   => 'ast-multi-selector',
 				'section'   => $_section,
 				'priority'  => 320,
-				'title'     => __( 'Visibility', 'astra' ),
+				'title'     => __( 'Visibility', 'divino' ),
 				'context'   => divino_Builder_Helper::$general_tab,
 				'transport' => 'refresh',
 				'choices'   => array(
@@ -218,7 +218,7 @@ final class divino_Builder_Base_Configuration {
 		$divino_has_widgets_block_editor = divino_has_widgets_block_editor();
 		for ( $index = 1; $index <= $component_limit; $index++ ) {
 
-			$_section = ! $divino_has_widgets_block_editor ? 'sidebar-widgets-' . $type . '-widget-' . $index : 'astra-sidebar-widgets-' . $type . '-widget-' . $index;
+			$_section = ! $divino_has_widgets_block_editor ? 'sidebar-widgets-' . $type . '-widget-' . $index : 'divino-sidebar-widgets-' . $type . '-widget-' . $index;
 
 			$html_config[] = array(
 
@@ -226,7 +226,7 @@ final class divino_Builder_Base_Configuration {
 					'name'        => $_section,
 					'type'        => 'section',
 					'priority'    => 5,
-					'title'       => __( 'Widget ', 'astra' ) . $index,
+					'title'       => __( 'Widget ', 'divino' ) . $index,
 					'panel'       => 'panel-' . $type . '-builder-group',
 					'clone_index' => $index,
 					'clone_type'  => $type . '-widget',
@@ -245,14 +245,14 @@ final class divino_Builder_Base_Configuration {
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 					'section'           => $_section,
 					'priority'          => 220,
-					'title'             => __( 'Margin', 'astra' ),
+					'title'             => __( 'Margin', 'divino' ),
 					'linked_choices'    => true,
 					'unit_choices'      => array( 'px', 'em', '%' ),
 					'choices'           => array(
-						'top'    => __( 'Top', 'astra' ),
-						'right'  => __( 'Right', 'astra' ),
-						'bottom' => __( 'Bottom', 'astra' ),
-						'left'   => __( 'Left', 'astra' ),
+						'top'    => __( 'Top', 'divino' ),
+						'right'  => __( 'Right', 'divino' ),
+						'bottom' => __( 'Bottom', 'divino' ),
+						'left'   => __( 'Left', 'divino' ),
 					),
 					'divider'           => array( 'ast_class' => ' ast-section-spacing ' ),
 				),
@@ -267,7 +267,7 @@ final class divino_Builder_Base_Configuration {
 						'control'   => 'ast-selector',
 						'section'   => $_section,
 						'priority'  => 5,
-						'title'     => __( 'Alignment', 'astra' ),
+						'title'     => __( 'Alignment', 'divino' ),
 						'transport' => 'postMessage',
 						'choices'   => array(
 							'left'   => 'align-left',
@@ -287,7 +287,7 @@ final class divino_Builder_Base_Configuration {
 					array(
 						'name'       => divino_THEME_SETTINGS . '[' . $type . '-widget-' . $index . '-title-color]',
 						'default'    => divino_get_option( $type . '-widget-' . $index . '-title-color' ),
-						'title'      => __( 'Heading Color', 'astra' ),
+						'title'      => __( 'Heading Color', 'divino' ),
 						'type'       => 'control',
 						'section'    => $_section,
 						'priority'   => 7,
@@ -304,7 +304,7 @@ final class divino_Builder_Base_Configuration {
 					array(
 						'name'       => divino_THEME_SETTINGS . '[' . $type . '-widget-' . $index . '-color]',
 						'default'    => divino_get_option( $type . '-widget-' . $index . '-color' ),
-						'title'      => __( 'Content Color', 'astra' ),
+						'title'      => __( 'Content Color', 'divino' ),
 						'type'       => 'control',
 						'section'    => $_section,
 						'priority'   => 7,
@@ -318,7 +318,7 @@ final class divino_Builder_Base_Configuration {
 						'default'    => divino_get_option( $type . '-widget-' . $index . '-color-group' ),
 						'type'       => 'control',
 						'control'    => 'ast-color-group',
-						'title'      => __( 'Link Color', 'astra' ),
+						'title'      => __( 'Link Color', 'divino' ),
 						'section'    => $_section,
 						'transport'  => 'postMessage',
 						'priority'   => 7,
@@ -340,7 +340,7 @@ final class divino_Builder_Base_Configuration {
 						'control'    => 'ast-responsive-color',
 						'responsive' => true,
 						'rgba'       => true,
-						'title'      => __( 'Normal', 'astra' ),
+						'title'      => __( 'Normal', 'divino' ),
 					),
 
 					/**
@@ -357,7 +357,7 @@ final class divino_Builder_Base_Configuration {
 						'control'    => 'ast-responsive-color',
 						'responsive' => true,
 						'rgba'       => true,
-						'title'      => __( 'Hover', 'astra' ),
+						'title'      => __( 'Hover', 'divino' ),
 					),
 				);
 
@@ -373,7 +373,7 @@ final class divino_Builder_Base_Configuration {
 							'type'      => 'control',
 							'control'   => 'ast-settings-group',
 							'is_font'   => true,
-							'title'     => __( 'Heading Font', 'astra' ),
+							'title'     => __( 'Heading Font', 'divino' ),
 							'section'   => $_section,
 							'transport' => 'postMessage',
 							'priority'  => 90,
@@ -388,7 +388,7 @@ final class divino_Builder_Base_Configuration {
 							'default'     => divino_get_option( $type . '-widget-' . $index . '-font-size' ),
 							'parent'      => divino_THEME_SETTINGS . '[' . $type . '-widget-' . $index . '-text-typography]',
 							'transport'   => 'postMessage',
-							'title'       => __( 'Font Size', 'astra' ),
+							'title'       => __( 'Font Size', 'divino' ),
 							'type'        => 'sub-control',
 							'section'     => $_section,
 							'control'     => 'ast-responsive-slider',
@@ -427,7 +427,7 @@ final class divino_Builder_Base_Configuration {
 							'type'      => 'control',
 							'control'   => 'ast-settings-group',
 							'is_font'   => true,
-							'title'     => __( 'Content Font', 'astra' ),
+							'title'     => __( 'Content Font', 'divino' ),
 							'section'   => $_section,
 							'transport' => 'postMessage',
 							'priority'  => 91,
@@ -441,7 +441,7 @@ final class divino_Builder_Base_Configuration {
 							'default'     => divino_get_option( $type . '-widget-' . $index . '-content-font-size' ),
 							'parent'      => divino_THEME_SETTINGS . '[' . $type . '-widget-' . $index . '-content-typography]',
 							'transport'   => 'postMessage',
-							'title'       => __( 'Font Size', 'astra' ),
+							'title'       => __( 'Font Size', 'divino' ),
 							'type'        => 'sub-control',
 							'section'     => $_section,
 							'control'     => 'ast-responsive-slider',
@@ -481,7 +481,7 @@ final class divino_Builder_Base_Configuration {
 							'name'        => divino_THEME_SETTINGS . '[' . $type . '-widget-' . $index . '-font-size]',
 							'default'     => divino_get_option( $type . '-widget-' . $index . '-font-size' ),
 							'transport'   => 'postMessage',
-							'title'       => __( 'Title Font Size', 'astra' ),
+							'title'       => __( 'Title Font Size', 'divino' ),
 							'type'        => 'control',
 							'section'     => $_section,
 							'control'     => 'ast-responsive-slider',
@@ -518,7 +518,7 @@ final class divino_Builder_Base_Configuration {
 							'name'        => divino_THEME_SETTINGS . '[' . $type . '-widget-' . $index . '-content-font-size]',
 							'default'     => divino_get_option( $type . '-widget-' . $index . '-content-font-size' ),
 							'transport'   => 'postMessage',
-							'title'       => __( 'Content Font Size', 'astra' ),
+							'title'       => __( 'Content Font Size', 'divino' ),
 							'type'        => 'control',
 							'section'     => $_section,
 							'control'     => 'ast-responsive-slider',

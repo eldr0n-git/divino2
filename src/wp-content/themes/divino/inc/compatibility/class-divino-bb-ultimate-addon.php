@@ -2,9 +2,9 @@
 /**
  * Filters to override defaults in UABB
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 // If plugin - 'BB Ultimate Addon' not exist then return.
@@ -13,12 +13,12 @@ if ( ! class_exists( 'BB_Ultimate_Addon' ) ) {
 }
 
 /**
- * Astra BB Ultimate Addon Compatibility
+ * divino BB Ultimate Addon Compatibility
  */
 if ( ! class_exists( 'divino_BB_Ultimate_Addon' ) ) {
 
 	/**
-	 * Astra BB Ultimate Addon Compatibility
+	 * divino BB Ultimate Addon Compatibility
 	 *
 	 * @since 1.0.0
 	 */

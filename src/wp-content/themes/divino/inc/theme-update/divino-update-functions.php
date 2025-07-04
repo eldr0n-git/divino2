@@ -1,17 +1,17 @@
 <?php
 /**
- * Astra Updates
+ * divino Updates
  *
  * Functions for updating data, used by the background updater.
  *
- * @package Astra
+ * @package divino
  * @version 2.1.3
  */
 
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Clear Astra + Astra Pro assets cache.
+ * Clear divino + divino Pro assets cache.
  *
  * @since 3.6.1
  * @return void.
@@ -20,13 +20,13 @@ function divino_clear_all_assets_cache() {
 	if ( ! class_exists( 'divino_Cache_Base' ) ) {
 		return;
 	}
-	// Clear Astra theme asset cache.
-	$divino_cache_base_instance = new divino_Cache_Base( 'astra' );
-	$divino_cache_base_instance->refresh_assets( 'astra' );
+	// Clear divino theme asset cache.
+	$divino_cache_base_instance = new divino_Cache_Base( 'divino' );
+	$divino_cache_base_instance->refresh_assets( 'divino' );
 
-	// Clear Astra Addon's static and dynamic CSS asset cache.
-	$divino_addon_cache_base_instance = new divino_Cache_Base( 'astra-addon' );
-	$divino_addon_cache_base_instance->refresh_assets( 'astra-addon' );
+	// Clear divino Addon's static and dynamic CSS asset cache.
+	$divino_addon_cache_base_instance = new divino_Cache_Base( 'divino-addon' );
+	$divino_addon_cache_base_instance->refresh_assets( 'divino-addon' );
 }
 
 /**
@@ -40,7 +40,7 @@ function divino_clear_all_assets_cache() {
  */
 function divino_theme_background_updater_4_0_0() {
 	// Dynamic customizer migration starts here.
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 	if ( ! isset( $theme_options['dynamic-blog-layouts'] ) && ! isset( $theme_options['theme-dynamic-customizer-support'] ) ) {
 		$theme_options['dynamic-blog-layouts']             = false;
 		$theme_options['theme-dynamic-customizer-support'] = true;
@@ -265,7 +265,7 @@ function divino_theme_background_updater_4_0_0() {
 		$theme_options['single-download-content-layout']  = isset( $theme_options['edd-single-product-layout'] ) ? $theme_options['edd-single-product-layout'] : 'default';
 		$theme_options['single-download-sidebar-layout']  = isset( $theme_options['edd-single-product-sidebar-layout'] ) ? $theme_options['edd-single-product-sidebar-layout'] : 'default';
 
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 
 	// Admin backward handling starts here.
@@ -287,7 +287,7 @@ function divino_theme_background_updater_4_0_0() {
 	// Check if existing user and disable smooth scroll-to-id.
 	if ( ! isset( $theme_options['enable-scroll-to-id'] ) ) {
 		$theme_options['enable-scroll-to-id'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 
 	// Check if existing user and disable scroll to top if disabled from pro addons list.
@@ -299,19 +299,19 @@ function divino_theme_background_updater_4_0_0() {
 	}
 	if ( ! isset( $theme_options['scroll-to-top-enable'] ) ) {
 		$theme_options['scroll-to-top-enable'] = $scroll_to_top_visibility;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 
 	// Default colors & typography flag.
 	if ( ! isset( $theme_options['update-default-color-typo'] ) ) {
 		$theme_options['update-default-color-typo'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 
 	// Block editor experience improvements compatibility flag.
 	if ( ! isset( $theme_options['v4-block-editor-compat'] ) ) {
 		$theme_options['v4-block-editor-compat'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -324,12 +324,12 @@ function divino_theme_background_updater_4_0_0() {
  * @return void
  */
 function divino_theme_background_updater_4_0_2() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 	if ( ! isset( $theme_options['v4-0-2-update-migration'] ) && isset( $theme_options['blog-single-meta'] ) && in_array( 'read-time', $theme_options['blog-single-meta'] ) ) {
 		if ( isset( $theme_options['ast-dynamic-single-post-metadata'] ) && ! in_array( 'read-time', $theme_options['ast-dynamic-single-post-metadata'] ) ) {
 			$theme_options['ast-dynamic-single-post-metadata'][] = 'read-time';
 			$theme_options['v4-0-2-update-migration']            = true;
-			update_option( 'astra-settings', $theme_options );
+			update_option( 'divino-settings', $theme_options );
 		}
 	}
 }
@@ -342,7 +342,7 @@ function divino_theme_background_updater_4_0_2() {
  */
 function divino_theme_background_updater_4_1_0() {
 
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 
 	if ( ! isset( $theme_options['v4-1-0-update-migration'] ) ) {
 		$theme_options['v4-1-0-update-migration'] = true;
@@ -363,7 +363,7 @@ function divino_theme_background_updater_4_1_0() {
 				'source'  => 'icon',
 				'icon'    => 'cc-visa',
 				'image'   => '',
-				'label'   => __( 'Visa', 'astra' ),
+				'label'   => __( 'Visa', 'divino' ),
 			)
 		) : '';
 
@@ -375,7 +375,7 @@ function divino_theme_background_updater_4_1_0() {
 				'source'  => 'icon',
 				'icon'    => 'cc-mastercard',
 				'image'   => '',
-				'label'   => __( 'Mastercard', 'astra' ),
+				'label'   => __( 'Mastercard', 'divino' ),
 			)
 		) : '';
 
@@ -387,7 +387,7 @@ function divino_theme_background_updater_4_1_0() {
 				'source'  => 'icon',
 				'icon'    => 'cc-amex',
 				'image'   => '',
-				'label'   => __( 'Amex', 'astra' ),
+				'label'   => __( 'Amex', 'divino' ),
 			)
 		) : '';
 
@@ -399,7 +399,7 @@ function divino_theme_background_updater_4_1_0() {
 				'source'  => 'icon',
 				'icon'    => 'cc-discover',
 				'image'   => '',
-				'label'   => __( 'Discover', 'astra' ),
+				'label'   => __( 'Discover', 'divino' ),
 			)
 		) : '';
 
@@ -411,7 +411,7 @@ function divino_theme_background_updater_4_1_0() {
 				'source'  => 'icon',
 				'icon'    => 'cc-paypal',
 				'image'   => '',
-				'label'   => __( 'Paypal', 'astra' ),
+				'label'   => __( 'Paypal', 'divino' ),
 			)
 		) : '';
 
@@ -423,7 +423,7 @@ function divino_theme_background_updater_4_1_0() {
 				'source'  => 'icon',
 				'icon'    => 'cc-apple-pay',
 				'image'   => '',
-				'label'   => __( 'Apple Pay', 'astra' ),
+				'label'   => __( 'Apple Pay', 'divino' ),
 			)
 		) : '';
 
@@ -435,12 +435,12 @@ function divino_theme_background_updater_4_1_0() {
 				),
 			);
 
-			update_option( 'astra-settings', $theme_options );
+			update_option( 'divino-settings', $theme_options );
 		}
 
 		if ( ! isset( $theme_options['woo_support_global_settings'] ) ) {
 			$theme_options['woo_support_global_settings'] = true;
-			update_option( 'astra-settings', $theme_options );
+			update_option( 'divino-settings', $theme_options );
 		}
 
 		if ( isset( $theme_options['theme-dynamic-customizer-support'] ) ) {
@@ -448,7 +448,7 @@ function divino_theme_background_updater_4_1_0() {
 			foreach ( $post_types as $post_type ) {
 				$theme_options[ 'ast-dynamic-single-' . esc_attr( $post_type ) . '-title-font-extras' ]['text-transform'] = '';
 			}
-			update_option( 'astra-settings', $theme_options );
+			update_option( 'divino-settings', $theme_options );
 		}
 	}
 }
@@ -462,7 +462,7 @@ function divino_theme_background_updater_4_1_0() {
  * @return void
  */
 function divino_theme_background_updater_4_1_4() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 	if ( ! isset( $theme_options['v4-1-4-update-migration'] ) ) {
 		$ast_bg_control_options = array(
 			'off-canvas-background',
@@ -593,7 +593,7 @@ function divino_theme_background_updater_4_1_4() {
 		}
 
 		$theme_options['v4-1-4-update-migration'] = true;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -604,10 +604,10 @@ function divino_theme_background_updater_4_1_4() {
  * @return void
  */
 function divino_theme_background_updater_4_1_6() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 	if ( ! isset( $theme_options['list-block-vertical-spacing'] ) ) {
 		$theme_options['list-block-vertical-spacing'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -618,16 +618,16 @@ function divino_theme_background_updater_4_1_6() {
  * @return void
  */
 function divino_theme_background_updater_4_1_7() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 
 	if ( ! isset( $theme_options['add-hr-styling-css'] ) ) {
 		$theme_options['add-hr-styling-css'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 
-	if ( ! isset( $theme_options['astra-site-svg-logo-equal-height'] ) ) {
-		$theme_options['astra-site-svg-logo-equal-height'] = false;
-		update_option( 'astra-settings', $theme_options );
+	if ( ! isset( $theme_options['divino-site-svg-logo-equal-height'] ) ) {
+		$theme_options['divino-site-svg-logo-equal-height'] = false;
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -638,11 +638,11 @@ function divino_theme_background_updater_4_1_7() {
  * @return void
  */
 function divino_theme_background_updater_4_2_0() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 	if ( ! isset( $theme_options['v4-2-0-update-migration'] ) ) {
 
 		$post_types          = divino_Posts_Structure_Loader::get_supported_post_types();
-		$theme_options       = get_option( 'astra-settings' );
+		$theme_options       = get_option( 'divino-settings' );
 		$blog_types          = array( 'single', 'archive' );
 		$third_party_layouts = array( 'woocommerce', 'edd', 'lifterlms', 'lifterlms-course-lesson', 'learndash' );
 
@@ -686,7 +686,7 @@ function divino_theme_background_updater_4_2_0() {
 		}
 
 		$theme_options['v4-2-0-update-migration'] = true;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -746,10 +746,10 @@ function divino_apply_layout_migration( $old_layout, $new_layout, $content_style
  * @return void
  */
 function divino_theme_background_updater_4_2_2() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 	if ( ! isset( $theme_options['v4-2-2-core-form-btns-styling'] ) ) {
 		$theme_options['v4-2-2-core-form-btns-styling'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -760,7 +760,7 @@ function divino_theme_background_updater_4_2_2() {
  * @return void
  */
 function divino_theme_background_updater_4_4_0() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 
 	if ( ! isset( $theme_options['v4-4-0-backward-option'] ) ) {
 		$theme_options['v4-4-0-backward-option'] = false;
@@ -802,7 +802,7 @@ function divino_theme_background_updater_4_4_0() {
 			$theme_options[ 'ast-dynamic-single-' . esc_attr( $post_type ) . '-article-featured-image-ratio-type' ]        = 'default';
 		}
 
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -813,18 +813,18 @@ function divino_theme_background_updater_4_4_0() {
  * @return void
  */
 function divino_theme_background_updater_4_5_0() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 
 	if ( ! isset( $theme_options['v4-5-0-backward-option'] ) ) {
 		$theme_options['v4-5-0-backward-option'] = false;
 
-		$palette_options = get_option( 'astra-color-palettes', divino_Global_Palette::get_default_color_palette() );
+		$palette_options = get_option( 'divino-color-palettes', divino_Global_Palette::get_default_color_palette() );
 		if ( ! isset( $palette_options['presets'] ) ) {
 			$palette_options['presets'] = divino_get_palette_presets();
-			update_option( 'astra-color-palettes', $palette_options );
+			update_option( 'divino-color-palettes', $palette_options );
 		}
 
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -835,11 +835,11 @@ function divino_theme_background_updater_4_5_0() {
  * @return void
  */
 function divino_theme_background_updater_4_5_2() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 
 	if ( ! isset( $theme_options['scndry-btn-default-padding'] ) ) {
 		$theme_options['scndry-btn-default-padding'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -850,7 +850,7 @@ function divino_theme_background_updater_4_5_2() {
  * @return void
  */
 function divino_theme_background_updater_4_6_0() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 	if ( ! isset( $theme_options['v4-6-0-backward-option'] ) ) {
 		$theme_options['v4-6-0-backward-option'] = false;
 		/** @psalm-suppress PossiblyUndefinedStringArrayOffset */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
@@ -909,7 +909,7 @@ function divino_theme_background_updater_4_6_0() {
 
 		$theme_options['single-content-images-shadow'] = false;
 		$theme_options['ast-font-style-update']        = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 	$docs_legacy_data = get_option( 'divino_docs_data', array() );
 	if ( ! empty( $docs_legacy_data ) ) {
@@ -924,7 +924,7 @@ function divino_theme_background_updater_4_6_0() {
  * @return void
  */
 function divino_theme_background_updater_4_6_2() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 
 	// Unset "featured image" for pages structure.
 	if ( ! isset( $theme_options['v4-6-2-backward-option'] ) ) {
@@ -945,7 +945,7 @@ function divino_theme_background_updater_4_6_2() {
 			$theme_options['ast-dynamic-single-page-structure'] = $migrated_page_structure;
 		}
 
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -956,11 +956,11 @@ function divino_theme_background_updater_4_6_2() {
  * @return void
  */
 function divino_theme_background_updater_4_6_4() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 
 	if ( ! isset( $theme_options['btn-stylings-upgrade'] ) ) {
 		$theme_options['btn-stylings-upgrade'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -971,10 +971,10 @@ function divino_theme_background_updater_4_6_4() {
  * @return void
  */
 function divino_theme_background_updater_4_6_5() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 	if ( ! isset( $theme_options['elementor-headings-style'] ) ) {
 		$theme_options['elementor-headings-style'] = defined( 'ELEMENTOR_PRO_VERSION' ) ? true : false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -985,10 +985,10 @@ function divino_theme_background_updater_4_6_5() {
  * @return void
  */
 function divino_theme_background_updater_4_6_6() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 	if ( ! isset( $theme_options['elementor-container-padding-style'] ) ) {
 		$theme_options['elementor-container-padding-style'] = defined( 'ELEMENTOR_PRO_VERSION' ) ? true : false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -999,7 +999,7 @@ function divino_theme_background_updater_4_6_6() {
  * @return void
  */
 function divino_theme_background_updater_4_6_11() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 
 	if ( isset( $theme_options['global-headings-line-height-update'] ) ) {
 		return;
@@ -1026,7 +1026,7 @@ function divino_theme_background_updater_4_6_11() {
 
 	$theme_options['global-headings-line-height-update'] = true;
 
-	update_option( 'astra-settings', $theme_options );
+	update_option( 'divino-settings', $theme_options );
 }
 
 /**
@@ -1036,21 +1036,21 @@ function divino_theme_background_updater_4_6_11() {
  * @return void
  */
 function divino_theme_background_updater_4_6_12() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 
 	if ( ! isset( $theme_options['single_posts_pages_heading_clear_none'] ) ) {
 		$theme_options['single_posts_pages_heading_clear_none'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 
 	if ( ! isset( $theme_options['elementor-btn-styling'] ) ) {
 		$theme_options['elementor-btn-styling'] = defined( 'ELEMENTOR_VERSION' ) ? true : false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 
 	if ( ! isset( $theme_options['remove_single_posts_navigation_mobile_device_padding'] ) ) {
 		$theme_options['remove_single_posts_navigation_mobile_device_padding'] = true;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -1064,11 +1064,11 @@ function divino_theme_background_updater_4_6_12() {
  * @return void
  */
 function divino_theme_background_updater_4_6_14() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 
 	if ( ! isset( $theme_options['enable-4-6-14-compatibility'] ) ) {
 		$theme_options['enable-4-6-14-compatibility'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -1082,16 +1082,16 @@ function divino_theme_background_updater_4_6_14() {
  * @return void
  */
 function divino_theme_background_updater_4_7_0() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 
 	if ( class_exists( 'Easy_Digital_Downloads' ) && ! isset( $theme_options['can-update-edd-featured-image-default'] ) ) {
 		$theme_options['can-update-edd-featured-image-default'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 
 	if ( ! isset( $theme_options['heading-widget-font-size'] ) ) {
 		$theme_options['heading-widget-font-size'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -1102,7 +1102,7 @@ function divino_theme_background_updater_4_7_0() {
  * @return void
  */
 function divino_theme_background_updater_4_7_1() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 
 	// Setting same background color for above and below transparent headers as on transparent primary header.
 	if ( isset( $theme_options['transparent-header-bg-color-responsive'] ) ) {
@@ -1112,22 +1112,22 @@ function divino_theme_background_updater_4_7_1() {
 		if ( ! isset( $theme_options['hbb-transparent-header-bg-color-responsive'] ) ) {
 			$theme_options['hbb-transparent-header-bg-color-responsive'] = $theme_options['transparent-header-bg-color-responsive'];
 		}
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
 /**
- * Handle backward compatibility Spectra Heading max-width with Astra when fullwidth layout is selected.
+ * Handle backward compatibility Spectra Heading max-width with divino when fullwidth layout is selected.
  *
  * @since 4.8.0
  * @return void
  */
 function divino_theme_background_updater_4_8_0() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 
 	if ( ! isset( $theme_options['enable-4-8-0-compatibility'] ) ) {
 		$theme_options['enable-4-8-0-compatibility'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -1138,11 +1138,11 @@ function divino_theme_background_updater_4_8_0() {
  * @return void
  */
 function divino_theme_background_updater_4_8_2() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 
 	if ( ! isset( $theme_options['v4-8-2-backward-option'] ) ) {
 		$theme_options['v4-8-2-backward-option'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -1154,16 +1154,16 @@ function divino_theme_background_updater_4_8_2() {
  * @return void
  */
 function divino_theme_background_updater_4_8_4() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 
 	if ( ! isset( $theme_options['enable-4-8-4-compatibility'] ) ) {
 		$theme_options['enable-4-8-4-compatibility'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 
-	if ( ! isset( $theme_options['astra-heading-font-size-compatibility'] ) ) {
-				$theme_options['astra-heading-font-size-compatibility'] = false;
-		update_option( 'astra-settings', $theme_options );
+	if ( ! isset( $theme_options['divino-heading-font-size-compatibility'] ) ) {
+				$theme_options['divino-heading-font-size-compatibility'] = false;
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -1196,16 +1196,16 @@ function divino_theme_background_updater_4_8_9() {
 		divino_update_option( 'new-color-labels', true );
 	}
 
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 	if ( ! isset( $theme_options['enable-4-8-9-compatibility'] ) ) {
 		$theme_options['enable-4-8-9-compatibility'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 
 	// Enable off canvas move body option for existing users.
 	if ( ! isset( $theme_options['off-canvas-move-body'] ) ) {
 		$theme_options['off-canvas-move-body'] = true;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -1216,13 +1216,13 @@ function divino_theme_background_updater_4_8_9() {
  * @return void
  */
 function divino_theme_background_updater_4_8_10() {
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 	/**
 	 * Enable star rating compatibility for existing users, excluding template import scenarios.
 	 */
 	if ( get_option( 'divino_sites_import_started' ) !== 'yes' ) {
 		$theme_options['star-rating-comp'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 
@@ -1235,11 +1235,11 @@ function divino_theme_background_updater_4_8_10() {
  */
 function divino_theme_background_updater_4_9_0() {
 
-	$theme_options = get_option( 'astra-settings', array() );
+	$theme_options = get_option( 'divino-settings', array() );
 
 	if ( ! isset( $theme_options['v4-9-0-backward-option'] ) ) {
 		$theme_options['v4-9-0-backward-option'] = false;
-		update_option( 'astra-settings', $theme_options );
+		update_option( 'divino-settings', $theme_options );
 	}
 }
 

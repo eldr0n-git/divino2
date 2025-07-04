@@ -3,18 +3,18 @@
  * Handle Mobile Cart events.
  *
  * @since 3.1.0
- * @package Astra
+ * @package divino
  */
 
 (function () {
 
-	var cart_flyout = document.getElementById('astra-mobile-cart-drawer'),
+	var cart_flyout = document.getElementById('divino-mobile-cart-drawer'),
 		main_header_masthead = document.getElementById('masthead'),
 		responsive_cart_click = divino_cart.responsive_cart_click;
-	
+
 	// Variable to store the element that opened the cart
 	var lastFocusedElement = null;
-	
+
 	// Return if masthead not exixts.
 	if (!main_header_masthead) {
 		return;
@@ -37,12 +37,12 @@
 		 * Moves focus to the close button
 		 */
 		moveToCloseButton: function() {
-			var closeButton = document.querySelector('.astra-cart-drawer-close');
+			var closeButton = document.querySelector('.divino-cart-drawer-close');
 			if (closeButton) {
 				closeButton.focus();
 			}
 		},
-		
+
 		/**
 		 * Returns focus to the triggering element
 		 */
@@ -63,20 +63,20 @@
 				}
 			}
 		},
-		
+
 		/**
 		 * Sets up a focus trap within the cart flyout
 		 */
 		setupFocusTrap: function() {
 			if (!cart_flyout) return;
-			
+
 			// Remove any existing event listeners first
 			document.removeEventListener('keydown', this.trapTabKey);
-			
+
 			// Add the event listener for tab key
 			document.addEventListener('keydown', this.trapTabKey);
 		},
-		
+
 		/**
 		 * Traps the tab key within the cart flyout
 		 */
@@ -85,27 +85,27 @@
 			if (!cart_flyout.classList.contains('active') || e.key !== 'Tab') {
 				return;
 			}
-			
+
 			// Get all focusable elements inside the flyout
 			var focusableElements = cart_flyout.querySelectorAll(
 				'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
 			);
-			
+
 			// Filter out hidden elements
 			focusableElements = Array.prototype.filter.call(focusableElements, function(element) {
 				return element.offsetWidth > 0 && element.offsetHeight > 0 && window.getComputedStyle(element).visibility !== 'hidden';
 			});
-			
+
 			if (focusableElements.length === 0) return;
-			
+
 			var firstElement = focusableElements[0];
 			var lastElement = focusableElements[focusableElements.length - 1];
-			
+
 			// If shift+tab on first element, go to last element
 			if (e.shiftKey && document.activeElement === firstElement) {
 				e.preventDefault();
 				lastElement.focus();
-			} 
+			}
 			// If tab on last element, go to first element
 			else if (!e.shiftKey && document.activeElement === lastElement) {
 				e.preventDefault();
@@ -155,7 +155,7 @@
 		}
 
 		document.dispatchEvent( new CustomEvent( "divino_on_slide_In_cart_open",  { "detail": {} }) );
-		
+
 		// Accessibility improvement: Move focus to close button after cart is opened
 		setTimeout(function() {
 			focusManager.moveToCloseButton();
@@ -172,7 +172,7 @@
 			cart_flyout.classList.remove('active');
 			document.documentElement.classList.remove('ast-mobile-cart-active');
 		}
-		
+
 		// Return focus to the element that opened the cart
 		setTimeout(function() {
 			focusManager.returnToTrigger();
@@ -191,7 +191,7 @@
 				cart_flyout.classList.remove('active');
 				document.documentElement.classList.remove('ast-mobile-cart-active');
 				updateTrigger();
-				
+
 				// Return focus to the element that opened the cart
 				setTimeout(function() {
 					focusManager.returnToTrigger();
@@ -202,12 +202,12 @@
 		// Close Popup on outside click.
 		document.addEventListener('click', function (event) {
 			var target = event.target;
-			var cart_modal = document.querySelector('.ast-mobile-cart-active .astra-mobile-cart-overlay');
+			var cart_modal = document.querySelector('.ast-mobile-cart-active .divino-mobile-cart-overlay');
 
 			if (target === cart_modal) {
 				cart_flyout.classList.remove('active');
 				document.documentElement.classList.remove('ast-mobile-cart-active');
-				
+
 				// Return focus to the element that opened the cart
 				setTimeout(function() {
 					focusManager.returnToTrigger();
@@ -224,7 +224,7 @@
 				var woo_carts = document.querySelectorAll('.ast-mobile-header-wrap .ast-header-woo-cart');
 			}
 			var edd_cart = document.querySelector('.ast-mobile-header-wrap .ast-header-edd-cart');
-			var cart_close = document.querySelector('.astra-cart-drawer-close');
+			var cart_close = document.querySelector('.divino-cart-drawer-close');
 
 			if( 0 < woo_carts.length ){
 				woo_carts.forEach(function callbackFn(woo_cart) {
@@ -264,25 +264,25 @@
 		document.querySelector('.ast-slidein-cart').addEventListener('click', (e)=> {
 			// Store this element as the last focused element
 			lastFocusedElement = e.currentTarget;
-			
-			document.querySelector('#astra-mobile-cart-drawer').classList.add('active');
+
+			document.querySelector('#divino-mobile-cart-drawer').classList.add('active');
 			document.querySelector('html').classList.add('ast-mobile-cart-active');
 			e.preventDefault();
-			
+
 			// Accessibility improvement: Move focus to close button
 			setTimeout(function() {
 				focusManager.moveToCloseButton();
 				focusManager.setupFocusTrap();
 			}, 100);
-		});		
+		});
 	}
-	
+
 	// Get the screen inner width.
 	var screenInnerWidth = window.innerWidth;
 
 	window.addEventListener('resize', function () {
 		// Close Cart
-		var cart_close = document.querySelector('.astra-cart-drawer-close');
+		var cart_close = document.querySelector('.divino-cart-drawer-close');
 		if ( undefined !== cart_close && '' !== cart_close && null !== cart_close && 'INPUT' !== document.activeElement.tagName && cart_flyout.classList.contains( 'active' ) ) {
 			// Get the modified screen inner width.
 			var modifiedInnerWidth = window.innerWidth;

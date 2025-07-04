@@ -1,14 +1,14 @@
 <?php
 /**
- * Astra BSF Analytics class helps to connect BSF Analytics.
+ * divino BSF Analytics class helps to connect BSF Analytics.
  *
- * @package astra.
+ * @package divino.
  */
 
 defined( 'ABSPATH' ) or exit;
 
 /**
- * Astra BSF Analytics class.
+ * divino BSF Analytics class.
  *
  * @since 4.10.0
  */
@@ -45,7 +45,7 @@ class divino_BSF_Analytics {
 	 * @return void
 	 */
 	public function init_bsf_analytics() {
-		// Bail early if BSF_Analytics_Loader::get_instance is not callable and if Astra white labelling is enabled.
+		// Bail early if BSF_Analytics_Loader::get_instance is not callable and if divino white labelling is enabled.
 		if ( ! is_callable( '\BSF_Analytics_Loader::get_instance' ) || divino_is_white_labelled() ) {
 			return;
 		}
@@ -62,8 +62,8 @@ class divino_BSF_Analytics {
 		$bsf_analytics = \BSF_Analytics_Loader::get_instance();
 		$bsf_analytics->set_entity(
 			array(
-				'astra' => array(
-					'product_name'        => 'Astra',
+				'divino' => array(
+					'product_name'        => 'divino',
 					'path'                => divino_THEME_DIR . 'inc/lib/bsf-analytics',
 					'author'              => 'brainstormforce',
 					'time_to_display'     => '+24 hours',
@@ -75,12 +75,12 @@ class divino_BSF_Analytics {
 						array(
 							// Kept it for future reference.
 							// array(
-							// 'id'                => 'deactivation-survey-astra',
-							// 'popup_logo'        => divino_THEME_URI . 'inc/assets/images/astra-logo.svg',
-							// 'plugin_slug'       => 'astra',
-							// 'popup_title'       => __( 'Quick Feedback', 'astra' ),
-							// 'support_url'       => 'https://wpastra.com/contact/',
-							// 'popup_description' => __( 'If you have a moment, please share why you are deactivating Astra:', 'astra' ),
+							// 'id'                => 'deactivation-survey-divino',
+							// 'popup_logo'        => divino_THEME_URI . 'inc/assets/images/divino-logo.svg',
+							// 'plugin_slug'       => 'divino',
+							// 'popup_title'       => __( 'Quick Feedback', 'divino' ),
+							// 'support_url'       => 'https://wpdivino.com/contact/',
+							// 'popup_description' => __( 'If you have a moment, please share why you are deactivating divino:', 'divino' ),
 							// 'show_on_screens'   => array( 'themes' ),
 							// 'plugin_version'    => divino_THEME_VERSION,
 							// 'popup_reasons'     => self::get_default_reasons(),
@@ -101,32 +101,32 @@ class divino_BSF_Analytics {
 	public static function get_default_reasons() {
 		return array(
 			'temporary_deactivation' => array(
-				'label'           => esc_html__( 'This is a temporary deactivation for testing.', 'astra' ),
-				'placeholder'     => esc_html__( 'How can we assist you?', 'astra' ),
+				'label'           => esc_html__( 'This is a temporary deactivation for testing.', 'divino' ),
+				'placeholder'     => esc_html__( 'How can we assist you?', 'divino' ),
 				'show_cta'        => 'false',
 				'accept_feedback' => 'false',
 			),
 			'theme_not_working'      => array(
-				'label'           => esc_html__( 'The theme isn\'t working properly.', 'astra' ),
-				'placeholder'     => esc_html__( 'Please tell us more about what went wrong?', 'astra' ),
+				'label'           => esc_html__( 'The theme isn\'t working properly.', 'divino' ),
+				'placeholder'     => esc_html__( 'Please tell us more about what went wrong?', 'divino' ),
 				'show_cta'        => 'true',
 				'accept_feedback' => 'true',
 			),
 			'found_better_theme'     => array(
-				'label'           => esc_html__( 'I found a better alternative theme.', 'astra' ),
-				'placeholder'     => esc_html__( 'Could you please specify which theme?', 'astra' ),
+				'label'           => esc_html__( 'I found a better alternative theme.', 'divino' ),
+				'placeholder'     => esc_html__( 'Could you please specify which theme?', 'divino' ),
 				'show_cta'        => 'false',
 				'accept_feedback' => 'true',
 			),
 			'missing_a_feature'      => array(
-				'label'           => esc_html__( 'It\'s missing a specific feature.', 'astra' ),
-				'placeholder'     => esc_html__( 'Please tell us more about the feature.', 'astra' ),
+				'label'           => esc_html__( 'It\'s missing a specific feature.', 'divino' ),
+				'placeholder'     => esc_html__( 'Please tell us more about the feature.', 'divino' ),
 				'show_cta'        => 'false',
 				'accept_feedback' => 'true',
 			),
 			'other'                  => array(
-				'label'           => esc_html__( 'Other', 'astra' ),
-				'placeholder'     => esc_html__( 'Please tell us more details.', 'astra' ),
+				'label'           => esc_html__( 'Other', 'divino' ),
+				'placeholder'     => esc_html__( 'Please tell us more details.', 'divino' ),
 				'show_cta'        => 'false',
 				'accept_feedback' => 'true',
 			),
@@ -134,7 +134,7 @@ class divino_BSF_Analytics {
 	}
 
 	/**
-	 * Callback function to add Astra specific analytics data.
+	 * Callback function to add divino specific analytics data.
 	 *
 	 * @param array $stats_data existing stats_data.
 	 *
@@ -142,8 +142,8 @@ class divino_BSF_Analytics {
 	 * @return array
 	 */
 	public function add_divino_analytics_data( $stats_data ) {
-		if ( ! isset( $stats_data['plugin_data']['astra'] ) ) {
-			$stats_data['plugin_data']['astra'] = array();
+		if ( ! isset( $stats_data['plugin_data']['divino'] ) ) {
+			$stats_data['plugin_data']['divino'] = array();
 		}
 
 		$bsf_internal_referrer    = get_option( 'bsf_product_referers', array() );
@@ -156,17 +156,17 @@ class divino_BSF_Analytics {
 			'numeric_values'               => array(),
 			'boolean_values'               => array(
 				'pro_active'             => defined( 'divino_EXT_VER' ),
-				'divino_sites_active'     => is_plugin_active( 'astra-sites/astra-sites.php' ),
-				'divino_pro_sites_active' => is_plugin_active( 'astra-pro-sites/astra-pro-sites.php' ),
+				'divino_sites_active'     => is_plugin_active( 'divino-sites/divino-sites.php' ),
+				'divino_pro_sites_active' => is_plugin_active( 'divino-pro-sites/divino-pro-sites.php' ),
 				'is_using_dark_palette'  => divino_Global_Palette::is_dark_palette(),
 			),
-			'internal_referrer'            => empty( $bsf_internal_referrer['astra'] ) ? '' : $bsf_internal_referrer['astra'],
+			'internal_referrer'            => empty( $bsf_internal_referrer['divino'] ) ? '' : $bsf_internal_referrer['divino'],
 			'using_old_header_footer'      => $is_hf_builder_active ? 'no' : 'yes',
 			'loading_google_fonts_locally' => isset( $admin_dashboard_settings['self_hosted_gfonts'] ) && $admin_dashboard_settings['self_hosted_gfonts'] ? 'yes' : 'no',
 			'preloading_local_fonts'       => isset( $admin_dashboard_settings['preload_local_fonts'] ) && $admin_dashboard_settings['preload_local_fonts'] ? 'yes' : 'no',
 		);
 
-		$stats_data['plugin_data']['astra'] = array_merge_recursive( $stats_data['plugin_data']['astra'], $divino_stats );
+		$stats_data['plugin_data']['divino'] = array_merge_recursive( $stats_data['plugin_data']['divino'], $divino_stats );
 
 		return $stats_data;
 	}

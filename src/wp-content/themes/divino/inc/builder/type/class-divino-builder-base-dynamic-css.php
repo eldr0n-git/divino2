@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Builder Base Dynamic CSS.
+ * divino Builder Base Dynamic CSS.
  *
- * @package astra-builder
+ * @package divino-builder
  */
 
 // No direct access, please.
@@ -317,7 +317,7 @@ if ( ! class_exists( 'divino_Builder_Base_Dynamic_CSS' ) ) {
 					display: inline-block;
 				}
 				.ast-header-break-point.ast-mobile-inherit-site-logo .ast-has-mobile-header-logo .custom-logo-link,
-				.ast-header-break-point.ast-mobile-inherit-site-logo .ast-has-mobile-header-logo .astra-logo-svg {
+				.ast-header-break-point.ast-mobile-inherit-site-logo .ast-has-mobile-header-logo .divino-logo-svg {
 					display: block;
 				}';
 

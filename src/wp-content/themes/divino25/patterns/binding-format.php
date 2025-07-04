@@ -1,3 +1,4 @@
+<!-- binding-format.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Post format name

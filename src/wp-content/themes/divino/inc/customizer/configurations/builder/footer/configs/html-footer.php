@@ -2,8 +2,8 @@
 /**
  * HTML footer Configuration.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       4.5.2
  */
 
@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Register html footer builder Customizer Configurations.
  *
- * @param array $configurations Astra Customizer Configurations.
+ * @param array $configurations divino Customizer Configurations.
  * @since 4.5.2
- * @return array Astra Customizer Configurations with updated configurations.
+ * @return array divino Customizer Configurations with updated configurations.
  */
 function divino_html_footer_configuration( $configurations = array() ) {
 	$_configs = divino_Html_Component_Configs::register_configuration( $configurations, 'footer', 'section-fb-html-' );

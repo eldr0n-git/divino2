@@ -1,3 +1,4 @@
+<!-- hero-overlapped-book-cover-with-links.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Hero, overlapped book cover with links

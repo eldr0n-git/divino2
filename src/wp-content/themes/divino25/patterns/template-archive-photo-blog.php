@@ -1,3 +1,4 @@
+<!-- template-archive-photo-blog.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Photo blog archive

@@ -1,3 +1,4 @@
+<!-- banner-about-book.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Banner with book description

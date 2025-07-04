@@ -2,7 +2,7 @@
 /**
  * SureCart Compatibility File.
  *
- * @package Astra
+ * @package divino
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,7 +14,7 @@ if ( ! defined( 'SURECART_PLUGIN_FILE' ) ) {
 }
 
 /**
- * Astra SureCart Compatibility
+ * divino SureCart Compatibility
  *
  * @since 4.4.0
  */
@@ -73,7 +73,7 @@ class divino_SureCart {
 		/**
 		 * Register Sections & Panels
 		 */
-		require divino_THEME_DIR . 'inc/compatibility/surecart/customizer/class-astra-customizer-register-surecart-section.php';
+		require divino_THEME_DIR . 'inc/compatibility/surecart/customizer/class-divino-customizer-register-surecart-section.php';
 	}
 
 	/**
@@ -304,7 +304,7 @@ class divino_SureCart {
 	}
 
 	/**
-	 * Disable Astra's next page's banner as we already loaded.
+	 * Disable divino's next page's banner as we already loaded.
 	 *
 	 * @since 4.4.0
 	 */
@@ -315,7 +315,7 @@ class divino_SureCart {
 	}
 
 	/**
-	 * Removed Astra's navigation markup from SureCart single product page.
+	 * Removed divino's navigation markup from SureCart single product page.
 	 *
 	 * @since 4.8.2
 	 */
@@ -345,9 +345,9 @@ class divino_SureCart {
 	}
 
 	/**
-	 * Astra SureCart default options.
+	 * divino SureCart default options.
 	 *
-	 * @param array $defaults Array of Astra's options.
+	 * @param array $defaults Array of divino's options.
 	 * @return array Filtered options array.
 	 *
 	 * @since 4.7.3
@@ -387,23 +387,23 @@ class divino_SureCart {
 	public function customize_surecart_title_area( $title, $post_type, $singular = false ) {
 		$surecart_titles = array(
 			'sc_product'  => array(
-				'single'  =>  __( 'Product', 'astra' ),
-				'archive' => __( 'Products', 'astra' ),
+				'single'  =>  __( 'Product', 'divino' ),
+				'archive' => __( 'Products', 'divino' ),
 			),
 			'sc_collection' => array(
-				'single'  =>  __( 'Collection', 'astra' ),
-				'archive' => __( 'Collections', 'astra' ),
+				'single'  =>  __( 'Collection', 'divino' ),
+				'archive' => __( 'Collections', 'divino' ),
 			),
 			'sc_upsell'   => array(
-				'single'  =>  __( 'Upsell', 'astra' ),
-				'archive' => __( 'Upsells', 'astra' ),
+				'single'  =>  __( 'Upsell', 'divino' ),
+				'archive' => __( 'Upsells', 'divino' ),
 			),
 		);
 
 		$type = $singular ? 'single' : 'archive';
 		// Check for SureCart's post types and customize the title.
 		if ( isset( $surecart_titles[ $post_type ][ $type ] ) ) {
-			$title_area_suffix = ' ' . __( 'Title Area', 'astra' );
+			$title_area_suffix = ' ' . __( 'Title Area', 'divino' );
 			return $surecart_titles[ $post_type ][ $type ] . $title_area_suffix;
 		}
 

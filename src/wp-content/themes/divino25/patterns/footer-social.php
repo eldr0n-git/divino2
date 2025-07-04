@@ -1,3 +1,4 @@
+<!-- footer-social.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Centered footer with social links

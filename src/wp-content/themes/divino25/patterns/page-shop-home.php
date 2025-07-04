@@ -1,3 +1,4 @@
+<!-- page-shop-home.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Shop homepage

@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Builder Helper.
+ * divino Builder Helper.
  *
- * @package astra-builder
+ * @package divino-builder
  */
 
 // No direct access, please.
@@ -507,93 +507,93 @@ final class divino_Builder_Helper {
 				'tablet'     => array(
 					'6' => array(
 						'6-equal' => array(
-							'tooltip' => __( 'Equal Width Columns', 'astra' ),
+							'tooltip' => __( 'Equal Width Columns', 'divino' ),
 							'icon'    => 'sixcol',
 						),
 						'full'    => array(
-							'tooltip' => __( 'Collapse to Rows', 'astra' ),
+							'tooltip' => __( 'Collapse to Rows', 'divino' ),
 							'icon'    => 'collapserowsix',
 						),
 					),
 					'5' => array(
 						'5-equal' => array(
-							'tooltip' => __( 'Equal Width Columns', 'astra' ),
+							'tooltip' => __( 'Equal Width Columns', 'divino' ),
 							'icon'    => 'fivecol',
 						),
 						'full'    => array(
-							'tooltip' => __( 'Collapse to Rows', 'astra' ),
+							'tooltip' => __( 'Collapse to Rows', 'divino' ),
 							'icon'    => 'collapserowfive',
 						),
 					),
 					'4' => array(
 						'4-equal' => array(
-							'tooltip' => __( 'Equal Width Columns', 'astra' ),
+							'tooltip' => __( 'Equal Width Columns', 'divino' ),
 							'icon'    => 'fourcol',
 						),
 						'2-equal' => array(
-							'tooltip' => __( 'Two Column Grid', 'astra' ),
+							'tooltip' => __( 'Two Column Grid', 'divino' ),
 							'icon'    => 'grid',
 						),
 						'full'    => array(
-							'tooltip' => __( 'Collapse to Rows', 'astra' ),
+							'tooltip' => __( 'Collapse to Rows', 'divino' ),
 							'icon'    => 'collapserowfour',
 						),
 					),
 					'3' => array(
 						'3-equal'    => array(
-							'tooltip' => __( 'Equal Width Columns', 'astra' ),
+							'tooltip' => __( 'Equal Width Columns', 'divino' ),
 							'icon'    => 'threecol',
 						),
 						'3-lheavy'   => array(
-							'tooltip' => __( 'Left Heavy 50/25/25', 'astra' ),
+							'tooltip' => __( 'Left Heavy 50/25/25', 'divino' ),
 							'icon'    => 'lefthalf',
 						),
 						'3-rheavy'   => array(
-							'tooltip' => __( 'Right Heavy 25/25/50', 'astra' ),
+							'tooltip' => __( 'Right Heavy 25/25/50', 'divino' ),
 							'icon'    => 'righthalf',
 						),
 						'3-cheavy'   => array(
-							'tooltip' => __( 'Center Heavy 25/50/25', 'astra' ),
+							'tooltip' => __( 'Center Heavy 25/50/25', 'divino' ),
 							'icon'    => 'centerhalf',
 						),
 						'3-cwide'    => array(
-							'tooltip' => __( 'Wide Center 20/60/20', 'astra' ),
+							'tooltip' => __( 'Wide Center 20/60/20', 'divino' ),
 							'icon'    => 'widecenter',
 						),
 						'3-firstrow' => array(
-							'tooltip' => __( 'First Row, Next Columns 100 - 50/50', 'astra' ),
+							'tooltip' => __( 'First Row, Next Columns 100 - 50/50', 'divino' ),
 							'icon'    => 'firstrow',
 						),
 						'3-lastrow'  => array(
-							'tooltip' => __( 'Last Row, Previous Columns 50/50 - 100', 'astra' ),
+							'tooltip' => __( 'Last Row, Previous Columns 50/50 - 100', 'divino' ),
 							'icon'    => 'lastrow',
 						),
 						'full'       => array(
-							'tooltip' => __( 'Collapse to Rows', 'astra' ),
+							'tooltip' => __( 'Collapse to Rows', 'divino' ),
 							'icon'    => 'collapserowthree',
 						),
 					),
 					'2' => array(
 						'2-equal'  => array(
-							'tooltip' => __( 'Equal Width Columns', 'astra' ),
+							'tooltip' => __( 'Equal Width Columns', 'divino' ),
 							'icon'    => 'twocol',
 						),
 						'2-lheavy' => array(
-							'tooltip' => __( 'Left Heavy 66/33', 'astra' ),
+							'tooltip' => __( 'Left Heavy 66/33', 'divino' ),
 							'icon'    => 'twoleftgolden',
 						),
 						'2-rheavy' => array(
-							'tooltip' => __( 'Right Heavy 33/66', 'astra' ),
+							'tooltip' => __( 'Right Heavy 33/66', 'divino' ),
 							'icon'    => 'tworightgolden',
 						),
 						'full'     => array(
-							'tooltip' => __( 'Collapse to Rows', 'astra' ),
+							'tooltip' => __( 'Collapse to Rows', 'divino' ),
 							'icon'    => 'collapserow',
 						),
 					),
 					'1' => array(
 						'full' => array(
-							'tooltip' => __( 'Single Row', 'astra' ),
+							'tooltip' => __( 'Single Row', 'divino' ),
 							'icon'    => 'row',
 						),
 					),
@@ -601,21 +601,21 @@ final class divino_Builder_Helper {
 				'mobile'     => array(
 					'6' => array(
 						'6-equal' => array(
-							'tooltip' => __( 'Equal Width Columns', 'astra' ),
+							'tooltip' => __( 'Equal Width Columns', 'divino' ),
 							'icon'    => 'sixcol',
 						),
 						'full'    => array(
-							'tooltip' => __( 'Collapse to Rows', 'astra' ),
+							'tooltip' => __( 'Collapse to Rows', 'divino' ),
 							'icon'    => 'collapserowsix',
 						),
 					),
 					'5' => array(
 						'5-equal' => array(
-							'tooltip' => __( 'Equal Width Columns', 'astra' ),
+							'tooltip' => __( 'Equal Width Columns', 'divino' ),
 							'icon'    => 'fivecol',
 						),
 						'full'    => array(
-							'tooltip' => __( 'Collapse to Rows', 'astra' ),
+							'tooltip' => __( 'Collapse to Rows', 'divino' ),
 							'icon'    => 'collapserowfive',
 						),
 					),
@@ -684,19 +684,19 @@ final class divino_Builder_Helper {
 			'divino_header_desktop_items',
 			array(
 				'logo'    => array(
-					'name'    => __( 'Site Title & Logo', 'astra' ),
+					'name'    => __( 'Site Title & Logo', 'divino' ),
 					'icon'    => 'admin-appearance',
 					'section' => 'title_tagline',
 					'delete'  => false,
 				),
 				'search'  => array(
-					'name'    => __( 'Search', 'astra' ),
+					'name'    => __( 'Search', 'divino' ),
 					'icon'    => 'search',
 					'section' => 'section-header-search',
 					'delete'  => false,
 				),
 				'account' => array(
-					'name'    => __( 'Account', 'astra' ),
+					'name'    => __( 'Account', 'divino' ),
 					'icon'    => 'admin-users',
 					'section' => 'section-header-account',
 					'delete'  => false,
@@ -708,67 +708,67 @@ final class divino_Builder_Helper {
 		if ( ! defined( 'divino_EXT_VER' ) ) {
 			$pro_header_desktop_items = array(
 				'divider-2'         => array(
-					'name'    => __( 'Divider 2', 'astra' ),
+					'name'    => __( 'Divider 2', 'divino' ),
 					'icon'    => 'minus',
 					'section' => 'section-hb-divider-2',
 					'pro'     => true,
 				),
 				'divider-3'         => array(
-					'name'    => __( 'Divider 3', 'astra' ),
+					'name'    => __( 'Divider 3', 'divino' ),
 					'icon'    => 'minus',
 					'section' => 'section-hb-divider-3',
 					'pro'     => true,
 				),
 				'language-switcher' => array(
-					'name'    => __( 'Language Switcher', 'astra' ),
+					'name'    => __( 'Language Switcher', 'divino' ),
 					'icon'    => 'translation',
 					'section' => 'section-hb-language-switcher',
 					'pro'     => true,
 				),
 				'mobile-trigger'    => array(
-					'name'    => __( 'Toggle Button', 'astra' ),
+					'name'    => __( 'Toggle Button', 'divino' ),
 					'icon'    => 'menu-alt',
 					'section' => 'section-header-mobile-trigger',
 					'pro'     => true,
 				),
 				'mobile-menu'       => array(
-					'name'    => __( 'Off-Canvas Menu', 'astra' ),
+					'name'    => __( 'Off-Canvas Menu', 'divino' ),
 					'icon'    => 'menu-alt',
 					'section' => 'section-header-mobile-menu',
 					'pro'     => true,
 				),
 				'button-2'          => array(
-					'name'    => __( 'Button 2', 'astra' ),
+					'name'    => __( 'Button 2', 'divino' ),
 					'icon'    => 'button',
 					'section' => 'section-hb-button-2',
 					'pro'     => true,
 				),
 				'html-3'            => array(
-					'name'    => __( 'HTML 3', 'astra' ),
+					'name'    => __( 'HTML 3', 'divino' ),
 					'icon'    => 'editor-code',
 					'section' => 'section-hb-html-3',
 					'pro'     => true,
 				),
 				'widget-3'          => array(
-					'name'    => __( 'Widget 3', 'astra' ),
+					'name'    => __( 'Widget 3', 'divino' ),
 					'icon'    => 'screenoptions',
 					'section' => 'sidebar-widgets-header-widget-3',
 					'pro'     => true,
 				),
 				'widget-4'          => array(
-					'name'    => __( 'Widget 4', 'astra' ),
+					'name'    => __( 'Widget 4', 'divino' ),
 					'icon'    => 'screenoptions',
 					'section' => 'sidebar-widgets-header-widget-4',
 					'pro'     => true,
 				),
 				'menu-3'            => array(
-					'name'    => __( 'Menu 3', 'astra' ),
+					'name'    => __( 'Menu 3', 'divino' ),
 					'icon'    => 'menu',
 					'section' => 'section-hb-menu-3',
 					'pro'     => true,
 				),
 				'color-switcher'    => array(
-					'name'    => __( 'Color Switcher', 'astra' ),
+					'name'    => __( 'Color Switcher', 'divino' ),
 					'icon'    => 'art',
 					'section' => 'section-header-color-switcher',
 					'pro'     => true,
@@ -801,32 +801,32 @@ final class divino_Builder_Helper {
 		if ( ! defined( 'divino_EXT_VER' ) ) {
 			$pro_footer_desktop_items = array(
 				'divider-2' => array(
-					'name' => __( 'Divider 2', 'astra' ),
+					'name' => __( 'Divider 2', 'divino' ),
 					'icon' => 'minus',
 					'pro'  => true,
 				),
 				'divider-3' => array(
-					'name' => __( 'Divider 3', 'astra' ),
+					'name' => __( 'Divider 3', 'divino' ),
 					'icon' => 'minus',
 					'pro'  => true,
 				),
 				'widget-5'  => array(
-					'name' => __( 'Widget 5', 'astra' ),
+					'name' => __( 'Widget 5', 'divino' ),
 					'icon' => 'screenoptions',
 					'pro'  => true,
 				),
 				'widget-6'  => array(
-					'name' => __( 'Widget 6', 'astra' ),
+					'name' => __( 'Widget 6', 'divino' ),
 					'icon' => 'screenoptions',
 					'pro'  => true,
 				),
 				'button-1'  => array(
-					'name' => __( 'Button 1', 'astra' ),
+					'name' => __( 'Button 1', 'divino' ),
 					'icon' => 'button',
 					'pro'  => true,
 				),
 				'button-2'  => array(
-					'name' => __( 'Button 2', 'astra' ),
+					'name' => __( 'Button 2', 'divino' ),
 					'icon' => 'button',
 					'pro'  => true,
 				),
@@ -838,7 +838,7 @@ final class divino_Builder_Helper {
 
 		if ( class_exists( 'divino_Woocommerce' ) ) {
 
-			$woo_cart_name = class_exists( 'Easy_Digital_Downloads' ) ? __( 'Woo Cart', 'astra' ) : __( 'Cart', 'astra' );
+			$woo_cart_name = class_exists( 'Easy_Digital_Downloads' ) ? __( 'Woo Cart', 'divino' ) : __( 'Cart', 'divino' );
 
 			self::$header_desktop_items['woo-cart'] = array(
 				'name'    => $woo_cart_name,
@@ -848,7 +848,7 @@ final class divino_Builder_Helper {
 		}
 		if ( class_exists( 'Easy_Digital_Downloads' ) ) {
 
-			$edd_cart_name = class_exists( 'divino_Woocommerce' ) ? __( 'EDD Cart', 'astra' ) : __( 'Cart', 'astra' );
+			$edd_cart_name = class_exists( 'divino_Woocommerce' ) ? __( 'EDD Cart', 'divino' ) : __( 'Cart', 'divino' );
 
 			self::$header_desktop_items['edd-cart'] = array(
 				'name'    => $edd_cart_name,
@@ -861,27 +861,27 @@ final class divino_Builder_Helper {
 			'divino_header_mobile_items',
 			array(
 				'logo'           => array(
-					'name'    => __( 'Site Title & Logo', 'astra' ),
+					'name'    => __( 'Site Title & Logo', 'divino' ),
 					'icon'    => 'admin-appearance',
 					'section' => 'title_tagline',
 				),
 				'search'         => array(
-					'name'    => __( 'Search', 'astra' ),
+					'name'    => __( 'Search', 'divino' ),
 					'icon'    => 'search',
 					'section' => 'section-header-search',
 				),
 				'mobile-trigger' => array(
-					'name'    => __( 'Toggle Button', 'astra' ),
+					'name'    => __( 'Toggle Button', 'divino' ),
 					'icon'    => 'menu-alt',
 					'section' => 'section-header-mobile-trigger',
 				),
 				'mobile-menu'    => array(
-					'name'    => __( 'Off-Canvas Menu', 'astra' ),
+					'name'    => __( 'Off-Canvas Menu', 'divino' ),
 					'icon'    => 'menu-alt',
 					'section' => 'section-header-mobile-menu',
 				),
 				'account'        => array(
-					'name'    => __( 'Account', 'astra' ),
+					'name'    => __( 'Account', 'divino' ),
 					'icon'    => 'admin-users',
 					'section' => 'section-header-account',
 				),
@@ -892,52 +892,52 @@ final class divino_Builder_Helper {
 		if ( ! defined( 'divino_EXT_VER' ) ) {
 			$pro_header_mobile_items = array(
 				'divider-1'         => array(
-					'name' => __( 'Divider 1', 'astra' ),
+					'name' => __( 'Divider 1', 'divino' ),
 					'icon' => 'minus',
 					'pro'  => true,
 				),
 				'divider-2'         => array(
-					'name' => __( 'Divider 2', 'astra' ),
+					'name' => __( 'Divider 2', 'divino' ),
 					'icon' => 'minus',
 					'pro'  => true,
 				),
 				'divider-3'         => array(
-					'name' => __( 'Divider 3', 'astra' ),
+					'name' => __( 'Divider 3', 'divino' ),
 					'icon' => 'minus',
 					'pro'  => true,
 				),
 				'language-switcher' => array(
-					'name' => __( 'Language Switcher', 'astra' ),
+					'name' => __( 'Language Switcher', 'divino' ),
 					'icon' => 'translation',
 					'pro'  => true,
 				),
 				'button-2'          => array(
-					'name' => __( 'Button 2', 'astra' ),
+					'name' => __( 'Button 2', 'divino' ),
 					'icon' => 'button',
 					'pro'  => true,
 				),
 				'html-3'            => array(
-					'name' => __( 'HTML 3', 'astra' ),
+					'name' => __( 'HTML 3', 'divino' ),
 					'icon' => 'text',
 					'pro'  => true,
 				),
 				'widget-3'          => array(
-					'name' => __( 'Widget 3', 'astra' ),
+					'name' => __( 'Widget 3', 'divino' ),
 					'icon' => 'wordpress',
 					'pro'  => true,
 				),
 				'widget-4'          => array(
-					'name' => __( 'Widget 4', 'astra' ),
+					'name' => __( 'Widget 4', 'divino' ),
 					'icon' => 'wordpress',
 					'pro'  => true,
 				),
 				'menu-3'            => array(
-					'name' => __( 'Menu 3', 'astra' ),
+					'name' => __( 'Menu 3', 'divino' ),
 					'icon' => 'menu',
 					'pro'  => true,
 				),
 				'color-switcher'    => array(
-					'name'    => __( 'Color Switcher', 'astra' ),
+					'name'    => __( 'Color Switcher', 'divino' ),
 					'icon'    => 'art',
 					'section' => 'section-header-color-switcher',
 					'pro'     => true,
@@ -1038,7 +1038,7 @@ final class divino_Builder_Helper {
 	}
 
 	/**
-	 *  Check if Migrated to new Astra Builder.
+	 *  Check if Migrated to new divino Builder.
 	 */
 	public static function is_new_user() {
 		return divino_get_option( 'header-footer-builder-notice', true );
@@ -1163,7 +1163,7 @@ final class divino_Builder_Helper {
 					<div class="ast-mobile-popup-content">
 						<?php
 							/**
-							 * Astra Off-Canvas
+							 * divino Off-Canvas
 							 */
 							do_action( 'divino_render_mobile_popup', 'popup', 'content' );
 						?>
@@ -1171,7 +1171,7 @@ final class divino_Builder_Helper {
 					<div class="ast-desktop-popup-content">
 						<?php
 							/**
-							 * Astra Off-Canvas
+							 * divino Off-Canvas
 							 */
 							do_action( 'divino_render_desktop_popup', 'popup', 'content' );
 						?>
@@ -1373,53 +1373,53 @@ final class divino_Builder_Helper {
 			// Count is 10 because component limit is set to 10 in $component_limit.
 			self::$translatable_strings = array(
 				// Header button components.
-				'header-button1-text'  => _x( '%astra%', 'Builder: Header Button 1 Text', 'astra' ),
-				'header-button2-text'  => _x( '%astra%', 'Builder: Header Button 2 Text', 'astra' ),
-				'header-button3-text'  => _x( '%astra%', 'Builder: Header Button 3 Text', 'astra' ),
-				'header-button4-text'  => _x( '%astra%', 'Builder: Header Button 4 Text', 'astra' ),
-				'header-button5-text'  => _x( '%astra%', 'Builder: Header Button 5 Text', 'astra' ),
-				'header-button6-text'  => _x( '%astra%', 'Builder: Header Button 6 Text', 'astra' ),
-				'header-button7-text'  => _x( '%astra%', 'Builder: Header Button 7 Text', 'astra' ),
-				'header-button8-text'  => _x( '%astra%', 'Builder: Header Button 8 Text', 'astra' ),
-				'header-button9-text'  => _x( '%astra%', 'Builder: Header Button 9 Text', 'astra' ),
-				'header-button10-text' => _x( '%astra%', 'Builder: Header Button 10 Text', 'astra' ),
+				'header-button1-text'  => _x( '%divino%', 'Builder: Header Button 1 Text', 'divino' ),
+				'header-button2-text'  => _x( '%divino%', 'Builder: Header Button 2 Text', 'divino' ),
+				'header-button3-text'  => _x( '%divino%', 'Builder: Header Button 3 Text', 'divino' ),
+				'header-button4-text'  => _x( '%divino%', 'Builder: Header Button 4 Text', 'divino' ),
+				'header-button5-text'  => _x( '%divino%', 'Builder: Header Button 5 Text', 'divino' ),
+				'header-button6-text'  => _x( '%divino%', 'Builder: Header Button 6 Text', 'divino' ),
+				'header-button7-text'  => _x( '%divino%', 'Builder: Header Button 7 Text', 'divino' ),
+				'header-button8-text'  => _x( '%divino%', 'Builder: Header Button 8 Text', 'divino' ),
+				'header-button9-text'  => _x( '%divino%', 'Builder: Header Button 9 Text', 'divino' ),
+				'header-button10-text' => _x( '%divino%', 'Builder: Header Button 10 Text', 'divino' ),
 				// Footer button components.
-				'footer-button1-text'  => _x( '%astra%', 'Builder: Footer Button 1 Text', 'astra' ),
-				'footer-button2-text'  => _x( '%astra%', 'Builder: Footer Button 2 Text', 'astra' ),
-				'footer-button3-text'  => _x( '%astra%', 'Builder: Footer Button 3 Text', 'astra' ),
-				'footer-button4-text'  => _x( '%astra%', 'Builder: Footer Button 4 Text', 'astra' ),
-				'footer-button5-text'  => _x( '%astra%', 'Builder: Footer Button 5 Text', 'astra' ),
-				'footer-button6-text'  => _x( '%astra%', 'Builder: Footer Button 6 Text', 'astra' ),
-				'footer-button7-text'  => _x( '%astra%', 'Builder: Footer Button 7 Text', 'astra' ),
-				'footer-button8-text'  => _x( '%astra%', 'Builder: Footer Button 8 Text', 'astra' ),
-				'footer-button9-text'  => _x( '%astra%', 'Builder: Footer Button 9 Text', 'astra' ),
-				'footer-button10-text' => _x( '%astra%', 'Builder: Footer Button 10 Text', 'astra' ),
+				'footer-button1-text'  => _x( '%divino%', 'Builder: Footer Button 1 Text', 'divino' ),
+				'footer-button2-text'  => _x( '%divino%', 'Builder: Footer Button 2 Text', 'divino' ),
+				'footer-button3-text'  => _x( '%divino%', 'Builder: Footer Button 3 Text', 'divino' ),
+				'footer-button4-text'  => _x( '%divino%', 'Builder: Footer Button 4 Text', 'divino' ),
+				'footer-button5-text'  => _x( '%divino%', 'Builder: Footer Button 5 Text', 'divino' ),
+				'footer-button6-text'  => _x( '%divino%', 'Builder: Footer Button 6 Text', 'divino' ),
+				'footer-button7-text'  => _x( '%divino%', 'Builder: Footer Button 7 Text', 'divino' ),
+				'footer-button8-text'  => _x( '%divino%', 'Builder: Footer Button 8 Text', 'divino' ),
+				'footer-button9-text'  => _x( '%divino%', 'Builder: Footer Button 9 Text', 'divino' ),
+				'footer-button10-text' => _x( '%divino%', 'Builder: Footer Button 10 Text', 'divino' ),
 				// Header HTML components.
-				'header-html-1'        => _x( '%astra%', 'Builder: Header HTML 1', 'astra' ),
-				'header-html-2'        => _x( '%astra%', 'Builder: Header HTML 2', 'astra' ),
-				'header-html-3'        => _x( '%astra%', 'Builder: Header HTML 3', 'astra' ),
-				'header-html-4'        => _x( '%astra%', 'Builder: Header HTML 4', 'astra' ),
-				'header-html-5'        => _x( '%astra%', 'Builder: Header HTML 5', 'astra' ),
-				'header-html-6'        => _x( '%astra%', 'Builder: Header HTML 6', 'astra' ),
-				'header-html-7'        => _x( '%astra%', 'Builder: Header HTML 7', 'astra' ),
-				'header-html-8'        => _x( '%astra%', 'Builder: Header HTML 8', 'astra' ),
-				'header-html-9'        => _x( '%astra%', 'Builder: Header HTML 9', 'astra' ),
-				'header-html-10'       => _x( '%astra%', 'Builder: Header HTML 10', 'astra' ),
+				'header-html-1'        => _x( '%divino%', 'Builder: Header HTML 1', 'divino' ),
+				'header-html-2'        => _x( '%divino%', 'Builder: Header HTML 2', 'divino' ),
+				'header-html-3'        => _x( '%divino%', 'Builder: Header HTML 3', 'divino' ),
+				'header-html-4'        => _x( '%divino%', 'Builder: Header HTML 4', 'divino' ),
+				'header-html-5'        => _x( '%divino%', 'Builder: Header HTML 5', 'divino' ),
+				'header-html-6'        => _x( '%divino%', 'Builder: Header HTML 6', 'divino' ),
+				'header-html-7'        => _x( '%divino%', 'Builder: Header HTML 7', 'divino' ),
+				'header-html-8'        => _x( '%divino%', 'Builder: Header HTML 8', 'divino' ),
+				'header-html-9'        => _x( '%divino%', 'Builder: Header HTML 9', 'divino' ),
+				'header-html-10'       => _x( '%divino%', 'Builder: Header HTML 10', 'divino' ),
 				// Footer HTML components.
-				'footer-html-1'        => _x( '%astra%', 'Builder: Footer HTML 1', 'astra' ),
-				'footer-html-2'        => _x( '%astra%', 'Builder: Footer HTML 2', 'astra' ),
-				'footer-html-3'        => _x( '%astra%', 'Builder: Footer HTML 3', 'astra' ),
-				'footer-html-4'        => _x( '%astra%', 'Builder: Footer HTML 4', 'astra' ),
-				'footer-html-5'        => _x( '%astra%', 'Builder: Footer HTML 5', 'astra' ),
-				'footer-html-6'        => _x( '%astra%', 'Builder: Footer HTML 6', 'astra' ),
-				'footer-html-7'        => _x( '%astra%', 'Builder: Footer HTML 7', 'astra' ),
-				'footer-html-8'        => _x( '%astra%', 'Builder: Footer HTML 8', 'astra' ),
-				'footer-html-9'        => _x( '%astra%', 'Builder: Footer HTML 9', 'astra' ),
-				'footer-html-10'       => _x( '%astra%', 'Builder: Footer HTML 10', 'astra' ),
+				'footer-html-1'        => _x( '%divino%', 'Builder: Footer HTML 1', 'divino' ),
+				'footer-html-2'        => _x( '%divino%', 'Builder: Footer HTML 2', 'divino' ),
+				'footer-html-3'        => _x( '%divino%', 'Builder: Footer HTML 3', 'divino' ),
+				'footer-html-4'        => _x( '%divino%', 'Builder: Footer HTML 4', 'divino' ),
+				'footer-html-5'        => _x( '%divino%', 'Builder: Footer HTML 5', 'divino' ),
+				'footer-html-6'        => _x( '%divino%', 'Builder: Footer HTML 6', 'divino' ),
+				'footer-html-7'        => _x( '%divino%', 'Builder: Footer HTML 7', 'divino' ),
+				'footer-html-8'        => _x( '%divino%', 'Builder: Footer HTML 8', 'divino' ),
+				'footer-html-9'        => _x( '%divino%', 'Builder: Footer HTML 9', 'divino' ),
+				'footer-html-10'       => _x( '%divino%', 'Builder: Footer HTML 10', 'divino' ),
 			);
 
 			// Old header button.
-			self::$translatable_strings['header-main-rt-section-button-text'] = _x( '%astra%', 'Button text for last item in Primary Menu', 'astra' );
+			self::$translatable_strings['header-main-rt-section-button-text'] = _x( '%divino%', 'Button text for last item in Primary Menu', 'divino' );
 		}
 
 		return self::$translatable_strings;
@@ -1438,7 +1438,7 @@ final class divino_Builder_Helper {
 			return $strings[ $option_key ];
 		}
 
-		return '%astra%'; // Indicates to use original string saved in the database.
+		return '%divino%'; // Indicates to use original string saved in the database.
 	}
 }
 

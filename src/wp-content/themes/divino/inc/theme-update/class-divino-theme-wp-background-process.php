@@ -2,7 +2,7 @@
 /**
  * Database Background Process
  *
- * @package Astra
+ * @package divino
  * @since 2.1.3
  */
 

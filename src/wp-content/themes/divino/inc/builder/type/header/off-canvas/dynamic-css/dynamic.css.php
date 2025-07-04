@@ -2,7 +2,7 @@
 /**
  * Off Canvas - Dynamic CSS
  *
- * @package astra-builder
+ * @package divino-builder
  * @since 3.0.0
  */
 
@@ -18,8 +18,8 @@ add_filter( 'divino_dynamic_theme_css', 'divino_off_canvas_row_setting', 11 );
 /**
  * Off Canvas Row - Dynamic CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
- * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+ * @param  string $dynamic_css          divino Dynamic CSS.
+ * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
  * @return String Generated dynamic CSS for Heading Colors.
  *
  * @since 3.0.0
@@ -247,13 +247,13 @@ function divino_off_canvas_static_css() {
 	.ast-mobile-popup-content .ast-icon.icon-search svg {
 		margin-top: 0;
 	}
-	.ast-desktop .ast-desktop-popup-content .astra-menu-animation-slide-up > .menu-item > .sub-menu,
-	.ast-desktop .ast-desktop-popup-content .astra-menu-animation-slide-up > .menu-item .menu-item > .sub-menu,
-	.ast-desktop .ast-desktop-popup-content .astra-menu-animation-slide-down > .menu-item > .sub-menu,
-	.ast-desktop .ast-desktop-popup-content .astra-menu-animation-slide-down > .menu-item .menu-item > .sub-menu,
-	.ast-desktop .ast-desktop-popup-content .astra-menu-animation-fade > .menu-item > .sub-menu,
+	.ast-desktop .ast-desktop-popup-content .divino-menu-animation-slide-up > .menu-item > .sub-menu,
+	.ast-desktop .ast-desktop-popup-content .divino-menu-animation-slide-up > .menu-item .menu-item > .sub-menu,
+	.ast-desktop .ast-desktop-popup-content .divino-menu-animation-slide-down > .menu-item > .sub-menu,
+	.ast-desktop .ast-desktop-popup-content .divino-menu-animation-slide-down > .menu-item .menu-item > .sub-menu,
+	.ast-desktop .ast-desktop-popup-content .divino-menu-animation-fade > .menu-item > .sub-menu,
 	.ast-mobile-popup-drawer.show,
-	.ast-desktop .ast-desktop-popup-content .astra-menu-animation-fade > .menu-item .menu-item > .sub-menu{
+	.ast-desktop .ast-desktop-popup-content .divino-menu-animation-fade > .menu-item .menu-item > .sub-menu{
 	  opacity: 1;
 	  visibility: visible;
 	}';
@@ -496,12 +496,12 @@ function divino_dropdown_type_static_css() {
 	.ast-main-header-nav-open.ast-header-break-point .ast-mobile-header-wrap .ast-mobile-header-content {
 	  display: block;
 	}
-	.ast-desktop .ast-desktop-header-content .astra-menu-animation-slide-up > .menu-item > .sub-menu,
-	.ast-desktop .ast-desktop-header-content .astra-menu-animation-slide-up > .menu-item .menu-item > .sub-menu,
-	.ast-desktop .ast-desktop-header-content .astra-menu-animation-slide-down > .menu-item > .sub-menu,
-	.ast-desktop .ast-desktop-header-content .astra-menu-animation-slide-down > .menu-item .menu-item > .sub-menu,
-	.ast-desktop .ast-desktop-header-content .astra-menu-animation-fade > .menu-item > .sub-menu,
-	.ast-desktop .ast-desktop-header-content .astra-menu-animation-fade > .menu-item .menu-item > .sub-menu {
+	.ast-desktop .ast-desktop-header-content .divino-menu-animation-slide-up > .menu-item > .sub-menu,
+	.ast-desktop .ast-desktop-header-content .divino-menu-animation-slide-up > .menu-item .menu-item > .sub-menu,
+	.ast-desktop .ast-desktop-header-content .divino-menu-animation-slide-down > .menu-item > .sub-menu,
+	.ast-desktop .ast-desktop-header-content .divino-menu-animation-slide-down > .menu-item .menu-item > .sub-menu,
+	.ast-desktop .ast-desktop-header-content .divino-menu-animation-fade > .menu-item > .sub-menu,
+	.ast-desktop .ast-desktop-header-content .divino-menu-animation-fade > .menu-item .menu-item > .sub-menu {
 	  opacity: 1;
 	  visibility: visible;
 	}

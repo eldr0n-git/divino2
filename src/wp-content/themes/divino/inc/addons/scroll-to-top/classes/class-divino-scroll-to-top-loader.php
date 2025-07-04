@@ -2,7 +2,7 @@
 /**
  * Scroll to Top - Customizer.
  *
- * @package Astra
+ * @package divino
  * @since 4.0.0
  */
 
@@ -46,7 +46,7 @@ class divino_Scroll_To_Top_Loader {
 	/**
 	 * Set Options Default Values
 	 *
-	 * @param  array $defaults  Astra options default value array.
+	 * @param  array $defaults  divino options default value array.
 	 * @return array
 	 * @since 4.0.0
 	 */
@@ -95,7 +95,7 @@ class divino_Scroll_To_Top_Loader {
 	 * @since 4.0.0
 	 */
 	public function new_customize_register( $wp_customize ) {
-		require_once divino_SCROLL_TO_TOP_DIR . 'classes/customizer/class-astra-scroll-to-top-configs.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound -- Not a template file so loading in a normal way.
+		require_once divino_SCROLL_TO_TOP_DIR . 'classes/customizer/class-divino-scroll-to-top-configs.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound -- Not a template file so loading in a normal way.
 	}
 
 	/**
@@ -107,9 +107,9 @@ class divino_Scroll_To_Top_Loader {
 		/** @psalm-suppress RedundantCondition */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		if ( SCRIPT_DEBUG ) {
 			/** @psalm-suppress RedundantCondition */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-			wp_enqueue_script( 'astra-scroll-to-top-customize-preview-js', divino_SCROLL_TO_TOP_URL . 'assets/js/unminified/customizer-preview.js', array( 'customize-preview', 'astra-customizer-preview-js' ), divino_THEME_VERSION, true );
+			wp_enqueue_script( 'divino-scroll-to-top-customize-preview-js', divino_SCROLL_TO_TOP_URL . 'assets/js/unminified/customizer-preview.js', array( 'customize-preview', 'divino-customizer-preview-js' ), divino_THEME_VERSION, true );
 		} else {
-			wp_enqueue_script( 'astra-scroll-to-top-customize-preview-js', divino_SCROLL_TO_TOP_URL . 'assets/js/minified/customizer-preview.min.js', array( 'customize-preview', 'astra-customizer-preview-js' ), divino_THEME_VERSION, true );
+			wp_enqueue_script( 'divino-scroll-to-top-customize-preview-js', divino_SCROLL_TO_TOP_URL . 'assets/js/minified/customizer-preview.min.js', array( 'customize-preview', 'divino-customizer-preview-js' ), divino_THEME_VERSION, true );
 		}
 	}
 

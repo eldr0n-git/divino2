@@ -4,16 +4,16 @@
  * here. Your javascript should grab settings from customizer controls, and
  * then make any necessary changes to the page using jQuery.
  *
- * @package Astra
+ * @package divino
  * @since 3.0.0
  */
 
 ( function( $ ) {
 
-	var tablet_break_point    = astraBuilderPreview.tablet_break_point || 768,
-		mobile_break_point    = astraBuilderPreview.mobile_break_point || 544;
+	var tablet_break_point    = divinoBuilderPreview.tablet_break_point || 768,
+		mobile_break_point    = divinoBuilderPreview.mobile_break_point || 544;
 
-	wp.customize( 'astra-settings[hba-header-height]', function( value ) {
+	wp.customize( 'divino-settings[hba-header-height]', function( value ) {
 		value.bind( function( size ) {
 
 			if( size.desktop != '' || size.tablet != '' || size.mobile != '' ) {
@@ -43,10 +43,10 @@
 	} );
 
 	// Border Bottom width.
-	wp.customize( 'astra-settings[hba-header-separator]', function( value ) {
+	wp.customize( 'divino-settings[hba-header-separator]', function( value ) {
 		value.bind( function( border ) {
 
-			var color = wp.customize( 'astra-settings[hba-header-bottom-border-color]' ).get(),
+			var color = wp.customize( 'divino-settings[hba-header-bottom-border-color]' ).get(),
 				dynamicStyle = '';
 
 			dynamicStyle += '.ast-above-header.ast-above-header-bar, .ast-above-header-bar {';
@@ -62,29 +62,29 @@
 
 	// Border Color.
 	divino_css(
-		'astra-settings[hba-header-bottom-border-color]',
+		'divino-settings[hba-header-bottom-border-color]',
 		'border-color',
 		'.ast-above-header.ast-above-header-bar, .ast-above-header-bar'
 	);
 
 	// Responsive BG styles > Below Header Row.
-	divino_apply_responsive_background_css( 'astra-settings[hba-header-bg-obj-responsive]', '.ast-above-header.ast-above-header-bar', 'desktop' );
-	divino_apply_responsive_background_css( 'astra-settings[hba-header-bg-obj-responsive]', '.ast-above-header.ast-above-header-bar', 'tablet' );
-	divino_apply_responsive_background_css( 'astra-settings[hba-header-bg-obj-responsive]', '.ast-above-header.ast-above-header-bar', 'mobile' );
+	divino_apply_responsive_background_css( 'divino-settings[hba-header-bg-obj-responsive]', '.ast-above-header.ast-above-header-bar', 'desktop' );
+	divino_apply_responsive_background_css( 'divino-settings[hba-header-bg-obj-responsive]', '.ast-above-header.ast-above-header-bar', 'tablet' );
+	divino_apply_responsive_background_css( 'divino-settings[hba-header-bg-obj-responsive]', '.ast-above-header.ast-above-header-bar', 'mobile' );
 	
 	if (document.querySelector(".ast-above-header-wrap .site-logo-img")) {
 	divino_apply_responsive_background_css(
-		"astra-settings[hba-header-bg-obj-responsive]",
+		"divino-settings[hba-header-bg-obj-responsive]",
 		".ast-sg-element-wrap.ast-sg-logo-section, .ast-above-header.ast-above-header-bar",
 		"desktop"
 	);
 	divino_apply_responsive_background_css(
-		"astra-settings[hba-header-bg-obj-responsive]",
+		"divino-settings[hba-header-bg-obj-responsive]",
 		".ast-sg-element-wrap.ast-sg-logo-section, .ast-above-header.ast-above-header-bar",
 		"tablet"
 	);
 	divino_apply_responsive_background_css(
-		"astra-settings[hba-header-bg-obj-responsive]",
+		"divino-settings[hba-header-bg-obj-responsive]",
 		".ast-sg-element-wrap.ast-sg-logo-section, .ast-above-header.ast-above-header-bar",
 		"mobile"
 	);

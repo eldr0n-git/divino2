@@ -2,7 +2,7 @@
 /**
  * Template part for displaying a row of the mobile header
  *
- * @package Astra Builder
+ * @package divino Builder
  */
 
 $divino_row = get_query_var( 'row' );
@@ -29,7 +29,7 @@ if ( divino_Builder_Helper::is_row_empty( $divino_row, 'header', 'mobile' ) ) {
 					divino_Builder_UI_Controller::render_grid_row_customizer_edit_button( 'Header', $divino_row );
 				}
 				/**
-				 * Astra Render before Site Content.
+				 * divino Render before Site Content.
 				 */
 				do_action( "divino_header_{$divino_row}_container_before" );
 				?>
@@ -38,13 +38,13 @@ if ( divino_Builder_Helper::is_row_empty( $divino_row, 'header', 'mobile' ) ) {
 							<div class="site-header-<?php echo esc_attr( $divino_row ); ?>-section-left site-header-section ast-flex site-header-section-left">
 								<?php
 								/**
-								 * Astra Render Header Column
+								 * divino Render Header Column
 								 */
 								do_action( 'divino_render_mobile_header_column', $divino_row, 'left' );
 
 								if ( divino_Builder_Helper::has_mobile_center_column( $divino_row ) ) {
 									/**
-									 * Astra Render Header Column
+									 * divino Render Header Column
 									 */
 									do_action( 'divino_render_mobile_header_column', $divino_row, 'left_center' );
 								}
@@ -55,7 +55,7 @@ if ( divino_Builder_Helper::is_row_empty( $divino_row, 'header', 'mobile' ) ) {
 							<div class="site-header-<?php echo esc_attr( $divino_row ); ?>-section-center site-header-section ast-flex ast-grid-section-center">
 								<?php
 								/**
-								 * Astra Render Header Column
+								 * divino Render Header Column
 								 */
 								do_action( 'divino_render_mobile_header_column', $divino_row, 'center' );
 								?>
@@ -66,12 +66,12 @@ if ( divino_Builder_Helper::is_row_empty( $divino_row, 'header', 'mobile' ) ) {
 								<?php
 								if ( divino_Builder_Helper::has_mobile_center_column( $divino_row ) ) {
 									/**
-									 * Astra Render Header Column
+									 * divino Render Header Column
 									 */
 									do_action( 'divino_render_mobile_header_column', $divino_row, 'right_center' );
 								}
 								/**
-								 * Astra Render Header Column
+								 * divino Render Header Column
 								 */
 								do_action( 'divino_render_mobile_header_column', $divino_row, 'right' );
 								?>
@@ -80,7 +80,7 @@ if ( divino_Builder_Helper::is_row_empty( $divino_row, 'header', 'mobile' ) ) {
 					</div>
 				<?php
 				/**
-				 * Astra Render after Site Content.
+				 * divino Render after Site Content.
 				 */
 				do_action( "divino_header_{$divino_row}_container_after" );
 				?>

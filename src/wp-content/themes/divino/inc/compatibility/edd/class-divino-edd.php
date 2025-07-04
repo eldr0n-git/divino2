@@ -4,7 +4,7 @@
  *
  * @link https://easydigitaldownloads.com/
  *
- * @package Astra
+ * @package divino
  */
 
 // If plugin - 'Easy_Digital_Downloads' not exist then return.
@@ -13,12 +13,12 @@ if ( ! class_exists( 'Easy_Digital_Downloads' ) ) {
 }
 
 /**
- * Astra Easy Digital Downloads Compatibility
+ * divino Easy Digital Downloads Compatibility
  */
 if ( ! class_exists( 'divino_Edd' ) ) {
 
 	/**
-	 * Astra Easy Digital Downloads Compatibility
+	 * divino Easy Digital Downloads Compatibility
 	 *
 	 * @since 1.5.5
 	 */
@@ -98,7 +98,7 @@ if ( ! class_exists( 'divino_Edd' ) ) {
 			$cart_total_display = divino_get_option( 'edd-header-cart-total-display' );
 			$cart_count_display = apply_filters( 'divino_edd_header_cart_count', true );
 			$cart_title_display = divino_get_option( 'edd-header-cart-title-display' );
-			$cart_title         = apply_filters( 'divino_header_cart_title', __( 'Cart', 'astra' ) );
+			$cart_title         = apply_filters( 'divino_header_cart_title', __( 'Cart', 'divino' ) );
 
 			$cart_title_markup = '<span class="ast-edd-header-cart-title">' . esc_html( $cart_title ) . '</span>';
 
@@ -120,7 +120,7 @@ if ( ! class_exists( 'divino_Edd' ) ) {
 			$cart_contents_count = $cart_items;
 
 			$cart_icon = sprintf(
-				'<span class="astra-icon ast-icon-shopping-%1$s %2$s"
+				'<span class="divino-icon ast-icon-shopping-%1$s %2$s"
 							%3$s
 						>%4$s</span>',
 				$icon ? $icon : '',
@@ -183,14 +183,14 @@ if ( ! class_exists( 'divino_Edd' ) ) {
 		 */
 		public function edd_set_defaults_initialization() {
 
-			$divino_theme_options = get_option( 'astra-settings' );
+			$divino_theme_options = get_option( 'divino-settings' );
 			$edd_settings        = get_option( 'edd_settings' );
 
 			// Set flag to set the EDD style disable only once for the very first time.
 			if ( ! isset( $divino_theme_options['ast-edd-disable-styles'] ) ) {
 				$divino_theme_options['ast-edd-disable-styles'] = true;
 				$edd_settings['disable_styles']                = true;
-				update_option( 'astra-settings', $divino_theme_options );
+				update_option( 'divino-settings', $divino_theme_options );
 				update_option( 'edd_settings', $edd_settings );
 			}
 		}
@@ -316,7 +316,7 @@ if ( ! class_exists( 'divino_Edd' ) ) {
 		 */
 		public function header_section_elements( $options ) {
 
-			$options['edd'] = __( 'Easy Digital Downloads', 'astra' );
+			$options['edd'] = __( 'Easy Digital Downloads', 'divino' );
 
 			return $options;
 		}
@@ -354,13 +354,13 @@ if ( ! class_exists( 'divino_Edd' ) ) {
 				$classes = array_diff(
 					$classes,
 					array(
-						// Astra common grid.
+						// divino common grid.
 						'ast-col-sm-12',
 						'ast-col-md-8',
 						'ast-col-md-6',
 						'ast-col-md-12',
 
-						// Astra Blog / Single Post.
+						// divino Blog / Single Post.
 						'ast-article-post',
 						'ast-article-single',
 						'ast-separate-posts',
@@ -436,7 +436,7 @@ if ( ! class_exists( 'divino_Edd' ) ) {
 		 */
 		public function divino_get_edd_cart() {
 
-			$view_shopping_cart = apply_filters( 'divino_edd_view_shopping_cart_title', __( 'View your shopping cart', 'astra' ) );
+			$view_shopping_cart = apply_filters( 'divino_edd_view_shopping_cart_title', __( 'View your shopping cart', 'divino' ) );
 			$edd_cart_link      = apply_filters( 'divino_edd_cart_link', edd_get_checkout_uri() );
 
 			if ( is_customize_preview() ) {
@@ -478,7 +478,7 @@ if ( ! class_exists( 'divino_Edd' ) ) {
 		 * @since 1.5.5
 		 */
 		public function add_styles( $assets ) {
-			$assets['css']['astra-edd'] = divino_Builder_Helper::apply_flex_based_css() ? 'compatibility/edd-grid' : 'compatibility/edd';
+			$assets['css']['divino-edd'] = divino_Builder_Helper::apply_flex_based_css() ? 'compatibility/edd-grid' : 'compatibility/edd';
 			return $assets;
 		}
 
@@ -668,17 +668,17 @@ if ( ! class_exists( 'divino_Edd' ) ) {
 			/* Parse CSS from array() -> max-width: (mobile-breakpoint) px */
 			$edd_css_output .= divino_parse_css( $mobile_edd_lang_direction_css, '', divino_get_mobile_breakpoint() );
 
-			wp_add_inline_style( 'astra-edd', apply_filters( 'divino_theme_edd_dynamic_css', $edd_css_output ) );
+			wp_add_inline_style( 'divino-edd', apply_filters( 'divino_theme_edd_dynamic_css', $edd_css_output ) );
 
 			// Inline js for EDD Cart updates.
 			wp_add_inline_script(
 				'edd-ajax',
 				"jQuery( document ).ready( function($) {
 					/**
-					 * Astra - Easy Digital Downloads Cart Quantity & Total Amount
+					 * divino - Easy Digital Downloads Cart Quantity & Total Amount
 					 */
 					var cartQuantity = jQuery('.ast-edd-site-header-cart-wrap .count'),
-						iconQuantity = jQuery('.ast-edd-site-header-cart-wrap .astra-icon'),
+						iconQuantity = jQuery('.ast-edd-site-header-cart-wrap .divino-icon'),
 						cartTotalAmount = jQuery('.ast-edd-site-header-cart-wrap .ast-edd-header-cart-total');
 
 					jQuery('body').on('edd_cart_item_added', function( event, response ) {
@@ -699,8 +699,8 @@ if ( ! class_exists( 'divino_Edd' ) ) {
 		/**
 		 * Dynamic CSS
 		 *
-		 * @param  string $dynamic_css          Astra Dynamic CSS.
-		 * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+		 * @param  string $dynamic_css          divino Dynamic CSS.
+		 * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
 		 * @since 1.5.5
 		 * @return string $dynamic_css
 		 */
@@ -856,9 +856,9 @@ if ( ! class_exists( 'divino_Edd' ) ) {
 				'add_cart',
 			);
 
-			$defaults['edd-archive-add-to-cart-button-text'] = __( 'Add To Cart', 'astra' );
+			$defaults['edd-archive-add-to-cart-button-text'] = __( 'Add To Cart', 'divino' );
 			$defaults['edd-archive-variable-button']         = 'button';
-			$defaults['edd-archive-variable-button-text']    = __( 'View Details', 'astra' );
+			$defaults['edd-archive-variable-button-text']    = __( 'View Details', 'divino' );
 
 			$defaults['edd-archive-width']              = 'default';
 			$defaults['edd-archive-max-width']          = 1200;
@@ -916,9 +916,9 @@ if ( ! class_exists( 'divino_Edd' ) ) {
 				apply_filters(
 					'divino_edd_sidebar_init',
 					array(
-						'name'          => esc_html__( 'Easy Digital Downloads Sidebar', 'astra' ),
-						'id'            => 'astra-edd-sidebar',
-						'description'   => __( 'This sidebar will be used on Product archive, Cart, Checkout and My Account pages.', 'astra' ),
+						'name'          => esc_html__( 'Easy Digital Downloads Sidebar', 'divino' ),
+						'id'            => 'divino-edd-sidebar',
+						'description'   => __( 'This sidebar will be used on Product archive, Cart, Checkout and My Account pages.', 'divino' ),
 						'before_widget' => '<div id="%1$s" class="widget %2$s">',
 						'after_widget'  => '</div>',
 						'before_title'  => '<h2 class="widget-title">',
@@ -930,9 +930,9 @@ if ( ! class_exists( 'divino_Edd' ) ) {
 				apply_filters(
 					'divino_edd_single_product_sidebar_init',
 					array(
-						'name'          => esc_html__( 'EDD Single Product Sidebar', 'astra' ),
-						'id'            => 'astra-edd-single-product-sidebar',
-						'description'   => __( 'This sidebar will be used on EDD Single Product page.', 'astra' ),
+						'name'          => esc_html__( 'EDD Single Product Sidebar', 'divino' ),
+						'id'            => 'divino-edd-single-product-sidebar',
+						'description'   => __( 'This sidebar will be used on EDD Single Product page.', 'divino' ),
 						'before_widget' => '<div id="%1$s" class="widget %2$s">',
 						'after_widget'  => '</div>',
 						'before_title'  => '<h2 class="widget-title">',
@@ -955,9 +955,9 @@ if ( ! class_exists( 'divino_Edd' ) ) {
 			$is_edd_single_product_page = divino_is_edd_single_product_page();
 
 			if ( $is_edd_page && ! $is_edd_single_product_page ) {
-				$sidebar = 'astra-edd-sidebar';
+				$sidebar = 'divino-edd-sidebar';
 			} elseif ( $is_edd_single_product_page ) {
-				$sidebar = 'astra-edd-single-product-sidebar';
+				$sidebar = 'divino-edd-single-product-sidebar';
 			}
 
 			return $sidebar;
@@ -1083,15 +1083,15 @@ if ( ! class_exists( 'divino_Edd' ) ) {
 			/**
 			 * Register Sections & Panels
 			 */
-			require divino_THEME_DIR . 'inc/compatibility/edd/customizer/class-astra-customizer-register-edd-section.php';
+			require divino_THEME_DIR . 'inc/compatibility/edd/customizer/class-divino-customizer-register-edd-section.php';
 
 			/**
 			 * Sections
 			 */
-			require divino_THEME_DIR . 'inc/compatibility/edd/customizer/sections/class-astra-edd-container-configs.php';
-			require divino_THEME_DIR . 'inc/compatibility/edd/customizer/sections/class-astra-edd-sidebar-configs.php';
-			require divino_THEME_DIR . 'inc/compatibility/edd/customizer/sections/layout/class-astra-edd-archive-layout-configs.php';
-			require divino_THEME_DIR . 'inc/compatibility/edd/customizer/sections/layout/class-astra-edd-single-product-layout-configs.php';
+			require divino_THEME_DIR . 'inc/compatibility/edd/customizer/sections/class-divino-edd-container-configs.php';
+			require divino_THEME_DIR . 'inc/compatibility/edd/customizer/sections/class-divino-edd-sidebar-configs.php';
+			require divino_THEME_DIR . 'inc/compatibility/edd/customizer/sections/layout/class-divino-edd-archive-layout-configs.php';
+			require divino_THEME_DIR . 'inc/compatibility/edd/customizer/sections/layout/class-divino-edd-single-product-layout-configs.php';
 			// @codingStandardsIgnoreEnd WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 		}
 

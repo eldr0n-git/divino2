@@ -1,7 +1,7 @@
 /**
- * Astra Theme Style Guide Preview Updater.
+ * divino Theme Style Guide Preview Updater.
  *
- * @package Astra
+ * @package divino
  * @since  x.x.x
  */
 
@@ -10,7 +10,7 @@
      * Quick easy navigation.
      */
 	jQuery(document).ready(function($) {
-		document.addEventListener('AstraStyleGuideElementUpdated', function (e) {
+		document.addEventListener('divinoStyleGuideElementUpdated', function (e) {
 			let element = $(document.body).find( e.detail.selector );
 			let value   = e.detail.value;
 

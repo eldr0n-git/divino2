@@ -1,3 +1,4 @@
+<!-- services-team-photos.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Services, team photos

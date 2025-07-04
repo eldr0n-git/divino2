@@ -2,9 +2,9 @@
 /**
  * Navigation Menu customizations.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.5.4
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.5.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,12 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Custom wp_nav_menu walker.
  *
- * @package Astra WordPress theme
+ * @package divino WordPress theme
  */
 if ( ! class_exists( 'divino_Walker_Page' ) ) {
 
 	/**
-	 * Astra custom navigation walker.
+	 * divino custom navigation walker.
 	 *
 	 * @since 1.5.4
 	 */
@@ -70,7 +70,7 @@ if ( ! class_exists( 'divino_Walker_Page' ) ) {
 				$css_class[] = 'menu-item-has-children';
 				$icon        = divino_Icons::get_icons( 'arrow' );
 				$icon        = '<span role="presentation" class="dropdown-menu-toggle ast-header-navigation-arrow" tabindex="0">' . $icon . '</span>';
-				// Add toggle button if menu is from Astra.
+				// Add toggle button if menu is from divino.
 				if ( true === is_object( $args ) ) {
 					if ( isset( $args->theme_location ) &&
 					( 'primary' === $args->theme_location ||
@@ -83,7 +83,7 @@ if ( ! class_exists( 'divino_Walker_Page' ) ) {
 								'aria-expanded' => 'false',
 							),
 							$page
-						) . '><span class="screen-reader-text">' . __( 'Menu Toggle', 'astra' ) . '</span>' . divino_Icons::get_icons( 'arrow' ) . '</button>';
+						) . '><span class="screen-reader-text">' . __( 'Menu Toggle', 'divino' ) . '</span>' . divino_Icons::get_icons( 'arrow' ) . '</button>';
 					}
 				} else {
 					if ( isset( $page->post_parent ) && 0 === $page->post_parent ) {
@@ -93,7 +93,7 @@ if ( ! class_exists( 'divino_Walker_Page' ) ) {
 								'aria-expanded' => 'false',
 							),
 							$page
-						) . '><span class="screen-reader-text">' . __( 'Menu Toggle', 'astra' ) . '</span>' . divino_Icons::get_icons( 'arrow' ) . '</button>';
+						) . '><span class="screen-reader-text">' . __( 'Menu Toggle', 'divino' ) . '</span>' . divino_Icons::get_icons( 'arrow' ) . '</button>';
 					}
 				}
 			}

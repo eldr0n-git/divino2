@@ -1,10 +1,10 @@
 <?php
 /**
- * Astra Theme Options
+ * divino Theme Options
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -58,7 +58,7 @@ if ( ! class_exists( 'divino_Theme_Options' ) ) {
 		private static $db_options_no_defaults;
 
 		/**
-		 * A static theme astra-options variable.
+		 * A static theme divino-options variable.
 		 *
 		 * @since 4.0.2
 		 * @var mixed $divino_options
@@ -98,14 +98,14 @@ if ( ! class_exists( 'divino_Theme_Options' ) ) {
 
 			$palette_css_var_prefix = divino_Global_Palette::get_css_variable_prefix();
 			/**
-			 * Update Astra customizer default values. To not update directly on existing users site, added backwards.
+			 * Update divino customizer default values. To not update directly on existing users site, added backwards.
 			 *
 			 * @since 3.6.3
 			 */
 			$apply_new_default_values = divino_button_default_padding_updated();
 
 			/**
-			 * Update Astra customizer default values. To not update directly on existing users site, added backwards.
+			 * Update divino customizer default values. To not update directly on existing users site, added backwards.
 			 *
 			 * @since 4.5.2
 			 */
@@ -123,7 +123,7 @@ if ( ! class_exists( 'divino_Theme_Options' ) ) {
 			$mob_sec_vertical_padding = $update_secondary_paddings ? 10 : $mob_sec_vertical_padding;
 
 			/**
-			 * Update Astra default color and typography values. To not update directly on existing users site, added backwards.
+			 * Update divino default color and typography values. To not update directly on existing users site, added backwards.
 			 *
 			 * @since 4.0.0
 			 */
@@ -134,7 +134,7 @@ if ( ! class_exists( 'divino_Theme_Options' ) ) {
 			$blog_defaults_update = divino_Dynamic_CSS::divino_4_6_0_compatibility();
 			$reorder_color_seq    = divino_Dynamic_CSS::divino_4_8_9_compatibility();
 
-			// Update Astra heading 5 font size & handled backward case
+			// Update divino heading 5 font size & handled backward case
 			$update_heading_five_font_size  = divino_Dynamic_CSS::divino_4_6_14_compatibility();
 			$updated_heading_font_five_size = $blog_defaults_update && $update_heading_five_font_size ? 18 : 16;
 
@@ -184,9 +184,9 @@ if ( ! class_exists( 'divino_Theme_Options' ) ) {
 					) : array(
 						'section-search-page-title-title',
 					),
-					'section-search-page-title-custom-title' => __( 'Search Results for:', 'astra' ),
-					'section-search-page-title-found-custom-description' => __( 'Here are the search results for your search.', 'astra' ),
-					'section-search-page-title-not-found-custom-description' => __( 'Sorry, but we could not find anything related to your search terms. Please try again.', 'astra' ),
+					'section-search-page-title-custom-title' => __( 'Search Results for:', 'divino' ),
+					'section-search-page-title-found-custom-description' => __( 'Here are the search results for your search.', 'divino' ),
+					'section-search-page-title-not-found-custom-description' => __( 'Sorry, but we could not find anything related to your search terms. Please try again.', 'divino' ),
 					'section-search-page-title-title-font-weight' => $blog_defaults_update ? '600' : '',
 					'section-search-page-title-title-font-size' => array(
 						'desktop'      => $blog_defaults_update ? 32 : '',
@@ -436,9 +436,9 @@ if ( ! class_exists( 'divino_Theme_Options' ) ) {
 					// Footer - Small.
 					'footer-sml-layout'                    => 'footer-sml-layout-1',
 					'footer-sml-section-1'                 => 'custom',
-					'footer-sml-section-1-credit'          => __( 'Copyright &copy; [current_year] [site_title] | Powered by [theme_author]', 'astra' ),
+					'footer-sml-section-1-credit'          => __( 'Copyright &copy; [current_year] [site_title] | Powered by [theme_author]', 'divino' ),
 					'footer-sml-section-2'                 => '',
-					'footer-sml-section-2-credit'          => __( 'Copyright &copy; [current_year] [site_title] | Powered by [theme_author]', 'astra' ),
+					'footer-sml-section-2-credit'          => __( 'Copyright &copy; [current_year] [site_title] | Powered by [theme_author]', 'divino' ),
 					'footer-sml-dist-equal-align'          => true,
 					'footer-sml-divider'                   => 1,
 					'footer-sml-divider-color'             => '#7a7a7a',
@@ -480,11 +480,11 @@ if ( ! class_exists( 'divino_Theme_Options' ) ) {
 					'header-layouts'                       => 'header-main-layout-1',
 					'header-main-rt-section'               => 'none',
 					'header-display-outside-menu'          => false,
-					'header-main-rt-section-html'          => '<button>' . __( 'Contact Us', 'astra' ) . '</button>',
-					'header-main-rt-section-button-text'   => __( 'Button', 'astra' ),
-					'header-main-rt-section-button-link'   => apply_filters( 'divino_site_url', 'https://www.wpastra.com' ),
+					'header-main-rt-section-html'          => '<button>' . __( 'Contact Us', 'divino' ) . '</button>',
+					'header-main-rt-section-button-text'   => __( 'Button', 'divino' ),
+					'header-main-rt-section-button-link'   => apply_filters( 'divino_site_url', 'https://www.wpdivino.com' ),
 					'header-main-rt-section-button-link-option' => array(
-						'url'      => apply_filters( 'divino_site_url', 'https://www.wpastra.com' ),
+						'url'      => apply_filters( 'divino_site_url', 'https://www.wpdivino.com' ),
 						'new_tab'  => false,
 						'link_rel' => '',
 					),
@@ -919,7 +919,7 @@ if ( ! class_exists( 'divino_Theme_Options' ) ) {
 		}
 
 		/**
-		 * Get astra-options DB values.
+		 * Get divino-options DB values.
 		 *
 		 * @return array Return array of theme options from database.
 		 *

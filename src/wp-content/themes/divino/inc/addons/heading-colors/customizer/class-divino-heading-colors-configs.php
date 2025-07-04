@@ -1,10 +1,10 @@
 <?php
 /**
- * Heading Colors Options for Astra theme.
+ * Heading Colors Options for divino theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 2.1.4
+ * @since       divino 2.1.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,12 +18,12 @@ if ( ! class_exists( 'divino_Heading_Colors_Configs' ) ) {
 	 */
 	class divino_Heading_Colors_Configs extends divino_Customizer_Config_Base {
 		/**
-		 * Register Astra Heading Colors Settings.
+		 * Register divino Heading Colors Settings.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 2.1.4
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -44,7 +44,7 @@ if ( ! class_exists( 'divino_Heading_Colors_Configs' ) ) {
 					'transport'         => 'postMessage',
 					'priority'          => 5,
 					'name'              => divino_THEME_SETTINGS . '[heading-base-color]',
-					'title'             => __( 'Heading (H1-H6)', 'astra' ),
+					'title'             => __( 'Heading (H1-H6)', 'divino' ),
 					'section'           => $_section,
 				),
 
@@ -57,7 +57,7 @@ if ( ! class_exists( 'divino_Heading_Colors_Configs' ) ) {
 					'type'      => 'control',
 					'control'   => 'ast-settings-group',
 					'is_font'   => true,
-					'title'     => __( 'Font', 'astra' ),
+					'title'     => __( 'Font', 'divino' ),
 					'section'   => 'section-buttons',
 					'transport' => 'postMessage',
 					'priority'  => 18.5,
@@ -73,7 +73,7 @@ if ( ! class_exists( 'divino_Heading_Colors_Configs' ) ) {
 					'type'      => 'control',
 					'control'   => 'ast-settings-group',
 					'is_font'   => true,
-					'title'     => __( 'Font', 'astra' ),
+					'title'     => __( 'Font', 'divino' ),
 					'section'   => 'section-buttons',
 					'transport' => 'postMessage',
 					'priority'  => 10,
@@ -91,7 +91,7 @@ if ( ! class_exists( 'divino_Heading_Colors_Configs' ) ) {
 					'section'   => 'section-buttons',
 					'control'   => 'ast-font',
 					'font_type' => 'ast-font-family',
-					'title'     => __( 'Font Family', 'astra' ),
+					'title'     => __( 'Font Family', 'divino' ),
 					'default'   => divino_get_option( 'font-family-button' ),
 					'connect'   => divino_THEME_SETTINGS . '[font-weight-button]',
 					'priority'  => 1,
@@ -108,7 +108,7 @@ if ( ! class_exists( 'divino_Heading_Colors_Configs' ) ) {
 					'section'   => 'section-buttons',
 					'control'   => 'ast-font',
 					'font_type' => 'ast-font-family',
-					'title'     => __( 'Font Family', 'astra' ),
+					'title'     => __( 'Font Family', 'divino' ),
 					'default'   => divino_get_option( 'secondary-font-family-button' ),
 					'connect'   => divino_THEME_SETTINGS . '[secondary-font-weight-button]',
 					'priority'  => 1,
@@ -125,7 +125,7 @@ if ( ! class_exists( 'divino_Heading_Colors_Configs' ) ) {
 					'section'           => 'section-buttons',
 					'control'           => 'ast-font',
 					'font_type'         => 'ast-font-weight',
-					'title'             => __( 'Font Weight', 'astra' ),
+					'title'             => __( 'Font Weight', 'divino' ),
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
 					'default'           => divino_get_option( 'font-weight-button' ),
 					'connect'           => 'font-family-button',
@@ -143,7 +143,7 @@ if ( ! class_exists( 'divino_Heading_Colors_Configs' ) ) {
 					'section'           => 'section-buttons',
 					'control'           => 'ast-font',
 					'font_type'         => 'ast-font-weight',
-					'title'             => __( 'Font Weight', 'astra' ),
+					'title'             => __( 'Font Weight', 'divino' ),
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
 					'default'           => divino_get_option( 'secondary-font-weight-button' ),
 					'connect'           => 'secondary-font-family-button',
@@ -163,7 +163,7 @@ if ( ! class_exists( 'divino_Heading_Colors_Configs' ) ) {
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
 					'section'           => 'section-buttons',
 					'transport'         => 'postMessage',
-					'title'             => __( 'Font Size', 'astra' ),
+					'title'             => __( 'Font Size', 'divino' ),
 					'priority'          => 3,
 					'default'           => divino_get_option( 'font-size-button' ),
 					'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
@@ -203,7 +203,7 @@ if ( ! class_exists( 'divino_Heading_Colors_Configs' ) ) {
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
 					'section'           => 'section-buttons',
 					'transport'         => 'postMessage',
-					'title'             => __( 'Font Size', 'astra' ),
+					'title'             => __( 'Font Size', 'divino' ),
 					'priority'          => 3,
 					'default'           => divino_get_option( 'secondary-font-size-button' ),
 					'suffix'            => array( 'px', 'em', 'vw', 'rem' ),

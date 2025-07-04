@@ -3,7 +3,7 @@
  * Starter Content Compatibility.
  *
  * @since 4.0.0
- * @package Astra
+ * @package divino
  */
 
 /**
@@ -38,7 +38,7 @@ class divino_Starter_Content {
 			99
 		);
 
-		// Save astra settings into database.
+		// Save divino settings into database.
 		add_action(
 			'customize_save_after',
 			array(
@@ -128,7 +128,7 @@ class divino_Starter_Content {
 	 */
 	public function get_customizer_json() {
 		try {
-			$request = wp_remote_get( divino_THEME_URI . 'inc/compatibility/starter-content/astra-settings-export.json' );
+			$request = wp_remote_get( divino_THEME_URI . 'inc/compatibility/starter-content/divino-settings-export.json' );
 		} catch ( Exception $ex ) {
 			$request = null;
 		}
@@ -150,7 +150,7 @@ class divino_Starter_Content {
 	}
 
 	/**
-	 *  Save Astra customizer settings into database.
+	 *  Save divino customizer settings into database.
 	 *
 	 * @since 4.0.0
 	 */
@@ -159,7 +159,7 @@ class divino_Starter_Content {
 		$settings = self::get_customizer_json();
 
 		// Delete existing dynamic CSS cache.
-		delete_option( 'astra-settings' );
+		delete_option( 'divino-settings' );
 
 		if ( ! empty( $settings['customizer-settings'] ) ) {
 			foreach ( $settings['customizer-settings'] as $option => $value ) {
@@ -169,7 +169,7 @@ class divino_Starter_Content {
 	}
 
 	/**
-	 * Load default astra settings.
+	 * Load default divino settings.
 	 *
 	 * @since 4.0.0
 	 * @param mixed $defaults defaults.
@@ -180,7 +180,7 @@ class divino_Starter_Content {
 		$settings = self::get_customizer_json();
 
 		if ( ! empty( $settings['customizer-settings'] ) ) {
-			$json = $settings['customizer-settings']['astra-settings'];
+			$json = $settings['customizer-settings']['divino-settings'];
 		}
 
 		return $json ? $json : $defaults;
@@ -198,7 +198,7 @@ class divino_Starter_Content {
 		$settings = self::get_customizer_json();
 
 		if ( ! empty( $settings['customizer-settings'] ) ) {
-			$json = $settings['customizer-settings']['astra-color-palettes'];
+			$json = $settings['customizer-settings']['divino-color-palettes'];
 		}
 
 		return $json ? $json : $defaults;
@@ -219,27 +219,27 @@ class divino_Starter_Content {
 				'object_id' => '{{' . self::HOME_SLUG . '}}',
 			),
 			'about'    => array(
-				'title' => __( 'Services', 'astra' ),
+				'title' => __( 'Services', 'divino' ),
 				'type'  => 'custom',
 				'url'   => '{{' . self::SERVICES_SLUG . '}}',
 			),
 			'services' => array(
-				'title' => __( 'About', 'astra' ),
+				'title' => __( 'About', 'divino' ),
 				'type'  => 'custom',
 				'url'   => '{{' . self::ABOUT_SLUG . '}}',
 			),
 			'reviews'  => array(
-				'title' => __( 'Reviews', 'astra' ),
+				'title' => __( 'Reviews', 'divino' ),
 				'type'  => 'custom',
 				'url'   => '{{' . self::REVIEWS_SLUG . '}}',
 			),
 			'faq'      => array(
-				'title' => __( 'Why Us', 'astra' ),
+				'title' => __( 'Why Us', 'divino' ),
 				'type'  => 'custom',
 				'url'   => '{{' . self::WHY_US_SLUG . '}}',
 			),
 			'contact'  => array(
-				'title' => __( 'Contact', 'astra' ),
+				'title' => __( 'Contact', 'divino' ),
 				'type'  => 'custom',
 				'url'   => '{{' . self::CONTACT_SLUG . '}}',
 			),
@@ -248,7 +248,7 @@ class divino_Starter_Content {
 		$content = array(
 			'attachments' => array(
 				'logo' => array(
-					'post_title' => _x( 'Logo', 'Theme starter content', 'astra' ),
+					'post_title' => _x( 'Logo', 'Theme starter content', 'divino' ),
 					'file'       => 'inc/assets/images/starter-content/logo.png',
 				),
 			),
@@ -258,11 +258,11 @@ class divino_Starter_Content {
 
 			'nav_menus'   => array(
 				'primary'     => array(
-					'name'  => esc_html__( 'Primary', 'astra' ),
+					'name'  => esc_html__( 'Primary', 'divino' ),
 					'items' => $nav_items_header,
 				),
 				'mobile_menu' => array(
-					'name'  => esc_html__( 'Primary', 'astra' ),
+					'name'  => esc_html__( 'Primary', 'divino' ),
 					'items' => $nav_items_header,
 				),
 			),

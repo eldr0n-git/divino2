@@ -84,7 +84,7 @@
       "type": [
         "global"
       ],
-      "global_key" : "astra-settings",
+      "global_key" : "divino-settings",
       "group": "Archive Layout Settings",
       "target": [
         "archive"
@@ -147,7 +147,7 @@
       "type": [
         "global"
       ],
-      "global_key" : "astra-settings",
+      "global_key" : "divino-settings",
       "group": "Archive Layout Settings",
       "target": [
         "archive"
@@ -206,7 +206,7 @@
       "type": [
         "global"
       ],
-      "global_key" : "astra-settings",
+      "global_key" : "divino-settings",
       "group": "Archive Layout Settings",
       "target": [
         "archive"

@@ -2,7 +2,7 @@
 /**
  * Site Builder Free Version Preview.
  *
- * @package Astra
+ * @package divino
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -70,25 +70,25 @@ if ( ! class_exists( 'divino_Theme_Builder_Free' ) ) {
 				$file_prefix .= '.rtl';
 			}
 
-			wp_enqueue_style( 'astra-theme-builder-style', divino_THEME_BUILDER_FREE_URI . 'build/index' . $file_prefix . '.css', array(), divino_THEME_VERSION );
+			wp_enqueue_style( 'divino-theme-builder-style', divino_THEME_BUILDER_FREE_URI . 'build/index' . $file_prefix . '.css', array(), divino_THEME_VERSION );
 
-			wp_enqueue_script( 'astra-theme-builder-script', divino_THEME_BUILDER_FREE_URI . 'build/index.js', array( 'wp-element' ), divino_THEME_VERSION, true );
+			wp_enqueue_script( 'divino-theme-builder-script', divino_THEME_BUILDER_FREE_URI . 'build/index.js', array( 'wp-element' ), divino_THEME_VERSION, true );
 
 			wp_enqueue_style( 'dashicons' );
 
-			$divino_addon_locale = divino_THEME_ORG_VERSION ? 'astra-addon/astra-addon.php' : 'astra-pro/astra-pro.php';
+			$divino_addon_locale = divino_THEME_ORG_VERSION ? 'divino-addon/divino-addon.php' : 'divino-pro/divino-pro.php';
 
 			$localized_data = array(
-				'title'                      => esc_html__( 'Site Builder', 'astra' ),
-				'rest_url'                   => '/wp-json/astra-addon/v1/custom-layouts/',
-				'new_custom_layout_base_url' => admin_url( 'post-new.php?post_type=astra-advanced-hook' ),
+				'title'                      => esc_html__( 'Site Builder', 'divino' ),
+				'rest_url'                   => '/wp-json/divino-addon/v1/custom-layouts/',
+				'new_custom_layout_base_url' => admin_url( 'post-new.php?post_type=divino-advanced-hook' ),
 				'divino_pricing_page_url'     => divino_get_pro_url( '/pricing/', 'free-theme', 'site-builder', 'upgrade' ),
 				'divino_docs_page_url'        => divino_get_pro_url( '/docs/custom-layouts-pro/', 'free-theme', 'site-builder', 'documentation' ),
 				'divino_base_url'             => admin_url( 'admin.php?page=' . divino_Menu::get_theme_page_slug() ),
 			);
 
-			wp_localize_script( 'astra-theme-builder-script', 'divino_theme_builder', $localized_data );
-			wp_set_script_translations( 'astra-theme-builder-script', 'astra' );
+			wp_localize_script( 'divino-theme-builder-script', 'divino_theme_builder', $localized_data );
+			wp_set_script_translations( 'divino-theme-builder-script', 'divino' );
 
 			$localize = array(
 				'pro_installed_status'   => 'installed' === divino_Menu::get_plugin_status( $divino_addon_locale ) ? true : false,
@@ -98,14 +98,14 @@ if ( ! class_exists( 'divino_Theme_Builder_Free' ) ) {
 				'update_nonce'           => wp_create_nonce( 'divino_update_admin_setting' ),
 				'plugin_manager_nonce'   => wp_create_nonce( 'divino_plugin_manager_nonce' ),
 				'plugin_installer_nonce' => wp_create_nonce( 'updates' ),
-				'plugin_installing_text' => esc_html__( 'Installing', 'astra' ),
-				'plugin_installed_text'  => esc_html__( 'Installed', 'astra' ),
-				'plugin_activating_text' => esc_html__( 'Activating', 'astra' ),
-				'plugin_activated_text'  => esc_html__( 'Activated', 'astra' ),
-				'plugin_activate_text'   => esc_html__( 'Activate', 'astra' ),
+				'plugin_installing_text' => esc_html__( 'Installing', 'divino' ),
+				'plugin_installed_text'  => esc_html__( 'Installed', 'divino' ),
+				'plugin_activating_text' => esc_html__( 'Activating', 'divino' ),
+				'plugin_activated_text'  => esc_html__( 'Activated', 'divino' ),
+				'plugin_activate_text'   => esc_html__( 'Activate', 'divino' ),
 			);
 
-			wp_localize_script( 'astra-theme-builder-script', 'divino_admin', $localize );
+			wp_localize_script( 'divino-theme-builder-script', 'divino_admin', $localize );
 		}
 
 		/**
@@ -147,9 +147,9 @@ if ( ! class_exists( 'divino_Theme_Builder_Free' ) ) {
 		 */
 		public function setup_menu() {
 			add_submenu_page( // phpcs:ignore WPThemeReview.PluginTerritory.NoAddAdminPages.add_menu_pages_add_submenu_page -- Taken the menu on top level
-				'astra',
-				__( 'Site Builder', 'astra' ),
-				__( 'Site Builder', 'astra' ),
+				'divino',
+				__( 'Site Builder', 'divino' ),
+				__( 'Site Builder', 'divino' ),
 				'manage_options',
 				'theme-builder-free',
 				array( $this, 'render_theme_builder' ),

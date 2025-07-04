@@ -1,3 +1,4 @@
+<!-- vertical-header.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Vertical site header

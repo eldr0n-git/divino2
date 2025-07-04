@@ -2,7 +2,7 @@
 /**
  * Contact Form 7 Compatibility File.
  *
- * @package Astra
+ * @package divino
  */
 
 // If plugin - 'Contact Form 7' not exist then return.
@@ -11,12 +11,12 @@ if ( ! class_exists( 'WPCF7' ) ) {
 }
 
 /**
- * Astra Contact Form 7 Compatibility
+ * divino Contact Form 7 Compatibility
  */
 if ( ! class_exists( 'divino_Contact_Form_7' ) ) {
 
 	/**
-	 * Astra Contact Form 7 Compatibility
+	 * divino Contact Form 7 Compatibility
 	 *
 	 * @since 1.0.0
 	 */
@@ -60,7 +60,7 @@ if ( ! class_exists( 'divino_Contact_Form_7' ) ) {
 
 			$css_file = divino_THEME_URI . 'assets/css/' . $dir_name . '/compatibility/contact-form-7-main' . $file_prefix . '.css';
 
-			wp_enqueue_style( 'astra-contact-form-7', $css_file, array(), divino_THEME_VERSION, 'all' );
+			wp_enqueue_style( 'divino-contact-form-7', $css_file, array(), divino_THEME_VERSION, 'all' );
 		}
 
 	}

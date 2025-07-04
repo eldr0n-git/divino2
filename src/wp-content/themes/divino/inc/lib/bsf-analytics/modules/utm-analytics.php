@@ -32,9 +32,9 @@ if ( ! class_exists( 'BSF_UTM_Analytics' ) ) {
 		 */
 		private static $bsf_product_slugs = [
 			'all-in-one-schemaorg-rich-snippets',
-			'astra',
-			'astra-portfolio',
-			'astra-sites',
+			'divino',
+			'divino-portfolio',
+			'divino-sites',
 			'bb-ultimate-addon',
 			'cartflows',
 			'checkout-paypal-woo',

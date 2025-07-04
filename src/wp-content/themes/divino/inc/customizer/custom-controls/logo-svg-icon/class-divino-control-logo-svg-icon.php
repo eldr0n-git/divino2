@@ -2,8 +2,8 @@
 /**
  * Customizer Control: Logo SVG Icon
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       4.7.0
  */
 

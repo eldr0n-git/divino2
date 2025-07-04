@@ -2,7 +2,7 @@
 /**
  * Template part for displaying the a row of the header
  *
- * @package Astra Builder
+ * @package divino Builder
  */
 
 $divino_header_row = get_query_var( 'row' );
@@ -25,7 +25,7 @@ if ( divino_Builder_Helper::is_row_empty( $divino_header_row, 'header', 'desktop
 				divino_Builder_UI_Controller::render_grid_row_customizer_edit_button( 'Header', $divino_header_row );
 			}
 			/**
-			 * Astra Render before Site Content.
+			 * divino Render before Site Content.
 			 */
 			do_action( "divino_header_{$divino_header_row}_container_before" );
 			?>
@@ -35,7 +35,7 @@ if ( divino_Builder_Helper::is_row_empty( $divino_header_row, 'header', 'desktop
 						<div class="site-header-<?php echo esc_attr( $divino_header_row ); ?>-section-left site-header-section ast-flex site-header-section-left">
 							<?php
 								/**
-								 * Astra Render Header Column
+								 * divino Render Header Column
 								 */
 								do_action( 'divino_render_header_column', $divino_header_row, 'left' );
 							if ( divino_Builder_Helper::has_center_column( $divino_header_row ) ) {
@@ -43,7 +43,7 @@ if ( divino_Builder_Helper::is_row_empty( $divino_header_row, 'header', 'desktop
 										<div class="site-header-<?php echo esc_attr( $divino_header_row ); ?>-section-left-center site-header-section ast-flex ast-grid-left-center-section">
 									<?php
 									/**
-									 * Astra Render Header Column
+									 * divino Render Header Column
 									 */
 									do_action( 'divino_render_header_column', $divino_header_row, 'left_center' );
 									?>
@@ -57,7 +57,7 @@ if ( divino_Builder_Helper::is_row_empty( $divino_header_row, 'header', 'desktop
 							<div class="site-header-<?php echo esc_attr( $divino_header_row ); ?>-section-center site-header-section ast-flex ast-grid-section-center">
 								<?php
 								/**
-								 * Astra Render Header Column
+								 * divino Render Header Column
 								 */
 								do_action( 'divino_render_header_column', $divino_header_row, 'center' );
 								?>
@@ -71,7 +71,7 @@ if ( divino_Builder_Helper::is_row_empty( $divino_header_row, 'header', 'desktop
 									<div class="site-header-<?php echo esc_attr( $divino_header_row ); ?>-section-right-center site-header-section ast-flex ast-grid-right-center-section">
 										<?php
 										/**
-										 * Astra Render Header Column
+										 * divino Render Header Column
 										 */
 										do_action( 'divino_render_header_column', $divino_header_row, 'right_center' );
 										?>
@@ -79,7 +79,7 @@ if ( divino_Builder_Helper::is_row_empty( $divino_header_row, 'header', 'desktop
 									<?php
 								}
 								/**
-								 * Astra Render Header Column
+								 * divino Render Header Column
 								 */
 								do_action( 'divino_render_header_column', $divino_header_row, 'right' );
 								?>
@@ -89,7 +89,7 @@ if ( divino_Builder_Helper::is_row_empty( $divino_header_row, 'header', 'desktop
 					</div>
 					<?php
 					/**
-					 * Astra Render after Site Content.
+					 * divino Render after Site Content.
 					 */
 					do_action( "divino_header_{$divino_header_row}_container_after" );
 					?>

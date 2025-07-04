@@ -2,7 +2,7 @@
 /**
  * BNE Flyout Compatibility File.
  *
- * @package Astra
+ * @package divino
  */
 
 // If plugin - 'BNE Flyout' not exist then return.
@@ -11,12 +11,12 @@ if ( ! defined( 'BNE_FLYOUT_VERSION' ) ) {
 }
 
 /**
- * Astra BNE Flyout Compatibility
+ * divino BNE Flyout Compatibility
  */
 if ( ! class_exists( 'divino_BNE_Flyout' ) ) {
 
 	/**
-	 * Astra BNE Flyout Compatibility
+	 * divino BNE Flyout Compatibility
 	 *
 	 * @since 1.0.0
 	 */
@@ -53,7 +53,7 @@ if ( ! class_exists( 'divino_BNE_Flyout' ) ) {
 		 * @since 1.0.0
 		 */
 		public function add_styles( $assets ) {
-			$assets['css']['astra-bne-flyout'] = 'compatibility/bne-flyout';
+			$assets['css']['divino-bne-flyout'] = 'compatibility/bne-flyout';
 			return $assets;
 		}
 

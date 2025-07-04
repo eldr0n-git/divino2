@@ -2,9 +2,9 @@
 /**
  * Register customizer panels & sections.
  *
- * @package     Astra\
+ * @package     divino\
  * @link        https://www.brainstormforce.com
- * @since       Astra 1.2.0
+ * @since       divino 1.2.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,10 +20,10 @@ if ( ! class_exists( 'divino_Liferlms_Section_Configs' ) ) {
 		/**
 		 * Register LearnDash Container settings.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -33,7 +33,7 @@ if ( ! class_exists( 'divino_Liferlms_Section_Configs' ) ) {
 					'name'     => 'section-lifterlms',
 					'type'     => 'section',
 					'priority' => 65,
-					'title'    => __( 'LifterLMS', 'astra' ),
+					'title'    => __( 'LifterLMS', 'divino' ),
 				),
 
 				/**
@@ -42,7 +42,7 @@ if ( ! class_exists( 'divino_Liferlms_Section_Configs' ) ) {
 				array(
 					'name'     => 'section-lifterlms-general',
 					'type'     => 'section',
-					'title'    => __( 'General', 'astra' ),
+					'title'    => __( 'General', 'divino' ),
 					'section'  => 'section-lifterlms',
 					'priority' => 0,
 				),

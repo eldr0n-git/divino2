@@ -2,14 +2,14 @@
 /**
  * Template for Primary Header
  *
- * The header layout 2 for Astra Theme. ( No of sections - 1 [ Section 1 limit - 3 )
+ * The header layout 2 for divino Theme. ( No of sections - 1 [ Section 1 limit - 3 )
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
  * @see https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 ?>

@@ -2,7 +2,7 @@
 /**
  * Mobile Trigger.
  *
- * @package     astra-builder
+ * @package     divino-builder
  * @link        https://www.brainstormforce.com
  * @since       3.0.0
  */
@@ -25,7 +25,7 @@ class divino_Mobile_Trigger {
 	 */
 	public function __construct() {
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once divino_MOBILE_TRIGGER_DIR . '/class-astra-mobile-trigger-loader.php';
+		require_once divino_MOBILE_TRIGGER_DIR . '/class-divino-mobile-trigger-loader.php';
 
 		// Include front end files.
 		if ( ! is_admin() || divino_Builder_Customizer::divino_collect_customizer_builder_data() ) {

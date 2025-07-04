@@ -2,9 +2,9 @@
 /**
  * AMP Compatibility.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Astra BB Ultimate Addon Compatibility
+ * divino BB Ultimate Addon Compatibility
  */
 if ( ! class_exists( 'divino_AMP' ) ) {
 
@@ -45,7 +45,7 @@ if ( ! class_exists( 'divino_AMP' ) ) {
 		}
 
 		/**
-		 * Init Astra Amp Compatibility.
+		 * Init divino Amp Compatibility.
 		 * This adds required actions and filters only if AMP endpoinnt is detected.
 		 *
 		 * @since 1.7.0
@@ -87,7 +87,7 @@ if ( ! class_exists( 'divino_AMP' ) ) {
 		 * @return String
 		 */
 		public function body_id( $schema ) {
-			return $schema . 'id="astra-body"';
+			return $schema . 'id="divino-body"';
 		}
 
 		/**
@@ -173,7 +173,7 @@ if ( ! class_exists( 'divino_AMP' ) ) {
 					$css['.ast-amp .ast-mobile-header-content .main-header-bar-navigation .menu-item-has-children > .ast-menu-toggle::before'] = array(
 						'font-weight'     => 'bold',
 						'content'         => '"\e900"',
-						'font-family'     => '"Astra"',
+						'font-family'     => '"divino"',
 						'text-decoration' => 'inherit',
 						'display'         => 'inline-block',
 					);
@@ -301,7 +301,7 @@ if ( ! class_exists( 'divino_AMP' ) ) {
 				$css['.main-header-bar .main-header-bar-navigation .menu-item-has-children > .ast-menu-toggle::before'] = array(
 					'font-weight'     => 'bold',
 					'content'         => '"\e900"',
-					'font-family'     => 'Astra',
+					'font-family'     => 'divino',
 					'text-decoration' => 'inherit',
 					'display'         => 'inline-block',
 				);
@@ -1022,13 +1022,13 @@ if ( ! class_exists( 'divino_AMP' ) ) {
 				'.ast-amp .main-header-menu ul ul'         => array(
 					'top' => '0',
 				),
-				'.ast-amp .ast-has-mobile-header-logo .custom-logo-link, .ast-amp .ast-has-mobile-header-logo .astra-logo-svg' => array(
+				'.ast-amp .ast-has-mobile-header-logo .custom-logo-link, .ast-amp .ast-has-mobile-header-logo .divino-logo-svg' => array(
 					'display' => 'none',
 				),
 				'.ast-amp .ast-has-mobile-header-logo .custom-mobile-logo-link' => array(
 					'display' => 'inline-block',
 				),
-				'.ast-theme.ast-mobile-inherit-site-logo .ast-has-mobile-header-logo .custom-logo-link, .ast-theme.ast-mobile-inherit-site-logo .ast-has-mobile-header-logo .astra-logo-svg' => array(
+				'.ast-theme.ast-mobile-inherit-site-logo .ast-has-mobile-header-logo .custom-logo-link, .ast-theme.ast-mobile-inherit-site-logo .ast-has-mobile-header-logo .divino-logo-svg' => array(
 					'display' => 'block',
 				),
 				'.ast-amp .ast-header-widget-area .widget' => array(
@@ -1079,7 +1079,7 @@ if ( ! class_exists( 'divino_AMP' ) ) {
 			if ( false === divino_Icons::is_svg_icons() ) {
 				$divino_break_point_navigation['.ast-amp .main-navigation ul.children li a:before, .ast-amp .main-navigation ul.sub-menu li a:before']     = array(
 					'content'         => '"\e900"',
-					'font-family'     => '"Astra"',
+					'font-family'     => '"divino"',
 					'font-size'       => '0.65em',
 					'text-decoration' => 'inherit',
 					'display'         => 'inline-block',
@@ -1089,7 +1089,7 @@ if ( ! class_exists( 'divino_AMP' ) ) {
 				$divino_break_point_navigation['.ast-amp .main-header-bar .main-header-bar-navigation .menu-item-has-children > .ast-menu-toggle::before'] = array(
 					'font-weight'     => 'bold',
 					'content'         => '"\e900"',
-					'font-family'     => '"Astra"',
+					'font-family'     => '"divino"',
 					'text-decoration' => 'inherit',
 					'display'         => 'inline-block',
 				);
@@ -1112,9 +1112,9 @@ if ( ! class_exists( 'divino_AMP' ) ) {
 		 * @return Array updated HTML attributes.
 		 */
 		public function nav_menu_wrapper( $attr ) {
-			$attr['[class]']         = '( astraAmpMenuExpanded ? \'ast-main-header-bar-alignment toggle-on\' : \'ast-main-header-bar-alignment\' )';
+			$attr['[class]']         = '( divinoAmpMenuExpanded ? \'ast-main-header-bar-alignment toggle-on\' : \'ast-main-header-bar-alignment\' )';
 			$attr['aria-expanded']   = 'false';
-			$attr['[aria-expanded]'] = '(astraAmpMenuExpanded ? \'true\' : \'false\')';
+			$attr['[aria-expanded]'] = '(divinoAmpMenuExpanded ? \'true\' : \'false\')';
 
 			return $attr;
 		}
@@ -1129,7 +1129,7 @@ if ( ! class_exists( 'divino_AMP' ) ) {
 		 * @return String HTML MArkup for the menu including the AML State.
 		 */
 		public function toggle_button_markup( $item_output, $item ) {
-			$item_output .= '<amp-state id="astraNavMenuItemExpanded' . esc_attr( $item->ID ) . '"><script type="application/json">false</script></amp-state>';
+			$item_output .= '<amp-state id="divinoNavMenuItemExpanded' . esc_attr( $item->ID ) . '"><script type="application/json">false</script></amp-state>';
 
 			return $item_output;
 		}
@@ -1145,8 +1145,8 @@ if ( ! class_exists( 'divino_AMP' ) ) {
 		 * @return Array updated HTML attributes.
 		 */
 		public function menu_toggle_button( $attr, $context, $args ) {
-			$attr['[class]'] = '( astraNavMenuItemExpanded' . $args->ID . ' ? \' ast-menu-toggle dropdown-open\' : \'ast-menu-toggle\')';
-			$attr['on']      = 'tap:AMP.setState( { astraNavMenuItemExpanded' . $args->ID . ': ! astraNavMenuItemExpanded' . $args->ID . ' } )';
+			$attr['[class]'] = '( divinoNavMenuItemExpanded' . $args->ID . ' ? \' ast-menu-toggle dropdown-open\' : \'ast-menu-toggle\')';
+			$attr['on']      = 'tap:AMP.setState( { divinoNavMenuItemExpanded' . $args->ID . ': ! divinoNavMenuItemExpanded' . $args->ID . ' } )';
 
 			return $attr;
 		}
@@ -1155,7 +1155,7 @@ if ( ! class_exists( 'divino_AMP' ) ) {
 		 * Add amp states to the dom.
 		 */
 		public function render_amp_states() {
-			echo '<amp-state id="astraAmpMenuExpanded">';
+			echo '<amp-state id="divinoAmpMenuExpanded">';
 			echo '<script type="application/json">false</script>';
 			echo '</amp-state>';
 		}
@@ -1168,9 +1168,9 @@ if ( ! class_exists( 'divino_AMP' ) ) {
 		 * @return string
 		 */
 		public function add_search_slide_toggle_attrs( $input ) {
-			$input .= ' on="tap:AMP.setState( { astraAmpSlideSearchMenuExpanded: ! astraAmpSlideSearchMenuExpanded } )" ';
-			$input .= ' [class]="( astraAmpSlideSearchMenuExpanded ? \'ast-search-menu-icon slide-search ast-dropdown-active\' : \'ast-search-menu-icon slide-search\' )" ';
-			$input .= ' aria-expanded="false" [aria-expanded]="astraAmpSlideSearchMenuExpanded ? \'true\' : \'false\'" ';
+			$input .= ' on="tap:AMP.setState( { divinoAmpSlideSearchMenuExpanded: ! divinoAmpSlideSearchMenuExpanded } )" ';
+			$input .= ' [class]="( divinoAmpSlideSearchMenuExpanded ? \'ast-search-menu-icon slide-search ast-dropdown-active\' : \'ast-search-menu-icon slide-search\' )" ';
+			$input .= ' aria-expanded="false" [aria-expanded]="divinoAmpSlideSearchMenuExpanded ? \'true\' : \'false\'" ';
 
 			return $input;
 		}
@@ -1183,7 +1183,7 @@ if ( ! class_exists( 'divino_AMP' ) ) {
 		 * @return string
 		 */
 		public function add_search_field_toggle_attrs( $input ) {
-			$input .= ' on="tap:AMP.setState( { astraAmpSlideSearchMenuExpanded: astraAmpSlideSearchMenuExpanded } )" ';
+			$input .= ' on="tap:AMP.setState( { divinoAmpSlideSearchMenuExpanded: divinoAmpSlideSearchMenuExpanded } )" ';
 
 			return $input;
 		}
@@ -1196,10 +1196,10 @@ if ( ! class_exists( 'divino_AMP' ) ) {
 		 * @return string
 		 */
 		public function add_nav_toggle_attrs( $input ) {
-			$input .= ' on="tap:AMP.setState( { astraAmpMenuExpanded: ! astraAmpMenuExpanded } ),astra-body.toggleClass(class=ast-main-header-nav-open)" ';
-			$input .= ' [class]="\'menu-toggle main-header-menu-toggle  ast-mobile-menu-buttons-minimal\' + ( astraAmpMenuExpanded ? \' toggled\' : \'\' )" ';
+			$input .= ' on="tap:AMP.setState( { divinoAmpMenuExpanded: ! divinoAmpMenuExpanded } ),divino-body.toggleClass(class=ast-main-header-nav-open)" ';
+			$input .= ' [class]="\'menu-toggle main-header-menu-toggle  ast-mobile-menu-buttons-minimal\' + ( divinoAmpMenuExpanded ? \' toggled\' : \'\' )" ';
 			$input .= ' aria-expanded="false" ';
-			$input .= ' [aria-expanded]="astraAmpMenuExpanded ? \'true\' : \'false\'" ';
+			$input .= ' [aria-expanded]="divinoAmpMenuExpanded ? \'true\' : \'false\'" ';
 
 			return $input;
 		}

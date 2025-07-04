@@ -1,20 +1,20 @@
-.astra-review-notice-container {
+.divino-review-notice-container {
 	display: flex;
 	align-items: center;
 	padding-top: 10px;
 }
 
-.astra-review-notice-container .dashicons {
+.divino-review-notice-container .dashicons {
 	font-size: 1.4em;
 	padding-right: 10px;
 }
 
-.astra-review-notice-container a {
+.divino-review-notice-container a {
 	padding-right: 5px;
 	text-decoration: none;
 }
 
-.astra-review-notice-container .dashicons:first-child {
+.divino-review-notice-container .dashicons:first-child {
 	padding-right: 0;
 }
 
@@ -38,14 +38,14 @@
 	align-items: center;
 }
 
-#astra-sites-on-active .notice-image img,
-#astra-upgrade-pro-wc .notice-image img {
+#divino-sites-on-active .notice-image img,
+#divino-upgrade-pro-wc .notice-image img {
 	max-width: 50px;
 	margin-right: 5px;
 }
 
-#astra-sites-on-active .notice-content .notice-heading,
-#astra-upgrade-pro-wc .notice-content .notice-heading {
+#divino-sites-on-active .notice-content .notice-heading,
+#divino-upgrade-pro-wc .notice-content .notice-heading {
 	margin: 0 0 10px;
 	padding: 0;
 	font-weight: 600;
@@ -53,21 +53,21 @@
 	color: #1e293b;
 }
 
-#astra-sites-on-active .notice-content p,
-#astra-upgrade-pro-wc .notice-content p {
+#divino-sites-on-active .notice-content p,
+#divino-upgrade-pro-wc .notice-content p {
 	padding-top: 0;
 	margin-top: 0;
 	margin-bottom: 6px;
 	color: #475569;
 }
 
-#astra-sites-on-active .notice-container,
-#astra-upgrade-pro-wc .notice-container {
+#divino-sites-on-active .notice-container,
+#divino-upgrade-pro-wc .notice-container {
 	padding: 18px 0 18px;
 	align-items: start;
 }
 
-#astra-sites-on-active .button.button-hero {
+#divino-sites-on-active .button.button-hero {
 	font-size: 13px;
 	min-height: 30px;
 	line-height: 26px;
@@ -75,24 +75,24 @@
 	height: 30px;
 }
 
-#astra-sites-on-active .astra-review-notice-container,
-#astra-upgrade-pro-wc .astra-review-notice-container {
+#divino-sites-on-active .divino-review-notice-container,
+#divino-upgrade-pro-wc .divino-review-notice-container {
 	padding-top: 5px;
 }
 
-#astra-sites-on-active .button-primary,
-#astra-upgrade-pro-wc .button-primary {
+#divino-sites-on-active .button-primary,
+#divino-upgrade-pro-wc .button-primary {
 	box-shadow: 0 1px 0 #006799;
 }
 
-#astra-sites-on-active .button.updating-message:before,
-#astra-sites-on-active .button.updated-message:before,
-#astra-sites-on-active .button.installed:before,
-#astra-sites-on-active .button.installing:before {
+#divino-sites-on-active .button.updating-message:before,
+#divino-sites-on-active .button.updated-message:before,
+#divino-sites-on-active .button.installed:before,
+#divino-sites-on-active .button.installing:before {
 	margin: 4px -1px 0px 5px;
 }
 
-.wp-core-ui .astra-notice-wrapper:has(.ast-welcome-banner) {
+.wp-core-ui .divino-notice-wrapper:has(.ast-welcome-banner) {
     padding-left: 0;
 }
 .ast-welcome-banner {
@@ -140,7 +140,7 @@
 	margin-bottom: 32px;
 	padding: 0px;
 }
-#astra-sites-on-active .astra-notice-container .notice-actions > button {
+#divino-sites-on-active .divino-notice-container .notice-actions > button {
 	border-radius: 6px;
 	background: #046bd2;
 	padding: 12px 24px;
@@ -162,7 +162,7 @@
 	margin: 0;
 	padding: 0;
 }
-.astra-notice-container:has(.ast-welcome-banner) {
+.divino-notice-container:has(.ast-welcome-banner) {
     padding-top: 0;
     padding-bottom: 0;
 }
@@ -215,7 +215,7 @@ p.sub-notice-description {
     padding-left: 6px;
     border-left: 1px solid #fff;
 }
-#astra-sites-on-active {
+#divino-sites-on-active {
 	padding: 0;
 }
 @media screen and (max-width: 1199px) {
@@ -227,7 +227,7 @@ p.sub-notice-description {
 		padding: 20px 24px;
 		align-items: unset;
 	}
-	#astra-sites-on-active .astra-notice-container .notice-actions > button {
+	#divino-sites-on-active .divino-notice-container .notice-actions > button {
 		width: 100%;
 	}
 }
@@ -239,7 +239,7 @@ p.sub-notice-description {
 		padding-right: 15px;
 		padding-left: 15px;
 	}
-	#astra-sites-on-active .astra-notice-container .notice-actions > button {
+	#divino-sites-on-active .divino-notice-container .notice-actions > button {
 		font-size: 14px;
 		width: 100%;
 	}
@@ -263,7 +263,7 @@ p.sub-notice-description {
 	.ast-col-right {
 		width: 65%;
 	}
-	#astra-sites-on-active .astra-notice-container .notice-actions > button {
+	#divino-sites-on-active .divino-notice-container .notice-actions > button {
 		font-size: 14px;
 	}
 	.ast-welcome-banner .notice-title {

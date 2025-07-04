@@ -2,9 +2,9 @@
 /**
  * Helper class for font settings.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 // Exit if accessed directly.
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Astra Fonts
+ * divino Fonts
  */
 final class divino_Fonts {
 	/**
@@ -124,9 +124,9 @@ final class divino_Fonts {
 			if ( divino_API_Init::get_admin_settings_option( 'preload_local_fonts', false ) ) {
 				divino_load_preload_local_fonts( $google_font_url );
 			}
-			wp_enqueue_style( 'astra-google-fonts', divino_get_webfont_url( $google_font_url ), array(), divino_THEME_VERSION, 'all' );
+			wp_enqueue_style( 'divino-google-fonts', divino_get_webfont_url( $google_font_url ), array(), divino_THEME_VERSION, 'all' );
 		} else {
-			wp_enqueue_style( 'astra-google-fonts', $google_font_url, array(), divino_THEME_VERSION, 'all' );
+			wp_enqueue_style( 'divino-google-fonts', $google_font_url, array(), divino_THEME_VERSION, 'all' );
 		}
 	}
 

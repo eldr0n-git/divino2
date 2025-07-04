@@ -2,7 +2,7 @@
 /**
  * Below Footer control - Dynamic CSS
  *
- * @package Astra Builder
+ * @package divino Builder
  * @since 3.0.0
  */
 
@@ -18,8 +18,8 @@ add_filter( 'divino_dynamic_theme_css', 'divino_fb_below_footer_dynamic_css' );
 /**
  * Dynamic CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
- * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+ * @param  string $dynamic_css          divino Dynamic CSS.
+ * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
  * @return String Generated dynamic CSS for below Footer.
  *
  * @since 3.0.0

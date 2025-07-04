@@ -2,7 +2,7 @@
 /**
  * Class divino_Menu.
  *
- * @package Astra
+ * @package divino
  * @since 4.0.0
  */
 
@@ -45,7 +45,7 @@ class divino_Menu {
 	 * @since 4.0.0
 	 * @var string $page_title
 	 */
-	public static $page_title = 'Astra';
+	public static $page_title = 'divino';
 
 	/**
 	 * Plugin slug
@@ -53,7 +53,7 @@ class divino_Menu {
 	 * @since 4.0.0
 	 * @var string $plugin_slug
 	 */
-	public static $plugin_slug = 'astra';
+	public static $plugin_slug = 'divino';
 
 	/**
 	 * Constructor
@@ -77,11 +77,11 @@ class divino_Menu {
 		add_action( 'admin_init', array( $this, 'settings_admin_scripts' ) );
 
 		add_filter( 'install_plugins_tabs', array( $this, 'add_divino_woo_suggestions_link' ), 1 );
-		add_action( 'install_plugins_pre_astra-woo', array( $this, 'update_plugin_suggestions_tab_link' ) );
+		add_action( 'install_plugins_pre_divino-woo', array( $this, 'update_plugin_suggestions_tab_link' ) );
 	}
 
 	/**
-	 * Add Astra~Woo Suggestions plugin tab link.
+	 * Add divino~Woo Suggestions plugin tab link.
 	 *
 	 * @param array $tabs Plugin tabs.
 	 * @since 4.7.3
@@ -89,7 +89,7 @@ class divino_Menu {
 	 */
 	public function add_divino_woo_suggestions_link( $tabs ) {
 		if ( class_exists( 'WooCommerce' ) ) {
-			$tabs['astra-woo'] = esc_html__( 'For ', 'astra' ) . self::$page_title . '~Woo';
+			$tabs['divino-woo'] = esc_html__( 'For ', 'divino' ) . self::$page_title . '~Woo';
 		}
 		return $tabs;
 	}
@@ -102,7 +102,7 @@ class divino_Menu {
 	 */
 	public function update_plugin_suggestions_tab_link() {
 		// phpcs:disable WordPress.Security.NonceVerification.Recommended
-		if ( ! isset( $_GET['tab'] ) || 'astra-woo' !== $_GET['tab'] ) {
+		if ( ! isset( $_GET['tab'] ) || 'divino-woo' !== $_GET['tab'] ) {
 			return;
 		}
 		// phpcs:enable WordPress.Security.NonceVerification.Recommended
@@ -131,7 +131,7 @@ class divino_Menu {
 	}
 
 	/**
-	 *  Initialize after Astra gets loaded.
+	 *  Initialize after divino gets loaded.
 	 *
 	 * @since 4.0.0
 	 */
@@ -159,7 +159,7 @@ class divino_Menu {
 			return;
 		}
 
-		self::$page_title = apply_filters( 'divino_page_title', esc_html__( 'Astra', 'astra' ) );
+		self::$page_title = apply_filters( 'divino_page_title', esc_html__( 'divino', 'divino' ) );
 
 		$divino_icon = apply_filters( 'divino_menu_icon', 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzcyIiBoZWlnaHQ9Ijc3MiIgdmlld0JveD0iMCAwIDc3MiA3NzIiIGZpbGw9IiNhN2FhYWQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTM4NiA3NzJDNTk5LjE4MiA3NzIgNzcyIDU5OS4xODIgNzcyIDM4NkM3NzIgMTcyLjgxOCA1OTkuMTgyIDAgMzg2IDBDMTcyLjgxOCAwIDAgMTcyLjgxOCAwIDM4NkMwIDU5OS4xODIgMTcyLjgxOCA3NzIgMzg2IDc3MlpNMjYxLjcxMyAzNDMuODg2TDI2MS42NzUgMzQzLjk2OEMyMjIuNDE3IDQyNi45OTQgMTgzLjE1OSA1MTAuMDE5IDE0My45MDIgNTkyLjk1MkgyNDQuODQ3QzI3Ni42MjcgNTI4LjczOSAzMDguNDA3IDQ2NC40MzQgMzQwLjE4NyA0MDAuMTI4QzM3MS45NjUgMzM1LjgyNyA0MDMuNzQyIDI3MS41MjcgNDM1LjUyIDIwNy4zMkwzNzkuNDQgOTVDMzQwLjE5NyAxNzcuOSAzMDAuOTU1IDI2MC44OTMgMjYxLjcxMyAzNDMuODg2Wk00MzYuNjczIDQwNC4wNzVDNDUyLjkwNiAzNzAuNzQ1IDQ2OS4xMzkgMzM3LjQxNSA0ODUuNDY3IDMwNC4wODVDNTA5LjMwMSAzNTIuMjI5IDUzMy4wNDIgNDAwLjM3NCA1NTYuNzgyIDQ0OC41MThDNTgwLjUyMyA0OTYuNjYzIDYwNC4yNjQgNTQ0LjgwNyA2MjguMDk4IDU5Mi45NTJINTE5LjI0OEM1MTMuMDU0IDU3OC42OTMgNTA2Ljc2NyA1NjQuNTI3IDUwMC40OCA1NTAuMzYyQzQ5NC4xOTMgNTM2LjE5NiA0ODcuOTA2IDUyMi4wMzEgNDgxLjcxMyA1MDcuNzczSDM4NkwzODcuODc3IDUwNC4wNjlDNDA0LjIwNSA0NzAuNzM4IDQyMC40MzkgNDM3LjQwNiA0MzYuNjczIDQwNC4wNzVaIiBmaWxsPSIjYTdhYWFkIi8+DQo8L3N2Zz4=' );
 		$priority   = apply_filters( 'divino_menu_priority', 59 );
@@ -177,8 +177,8 @@ class divino_Menu {
 		// Add Customize submenu.
 		add_submenu_page( // phpcs:ignore WPThemeReview.PluginTerritory.NoAddAdminPages.add_menu_pages_add_submenu_page -- Taken the menu on top level
 			self::$plugin_slug,
-			__( 'Customize', 'astra' ),
-			__( 'Customize', 'astra' ),
+			__( 'Customize', 'divino' ),
+			__( 'Customize', 'divino' ),
 			$capability,
 			'customize.php'
 		);
@@ -191,16 +191,16 @@ class divino_Menu {
 		if ( $show_custom_layout_submenu && defined( 'divino_EXT_VER' ) && version_compare( divino_EXT_VER, '4.5.0', '<' ) ) {
 			add_submenu_page( // phpcs:ignore WPThemeReview.PluginTerritory.NoAddAdminPages.add_menu_pages_add_submenu_page -- Taken the menu on top level
 				self::$plugin_slug,
-				__( 'Custom Layouts', 'astra' ),
-				__( 'Custom Layouts', 'astra' ),
+				__( 'Custom Layouts', 'divino' ),
+				__( 'Custom Layouts', 'divino' ),
 				$capability,
 				/* @psalm-suppress UndefinedClass */
-				defined( 'divino_EXT_VER' ) && divino_Ext_Extension::is_active( 'advanced-hooks' ) ? 'edit.php?post_type=astra-advanced-hook' : 'admin.php?page=' . self::$plugin_slug . '&path=custom-layouts'
+				defined( 'divino_EXT_VER' ) && divino_Ext_Extension::is_active( 'advanced-hooks' ) ? 'edit.php?post_type=divino-advanced-hook' : 'admin.php?page=' . self::$plugin_slug . '&path=custom-layouts'
 			);
 		}
 
 		if ( ! divino_is_white_labelled() ) {
-			// Add Astra~Woo Extensions page or Spectra submenu.
+			// Add divino~Woo Extensions page or Spectra submenu.
 			/** @psalm-suppress TypeDoesNotContainType */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			if ( divino_THEME_ORG_VERSION && class_exists( 'WooCommerce' ) ) {
 				/** @psalm-suppress TypeDoesNotContainType */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
@@ -223,11 +223,11 @@ class divino_Menu {
 		}
 
 		// Rename to Home menu.
-		$submenu[ self::$plugin_slug ][0][0] = esc_html__( 'Dashboard', 'astra' ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- Required to rename the home menu.
+		$submenu[ self::$plugin_slug ][0][0] = esc_html__( 'Dashboard', 'divino' ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- Required to rename the home menu.
 	}
 
 	/**
-	 * In version 2.4.1 Spectra introduces top level admin menu so there is no meaning to show Spectra submenu from Astra menu.
+	 * In version 2.4.1 Spectra introduces top level admin menu so there is no meaning to show Spectra submenu from divino menu.
 	 *
 	 * @since 4.1.4
 	 * @return bool true|false.
@@ -267,7 +267,7 @@ class divino_Menu {
 		<div class="ast-menu-page-wrapper">
 			<div id="ast-menu-page">
 				<div class="ast-menu-page-content">
-					<div id="astra-dashboard-app" class="astra-dashboard-app"> </div>
+					<div id="divino-dashboard-app" class="divino-dashboard-app"> </div>
 				</div>
 			</div>
 		</div>
@@ -285,7 +285,7 @@ class divino_Menu {
 			return;
 		}
 
-		wp_enqueue_style( 'astra-admin-font', 'https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap', array(), divino_THEME_VERSION ); // Styles.
+		wp_enqueue_style( 'divino-admin-font', 'https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap', array(), divino_THEME_VERSION ); // Styles.
 
 		wp_enqueue_style( 'wp-components' );
 
@@ -294,7 +294,7 @@ class divino_Menu {
 		/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		$user_firstname = wp_get_current_user()->user_firstname;
 		/** @psalm-suppress TypeDoesNotContainType */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-		$divino_addon_locale = divino_THEME_ORG_VERSION ? 'astra-addon/astra-addon.php' : 'astra-pro/astra-pro.php';
+		$divino_addon_locale = divino_THEME_ORG_VERSION ? 'divino-addon/divino-addon.php' : 'divino-pro/divino-pro.php';
 		/** @psalm-suppress TypeDoesNotContainType */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		$localize = array(
 			'current_user'            => ! empty( $user_firstname ) ? ucfirst( $user_firstname ) : ucfirst( wp_get_current_user()->display_name ),
@@ -306,7 +306,7 @@ class divino_Menu {
 			'pro_installed_status'    => 'installed' === self::get_plugin_status( $divino_addon_locale ) ? true : false,
 			'divino_addon_locale'      => $divino_addon_locale,
 			/** @psalm-suppress TypeDoesNotContainType */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-			'divino_rating_url'        => divino_THEME_ORG_VERSION ? 'https://wordpress.org/support/theme/astra/reviews/?rate=5#new-post' : 'https://woo.com/products/astra/#reviews',
+			'divino_rating_url'        => divino_THEME_ORG_VERSION ? 'https://wordpress.org/support/theme/divino/reviews/?rate=5#new-post' : 'https://woo.com/products/divino/#reviews',
 			/** @psalm-suppress TypeDoesNotContainType */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			'spectra_plugin_status'   => self::get_plugin_status( 'ultimate-addons-for-gutenberg/ultimate-addons-for-gutenberg.php' ),
 			'theme_name'              => divino_get_theme_name(),
@@ -320,7 +320,7 @@ class divino_Menu {
 			'upgrade_url'             => divino_get_upgrade_url( 'dashboard' ),
 			'customize_url'           => admin_url( 'customize.php' ),
 			'divino_base_url'          => admin_url( 'admin.php?page=' . self::$plugin_slug ),
-			'logo_url'                => apply_filters( 'divino_admin_menu_icon', divino_THEME_URI . 'inc/assets/images/astra-logo.svg' ),
+			'logo_url'                => apply_filters( 'divino_admin_menu_icon', divino_THEME_URI . 'inc/assets/images/divino-logo.svg' ),
 			'update_nonce'            => wp_create_nonce( 'divino_update_admin_setting' ),
 			/** @psalm-suppress TypeDoesNotContainType */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			'show_plugins'            => apply_filters( 'divino_show_free_extend_plugins', true ) && divino_THEME_ORG_VERSION ? true : false, // Legacy filter support.
@@ -331,18 +331,18 @@ class divino_Menu {
 			'plugin_installer_nonce'  => wp_create_nonce( 'updates' ),
 			'free_vs_pro_link'        => admin_url( 'admin.php?page=' . self::$plugin_slug . '&path=free-vs-pro' ),
 			'show_builder_migration'  => divino_Builder_Helper::is_header_footer_builder_active(),
-			'plugin_installing_text'  => esc_html__( 'Installing', 'astra' ),
-			'plugin_installed_text'   => esc_html__( 'Installed', 'astra' ),
-			'plugin_activating_text'  => esc_html__( 'Activating', 'astra' ),
-			'plugin_activated_text'   => esc_html__( 'Activated', 'astra' ),
-			'plugin_activate_text'    => esc_html__( 'Activate', 'astra' ),
+			'plugin_installing_text'  => esc_html__( 'Installing', 'divino' ),
+			'plugin_installed_text'   => esc_html__( 'Installed', 'divino' ),
+			'plugin_activating_text'  => esc_html__( 'Activating', 'divino' ),
+			'plugin_activated_text'   => esc_html__( 'Activated', 'divino' ),
+			'plugin_activate_text'    => esc_html__( 'Activate', 'divino' ),
 			'starter_templates_data'  => self::get_starter_template_plugin_data(),
 			'divino_docs_data'         => divino_remote_docs_data(),
 			'upgrade_notice'          => divino_showcase_upgrade_notices(),
 			'show_banner_video'       => apply_filters( 'divino_show_banner_video', true ),
 			'is_woo_active'           => class_exists( 'WooCommerce' ) ? true : false,
 			'woo_extensions'          => self::divino_get_woo_extensions( false ),
-			'astraWebsite'            => array(
+			'divinoWebsite'            => array(
 				'baseUrl'                => divino_WEBSITE_BASE_URL,
 				'docsUrl'                => divino_get_pro_url( '/docs/', 'free-theme', 'dashboard', 'documentation' ),
 				'docsCategoryDynamicUrl' => divino_get_pro_url( '/docs-category/{{category}}', 'free-theme', 'dashboard', 'documentation' ),
@@ -351,10 +351,10 @@ class divino_Menu {
 				'whatsNewFeedUrl'        => esc_url( divino_WEBSITE_BASE_URL . '/whats-new/feed/' ),
 			),
 			/** @psalm-suppress TypeDoesNotContainType */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-			'divino_cta_btn_url'       => divino_THEME_ORG_VERSION ? divino_get_pro_url( '/pricing/', 'free-theme', 'dashboard', 'unlock-pro-features-CTA' ) : 'https://woocommerce.com/products/astra-pro/',
+			'divino_cta_btn_url'       => divino_THEME_ORG_VERSION ? divino_get_pro_url( '/pricing/', 'free-theme', 'dashboard', 'unlock-pro-features-CTA' ) : 'https://woocommerce.com/products/divino-pro/',
 			/** @psalm-suppress TypeDoesNotContainType */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-			'plugin_configuring_text' => esc_html__( 'Configuring', 'astra' ),
-			'bsfUsageTrackingUrl'     => 'https://store.brainstormforce.com/usage-tracking/?utm_source=astra&utm_medium=dashboard&utm_campaign=usage_tracking',
+			'plugin_configuring_text' => esc_html__( 'Configuring', 'divino' ),
+			'bsfUsageTrackingUrl'     => 'https://store.brainstormforce.com/usage-tracking/?utm_source=divino&utm_medium=dashboard&utm_campaign=usage_tracking',
 		);
 
 		$this->settings_app_scripts( apply_filters( 'divino_react_admin_localize', $localize ) );
@@ -371,35 +371,35 @@ class divino_Menu {
 			'divino_quick_settings',
 			array(
 				'logo-favicon' => array(
-					'title'     => __( 'Site Identity', 'astra' ),
+					'title'     => __( 'Site Identity', 'divino' ),
 					'quick_url' => admin_url( 'customize.php?autofocus[control]=site_icon' ),
 				),
 				'header'       => array(
-					'title'     => __( 'Header Settings', 'astra' ),
+					'title'     => __( 'Header Settings', 'divino' ),
 					'quick_url' => admin_url( 'customize.php?autofocus[panel]=panel-header-group' ),
 				),
 				'footer'       => array(
-					'title'     => __( 'Footer Settings', 'astra' ),
+					'title'     => __( 'Footer Settings', 'divino' ),
 					'quick_url' => admin_url( 'customize.php?autofocus[section]=section-footer-group' ),
 				),
 				'colors'       => array(
-					'title'     => __( 'Color', 'astra' ),
+					'title'     => __( 'Color', 'divino' ),
 					'quick_url' => admin_url( 'customize.php?autofocus[section]=section-colors-background' ),
 				),
 				'typography'   => array(
-					'title'     => __( 'Typography', 'astra' ),
+					'title'     => __( 'Typography', 'divino' ),
 					'quick_url' => admin_url( 'customize.php?autofocus[section]=section-typography' ),
 				),
 				'button'       => array(
-					'title'     => __( 'Button', 'astra' ),
+					'title'     => __( 'Button', 'divino' ),
 					'quick_url' => admin_url( 'customize.php?autofocus[section]=section-buttons' ),
 				),
 				'blog-options' => array(
-					'title'     => __( 'Blog Options', 'astra' ),
+					'title'     => __( 'Blog Options', 'divino' ),
 					'quick_url' => admin_url( 'customize.php?autofocus[section]=section-blog-group' ),
 				),
 				'layout'       => array(
-					'title'     => __( 'Layout', 'astra' ),
+					'title'     => __( 'Layout', 'divino' ),
 					'quick_url' => admin_url( 'customize.php?autofocus[section]=section-container-layout' ),
 				),
 			)
@@ -434,30 +434,30 @@ class divino_Menu {
 
 		/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		$st_data = array(
-			'title'        => is_callable( 'divino_Ext_White_Label_Markup::get_whitelabel_string' ) ? divino_Ext_White_Label_Markup::get_whitelabel_string( 'astra-sites', 'name', __( 'Starter Templates', 'astra' ) ) : __( 'Starter Templates', 'astra' ),
-			'description'  => is_callable( 'divino_Ext_White_Label_Markup::get_whitelabel_string' ) ? divino_Ext_White_Label_Markup::get_whitelabel_string( 'astra-sites', 'description', __( 'Create professional designed pixel perfect websites in minutes. Get access to 300+ pre-made full website templates for your favorite page builder.', 'astra' ) ) : __( 'Create professional designed pixel perfect websites in minutes. Get access to 300+ pre-made full website templates for your favorite page builder.', 'astra' ),
+			'title'        => is_callable( 'divino_Ext_White_Label_Markup::get_whitelabel_string' ) ? divino_Ext_White_Label_Markup::get_whitelabel_string( 'divino-sites', 'name', __( 'Starter Templates', 'divino' ) ) : __( 'Starter Templates', 'divino' ),
+			'description'  => is_callable( 'divino_Ext_White_Label_Markup::get_whitelabel_string' ) ? divino_Ext_White_Label_Markup::get_whitelabel_string( 'divino-sites', 'description', __( 'Create professional designed pixel perfect websites in minutes. Get access to 300+ pre-made full website templates for your favorite page builder.', 'divino' ) ) : __( 'Create professional designed pixel perfect websites in minutes. Get access to 300+ pre-made full website templates for your favorite page builder.', 'divino' ),
 			'is_available' => defined( 'divino_PRO_SITES_VER' ) || defined( 'divino_SITES_VER' ) ? true : false,
 			'redirection'  => admin_url( 'themes.php?page=starter-templates' ),
-			'icon_path'    => 'https://ps.w.org/astra-sites/assets/icon-256x256.gif',
+			'icon_path'    => 'https://ps.w.org/divino-sites/assets/icon-256x256.gif',
 			'is_promoting' => self::is_promoting_starter_templates(),
 		);
 		/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
 		$skip_free_version = false;
-		$pro_plugin_status = self::get_plugin_status( 'astra-pro-sites/astra-pro-sites.php' );
+		$pro_plugin_status = self::get_plugin_status( 'divino-pro-sites/divino-pro-sites.php' );
 
 		if ( 'installed' === $pro_plugin_status || 'activated' === $pro_plugin_status ) {
 			$skip_free_version = true;
-			$st_data['slug']   = 'astra-pro-sites';
+			$st_data['slug']   = 'divino-pro-sites';
 			$st_data['status'] = $pro_plugin_status;
-			$st_data['path']   = 'astra-pro-sites/astra-pro-sites.php';
+			$st_data['path']   = 'divino-pro-sites/divino-pro-sites.php';
 		}
 
-		$free_plugin_status = self::get_plugin_status( 'astra-sites/astra-sites.php' );
+		$free_plugin_status = self::get_plugin_status( 'divino-sites/divino-sites.php' );
 		if ( ! $skip_free_version ) {
-			$st_data['slug']   = 'astra-sites';
+			$st_data['slug']   = 'divino-sites';
 			$st_data['status'] = $free_plugin_status;
-			$st_data['path']   = 'astra-sites/astra-sites.php';
+			$st_data['path']   = 'divino-sites/divino-sites.php';
 		}
 
 		return $st_data;
@@ -543,7 +543,7 @@ class divino_Menu {
 	}
 
 	/**
-	 * Get Astra's pro extension list.
+	 * Get divino's pro extension list.
 	 *
 	 * @since 4.0.0
 	 * @return array
@@ -553,138 +553,138 @@ class divino_Menu {
 			'divino_addon_list',
 			array(
 				'colors-and-background' => array(
-					'title'     => __( 'Colors & Background', 'astra' ),
+					'title'     => __( 'Colors & Background', 'divino' ),
 					'class'     => 'ast-addon',
 					'title_url' => divino_get_pro_url( '/docs/colors-background-module/', 'free-theme', 'dashboard', 'documentation' ),
 					'links'     => array(
 						array(
 							'link_class'   => 'ast-learn-more',
 							'link_url'     => divino_get_pro_url( '/docs/colors-background-module/', 'free-theme', 'dashboard', 'documentation' ),
-							'link_text'    => __( 'Documentation', 'astra' ),
+							'link_text'    => __( 'Documentation', 'divino' ),
 							'target_blank' => true,
 						),
 					),
 				),
 				'typography'            => array(
-					'title'     => __( 'Typography', 'astra' ),
+					'title'     => __( 'Typography', 'divino' ),
 					'class'     => 'ast-addon',
 					'title_url' => divino_get_pro_url( '/docs/typography-module/', 'free-theme', 'dashboard', 'documentation' ),
 					'links'     => array(
 						array(
 							'link_class'   => 'ast-learn-more',
 							'link_url'     => divino_get_pro_url( '/docs/typography-module/', 'free-theme', 'dashboard', 'documentation' ),
-							'link_text'    => __( 'Documentation', 'astra' ),
+							'link_text'    => __( 'Documentation', 'divino' ),
 							'target_blank' => true,
 						),
 					),
 				),
 				'spacing'               => array(
-					'title'     => __( 'Spacing', 'astra' ),
+					'title'     => __( 'Spacing', 'divino' ),
 					'class'     => 'ast-addon',
 					'title_url' => divino_get_pro_url( '/docs/spacing-addon-overview/', 'free-theme', 'dashboard', 'documentation' ),
 					'links'     => array(
 						array(
 							'link_class'   => 'ast-learn-more',
 							'link_url'     => divino_get_pro_url( '/docs/spacing-addon-overview/', 'free-theme', 'dashboard', 'documentation' ),
-							'link_text'    => __( 'Documentation', 'astra' ),
+							'link_text'    => __( 'Documentation', 'divino' ),
 							'target_blank' => true,
 						),
 					),
 				),
 				'blog-pro'              => array(
-					'title'     => __( 'Blog Pro', 'astra' ),
+					'title'     => __( 'Blog Pro', 'divino' ),
 					'class'     => 'ast-addon',
 					'title_url' => divino_get_pro_url( '/docs/blog-pro-overview/', 'free-theme', 'dashboard', 'documentation' ),
 					'links'     => array(
 						array(
 							'link_class'   => 'ast-learn-more',
 							'link_url'     => divino_get_pro_url( '/docs/blog-pro-overview/', 'free-theme', 'dashboard', 'documentation' ),
-							'link_text'    => __( 'Documentation', 'astra' ),
+							'link_text'    => __( 'Documentation', 'divino' ),
 							'target_blank' => true,
 						),
 					),
 				),
 				'mobile-header'         => array(
-					'title'     => __( 'Mobile Header', 'astra' ),
+					'title'     => __( 'Mobile Header', 'divino' ),
 					'class'     => 'ast-addon',
-					'title_url' => divino_get_pro_url( '/docs/mobile-header-with-astra/', 'free-theme', 'dashboard', 'documentation' ),
+					'title_url' => divino_get_pro_url( '/docs/mobile-header-with-divino/', 'free-theme', 'dashboard', 'documentation' ),
 					'links'     => array(
 						array(
 							'link_class'   => 'ast-learn-more',
-							'link_url'     => divino_get_pro_url( '/docs/mobile-header-with-astra/', 'free-theme', 'dashboard', 'documentation' ),
-							'link_text'    => __( 'Documentation', 'astra' ),
+							'link_url'     => divino_get_pro_url( '/docs/mobile-header-with-divino/', 'free-theme', 'dashboard', 'documentation' ),
+							'link_text'    => __( 'Documentation', 'divino' ),
 							'target_blank' => true,
 						),
 					),
 				),
 				'header-sections'       => array(
-					'title'     => __( 'Header Sections', 'astra' ),
+					'title'     => __( 'Header Sections', 'divino' ),
 					'class'     => 'ast-addon',
 					'title_url' => divino_get_pro_url( '/docs/header-sections-pro/', 'free-theme', 'dashboard', 'documentation' ),
 					'links'     => array(
 						array(
 							'link_class'   => 'ast-learn-more',
 							'link_url'     => divino_get_pro_url( '/docs/header-sections-pro/', 'free-theme', 'dashboard', 'documentation' ),
-							'link_text'    => __( 'Documentation', 'astra' ),
+							'link_text'    => __( 'Documentation', 'divino' ),
 							'target_blank' => true,
 						),
 					),
 				),
 				'sticky-header'         => array(
-					'title'     => __( 'Sticky Header', 'astra' ),
+					'title'     => __( 'Sticky Header', 'divino' ),
 					'class'     => 'ast-addon',
 					'title_url' => divino_get_pro_url( '/docs/sticky-header-pro/', 'free-theme', 'dashboard', 'documentation' ),
 					'links'     => array(
 						array(
 							'link_class'   => 'ast-learn-more',
 							'link_url'     => divino_get_pro_url( '/docs/sticky-header-pro/', 'free-theme', 'dashboard', 'documentation' ),
-							'link_text'    => __( 'Documentation', 'astra' ),
+							'link_text'    => __( 'Documentation', 'divino' ),
 							'target_blank' => true,
 						),
 					),
 				),
 				'site-layouts'          => array(
-					'title'     => __( 'Site Layouts', 'astra' ),
+					'title'     => __( 'Site Layouts', 'divino' ),
 					'class'     => 'ast-addon',
 					'title_url' => divino_get_pro_url( '/docs/site-layout-overview/', 'free-theme', 'dashboard', 'documentation' ),
 					'links'     => array(
 						array(
 							'link_class'   => 'ast-learn-more',
 							'link_url'     => divino_get_pro_url( '/docs/site-layout-overview/', 'free-theme', 'dashboard', 'documentation' ),
-							'link_text'    => __( 'Documentation', 'astra' ),
+							'link_text'    => __( 'Documentation', 'divino' ),
 							'target_blank' => true,
 						),
 					),
 				),
 				'advanced-footer'       => array(
-					'title'     => __( 'Footer Widgets', 'astra' ),
+					'title'     => __( 'Footer Widgets', 'divino' ),
 					'class'     => 'ast-addon',
-					'title_url' => divino_get_pro_url( '/docs/footer-widgets-astra-pro/', 'free-theme', 'dashboard', 'documentation' ),
+					'title_url' => divino_get_pro_url( '/docs/footer-widgets-divino-pro/', 'free-theme', 'dashboard', 'documentation' ),
 					'links'     => array(
 						array(
 							'link_class'   => 'ast-learn-more',
-							'link_url'     => divino_get_pro_url( '/docs/footer-widgets-astra-pro/', 'free-theme', 'dashboard', 'documentation' ),
-							'link_text'    => __( 'Documentation', 'astra' ),
+							'link_url'     => divino_get_pro_url( '/docs/footer-widgets-divino-pro/', 'free-theme', 'dashboard', 'documentation' ),
+							'link_text'    => __( 'Documentation', 'divino' ),
 							'target_blank' => true,
 						),
 					),
 				),
 				'nav-menu'              => array(
-					'title'     => __( 'Nav Menu', 'astra' ),
+					'title'     => __( 'Nav Menu', 'divino' ),
 					'class'     => 'ast-addon',
 					'title_url' => divino_get_pro_url( '/docs/nav-menu-addon/', 'free-theme', 'dashboard', 'documentation' ),
 					'links'     => array(
 						array(
 							'link_class'   => 'ast-learn-more',
 							'link_url'     => divino_get_pro_url( '/docs/nav-menu-addon/', 'free-theme', 'dashboard', 'documentation' ),
-							'link_text'    => __( 'Documentation', 'astra' ),
+							'link_text'    => __( 'Documentation', 'divino' ),
 							'target_blank' => true,
 						),
 					),
 				),
 				'advanced-hooks'        => array(
-					'title'           => defined( 'divino_EXT_VER' ) && version_compare( divino_EXT_VER, '4.5.0', '<' ) ? __( 'Custom Layouts', 'astra' ) : __( 'Site Builder', 'astra' ),
-					'description'     => __( 'Add content conditionally in the various hook areas of the theme.', 'astra' ),
+					'title'           => defined( 'divino_EXT_VER' ) && version_compare( divino_EXT_VER, '4.5.0', '<' ) ? __( 'Custom Layouts', 'divino' ) : __( 'Site Builder', 'divino' ),
+					'description'     => __( 'Add content conditionally in the various hook areas of the theme.', 'divino' ),
 					'manage_settings' => true,
 					'class'           => 'ast-addon',
 					'title_url'       => divino_get_pro_url( '/docs/custom-layouts-pro/', 'free-theme', 'dashboard', 'documentation' ),
@@ -692,14 +692,14 @@ class divino_Menu {
 						array(
 							'link_class'   => 'ast-learn-more',
 							'link_url'     => divino_get_pro_url( '/docs/custom-layouts-pro/', 'free-theme', 'dashboard', 'documentation' ),
-							'link_text'    => __( 'Documentation', 'astra' ),
+							'link_text'    => __( 'Documentation', 'divino' ),
 							'target_blank' => true,
 						),
 					),
 				),
 				'advanced-headers'      => array(
-					'title'           => __( 'Page Headers', 'astra' ),
-					'description'     => __( 'Make your header layouts look more appealing and sexy!', 'astra' ),
+					'title'           => __( 'Page Headers', 'divino' ),
+					'description'     => __( 'Make your header layouts look more appealing and sexy!', 'divino' ),
 					'manage_settings' => true,
 					'class'           => 'ast-addon',
 					'title_url'       => divino_get_pro_url( '/docs/page-headers-overview/', 'free-theme', 'dashboard', 'documentation' ),
@@ -707,7 +707,7 @@ class divino_Menu {
 						array(
 							'link_class'   => 'ast-learn-more',
 							'link_url'     => divino_get_pro_url( '/docs/page-headers-overview/', 'free-theme', 'dashboard', 'documentation' ),
-							'link_text'    => __( 'Documentation', 'astra' ),
+							'link_text'    => __( 'Documentation', 'divino' ),
 							'target_blank' => true,
 						),
 					),
@@ -721,7 +721,7 @@ class divino_Menu {
 						array(
 							'link_class'   => 'ast-learn-more',
 							'link_url'     => divino_get_pro_url( '/docs/woocommerce-module-overview/', 'free-theme', 'dashboard', 'documentation' ),
-							'link_text'    => __( 'Documentation', 'astra' ),
+							'link_text'    => __( 'Documentation', 'divino' ),
 							'target_blank' => true,
 						),
 					),
@@ -735,7 +735,7 @@ class divino_Menu {
 						array(
 							'link_class'   => 'ast-learn-more',
 							'link_url'     => divino_get_pro_url( '/docs/easy-digital-downloads-module-overview/', 'free-theme', 'dashboard', 'documentation' ),
-							'link_text'    => __( 'Documentation', 'astra' ),
+							'link_text'    => __( 'Documentation', 'divino' ),
 							'target_blank' => true,
 						),
 					),
@@ -743,14 +743,14 @@ class divino_Menu {
 				'learndash'             => array(
 					'title'       => 'LearnDash',
 					'isActive'    => defined( 'divino_EXT_VER' ) && class_exists( 'SFWD_LMS' ) ? true : false,
-					'description' => __( 'Supercharge your LearnDash website with amazing design features.', 'astra' ),
+					'description' => __( 'Supercharge your LearnDash website with amazing design features.', 'divino' ),
 					'class'       => 'ast-addon',
-					'title_url'   => divino_get_pro_url( '/docs/learndash-integration-in-astra-pro/', 'free-theme', 'dashboard', 'documentation' ),
+					'title_url'   => divino_get_pro_url( '/docs/learndash-integration-in-divino-pro/', 'free-theme', 'dashboard', 'documentation' ),
 					'links'       => array(
 						array(
 							'link_class'   => 'ast-learn-more',
-							'link_url'     => divino_get_pro_url( '/docs/learndash-integration-in-astra-pro/', 'free-theme', 'dashboard', 'documentation' ),
-							'link_text'    => __( 'Documentation', 'astra' ),
+							'link_url'     => divino_get_pro_url( '/docs/learndash-integration-in-divino-pro/', 'free-theme', 'dashboard', 'documentation' ),
+							'link_text'    => __( 'Documentation', 'divino' ),
 							'target_blank' => true,
 						),
 					),
@@ -764,20 +764,20 @@ class divino_Menu {
 						array(
 							'link_class'   => 'ast-learn-more',
 							'link_url'     => divino_get_pro_url( '/docs/lifterlms-module-pro/', 'free-theme', 'dashboard', 'documentation' ),
-							'link_text'    => __( 'Documentation', 'astra' ),
+							'link_text'    => __( 'Documentation', 'divino' ),
 							'target_blank' => true,
 						),
 					),
 				),
 				'white-label'           => array(
-					'title'     => __( 'White Label', 'astra' ),
+					'title'     => __( 'White Label', 'divino' ),
 					'class'     => 'ast-addon',
-					'title_url' => divino_get_pro_url( '/docs/how-to-white-label-astra/', 'free-theme', 'dashboard', 'documentation' ),
+					'title_url' => divino_get_pro_url( '/docs/how-to-white-label-divino/', 'free-theme', 'dashboard', 'documentation' ),
 					'links'     => array(
 						array(
 							'link_class'   => 'ast-learn-more',
-							'link_url'     => divino_get_pro_url( '/docs/how-to-white-label-astra/', 'free-theme', 'dashboard', 'documentation' ),
-							'link_text'    => __( 'Documentation', 'astra' ),
+							'link_url'     => divino_get_pro_url( '/docs/how-to-white-label-divino/', 'free-theme', 'dashboard', 'documentation' ),
+							'link_text'    => __( 'Documentation', 'divino' ),
 							'target_blank' => true,
 						),
 					),
@@ -787,7 +787,7 @@ class divino_Menu {
 	}
 
 	/**
-	 * Get Astra's recommended WooCommerce extensions.
+	 * Get divino's recommended WooCommerce extensions.
 	 *
 	 * @param bool $under_useful_plugins Add under useful plugins or not.
 	 *
@@ -799,7 +799,7 @@ class divino_Menu {
 		$extensions = array(
 			array(
 				'title'       => 'CartFlows: Create Sales Funnel',
-				'subtitle'    => $under_useful_plugins ? __( '#1 Sales Funnel WordPress Builder.', 'astra' ) : __( 'Build high-converting E-Commerce stores with CartFlows, the ultimate checkout and funnel builder.', 'astra' ),
+				'subtitle'    => $under_useful_plugins ? __( '#1 Sales Funnel WordPress Builder.', 'divino' ) : __( 'Build high-converting E-Commerce stores with CartFlows, the ultimate checkout and funnel builder.', 'divino' ),
 				'status'      => self::get_plugin_status( 'cartflows/cartflows.php' ),
 				'slug'        => 'cartflows',
 				'path'        => 'cartflows/cartflows.php',
@@ -816,7 +816,7 @@ class divino_Menu {
 		if ( ! $under_useful_plugins ) {
 			$extensions[] = array(
 				'title'       => 'OttoKit: WordPress Automation',
-				'subtitle'    => __( 'Connect your WordPress plugins, WooCommerce sites, apps, and websites for powerful automations.', 'astra' ),
+				'subtitle'    => __( 'Connect your WordPress plugins, WooCommerce sites, apps, and websites for powerful automations.', 'divino' ),
 				'status'      => self::get_plugin_status( 'suretriggers/suretriggers.php' ),
 				'slug'        => 'suretriggers',
 				'path'        => 'suretriggers/suretriggers.php',
@@ -832,7 +832,7 @@ class divino_Menu {
 
 		$extensions[] = array(
 			'title'       => 'Spectra: Blocks Builder',
-			'subtitle'    => $under_useful_plugins ? __( 'Free WordPress Page Builder.', 'astra' ) : __( 'Power-up block editor with advanced blocks for faster and effortlessly website creation.', 'astra' ),
+			'subtitle'    => $under_useful_plugins ? __( 'Free WordPress Page Builder.', 'divino' ) : __( 'Power-up block editor with advanced blocks for faster and effortlessly website creation.', 'divino' ),
 			'status'      => self::get_plugin_status( 'ultimate-addons-for-gutenberg/ultimate-addons-for-gutenberg.php' ),
 			'slug'        => 'ultimate-addons-for-gutenberg',
 			'path'        => 'ultimate-addons-for-gutenberg/ultimate-addons-for-gutenberg.php',
@@ -847,7 +847,7 @@ class divino_Menu {
 
 		$extensions[] = array(
 			'title'       => 'Modern Cart for WooCommerce',
-			'subtitle'    => $under_useful_plugins ? __( 'Modern Cart: A smarter way to sell', 'astra' ) : __( 'Say goodbye to slow checkouts – boost sales with a smooth, hassle-free experience.', 'astra' ),
+			'subtitle'    => $under_useful_plugins ? __( 'Modern Cart: A smarter way to sell', 'divino' ) : __( 'Say goodbye to slow checkouts – boost sales with a smooth, hassle-free experience.', 'divino' ),
 			'status'      => 'visit',
 			'slug'        => '',
 			'path'        => '',
@@ -863,7 +863,7 @@ class divino_Menu {
 		if ( ! $under_useful_plugins ) {
 			$extensions[] = array(
 				'title'       => 'PayPal Payments For WooCommerce',
-				'subtitle'    => __( 'PayPal Payments For WooCommerce simplifies and secures PayPal transactions on your store.', 'astra' ),
+				'subtitle'    => __( 'PayPal Payments For WooCommerce simplifies and secures PayPal transactions on your store.', 'divino' ),
 				'status'      => self::get_plugin_status( 'checkout-paypal-woo/checkout-paypal-woo.php' ),
 				'slug'        => 'checkout-paypal-woo',
 				'path'        => 'checkout-paypal-woo/checkout-paypal-woo.php',
@@ -879,7 +879,7 @@ class divino_Menu {
 
 		$extensions[] = array(
 			'title'       => 'Cart Abandonment Recovery',
-			'subtitle'    => $under_useful_plugins ? __( 'Recover lost revenue automatically.', 'astra' ) : __( 'Capture emails at checkout and send follow-up emails to recover lost revenue.', 'astra' ),
+			'subtitle'    => $under_useful_plugins ? __( 'Recover lost revenue automatically.', 'divino' ) : __( 'Capture emails at checkout and send follow-up emails to recover lost revenue.', 'divino' ),
 			'status'      => self::get_plugin_status( 'woo-cart-abandonment-recovery/woo-cart-abandonment-recovery.php' ),
 			'slug'        => 'woo-cart-abandonment-recovery',
 			'path'        => 'woo-cart-abandonment-recovery/woo-cart-abandonment-recovery.php',
@@ -895,7 +895,7 @@ class divino_Menu {
 		if ( ! $under_useful_plugins ) {
 			$extensions[] = array(
 				'title'       => 'Variations Swatches by CartFlows',
-				'subtitle'    => __( 'Convert WooCommerce variation dropdown attributes into attractive swatches instantly.', 'astra' ),
+				'subtitle'    => __( 'Convert WooCommerce variation dropdown attributes into attractive swatches instantly.', 'divino' ),
 				'status'      => self::get_plugin_status( 'variation-swatches-woo/variation-swatches-woo.php' ),
 				'slug'        => 'variation-swatches-woo',
 				'path'        => 'variation-swatches-woo/variation-swatches-woo.php',
@@ -911,7 +911,7 @@ class divino_Menu {
 
 		$extensions[] = array(
 			'title'       => 'Google Analytics for WooCommerce',
-			'subtitle'    => __( 'Boost sales with WooCommerce analytics.', 'astra' ),
+			'subtitle'    => __( 'Boost sales with WooCommerce analytics.', 'divino' ),
 			'status'      => self::get_plugin_status( 'woocommerce-google-analytics-integration/woocommerce-google-analytics-integration.php' ),
 			'slug'        => 'woocommerce-google-analytics-integration',
 			'path'        => 'woocommerce-google-analytics-integration/woocommerce-google-analytics-integration.php',
@@ -928,7 +928,7 @@ class divino_Menu {
 	}
 
 	/**
-	 * Get Astra's useful plugins.
+	 * Get divino's useful plugins.
 	 * Extend this in following way -
 	 *
 	 * //  array(
@@ -938,8 +938,8 @@ class divino_Menu {
 	 * //         'redirection' => admin_url( 'admin.php?page=sc-dashboard' ),
 	 * //         'status' => self::get_plugin_status( 'plugin-slug/plugin-slug.php' ),
 	 * //         'logoPath' => array(
-	 * //             'internal_icon' => true, // true = will take internal Astra's any icon. false = provide next custom icon link.
-	 * //             'icon_path' => "spectra", // If internal_icon false then - example custom SVG URL: divino_THEME_URI . 'inc/assets/images/astra.svg'.
+	 * //             'internal_icon' => true, // true = will take internal divino's any icon. false = provide next custom icon link.
+	 * //             'icon_path' => "spectra", // If internal_icon false then - example custom SVG URL: divino_THEME_URI . 'inc/assets/images/divino.svg'.
 	 * //         ),
 	 * //     ),
 	 *
@@ -957,7 +957,7 @@ class divino_Menu {
 			$plugins = array(
 				'surecart'      => array(
 					'title'       => 'SureCart',
-					'subtitle'    => __( 'Sell products, services, subscriptions & more.', 'astra' ),
+					'subtitle'    => __( 'Sell products, services, subscriptions & more.', 'divino' ),
 					'status'      => $surecart_status,
 					'slug'        => 'surecart',
 					'path'        => 'surecart/surecart.php',
@@ -969,7 +969,7 @@ class divino_Menu {
 				),
 				'spectra'       => array(
 					'title'       => 'Spectra',
-					'subtitle'    => __( 'Free WordPress Page Builder.', 'astra' ),
+					'subtitle'    => __( 'Free WordPress Page Builder.', 'divino' ),
 					'status'      => self::get_plugin_status( 'ultimate-addons-for-gutenberg/ultimate-addons-for-gutenberg.php' ),
 					'slug'        => 'ultimate-addons-for-gutenberg',
 					'path'        => 'ultimate-addons-for-gutenberg/ultimate-addons-for-gutenberg.php',
@@ -981,7 +981,7 @@ class divino_Menu {
 				),
 				'suretriggers'  => array(
 					'title'       => 'OttoKit',
-					'subtitle'    => __( 'Automate your WordPress setup.', 'astra' ),
+					'subtitle'    => __( 'Automate your WordPress setup.', 'divino' ),
 					'isPro'       => false,
 					'status'      => self::get_plugin_status( 'suretriggers/suretriggers.php' ),
 					'slug'        => 'suretriggers',
@@ -994,7 +994,7 @@ class divino_Menu {
 				),
 				'sureforms'     => array(
 					'title'       => 'SureForms',
-					'subtitle'    => __( 'A versatile form builder plugin.', 'astra' ),
+					'subtitle'    => __( 'A versatile form builder plugin.', 'divino' ),
 					'status'      => self::get_plugin_status( 'sureforms/sureforms.php' ),
 					'slug'        => 'sureforms',
 					'path'        => 'sureforms/sureforms.php',
@@ -1006,7 +1006,7 @@ class divino_Menu {
 				),
 				'presto-player' => array(
 					'title'       => 'Presto Player',
-					'subtitle'    => __( 'Ultimate Video Player For WordPress.', 'astra' ),
+					'subtitle'    => __( 'Ultimate Video Player For WordPress.', 'divino' ),
 					'status'      => self::get_plugin_status( 'presto-player/presto-player.php' ),
 					'slug'        => 'presto-player',
 					'path'        => 'presto-player/presto-player.php',
@@ -1018,7 +1018,7 @@ class divino_Menu {
 				),
 				'uael'          => array(
 					'title'       => 'Ultimate Addons for Elementor',
-					'subtitle'    => __( 'Extend Elementor with premium widgets.', 'astra' ),
+					'subtitle'    => __( 'Extend Elementor with premium widgets.', 'divino' ),
 					'status'      => self::get_plugin_status( 'header-footer-elementor/header-footer-elementor.php' ),
 					'slug'        => 'header-footer-elementor',
 					'path'        => 'header-footer-elementor/header-footer-elementor.php',
@@ -1048,7 +1048,7 @@ class divino_Menu {
 	 * @param array $localize Variable names.
 	 */
 	public function settings_app_scripts( $localize ) {
-		$handle            = 'astra-admin-dashboard-app';
+		$handle            = 'divino-admin-dashboard-app';
 		$build_path        = divino_THEME_ADMIN_DIR . 'assets/build/';
 		$build_url         = divino_THEME_ADMIN_URL . 'assets/build/';
 		$script_asset_path = $build_path . 'dashboard-app.asset.php';
@@ -1079,7 +1079,7 @@ class divino_Menu {
 
 		wp_enqueue_script( $handle );
 
-		wp_set_script_translations( $handle, 'astra' );
+		wp_set_script_translations( $handle, 'divino' );
 
 		wp_enqueue_style( $handle );
 
@@ -1096,14 +1096,14 @@ class divino_Menu {
 	public function divino_admin_footer_link() {
 		$theme_name = divino_get_theme_name();
 		/** @psalm-suppress TypeDoesNotContainType */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-		$rating_url = divino_THEME_ORG_VERSION ? 'https://wordpress.org/support/theme/astra/reviews/?rate=5#new-post' : 'https://woo.com/products/astra/#reviews';
+		$rating_url = divino_THEME_ORG_VERSION ? 'https://wordpress.org/support/theme/divino/reviews/?rate=5#new-post' : 'https://woo.com/products/divino/#reviews';
 		/** @psalm-suppress TypeDoesNotContainType */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 		if ( divino_is_white_labelled() ) {
-			$footer_text = '<span id="footer-thankyou">' . __( 'Thank you for using', 'astra' ) . '<span class="focus:text-astra-hover active:text-astra-hover hover:text-astra-hover"> ' . esc_html( $theme_name ) . '.</span></span>';
+			$footer_text = '<span id="footer-thankyou">' . __( 'Thank you for using', 'divino' ) . '<span class="focus:text-divino-hover active:text-divino-hover hover:text-divino-hover"> ' . esc_html( $theme_name ) . '.</span></span>';
 		} else {
 			$footer_text = sprintf(
-				/* translators: 1: Astra, 2: Theme rating link */
-				__( 'Enjoyed %1$s? Please leave us a %2$s rating. We really appreciate your support!', 'astra' ),
+				/* translators: 1: divino, 2: Theme rating link */
+				__( 'Enjoyed %1$s? Please leave us a %2$s rating. We really appreciate your support!', 'divino' ),
 				'<span class="ast-footer-thankyou"><strong>' . esc_html( $theme_name ) . '</strong>',
 				'<a href="' . esc_url( $rating_url ) . '" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a></span>'
 			);

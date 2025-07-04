@@ -4,27 +4,27 @@
  * here. Your javascript should grab settings from customizer controls, and
  * then make any necessary changes to the page using jQuery.
  *
- * @package Astra
+ * @package divino
  * @since  x.x.x
  */
 ( function( $ ) {
 
 	divino_css(
-		'astra-settings[scroll-to-top-icon-size]',
+		'divino-settings[scroll-to-top-icon-size]',
 		'font-size',
 		'#ast-scroll-top',
 		'px'
 	);
-	divino_css( 'astra-settings[scroll-to-top-icon-color]', 'color', '#ast-scroll-top' );
-	divino_css( 'astra-settings[scroll-to-top-icon-bg-color]', 'background-color', '#ast-scroll-top' );
-	divino_css( 'astra-settings[scroll-to-top-icon-h-color]', 'color', '#ast-scroll-top:hover' );
-	divino_css( 'astra-settings[scroll-to-top-icon-h-bg-color]', 'background-color', '#ast-scroll-top:hover' );
+	divino_css( 'divino-settings[scroll-to-top-icon-color]', 'color', '#ast-scroll-top' );
+	divino_css( 'divino-settings[scroll-to-top-icon-bg-color]', 'background-color', '#ast-scroll-top' );
+	divino_css( 'divino-settings[scroll-to-top-icon-h-color]', 'color', '#ast-scroll-top:hover' );
+	divino_css( 'divino-settings[scroll-to-top-icon-h-bg-color]', 'background-color', '#ast-scroll-top:hover' );
 
 	// Border Radius Fields for Button.
-	wp.customize( 'astra-settings[scroll-to-top-icon-radius-fields]', function( value ) {
+	wp.customize( 'divino-settings[scroll-to-top-icon-radius-fields]', function( value ) {
 		value.bind( function( border ) {
-			let tablet_break_point    = astraBuilderPreview.tablet_break_point || 768,
-			mobile_break_point    = astraBuilderPreview.mobile_break_point || 544;
+			let tablet_break_point    = divinoBuilderPreview.tablet_break_point || 768,
+			mobile_break_point    = divinoBuilderPreview.mobile_break_point || 544;
 			let dynamicStyle = '';
 			dynamicStyle += ' #ast-scroll-top { border-top-left-radius :' + border['desktop']['top'] + border['desktop-unit']
 				+ '; border-bottom-right-radius :' + border['desktop']['bottom'] + border['desktop-unit'] + '; border-bottom-left-radius :'
@@ -40,7 +40,7 @@
 	} );
 
 	// Scroll to top position.
-	wp.customize( 'astra-settings[scroll-to-top-icon-position]', function( value ) {
+	wp.customize( 'divino-settings[scroll-to-top-icon-position]', function( value ) {
 		value.bind( function( position ) {
 			jQuery("#ast-scroll-top").removeClass("ast-scroll-to-top-right ast-scroll-to-top-left");
 			jQuery("#ast-scroll-top").addClass("ast-scroll-to-top-"+position);

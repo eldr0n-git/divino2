@@ -2,7 +2,7 @@
 /**
  * Template part for displaying the footer component.
  *
- * @package Astra
+ * @package divino
  */
 
 $divino_component_slug = get_query_var( 'type' );

@@ -1,9 +1,9 @@
 <?php
 /**
- * Astra Theme Customizer Configuration Builder.
+ * divino Theme Customizer Configuration Builder.
  *
- * @package     astra-builder
- * @link        https://wpastra.com/
+ * @package     divino-builder
+ * @link        https://wpdivino.com/
  * @since       3.0.0
  */
 
@@ -25,10 +25,10 @@ class divino_Header_Social_Icon_Component_Configs extends divino_Customizer_Conf
 	/**
 	 * Register Builder Customizer Configurations.
 	 *
-	 * @param Array                $configurations Astra Customizer Configurations.
+	 * @param Array                $configurations divino Customizer Configurations.
 	 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 	 * @since 3.0.0
-	 * @return Array Astra Customizer Configurations with updated configurations.
+	 * @return Array divino Customizer Configurations with updated configurations.
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {
 		return divino_header_social_configuration( $configurations );

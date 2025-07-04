@@ -2,7 +2,7 @@
 /**
  * Divi Builder File.
  *
- * @package Astra
+ * @package divino
  */
 
 // If plugin - 'Divi Builder' not exist then return.
@@ -11,12 +11,12 @@ if ( ! class_exists( 'ET_Builder_Plugin' ) ) {
 }
 
 /**
- * Astra Divi Builder
+ * divino Divi Builder
  */
 if ( ! class_exists( 'divino_Divi_Builder' ) ) {
 
 	/**
-	 * Astra Divi Builder
+	 * divino Divi Builder
 	 *
 	 * @since 1.4.0
 	 */
@@ -53,7 +53,7 @@ if ( ! class_exists( 'divino_Divi_Builder' ) ) {
 		 * @since 1.4.0
 		 */
 		public function add_styles( $assets ) {
-			$assets['css']['astra-divi-builder'] = 'compatibility/divi-builder';
+			$assets['css']['divino-divi-builder'] = 'compatibility/divi-builder';
 			return $assets;
 		}
 

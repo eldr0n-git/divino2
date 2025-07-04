@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Builder Loader.
+ * divino Builder Loader.
  *
- * @package astra-builder
+ * @package divino-builder
  */
 
 // No direct access, please.
@@ -127,7 +127,7 @@ if ( ! class_exists( 'divino_Builder_Footer' ) ) {
 		}
 
 		/**
-		 * Astra Footer Markup.
+		 * divino Footer Markup.
 		 */
 		public function footer_markup() {
 
@@ -223,7 +223,7 @@ if ( ! class_exists( 'divino_Builder_Footer' ) ) {
 
 			$theme_author = divino_get_theme_author_details();
 
-			$content = divino_get_i18n_option( 'footer-copyright-editor', _x( '%astra%', 'Footer Builder: Copyright Editor Text', 'astra' ) );
+			$content = divino_get_i18n_option( 'footer-copyright-editor', _x( '%divino%', 'Footer Builder: Copyright Editor Text', 'divino' ) );
 			if ( $content || is_customize_preview() ) {
 				echo '<div class="ast-footer-copyright">';
 						$content = str_replace( '[copyright]', '&copy;', $content );

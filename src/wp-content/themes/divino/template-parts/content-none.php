@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Astra
+ * @package divino
  * @since 1.0.0
  */
 
@@ -20,7 +20,7 @@
 				printf(
 					wp_kses(
 						/* translators: 1: link to new post */
-						__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'astra' ),
+						__( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'divino' ),
 						array(
 							'a' => array(
 								'href' => array(),

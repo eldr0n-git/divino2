@@ -236,13 +236,13 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 				/* translators: %s product name */
 				$notice_string = sprintf(
 					__(
-						'Help us improve %1$s and our other products!<br><br>With your permission, we\'d like to collect <strong>non-sensitive information</strong> from your website — like your PHP version and which features you use — so we can fix bugs faster, make smarter decisions, and build features that actually matter to you. <em>No personal info. Ever.</em>', 'astra'
+						'Help us improve %1$s and our other products!<br><br>With your permission, we\'d like to collect <strong>non-sensitive information</strong> from your website — like your PHP version and which features you use — so we can fix bugs faster, make smarter decisions, and build features that actually matter to you. <em>No personal info. Ever.</em>', 'divino'
 					),
 					'<strong>' . esc_html( $data['product_name'] ) . '</strong>'
 				);
 				
 				if ( is_multisite() ) {
-					$notice_string .= __( 'This will be applicable for all sites from the network.', 'astra' );
+					$notice_string .= __( 'This will be applicable for all sites from the network.', 'divino' );
 				}
 
 				$language_dir = is_rtl() ? 'rtl' : 'ltr';
@@ -256,17 +256,17 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 									<div class="notice-heading">
 										%1$s
 									</div>
-									<div class="astra-notices-container">
-										<a href="%2$s" class="astra-notices button-primary">
+									<div class="divino-notices-container">
+										<a href="%2$s" class="divino-notices button-primary">
 										%3$s
 										</a>
-										<a href="%4$s" data-repeat-notice-after="%5$s" class="astra-notices button-secondary">
+										<a href="%4$s" data-repeat-notice-after="%5$s" class="divino-notices button-secondary">
 										%6$s
 										</a>
 									</div>
 								</div>',
 							/* translators: %s usage doc link */
-							sprintf( $notice_string . '<span dir="%1s"><a href="%2s" target="_blank" rel="noreferrer noopener">%3s</a><span><br><br>', $language_dir, esc_url( $usage_doc_link ), __( ' Know More.', 'astra' ) ),
+							sprintf( $notice_string . '<span dir="%1s"><a href="%2s" target="_blank" rel="noreferrer noopener">%3s</a><span><br><br>', $language_dir, esc_url( $usage_doc_link ), __( ' Know More.', 'divino' ) ),
 							esc_url(
 								add_query_arg(
 									array(
@@ -276,7 +276,7 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 									)
 								)
 							),
-							__( 'Yes! Allow it', 'astra' ),
+							__( 'Yes! Allow it', 'divino' ),
 							esc_url(
 								add_query_arg(
 									array(
@@ -287,7 +287,7 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 								)
 							),
 							MONTH_IN_SECONDS,
-							__( 'No Thanks', 'astra' )
+							__( 'No Thanks', 'divino' )
 						),
 						'show_if'                    => true,
 						'repeat-notice-after'        => false,
@@ -412,7 +412,7 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 
 				add_settings_field(
 					$key . '-analytics-optin',       // Field ID.
-					__( 'Usage Tracking', 'astra' ),       // Field title.
+					__( 'Usage Tracking', 'divino' ),       // Field title.
 					array( $this, 'render_settings_field_html' ), // Field callback function.
 					'general',
 					'default',                   // Settings page slug.
@@ -456,15 +456,15 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 				<input id="<?php echo esc_attr( $args['id'] ); ?>" type="checkbox" value="1" name="<?php echo esc_attr( $args['name'] ); ?>" <?php checked( get_site_option( $args['name'], 'no' ), 'yes' ); ?>>
 				<?php
 				/* translators: %s Product title */
-				echo esc_html( sprintf( __( 'Allow %s products to track non-sensitive usage tracking data.', 'astra' ), $args['title'] ) );// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
+				echo esc_html( sprintf( __( 'Allow %s products to track non-sensitive usage tracking data.', 'divino' ), $args['title'] ) );// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
 
 				if ( is_multisite() ) {
-					esc_html_e( ' This will be applicable for all sites from the network.', 'astra' );
+					esc_html_e( ' This will be applicable for all sites from the network.', 'divino' );
 				}
 				?>
 			</label>
 			<?php
-			echo wp_kses_post( sprintf( '<a href="%1s" target="_blank" rel="noreferrer noopener">%2s</a>', esc_url( $args['usage_doc_link'] ), __( 'Learn More.', 'astra' ) ) );
+			echo wp_kses_post( sprintf( '<a href="%1s" target="_blank" rel="noreferrer noopener">%2s</a>', esc_url( $args['usage_doc_link'] ), __( 'Learn More.', 'divino' ) ) );
 			?>
 			</fieldset>
 			<?php

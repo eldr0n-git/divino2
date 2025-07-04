@@ -1,3 +1,4 @@
+<!-- testimonials-large.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Review with large image on right
@@ -30,7 +31,6 @@
 					<div class="wp-block-group" style="margin-top:0;margin-bottom:0;padding-top:0;padding-right:0;padding-bottom:0;padding-left:0">
 						<!-- wp:paragraph {"fontSize":"xx-large"} -->
 						<p class="has-xx-large-font-size"><?php echo esc_html_x( '“Superb product and customer service!”', 'Sample testimonial.', 'divino' ); ?></p>
-						<!-- /wp:paragraph -->
 					</div>
 					<!-- /wp:group -->
 					<cite><?php echo wp_kses_post( _x( 'Jo Mulligan <br /><sub>Atlanta, GA</sub>', 'Sample testimonial citation.', 'divino' ) ); ?></cite>

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package Astra
+ * @package Divino
  * @since 1.0.0
  */
 
@@ -26,7 +26,7 @@ get_header(); ?>
 
 		<?php divino_archive_header(); ?>
 
-		<?php divino_content_loop(); ?>		
+		<?php divino_content_loop(); ?>
 
 		<?php divino_pagination(); ?>
 

@@ -2,8 +2,8 @@
 /**
  * Header Builder Configuration.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       4.5.2
  */
 
@@ -14,9 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Register header_builder header builder Customizer Configurations.
  *
- * @param array $configurations Astra Customizer Configurations.
+ * @param array $configurations divino Customizer Configurations.
  * @since 4.5.2
- * @return array Astra Customizer Configurations with updated configurations.
+ * @return array divino Customizer Configurations with updated configurations.
  */
 function divino_header_header_builder_configuration( $configurations = array() ) {
 	$cloned_component_track         = divino_Builder_Helper::$component_count_array;
@@ -109,13 +109,13 @@ function divino_header_header_builder_configuration( $configurations = array() )
 
 		switch ( $index ) {
 			case 1:
-				$name = __( 'Primary Menu', 'astra' );
+				$name = __( 'Primary Menu', 'divino' );
 				break;
 			case 2:
-				$name = __( 'Secondary Menu', 'astra' );
+				$name = __( 'Secondary Menu', 'divino' );
 				break;
 			default:
-				$name = __( 'Menu ', 'astra' ) . $index;
+				$name = __( 'Menu ', 'divino' ) . $index;
 				break;
 		}
 
@@ -165,7 +165,7 @@ function divino_header_header_builder_configuration( $configurations = array() )
 			'name'     => 'section-header-builder',
 			'type'     => 'section',
 			'priority' => 5,
-			'title'    => __( 'Header Builder', 'astra' ),
+			'title'    => __( 'Header Builder', 'divino' ),
 			'panel'    => 'panel-header-builder-group',
 		),
 
@@ -176,7 +176,7 @@ function divino_header_header_builder_configuration( $configurations = array() )
 			'name'     => 'section-header-builder-layout',
 			'type'     => 'section',
 			'priority' => 0,
-			'title'    => __( 'Header Layout', 'astra' ),
+			'title'    => __( 'Header Layout', 'divino' ),
 			'panel'    => 'panel-header-builder-group',
 		),
 
@@ -228,7 +228,7 @@ function divino_header_header_builder_configuration( $configurations = array() )
 			'section'     => 'section-header-builder',
 			'type'        => 'control',
 			'control'     => 'ast-builder',
-			'title'       => __( 'Header Builder', 'astra' ),
+			'title'       => __( 'Header Builder', 'divino' ),
 			'priority'    => 25,
 			'default'     => divino_get_option( 'header-desktop-items' ),
 			'choices'     => divino_Builder_Helper::$header_desktop_items,
@@ -283,7 +283,7 @@ function divino_header_header_builder_configuration( $configurations = array() )
 			'control'   => 'ast-header-presets',
 			'section'   => 'section-header-builder-layout',
 			'priority'  => 10,
-			'title'     => __( 'Header Presets', 'astra' ),
+			'title'     => __( 'Header Presets', 'divino' ),
 			'options'   => array(
 				'preset_1' => array(
 					'src'     => 'header-preset-1',
@@ -424,8 +424,8 @@ function divino_header_header_builder_configuration( $configurations = array() )
 								'below_right'  => array(),
 							),
 						),
-						'header-html-1'        => '<a href="#">' . esc_html__( 'Log in', 'astra' ) . '</a>',
-						'header-button1-text'  => esc_html__( 'Sign up', 'astra' ),
+						'header-html-1'        => '<a href="#">' . esc_html__( 'Log in', 'divino' ) . '</a>',
+						'header-button1-text'  => esc_html__( 'Sign up', 'divino' ),
 					),
 				),
 				'preset_4' => array(
@@ -520,7 +520,7 @@ function divino_header_header_builder_configuration( $configurations = array() )
 			'section'     => 'section-header-builder',
 			'type'        => 'control',
 			'control'     => 'ast-builder',
-			'title'       => __( 'Header Builder', 'astra' ),
+			'title'       => __( 'Header Builder', 'divino' ),
 			'priority'    => 35,
 			'default'     => divino_get_option( 'header-mobile-items' ),
 			'choices'     => divino_Builder_Helper::$header_mobile_items,
@@ -610,7 +610,7 @@ function divino_header_header_builder_configuration( $configurations = array() )
 			'type'     => 'control',
 			'control'  => 'ast-heading',
 			'section'  => 'section-header-builder-layout',
-			'title'    => __( 'Header Types', 'astra' ),
+			'title'    => __( 'Header Types', 'divino' ),
 			'priority' => 44,
 			'settings' => array(),
 			'context'  => divino_Builder_Helper::$general_tab,
@@ -627,7 +627,7 @@ function divino_header_header_builder_configuration( $configurations = array() )
 			'control'     => 'ast-header-type-button',
 			'input_attrs' => array(
 				'section' => 'section-transparent-header',
-				'label'   => esc_html__( 'Transparent Header', 'astra' ),
+				'label'   => esc_html__( 'Transparent Header', 'divino' ),
 			),
 			'priority'    => 45,
 			'context'     => divino_Builder_Helper::$general_tab,
@@ -642,10 +642,10 @@ function divino_header_header_builder_configuration( $configurations = array() )
 			'control'    => 'ast-selector',
 			'section'    => 'section-header-builder-layout',
 			'priority'   => 4,
-			'title'      => __( 'Width', 'astra' ),
+			'title'      => __( 'Width', 'divino' ),
 			'choices'    => array(
-				'full'    => __( 'Full Width', 'astra' ),
-				'content' => __( 'Content Width', 'astra' ),
+				'full'    => __( 'Full Width', 'divino' ),
+				'content' => __( 'Content Width', 'divino' ),
 			),
 			'context'    => array(
 				array(
@@ -672,20 +672,20 @@ function divino_header_header_builder_configuration( $configurations = array() )
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 			'section'           => 'section-header-builder-layout',
 			'priority'          => 220,
-			'title'             => __( 'Margin', 'astra' ),
+			'title'             => __( 'Margin', 'divino' ),
 			'linked_choices'    => true,
 			'unit_choices'      => array( 'px', 'em', '%' ),
 			'choices'           => array(
-				'top'    => __( 'Top', 'astra' ),
-				'right'  => __( 'Right', 'astra' ),
-				'bottom' => __( 'Bottom', 'astra' ),
-				'left'   => __( 'Left', 'astra' ),
+				'top'    => __( 'Top', 'divino' ),
+				'right'  => __( 'Right', 'divino' ),
+				'bottom' => __( 'Bottom', 'divino' ),
+				'left'   => __( 'Left', 'divino' ),
 			),
 			'context'           => divino_Builder_Helper::$design_tab,
 		),
 	);
 
-	// Learn More link if Astra Pro is not activated.
+	// Learn More link if divino Pro is not activated.
 	if ( divino_showcase_upgrade_notices() ) {
 		/**
 		 * Option: Pro options
@@ -697,29 +697,29 @@ function divino_header_header_builder_configuration( $configurations = array() )
 			'campaign' => 'header-builder',
 			'choices'  => array(
 				'one'   => array(
-					'title' => __( 'Sticky header', 'astra' ),
+					'title' => __( 'Sticky header', 'divino' ),
 				),
 				'two'   => array(
-					'title' => __( 'Divider element', 'astra' ),
+					'title' => __( 'Divider element', 'divino' ),
 				),
 				'three' => array(
-					'title' => __( 'Language Switcher', 'astra' ),
+					'title' => __( 'Language Switcher', 'divino' ),
 				),
 				'four'  => array(
-					'title' => __( 'Toggle Button element', 'astra' ),
+					'title' => __( 'Toggle Button element', 'divino' ),
 				),
 				'five'  => array(
-					'title' => __( 'Clone, Delete options', 'astra' ),
+					'title' => __( 'Clone, Delete options', 'divino' ),
 				),
 				'seven' => array(
-					'title' => __( 'More design options', 'astra' ),
+					'title' => __( 'More design options', 'divino' ),
 				),
 			),
 			'section'  => 'section-header-builder-layout',
 			'default'  => '',
 			'priority' => 999,
 			'context'  => array(),
-			'title'    => __( 'Make an instant connection with amazing site headers', 'astra' ),
+			'title'    => __( 'Make an instant connection with amazing site headers', 'divino' ),
 			'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),
 		);
 	}
@@ -737,7 +737,7 @@ function divino_header_header_builder_configuration( $configurations = array() )
 			'control'     => 'ast-header-type-button',
 			'input_attrs' => array(
 				'section' => 'section-sticky-header',
-				'label'   => esc_html__( 'Sticky Header', 'astra' ),
+				'label'   => esc_html__( 'Sticky Header', 'divino' ),
 			),
 			'priority'    => 45,
 			'context'     => divino_Builder_Helper::$general_tab,

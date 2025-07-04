@@ -1,10 +1,10 @@
 <?php
 /**
- * Related Posts Options for Astra Theme.
+ * Related Posts Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 3.5.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 3.5.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,10 +23,10 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 	/**
 	 * Register Related Posts Configurations.
 	 *
-	 * @param Array                $configurations Astra Customizer Configurations.
+	 * @param Array                $configurations divino Customizer Configurations.
 	 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 	 * @since 3.5.0
-	 * @return Array Astra Customizer Configurations with updated configurations.
+	 * @return Array divino Customizer Configurations with updated configurations.
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {
 		$related_structure_sub_controls = array();
@@ -38,42 +38,42 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 			'is_parent'   => true,
 			'main_index'  => 'featured-image',
 			'clone_limit' => 2,
-			'title'       => __( 'Featured Image', 'astra' ),
+			'title'       => __( 'Featured Image', 'divino' ),
 		);
 		$related_structure_sub_controls['title-meta']     = array(
 			'clone'       => false,
 			'is_parent'   => true,
 			'main_index'  => 'title-meta',
 			'clone_limit' => 2,
-			'title'       => __( 'Title & Post Meta', 'astra' ),
+			'title'       => __( 'Title & Post Meta', 'divino' ),
 		);
 		$meta_config_options['category']                  = array(
 			'clone'       => false,
 			'is_parent'   => true,
 			'main_index'  => 'category',
 			'clone_limit' => 1,
-			'title'       => __( 'Category', 'astra' ),
+			'title'       => __( 'Category', 'divino' ),
 		);
 		$meta_config_options['author']                    = array(
 			'clone'       => false,
 			'is_parent'   => true,
 			'main_index'  => 'author',
 			'clone_limit' => 1,
-			'title'       => __( 'Author', 'astra' ),
+			'title'       => __( 'Author', 'divino' ),
 		);
 		$meta_config_options['date']                      = array(
 			'clone'       => false,
 			'is_parent'   => true,
 			'main_index'  => 'date',
 			'clone_limit' => 1,
-			'title'       => __( 'Date', 'astra' ),
+			'title'       => __( 'Date', 'divino' ),
 		);
 		$meta_config_options['tag']                       = array(
 			'clone'       => false,
 			'is_parent'   => true,
 			'main_index'  => 'tag',
 			'clone_limit' => 1,
-			'title'       => __( 'Tag', 'astra' ),
+			'title'       => __( 'Tag', 'divino' ),
 		);
 
 		$_configs = array(
@@ -86,7 +86,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'section'  => 'section-blog-single',
 				'type'     => 'control',
 				'control'  => 'ast-heading',
-				'title'    => __( 'Related Posts', 'astra' ),
+				'title'    => __( 'Related Posts', 'divino' ),
 				'priority' => 10,
 				'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),
 			),
@@ -103,7 +103,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 
 			array(
 				'name'     => 'ast-sub-section-related-posts',
-				'title'    => __( 'Related Posts', 'astra' ),
+				'title'    => __( 'Related Posts', 'divino' ),
 				'type'     => 'section',
 				'section'  => $parent_section,
 				'panel'    => '',
@@ -118,7 +118,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'section'  => $parent_section,
 				'priority' => 10,
 				'linked'   => 'ast-sub-section-related-posts',
-				'linkText' => __( 'Related Posts', 'astra' ),
+				'linkText' => __( 'Related Posts', 'divino' ),
 				'divider'  => array( 'ast_class' => 'ast-bottom-divider ast-bottom-section-divider' ),
 			),
 
@@ -131,7 +131,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'type'      => 'control',
 				'section'   => 'ast-sub-section-related-posts',
 				'priority'  => 11,
-				'title'     => __( 'Title', 'astra' ),
+				'title'     => __( 'Title', 'divino' ),
 				'control'   => 'ast-text-input',
 				'divider'   => array( 'ast_class' => 'ast-section-spacing' ),
 				'transport' => 'postMessage',
@@ -158,7 +158,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'default'    => divino_get_option( 'releted-posts-title-alignment' ),
 				'section'    => 'ast-sub-section-related-posts',
 				'transport'  => 'postMessage',
-				'title'      => __( 'Title Alignment', 'astra' ),
+				'title'      => __( 'Title Alignment', 'divino' ),
 				'type'       => 'control',
 				'control'    => 'ast-selector',
 				'priority'   => 11,
@@ -204,7 +204,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 						'value'    => true,
 					),
 				),
-				'title'             => __( 'Posts Structure', 'astra' ),
+				'title'             => __( 'Posts Structure', 'divino' ),
 
 				'choices'           => $related_structure_sub_controls,
 				'divider'           => array( 'ast_class' => 'ast-top-divider' ),
@@ -222,13 +222,13 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'section'    => 'ast-sub-section-related-posts',
 				'priority'   => 10,
 				'control'    => 'ast-selector',
-				'title'      => __( 'Divider Type', 'astra' ),
+				'title'      => __( 'Divider Type', 'divino' ),
 				'choices'    => array(
 					'/'    => '/',
 					'-'    => '-',
 					'|'    => '|',
 					'•'    => '•',
-					'none' => __( 'None', 'astra' ),
+					'none' => __( 'None', 'divino' ),
 				),
 				'responsive' => false,
 				'renderAs'   => 'text',
@@ -255,10 +255,10 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				),
 				'section'           => 'ast-sub-section-related-posts',
 				'priority'          => 12,
-				'title'             => __( 'Meta', 'astra' ),
+				'title'             => __( 'Meta', 'divino' ),
 				'choices'           => array_merge(
 					array(
-						'comments' => __( 'Comments', 'astra' ),
+						'comments' => __( 'Comments', 'divino' ),
 					),
 					$meta_config_options
 				),
@@ -274,11 +274,11 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'linked'                 => 'featured-image',
 				'priority'               => 5,
 				'control'                => 'ast-selector',
-				'title'                  => __( 'Image Ratio', 'astra' ),
+				'title'                  => __( 'Image Ratio', 'divino' ),
 				'choices'                => array(
-					''           => __( 'Original', 'astra' ),
-					'predefined' => __( 'Predefined', 'astra' ),
-					'custom'     => __( 'Custom', 'astra' ),
+					''           => __( 'Original', 'divino' ),
+					'predefined' => __( 'Predefined', 'divino' ),
+					'custom'     => __( 'Custom', 'divino' ),
 				),
 				'responsive'             => false,
 				'renderAs'               => 'text',
@@ -302,10 +302,10 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'priority'   => 10,
 				'control'    => 'ast-selector',
 				'choices'    => array(
-					'1/1'  => __( '1:1', 'astra' ),
-					'4/3'  => __( '4:3', 'astra' ),
-					'16/9' => __( '16:9', 'astra' ),
-					'2/1'  => __( '2:1', 'astra' ),
+					'1/1'  => __( '1:1', 'divino' ),
+					'4/3'  => __( '4:3', 'divino' ),
+					'16/9' => __( '16:9', 'divino' ),
+					'2/1'  => __( '2:1', 'divino' ),
 				),
 				'responsive' => false,
 				'renderAs'   => 'text',
@@ -321,10 +321,10 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'linked'            => 'featured-image',
 				'priority'          => 11,
 				'qty_selector'      => true,
-				'title'             => __( 'Width', 'astra' ),
+				'title'             => __( 'Width', 'divino' ),
 				'input_attrs'       => array(
 					'style'       => 'text-align:center;',
-					'placeholder' => __( 'Auto', 'astra' ),
+					'placeholder' => __( 'Auto', 'divino' ),
 					'min'         => 1,
 					'max'         => 1000,
 				),
@@ -341,10 +341,10 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'linked'            => 'featured-image',
 				'priority'          => 12,
 				'qty_selector'      => true,
-				'title'             => __( 'Height', 'astra' ),
+				'title'             => __( 'Height', 'divino' ),
 				'input_attrs'       => array(
 					'style'       => 'text-align:center;',
-					'placeholder' => __( 'Auto', 'astra' ),
+					'placeholder' => __( 'Auto', 'divino' ),
 					'min'         => 1,
 					'max'         => 1000,
 				),
@@ -359,7 +359,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'section'  => 'ast-sub-section-related-posts',
 				'priority' => 14,
 				'label'    => '',
-				'help'     => sprintf( /* translators: 1: link open markup, 2: link close markup */ __( 'Calculate a personalized image ratio using this %1$s online tool %2$s for your image dimensions.', 'astra' ), '<a href="' . esc_url( 'https://www.digitalrebellion.com/webapps/aspectcalc' ) . '" target="_blank">', '</a>' ),
+				'help'     => sprintf( /* translators: 1: link open markup, 2: link close markup */ __( 'Calculate a personalized image ratio using this %1$s online tool %2$s for your image dimensions.', 'divino' ), '<a href="' . esc_url( 'https://www.digitalrebellion.com/webapps/aspectcalc' ) . '" target="_blank">', '</a>' ),
 			),
 			array(
 				'name'        => 'related-posts-image-size',
@@ -370,11 +370,11 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'type'        => 'sub-control',
 				'priority'    => 17,
 				'transport'   => 'postMessage',
-				'title'       => __( 'Image Size', 'astra' ),
+				'title'       => __( 'Image Size', 'divino' ),
 				'divider'     => array( 'ast_class' => 'ast-top-divider' ),
 				'control'     => 'ast-select',
 				'choices'     => divino_get_site_image_sizes(),
-				'description' => __( 'Note: Image Size & Ratio won\'t work if Image Position set as Background.', 'astra' ),
+				'description' => __( 'Note: Image Size & Ratio won\'t work if Image Position set as Background.', 'divino' ),
 			),
 			array(
 				'name'      => 'related-posts-author-prefix-label',
@@ -385,7 +385,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'control'   => 'ast-text-input',
 				'section'   => 'ast-sub-section-related-posts',
 				'divider'   => array( 'ast_class' => 'ast-bottom-divider ast-bottom-section-spacing' ),
-				'title'     => __( 'Prefix Label', 'astra' ),
+				'title'     => __( 'Prefix Label', 'divino' ),
 				'priority'  => 1,
 				'transport' => 'postMessage',
 			),
@@ -398,7 +398,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'control'   => 'ast-toggle',
 				'section'   => 'ast-sub-section-related-posts',
 				'priority'  => 5,
-				'title'     => __( 'Author Avatar', 'astra' ),
+				'title'     => __( 'Author Avatar', 'divino' ),
 				'transport' => 'postMessage',
 			),
 			array(
@@ -411,7 +411,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'transport'   => 'postMessage',
 				'section'     => 'ast-sub-section-related-posts',
 				'priority'    => 10,
-				'title'       => __( 'Image Size', 'astra' ),
+				'title'       => __( 'Image Size', 'divino' ),
 				'suffix'      => 'px',
 				'input_attrs' => array(
 					'min'  => 1,
@@ -429,10 +429,10 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'priority'   => 1,
 				'linked'     => 'date',
 				'transport'  => 'refresh',
-				'title'      => __( 'Type', 'astra' ),
+				'title'      => __( 'Type', 'divino' ),
 				'choices'    => array(
-					'published' => __( 'Published', 'astra' ),
-					'updated'   => __( 'Last Updated', 'astra' ),
+					'published' => __( 'Published', 'divino' ),
+					'updated'   => __( 'Last Updated', 'divino' ),
 				),
 				'divider'    => array( 'ast_class' => 'ast-bottom-divider ast-bottom-spacing' ),
 				'responsive' => false,
@@ -449,9 +449,9 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'priority'   => 2,
 				'responsive' => false,
 				'renderAs'   => 'text',
-				'title'      => __( 'Format', 'astra' ),
+				'title'      => __( 'Format', 'divino' ),
 				'choices'    => array(
-					''       => __( 'Default', 'astra' ),
+					''       => __( 'Default', 'divino' ),
 					'F j, Y' => 'November 6, 2010',
 					'Y-m-d'  => '2010-11-06',
 					'm/d/Y'  => '11/06/2010',
@@ -468,11 +468,11 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'priority'   => 2,
 				'linked'     => 'category',
 				'transport'  => 'refresh',
-				'title'      => __( 'Style', 'astra' ),
+				'title'      => __( 'Style', 'divino' ),
 				'choices'    => array(
-					'none'      => __( 'Default', 'astra' ),
-					'badge'     => __( 'Badge', 'astra' ),
-					'underline' => __( 'Underline', 'astra' ),
+					'none'      => __( 'Default', 'divino' ),
+					'badge'     => __( 'Badge', 'divino' ),
+					'underline' => __( 'Underline', 'divino' ),
 				),
 				'responsive' => false,
 				'renderAs'   => 'text',
@@ -487,11 +487,11 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'priority'   => 2,
 				'linked'     => 'tag',
 				'transport'  => 'refresh',
-				'title'      => __( 'Style', 'astra' ),
+				'title'      => __( 'Style', 'divino' ),
 				'choices'    => array(
-					'none'      => __( 'Default', 'astra' ),
-					'badge'     => __( 'Badge', 'astra' ),
-					'underline' => __( 'Underline', 'astra' ),
+					'none'      => __( 'Default', 'divino' ),
+					'badge'     => __( 'Badge', 'divino' ),
+					'underline' => __( 'Underline', 'divino' ),
 				),
 				'responsive' => false,
 				'renderAs'   => 'text',
@@ -505,7 +505,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'default'  => divino_get_option( 'enable-related-posts-excerpt' ),
 				'type'     => 'control',
 				'control'  => 'ast-toggle-control',
-				'title'    => __( 'Enable Post Excerpt', 'astra' ),
+				'title'    => __( 'Enable Post Excerpt', 'divino' ),
 				'section'  => 'ast-sub-section-related-posts',
 				'priority' => 12,
 				'context'  => array(
@@ -542,7 +542,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 					),
 				),
 				'section'     => 'ast-sub-section-related-posts',
-				'title'       => __( 'Excerpt Word Count', 'astra' ),
+				'title'       => __( 'Excerpt Word Count', 'divino' ),
 				'divider'     => array( 'ast_class' => 'ast-section-spacing' ),
 				'priority'    => 12,
 				'input_attrs' => array(
@@ -569,7 +569,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 					),
 				),
 				'section'     => 'ast-sub-section-related-posts',
-				'title'       => __( 'Total Number of Related Posts', 'astra' ),
+				'title'       => __( 'Total Number of Related Posts', 'divino' ),
 				'priority'    => 11,
 				'input_attrs' => array(
 					'min'  => 1,
@@ -597,12 +597,12 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 						'value'    => true,
 					),
 				),
-				'title'      => __( 'Grid Column Layout', 'astra' ),
+				'title'      => __( 'Grid Column Layout', 'divino' ),
 				'choices'    => array(
-					'full'    => __( '1', 'astra' ),
-					'2-equal' => __( '2', 'astra' ),
-					'3-equal' => __( '3', 'astra' ),
-					'4-equal' => __( '4', 'astra' ),
+					'full'    => __( '1', 'divino' ),
+					'2-equal' => __( '2', 'divino' ),
+					'3-equal' => __( '3', 'divino' ),
+					'4-equal' => __( '4', 'divino' ),
 				),
 				'responsive' => true,
 				'renderAs'   => 'text',
@@ -626,7 +626,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 						'value'    => true,
 					),
 				),
-				'title'     => __( 'Posts Query', 'astra' ),
+				'title'     => __( 'Posts Query', 'divino' ),
 				'section'   => 'ast-sub-section-related-posts',
 				'priority'  => 11,
 			),
@@ -644,10 +644,10 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'priority'   => 1,
 				'control'    => 'ast-selector',
 				'divider'    => array( 'ast_class' => 'ast-sub-bottom-divider' ),
-				'title'      => __( 'Related Posts by', 'astra' ),
+				'title'      => __( 'Related Posts by', 'divino' ),
 				'choices'    => array(
-					'categories' => __( 'Categories', 'astra' ),
-					'tags'       => __( 'Tags', 'astra' ),
+					'categories' => __( 'Categories', 'divino' ),
+					'tags'       => __( 'Tags', 'divino' ),
 				),
 				'responsive' => false,
 				'renderAs'   => 'text',
@@ -665,14 +665,14 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'divider'   => array( 'ast_class' => 'ast-sub-bottom-divider' ),
 				'priority'  => 2,
 				'transport' => 'postMessage',
-				'title'     => __( 'Order by', 'astra' ),
+				'title'     => __( 'Order by', 'divino' ),
 				'control'   => 'ast-select',
 				'choices'   => array(
-					'date'          => __( 'Date', 'astra' ),
-					'title'         => __( 'Title', 'astra' ),
-					'menu_order'    => __( 'Post Order', 'astra' ),
-					'rand'          => __( 'Random', 'astra' ),
-					'comment_count' => __( 'Comment Counts', 'astra' ),
+					'date'          => __( 'Date', 'divino' ),
+					'title'         => __( 'Title', 'divino' ),
+					'menu_order'    => __( 'Post Order', 'divino' ),
+					'rand'          => __( 'Random', 'divino' ),
+					'comment_count' => __( 'Comment Counts', 'divino' ),
 				),
 			),
 
@@ -685,13 +685,13 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'section'    => 'ast-sub-section-related-posts',
 				'type'       => 'sub-control',
 				'transport'  => 'postMessage',
-				'title'      => __( 'Order', 'astra' ),
+				'title'      => __( 'Order', 'divino' ),
 				'default'    => divino_get_option( 'related-posts-order' ),
 				'control'    => 'ast-selector',
 				'priority'   => 3,
 				'choices'    => array(
-					'asc'  => __( 'Ascending', 'astra' ),
-					'desc' => __( 'Descending', 'astra' ),
+					'asc'  => __( 'Ascending', 'divino' ),
+					'desc' => __( 'Descending', 'divino' ),
 				),
 				'responsive' => false,
 				'renderAs'   => 'text',
@@ -703,14 +703,14 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'type'        => 'control',
 				'section'     => 'ast-sub-section-related-posts',
 				'priority'    => 12,
-				'title'       => __( 'Section Placement', 'astra' ),
+				'title'       => __( 'Section Placement', 'divino' ),
 				'control'     => 'ast-selector',
-				'description' => __( 'Decide whether to isolate or integrate the module with the entry content area.', 'astra' ),
+				'description' => __( 'Decide whether to isolate or integrate the module with the entry content area.', 'divino' ),
 				'divider'     => array( 'ast_class' => 'ast-top-divider' ),
 				'choices'     => array(
-					'default' => __( 'Default', 'astra' ),
-					'inside'  => __( 'Contained', 'astra' ),
-					'outside' => __( 'Separated', 'astra' ),
+					'default' => __( 'Default', 'divino' ),
+					'inside'  => __( 'Contained', 'divino' ),
+					'outside' => __( 'Separated', 'divino' ),
 				),
 				'context'     => array(
 					divino_Builder_Helper::$general_tab_config,
@@ -729,13 +729,13 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'type'        => 'control',
 				'section'     => 'ast-sub-section-related-posts',
 				'priority'    => 12,
-				'title'       => __( 'Location', 'astra' ),
+				'title'       => __( 'Location', 'divino' ),
 				'control'     => 'ast-selector',
 				'choices'     => array(
-					'below' => __( 'Below Comments', 'astra' ),
-					'above' => __( 'Above Comments', 'astra' ),
+					'below' => __( 'Below Comments', 'divino' ),
+					'above' => __( 'Above Comments', 'divino' ),
 				),
-				'description' => __( 'To sync this option with comments, use the same positioning for both sections: Contained or Separated.', 'astra' ),
+				'description' => __( 'To sync this option with comments, use the same positioning for both sections: Contained or Separated.', 'divino' ),
 				'divider'     => array( 'ast_class' => 'ast-top-section-spacing' ),
 				'context'     => array(
 					divino_Builder_Helper::$general_tab_config,
@@ -760,11 +760,11 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'type'       => 'control',
 				'section'    => 'ast-sub-section-related-posts',
 				'priority'   => 12,
-				'title'      => __( 'Container Structure', 'astra' ),
+				'title'      => __( 'Container Structure', 'divino' ),
 				'control'    => 'ast-selector',
 				'choices'    => array(
-					'narrow' => __( 'Narrow', 'astra' ),
-					''       => __( 'Full Width', 'astra' ),
+					'narrow' => __( 'Narrow', 'divino' ),
+					''       => __( 'Full Width', 'divino' ),
 				),
 				'divider'    => array( 'ast_class' => 'ast-top-section-spacing' ),
 				'context'    => array(
@@ -808,7 +808,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 						'value'    => 'title-meta',
 					),
 				),
-				'title'     => __( 'Content Colors', 'astra' ),
+				'title'     => __( 'Content Colors', 'divino' ),
 				'section'   => 'ast-sub-section-related-posts',
 				'priority'  => 15,
 				'divider'   => array( 'ast_class' => 'ast-bottom-divider' ),
@@ -837,7 +837,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 						'value'    => '',
 					),
 				),
-				'title'     => __( 'Section Title Font', 'astra' ),
+				'title'     => __( 'Section Title Font', 'divino' ),
 				'section'   => 'ast-sub-section-related-posts',
 				'transport' => 'postMessage',
 			),
@@ -864,7 +864,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 						'value'    => 'title-meta',
 					),
 				),
-				'title'     => __( 'Post Title Font', 'astra' ),
+				'title'     => __( 'Post Title Font', 'divino' ),
 				'is_font'   => true,
 				'section'   => 'ast-sub-section-related-posts',
 				'transport' => 'postMessage',
@@ -892,7 +892,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 						'value'    => 'title-meta',
 					),
 				),
-				'title'     => __( 'Meta Font', 'astra' ),
+				'title'     => __( 'Meta Font', 'divino' ),
 				'is_font'   => true,
 				'section'   => 'ast-sub-section-related-posts',
 				'transport' => 'postMessage',
@@ -921,7 +921,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 						'value'    => true,
 					),
 				),
-				'title'     => __( 'Content Font', 'astra' ),
+				'title'     => __( 'Content Font', 'divino' ),
 				'section'   => 'ast-sub-section-related-posts',
 				'transport' => 'postMessage',
 			),
@@ -931,14 +931,14 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 			 */
 			array(
 				'name'      => 'related-posts-text-color',
-				'tab'       => __( 'Normal', 'astra' ),
+				'tab'       => __( 'Normal', 'divino' ),
 				'type'      => 'sub-control',
 				'parent'    => divino_THEME_SETTINGS . '[related-posts-colors-group]',
 				'section'   => 'ast-sub-section-related-posts',
 				'default'   => divino_get_option( 'related-posts-text-color' ),
 				'transport' => 'postMessage',
 				'control'   => 'ast-color',
-				'title'     => __( 'Text Color', 'astra' ),
+				'title'     => __( 'Text Color', 'divino' ),
 			),
 
 			/**
@@ -946,14 +946,14 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 			 */
 			array(
 				'name'      => 'related-posts-link-color',
-				'tab'       => __( 'Normal', 'astra' ),
+				'tab'       => __( 'Normal', 'divino' ),
 				'type'      => 'sub-control',
 				'parent'    => divino_THEME_SETTINGS . '[related-posts-colors-group]',
 				'section'   => 'ast-sub-section-related-posts',
 				'default'   => divino_get_option( 'related-posts-link-color' ),
 				'transport' => 'postMessage',
 				'control'   => 'ast-color',
-				'title'     => __( 'Link Color', 'astra' ),
+				'title'     => __( 'Link Color', 'divino' ),
 			),
 
 			/**
@@ -982,7 +982,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 						'value'    => '',
 					),
 				),
-				'title'             => __( 'Section Title', 'astra' ),
+				'title'             => __( 'Section Title', 'divino' ),
 				'divider'           => array( 'ast_class' => 'ast-top-section-spacing' ),
 			),
 
@@ -1006,7 +1006,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 						'value'    => true,
 					),
 				),
-				'title'             => __( 'Section Background', 'astra' ),
+				'title'             => __( 'Section Background', 'divino' ),
 				'divider'           => array( 'ast_class' => 'ast-bottom-divider' ),
 			),
 
@@ -1016,13 +1016,13 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 			array(
 				'name'      => 'related-posts-meta-color',
 				'default'   => divino_get_option( 'related-posts-meta-color' ),
-				'tab'       => __( 'Normal', 'astra' ),
+				'tab'       => __( 'Normal', 'divino' ),
 				'type'      => 'sub-control',
 				'parent'    => divino_THEME_SETTINGS . '[related-posts-colors-group]',
 				'section'   => 'ast-sub-section-related-posts',
 				'transport' => 'postMessage',
 				'control'   => 'ast-color',
-				'title'     => __( 'Meta Color', 'astra' ),
+				'title'     => __( 'Meta Color', 'divino' ),
 			),
 
 			/**
@@ -1031,13 +1031,13 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 			array(
 				'name'      => 'related-posts-link-hover-color',
 				'type'      => 'sub-control',
-				'tab'       => __( 'Hover', 'astra' ),
+				'tab'       => __( 'Hover', 'divino' ),
 				'parent'    => divino_THEME_SETTINGS . '[related-posts-colors-group]',
 				'section'   => 'ast-sub-section-related-posts',
 				'control'   => 'ast-color',
 				'default'   => divino_get_option( 'related-posts-link-hover-color' ),
 				'transport' => 'postMessage',
-				'title'     => __( 'Link Color', 'astra' ),
+				'title'     => __( 'Link Color', 'divino' ),
 			),
 
 			/**
@@ -1046,13 +1046,13 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 			array(
 				'name'      => 'related-posts-meta-link-hover-color',
 				'type'      => 'sub-control',
-				'tab'       => __( 'Hover', 'astra' ),
+				'tab'       => __( 'Hover', 'divino' ),
 				'parent'    => divino_THEME_SETTINGS . '[related-posts-colors-group]',
 				'section'   => 'ast-sub-section-related-posts',
 				'control'   => 'ast-color',
 				'default'   => divino_get_option( 'related-posts-meta-link-hover-color' ),
 				'transport' => 'postMessage',
-				'title'     => __( 'Meta Link Color', 'astra' ),
+				'title'     => __( 'Meta Link Color', 'divino' ),
 			),
 
 			/**
@@ -1066,7 +1066,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'control'   => 'ast-font',
 				'font_type' => 'ast-font-family',
 				'default'   => divino_get_option( 'related-posts-title-font-family' ),
-				'title'     => __( 'Font Family', 'astra' ),
+				'title'     => __( 'Font Family', 'divino' ),
 				'connect'   => divino_THEME_SETTINGS . '[related-posts-title-font-weight]',
 				'divider'   => array( 'ast_class' => 'ast-sub-bottom-divider' ),
 			),
@@ -1083,7 +1083,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'font_type'         => 'ast-font-weight',
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
 				'default'           => divino_get_option( 'related-posts-title-font-weight' ),
-				'title'             => __( 'Font Weight', 'astra' ),
+				'title'             => __( 'Font Weight', 'divino' ),
 				'connect'           => 'related-posts-title-font-family',
 				'divider'           => array( 'ast_class' => 'ast-sub-bottom-divider' ),
 			),
@@ -1100,7 +1100,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'control'           => 'ast-responsive-slider',
 				'default'           => divino_get_option( 'related-posts-title-font-size' ),
 				'transport'         => 'postMessage',
-				'title'             => __( 'Font Size', 'astra' ),
+				'title'             => __( 'Font Size', 'divino' ),
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
 				'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
 				'input_attrs'       => array(
@@ -1137,7 +1137,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'control' => 'ast-font-extras',
 				'section' => 'ast-sub-section-related-posts',
 				'default' => divino_get_option( 'related-posts-title-font-extras' ),
-				'title'   => __( 'Font Extras', 'astra' ),
+				'title'   => __( 'Font Extras', 'divino' ),
 			),
 
 			/**
@@ -1151,7 +1151,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'control'   => 'ast-font',
 				'font_type' => 'ast-font-family',
 				'default'   => divino_get_option( 'related-posts-section-title-font-family' ),
-				'title'     => __( 'Font Family', 'astra' ),
+				'title'     => __( 'Font Family', 'divino' ),
 				'connect'   => divino_THEME_SETTINGS . '[related-posts-section-title-font-weight]',
 				'divider'   => array( 'ast_class' => 'ast-sub-bottom-divider' ),
 			),
@@ -1168,7 +1168,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'font_type'         => 'ast-font-weight',
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
 				'default'           => divino_get_option( 'related-posts-section-title-font-weight' ),
-				'title'             => __( 'Font Weight', 'astra' ),
+				'title'             => __( 'Font Weight', 'divino' ),
 				'connect'           => 'related-posts-section-title-font-family',
 				'divider'           => array( 'ast_class' => 'ast-sub-bottom-divider' ),
 			),
@@ -1185,7 +1185,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'control'           => 'ast-responsive-slider',
 				'default'           => divino_get_option( 'related-posts-section-title-font-size' ),
 				'transport'         => 'postMessage',
-				'title'             => __( 'Font Size', 'astra' ),
+				'title'             => __( 'Font Size', 'divino' ),
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
 				'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
 				'input_attrs'       => array(
@@ -1222,7 +1222,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'control' => 'ast-font-extras',
 				'section' => 'ast-sub-section-related-posts',
 				'default' => divino_get_option( 'related-posts-section-title-font-extras' ),
-				'title'   => __( 'Font Extras', 'astra' ),
+				'title'   => __( 'Font Extras', 'divino' ),
 			),
 
 			/**
@@ -1236,7 +1236,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'control'   => 'ast-font',
 				'font_type' => 'ast-font-family',
 				'default'   => divino_get_option( 'related-posts-meta-font-family' ),
-				'title'     => __( 'Font Family', 'astra' ),
+				'title'     => __( 'Font Family', 'divino' ),
 				'connect'   => divino_THEME_SETTINGS . '[related-posts-meta-font-weight]',
 				'divider'   => array( 'ast_class' => 'ast-sub-bottom-divider' ),
 			),
@@ -1253,7 +1253,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'font_type'         => 'ast-font-weight',
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
 				'default'           => divino_get_option( 'related-posts-meta-font-weight' ),
-				'title'             => __( 'Font Weight', 'astra' ),
+				'title'             => __( 'Font Weight', 'divino' ),
 				'connect'           => 'related-posts-meta-font-family',
 				'divider'           => array( 'ast_class' => 'ast-sub-bottom-divider' ),
 			),
@@ -1270,7 +1270,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'control'           => 'ast-responsive-slider',
 				'default'           => divino_get_option( 'related-posts-meta-font-size' ),
 				'transport'         => 'postMessage',
-				'title'             => __( 'Font Size', 'astra' ),
+				'title'             => __( 'Font Size', 'divino' ),
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
 				'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
 				'input_attrs'       => array(
@@ -1307,7 +1307,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'control' => 'ast-font-extras',
 				'section' => 'ast-sub-section-related-posts',
 				'default' => divino_get_option( 'related-posts-meta-font-extras' ),
-				'title'   => __( 'Font Extras', 'astra' ),
+				'title'   => __( 'Font Extras', 'divino' ),
 			),
 
 			/**
@@ -1321,7 +1321,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'control'   => 'ast-font',
 				'font_type' => 'ast-font-family',
 				'default'   => divino_get_option( 'related-posts-content-font-family' ),
-				'title'     => __( 'Font Family', 'astra' ),
+				'title'     => __( 'Font Family', 'divino' ),
 				'connect'   => divino_THEME_SETTINGS . '[related-posts-content-font-weight]',
 				'divider'   => array( 'ast_class' => 'ast-sub-bottom-divider' ),
 			),
@@ -1338,7 +1338,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'font_type'         => 'ast-font-weight',
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
 				'default'           => divino_get_option( 'related-posts-content-font-weight' ),
-				'title'             => __( 'Font Weight', 'astra' ),
+				'title'             => __( 'Font Weight', 'divino' ),
 				'connect'           => 'related-posts-content-font-family',
 				'divider'           => array( 'ast_class' => 'ast-sub-bottom-divider' ),
 			),
@@ -1354,7 +1354,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'control'           => 'ast-responsive-slider',
 				'default'           => divino_get_option( 'related-posts-content-font-size' ),
 				'transport'         => 'postMessage',
-				'title'             => __( 'Font Size', 'astra' ),
+				'title'             => __( 'Font Size', 'divino' ),
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
 				'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
 				'input_attrs'       => array(
@@ -1394,7 +1394,7 @@ class divino_Related_Posts_Configs extends divino_Customizer_Config_Base {
 				'control' => 'ast-font-extras',
 				'section' => 'ast-sub-section-related-posts',
 				'default' => divino_get_option( 'related-posts-content-font-extras' ),
-				'title'   => __( 'Font Extras', 'astra' ),
+				'title'   => __( 'Font Extras', 'divino' ),
 			),
 		);
 

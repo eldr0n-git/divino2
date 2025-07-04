@@ -2,7 +2,7 @@
 /**
  * Live Search - Dynamic CSS
  *
- * @package astra
+ * @package divino
  * @since 4.4.0
  */
 

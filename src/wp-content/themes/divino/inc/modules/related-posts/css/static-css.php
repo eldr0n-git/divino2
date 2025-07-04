@@ -2,7 +2,7 @@
 /**
  * Related Posts - Static CSS
  *
- * @package astra
+ * @package divino
  *
  * @since 3.5.0
  */
@@ -16,7 +16,7 @@ add_filter( 'divino_dynamic_theme_css', 'divino_related_posts_static_css', 11 );
 /**
  * Related Posts - Static CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
+ * @param  string $dynamic_css          divino Dynamic CSS.
  * @return String Generated dynamic CSS for Related Posts.
  *
  * @since 3.5.0

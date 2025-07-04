@@ -2,8 +2,8 @@
 /**
  * Mobile Trigger Header Configuration.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       4.5.2
  */
 
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register Header Trigger header builder Customizer Configurations.
  *
  * @since 4.5.2
- * @return array Astra Customizer Configurations with updated configurations.
+ * @return array divino Customizer Configurations with updated configurations.
  */
 function divino_header_mobile_trigger_configuration() {
 	$_section = 'section-header-mobile-trigger';
@@ -29,7 +29,7 @@ function divino_header_mobile_trigger_configuration() {
 			'name'     => 'section-header-mobile-trigger',
 			'type'     => 'section',
 			'priority' => 70,
-			'title'    => __( 'Toggle Button', 'astra' ),
+			'title'    => __( 'Toggle Button', 'divino' ),
 			'panel'    => 'panel-header-builder-group',
 		),
 
@@ -55,19 +55,19 @@ function divino_header_mobile_trigger_configuration() {
 			'control'           => 'ast-radio-image',
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_choices' ),
 			'default'           => divino_get_option( 'header-trigger-icon' ),
-			'title'             => __( 'Icons', 'astra' ),
+			'title'             => __( 'Icons', 'divino' ),
 			'section'           => $_section,
 			'choices'           => array(
 				'menu'  => array(
-					'label' => __( 'Menu', 'astra' ),
+					'label' => __( 'Menu', 'divino' ),
 					'path'  => divino_Builder_UI_Controller::fetch_svg_icon( 'mobile_menu' ),
 				),
 				'menu2' => array(
-					'label' => __( 'Menu 2', 'astra' ),
+					'label' => __( 'Menu 2', 'divino' ),
 					'path'  => divino_Builder_UI_Controller::fetch_svg_icon( 'mobile_menu2' ),
 				),
 				'menu3' => array(
-					'label' => __( 'Menu 3', 'astra' ),
+					'label' => __( 'Menu 3', 'divino' ),
 					'path'  => divino_Builder_UI_Controller::fetch_svg_icon( 'mobile_menu3' ),
 				),
 			),
@@ -89,14 +89,14 @@ function divino_header_mobile_trigger_configuration() {
 			'name'       => divino_THEME_SETTINGS . '[mobile-header-toggle-btn-style]',
 			'default'    => divino_get_option( 'mobile-header-toggle-btn-style' ),
 			'section'    => $_section,
-			'title'      => __( 'Toggle Button Style', 'astra' ),
+			'title'      => __( 'Toggle Button Style', 'divino' ),
 			'type'       => 'control',
 			'control'    => 'ast-selector',
 			'priority'   => 11,
 			'choices'    => array(
-				'fill'    => __( 'Fill', 'astra' ),
-				'outline' => __( 'Outline', 'astra' ),
-				'minimal' => __( 'Minimal', 'astra' ),
+				'fill'    => __( 'Fill', 'divino' ),
+				'outline' => __( 'Outline', 'divino' ),
+				'minimal' => __( 'Minimal', 'divino' ),
 			),
 			'context'    => divino_Builder_Helper::$general_tab,
 			'transport'  => 'postMessage',
@@ -122,7 +122,7 @@ function divino_header_mobile_trigger_configuration() {
 			'default'   => divino_get_option( 'mobile-header-menu-label' ),
 			'section'   => $_section,
 			'priority'  => 20,
-			'title'     => __( 'Menu Label', 'astra' ),
+			'title'     => __( 'Menu Label', 'divino' ),
 			'type'      => 'control',
 			'control'   => 'text',
 			'context'   => divino_Builder_Helper::$general_tab,
@@ -138,7 +138,7 @@ function divino_header_mobile_trigger_configuration() {
 			'type'              => 'control',
 			'control'           => 'ast-color',
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
-			'title'             => __( 'Icon Color', 'astra' ),
+			'title'             => __( 'Icon Color', 'divino' ),
 			'section'           => $_section,
 			'transport'         => 'postMessage',
 			'priority'          => 40,
@@ -156,7 +156,7 @@ function divino_header_mobile_trigger_configuration() {
 			'type'        => 'control',
 			'control'     => 'ast-slider',
 			'section'     => $_section,
-			'title'       => __( 'Icon Size', 'astra' ),
+			'title'       => __( 'Icon Size', 'divino' ),
 			'priority'    => 50,
 			'suffix'      => 'px',
 			'transport'   => 'postMessage',
@@ -178,7 +178,7 @@ function divino_header_mobile_trigger_configuration() {
 			'type'              => 'control',
 			'control'           => 'ast-color',
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
-			'title'             => __( 'Background Color', 'astra' ),
+			'title'             => __( 'Background Color', 'divino' ),
 			'section'           => $_section,
 			'transport'         => 'postMessage',
 			'priority'          => 40,
@@ -204,12 +204,12 @@ function divino_header_mobile_trigger_configuration() {
 			'transport'      => 'postMessage',
 			'linked_choices' => true,
 			'priority'       => 60,
-			'title'          => __( 'Border Width', 'astra' ),
+			'title'          => __( 'Border Width', 'divino' ),
 			'choices'        => array(
-				'top'    => __( 'Top', 'astra' ),
-				'right'  => __( 'Right', 'astra' ),
-				'bottom' => __( 'Bottom', 'astra' ),
-				'left'   => __( 'Left', 'astra' ),
+				'top'    => __( 'Top', 'divino' ),
+				'right'  => __( 'Right', 'divino' ),
+				'bottom' => __( 'Bottom', 'divino' ),
+				'left'   => __( 'Left', 'divino' ),
 			),
 			'context'        => array(
 				divino_Builder_Helper::$design_tab_config,
@@ -231,7 +231,7 @@ function divino_header_mobile_trigger_configuration() {
 			'type'              => 'control',
 			'control'           => 'ast-color',
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
-			'title'             => __( 'Border Color', 'astra' ),
+			'title'             => __( 'Border Color', 'divino' ),
 			'section'           => $_section,
 			'transport'         => 'postMessage',
 			'priority'          => 40,
@@ -255,15 +255,15 @@ function divino_header_mobile_trigger_configuration() {
 			'control'           => 'ast-responsive-spacing',
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 			'section'           => $_section,
-			'title'             => __( 'Border Radius', 'astra' ),
+			'title'             => __( 'Border Radius', 'divino' ),
 			'linked_choices'    => true,
 			'transport'         => 'postMessage',
 			'unit_choices'      => array( 'px', 'em', '%' ),
 			'choices'           => array(
-				'top'    => __( 'Top', 'astra' ),
-				'right'  => __( 'Right', 'astra' ),
-				'bottom' => __( 'Bottom', 'astra' ),
-				'left'   => __( 'Left', 'astra' ),
+				'top'    => __( 'Top', 'divino' ),
+				'right'  => __( 'Right', 'divino' ),
+				'bottom' => __( 'Bottom', 'divino' ),
+				'left'   => __( 'Left', 'divino' ),
 			),
 			'priority'          => 50,
 			'connected'         => false,
@@ -284,7 +284,7 @@ function divino_header_mobile_trigger_configuration() {
 		array(
 			'name'     => divino_THEME_SETTINGS . '[' . $_section . '-margin-divider]',
 			'section'  => $_section,
-			'title'    => __( 'Spacing', 'astra' ),
+			'title'    => __( 'Spacing', 'divino' ),
 			'type'     => 'control',
 			'control'  => 'ast-heading',
 			'priority' => 130,
@@ -305,14 +305,14 @@ function divino_header_mobile_trigger_configuration() {
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 			'section'           => $_section,
 			'priority'          => 130,
-			'title'             => __( 'Margin', 'astra' ),
+			'title'             => __( 'Margin', 'divino' ),
 			'linked_choices'    => true,
 			'unit_choices'      => array( 'px', 'em', '%' ),
 			'choices'           => array(
-				'top'    => __( 'Top', 'astra' ),
-				'right'  => __( 'Right', 'astra' ),
-				'bottom' => __( 'Bottom', 'astra' ),
-				'left'   => __( 'Left', 'astra' ),
+				'top'    => __( 'Top', 'divino' ),
+				'right'  => __( 'Right', 'divino' ),
+				'bottom' => __( 'Bottom', 'divino' ),
+				'left'   => __( 'Left', 'divino' ),
 			),
 			'divider'           => array( 'ast_class' => 'ast-section-spacing' ),
 			'context'           => divino_Builder_Helper::$design_tab,
@@ -332,7 +332,7 @@ function divino_header_mobile_trigger_configuration() {
 				'type'      => 'control',
 				'control'   => 'ast-settings-group',
 				'is_font'   => true,
-				'title'     => __( 'Typography', 'astra' ),
+				'title'     => __( 'Typography', 'divino' ),
 				'section'   => $_section,
 				'transport' => 'postMessage',
 				'priority'  => 70,
@@ -355,7 +355,7 @@ function divino_header_mobile_trigger_configuration() {
 				'type'        => 'sub-control',
 				'priority'    => 23,
 				'suffix'      => 'px',
-				'title'       => __( 'Font Size', 'astra' ),
+				'title'       => __( 'Font Size', 'divino' ),
 				'control'     => 'ast-slider',
 				'transport'   => 'postMessage',
 				'input_attrs' => array(
@@ -384,7 +384,7 @@ function divino_header_mobile_trigger_configuration() {
 				'type'        => 'control',
 				'priority'    => 70,
 				'suffix'      => 'px',
-				'title'       => __( 'Font Size', 'astra' ),
+				'title'       => __( 'Font Size', 'divino' ),
 				'control'     => 'ast-slider',
 				'transport'   => 'postMessage',
 				'input_attrs' => array(

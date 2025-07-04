@@ -1,3 +1,4 @@
+<!-- template-single-left-aligned-content.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Post with left-aligned content

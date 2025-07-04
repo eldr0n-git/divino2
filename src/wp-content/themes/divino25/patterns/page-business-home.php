@@ -1,3 +1,4 @@
+<!-- page-business-home.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Business homepage

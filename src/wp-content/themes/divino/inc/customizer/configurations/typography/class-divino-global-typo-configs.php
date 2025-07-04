@@ -1,10 +1,10 @@
 <?php
 /**
- * Styling Options for Astra Theme.
+ * Styling Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 3.7.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 3.7.0
  */
 
 /** @psalm-suppress ParadoxicalCondition */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
@@ -19,10 +19,10 @@ class divino_Global_Typo_Configs extends divino_Customizer_Config_Base {
 	/**
 	 * Register Body Typography Customizer Configurations.
 	 *
-	 * @param Array                $configurations Astra Customizer Configurations.
+	 * @param Array                $configurations divino Customizer Configurations.
 	 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 	 * @since 1.4.3
-	 * @return Array Astra Customizer Configurations with updated configurations.
+	 * @return Array divino Customizer Configurations with updated configurations.
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {
 
@@ -32,7 +32,7 @@ class divino_Global_Typo_Configs extends divino_Customizer_Config_Base {
 			 * Option: Font Family
 			 */
 			array(
-				'name'      => 'astra-typography-presets',
+				'name'      => 'divino-typography-presets',
 				'type'      => 'control',
 				'control'   => 'ast-typography-presets',
 				'default'   => divino_get_typography_presets(),
@@ -473,7 +473,7 @@ class divino_Global_Typo_Configs extends divino_Customizer_Config_Base {
 				'section'   => divino_has_gcp_typo_preset_compatibility() ? 'section-typography' : 'section-body-typo',
 				'transport' => 'postMessage',
 				'priority'  => 5,
-				'title'     => __( 'Presets', 'astra' ),
+				'title'     => __( 'Presets', 'divino' ),
 				'divider'   => array( 'ast_class' => 'ast-section-spacing ast-bottom-section-divider' ),
 			),
 

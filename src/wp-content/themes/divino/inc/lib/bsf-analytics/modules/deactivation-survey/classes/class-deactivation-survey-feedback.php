@@ -77,10 +77,10 @@ if ( ! class_exists( 'Deactivation_Survey_Feedback' ) ) {
 				'popup_logo'        => '',
 				'plugin_slug'       => 'user-deactivation-survey',
 				'plugin_version'    => '',
-				'popup_title'       => __( 'Quick Feedback', 'astra' ),
+				'popup_title'       => __( 'Quick Feedback', 'divino' ),
 				'support_url'       => 'https://brainstormforce.com/contact/',
 				'popup_reasons'     => self::get_default_reasons(),
-				'popup_description' => __( 'If you have a moment, please share why you are deactivating the plugin.', 'astra' ),
+				'popup_description' => __( 'If you have a moment, please share why you are deactivating the plugin.', 'divino' ),
 				'show_on_screens'   => array( 'plugins' ),
 			);
 
@@ -109,7 +109,7 @@ if ( ! class_exists( 'Deactivation_Survey_Feedback' ) ) {
 					<div class="uds-form-header--wrapper">
 						<div class="uds-form-title--icon-wrapper">
 							<?php if ( ! empty( $args['popup_logo'] ) ) { ?>
-								<img class="uds-icon" src="<?php echo esc_url( $args['popup_logo'] ); ?>" title="<?php echo esc_attr( $args['plugin_slug'] ); ?> <?php echo esc_attr( __( 'Icon', 'astra' ) ); ?>" />							<?php } ?>
+								<img class="uds-icon" src="<?php echo esc_url( $args['popup_logo'] ); ?>" title="<?php echo esc_attr( $args['plugin_slug'] ); ?> <?php echo esc_attr( __( 'Icon', 'divino' ) ); ?>" />							<?php } ?>
 							<h2 class="uds-title"><?php echo esc_html( $args['popup_title'] ); ?></h2>
 						</div>
 						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="uds-close">
@@ -135,7 +135,7 @@ if ( ! class_exists( 'Deactivation_Survey_Feedback' ) ) {
 							<?php } ?>
 
 							<fieldset>
-							<textarea class="uds-options-feedback hide" id="uds-options-feedback" rows="3" name="uds_options_feedback" placeholder="<?php echo esc_attr( __( 'Please tell us more details.', 'astra' ) ); ?>"></textarea>								<?php
+							<textarea class="uds-options-feedback hide" id="uds-options-feedback" rows="3" name="uds_options_feedback" placeholder="<?php echo esc_attr( __( 'Please tell us more details.', 'divino' ) ); ?>"></textarea>								<?php
 								if ( ! empty( $args['support_url'] ) ) {
 									?>
 										<p class="uds-option-feedback-cta hide">
@@ -143,7 +143,7 @@ if ( ! class_exists( 'Deactivation_Survey_Feedback' ) ) {
 											echo wp_kses_post(
 												sprintf(
 												/* translators: %1$s: link html start, %2$s: link html end*/
-												__( 'Need help from our experts? %1$sClick here to contact us.%2$s', 'astra' ),													'<a href="' . esc_url( $args['support_url'] ) . '" target="_blank">',
+												__( 'Need help from our experts? %1$sClick here to contact us.%2$s', 'divino' ),													'<a href="' . esc_url( $args['support_url'] ) . '" target="_blank">',
 													'</a>'
 												)
 											);
@@ -153,8 +153,8 @@ if ( ! class_exists( 'Deactivation_Survey_Feedback' ) ) {
 							</fieldset>
 
 							<div class="uds-feedback-form-sumbit--actions">
-							<button class="button button-primary uds-feedback-submit" data-action="submit"><?php esc_html_e( 'Submit & Deactivate', 'astra' ); ?></button>								
-							<button class="button button-secondary uds-feedback-skip" data-action="skip"><?php esc_html_e( 'Skip & Deactivate', 'astra' ); ?></button>								<input type="hidden" name="referer" value="<?php echo esc_url( get_site_url() ); ?>">
+							<button class="button button-primary uds-feedback-submit" data-action="submit"><?php esc_html_e( 'Submit & Deactivate', 'divino' ); ?></button>								
+							<button class="button button-secondary uds-feedback-skip" data-action="skip"><?php esc_html_e( 'Skip & Deactivate', 'divino' ); ?></button>								<input type="hidden" name="referer" value="<?php echo esc_url( get_site_url() ); ?>">
 								<input type="hidden" name="version" value="<?php echo esc_attr( $args['plugin_version'] ); ?>">
 								<input type="hidden" name="source" value="<?php echo esc_attr( $args['plugin_slug'] ); ?>">
 							</div>
@@ -222,7 +222,7 @@ if ( ! class_exists( 'Deactivation_Survey_Feedback' ) ) {
 		 */
 		public function send_plugin_deactivate_feedback() {
 
-			$response_data = array( 'message' => __( 'Sorry, you are not allowed to do this operation.', 'astra' ) );
+			$response_data = array( 'message' => __( 'Sorry, you are not allowed to do this operation.', 'divino' ) );
 
 			/**
 			 * Check permission
@@ -235,7 +235,7 @@ if ( ! class_exists( 'Deactivation_Survey_Feedback' ) ) {
 			 * Nonce verification
 			 */
 			if ( ! check_ajax_referer( 'uds_plugin_deactivate_feedback', 'security', false ) ) {
-				$response_data = array( 'message' => __( 'Nonce validation failed', 'astra' ) );
+				$response_data = array( 'message' => __( 'Nonce validation failed', 'divino' ) );
 				wp_send_json_error( $response_data );
 			}
 
@@ -282,32 +282,32 @@ if ( ! class_exists( 'Deactivation_Survey_Feedback' ) ) {
 				'uds_default_deactivation_reasons',
 				array(
 					'temporary_deactivation' => array(
-						'label'           => esc_html__( 'This is a temporary deactivation for testing.', 'astra' ),
-						'placeholder'     => esc_html__( 'How can we assist you?', 'astra' ),
+						'label'           => esc_html__( 'This is a temporary deactivation for testing.', 'divino' ),
+						'placeholder'     => esc_html__( 'How can we assist you?', 'divino' ),
 						'show_cta'        => 'false',
 						'accept_feedback' => 'false',
 					),
 					'plugin_not_working'     => array(
-						'label'           => esc_html__( 'The plugin isn\'t working properly.', 'astra' ),
-						'placeholder'     => esc_html__( 'Please tell us more about what went wrong?', 'astra' ),
+						'label'           => esc_html__( 'The plugin isn\'t working properly.', 'divino' ),
+						'placeholder'     => esc_html__( 'Please tell us more about what went wrong?', 'divino' ),
 						'show_cta'        => 'true',
 						'accept_feedback' => 'true',
 					),
 					'found_better_plugin'    => array(
-						'label'           => esc_html__( 'I found a better alternative plugin.', 'astra' ),
-						'placeholder'     => esc_html__( 'Could you please specify which plugin?', 'astra' ),
+						'label'           => esc_html__( 'I found a better alternative plugin.', 'divino' ),
+						'placeholder'     => esc_html__( 'Could you please specify which plugin?', 'divino' ),
 						'show_cta'        => 'false',
 						'accept_feedback' => 'true',
 					),
 					'missing_a_feature'      => array(
-						'label'           => esc_html__( 'It\'s missing a specific feature.', 'astra' ),
-						'placeholder'     => esc_html__( 'Please tell us more about the feature.', 'astra' ),
+						'label'           => esc_html__( 'It\'s missing a specific feature.', 'divino' ),
+						'placeholder'     => esc_html__( 'Please tell us more about the feature.', 'divino' ),
 						'show_cta'        => 'false',
 						'accept_feedback' => 'true',
 					),
 					'other'                  => array(
-						'label'           => esc_html__( 'Other', 'astra' ),
-						'placeholder'     => esc_html__( 'Please tell us more details.', 'astra' ),
+						'label'           => esc_html__( 'Other', 'divino' ),
+						'placeholder'     => esc_html__( 'Please tell us more details.', 'divino' ),
 						'show_cta'        => 'false',
 						'accept_feedback' => 'true',
 					),

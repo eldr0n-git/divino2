@@ -1,7 +1,7 @@
 /**
- * Astra's Live Search
+ * divino's Live Search
  *
- * @package Astra
+ * @package divino
  * @since x.x.x
  */
 

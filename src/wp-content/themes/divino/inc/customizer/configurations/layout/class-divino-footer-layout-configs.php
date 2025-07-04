@@ -1,10 +1,10 @@
 <?php
 /**
- * Bottom Footer Options for Astra Theme.
+ * Bottom Footer Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,10 +20,10 @@ if ( ! class_exists( 'divino_Footer_Layout_Configs' ) ) {
 		/**
 		 * Register Footer Layout Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -41,18 +41,18 @@ if ( ! class_exists( 'divino_Footer_Layout_Configs' ) ) {
 					'default'           => divino_get_option( 'footer-sml-layout' ),
 					'section'           => 'section-footer-small',
 					'priority'          => 5,
-					'title'             => __( 'Layout', 'astra' ),
+					'title'             => __( 'Layout', 'divino' ),
 					'choices'           => array(
 						'disabled'            => array(
-							'label' => __( 'Disabled', 'astra' ),
+							'label' => __( 'Disabled', 'divino' ),
 							'path'  => divino_Builder_UI_Controller::fetch_svg_icon( 'disabled' ),
 						),
 						'footer-sml-layout-1' => array(
-							'label' => __( 'Footer Bar Layout 1', 'astra' ),
+							'label' => __( 'Footer Bar Layout 1', 'divino' ),
 							'path'  => divino_Builder_UI_Controller::fetch_svg_icon( 'footer-layout-1' ),
 						),
 						'footer-sml-layout-2' => array(
-							'label' => __( 'Footer Bar Layout 2', 'astra' ),
+							'label' => __( 'Footer Bar Layout 2', 'divino' ),
 							'path'  => divino_Builder_UI_Controller::fetch_svg_icon( 'footer-layout-2' ),
 						),
 					),
@@ -80,13 +80,13 @@ if ( ! class_exists( 'divino_Footer_Layout_Configs' ) ) {
 					),
 					'section'    => 'section-footer-small',
 					'priority'   => 15,
-					'title'      => __( 'Section 1', 'astra' ),
+					'title'      => __( 'Section 1', 'divino' ),
 					'divider'    => array( 'ast_class' => 'ast-top-divider' ),
 					'choices'    => array(
-						''       => __( 'None', 'astra' ),
-						'custom' => __( 'Text', 'astra' ),
-						'widget' => __( 'Widget', 'astra' ),
-						'menu'   => __( 'Footer Menu', 'astra' ),
+						''       => __( 'None', 'divino' ),
+						'custom' => __( 'Text', 'divino' ),
+						'widget' => __( 'Widget', 'divino' ),
+						'menu'   => __( 'Footer Menu', 'divino' ),
 					),
 					'partial'    => array(
 						'selector'            => '.ast-small-footer .ast-container .ast-footer-widget-1-area .ast-no-widget-row, .ast-small-footer .ast-container .ast-small-footer-section-1 .footer-primary-navigation .nav-menu',
@@ -119,12 +119,12 @@ if ( ! class_exists( 'divino_Footer_Layout_Configs' ) ) {
 						),
 					),
 					'priority'  => 20,
-					'title'     => __( 'Section 1 Custom Text', 'astra' ),
+					'title'     => __( 'Section 1 Custom Text', 'divino' ),
 					'choices'   => array(
-						''       => __( 'None', 'astra' ),
-						'custom' => __( 'Custom Text', 'astra' ),
-						'widget' => __( 'Widget', 'astra' ),
-						'menu'   => __( 'Footer Menu', 'astra' ),
+						''       => __( 'None', 'divino' ),
+						'custom' => __( 'Custom Text', 'divino' ),
+						'widget' => __( 'Widget', 'divino' ),
+						'menu'   => __( 'Footer Menu', 'divino' ),
 					),
 					'partial'   => array(
 						'selector'            => '.ast-small-footer .ast-container .ast-small-footer-section.ast-small-footer-section-1:has(> .ast-footer-site-title)',
@@ -151,12 +151,12 @@ if ( ! class_exists( 'divino_Footer_Layout_Configs' ) ) {
 					),
 					'section'    => 'section-footer-small',
 					'priority'   => 25,
-					'title'      => __( 'Section 2', 'astra' ),
+					'title'      => __( 'Section 2', 'divino' ),
 					'choices'    => array(
-						''       => __( 'None', 'astra' ),
-						'custom' => __( 'Text', 'astra' ),
-						'widget' => __( 'Widget', 'astra' ),
-						'menu'   => __( 'Footer Menu', 'astra' ),
+						''       => __( 'None', 'divino' ),
+						'custom' => __( 'Text', 'divino' ),
+						'widget' => __( 'Widget', 'divino' ),
+						'menu'   => __( 'Footer Menu', 'divino' ),
 					),
 					'partial'    => array(
 						'selector'            => '.ast-small-footer .ast-container .ast-footer-widget-2-area .ast-no-widget-row, .ast-small-footer .ast-container .ast-small-footer-section-2 .footer-primary-navigation .nav-menu',
@@ -185,7 +185,7 @@ if ( ! class_exists( 'divino_Footer_Layout_Configs' ) ) {
 							'value'    => 'custom',
 						),
 					),
-					'title'     => __( 'Section 2 Custom Text', 'astra' ),
+					'title'     => __( 'Section 2 Custom Text', 'divino' ),
 					'partial'   => array(
 						'selector'            => '.ast-small-footer-section-2',
 						'container_inclusive' => false,
@@ -216,7 +216,7 @@ if ( ! class_exists( 'divino_Footer_Layout_Configs' ) ) {
 							'value'    => 'disabled',
 						),
 					),
-					'title'       => __( 'Border Size', 'astra' ),
+					'title'       => __( 'Border Size', 'divino' ),
 					'transport'   => 'postMessage',
 					'input_attrs' => array(
 						'min'  => 0,
@@ -251,7 +251,7 @@ if ( ! class_exists( 'divino_Footer_Layout_Configs' ) ) {
 						),
 					),
 					'priority'          => 45,
-					'title'             => __( 'Border Color', 'astra' ),
+					'title'             => __( 'Border Color', 'divino' ),
 					'transport'         => 'postMessage',
 				),
 
@@ -263,7 +263,7 @@ if ( ! class_exists( 'divino_Footer_Layout_Configs' ) ) {
 					'default'   => divino_get_option( 'footer-bar-background-group' ),
 					'type'      => 'control',
 					'control'   => 'ast-settings-group',
-					'title'     => __( 'Background Color', 'astra' ),
+					'title'     => __( 'Background Color', 'divino' ),
 					'section'   => 'section-footer-small',
 					'transport' => 'postMessage',
 					'divider'   => array( 'ast_class' => 'ast-bottom-divider' ),
@@ -286,7 +286,7 @@ if ( ! class_exists( 'divino_Footer_Layout_Configs' ) ) {
 					'default'   => divino_get_option( 'footer-bar-content-group' ),
 					'type'      => 'control',
 					'control'   => 'ast-settings-group',
-					'title'     => __( 'Content Colors', 'astra' ),
+					'title'     => __( 'Content Colors', 'divino' ),
 					'section'   => 'section-footer-small',
 					'transport' => 'postMessage',
 					'priority'  => 47,
@@ -308,7 +308,7 @@ if ( ! class_exists( 'divino_Footer_Layout_Configs' ) ) {
 					'default'   => divino_get_option( 'footer-bar-link-color-group' ),
 					'type'      => 'control',
 					'control'   => 'ast-color-group',
-					'title'     => __( 'Link Color', 'astra' ),
+					'title'     => __( 'Link Color', 'divino' ),
 					'section'   => 'section-footer-small',
 					'transport' => 'postMessage',
 					'priority'  => 47,
@@ -352,10 +352,10 @@ if ( ! class_exists( 'divino_Footer_Layout_Configs' ) ) {
 						),
 					),
 					'priority'   => 35,
-					'title'      => __( 'Width', 'astra' ),
+					'title'      => __( 'Width', 'divino' ),
 					'choices'    => array(
-						'full'    => __( 'Full Width', 'astra' ),
-						'content' => __( 'Content Width', 'astra' ),
+						'full'    => __( 'Full Width', 'divino' ),
+						'content' => __( 'Content Width', 'divino' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -381,7 +381,7 @@ if ( ! class_exists( 'divino_Footer_Layout_Configs' ) ) {
 						),
 					),
 					'suffix'      => 'px',
-					'title'       => __( 'Top Border Size', 'astra' ),
+					'title'       => __( 'Top Border Size', 'divino' ),
 					'input_attrs' => array(
 						'min'  => 0,
 						'step' => 1,
@@ -395,7 +395,7 @@ if ( ! class_exists( 'divino_Footer_Layout_Configs' ) ) {
 				array(
 					'name'              => divino_THEME_SETTINGS . '[footer-adv-border-color]',
 					'section'           => 'section-footer-adv',
-					'title'             => __( 'Top Border Color', 'astra' ),
+					'title'             => __( 'Top Border Color', 'divino' ),
 					'type'              => 'control',
 					'transport'         => 'postMessage',
 					'control'           => 'ast-color',
@@ -416,7 +416,7 @@ if ( ! class_exists( 'divino_Footer_Layout_Configs' ) ) {
 
 			$configurations = array_merge( $configurations, $_configs );
 
-			// Learn More link if Astra Pro is not activated.
+			// Learn More link if divino Pro is not activated.
 			if ( ! defined( 'divino_EXT_VER' ) || ( defined( 'divino_EXT_VER' ) && false === divino_Ext_Extension::is_active( 'advanced-footer' ) ) ) {
 
 				$config = array(
@@ -431,16 +431,16 @@ if ( ! class_exists( 'divino_Footer_Layout_Configs' ) ) {
 						'control'           => 'ast-radio-image',
 						'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_choices' ),
 						'default'           => divino_get_option( 'footer-adv' ),
-						'title'             => __( 'Layout', 'astra' ),
+						'title'             => __( 'Layout', 'divino' ),
 						'section'           => 'section-footer-adv',
 						'divider'           => array( 'ast_class' => 'ast-bottom-divider' ),
 						'choices'           => array(
 							'disabled' => array(
-								'label' => __( 'Disable', 'astra' ),
+								'label' => __( 'Disable', 'divino' ),
 								'path'  => divino_Builder_UI_Controller::fetch_svg_icon( 'disabled' ),
 							),
 							'layout-4' => array(
-								'label' => __( 'Layout 4', 'astra' ),
+								'label' => __( 'Layout 4', 'divino' ),
 								'path'  => divino_Builder_UI_Controller::fetch_svg_icon( 'footer-layout-4' ),
 							),
 						),
@@ -460,7 +460,7 @@ if ( ! class_exists( 'divino_Footer_Layout_Configs' ) ) {
 						'section'  => 'section-footer-adv',
 						'priority' => 999,
 						'label'    => '',
-						'help'     => '<span>' . __( 'More Options Available in Astra Pro!', 'astra' ) . '</span><a style="display: block;" href="' . divino_get_upgrade_url( 'customizer' ) . '" class="button button-secondary"  target="_blank" rel="noopener">' . __( 'Learn More', 'astra' ) . '</a>',
+						'help'     => '<span>' . __( 'More Options Available in divino Pro!', 'divino' ) . '</span><a style="display: block;" href="' . divino_get_upgrade_url( 'customizer' ) . '" class="button button-secondary"  target="_blank" rel="noopener">' . __( 'Learn More', 'divino' ) . '</a>',
 						'settings' => array(),
 					),
 

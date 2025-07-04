@@ -4,17 +4,17 @@
  * here. Your javascript should grab settings from customizer controls, and
  * then make any necessary changes to the page using jQuery.
  *
- * @package Astra
+ * @package divino
  * @since 3.0.0
  */
 
 ( function( $ ) {
 
-	var tablet_break_point    = AstraBuilderMenuData.tablet_break_point || 768,
-		mobile_break_point    = AstraBuilderMenuData.mobile_break_point || 544,
-		isNavMenuEnabled      = AstraBuilderMenuData.nav_menu_enabled || false;
+	var tablet_break_point    = divinoBuilderMenuData.tablet_break_point || 768,
+		mobile_break_point    = divinoBuilderMenuData.mobile_break_point || 544,
+		isNavMenuEnabled      = divinoBuilderMenuData.nav_menu_enabled || false;
 
-	for ( var index = 1; index <= AstraBuilderMenuData.component_limit; index++ ) {
+	for ( var index = 1; index <= divinoBuilderMenuData.component_limit; index++ ) {
 
 		var prefix = 'menu' + index;
 		var selector = '.ast-builder-menu-' + index;
@@ -29,31 +29,31 @@
 
 			// Menu Typography.
 			divino_generate_outside_font_family_css(
-				'astra-settings[header-' + prefix + '-font-family]',
+				'divino-settings[header-' + prefix + '-font-family]',
 				selector + ' .menu-item > .menu-link'
 			);
 			divino_generate_font_weight_css(
-				'astra-settings[header-' + prefix + '-font-family]',
-				'astra-settings[header-' + prefix + '-font-weight]',
+				'divino-settings[header-' + prefix + '-font-family]',
+				'divino-settings[header-' + prefix + '-font-weight]',
 				'font-weight',
 				selector + ' .menu-item > .menu-link'
 			);
 			divino_css(
-				'astra-settings[header-' + prefix + '-text-transform]',
+				'divino-settings[header-' + prefix + '-text-transform]',
 				'text-transform',
 				selector + ' .menu-item > .menu-link'
 			);
 			divino_responsive_font_size(
-				'astra-settings[header-' + prefix + '-font-size]',
+				'divino-settings[header-' + prefix + '-font-size]',
 				selector + ' .menu-item > .menu-link'
 			);
 			divino_css(
-				'astra-settings[header-' + prefix + '-line-height]',
+				'divino-settings[header-' + prefix + '-line-height]',
 				'line-height',
 				selector + ' .menu-item > .menu-link'
 			);
 			divino_css(
-				'astra-settings[header-' + prefix + '-letter-spacing]',
+				'divino-settings[header-' + prefix + '-letter-spacing]',
 				'letter-spacing',
 				selector + ' .menu-item > .menu-link',
 				'px'
@@ -69,60 +69,60 @@
 
 			// Menu - Normal Color
 			divino_color_responsive_css(
-				'astra-menu-color-preview',
-				'astra-settings[header-' + prefix + '-color-responsive]',
+				'divino-menu-color-preview',
+				'divino-settings[header-' + prefix + '-color-responsive]',
 				'color',
 				selector + ' .main-header-menu .menu-item > .menu-link'
 			);
 
 			// Menu - Hover Color
 			divino_color_responsive_css(
-				'astra-menu-h-color-preview',
-				'astra-settings[header-' + prefix + '-h-color-responsive]',
+				'divino-menu-h-color-preview',
+				'divino-settings[header-' + prefix + '-h-color-responsive]',
 				'color',
 				selector + ' .menu-item:hover > .menu-link, ' + selector + ' .inline-on-mobile .menu-item:hover > .ast-menu-toggle'
 			);
 
 			// Menu Toggle -  Color
 			divino_color_responsive_css(
-				'astra-builder-toggle',
-				'astra-settings[header-' + prefix + '-color-responsive]',
+				'divino-builder-toggle',
+				'divino-settings[header-' + prefix + '-color-responsive]',
 				'color',
 				selector + ' .menu-item > .ast-menu-toggle'
 			);
 
 			// Menu Toggle - Hover Color
 			divino_color_responsive_css(
-				'astra-menu-h-toogle-color-preview',
-				'astra-settings[header-' + prefix + '-h-color-responsive]',
+				'divino-menu-h-toogle-color-preview',
+				'divino-settings[header-' + prefix + '-h-color-responsive]',
 				'color',
 				selector + ' .menu-item:hover > .ast-menu-toggle'
 			);
 			// Menu - Active Color
 			divino_color_responsive_css(
-				'astra-menu-active-color-preview',
-				'astra-settings[header-' + prefix + '-a-color-responsive]',
+				'divino-menu-active-color-preview',
+				'divino-settings[header-' + prefix + '-a-color-responsive]',
 				'color',
 				selector + ' .menu-item.current-menu-item > .menu-link, ' + selector + ' .inline-on-mobile .menu-item.current-menu-item > .ast-menu-toggle, ' + selector + ' .current-menu-ancestor > .menu-link, ' + selector + '  .current-menu-ancestor > .ast-menu-toggle'
 			);
 
 			// Menu - Normal Background
-			divino_apply_responsive_background_css( 'astra-settings[header-' + prefix + '-bg-obj-responsive]', selector + ' .main-header-menu, ' + selector + ' .main-header-menu .sub-menu', 'desktop' );
-			divino_apply_responsive_background_css( 'astra-settings[header-' + prefix + '-bg-obj-responsive]', selector + ' .main-header-menu, ' + selector + ' .main-header-menu .sub-menu', 'tablet' );
-			divino_apply_responsive_background_css( 'astra-settings[header-' + prefix + '-bg-obj-responsive]', selector + ' .main-header-menu, ' + selector + ' .main-header-menu .sub-menu', 'mobile' );
+			divino_apply_responsive_background_css( 'divino-settings[header-' + prefix + '-bg-obj-responsive]', selector + ' .main-header-menu, ' + selector + ' .main-header-menu .sub-menu', 'desktop' );
+			divino_apply_responsive_background_css( 'divino-settings[header-' + prefix + '-bg-obj-responsive]', selector + ' .main-header-menu, ' + selector + ' .main-header-menu .sub-menu', 'tablet' );
+			divino_apply_responsive_background_css( 'divino-settings[header-' + prefix + '-bg-obj-responsive]', selector + ' .main-header-menu, ' + selector + ' .main-header-menu .sub-menu', 'mobile' );
 
 			// Menu - Hover Background
 			divino_color_responsive_css(
-				'astra-menu-bg-preview',
-				'astra-settings[header-' + prefix + '-h-bg-color-responsive]',
+				'divino-menu-bg-preview',
+				'divino-settings[header-' + prefix + '-h-bg-color-responsive]',
 				'background',
 				selector + ' .menu-item:hover > .menu-link, ' + selector + ' .inline-on-mobile .menu-item:hover > .ast-menu-toggle'
 			);
 
 			// Menu - Active Background
 			divino_color_responsive_css(
-				'astra-builder',
-				'astra-settings[header-' + prefix + '-a-bg-color-responsive]',
+				'divino-builder',
+				'divino-settings[header-' + prefix + '-a-bg-color-responsive]',
 				'background',
 				selector + ' .menu-item.current-menu-item > .menu-link, ' + selector + ' .inline-on-mobile .menu-item.current-menu-item > .ast-menu-toggle, ' + selector + ' .current-menu-ancestor > .menu-link, ' + selector + '  .current-menu-ancestor > .ast-menu-toggle'
 			);
@@ -134,10 +134,10 @@
 			(function (index) {
 
 				// Menu 1 > Sub Menu Border Size.
-				wp.customize( 'astra-settings[header-menu'+ index +'-submenu-border]', function( setting ) {
+				wp.customize( 'divino-settings[header-menu'+ index +'-submenu-border]', function( setting ) {
 					setting.bind( function( border ) {
 
-						var dynamicStyle = '.ast-builder-menu-'+ index +' .sub-menu, .ast-builder-menu-'+ index +' .inline-on-mobile .sub-menu, .ast-builder-menu-'+ index +' .main-header-menu.submenu-with-border .astra-megamenu, .ast-builder-menu-'+ index +' .main-header-menu.submenu-with-border .astra-full-megamenu-wrapper {';
+						var dynamicStyle = '.ast-builder-menu-'+ index +' .sub-menu, .ast-builder-menu-'+ index +' .inline-on-mobile .sub-menu, .ast-builder-menu-'+ index +' .main-header-menu.submenu-with-border .divino-megamenu, .ast-builder-menu-'+ index +' .main-header-menu.submenu-with-border .divino-full-megamenu-wrapper {';
 						dynamicStyle += 'border-top-width:'  + border.top + 'px;';
 						dynamicStyle += 'border-right-width:'  + border.right + 'px;';
 						dynamicStyle += 'border-left-width:'   + border.left + 'px;';
@@ -151,9 +151,9 @@
 						dynamicStyle += 'top:' + Number( -1 * border.top ) + 'px;';
 						dynamicStyle += '}';
 
-						const submenuTopOffset = wp.customize( 'astra-settings[header-menu'+ index +'-submenu-top-offset]' ).get();
+						const submenuTopOffset = wp.customize( 'divino-settings[header-menu'+ index +'-submenu-top-offset]' ).get();
 
-						dynamicStyle += '.ast-desktop .ast-builder-menu-' + index + ' .main-header-menu > .menu-item > .sub-menu:before, .ast-desktop .ast-builder-menu-' + index + ' .main-header-menu > .menu-item > .astra-full-megamenu-wrapper:before {';
+						dynamicStyle += '.ast-desktop .ast-builder-menu-' + index + ' .main-header-menu > .menu-item > .sub-menu:before, .ast-desktop .ast-builder-menu-' + index + ' .main-header-menu > .menu-item > .divino-full-megamenu-wrapper:before {';
 						dynamicStyle += 'height: calc( ' + ( border.top || 0 ) + 'px + ' + ( submenuTopOffset || 0 ) + 'px + 5px );';
 						dynamicStyle += '}';
 
@@ -163,7 +163,7 @@
 				} );
 
 				// Menu Spacing - Menu 1.
-				wp.customize( 'astra-settings[header-menu'+ index +'-menu-spacing]', function( value ) {
+				wp.customize( 'divino-settings[header-menu'+ index +'-menu-spacing]', function( value ) {
 					value.bind( function( padding ) {
 						var dynamicStyle = '';
 						dynamicStyle += '.ast-builder-menu-'+ index +' .main-header-menu .menu-item > .menu-link {';
@@ -208,7 +208,7 @@
 				} );
 
 				// Margin - Menu 1.
-				wp.customize( 'astra-settings[section-hb-menu-'+ index +'-margin]', function( value ) {
+				wp.customize( 'divino-settings[section-hb-menu-'+ index +'-margin]', function( value ) {
 					value.bind( function( margin ) {
 						var selector = '.ast-builder-menu-'+ index +' .main-header-menu, .ast-header-break-point .ast-builder-menu-'+ index +' .main-header-menu';
 						var dynamicStyle = '';
@@ -243,10 +243,10 @@
 				/**
 				 * Header Menu 1 > Submenu border Color
 				 */
-				wp.customize('astra-settings[header-menu'+ index +'-submenu-item-b-color]', function (value) {
+				wp.customize('divino-settings[header-menu'+ index +'-submenu-item-b-color]', function (value) {
 					value.bind(function (color) {
-						var insideBorder = wp.customize('astra-settings[header-menu'+ index +'-submenu-item-border]').get(),
-							borderSize = wp.customize('astra-settings[header-menu'+ index +'-submenu-item-b-size]').get();
+						var insideBorder = wp.customize('divino-settings[header-menu'+ index +'-submenu-item-border]').get(),
+							borderSize = wp.customize('divino-settings[header-menu'+ index +'-submenu-item-b-size]').get();
 						if ('' != color) {
 							if ( true == insideBorder ) {
 
@@ -269,7 +269,7 @@
 				});
 
 				// Sub Menu - Divider Size.
-				wp.customize( 'astra-settings[header-menu'+ index +'-submenu-item-b-size]', function( value ) {
+				wp.customize( 'divino-settings[header-menu'+ index +'-submenu-item-b-size]', function( value ) {
 					value.bind( function( borderSize ) {
 						var selector = '.ast-desktop .ast-builder-menu-'+ index + ' .main-header-menu';
 						var dynamicStyle = '';
@@ -286,10 +286,10 @@
 				/**
 				 * Header Menu 1 > Submenu border Color
 				 */
-				wp.customize( 'astra-settings[header-menu'+ index +'-submenu-item-border]', function( value ) {
+				wp.customize( 'divino-settings[header-menu'+ index +'-submenu-item-border]', function( value ) {
 					value.bind( function( border ) {
-						var color = wp.customize( 'astra-settings[header-menu'+ index +'-submenu-item-b-color]' ).get(),
-							borderSize = wp.customize('astra-settings[header-menu'+ index +'-submenu-item-b-size]').get();
+						var color = wp.customize( 'divino-settings[header-menu'+ index +'-submenu-item-b-color]' ).get(),
+							borderSize = wp.customize('divino-settings[header-menu'+ index +'-submenu-item-b-size]').get();
 
 						var dynamicStyle = '.ast-desktop .ast-builder-menu-'+ index +' .main-header-menu.submenu-with-border .sub-menu .menu-link';
 
@@ -313,7 +313,7 @@
 
 				// Animation preview support.
 				// Adding customizer-refresh because if megamenu is enabled on menu then caluculated left & width JS value of megamenu wrapper wiped out due to partial refresh.
-				wp.customize( 'astra-settings[header-menu'+ index +'-menu-hover-animation]', function( setting ) {
+				wp.customize( 'divino-settings[header-menu'+ index +'-menu-hover-animation]', function( setting ) {
 					setting.bind( function( animation ) {
 
 						var menuWrapper = jQuery( '#ast-desktop-header #ast-hf-menu-'+ index  );
@@ -329,22 +329,22 @@
 					} );
 				} );
 
-				wp.customize( 'astra-settings[header-menu'+ index +'-submenu-container-animation]', function( setting ) {
+				wp.customize( 'divino-settings[header-menu'+ index +'-submenu-container-animation]', function( setting ) {
 					setting.bind( function( animation ) {
 
 						var menuWrapper = jQuery( '#ast-desktop-header #ast-hf-menu-'+ index  );
-						menuWrapper.removeClass('astra-menu-animation-fade');
-						menuWrapper.removeClass('astra-menu-animation-slide-down');
-						menuWrapper.removeClass('astra-menu-animation-slide-up');
+						menuWrapper.removeClass('divino-menu-animation-fade');
+						menuWrapper.removeClass('divino-menu-animation-slide-down');
+						menuWrapper.removeClass('divino-menu-animation-slide-up');
 
 						if ( '' != animation ) {
-							menuWrapper.addClass( 'astra-menu-animation-' + animation );
+							menuWrapper.addClass( 'divino-menu-animation-' + animation );
 						}
 					} );
 				} );
 
 				// Stack on Mobile CSS
-				wp.customize( 'astra-settings[header-menu'+ index +'-menu-stack-on-mobile]', function( setting ) {
+				wp.customize( 'divino-settings[header-menu'+ index +'-menu-stack-on-mobile]', function( setting ) {
 					setting.bind( function( stack ) {
 
 						var menu_div = jQuery( '#ast-mobile-header #ast-hf-menu-'+ index + '.main-header-menu'  );
@@ -360,12 +360,12 @@
 				} );
 
 				
-				wp.customize( 'astra-settings[header-menu'+ index +'-submenu-border-radius-fields]', function( value ) {
+				wp.customize( 'divino-settings[header-menu'+ index +'-submenu-border-radius-fields]', function( value ) {
 					value.bind( function( border ) {
 
-						const tabletBreakPoint = astraBuilderPreview.tablet_break_point || 768;
-						const mobileBreakPoint = astraBuilderPreview.mobile_break_point || 544;
-						const submenuBorderWidth = wp.customize.get()?.[ 'astra-settings[header-menu' + index + '-submenu-border]' ];
+						const tabletBreakPoint = divinoBuilderPreview.tablet_break_point || 768;
+						const mobileBreakPoint = divinoBuilderPreview.mobile_break_point || 544;
+						const submenuBorderWidth = wp.customize.get()?.[ 'divino-settings[header-menu' + index + '-submenu-border]' ];
 
 						const deviceSpecific = ( device ) => {
 							return '.ast-builder-menu-' + index + ' li.menu-item .sub-menu, .ast-builder-menu-' + index + ' ul.inline-on-mobile li.menu-item .sub-menu {\
@@ -394,16 +394,16 @@
 				} );
 
 				// Sub Menu - Top Offset.
-				wp.customize( 'astra-settings[header-menu'+ index +'-submenu-top-offset]', function( value ) {
+				wp.customize( 'divino-settings[header-menu'+ index +'-submenu-top-offset]', function( value ) {
 					value.bind( function( offset ) {
 
-						var dynamicStyle = '.ast-desktop .ast-builder-menu-' + index + ' .main-header-menu > li.menu-item > .sub-menu, .ast-desktop .ast-builder-menu-' + index + ' ul.inline-on-mobile > li.menu-item > .sub-menu, .ast-desktop .ast-builder-menu-' + index + ' li.menu-item .astra-full-megamenu-wrapper {';
+						var dynamicStyle = '.ast-desktop .ast-builder-menu-' + index + ' .main-header-menu > li.menu-item > .sub-menu, .ast-desktop .ast-builder-menu-' + index + ' ul.inline-on-mobile > li.menu-item > .sub-menu, .ast-desktop .ast-builder-menu-' + index + ' li.menu-item .divino-full-megamenu-wrapper {';
 						dynamicStyle += 'margin-top: ' + offset + 'px';
 						dynamicStyle += '}';
 
-						const submenuBorder = wp.customize( 'astra-settings[header-menu'+ index +'-submenu-border]' ).get();
+						const submenuBorder = wp.customize( 'divino-settings[header-menu'+ index +'-submenu-border]' ).get();
 
-						dynamicStyle += '.ast-desktop .ast-builder-menu-' + index + ' .main-header-menu > .menu-item > .sub-menu:before, .ast-desktop .ast-builder-menu-' + index + ' .main-header-menu > .menu-item > .astra-full-megamenu-wrapper:before {';
+						dynamicStyle += '.ast-desktop .ast-builder-menu-' + index + ' .main-header-menu > .menu-item > .sub-menu:before, .ast-desktop .ast-builder-menu-' + index + ' .main-header-menu > .menu-item > .divino-full-megamenu-wrapper:before {';
 						dynamicStyle += 'height: calc( ' + ( submenuBorder.top || 0 ) + 'px + ' + ( offset || 0 ) + 'px + 5px );';
 						dynamicStyle += '}';
 
@@ -413,7 +413,7 @@
 				} );
 
 				// Sub Menu - Width.
-				wp.customize( 'astra-settings[header-menu'+ index +'-submenu-width]', function( value ) {
+				wp.customize( 'divino-settings[header-menu'+ index +'-submenu-width]', function( value ) {
 					value.bind( function( width ) {
 
 						var dynamicStyle = '.ast-builder-menu-' + index + ' li.menu-item .sub-menu, .ast-builder-menu-' + index + ' ul.inline-on-mobile li.menu-item .sub-menu {';
@@ -433,13 +433,13 @@
 
 			// Sub Menu - Border Color.
 			divino_css(
-				'astra-settings[header-' + prefix + '-submenu-b-color]',
+				'divino-settings[header-' + prefix + '-submenu-b-color]',
 				'border-color',
 				selector + ' li.menu-item .sub-menu, ' + selector + ' .inline-on-mobile li.menu-item .sub-menu '
 			);
 	}
 
 	// Transparent header > Submenu link hover color.
-	divino_color_responsive_css( 'astra-builder-transparent-submenu', 'astra-settings[transparent-submenu-h-color-responsive]', 'color', '.ast-theme-transparent-header .main-header-menu .menu-item .sub-menu .menu-item:hover > .menu-link' );
+	divino_color_responsive_css( 'divino-builder-transparent-submenu', 'divino-settings[transparent-submenu-h-color-responsive]', 'color', '.ast-theme-transparent-header .main-header-menu .menu-item .sub-menu .menu-item:hover > .menu-link' );
 
 } )( jQuery );

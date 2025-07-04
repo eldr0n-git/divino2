@@ -1,10 +1,10 @@
 <?php
 /**
- * Deprecated Functions of Astra Theme.
+ * Deprecated Functions of divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.23
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.23
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -154,7 +154,7 @@ function prepare_divider_defaults( $defaults, $index ) {
 /**
  * Deprecating is_divino_pagination_enabled function.
  *
- * Checking if Astra's pagination enabled.
+ * Checking if divino's pagination enabled.
  *
  * @since 3.7.4
  * @deprecated is_divino_pagination_enabled() Use divino_check_pagination_enabled()

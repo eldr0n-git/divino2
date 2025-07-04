@@ -4,20 +4,20 @@
  * here. Your javascript should grab settings from customizer controls, and
  * then make any necessary changes to the page using jQuery.
  *
- * @package Astra Builder
+ * @package divino Builder
  * @since 3.0.0
  */
 
 ( function( $ ) {
 
-    var tablet_break_point    = AstraBuilderHTMLData.tablet_break_point || 768,
-        mobile_break_point    = AstraBuilderHTMLData.mobile_break_point || 544;
+    var tablet_break_point    = divinoBuilderHTMLData.tablet_break_point || 768,
+        mobile_break_point    = divinoBuilderHTMLData.mobile_break_point || 544;
 
-    divino_builder_html_css( 'footer', AstraBuilderHTMLData.component_limit );
+    divino_builder_html_css( 'footer', divinoBuilderHTMLData.component_limit );
 
-    for( var index = 1; index <= AstraBuilderHTMLData.component_limit ; index++ ) {
+    for( var index = 1; index <= divinoBuilderHTMLData.component_limit ; index++ ) {
 		(function( index ) {
-			wp.customize( 'astra-settings[footer-html-'+ index +'-alignment]', function( value ) {
+			wp.customize( 'divino-settings[footer-html-'+ index +'-alignment]', function( value ) {
 				value.bind( function( alignment ) {
 					if( alignment.desktop != '' || alignment.tablet != '' || alignment.mobile != '' ) {
 						var dynamicStyle = '';

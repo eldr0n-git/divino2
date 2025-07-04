@@ -1,3 +1,4 @@
+<!-- page-landing-book.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Landing page for book

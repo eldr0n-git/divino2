@@ -124,4 +124,5 @@
 			</div>
 		</div>
 	</div>
+    <!-- .wp-embed embed-content -->
 <?php

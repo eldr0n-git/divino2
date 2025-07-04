@@ -2,9 +2,9 @@
 /**
  * Template for Single Page
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 4.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 4.0.0
  */
 
 if ( apply_filters( 'divino_single_layout_one_banner_visibility', true ) ) {

@@ -2,7 +2,7 @@
 /**
  * Post Structures - Special Pages Dynamic CSS
  *
- * @package Astra
+ * @package divino
  * @since 4.6.0
  */
 
@@ -18,8 +18,8 @@ add_filter( 'divino_dynamic_theme_css', 'divino_special_archive_dynamic_css' );
 /**
  * Special Pages Dynamic CSS.
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
- * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+ * @param  string $dynamic_css          divino Dynamic CSS.
+ * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
  * @return string Generated dynamic CSS for Post Structures.
  *
  * @since 4.6.0

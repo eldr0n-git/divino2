@@ -4,7 +4,7 @@
  * Handles toggling the navigation menu for small screens and enables tab
  * support for dropdown menus.
  *
- * @package Astra
+ * @package divino
  */
 
 /**
@@ -14,7 +14,7 @@
  * @param  {String} selector Selector to match against [optional].
  * @return {Array}           The parent elements.
  */
-var astraGetParents = function ( elem, selector ) {
+var divinoGetParents = function ( elem, selector ) {
 
 	// Element.matches() polyfill.
 	if ( ! Element.prototype.matches) {
@@ -58,8 +58,8 @@ var astraGetParents = function ( elem, selector ) {
  * @return {Array}           The parent elements.
  */
 var getParents = function ( elem, selector ) {
-	console.warn( 'getParents() function has been deprecated since version 2.5.0 or above of Astra Theme and will be removed in the future. Use astraGetParents() instead.' );
-	astraGetParents( elem, selector );
+	console.warn( 'getParents() function has been deprecated since version 2.5.0 or above of divino Theme and will be removed in the future. Use divinoGetParents() instead.' );
+	divinoGetParents( elem, selector );
 }
 
 /**
@@ -69,7 +69,7 @@ var getParents = function ( elem, selector ) {
  * @param  {String} selector Selector to match against [optional].
  * @return {Array}           The parent elements.
  */
-var astraToggleClass = function ( el, className ) {
+var divinoToggleClass = function ( el, className ) {
 	if ( el.classList.contains( className ) ) {
 		el.classList.remove( className );
 	} else {
@@ -85,8 +85,8 @@ var astraToggleClass = function ( el, className ) {
  * @return {Array}           The parent elements.
  */
 var toggleClass = function ( el, className ) {
-	console.warn( 'toggleClass() function has been deprecated since version 2.5.0 or above of Astra Theme and will be removed in the future. Use astraToggleClass() instead.' );
-	astraToggleClass( el, className );
+	console.warn( 'toggleClass() function has been deprecated since version 2.5.0 or above of divino Theme and will be removed in the future. Use divinoToggleClass() instead.' );
+	divinoToggleClass( el, className );
 };
 
 // CustomEvent() constructor functionality in Internet Explorer 9 and higher.
@@ -114,7 +114,7 @@ var toggleClass = function ( el, className ) {
  * @param {String} A CustomEventInit dictionary, having the following fields:
  *			"detail", optional and defaulting to null, of type any, that is an event-dependent value associated with the event.
  */
-var astraTriggerEvent = function astraTriggerEvent( el, typeArg ) {
+var divinoTriggerEvent = function divinoTriggerEvent( el, typeArg ) {
 	var customEventInit =
 	  arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
@@ -130,7 +130,7 @@ var astraTriggerEvent = function astraTriggerEvent( el, typeArg ) {
  * @param {Event} e Event which is been fired.
  * @param {String} top offset from top.
  */
-astraSmoothScroll = function astraSmoothScroll( e, top ) {
+divinoSmoothScroll = function divinoSmoothScroll( e, top ) {
 	e.preventDefault();
 	window.scrollTo({
 		top: top,
@@ -217,14 +217,14 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 				}
 			});
 		}
-	
+
 		init(mobileHeaderType);
 	}
-	
+
 	function syncToggledClass() {
 		const buttons = document.querySelectorAll('.menu-toggle');
 			const allToggled = Array.from(buttons).every(button => button.classList.contains('toggled'));
-	
+
 		buttons.forEach(button => {
 			if (allToggled) {
 				button.classList.remove('toggled');
@@ -233,7 +233,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 			}
 		});
 	}
-	
+
 	document.addEventListener('click', function (e) {
 		const button = e.target.closest('.menu-toggle');
 		if (button) {
@@ -241,7 +241,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 			syncToggledClass();
 		}
 	});
-	
+
 
 	/**
 	 * Opens the Popup when trigger is clicked.
@@ -307,13 +307,13 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 
 		parent_li_sibling.forEach((li_sibling) => {
 			li_sibling.classList.remove('ast-submenu-expanded');
-		
+
 			const all_sub_menu = Array.from(li_sibling.querySelectorAll('.sub-menu'));
 			all_sub_menu.forEach((sub_menu) => {
 				if (!sub_menu.hasAttribute('data-initial-display')) {
 					sub_menu.setAttribute('data-initial-display', window.getComputedStyle(sub_menu).display);
 				}
-		
+
 				if (sub_menu.getAttribute('data-initial-display') === 'block') {
 					sub_menu.style.display = 'block';
 				} else {
@@ -321,7 +321,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 				}
 			});
 		});
-		
+
         var popupTrigger = document.querySelectorAll( '.menu-toggle' );
 
 		document.body.classList.remove( 'ast-main-header-nav-open', 'ast-popup-nav-open' );
@@ -370,7 +370,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 
 			for ( var item = 0;  item < popupTriggerMobile.length; item++ ) {
 
-				popupTriggerMobile[item].removeEventListener("click", astraNavMenuToggle, false);
+				popupTriggerMobile[item].removeEventListener("click", divinoNavMenuToggle, false);
 				// Open the Popup when click on trigger
 				popupTriggerMobile[item].removeEventListener("click", popupTriggerClick);
 				popupTriggerMobile[item].addEventListener("click", popupTriggerClick, false);
@@ -379,7 +379,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 			}
 			for ( var item = 0;  item < popupTriggerDesktop.length; item++ ) {
 
-				popupTriggerDesktop[item].removeEventListener("click", astraNavMenuToggle, false);
+				popupTriggerDesktop[item].removeEventListener("click", divinoNavMenuToggle, false);
 				// Open the Popup when click on trigger
 				popupTriggerDesktop[item].removeEventListener("click", popupTriggerClick);
 				popupTriggerDesktop[item].addEventListener("click", popupTriggerClick, false);
@@ -428,7 +428,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 				}
 			}
 
-			AstraToggleSetup();
+			divinoToggleSetup();
 		} else if ( 'dropdown' === mobileHeaderType ) {
 
 			var mobileDropdownContent = document.querySelectorAll( '.ast-mobile-header-content' ) || false,
@@ -469,18 +469,18 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 
 			for ( var item = 0; item < popupTriggerMobile.length; item++ ) {
 				popupTriggerMobile[ item ].removeEventListener( 'click', popupTriggerClick, false );
-				popupTriggerMobile[ item ].removeEventListener( 'click', astraNavMenuToggle );
-				popupTriggerMobile[ item ].addEventListener( 'click', astraNavMenuToggle, false );
+				popupTriggerMobile[ item ].removeEventListener( 'click', divinoNavMenuToggle );
+				popupTriggerMobile[ item ].addEventListener( 'click', divinoNavMenuToggle, false );
 				popupTriggerMobile[ item ].trigger_type = 'mobile';
 			}
 			for ( var item = 0; item < popupTriggerDesktop.length; item++ ) {
 				popupTriggerDesktop[ item ].removeEventListener( 'click', popupTriggerClick, false );
-				popupTriggerDesktop[ item ].removeEventListener( 'click', astraNavMenuToggle );
-				popupTriggerDesktop[ item ].addEventListener( 'click', astraNavMenuToggle, false );
+				popupTriggerDesktop[ item ].removeEventListener( 'click', divinoNavMenuToggle );
+				popupTriggerDesktop[ item ].addEventListener( 'click', divinoNavMenuToggle, false );
 				popupTriggerDesktop[ item ].trigger_type = 'desktop';
 			}
 
-			AstraToggleSetup();
+			divinoToggleSetup();
 		}
 
 		accountPopupTrigger();
@@ -536,7 +536,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 
 	var mobile_width = ( null !== navigator.userAgent.match(/Android/i) && 'Android' === navigator.userAgent.match(/Android/i)[0] ) ? window.visualViewport.width : window.innerWidth;
 
-	function AstraHandleResizeEvent() {
+	function divinoHandleResizeEvent() {
 
 		var menu_offcanvas_close 	= document.getElementById('menu-toggle-close');
 		var menu_dropdown_close 	= document.querySelector('.menu-toggle.toggled');
@@ -561,19 +561,19 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 
 		updateHeaderBreakPoint();
 
-		AstraToggleSetup();
+		divinoToggleSetup();
 
 	}
 
 	window.addEventListener('resize', function(){
 		// Skip resize event when keyboard display event triggers on devices.
 		if( 'INPUT' !== document.activeElement.tagName ) {
-			AstraHandleResizeEvent();
+			divinoHandleResizeEvent();
 		}
 	} );
 
 	document.addEventListener('DOMContentLoaded', function () {
-		AstraToggleSetup();
+		divinoToggleSetup();
 		/**
 		 * Navigation Keyboard Navigation.
 		 */
@@ -605,7 +605,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 		var ww = get_window_width();
 		body.style.overflow = originalOverflow;
 
-		var break_point = astra.break_point;
+		var break_point = divino.break_point;
 
 		/**
 		 * This case is when one hits a URL one after the other via `Open in New Tab` option
@@ -626,13 +626,13 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 			}
 			body.classList.remove("ast-header-break-point");
 			body.classList.add("ast-desktop");
-			astraTriggerEvent(body, "astra-header-responsive-enabled");
+			divinoTriggerEvent(body, "divino-header-responsive-enabled");
 
 		} else {
 
 			body.classList.add("ast-header-break-point");
 			body.classList.remove("ast-desktop");
-			astraTriggerEvent(body, "astra-header-responsive-disabled")
+			divinoTriggerEvent(body, "divino-header-responsive-disabled")
 		}
 	}
 
@@ -670,7 +670,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 
 	updateHeaderBreakPoint();
 
-	AstraToggleSubMenu = function( event ) {
+	divinoToggleSubMenu = function( event ) {
 
 		event.preventDefault();
 
@@ -718,7 +718,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 		}
 
 		if (parent_li.classList.contains('menu-item-has-children') ) {
-			astraToggleClass(parent_li, 'ast-submenu-expanded');
+			divinoToggleClass(parent_li, 'ast-submenu-expanded');
 			if (parent_li.classList.contains('ast-submenu-expanded')) {
 				parent_li.querySelector('.sub-menu').style.display = 'block';
 			} else {
@@ -727,10 +727,10 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 		}
 	};
 
-	AstraToggleSetup = function () {
+	divinoToggleSetup = function () {
 
-		if( typeof astraAddon != 'undefined' && typeof astraToggleSetupPro === "function" ) {
-			astraToggleSetupPro( mobileHeaderType, body, menu_click_listeners_nav );
+		if( typeof divinoAddon != 'undefined' && typeof divinoToggleSetupPro === "function" ) {
+			divinoToggleSetupPro( mobileHeaderType, body, menu_click_listeners_nav );
 		} else {
 			var flag = false;
 			var menuToggleAllLength;
@@ -760,8 +760,8 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 
 						if ( ! menu_click_listeners_nav[i] ) {
 							menu_click_listeners_nav[i] = menu_toggle_all[i];
-							menu_toggle_all[i].removeEventListener('click', astraNavMenuToggle);
-							menu_toggle_all[i].addEventListener('click', astraNavMenuToggle, false);
+							menu_toggle_all[i].removeEventListener('click', divinoNavMenuToggle);
+							menu_toggle_all[i].addEventListener('click', divinoNavMenuToggle, false);
 						}
 					}
 
@@ -779,8 +779,8 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 							if (divino_menu_toggle.length > 0) {
 
 								for (var j = 0; j < divino_menu_toggle.length; j++) {
-									divino_menu_toggle[j].removeEventListener('click', AstraToggleSubMenu);
-									divino_menu_toggle[j].addEventListener('click', AstraToggleSubMenu, false);
+									divino_menu_toggle[j].removeEventListener('click', divinoToggleSubMenu);
+									divino_menu_toggle[j].addEventListener('click', divinoToggleSubMenu, false);
 								}
 							}
 						}
@@ -790,10 +790,10 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 		}
 	};
 
-	astraNavMenuToggle = function ( event ) {
+	divinoNavMenuToggle = function ( event ) {
 
-		if( typeof astraAddon != 'undefined' ) {
-			astraNavMenuTogglePro( event, body, mobileHeaderType, this );
+		if( typeof divinoAddon != 'undefined' ) {
+			divinoNavMenuTogglePro( event, body, mobileHeaderType, this );
 		} else {
 
 			event.preventDefault();
@@ -824,8 +824,8 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 			var menu_class = this.getAttribute('class') || '';
 
 			if ( menu_class.indexOf('main-header-menu-toggle') !== -1 ) {
-				astraToggleClass(__main_header_all[event_index], 'toggle-on');
-				astraToggleClass(menu_toggle_all[event_index], 'toggled');
+				divinoToggleClass(__main_header_all[event_index], 'toggle-on');
+				divinoToggleClass(menu_toggle_all[event_index], 'toggled');
 				if (__main_header_all[event_index].classList.contains('toggle-on')) {
 					__main_header_all[event_index].style.display = 'block';
 					body.classList.add("ast-main-header-nav-open");
@@ -837,7 +837,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 		}
 	};
 
-	body.addEventListener("astra-header-responsive-enabled", function () {
+	body.addEventListener("divino-header-responsive-enabled", function () {
 
 		var __main_header_all = document.querySelectorAll('.main-header-bar-navigation');
 
@@ -892,7 +892,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 	get_browser();
 
 	/* Search Script */
-	var SearchIcons = document.getElementsByClassName( 'astra-search-icon' );
+	var SearchIcons = document.getElementsByClassName( 'divino-search-icon' );
 	for (var i = 0; i < SearchIcons.length; i++) {
 
 		SearchIcons[i].onclick = function(event) {
@@ -920,14 +920,14 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 		input.addEventListener('focus', function (e) {
 			var sibling = this.parentNode.parentNode.parentNode.querySelector( '.ast-search-menu-icon' );
 			if ( sibling ) {
-				astraToggleClass( sibling, 'ast-dropdown-active' );
+				divinoToggleClass( sibling, 'ast-dropdown-active' );
 			}
 		});
 		input.addEventListener('blur', function (e) {
 			var sibling = this.parentNode.parentNode.parentNode.querySelector( '.ast-search-menu-icon' );
 			if ( sibling ) {
 				sibling.classList.remove( 'ast-dropdown-active' );
-				astraToggleClass( sibling, 'ast-dropdown-active' );
+				divinoToggleClass( sibling, 'ast-dropdown-active' );
 			}
 		});
 	});
@@ -935,7 +935,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 	/* Hide Dropdown on body click*/
 	body.onclick = function( event ) {
 		if ( typeof event.target.classList !==  'undefined' ) {
-			if ( ! event.target.classList.contains( 'ast-search-menu-icon' ) && astraGetParents( event.target, '.ast-search-menu-icon' ).length === 0 && astraGetParents( event.target, '.ast-search-icon' ).length === 0  ) {
+			if ( ! event.target.classList.contains( 'ast-search-menu-icon' ) && divinoGetParents( event.target, '.ast-search-menu-icon' ).length === 0 && divinoGetParents( event.target, '.ast-search-icon' ).length === 0  ) {
 				var dropdownSearchWrap = document.getElementsByClassName( 'ast-search-menu-icon' );
 				for (var i = 0; i < dropdownSearchWrap.length; i++) {
 					dropdownSearchWrap[i].classList.remove( 'ast-dropdown-active' );
@@ -952,7 +952,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 			return;
 		}
 		var button = containerButton.getElementsByTagName('button')[0] || containerButton.getElementsByTagName('a')[0];
-		if (!button || (button.classList.contains('astra-search-icon'))) {
+		if (!button || (button.classList.contains('divino-search-icon'))) {
 			return;
 		}
 		var menu = containerMenu.getElementsByTagName('ul')[0];
@@ -988,7 +988,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 			menu.setAttribute('aria-expanded', toggled ? 'false' : 'true');
 		};
 
-		if (!astra.is_header_footer_builder_active) {
+		if (!divino.is_header_footer_builder_active) {
 
 			// Get all the link elements within the menu.
 			var links = menu.getElementsByTagName('a');
@@ -1007,7 +1007,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 			}
 		}
 
-		if (astra.is_header_footer_builder_active) {
+		if (divino.is_header_footer_builder_active) {
 			tabNavigation();
 		}
 	}
@@ -1017,7 +1017,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 		const dropdownToggleLinks = document.querySelectorAll('nav.site-navigation .menu-item-has-children > a .ast-header-navigation-arrow');
 		const siteNavigationSubMenu = document.querySelectorAll('nav.site-navigation .sub-menu');
 		const menuLi = document.querySelectorAll('nav.site-navigation .menu-item-has-children');
-		const megaMenuFullWidth = document.querySelectorAll('.astra-full-megamenu-wrapper');
+		const megaMenuFullWidth = document.querySelectorAll('.divino-full-megamenu-wrapper');
 
 		if (dropdownToggleLinks) {
 			dropdownToggleLinks.forEach(element => {
@@ -1031,16 +1031,16 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 
 						const closestLi = e.target.closest('li');
 						const subMenu = closestLi.querySelector('.sub-menu');
-						const isMegaMenu = subMenu && subMenu.classList.contains('astra-megamenu');
+						const isMegaMenu = subMenu && subMenu.classList.contains('divino-megamenu');
 
 						setTimeout(() => {
 							if (!isMegaMenu) {
 								subMenu.classList.toggle('toggled-on');
 								closestLi.classList.toggle('ast-menu-hover');
 							} else {
-								const fullMegaMenuWrapper = closestLi.querySelector('.astra-full-megamenu-wrapper');
-								if (subMenu) subMenu.classList.toggle('astra-megamenu-focus');
-								if (fullMegaMenuWrapper) fullMegaMenuWrapper.classList.toggle('astra-megamenu-wrapper-focus');
+								const fullMegaMenuWrapper = closestLi.querySelector('.divino-full-megamenu-wrapper');
+								if (subMenu) subMenu.classList.toggle('divino-megamenu-focus');
+								if (fullMegaMenuWrapper) fullMegaMenuWrapper.classList.toggle('divino-megamenu-wrapper-focus');
 								closestLi.classList.toggle('ast-menu-hover');
 							}
 
@@ -1080,7 +1080,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 	function closeNavigationMenu(siteNavigationSubMenu, dropdownToggleLinks, menuLi, megaMenuFullWidth) {
 		if (siteNavigationSubMenu) {
 			siteNavigationSubMenu.forEach(element => {
-				element.classList.remove('astra-megamenu-focus');
+				element.classList.remove('divino-megamenu-focus');
 				element.classList.remove('toggled-on');
 			});
 		}
@@ -1093,7 +1093,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 
 		if (megaMenuFullWidth) {
 			megaMenuFullWidth.forEach(element => {
-				element.classList.remove('astra-megamenu-wrapper-focus')
+				element.classList.remove('divino-megamenu-wrapper-focus')
 			});
 		}
 
@@ -1116,7 +1116,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 		var self = this || '',
 			hash = '#';
 
-		if( self && ! self.classList.contains('astra-search-icon') && null === self.closest('.ast-builder-menu') ) {
+		if( self && ! self.classList.contains('divino-search-icon') && null === self.closest('.ast-builder-menu') ) {
 			var link = String( self );
 			if( link.indexOf( hash ) !== -1 ) {
 				var link_parent = self.parentNode;
@@ -1131,7 +1131,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 
 						main_header_bar_navigation.style.display = 'none';
 
-						astraTriggerEvent( document.querySelector('body'), 'astraMenuHashLinkClicked' );
+						divinoTriggerEvent( document.querySelector('body'), 'divinoMenuHashLinkClicked' );
 					}
 
 				} else {
@@ -1164,7 +1164,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 		}
 	}
 
-	if( ! astra.is_header_footer_builder_active ) {
+	if( ! divino.is_header_footer_builder_active ) {
 
 		/* Add class if mouse clicked and remove if tab pressed */
 		if ( 'querySelector' in document && 'addEventListener' in window ) {
@@ -1183,7 +1183,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 	 *
 	 * @since x.x.x
 	 */
-	if ( astra.is_scroll_to_id ) {
+	if ( divino.is_scroll_to_id ) {
 		// Calculate the offset top of an element, accounting for nested elements.
 		const getOffsetTop = (element) => {
 			let offsetTop = 0;
@@ -1208,11 +1208,11 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 
 				if ( stickyHeaders.length > 0 ) {
 					stickyHeaders.forEach( ( header ) => ( offset += header.clientHeight ) );
-				} else if ( typeof astraAddon !== 'undefined' && ! ( Number( astraAddon.sticky_hide_on_scroll ) && ! document?.querySelector( '.ast-header-sticked' ) ) ) {
+				} else if ( typeof divinoAddon !== 'undefined' && ! ( Number( divinoAddon.sticky_hide_on_scroll ) && ! document?.querySelector( '.ast-header-sticked' ) ) ) {
 					const fixedHeader = document.querySelector( '#ast-fixed-header' );
 					if ( fixedHeader ) {
 						offset = fixedHeader?.clientHeight;
-						if ( Number( astraAddon?.header_main_shrink ) ) {
+						if ( Number( divinoAddon?.header_main_shrink ) ) {
 							const headers = fixedHeader?.querySelectorAll(
 								'.ast-above-header-wrap, .ast-below-header-wrap'
 							);
@@ -1226,13 +1226,13 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 					const scrollId = document.querySelector(href);
 					if (scrollId) {
 						const elementOffsetTop = getOffsetTop( scrollId );
-						if ( typeof astraAddon !== 'undefined' && Number( astraAddon.sticky_hide_on_scroll ) && window?.scrollY  < elementOffsetTop ) {
+						if ( typeof divinoAddon !== 'undefined' && Number( divinoAddon.sticky_hide_on_scroll ) && window?.scrollY  < elementOffsetTop ) {
 							offset = 0;
 						}
 
 						const scrollOffsetTop = elementOffsetTop - offset;
 						if( scrollOffsetTop ) {
-							astraSmoothScroll( e, scrollOffsetTop );
+							divinoSmoothScroll( e, scrollOffsetTop );
 						}
 					}
 				}
@@ -1262,7 +1262,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 				if (window.location.href.split('#')[0] === link.url) {
 					const siteHeader = document.querySelector('.site-header');
 					let offset = 0;
-	
+
 					// Check and add offset to scroll top if header is sticky.
 					const headerHeight = siteHeader.querySelectorAll('div[data-stick-support]');
 					if (headerHeight) {
@@ -1275,7 +1275,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 					if (scrollId) {
 						const scrollOffsetTop = getOffsetTop(scrollId) - offset;
 						if (scrollOffsetTop) {
-							astraSmoothScroll(event, scrollOffsetTop);
+							divinoSmoothScroll(event, scrollOffsetTop);
 						}
 					}
 				}
@@ -1293,7 +1293,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 	 *
 	 * @since x.x.x
 	 */
-	if ( astra.is_scroll_to_top ) {
+	if ( divino.is_scroll_to_top ) {
 		var masthead     = document.querySelector( '#page header' );
 		var astScrollTop = document.getElementById( 'ast-scroll-top' );
 
@@ -1304,20 +1304,20 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 		});
 
 		astScrollTop.onclick = function(e){
-			astraSmoothScroll( e, 0 );
+			divinoSmoothScroll( e, 0 );
 		};
 
 		astScrollTop.addEventListener( 'keydown' , function(e) {
 			if ( e.key === 'Enter') {
-				astraSmoothScroll( e, 0 );
+				divinoSmoothScroll( e, 0 );
 			}
 		});
 	}
 
-	if ( astra?.is_dark_palette ) {
-		document.documentElement.classList.add("astra-dark-mode-enable");
+	if ( divino?.is_dark_palette ) {
+		document.documentElement.classList.add("divino-dark-mode-enable");
 	} else {
-		document.documentElement.classList.remove("astra-dark-mode-enable");
+		document.documentElement.classList.remove("divino-dark-mode-enable");
 	}
 
 	/**
@@ -1333,7 +1333,7 @@ astScrollToTopHandler = function ( masthead, astScrollTop ) {
 			document.body.style.paddingTop = `${storeNotice?.clientHeight || 0}px`;
 		}
 
-		if (isHangOverTopNotice) {	
+		if (isHangOverTopNotice) {
 			window.addEventListener('resize', adjustBodyHeight);
 			setTimeout(() => adjustBodyHeight(), 0);
 		}
@@ -1426,7 +1426,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Accessibility improvement for product card quick view and add to cart buttons.
 document.addEventListener('DOMContentLoaded', () => {
-    const thumbnailWraps = document.querySelectorAll('.astra-shop-thumbnail-wrap');
+    const thumbnailWraps = document.querySelectorAll('.divino-shop-thumbnail-wrap');
 
     thumbnailWraps.forEach(wrap => {
         const focusableElements = wrap.querySelectorAll('a, span');

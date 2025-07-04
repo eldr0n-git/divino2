@@ -2,8 +2,8 @@
 /**
  * Below Header Configuration.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       4.5.2
  */
 
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register below header builder Customizer Configurations.
  *
  * @since 4.5.2
- * @return array Astra Customizer Configurations with updated configurations.
+ * @return array divino Customizer Configurations with updated configurations.
  */
 function divino_below_header_configuration() {
 	$_section = 'section-below-header-builder';
@@ -26,7 +26,7 @@ function divino_below_header_configuration() {
 		array(
 			'name'     => $_section,
 			'type'     => 'section',
-			'title'    => __( 'Below Header', 'astra' ),
+			'title'    => __( 'Below Header', 'divino' ),
 			'panel'    => 'panel-header-builder-group',
 			'priority' => 30,
 		),
@@ -50,7 +50,7 @@ function divino_below_header_configuration() {
 			'transport'         => 'postMessage',
 			'default'           => divino_get_option( 'hbb-header-height' ),
 			'priority'          => 30,
-			'title'             => __( 'Height', 'astra' ),
+			'title'             => __( 'Height', 'divino' ),
 			'type'              => 'control',
 			'control'           => 'ast-responsive-slider',
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_slider' ),
@@ -72,8 +72,8 @@ function divino_below_header_configuration() {
 			'control'     => 'ast-responsive-background',
 			'transport'   => 'postMessage',
 			'default'     => divino_get_option( 'hbb-header-bg-obj-responsive' ),
-			'title'       => __( 'Background', 'astra' ),
-			'description' => __( 'It would not be effective if transparent header is enabled.', 'astra' ),
+			'title'       => __( 'Background', 'divino' ),
+			'description' => __( 'It would not be effective if transparent header is enabled.', 'divino' ),
 			'priority'    => 40,
 			'context'     => divino_Builder_Helper::$design_tab,
 			'divider'     => array( 'ast_class' => 'ast-section-spacing' ),
@@ -89,7 +89,7 @@ function divino_below_header_configuration() {
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 			'section'           => $_section,
 			'priority'          => 40,
-			'title'             => __( 'Bottom Border Color', 'astra' ),
+			'title'             => __( 'Bottom Border Color', 'divino' ),
 			'context'           => array(
 				array(
 					'setting'  => divino_THEME_SETTINGS . '[hbb-header-separator]',
@@ -107,7 +107,7 @@ function divino_below_header_configuration() {
 			'priority'    => 40,
 			'transport'   => 'postMessage',
 			'default'     => divino_get_option( 'hbb-header-separator' ),
-			'title'       => __( 'Bottom Border Size', 'astra' ),
+			'title'       => __( 'Bottom Border Size', 'divino' ),
 			'type'        => 'control',
 			'control'     => 'ast-slider',
 			'suffix'      => 'px',

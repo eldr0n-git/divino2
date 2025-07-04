@@ -2,7 +2,7 @@
 /**
  * Pagination - Dynamic CSS
  *
- * @package astra-builder
+ * @package divino-builder
  * @since 3.3.0
  */
 
@@ -15,7 +15,7 @@ add_filter( 'divino_dynamic_theme_css', 'divino_pagination_css', 11 );
 /**
  * Pagination - Dynamic CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
+ * @param  string $dynamic_css          divino Dynamic CSS.
  * @return String Generated dynamic CSS for Pagination.
  *
  * @since 3.3.0

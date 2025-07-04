@@ -2,9 +2,9 @@
 /**
  * Loader Functions
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -163,11 +163,11 @@ if ( ! class_exists( 'divino_Enqueue_Scripts' ) ) {
 			$default_assets = array(
 				// handle => location ( in /assets/js/ ) ( without .js ext).
 				'js'  => array(
-					'astra-theme-js' => 'style',
+					'divino-theme-js' => 'style',
 				),
 				// handle => location ( in /assets/css/ ) ( without .css ext).
 				'css' => array(
-					'astra-theme-css' => divino_Builder_Helper::apply_flex_based_css() ? 'style-flex' : 'style',
+					'divino-theme-css' => divino_Builder_Helper::apply_flex_based_css() ? 'style-flex' : 'style',
 				),
 			);
 
@@ -176,51 +176,51 @@ if ( ! class_exists( 'divino_Enqueue_Scripts' ) ) {
 				$default_assets = array(
 					// handle => location ( in /assets/js/ ) ( without .js ext).
 					'js'  => array(
-						'astra-theme-js' => 'frontend',
+						'divino-theme-js' => 'frontend',
 					),
 					// handle => location ( in /assets/css/ ) ( without .css ext).
 					'css' => array(
-						'astra-theme-css' => divino_Builder_Helper::apply_flex_based_css() ? 'main' : 'frontend',
+						'divino-theme-css' => divino_Builder_Helper::apply_flex_based_css() ? 'main' : 'frontend',
 					),
 				);
 
 				if ( defined( 'divino_EXT_VER' ) && version_compare( divino_EXT_VER, '3.5.9', '<' ) ) {
-					$default_assets['js']['astra-theme-js-pro'] = 'frontend-pro';
+					$default_assets['js']['divino-theme-js-pro'] = 'frontend-pro';
 				}
 
 				if ( ( class_exists( 'Easy_Digital_Downloads' ) && divino_Builder_Helper::is_component_loaded( 'edd-cart', 'header' ) ) ||
 					( class_exists( 'WooCommerce' ) && divino_Builder_Helper::is_component_loaded( 'woo-cart', 'header' ) ) ) {
-					$default_assets['js']['astra-mobile-cart'] = 'mobile-cart';
+					$default_assets['js']['divino-mobile-cart'] = 'mobile-cart';
 				}
 
 				/** @psalm-suppress RedundantCondition */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 				if ( ( true === divino_Builder_Helper::$is_header_footer_builder_active && divino_Builder_Helper::is_component_loaded( 'search', 'header' ) && divino_get_option( 'live-search', false ) ) || ( is_search() && true === divino_get_option( 'ast-search-live-search' ) ) ) {
 					/** @psalm-suppress RedundantCondition */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-					$default_assets['js']['astra-live-search'] = 'live-search';
+					$default_assets['js']['divino-live-search'] = 'live-search';
 				}
 
 				if ( class_exists( 'WooCommerce' ) ) {
 					if ( is_product() && divino_get_option( 'single-product-sticky-add-to-cart' ) ) {
-						$default_assets['js']['astra-sticky-add-to-cart'] = 'sticky-add-to-cart';
+						$default_assets['js']['divino-sticky-add-to-cart'] = 'sticky-add-to-cart';
 					}
 
 					if ( ! is_customize_preview() ) {
 						$divino_shop_add_to_cart = divino_get_option( 'shop-add-to-cart-action' );
 						if ( $divino_shop_add_to_cart && 'default' !== $divino_shop_add_to_cart ) {
-							$default_assets['js']['astra-shop-add-to-cart'] = 'shop-add-to-cart';
+							$default_assets['js']['divino-shop-add-to-cart'] = 'shop-add-to-cart';
 						}
 					}
 
 					/** @psalm-suppress UndefinedFunction */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 					$divino_add_to_cart_quantity_btn_enabled = apply_filters( 'divino_add_to_cart_quantity_btn_enabled', divino_get_option( 'single-product-plus-minus-button' ) );
 					if ( $divino_add_to_cart_quantity_btn_enabled ) {
-						$default_assets['js']['astra-add-to-cart-quantity-btn'] = 'add-to-cart-quantity-btn';
+						$default_assets['js']['divino-add-to-cart-quantity-btn'] = 'add-to-cart-quantity-btn';
 					}
 				}
 			}
 
 			if ( divino_get_option( 'site-sticky-sidebar', false ) ) {
-				$default_assets['js']['astra-sticky-sidebar'] = 'sticky-sidebar';
+				$default_assets['js']['divino-sticky-sidebar'] = 'sticky-sidebar';
 			}
 
 			return apply_filters( 'divino_theme_assets', $default_assets );
@@ -267,13 +267,13 @@ if ( ! class_exists( 'divino_Enqueue_Scripts' ) ) {
 			 * IE Only Js and CSS Files.
 			 */
 			// Flexibility.js for flexbox IE10 support.
-			wp_enqueue_script( 'astra-flexibility', $js_uri . 'flexibility' . $file_prefix . '.js', array(), divino_THEME_VERSION, false );
-			wp_add_inline_script( 'astra-flexibility', 'flexibility(document.documentElement);' );
-			wp_script_add_data( 'astra-flexibility', 'conditional', 'IE' );
+			wp_enqueue_script( 'divino-flexibility', $js_uri . 'flexibility' . $file_prefix . '.js', array(), divino_THEME_VERSION, false );
+			wp_add_inline_script( 'divino-flexibility', 'flexibility(document.documentElement);' );
+			wp_script_add_data( 'divino-flexibility', 'conditional', 'IE' );
 
 			// Polyfill for CustomEvent for IE.
-			wp_register_script( 'astra-customevent', $js_uri . 'custom-events-polyfill' . $file_prefix . '.js', array(), divino_THEME_VERSION, false );
-			wp_register_style( 'astra-galleries-css', $css_uri . 'galleries.min.css', array(), divino_THEME_VERSION, 'all' );
+			wp_register_script( 'divino-customevent', $js_uri . 'custom-events-polyfill' . $file_prefix . '.js', array(), divino_THEME_VERSION, false );
+			wp_register_style( 'divino-galleries-css', $css_uri . 'galleries.min.css', array(), divino_THEME_VERSION, 'all' );
 			// All assets.
 			$all_assets = self::theme_assets();
 			$styles     = $all_assets['css'];
@@ -286,9 +286,9 @@ if ( ! class_exists( 'divino_Enqueue_Scripts' ) ) {
 					$dependency = array();
 
 					// Add dynamic CSS dependency for all styles except for theme's style.css.
-					if ( 'astra-theme-css' !== $key && class_exists( 'divino_Cache_Base' ) ) {
+					if ( 'divino-theme-css' !== $key && class_exists( 'divino_Cache_Base' ) ) {
 						if ( ! divino_Cache_Base::inline_assets() ) {
-							$dependency[] = 'astra-theme-dynamic';
+							$dependency[] = 'divino-theme-dynamic';
 						}
 					}
 
@@ -338,14 +338,14 @@ if ( ! class_exists( 'divino_Enqueue_Scripts' ) ) {
 				if ( class_exists( 'divino_Cache' ) ) {
 					divino_Cache::add_css_file( divino_THEME_DIR . 'assets/css/minified/menu-animation' . $rtl . '.min.css' );
 				} else {
-					wp_register_style( 'astra-menu-animation', $css_uri . 'menu-animation.min.css', null, divino_THEME_VERSION, 'all' );
-					wp_enqueue_style( 'astra-menu-animation' );
+					wp_register_style( 'divino-menu-animation', $css_uri . 'menu-animation.min.css', null, divino_THEME_VERSION, 'all' );
+					wp_enqueue_style( 'divino-menu-animation' );
 				}
 			}
 
 			if ( ! class_exists( 'divino_Cache' ) ) {
 				$theme_css_data = apply_filters( 'divino_dynamic_theme_css', '' );
-				wp_add_inline_style( 'astra-theme-css', $theme_css_data );
+				wp_add_inline_style( 'divino-theme-css', $theme_css_data );
 			}
 
 			if ( divino_is_amp_endpoint() ) {
@@ -384,22 +384,22 @@ if ( ! class_exists( 'divino_Enqueue_Scripts' ) ) {
 				'is_dark_palette'                 => divino_Global_Palette::is_dark_palette(),
 			);
 
-			wp_localize_script( 'astra-theme-js', 'astra', apply_filters( 'divino_theme_js_localize', $divino_localize ) );
+			wp_localize_script( 'divino-theme-js', 'divino', apply_filters( 'divino_theme_js_localize', $divino_localize ) );
 
 			$divino_qty_btn_localize = array(
-				'plus_qty'   => __( 'Plus Quantity', 'astra' ),
-				'minus_qty'  => __( 'Minus Quantity', 'astra' ),
+				'plus_qty'   => __( 'Plus Quantity', 'divino' ),
+				'minus_qty'  => __( 'Minus Quantity', 'divino' ),
 				'style_type' => $quantity_type,    // Quantity button type.
 			);
 
-			wp_localize_script( 'astra-add-to-cart-quantity-btn', 'divino_qty_btn', apply_filters( 'divino_qty_btn_js_localize', $divino_qty_btn_localize ) );
+			wp_localize_script( 'divino-add-to-cart-quantity-btn', 'divino_qty_btn', apply_filters( 'divino_qty_btn_js_localize', $divino_qty_btn_localize ) );
 
 			$divino_cart_localize_data = array(
 				'desktop_layout'        => divino_get_option( 'woo-header-cart-click-action' ),    // WooCommerce sidebar flyout desktop.
 				'responsive_cart_click' => divino_get_option( 'responsive-cart-click-action' ),    // WooCommerce responsive devices flyout.
 			);
 
-			wp_localize_script( 'astra-mobile-cart', 'divino_cart', apply_filters( 'divino_cart_js_localize', $divino_cart_localize_data ) );
+			wp_localize_script( 'divino-mobile-cart', 'divino_cart', apply_filters( 'divino_cart_js_localize', $divino_cart_localize_data ) );
 
 			if ( ( true === divino_Builder_Helper::$is_header_footer_builder_active && divino_Builder_Helper::is_component_loaded( 'search', 'header' ) && divino_get_option( 'live-search', false ) ) || ( is_search() && true === divino_get_option( 'ast-search-live-search' ) ) ) {
 				$search_post_types      = array();
@@ -438,13 +438,13 @@ if ( ! class_exists( 'divino_Enqueue_Scripts' ) ) {
 					'search_post_types'            => $search_post_types,
 					'search_post_types_labels'     => $search_post_type_label,
 					'search_language'              => divino_get_current_language_slug(),
-					'no_live_results_found'        => __( 'No results found', 'astra' ),
+					'no_live_results_found'        => __( 'No results found', 'divino' ),
 					'search_page_condition'        => is_search() && true === divino_get_option( 'ast-search-live-search' ) ? true : false,
 					'search_page_post_types'       => $search_page_post_types,
 					'search_page_post_type_labels' => $search_page_post_type_label,
 				);
 
-				wp_localize_script( 'astra-live-search', 'divino_search', apply_filters( 'divino_search_js_localize', $divino_live_search_localize_data ) );
+				wp_localize_script( 'divino-live-search', 'divino_search', apply_filters( 'divino_search_js_localize', $divino_live_search_localize_data ) );
 			}
 
 			if ( class_exists( 'woocommerce' ) ) {
@@ -456,7 +456,7 @@ if ( ! class_exists( 'divino_Enqueue_Scripts' ) ) {
 					'checkout_url'            => wc_get_checkout_url(),
 					'is_divino_pro'            => $is_divino_pro,
 				);
-				wp_localize_script( 'astra-shop-add-to-cart', 'divino_shop_add_to_cart', apply_filters( 'divino_shop_add_to_cart_js_localize', $divino_shop_add_to_cart_localize_data ) );
+				wp_localize_script( 'divino-shop-add-to-cart', 'divino_shop_add_to_cart', apply_filters( 'divino_shop_add_to_cart_js_localize', $divino_shop_add_to_cart_localize_data ) );
 			}
 
 			$sticky_sidebar = divino_get_option( 'site-sticky-sidebar', false );
@@ -477,7 +477,7 @@ if ( ! class_exists( 'divino_Enqueue_Scripts' ) ) {
 					'sticky_header_addon' => $sticky_header_addon,
 					'desktop_breakpoint'  => divino_get_tablet_breakpoint( '', 1 ),
 				);
-				wp_localize_script( 'astra-sticky-sidebar', 'divino_sticky_sidebar', apply_filters( 'divino_sticky_sidebar_js_localize', $divino_sticky_sidebar_localize_data ) );
+				wp_localize_script( 'divino-sticky-sidebar', 'divino_sticky_sidebar', apply_filters( 'divino_sticky_sidebar_js_localize', $divino_sticky_sidebar_localize_data ) );
 			}
 		}
 
@@ -516,7 +516,7 @@ if ( ! class_exists( 'divino_Enqueue_Scripts' ) ) {
 
 			$js_uri = divino_THEME_URI . 'inc/assets/js/block-editor-script.js';
 			/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-			wp_enqueue_script( 'astra-block-editor-script', $js_uri, false, divino_THEME_VERSION, 'all' );
+			wp_enqueue_script( 'divino-block-editor-script', $js_uri, false, divino_THEME_VERSION, 'all' );
 			/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
 			$content_bg_obj = divino_get_option( 'content-bg-obj-responsive' );
@@ -551,7 +551,7 @@ if ( ! class_exists( 'divino_Enqueue_Scripts' ) ) {
 				'mobile_logo_state'             => divino_get_option( 'different-mobile-logo' ),
 			);
 
-			wp_localize_script( 'astra-block-editor-script', 'astraColors', apply_filters( 'divino_theme_root_colors', $divino_colors ) );
+			wp_localize_script( 'divino-block-editor-script', 'divinoColors', apply_filters( 'divino_theme_root_colors', $divino_colors ) );
 
 			// Render fonts in Gutenberg layout.
 			divino_Fonts::render_fonts();
@@ -559,20 +559,20 @@ if ( ! class_exists( 'divino_Enqueue_Scripts' ) ) {
 			if ( divino_block_based_legacy_setup() ) {
 				$css_uri = divino_THEME_URI . 'inc/assets/css/block-editor-styles' . $rtl . '.css';
 				/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-				wp_enqueue_style( 'astra-block-editor-styles', $css_uri, false, divino_THEME_VERSION, 'all' );
+				wp_enqueue_style( 'divino-block-editor-styles', $css_uri, false, divino_THEME_VERSION, 'all' );
 				/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-				wp_add_inline_style( 'astra-block-editor-styles', apply_filters( 'divino_block_editor_dynamic_css', Gutenberg_Editor_CSS::get_css() ) );
+				wp_add_inline_style( 'divino-block-editor-styles', apply_filters( 'divino_block_editor_dynamic_css', Gutenberg_Editor_CSS::get_css() ) );
 			} else {
 				$css_uri = divino_THEME_URI . 'inc/assets/css/wp-editor-styles' . $rtl . '.css';
 				/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-				wp_enqueue_style( 'astra-wp-editor-styles', $css_uri, false, divino_THEME_VERSION, 'all' );
+				wp_enqueue_style( 'divino-wp-editor-styles', $css_uri, false, divino_THEME_VERSION, 'all' );
 				/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-				wp_add_inline_style( 'astra-wp-editor-styles', apply_filters( 'divino_block_editor_dynamic_css', divino_WP_Editor_CSS::get_css() ) );
+				wp_add_inline_style( 'divino-wp-editor-styles', apply_filters( 'divino_block_editor_dynamic_css', divino_WP_Editor_CSS::get_css() ) );
 			}
 		}
 
 		/**
-		 * Function to check if enqueuing of Astra assets are disabled.
+		 * Function to check if enqueuing of divino assets are disabled.
 		 *
 		 * @since 2.1.0
 		 * @return bool
@@ -589,7 +589,7 @@ if ( ! class_exists( 'divino_Enqueue_Scripts' ) ) {
 		 * @return string
 		 */
 		public function enqueue_galleries_style( $gallery_style ) {
-			wp_enqueue_style( 'astra-galleries-css' );
+			wp_enqueue_style( 'divino-galleries-css' );
 			return $gallery_style;
 		}
 

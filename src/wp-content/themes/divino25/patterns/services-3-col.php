@@ -1,3 +1,4 @@
+<!-- services-3-col.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Services, 3 columns

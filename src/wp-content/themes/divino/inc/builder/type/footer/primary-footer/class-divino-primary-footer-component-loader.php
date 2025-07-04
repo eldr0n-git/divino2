@@ -1,10 +1,10 @@
 <?php
 /**
- * Primary Footer Styling Loader for Astra theme.
+ * Primary Footer Styling Loader for divino theme.
  *
- * @package     Astra Builder
+ * @package     divino Builder
  * @link        https://www.brainstormforce.com
- * @since       Astra 3.0.0
+ * @since       divino 3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -38,12 +38,12 @@ class divino_Primary_Footer_Component_Loader {
 		/* Directory and Extension */
 		$dir_name    = SCRIPT_DEBUG ? 'unminified' : 'minified';
 		$file_prefix = SCRIPT_DEBUG ? '' : '.min';
-		wp_enqueue_script( 'astra-footer-primary-footer-customizer-preview-js', divino_BUILDER_FOOTER_PRIMARY_FOOTER_URI . '/assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'astra-customizer-preview-js' ), divino_THEME_VERSION, true );
+		wp_enqueue_script( 'divino-footer-primary-footer-customizer-preview-js', divino_BUILDER_FOOTER_PRIMARY_FOOTER_URI . '/assets/js/' . $dir_name . '/customizer-preview' . $file_prefix . '.js', array( 'customize-preview', 'divino-customizer-preview-js' ), divino_THEME_VERSION, true );
 
 		// Localize variables for Footer JS.
 		wp_localize_script(
-			'astra-heading-primary-customizer-preview-js',
-			'AstraBuilderPrimaryFooterData',
+			'divino-heading-primary-customizer-preview-js',
+			'divinoBuilderPrimaryFooterData',
 			array(
 				'footer_content_width' => divino_get_option( 'site-content-width' ),
 			)

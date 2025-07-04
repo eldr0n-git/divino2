@@ -3,7 +3,7 @@
  * Blog Config File
  * Common Functions for Blog and Single Blog
  *
- * @package Astra
+ * @package divino
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -178,7 +178,7 @@ if ( ! function_exists( 'divino_get_post_meta' ) ) {
 									/** @psalm-suppress PossiblyFalseOperand */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 							}
 						}
-						$output_str .= esc_html( divino_get_i18n_option( 'blog-meta-author-avatar-prefix-label', _x( '%astra%', 'Blogs: Author Prefix Label', 'astra' ) ) ) . $divino_post_author_html;
+						$output_str .= esc_html( divino_get_i18n_option( 'blog-meta-author-avatar-prefix-label', _x( '%divino%', 'Blogs: Author Prefix Label', 'divino' ) ) ) . $divino_post_author_html;
 					}
 					break;
 
@@ -432,7 +432,7 @@ if ( ! function_exists( 'divino_post_author' ) ) {
 			);
 		echo '>';
 			// Translators: Author Name. ?>
-			<a title="<?php printf( esc_attr__( 'View all posts by %1$s', 'astra' ), esc_attr( strval( get_the_author() ) ) ); ?>"
+			<a title="<?php printf( esc_attr__( 'View all posts by %1$s', 'divino' ), esc_attr( strval( get_the_author() ) ) ); ?>"
 				href="<?php echo esc_url( get_author_posts_url( $author_id ) ); ?>" rel="author"
 				<?php
 					echo wp_kses_post(
@@ -494,7 +494,7 @@ if ( ! function_exists( 'divino_post_link' ) ) {
 			return $output_filter;
 		}
 
-		$more_label        = divino_Dynamic_CSS::divino_4_6_0_compatibility() ? esc_html__( 'Read Post »', 'astra' ) : esc_html__( 'Read More »', 'astra' );
+		$more_label        = divino_Dynamic_CSS::divino_4_6_0_compatibility() ? esc_html__( 'Read Post »', 'divino' ) : esc_html__( 'Read More »', 'divino' );
 		$read_more_text    = apply_filters( 'divino_post_read_more', $more_label );
 		$read_more_classes = apply_filters( 'divino_post_read_more_class', array() );
 
@@ -736,7 +736,7 @@ if ( ! function_exists( 'divino_the_content_more_link' ) ) {
 			return $more_link_element;
 		}
 
-		$more_link_text    = apply_filters( 'divino_the_content_more_string', __( 'Read More &raquo;', 'astra' ) );
+		$more_link_text    = apply_filters( 'divino_the_content_more_string', __( 'Read More &raquo;', 'divino' ) );
 		$read_more_classes = apply_filters( 'divino_the_content_more_link_class', array() );
 
 		$post_link = sprintf(

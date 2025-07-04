@@ -4,9 +4,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package     Astra
- * @link        http://wpastra.com/
- * @since       Astra 1.0
+ * @package     divino
+ * @link        http://wpdivino.com/
+ * @since       divino 1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

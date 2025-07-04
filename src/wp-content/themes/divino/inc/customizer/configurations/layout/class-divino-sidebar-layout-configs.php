@@ -1,10 +1,10 @@
 <?php
 /**
- * Bottom Footer Options for Astra Theme.
+ * Bottom Footer Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,16 +14,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'divino_Sidebar_Layout_Configs' ) ) {
 
 	/**
-	 * Register Astra Sidebar Layout Configurations.
+	 * Register divino Sidebar Layout Configurations.
 	 */
 	class divino_Sidebar_Layout_Configs extends divino_Customizer_Config_Base {
 		/**
-		 * Register Astra Sidebar Layout Configurations.
+		 * Register divino Sidebar Layout Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -40,19 +40,19 @@ if ( ! class_exists( 'divino_Sidebar_Layout_Configs' ) ) {
 					'section'           => 'section-sidebars',
 					'default'           => divino_get_option( 'site-sidebar-layout' ),
 					'priority'          => 5,
-					'description'       => __( 'Sidebar will only apply when container layout is set to normal.', 'astra' ),
-					'title'             => __( 'Default Layout', 'astra' ),
+					'description'       => __( 'Sidebar will only apply when container layout is set to normal.', 'divino' ),
+					'title'             => __( 'Default Layout', 'divino' ),
 					'choices'           => array(
 						'no-sidebar'    => array(
-							'label' => __( 'No Sidebar', 'astra' ),
+							'label' => __( 'No Sidebar', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'no-sidebar', false ) : '',
 						),
 						'left-sidebar'  => array(
-							'label' => __( 'Left Sidebar', 'astra' ),
+							'label' => __( 'Left Sidebar', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'left-sidebar', false ) : '',
 						),
 						'right-sidebar' => array(
-							'label' => __( 'Right Sidebar', 'astra' ),
+							'label' => __( 'Right Sidebar', 'divino' ),
 							'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'right-sidebar', false ) : '',
 						),
 					),
@@ -68,10 +68,10 @@ if ( ! class_exists( 'divino_Sidebar_Layout_Configs' ) ) {
 					'section'    => 'section-sidebars',
 					'default'    => divino_get_option( 'site-sidebar-style', 'unboxed' ),
 					'priority'   => 9,
-					'title'      => __( 'Sidebar Style', 'astra' ),
+					'title'      => __( 'Sidebar Style', 'divino' ),
 					'choices'    => array(
-						'unboxed' => __( 'Unboxed', 'astra' ),
-						'boxed'   => __( 'Boxed', 'astra' ),
+						'unboxed' => __( 'Unboxed', 'divino' ),
+						'boxed'   => __( 'Boxed', 'divino' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -88,7 +88,7 @@ if ( ! class_exists( 'divino_Sidebar_Layout_Configs' ) ) {
 					'default'     => divino_get_option( 'site-sidebar-width' ),
 					'section'     => 'section-sidebars',
 					'priority'    => 15,
-					'title'       => __( 'Sidebar Width', 'astra' ),
+					'title'       => __( 'Sidebar Width', 'divino' ),
 					'suffix'      => '%',
 					'transport'   => 'postMessage',
 					'input_attrs' => array(
@@ -106,7 +106,7 @@ if ( ! class_exists( 'divino_Sidebar_Layout_Configs' ) ) {
 					'section'  => 'section-sidebars',
 					'priority' => 15,
 					'title'    => '',
-					'help'     => __( 'Sidebar width will apply only when one of the above sidebar is set.', 'astra' ),
+					'help'     => __( 'Sidebar width will apply only when one of the above sidebar is set.', 'divino' ),
 					'divider'  => array( 'ast_class' => 'ast-bottom-section-divider' ),
 					'settings' => array(),
 				),
@@ -119,14 +119,14 @@ if ( ! class_exists( 'divino_Sidebar_Layout_Configs' ) ) {
 					'default'  => divino_get_option( 'site-sticky-sidebar' ),
 					'type'     => 'control',
 					'section'  => 'section-sidebars',
-					'title'    => __( 'Enable Sticky Sidebar', 'astra' ),
+					'title'    => __( 'Enable Sticky Sidebar', 'divino' ),
 					'priority' => 15,
 					'control'  => 'ast-toggle-control',
 					'divider'  => array( 'ast_class' => 'ast-section-spacing' ),
 				),
 			);
 
-			// Learn More link if Astra Pro is not activated.
+			// Learn More link if divino Pro is not activated.
 			if ( divino_showcase_upgrade_notices() ) {
 				$_configs[] = array(
 					'name'     => divino_THEME_SETTINGS . '[ast-sidebar-pro-items]',
@@ -135,25 +135,25 @@ if ( ! class_exists( 'divino_Sidebar_Layout_Configs' ) ) {
 					'campaign' => 'sidebar',
 					'choices'  => array(
 						'one'   => array(
-							'title' => __( 'Sidebar spacing', 'astra' ),
+							'title' => __( 'Sidebar spacing', 'divino' ),
 						),
 						'two'   => array(
-							'title' => __( 'Sidebar color options', 'astra' ),
+							'title' => __( 'Sidebar color options', 'divino' ),
 						),
 						'three' => array(
-							'title' => __( 'Widget color options', 'astra' ),
+							'title' => __( 'Widget color options', 'divino' ),
 						),
 						'four'  => array(
-							'title' => __( 'Widget title typography', 'astra' ),
+							'title' => __( 'Widget title typography', 'divino' ),
 						),
 						'five'  => array(
-							'title' => __( 'Widget content typography', 'astra' ),
+							'title' => __( 'Widget content typography', 'divino' ),
 						),
 					),
 					'section'  => 'section-sidebars',
 					'default'  => '',
 					'priority' => 999,
-					'title'    => __( 'Make sidebars work harder to engage with Astra Pro', 'astra' ),
+					'title'    => __( 'Make sidebars work harder to engage with divino Pro', 'divino' ),
 					'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),
 				);
 			}

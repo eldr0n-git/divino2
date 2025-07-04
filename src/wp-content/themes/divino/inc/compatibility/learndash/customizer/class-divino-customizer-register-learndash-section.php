@@ -2,7 +2,7 @@
 /**
  * Register customizer panels & sections.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
  * @since       1.2.0
  * @since       1.4.6 Chnaged to using divino_Customizer API
@@ -21,11 +21,11 @@ if ( ! class_exists( 'divino_Customizer_Register_Learndash_Section' ) ) {
 		/**
 		 * Register Panels and Sections for Customizer.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.2.0
 		 * @since 1.4.6 Chnaged to using divino_Customizer API
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -34,13 +34,13 @@ if ( ! class_exists( 'divino_Customizer_Register_Learndash_Section' ) ) {
 					'type'     => 'section',
 					'name'     => 'section-learndash',
 					'priority' => 65,
-					'title'    => __( 'LearnDash', 'astra' ),
+					'title'    => __( 'LearnDash', 'divino' ),
 
 				),
 
 				array(
 					'name'     => 'section-leandash-general',
-					'title'    => __( 'General', 'astra' ),
+					'title'    => __( 'General', 'divino' ),
 					'type'     => 'section',
 					'section'  => 'section-learndash',
 					'priority' => 10,

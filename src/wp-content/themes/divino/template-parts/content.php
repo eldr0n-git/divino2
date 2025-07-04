@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Astra
+ * @package divino
  * @since 1.0.0
  */
 
@@ -66,7 +66,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. */
-						__( 'Continue reading %s', 'astra' ) . ' <span class="meta-nav">&rarr;</span>',
+						__( 'Continue reading %s', 'divino' ) . ' <span class="meta-nav">&rarr;</span>',
 						array(
 							'span' => array(
 								'class' => array(),

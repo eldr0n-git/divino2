@@ -6,7 +6,7 @@
  *
  * Learn more: https://github.com/Automattic/_s/pull/136
  *
- * @package Astra
+ * @package divino
  */
 
 ( function() {

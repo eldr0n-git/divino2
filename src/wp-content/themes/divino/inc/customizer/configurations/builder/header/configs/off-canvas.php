@@ -2,8 +2,8 @@
 /**
  * Off canvas Header Configuration.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       4.5.2
  */
 
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Register off-canvas header builder Customizer Configurations.
  *
  * @since 4.5.2
- * @return array Astra Customizer Configurations with updated configurations.
+ * @return array divino Customizer Configurations with updated configurations.
  */
 function divino_header_off_canvas_configuration() {
 	$_section = 'section-popup-header-builder';
@@ -26,7 +26,7 @@ function divino_header_off_canvas_configuration() {
 		array(
 			'name'     => $_section,
 			'type'     => 'section',
-			'title'    => __( 'Off-Canvas', 'astra' ),
+			'title'    => __( 'Off-Canvas', 'divino' ),
 			'panel'    => 'panel-header-builder-group',
 			'priority' => 30,
 		),
@@ -53,11 +53,11 @@ function divino_header_off_canvas_configuration() {
 			'control'    => 'ast-selector',
 			'section'    => $_section,
 			'priority'   => 25,
-			'title'      => __( 'Header Type', 'astra' ),
+			'title'      => __( 'Header Type', 'divino' ),
 			'choices'    => array(
-				'off-canvas' => __( 'Flyout', 'astra' ),
-				'full-width' => __( 'Full-Screen', 'astra' ),
-				'dropdown'   => __( 'Dropdown', 'astra' ),
+				'off-canvas' => __( 'Flyout', 'divino' ),
+				'full-width' => __( 'Full-Screen', 'divino' ),
+				'dropdown'   => __( 'Dropdown', 'divino' ),
 			),
 			'transport'  => 'refresh',
 			'context'    => divino_Builder_Helper::$general_tab,
@@ -75,8 +75,8 @@ function divino_header_off_canvas_configuration() {
 			'control'     => 'ast-toggle-control',
 			'section'     => $_section,
 			'priority'    => 30,
-			'title'       => __( 'Move Body', 'astra' ),
-			'description' => __( 'Enable to shift the body content when the off-canvas menu opens.', 'astra' ),
+			'title'       => __( 'Move Body', 'divino' ),
+			'description' => __( 'Enable to shift the body content when the off-canvas menu opens.', 'divino' ),
 			'context'     => array(
 				divino_Builder_Helper::$general_tab_config,
 				array(
@@ -94,7 +94,7 @@ function divino_header_off_canvas_configuration() {
 			'control'  => 'ast-description',
 			'section'  => $_section,
 			'priority' => 30,
-			'help'     => esc_html__( 'Note: This is not applicable on Transparent and Sticky Headers!', 'astra' ),
+			'help'     => esc_html__( 'Note: This is not applicable on Transparent and Sticky Headers!', 'divino' ),
 			'context'  => array(
 				divino_Builder_Helper::$general_tab_config,
 				array(
@@ -116,10 +116,10 @@ function divino_header_off_canvas_configuration() {
 			'control'    => 'ast-selector',
 			'section'    => $_section,
 			'priority'   => 30,
-			'title'      => __( 'Position', 'astra' ),
+			'title'      => __( 'Position', 'divino' ),
 			'choices'    => array(
-				'left'  => __( 'Left', 'astra' ),
-				'right' => __( 'Right', 'astra' ),
+				'left'  => __( 'Left', 'divino' ),
+				'right' => __( 'Right', 'divino' ),
 			),
 			'context'    => array(
 				divino_Builder_Helper::$general_tab_config,
@@ -145,11 +145,11 @@ function divino_header_off_canvas_configuration() {
 			'section'    => $_section,
 			'context'    => divino_Builder_Helper::$general_tab,
 			'priority'   => 40,
-			'title'      => __( 'Dropdown Target', 'astra' ),
+			'title'      => __( 'Dropdown Target', 'divino' ),
 			'suffix'     => '',
 			'choices'    => array(
-				'icon' => __( 'Icon', 'astra' ),
-				'link' => __( 'Link', 'astra' ),
+				'icon' => __( 'Icon', 'divino' ),
+				'link' => __( 'Link', 'divino' ),
 			),
 			'renderAs'   => 'text',
 			'responsive' => false,
@@ -168,12 +168,12 @@ function divino_header_off_canvas_configuration() {
 			'section'    => $_section,
 			'context'    => divino_Builder_Helper::$general_tab,
 			'priority'   => 40,
-			'title'      => __( 'Content Alignment', 'astra' ),
+			'title'      => __( 'Content Alignment', 'divino' ),
 			'suffix'     => '',
 			'choices'    => array(
-				'flex-start' => __( 'Left', 'astra' ),
-				'center'     => __( 'Center', 'astra' ),
-				'flex-end'   => __( 'Right', 'astra' ),
+				'flex-start' => __( 'Left', 'divino' ),
+				'center'     => __( 'Center', 'divino' ),
+				'flex-end'   => __( 'Right', 'divino' ),
 			),
 			'renderAs'   => 'text',
 			'responsive' => false,
@@ -185,7 +185,7 @@ function divino_header_off_canvas_configuration() {
 			'name'              => divino_THEME_SETTINGS . '[off-canvas-background]',
 			'type'              => 'control',
 			'control'           => 'ast-background',
-			'title'             => __( 'Background', 'astra' ),
+			'title'             => __( 'Background', 'divino' ),
 			'section'           => $_section,
 			'transport'         => 'postMessage',
 			'priority'          => 26,
@@ -205,7 +205,7 @@ function divino_header_off_canvas_configuration() {
 			'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 			'section'           => $_section,
 			'priority'          => 27,
-			'title'             => __( 'Close Icon Color', 'astra' ),
+			'title'             => __( 'Close Icon Color', 'divino' ),
 			'context'           => array(
 				'relation' => 'AND',
 				divino_Builder_Helper::$design_tab_config,
@@ -231,7 +231,7 @@ function divino_header_off_canvas_configuration() {
 			'default'   => divino_get_option( 'off-canvas-inner-spacing' ),
 			'type'      => 'control',
 			'control'   => 'ast-slider',
-			'title'     => __( 'Inner Element Spacing', 'astra' ),
+			'title'     => __( 'Inner Element Spacing', 'divino' ),
 			'section'   => $_section,
 			'transport' => 'postMessage',
 			'priority'  => 28,
@@ -244,7 +244,7 @@ function divino_header_off_canvas_configuration() {
 			'name'              => divino_THEME_SETTINGS . '[off-canvas-background]',
 			'type'              => 'control',
 			'control'           => 'ast-background',
-			'title'             => __( 'Background', 'astra' ),
+			'title'             => __( 'Background', 'divino' ),
 			'section'           => $_section,
 			'transport'         => 'postMessage',
 			'priority'          => 30,
@@ -266,14 +266,14 @@ function divino_header_off_canvas_configuration() {
 			'control'        => 'ast-responsive-spacing',
 			'section'        => $_section,
 			'priority'       => 210,
-			'title'          => __( 'Popup Padding', 'astra' ),
+			'title'          => __( 'Popup Padding', 'divino' ),
 			'linked_choices' => true,
 			'unit_choices'   => array( 'px', 'em', '%' ),
 			'choices'        => array(
-				'top'    => __( 'Top', 'astra' ),
-				'right'  => __( 'Right', 'astra' ),
-				'bottom' => __( 'Bottom', 'astra' ),
-				'left'   => __( 'Left', 'astra' ),
+				'top'    => __( 'Top', 'divino' ),
+				'right'  => __( 'Right', 'divino' ),
+				'bottom' => __( 'Bottom', 'divino' ),
+				'left'   => __( 'Left', 'divino' ),
 			),
 			'context'        => array(
 				'relation' => 'AND',

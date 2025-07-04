@@ -3,11 +3,11 @@
  * Gutenberg Compatibility File.
  *
  * @since 3.7.1
- * @package Astra
+ * @package divino
  */
 
 /**
- * Astra Gutenberg Compatibility
+ * divino Gutenberg Compatibility
  *
  * @since 3.7.1
  */

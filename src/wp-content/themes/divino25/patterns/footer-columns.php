@@ -1,3 +1,4 @@
+<!-- footer-columns.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Footer with columns

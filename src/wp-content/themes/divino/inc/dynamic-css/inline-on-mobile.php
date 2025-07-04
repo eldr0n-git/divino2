@@ -2,7 +2,7 @@
 /**
  * Inline On Mobile - Dynamic CSS.
  *
- * @package astra
+ * @package divino
  * @since 3.5.0
  */
 

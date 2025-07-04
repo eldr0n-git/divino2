@@ -1,3 +1,4 @@
+<!-- hidden-blog-heading.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Hidden blog heading

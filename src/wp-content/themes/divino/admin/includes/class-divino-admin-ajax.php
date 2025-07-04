@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Admin Ajax Base.
+ * divino Admin Ajax Base.
  *
- * @package Astra
+ * @package divino
  * @since 4.0.0
  */
 
@@ -22,7 +22,7 @@ class divino_Admin_Ajax {
 	 * @var string
 	 * @since 4.0.0
 	 */
-	private $prefix = 'astra';
+	private $prefix = 'divino';
 
 	/**
 	 * Instance
@@ -65,10 +65,10 @@ class divino_Admin_Ajax {
 			'init',
 			function() {
 				$this->errors = array(
-					'permission' => esc_html__( 'Sorry, you are not allowed to do this operation.', 'astra' ),
-					'nonce'      => esc_html__( 'Nonce validation failed', 'astra' ),
-					'default'    => esc_html__( 'Sorry, something went wrong.', 'astra' ),
-					'invalid'    => esc_html__( 'No post data found!', 'astra' ),
+					'permission' => esc_html__( 'Sorry, you are not allowed to do this operation.', 'divino' ),
+					'nonce'      => esc_html__( 'Nonce validation failed', 'divino' ),
+					'default'    => esc_html__( 'Sorry, something went wrong.', 'divino' ),
+					'invalid'    => esc_html__( 'No post data found!', 'divino' ),
 				);
 			}
 		);
@@ -100,7 +100,7 @@ class divino_Admin_Ajax {
 	}
 
 	/**
-	 * Disable pro upgrade notice from all over in Astra.
+	 * Disable pro upgrade notice from all over in divino.
 	 *
 	 * @since 4.0.0
 	 */
@@ -126,7 +126,7 @@ class divino_Admin_Ajax {
 		}
 
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_send_json_error( esc_html__( 'You don\'t have the access', 'astra' ) );
+			wp_send_json_error( esc_html__( 'You don\'t have the access', 'divino' ) );
 		}
 
 		/** @psalm-suppress PossiblyInvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
@@ -174,7 +174,7 @@ class divino_Admin_Ajax {
 		divino_update_option( 'is-header-footer-builder', $migrate );
 
 		if ( $migrate && false === $migration_flag ) {
-			require_once divino_THEME_DIR . 'inc/theme-update/astra-builder-migration-updater.php';  // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+			require_once divino_THEME_DIR . 'inc/theme-update/divino-builder-migration-updater.php';  // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 			divino_header_builder_migration();
 		}
 
@@ -233,14 +233,14 @@ class divino_Admin_Ajax {
 		divino_API_Init::update_admin_settings_option( $sub_option_key, $sub_option_value );
 
 		$response_data = array(
-			'message' => esc_html__( 'Successfully saved data!', 'astra' ),
+			'message' => esc_html__( 'Successfully saved data!', 'divino' ),
 		);
 
 		wp_send_json_success( $response_data );
 	}
 
 	/**
-	 * Astra Analytics Opt-in.
+	 * divino Analytics Opt-in.
 	 *
 	 * @return void
 	 * @since 4.10.0
@@ -267,7 +267,7 @@ class divino_Admin_Ajax {
 		update_site_option( 'divino_analytics_optin', $opt_in );
 
 		$response_data = array(
-			'message' => esc_html__( 'Successfully saved data!', 'astra' ),
+			'message' => esc_html__( 'Successfully saved data!', 'divino' ),
 		);
 
 		wp_send_json_success( $response_data );
@@ -292,7 +292,7 @@ class divino_Admin_Ajax {
 	/**
 	 * Handles the installation and saving of required plugins.
 	 *
-	 * This function is responsible for installing and saving required plugins for the Astra theme.
+	 * This function is responsible for installing and saving required plugins for the divino theme.
 	 * It checks for the plugin slug in the AJAX request, verifies the nonce, and initiates the plugin installation process.
 	 * If the plugin is successfully installed, it schedules a database update to map the plugin slug to a custom key for analytics tracking.
 	 *
@@ -307,7 +307,7 @@ class divino_Admin_Ajax {
 		$plugin_slug = isset( $_POST['slug'] ) && is_string( $_POST['slug'] ) ? sanitize_text_field( wp_unslash( $_POST['slug'] ) ) : '';
 
 		if ( empty( $plugin_slug ) ) {
-			wp_send_json_error( array( 'message' => __( 'Plugin slug is missing.', 'astra' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Plugin slug is missing.', 'divino' ) ) );
 		}
 
 		// Schedule the database update if the plugin is installed successfully.
@@ -319,7 +319,7 @@ class divino_Admin_Ajax {
 				foreach ( $all_plugins as $plugin_file => $_ ) {
 					if ( is_callable( 'BSF_UTM_Analytics::update_referer' ) && strpos( $plugin_file, $plugin_slug . '/' ) === 0 ) {
 						// If the plugin is found and the update_referer function is callable, update the referer with the corresponding product slug.
-						BSF_UTM_Analytics::update_referer( 'astra', $plugin_slug );
+						BSF_UTM_Analytics::update_referer( 'divino', $plugin_slug );
 						return;
 					}
 				}
@@ -330,7 +330,7 @@ class divino_Admin_Ajax {
 			// @psalm-suppress NoValue
 			wp_ajax_install_plugin();
 		} else {
-			wp_send_json_error( array( 'message' => __( 'Plugin installation function not found.', 'astra' ) ) );
+			wp_send_json_error( array( 'message' => __( 'Plugin installation function not found.', 'divino' ) ) );
 		}
 	}
 
@@ -366,7 +366,7 @@ class divino_Admin_Ajax {
 			wp_send_json_error(
 				array(
 					'success' => false,
-					'message' => esc_html__( 'No plugin specified', 'astra' ),
+					'message' => esc_html__( 'No plugin specified', 'divino' ),
 				)
 			);
 		}
@@ -394,13 +394,13 @@ class divino_Admin_Ajax {
 		 * @since 4.7.0
 		 */
 		if ( 'surecart/surecart.php' === $plugin_init ) {
-			update_option( 'surecart_source', 'astra', false );
+			update_option( 'surecart_source', 'divino', false );
 		}
 
 		wp_send_json_success(
 			array(
 				'success' => true,
-				'message' => esc_html__( 'Plugin Successfully Activated', 'astra' ),
+				'message' => esc_html__( 'Plugin Successfully Activated', 'divino' ),
 			)
 		);
 	}
@@ -437,7 +437,7 @@ class divino_Admin_Ajax {
 			wp_send_json_error(
 				array(
 					'success' => false,
-					'message' => esc_html__( 'No plugin specified', 'astra' ),
+					'message' => esc_html__( 'No plugin specified', 'divino' ),
 				)
 			);
 		}
@@ -460,7 +460,7 @@ class divino_Admin_Ajax {
 		wp_send_json_success(
 			array(
 				'success' => true,
-				'message' => esc_html__( 'Plugin Successfully Deactivated', 'astra' ),
+				'message' => esc_html__( 'Plugin Successfully Deactivated', 'divino' ),
 			)
 		);
 	}

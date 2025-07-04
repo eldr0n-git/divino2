@@ -1,3 +1,4 @@
+<!-- header-columns.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Header with columns

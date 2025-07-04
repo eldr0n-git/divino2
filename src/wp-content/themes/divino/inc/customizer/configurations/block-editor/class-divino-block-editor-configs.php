@@ -1,10 +1,10 @@
 <?php
 /**
- * Entry Content options for Astra Theme.
+ * Entry Content options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 3.8.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 3.8.0
  */
 
 if ( ! class_exists( 'divino_Block_Editor_Configs' ) ) {
@@ -16,26 +16,26 @@ if ( ! class_exists( 'divino_Block_Editor_Configs' ) ) {
 		/**
 		 * Register Site Layout Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 3.8.0
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
 			$is_legacy_setup = 'legacy' === divino_get_option( 'wp-blocks-ui', 'comfort' ) || true === divino_get_option( 'blocks-legacy-setup', false ) ? true : false;
 
 			$preset_options = array(
-				'compact' => __( 'Compact', 'astra' ),
-				'comfort' => __( 'Comfort', 'astra' ),
-				'custom'  => __( 'Custom', 'astra' ),
+				'compact' => __( 'Compact', 'divino' ),
+				'comfort' => __( 'Comfort', 'divino' ),
+				'custom'  => __( 'Custom', 'divino' ),
 			);
 			if ( $is_legacy_setup ) {
 				$preset_options = array(
-					'legacy'  => __( 'Legacy', 'astra' ),
-					'compact' => __( 'Compact', 'astra' ),
-					'comfort' => __( 'Comfort', 'astra' ),
-					'custom'  => __( 'Custom', 'astra' ),
+					'legacy'  => __( 'Legacy', 'divino' ),
+					'compact' => __( 'Compact', 'divino' ),
+					'comfort' => __( 'Comfort', 'divino' ),
+					'custom'  => __( 'Custom', 'divino' ),
 				);
 			}
 
@@ -50,7 +50,7 @@ if ( ! class_exists( 'divino_Block_Editor_Configs' ) ) {
 					'section'    => 'section-block-editor',
 					'default'    => divino_get_option( 'wp-blocks-ui' ),
 					'priority'   => 9,
-					'title'      => __( 'Core Blocks Spacing', 'astra' ),
+					'title'      => __( 'Core Blocks Spacing', 'divino' ),
 					'choices'    => $preset_options,
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -62,16 +62,16 @@ if ( ! class_exists( 'divino_Block_Editor_Configs' ) ) {
 				array(
 					'name'              => divino_THEME_SETTINGS . '[wp-blocks-global-padding]',
 					'section'           => 'section-block-editor',
-					'title'             => __( 'Size', 'astra' ),
+					'title'             => __( 'Size', 'divino' ),
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 					'default'           => divino_get_option( 'wp-blocks-global-padding' ),
 					'type'              => 'control',
 					'control'           => 'ast-responsive-spacing',
 					'choices'           => array(
-						'top'    => __( 'Top', 'astra' ),
-						'right'  => __( 'Right', 'astra' ),
-						'bottom' => __( 'Bottom', 'astra' ),
-						'left'   => __( 'Left', 'astra' ),
+						'top'    => __( 'Top', 'divino' ),
+						'right'  => __( 'Right', 'divino' ),
+						'bottom' => __( 'Bottom', 'divino' ),
+						'left'   => __( 'Left', 'divino' ),
 					),
 					'linked_choices'    => true,
 					'priority'          => 10,
@@ -91,7 +91,7 @@ if ( ! class_exists( 'divino_Block_Editor_Configs' ) ) {
 					'control'  => 'ast-description',
 					'section'  => 'section-block-editor',
 					'priority' => 10,
-					'help'     => '<span style="margin-top: -5px;">' . __( 'Global padding setting for WordPress Group, Column, Cover blocks, it can be overridden by respective block\'s Dimension setting.', 'astra' ) . '</span>',
+					'help'     => '<span style="margin-top: -5px;">' . __( 'Global padding setting for WordPress Group, Column, Cover blocks, it can be overridden by respective block\'s Dimension setting.', 'divino' ) . '</span>',
 					'settings' => array(),
 				),
 			);

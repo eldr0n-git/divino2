@@ -4,9 +4,9 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.1.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -78,7 +78,7 @@ if ( ! function_exists( 'divino_woo_shop_out_of_stock' ) ) {
 	 */
 	function divino_woo_shop_out_of_stock() {
 		$out_of_stock        = get_post_meta( get_the_ID(), '_stock_status', true );
-		$out_of_stock_string = apply_filters( 'divino_woo_shop_out_of_stock_string', __( 'Out of stock', 'astra' ) );
+		$out_of_stock_string = apply_filters( 'divino_woo_shop_out_of_stock_string', __( 'Out of stock', 'divino' ) );
 		if ( 'outofstock' === $out_of_stock ) {
 			?>
 			<span class="ast-shop-product-out-of-stock"><?php echo esc_html( $out_of_stock_string ); ?></span>
@@ -131,7 +131,7 @@ if ( ! function_exists( 'divino_woo_product_in_stock' ) ) {
 				ob_start();
 				?>
 				<p class="ast-stock-detail">
-					<span class="ast-stock-avail"><?php esc_html_e( 'Availability:', 'astra' ); ?></span>
+					<span class="ast-stock-avail"><?php esc_html_e( 'Availability:', 'divino' ); ?></span>
 					<span class="stock <?php echo esc_html( $avail_class ); ?>"><?php echo esc_html( $availability ); ?></span>
 				</p>
 				<?php
@@ -172,7 +172,7 @@ if ( ! function_exists( 'divino_woo_woocommerce_shop_product_content' ) ) {
 		if ( is_array( $shop_structure ) && ! empty( $shop_structure ) ) {
 
 			do_action( 'divino_woo_shop_before_summary_wrap' );
-			echo '<div class="astra-shop-summary-wrap">';
+			echo '<div class="divino-shop-summary-wrap">';
 			do_action( 'divino_woo_shop_summary_wrap_top' );
 
 			foreach ( $shop_structure as $value ) {
@@ -239,7 +239,7 @@ if ( ! function_exists( 'divino_woo_shop_thumbnail_wrap_start' ) ) {
 	 */
 	function divino_woo_shop_thumbnail_wrap_start() {
 
-		echo '<div class="astra-shop-thumbnail-wrap">';
+		echo '<div class="divino-shop-thumbnail-wrap">';
 	}
 }
 

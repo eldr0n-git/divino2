@@ -1,10 +1,10 @@
 <?php
 /**
- * Icons for Astra theme.
+ * Icons for divino theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 3.3.0
+ * @since       divino 3.3.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -19,7 +19,7 @@ class divino_Icons {
 	 * Constructor function that initializes required actions and hooks
 	 */
 	public function __construct() {
-		// Remove astra.woff and other format of Astra font files when SVG is enabled.
+		// Remove divino.woff and other format of divino font files when SVG is enabled.
 		if ( self::is_svg_icons() ) {
 			add_filter( 'divino_enable_default_fonts', '__return_false' );
 		}
@@ -35,7 +35,7 @@ class divino_Icons {
 	 */
 	public static function is_svg_icons() {
 		$divino_settings = divino_get_options();
-		return apply_filters( 'divino_is_svg_icons', isset( $divino_settings['can-update-astra-icons-svg'] ) ? $divino_settings['can-update-astra-icons-svg'] : true );
+		return apply_filters( 'divino_is_svg_icons', isset( $divino_settings['can-update-divino-icons-svg'] ) ? $divino_settings['can-update-divino-icons-svg'] : true );
 	}
 
 	/**

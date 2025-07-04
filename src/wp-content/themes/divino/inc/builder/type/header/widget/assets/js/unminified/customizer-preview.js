@@ -4,7 +4,7 @@
  * here. Your javascript should grab settings from customizer controls, and
  * then make any necessary changes to the page using jQuery.
  *
- * @package Astra Builder
+ * @package divino Builder
  * @since 3.0.0
  */
 

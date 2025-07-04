@@ -1,3 +1,4 @@
+<!-- event-rsvp.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Event RSVP

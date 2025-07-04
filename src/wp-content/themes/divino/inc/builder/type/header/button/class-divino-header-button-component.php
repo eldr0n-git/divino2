@@ -1,10 +1,10 @@
 <?php
 /**
- * Heading Colors for Astra theme.
+ * Heading Colors for divino theme.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 2.1.4
+ * @since       divino 2.1.4
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -26,7 +26,7 @@ class divino_Header_Button_Component {
 	public function __construct() {
 
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once divino_HEADER_BUTTON_DIR . '/class-astra-header-button-component-loader.php';
+		require_once divino_HEADER_BUTTON_DIR . '/class-divino-header-button-component-loader.php';
 
 		// Include front end files.
 		if ( ! is_admin() || divino_Builder_Customizer::divino_collect_customizer_builder_data() ) {

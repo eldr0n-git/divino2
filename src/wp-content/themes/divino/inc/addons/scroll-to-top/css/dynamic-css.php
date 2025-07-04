@@ -2,7 +2,7 @@
 /**
  * Scroll To Top - Dynamic CSS
  *
- * @package Astra
+ * @package divino
  */
 
 add_filter( 'divino_dynamic_theme_css', 'divino_scroll_to_top_dynamic_css', 11 );
@@ -10,8 +10,8 @@ add_filter( 'divino_dynamic_theme_css', 'divino_scroll_to_top_dynamic_css', 11 )
 /**
  * Dynamic CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
- * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+ * @param  string $dynamic_css          divino Dynamic CSS.
+ * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
  * @return string
  */
 function divino_scroll_to_top_dynamic_css( $dynamic_css, $dynamic_css_filtered = '' ) {
@@ -82,7 +82,7 @@ function divino_scroll_to_top_dynamic_css( $dynamic_css, $dynamic_css_filtered =
 		$scroll_to_top_icon = array(
 			'.ast-scroll-top-icon::before' => array(
 				'content'         => '"\e900"',
-				'font-family'     => 'Astra',
+				'font-family'     => 'divino',
 				'text-decoration' => 'inherit',
 			),
 			'.ast-scroll-top-icon'         => array(

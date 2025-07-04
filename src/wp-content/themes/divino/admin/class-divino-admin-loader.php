@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Admin Loader
+ * divino Admin Loader
  *
- * @package Astra
+ * @package divino
  * @since 4.0.0
  */
 
@@ -59,15 +59,15 @@ if ( ! class_exists( 'divino_Admin_Loader' ) ) {
 		 */
 		public function includes() {
 			/* Ajax init */
-			require_once divino_THEME_ADMIN_DIR . 'includes/class-astra-admin-ajax.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound -- Not a template file so loading in a normal way.
+			require_once divino_THEME_ADMIN_DIR . 'includes/class-divino-admin-ajax.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound -- Not a template file so loading in a normal way.
 
 			/* Setup Menu */
-			require_once divino_THEME_ADMIN_DIR . 'includes/class-astra-menu.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound -- Not a template file so loading in a normal way.
+			require_once divino_THEME_ADMIN_DIR . 'includes/class-divino-menu.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound -- Not a template file so loading in a normal way.
 
-			require_once divino_THEME_ADMIN_DIR . 'includes/class-astra-theme-builder-free.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound -- Not a template file so loading in a normal way.
+			require_once divino_THEME_ADMIN_DIR . 'includes/class-divino-theme-builder-free.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound -- Not a template file so loading in a normal way.
 
 			/* BSF Analytics */
-			require_once divino_THEME_ADMIN_DIR . 'class-astra-bsf-analytics.php';
+			require_once divino_THEME_ADMIN_DIR . 'class-divino-bsf-analytics.php';
 		}
 	}
 }

@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Extended Configuration.
+ * divino Extended Configuration.
  *
- * @package Astra
+ * @package divino
  */
 
 // No direct access, please.
@@ -56,7 +56,7 @@ final class divino_Extended_Base_Configuration {
 			array(
 				'name'     => divino_THEME_SETTINGS . '[' . $section_id . '-divider]',
 				'section'  => $section_id,
-				'title'    => __( 'Spacing', 'astra' ),
+				'title'    => __( 'Spacing', 'divino' ),
 				'type'     => 'control',
 				'control'  => 'ast-heading',
 				'priority' => 210,
@@ -77,14 +77,14 @@ final class divino_Extended_Base_Configuration {
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 				'section'           => $section_id,
 				'priority'          => 210,
-				'title'             => __( 'Padding', 'astra' ),
+				'title'             => __( 'Padding', 'divino' ),
 				'linked_choices'    => true,
 				'unit_choices'      => array( 'px', 'em', '%' ),
 				'choices'           => array(
-					'top'    => __( 'Top', 'astra' ),
-					'right'  => __( 'Right', 'astra' ),
-					'bottom' => __( 'Bottom', 'astra' ),
-					'left'   => __( 'Left', 'astra' ),
+					'top'    => __( 'Top', 'divino' ),
+					'right'  => __( 'Right', 'divino' ),
+					'bottom' => __( 'Bottom', 'divino' ),
+					'left'   => __( 'Left', 'divino' ),
 				),
 				'context'           => divino_Builder_Helper::$design_tab,
 				'divider'           => array( 'ast_class' => 'ast-section-spacing' ),
@@ -102,14 +102,14 @@ final class divino_Extended_Base_Configuration {
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 				'section'           => $section_id,
 				'priority'          => 220,
-				'title'             => __( 'Margin', 'astra' ),
+				'title'             => __( 'Margin', 'divino' ),
 				'linked_choices'    => true,
 				'unit_choices'      => array( 'px', 'em', '%' ),
 				'choices'           => array(
-					'top'    => __( 'Top', 'astra' ),
-					'right'  => __( 'Right', 'astra' ),
-					'bottom' => __( 'Bottom', 'astra' ),
-					'left'   => __( 'Left', 'astra' ),
+					'top'    => __( 'Top', 'divino' ),
+					'right'  => __( 'Right', 'divino' ),
+					'bottom' => __( 'Bottom', 'divino' ),
+					'left'   => __( 'Left', 'divino' ),
 				),
 				'context'           => divino_Builder_Helper::$design_tab,
 				'divider'           => array( 'ast_class' => 'ast-top-section-divider' ),
@@ -133,7 +133,7 @@ final class divino_Extended_Base_Configuration {
 				'default'   => divino_get_option( $section_id . '-border-group' ),
 				'type'      => 'control',
 				'control'   => 'ast-settings-group',
-				'title'     => __( 'Border', 'astra' ),
+				'title'     => __( 'Border', 'divino' ),
 				'section'   => $section_id,
 				'transport' => 'postMessage',
 				'priority'  => 150,
@@ -147,16 +147,16 @@ final class divino_Extended_Base_Configuration {
 				'type'           => 'sub-control',
 				'transport'      => 'postMessage',
 				'control'        => 'ast-border',
-				'title'          => __( 'Border Width', 'astra' ),
+				'title'          => __( 'Border Width', 'divino' ),
 				'divider'        => array( 'ast_class' => 'ast-bottom-divider' ),
 				'section'        => $section_id,
 				'linked_choices' => true,
 				'priority'       => 1,
 				'choices'        => array(
-					'top'    => __( 'Top', 'astra' ),
-					'right'  => __( 'Right', 'astra' ),
-					'bottom' => __( 'Bottom', 'astra' ),
-					'left'   => __( 'Left', 'astra' ),
+					'top'    => __( 'Top', 'divino' ),
+					'right'  => __( 'Right', 'divino' ),
+					'bottom' => __( 'Bottom', 'divino' ),
+					'left'   => __( 'Left', 'divino' ),
 				),
 			),
 			array(
@@ -169,7 +169,7 @@ final class divino_Extended_Base_Configuration {
 				'control'           => 'ast-color',
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 				'transport'         => 'postMessage',
-				'title'             => __( 'Color', 'astra' ),
+				'title'             => __( 'Color', 'divino' ),
 				'divider'           => array( 'ast_class' => 'ast-top-spacing ast-bottom-spacing' ),
 			),
 			array(
@@ -179,16 +179,16 @@ final class divino_Extended_Base_Configuration {
 				'type'           => 'sub-control',
 				'transport'      => 'postMessage',
 				'control'        => 'ast-border',
-				'title'          => __( 'Border Radius', 'astra' ),
+				'title'          => __( 'Border Radius', 'divino' ),
 				'divider'        => array( 'ast_class' => 'ast-top-divider' ),
 				'section'        => $section_id,
 				'linked_choices' => true,
 				'priority'       => 1,
 				'choices'        => array(
-					'top'    => __( 'Top', 'astra' ),
-					'right'  => __( 'Right', 'astra' ),
-					'bottom' => __( 'Bottom', 'astra' ),
-					'left'   => __( 'Left', 'astra' ),
+					'top'    => __( 'Top', 'divino' ),
+					'right'  => __( 'Right', 'divino' ),
+					'bottom' => __( 'Bottom', 'divino' ),
+					'left'   => __( 'Left', 'divino' ),
 				),
 			),
 		);

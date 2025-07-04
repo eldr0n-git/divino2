@@ -1,10 +1,10 @@
 <?php
 /**
- * Styling Options for Astra Theme.
+ * Styling Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 3.7.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 3.7.0
  */
 
 /** @psalm-suppress ParadoxicalCondition */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
@@ -19,10 +19,10 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 	/**
 	 * Register headings Typography Customizer Configurations.
 	 *
-	 * @param Array                $configurations Astra Customizer Configurations.
+	 * @param Array                $configurations divino Customizer Configurations.
 	 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 	 * @since 3.7.0
-	 * @return Array Astra Customizer Configurations with updated configurations.
+	 * @return Array divino Customizer Configurations with updated configurations.
 	 */
 	public function register_configuration( $configurations, $wp_customize ) {
 
@@ -44,7 +44,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'control'   => 'ast-font',
 				'font_type' => 'ast-font-family',
 				'default'   => divino_get_option( 'font-family-h1' ),
-				'title'     => __( 'Font Family', 'astra' ),
+				'title'     => __( 'Font Family', 'divino' ),
 				'section'   => $section,
 				'priority'  => 28,
 				'connect'   => divino_THEME_SETTINGS . '[font-weight-h1]',
@@ -61,7 +61,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'parent'            => divino_THEME_SETTINGS . '[ast-heading-h1-typo]',
 				'control'           => 'ast-font',
 				'font_type'         => 'ast-font-weight',
-				'title'             => __( 'Font Weight', 'astra' ),
+				'title'             => __( 'Font Weight', 'divino' ),
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
 				'default'           => divino_get_option( 'font-weight-h1' ),
 				'section'           => $section,
@@ -85,7 +85,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'default'           => divino_get_option( 'font-size-h1' ),
 				'transport'         => 'postMessage',
 				'priority'          => 28,
-				'title'             => __( 'Font Size', 'astra' ),
+				'title'             => __( 'Font Size', 'divino' ),
 				'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
 				'input_attrs'       => array(
 					'px'  => array(
@@ -133,7 +133,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'control'   => 'ast-font',
 				'parent'    => divino_THEME_SETTINGS . '[ast-heading-h2-typo]',
 				'font_type' => 'ast-font-family',
-				'title'     => __( 'Font Family', 'astra' ),
+				'title'     => __( 'Font Family', 'divino' ),
 				'default'   => divino_get_option( 'font-family-h2' ),
 				'section'   => $section,
 				'priority'  => 28,
@@ -151,7 +151,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'type'              => 'sub-control',
 				'control'           => 'ast-font',
 				'font_type'         => 'ast-font-weight',
-				'title'             => __( 'Font Weight', 'astra' ),
+				'title'             => __( 'Font Weight', 'divino' ),
 				'section'           => $section,
 				'default'           => divino_get_option( 'font-weight-h2' ),
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
@@ -175,7 +175,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'default'           => divino_get_option( 'font-size-h2' ),
 				'transport'         => 'postMessage',
 				'priority'          => 28,
-				'title'             => __( 'Font Size', 'astra' ),
+				'title'             => __( 'Font Size', 'divino' ),
 				'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
 				'input_attrs'       => array(
 					'px'  => array(
@@ -224,7 +224,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'control'   => 'ast-font',
 				'font_type' => 'ast-font-family',
 				'default'   => divino_get_option( 'font-family-h3' ),
-				'title'     => __( 'Font Family', 'astra' ),
+				'title'     => __( 'Font Family', 'divino' ),
 				'section'   => $section,
 				'priority'  => 28,
 				'connect'   => divino_THEME_SETTINGS . '[font-weight-h3]',
@@ -243,7 +243,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'font_type'         => 'ast-font-weight',
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
 				'default'           => divino_get_option( 'font-weight-h3' ),
-				'title'             => __( 'Font Weight', 'astra' ),
+				'title'             => __( 'Font Weight', 'divino' ),
 				'section'           => $section,
 				'priority'          => 28,
 				'connect'           => 'font-family-h3',
@@ -265,7 +265,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'default'           => divino_get_option( 'font-size-h3' ),
 				'transport'         => 'postMessage',
 				'priority'          => 28,
-				'title'             => __( 'Font Size', 'astra' ),
+				'title'             => __( 'Font Size', 'divino' ),
 				'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
 				'input_attrs'       => array(
 					'px'  => array(
@@ -313,7 +313,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'type'      => 'sub-control',
 				'control'   => 'ast-font',
 				'font_type' => 'ast-font-family',
-				'title'     => __( 'Font Family', 'astra' ),
+				'title'     => __( 'Font Family', 'divino' ),
 				'default'   => divino_get_option( 'font-family-h4' ),
 				'section'   => $section,
 				'priority'  => 28,
@@ -332,7 +332,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'control'           => 'ast-font',
 				'font_type'         => 'ast-font-weight',
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
-				'title'             => __( 'Font Weight', 'astra' ),
+				'title'             => __( 'Font Weight', 'divino' ),
 				'default'           => divino_get_option( 'font-weight-h4' ),
 				'section'           => $section,
 				'priority'          => 28,
@@ -355,7 +355,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'default'           => divino_get_option( 'font-size-h4' ),
 				'transport'         => 'postMessage',
 				'priority'          => 28,
-				'title'             => __( 'Font Size', 'astra' ),
+				'title'             => __( 'Font Size', 'divino' ),
 				'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
 				'input_attrs'       => array(
 					'px'  => array(
@@ -404,7 +404,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'control'   => 'ast-font',
 				'font_type' => 'ast-font-family',
 				'default'   => divino_get_option( 'font-family-h5' ),
-				'title'     => __( 'Font Family', 'astra' ),
+				'title'     => __( 'Font Family', 'divino' ),
 				'section'   => $section,
 				'priority'  => 28,
 				'connect'   => divino_THEME_SETTINGS . '[font-weight-h5]',
@@ -422,7 +422,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'control'           => 'ast-font',
 				'font_type'         => 'ast-font-weight',
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
-				'title'             => __( 'Font Weight', 'astra' ),
+				'title'             => __( 'Font Weight', 'divino' ),
 				'section'           => $section,
 				'default'           => divino_get_option( 'font-weight-h5' ),
 				'priority'          => 28,
@@ -444,7 +444,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'default'           => divino_get_option( 'font-size-h5' ),
 				'transport'         => 'postMessage',
 				'priority'          => 28,
-				'title'             => __( 'Font Size', 'astra' ),
+				'title'             => __( 'Font Size', 'divino' ),
 				'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
 				'input_attrs'       => array(
 					'px'  => array(
@@ -493,7 +493,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'control'   => 'ast-font',
 				'font_type' => 'ast-font-family',
 				'default'   => divino_get_option( 'font-family-h6' ),
-				'title'     => __( 'Font Family', 'astra' ),
+				'title'     => __( 'Font Family', 'divino' ),
 				'section'   => $section,
 				'priority'  => 28,
 				'connect'   => divino_THEME_SETTINGS . '[font-weight-h6]',
@@ -512,7 +512,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'font_type'         => 'ast-font-weight',
 				'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_font_weight' ),
 				'default'           => divino_get_option( 'font-weight-h6' ),
-				'title'             => __( 'Font Weight', 'astra' ),
+				'title'             => __( 'Font Weight', 'divino' ),
 				'section'           => $section,
 				'priority'          => 28,
 				'connect'           => 'font-family-h6',
@@ -533,7 +533,7 @@ class divino_Headings_Typo_Configs extends divino_Customizer_Config_Base {
 				'default'           => divino_get_option( 'font-size-h6' ),
 				'transport'         => 'postMessage',
 				'priority'          => 28,
-				'title'             => __( 'Font Size', 'astra' ),
+				'title'             => __( 'Font Size', 'divino' ),
 				'suffix'            => array( 'px', 'em', 'vw', 'rem' ),
 				'input_attrs'       => array(
 					'px'  => array(

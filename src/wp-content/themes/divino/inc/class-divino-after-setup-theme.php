@@ -1,7 +1,7 @@
 <?php
 /**
- * Astra functions and definitions.
- * Text Domain: astra
+ * divino functions and definitions.
+ * Text Domain: divino
  * When using a child theme (see https://codex.wordpress.org/Theme_Development
  * and https://codex.wordpress.org/Child_Themes), you can override certain
  * functions (those wrapped in a function_exists() call) by defining them first
@@ -12,12 +12,12 @@
  * For more information on hooks, actions, and filters,
  * see https://codex.wordpress.org/Plugin_API
  *
- * Astra is a very powerful theme and virtually anything can be customized
+ * divino is a very powerful theme and virtually anything can be customized
  * via a child theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -179,7 +179,7 @@ if ( ! class_exists( 'divino_After_Setup_Theme' ) ) {
 			// Remove Template Editor support until WP 5.9 since more Theme Blocks are going to be introduced.
 			remove_theme_support( 'block-templates' );
 
-			// Let WooCommerce know, Astra is not compatible with New Product Editor.
+			// Let WooCommerce know, divino is not compatible with New Product Editor.
 			add_filter( 'option_woocommerce_feature_product_block_editor_enabled', '__return_false' );
 
 			add_filter( 'woocommerce_create_pages', array( $this, 'divino_enforce_woo_shortcode_pages' ), 99 );
@@ -249,9 +249,9 @@ if ( ! class_exists( 'divino_After_Setup_Theme' ) ) {
 			 * Make theme available for translation.
 			 * Translations can be filed in the /languages/ directory.
 			 * If you're building a theme based on Next, use a find and replace
-			 * to change 'astra' to the name of your theme in all the template files.
+			 * to change 'divino' to the name of your theme in all the template files.
 			 */
-			load_theme_textdomain( 'astra', divino_THEME_DIR . '/languages' );
+			load_theme_textdomain( 'divino', divino_THEME_DIR . '/languages' );
 		}
 
 		/**
@@ -359,9 +359,9 @@ if ( ! class_exists( 'divino_After_Setup_Theme' ) ) {
 		 * Enforce WooCommerce shortcode pages due to following reasons.
 		 *
 		 * 1. In WooCommerce 8.3 version cart & checkout pages are directly added with blocks and not with shortcodes.
-		 * 2. Due to which most of Astra extended features are not working on cart & checkout pages.
+		 * 2. Due to which most of divino extended features are not working on cart & checkout pages.
 		 *
-		 * This is temporary workaround, once Astra ready with WooCommerce 8.3 version, this will be removed.
+		 * This is temporary workaround, once divino ready with WooCommerce 8.3 version, this will be removed.
 		 *
 		 * @since 4.5.1
 		 * @param array $pages_data Array of WooCommerce pages.

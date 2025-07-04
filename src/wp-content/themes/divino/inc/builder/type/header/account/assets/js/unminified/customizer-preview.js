@@ -4,20 +4,20 @@
  * here. Your javascript should grab settings from customizer controls, and
  * then make any necessary changes to the page using jQuery.
  *
- * @package Astra
+ * @package divino
  * @since x.x.x
  */
 
 ( function( $ ) {
 
-	var tablet_break_point    = astraBuilderPreview.tablet_break_point || 768,
-		mobile_break_point    = astraBuilderPreview.mobile_break_point || 544;
+	var tablet_break_point    = divinoBuilderPreview.tablet_break_point || 768,
+		mobile_break_point    = divinoBuilderPreview.mobile_break_point || 544;
 
 	var selector = '.ast-header-account-wrap';
     var section = 'section-header-account';
 	var visibility_selector = '.ast-header-account[data-section="section-header-account"]';
 
-	wp.customize( 'astra-settings[header-account-icon-color]', function( value ) {
+	wp.customize( 'divino-settings[header-account-icon-color]', function( value ) {
 		value.bind( function( color ) {
 			if( ! color ) {
 				color = 'inherit';
@@ -31,19 +31,19 @@
 
 	// Typography CSS Generation.
     divino_responsive_font_size(
-        'astra-settings[font-size-section-header-account]',
+        'divino-settings[font-size-section-header-account]',
         selector + ' .ast-header-account-text'
     );
 
 	// Text size.
 	divino_css(
-		'astra-settings[header-account-type-text-color]',
+		'divino-settings[header-account-type-text-color]',
 		'color',
 		selector + ' .ast-header-account-text, .ast-mobile-popup-content ' + selector + ' .ast-header-account-text'
 	);
 
 	// Icon Size.
-	wp.customize( 'astra-settings[header-account-icon-size]', function( value ) {
+	wp.customize( 'divino-settings[header-account-icon-size]', function( value ) {
 		value.bind( function( size ) {
 			if( size.desktop != '' || size.tablet != '' || size.mobile != '' ) {
 				var dynamicStyle = '';
@@ -71,7 +71,7 @@
 	} );
 
 	// Image Width.
-	wp.customize( 'astra-settings[header-account-image-width]', function( value ) {
+	wp.customize( 'divino-settings[header-account-image-width]', function( value ) {
 		value.bind( function( size ) {
 			if( size.desktop != '' || size.tablet != '' || size.mobile != '' ) {
 				var dynamicStyle = '';
@@ -96,7 +96,7 @@
 	} );
 
 	// Margin.
-    wp.customize( 'astra-settings[header-account-margin]', function( value ) {
+    wp.customize( 'divino-settings[header-account-margin]', function( value ) {
         value.bind( function( margin ) {
             if(
                 margin.desktop.bottom != '' || margin.desktop.top != '' || margin.desktop.left != '' || margin.desktop.right != '' ||

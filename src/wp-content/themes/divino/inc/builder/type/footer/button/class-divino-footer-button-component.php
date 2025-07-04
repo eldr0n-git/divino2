@@ -1,10 +1,10 @@
 <?php
 /**
- * Footer Colors for Astra theme Buttpn.
+ * Footer Colors for divino theme Buttpn.
  *
- * @package     Astra
+ * @package     divino
  * @link        https://www.brainstormforce.com
- * @since       Astra 3.0.0
+ * @since       divino 3.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -26,7 +26,7 @@ class divino_Footer_Button_Component {
 	public function __construct() {
 
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once divino_FOOTER_BUTTON_DIR . '/class-astra-footer-button-component-loader.php';
+		require_once divino_FOOTER_BUTTON_DIR . '/class-divino-footer-button-component-loader.php';
 
 		// Include front end files.
 		if ( ! is_admin() || divino_Builder_Customizer::divino_collect_customizer_builder_data() ) {

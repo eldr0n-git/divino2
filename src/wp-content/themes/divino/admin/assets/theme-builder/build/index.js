@@ -1372,10 +1372,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   classNames: () => (/* binding */ classNames),
 /* harmony export */   debounce: () => (/* binding */ debounce),
-/* harmony export */   getAstraProTitle: () => (/* binding */ getAstraProTitle),
-/* harmony export */   getAstraProTitleFreePage: () => (/* binding */ getAstraProTitleFreePage),
+/* harmony export */   getdivinoProTitle: () => (/* binding */ getdivinoProTitle),
+/* harmony export */   getdivinoProTitleFreePage: () => (/* binding */ getdivinoProTitleFreePage),
 /* harmony export */   getSpinner: () => (/* binding */ getSpinner),
-/* harmony export */   handleGetAstraPro: () => (/* binding */ handleGetAstraPro),
+/* harmony export */   handleGetdivinoPro: () => (/* binding */ handleGetdivinoPro),
 /* harmony export */   saveSetting: () => (/* binding */ saveSetting)
 /* harmony export */ });
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
@@ -1397,7 +1397,7 @@ __webpack_require__.r(__webpack_exports__);
 const classNames = (...classes) => classes.filter(Boolean).join(' ');
 
 /**
- * Handles the Astra Pro CTA button click event, opening the upgrade URL in a new tab.
+ * Handles the divino Pro CTA button click event, opening the upgrade URL in a new tab.
  * This function also handles the display of a spinner during the upgrade process.
  *
  * @param {Event} e - The event object.
@@ -1407,7 +1407,7 @@ const classNames = (...classes) => classes.filter(Boolean).join(' ');
  * @param {boolean} options.disableSpinner - Optional. Disables the spinner if true.
  * @param {string} options.spinnerPosition - Optional. The position of the spinner.
  */
-const handleGetAstraPro = (e, {
+const handleGetdivinoPro = (e, {
   url = divino_admin.upgrade_url,
   campaign = '',
   disableSpinner = false,
@@ -1432,7 +1432,7 @@ const handleGetAstraPro = (e, {
   const formData = new window.FormData();
   formData.append('action', 'divino_recommended_plugin_activate');
   formData.append('security', divino_admin.plugin_manager_nonce);
-  formData.append('init', 'astra-addon/astra-addon.php');
+  formData.append('init', 'divino-addon/divino-addon.php');
   _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1___default()({
     url: divino_admin.ajax_url,
     method: 'POST',
@@ -1443,7 +1443,7 @@ const handleGetAstraPro = (e, {
       return;
     }
   }).catch(error => {
-    e.target.innerText = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Activation failed. Please try again.', 'astra');
+    e.target.innerText = (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Activation failed. Please try again.', 'divino');
     e.target.disabled = false;
     console.error('Error during API request:', error);
     // Optionally, notify the user about the error or handle it appropriately.
@@ -1475,21 +1475,21 @@ const debounce = (func, delay) => {
 };
 
 /**
- * Returns the Astra Pro title.
+ * Returns the divino Pro title.
  *
- * @return {string} Returns the Astra Pro title.
+ * @return {string} Returns the divino Pro title.
  */
-const getAstraProTitle = () => {
-  return divino_admin.pro_installed_status ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Activate Now', 'astra') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Upgrade Now', 'astra');
+const getdivinoProTitle = () => {
+  return divino_admin.pro_installed_status ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Activate Now', 'divino') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Upgrade Now', 'divino');
 };
 
 /**
- * Returns the Astra Pro title.
+ * Returns the divino Pro title.
  *
- * @return {string} Returns the Astra Pro title.
+ * @return {string} Returns the divino Pro title.
  */
-const getAstraProTitleFreePage = () => {
-  return divino_admin.pro_installed_status ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Activate Now', 'astra') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('See all Astra Pro Features', 'astra');
+const getdivinoProTitleFreePage = () => {
+  return divino_admin.pro_installed_status ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Activate Now', 'divino') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('See all divino Pro Features', 'divino');
 };
 
 /**
@@ -1507,7 +1507,7 @@ const getSpinner = () => {
 };
 
 /**
- * A function to save astra admin settings.
+ * A function to save divino admin settings.
  *
  * @function
  *
@@ -1547,7 +1547,7 @@ const saveSetting = debounce(({
   }).then(() => {
     dispatch({
       type: 'UPDATE_SETTINGS_SAVED_NOTIFICATION',
-      payload: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Successfully saved!', 'astra')
+      payload: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Successfully saved!', 'divino')
     });
   }).catch(error => {
     // Ignore if it is intentionally aborted.
@@ -1557,7 +1557,7 @@ const saveSetting = debounce(({
     console.error('Error during API request:', error);
     dispatch({
       type: 'UPDATE_SETTINGS_SAVED_NOTIFICATION',
-      payload: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('An error occurred while saving.', 'astra')
+      payload: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('An error occurred while saving.', 'divino')
     });
   });
 }, 300);
@@ -51504,7 +51504,7 @@ function createRouter(init) {
   let dataRoutes = convertRoutesToDataRoutes(init.routes, mapRouteProperties, undefined, manifest);
   let inFlightDataRoutes;
   let basename = init.basename || "/";
-  let dataStrategyImpl = init.dataStrategy || defaultDataStrategy;
+  let datdivinotegyImpl = init.datdivinotegy || defaultDatdivinotegy;
   let patchRoutesOnNavigationImpl = init.patchRoutesOnNavigation;
   // Config driven behavior flags
   let future = _extends({
@@ -52221,7 +52221,7 @@ function createRouter(init) {
         })
       };
     } else {
-      let results = await callDataStrategy("action", state, request, [actionMatch], matches, null);
+      let results = await callDatdivinotegy("action", state, request, [actionMatch], matches, null);
       result = results[actionMatch.route.id];
       if (request.signal.aborted) {
         return {
@@ -52591,7 +52591,7 @@ function createRouter(init) {
     // Call the action for the fetcher
     fetchControllers.set(key, abortController);
     let originatingLoadId = incrementingLoadId;
-    let actionResults = await callDataStrategy("action", state, fetchRequest, [match], requestMatches, key);
+    let actionResults = await callDatdivinotegy("action", state, fetchRequest, [match], requestMatches, key);
     let actionResult = actionResults[match.route.id];
     if (fetchRequest.signal.aborted) {
       // We can delete this so long as we weren't aborted by our own fetcher
@@ -52765,7 +52765,7 @@ function createRouter(init) {
     // Call the loader for this fetcher route match
     fetchControllers.set(key, abortController);
     let originatingLoadId = incrementingLoadId;
-    let results = await callDataStrategy("loader", state, fetchRequest, [match], matches, key);
+    let results = await callDatdivinotegy("loader", state, fetchRequest, [match], matches, key);
     let result = results[match.route.id];
     // Deferred isn't supported for fetcher loads, await everything and treat it
     // as a normal load.  resolveDeferredData will return undefined if this
@@ -52910,15 +52910,15 @@ function createRouter(init) {
       });
     }
   }
-  // Utility wrapper for calling dataStrategy client-side without having to
+  // Utility wrapper for calling datdivinotegy client-side without having to
   // pass around the manifest, mapRouteProperties, etc.
-  async function callDataStrategy(type, state, request, matchesToLoad, matches, fetcherKey) {
+  async function callDatdivinotegy(type, state, request, matchesToLoad, matches, fetcherKey) {
     let results;
     let dataResults = {};
     try {
-      results = await callDataStrategyImpl(dataStrategyImpl, type, state, request, matchesToLoad, matches, fetcherKey, manifest, mapRouteProperties);
+      results = await callDatdivinotegyImpl(datdivinotegyImpl, type, state, request, matchesToLoad, matches, fetcherKey, manifest, mapRouteProperties);
     } catch (e) {
-      // If the outer dataStrategy method throws, just return the error for all
+      // If the outer datdivinotegy method throws, just return the error for all
       // matches - and it'll naturally bubble to the root
       matchesToLoad.forEach(m => {
         dataResults[m.route.id] = {
@@ -52929,14 +52929,14 @@ function createRouter(init) {
       return dataResults;
     }
     for (let [routeId, result] of Object.entries(results)) {
-      if (isRedirectDataStrategyResultResult(result)) {
+      if (isRedirectDatdivinotegyResultResult(result)) {
         let response = result.result;
         dataResults[routeId] = {
           type: ResultType.redirect,
           response: normalizeRelativeRoutingRedirectResponse(response, request, routeId, matches, basename, future.v7_relativeSplatPath)
         };
       } else {
-        dataResults[routeId] = await convertDataStrategyResultToDataResult(result);
+        dataResults[routeId] = await convertDatdivinotegyResultToDataResult(result);
       }
     }
     return dataResults;
@@ -52944,10 +52944,10 @@ function createRouter(init) {
   async function callLoadersAndMaybeResolveData(state, matches, matchesToLoad, fetchersToLoad, request) {
     let currentMatches = state.matches;
     // Kick off loaders and fetchers in parallel
-    let loaderResultsPromise = callDataStrategy("loader", state, request, matchesToLoad, matches, null);
+    let loaderResultsPromise = callDatdivinotegy("loader", state, request, matchesToLoad, matches, null);
     let fetcherResultsPromise = Promise.all(fetchersToLoad.map(async f => {
       if (f.matches && f.match && f.controller) {
-        let results = await callDataStrategy("loader", state, createClientSideRequest(init.history, f.path, f.controller.signal), [f.match], f.matches, f.key);
+        let results = await callDatdivinotegy("loader", state, createClientSideRequest(init.history, f.path, f.controller.signal), [f.match], f.matches, f.key);
         let result = results[f.match.route.id];
         // Fetcher results are keyed by fetcher key from here on out, not routeId
         return {
@@ -53441,7 +53441,7 @@ function createStaticHandler(routes, opts) {
     let {
       requestContext,
       skipLoaderErrorBubbling,
-      dataStrategy
+      datdivinotegy
     } = _temp3 === void 0 ? {} : _temp3;
     let url = new URL(request.url);
     let method = request.method;
@@ -53493,7 +53493,7 @@ function createStaticHandler(routes, opts) {
         activeDeferreds: null
       };
     }
-    let result = await queryImpl(request, location, matches, requestContext, dataStrategy || null, skipLoaderErrorBubbling === true, null);
+    let result = await queryImpl(request, location, matches, requestContext, datdivinotegy || null, skipLoaderErrorBubbling === true, null);
     if (isResponse(result)) {
       return result;
     }
@@ -53535,7 +53535,7 @@ function createStaticHandler(routes, opts) {
     let {
       routeId,
       requestContext,
-      dataStrategy
+      datdivinotegy
     } = _temp4 === void 0 ? {} : _temp4;
     let url = new URL(request.url);
     let method = request.method;
@@ -53563,7 +53563,7 @@ function createStaticHandler(routes, opts) {
         pathname: location.pathname
       });
     }
-    let result = await queryImpl(request, location, matches, requestContext, dataStrategy || null, false, match);
+    let result = await queryImpl(request, location, matches, requestContext, datdivinotegy || null, false, match);
     if (isResponse(result)) {
       return result;
     }
@@ -53589,23 +53589,23 @@ function createStaticHandler(routes, opts) {
     }
     return undefined;
   }
-  async function queryImpl(request, location, matches, requestContext, dataStrategy, skipLoaderErrorBubbling, routeMatch) {
+  async function queryImpl(request, location, matches, requestContext, datdivinotegy, skipLoaderErrorBubbling, routeMatch) {
     invariant(request.signal, "query()/queryRoute() requests must contain an AbortController signal");
     try {
       if (isMutationMethod(request.method.toLowerCase())) {
-        let result = await submit(request, matches, routeMatch || getTargetMatch(matches, location), requestContext, dataStrategy, skipLoaderErrorBubbling, routeMatch != null);
+        let result = await submit(request, matches, routeMatch || getTargetMatch(matches, location), requestContext, datdivinotegy, skipLoaderErrorBubbling, routeMatch != null);
         return result;
       }
-      let result = await loadRouteData(request, matches, requestContext, dataStrategy, skipLoaderErrorBubbling, routeMatch);
+      let result = await loadRouteData(request, matches, requestContext, datdivinotegy, skipLoaderErrorBubbling, routeMatch);
       return isResponse(result) ? result : _extends({}, result, {
         actionData: null,
         actionHeaders: {}
       });
     } catch (e) {
       // If the user threw/returned a Response in callLoaderOrAction for a
-      // `queryRoute` call, we throw the `DataStrategyResult` to bail out early
+      // `queryRoute` call, we throw the `DatdivinotegyResult` to bail out early
       // and then return or throw the raw Response here accordingly
-      if (isDataStrategyResult(e) && isResponse(e.result)) {
+      if (isDatdivinotegyResult(e) && isResponse(e.result)) {
         if (e.type === ResultType.error) {
           throw e.result;
         }
@@ -53619,7 +53619,7 @@ function createStaticHandler(routes, opts) {
       throw e;
     }
   }
-  async function submit(request, matches, actionMatch, requestContext, dataStrategy, skipLoaderErrorBubbling, isRouteRequest) {
+  async function submit(request, matches, actionMatch, requestContext, datdivinotegy, skipLoaderErrorBubbling, isRouteRequest) {
     let result;
     if (!actionMatch.route.action && !actionMatch.route.lazy) {
       let error = getInternalRouterError(405, {
@@ -53635,7 +53635,7 @@ function createStaticHandler(routes, opts) {
         error
       };
     } else {
-      let results = await callDataStrategy("action", request, [actionMatch], matches, isRouteRequest, requestContext, dataStrategy);
+      let results = await callDatdivinotegy("action", request, [actionMatch], matches, isRouteRequest, requestContext, datdivinotegy);
       result = results[actionMatch.route.id];
       if (request.signal.aborted) {
         throwStaticHandlerAbortedError(request, isRouteRequest, future);
@@ -53696,7 +53696,7 @@ function createStaticHandler(routes, opts) {
       // Store off the pending error - we use it to determine which loaders
       // to call and will commit it when we complete the navigation
       let boundaryMatch = skipLoaderErrorBubbling ? actionMatch : findNearestBoundary(matches, actionMatch.route.id);
-      let context = await loadRouteData(loaderRequest, matches, requestContext, dataStrategy, skipLoaderErrorBubbling, null, [boundaryMatch.route.id, result]);
+      let context = await loadRouteData(loaderRequest, matches, requestContext, datdivinotegy, skipLoaderErrorBubbling, null, [boundaryMatch.route.id, result]);
       // action status codes take precedence over loader status codes
       return _extends({}, context, {
         statusCode: isRouteErrorResponse(result.error) ? result.error.status : result.statusCode != null ? result.statusCode : 500,
@@ -53706,7 +53706,7 @@ function createStaticHandler(routes, opts) {
         } : {})
       });
     }
-    let context = await loadRouteData(loaderRequest, matches, requestContext, dataStrategy, skipLoaderErrorBubbling, null);
+    let context = await loadRouteData(loaderRequest, matches, requestContext, datdivinotegy, skipLoaderErrorBubbling, null);
     return _extends({}, context, {
       actionData: {
         [actionMatch.route.id]: result.data
@@ -53719,7 +53719,7 @@ function createStaticHandler(routes, opts) {
       } : {}
     });
   }
-  async function loadRouteData(request, matches, requestContext, dataStrategy, skipLoaderErrorBubbling, routeMatch, pendingActionResult) {
+  async function loadRouteData(request, matches, requestContext, datdivinotegy, skipLoaderErrorBubbling, routeMatch, pendingActionResult) {
     let isRouteRequest = routeMatch != null;
     // Short circuit if we have no loaders to run (queryRoute())
     if (isRouteRequest && !(routeMatch != null && routeMatch.route.loader) && !(routeMatch != null && routeMatch.route.lazy)) {
@@ -53747,7 +53747,7 @@ function createStaticHandler(routes, opts) {
         activeDeferreds: null
       };
     }
-    let results = await callDataStrategy("loader", request, matchesToLoad, matches, isRouteRequest, requestContext, dataStrategy);
+    let results = await callDatdivinotegy("loader", request, matchesToLoad, matches, isRouteRequest, requestContext, datdivinotegy);
     if (request.signal.aborted) {
       throwStaticHandlerAbortedError(request, isRouteRequest, future);
     }
@@ -53766,17 +53766,17 @@ function createStaticHandler(routes, opts) {
       activeDeferreds: activeDeferreds.size > 0 ? Object.fromEntries(activeDeferreds.entries()) : null
     });
   }
-  // Utility wrapper for calling dataStrategy server-side without having to
+  // Utility wrapper for calling datdivinotegy server-side without having to
   // pass around the manifest, mapRouteProperties, etc.
-  async function callDataStrategy(type, request, matchesToLoad, matches, isRouteRequest, requestContext, dataStrategy) {
-    let results = await callDataStrategyImpl(dataStrategy || defaultDataStrategy, type, null, request, matchesToLoad, matches, null, manifest, mapRouteProperties, requestContext);
+  async function callDatdivinotegy(type, request, matchesToLoad, matches, isRouteRequest, requestContext, datdivinotegy) {
+    let results = await callDatdivinotegyImpl(datdivinotegy || defaultDatdivinotegy, type, null, request, matchesToLoad, matches, null, manifest, mapRouteProperties, requestContext);
     let dataResults = {};
     await Promise.all(matches.map(async match => {
       if (!(match.route.id in results)) {
         return;
       }
       let result = results[match.route.id];
-      if (isRedirectDataStrategyResultResult(result)) {
+      if (isRedirectDatdivinotegyResultResult(result)) {
         let response = result.result;
         // Throw redirects and let the server handle them with an HTTP redirect
         throw normalizeRelativeRoutingRedirectResponse(response, request, match.route.id, matches, basename, future.v7_relativeSplatPath);
@@ -53786,7 +53786,7 @@ function createStaticHandler(routes, opts) {
         // directly without unwrapping
         throw result;
       }
-      dataResults[match.route.id] = await convertDataStrategyResultToDataResult(result);
+      dataResults[match.route.id] = await convertDatdivinotegyResultToDataResult(result);
     }));
     return dataResults;
   }
@@ -54287,8 +54287,8 @@ async function loadLazyRouteModule(route, mapRouteProperties, manifest) {
     lazy: undefined
   }));
 }
-// Default implementation of `dataStrategy` which fetches all loaders in parallel
-async function defaultDataStrategy(_ref4) {
+// Default implementation of `datdivinotegy` which fetches all loaders in parallel
+async function defaultDatdivinotegy(_ref4) {
   let {
     matches
   } = _ref4;
@@ -54298,13 +54298,13 @@ async function defaultDataStrategy(_ref4) {
     [matchesToLoad[i].route.id]: result
   }), {});
 }
-async function callDataStrategyImpl(dataStrategyImpl, type, state, request, matchesToLoad, matches, fetcherKey, manifest, mapRouteProperties, requestContext) {
+async function callDatdivinotegyImpl(datdivinotegyImpl, type, state, request, matchesToLoad, matches, fetcherKey, manifest, mapRouteProperties, requestContext) {
   let loadRouteDefinitionsPromises = matches.map(m => m.route.lazy ? loadLazyRouteModule(m.route, mapRouteProperties, manifest) : undefined);
   let dsMatches = matches.map((match, i) => {
     let loadRoutePromise = loadRouteDefinitionsPromises[i];
     let shouldLoad = matchesToLoad.some(m => m.route.id === match.route.id);
     // `resolve` encapsulates route.lazy(), executing the loader/action,
-    // and mapping return values/thrown errors to a `DataStrategyResult`.  Users
+    // and mapping return values/thrown errors to a `DatdivinotegyResult`.  Users
     // can pass a callback to take fine-grained control over the execution
     // of the loader/action
     let resolve = async handlerOverride => {
@@ -54324,7 +54324,7 @@ async function callDataStrategyImpl(dataStrategyImpl, type, state, request, matc
   // Send all matches here to allow for a middleware-type implementation.
   // handler will be a no-op for unneeded routes and we filter those results
   // back out below.
-  let results = await dataStrategyImpl({
+  let results = await datdivinotegyImpl({
     matches: dsMatches,
     request,
     params: matches[0].params,
@@ -54341,14 +54341,14 @@ async function callDataStrategyImpl(dataStrategyImpl, type, state, request, matc
   }
   return results;
 }
-// Default logic for calling a loader/action is the user has no specified a dataStrategy
+// Default logic for calling a loader/action is the user has no specified a datdivinotegy
 async function callLoaderOrAction(type, request, match, loadRoutePromise, handlerOverride, staticContext) {
   let result;
   let onReject;
   let runHandler = handler => {
     // Setup a promise we can race against so that abort signals short circuit
     let reject;
-    // This will never resolve so safe to type it as Promise<DataStrategyResult> to
+    // This will never resolve so safe to type it as Promise<DatdivinotegyResult> to
     // satisfy the function return value
     let abortPromise = new Promise((_, r) => reject = r);
     onReject = () => reject();
@@ -54435,7 +54435,7 @@ async function callLoaderOrAction(type, request, match, loadRoutePromise, handle
     invariant(result.result !== undefined, "You defined " + (type === "action" ? "an action" : "a loader") + " for route " + ("\"" + match.route.id + "\" but didn't return anything from your `" + type + "` ") + "function. Please return a value or `null`.");
   } catch (e) {
     // We should already be catching and converting normal handler executions to
-    // DataStrategyResults and returning them, so anything that throws here is an
+    // DatdivinotegyResults and returning them, so anything that throws here is an
     // unexpected error we still need to wrap
     return {
       type: ResultType.error,
@@ -54448,11 +54448,11 @@ async function callLoaderOrAction(type, request, match, loadRoutePromise, handle
   }
   return result;
 }
-async function convertDataStrategyResultToDataResult(dataStrategyResult) {
+async function convertDatdivinotegyResultToDataResult(datdivinotegyResult) {
   let {
     result,
     type
-  } = dataStrategyResult;
+  } = datdivinotegyResult;
   if (isResponse(result)) {
     let data;
     try {
@@ -54872,10 +54872,10 @@ function isHashChangeOnly(a, b) {
   // /page#hash -> /page
   return false;
 }
-function isDataStrategyResult(result) {
+function isDatdivinotegyResult(result) {
   return result != null && typeof result === "object" && "type" in result && "result" in result && (result.type === ResultType.data || result.type === ResultType.error);
 }
-function isRedirectDataStrategyResultResult(result) {
+function isRedirectDatdivinotegyResultResult(result) {
   return isResponse(result.result) && redirectStatusCodes.has(result.result.status);
 }
 function isDeferredResult(result) {
@@ -56036,7 +56036,7 @@ function createBrowserRouter(routes, opts) {
     hydrationData: (opts == null ? void 0 : opts.hydrationData) || parseHydrationData(),
     routes,
     mapRouteProperties: react_router__WEBPACK_IMPORTED_MODULE_3__.UNSAFE_mapRouteProperties,
-    dataStrategy: opts == null ? void 0 : opts.dataStrategy,
+    datdivinotegy: opts == null ? void 0 : opts.datdivinotegy,
     patchRoutesOnNavigation: opts == null ? void 0 : opts.patchRoutesOnNavigation,
     window: opts == null ? void 0 : opts.window
   }).initialize();
@@ -56053,7 +56053,7 @@ function createHashRouter(routes, opts) {
     hydrationData: (opts == null ? void 0 : opts.hydrationData) || parseHydrationData(),
     routes,
     mapRouteProperties: react_router__WEBPACK_IMPORTED_MODULE_3__.UNSAFE_mapRouteProperties,
-    dataStrategy: opts == null ? void 0 : opts.dataStrategy,
+    datdivinotegy: opts == null ? void 0 : opts.datdivinotegy,
     patchRoutesOnNavigation: opts == null ? void 0 : opts.patchRoutesOnNavigation,
     window: opts == null ? void 0 : opts.window
   }).initialize();
@@ -58819,7 +58819,7 @@ function createMemoryRouter(routes, opts) {
     hydrationData: opts == null ? void 0 : opts.hydrationData,
     routes,
     mapRouteProperties,
-    dataStrategy: opts == null ? void 0 : opts.dataStrategy,
+    datdivinotegy: opts == null ? void 0 : opts.datdivinotegy,
     patchRoutesOnNavigation: opts == null ? void 0 : opts.patchRoutesOnNavigation
   }).initialize();
 }
@@ -60261,11 +60261,11 @@ const Breadcrumbs = () => {
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bsf_force_ui__WEBPACK_IMPORTED_MODULE_2__.Breadcrumb.List, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bsf_force_ui__WEBPACK_IMPORTED_MODULE_2__.Breadcrumb.Item, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bsf_force_ui__WEBPACK_IMPORTED_MODULE_2__.Breadcrumb.Link, {
     href: divino_base_url,
     className: "font-medium text-base leading-6 tracking-normal hover:no-underline focus:outline-none focus:ring-0 focus:border-transparent transition-none"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Dashboard', 'astra'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Dashboard', 'divino'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "mt-2"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bsf_force_ui__WEBPACK_IMPORTED_MODULE_2__.Breadcrumb.Separator, null)), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bsf_force_ui__WEBPACK_IMPORTED_MODULE_2__.Breadcrumb.Item, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bsf_force_ui__WEBPACK_IMPORTED_MODULE_2__.Breadcrumb.Page, {
     className: "font-medium text-base leading-6 tracking-normal"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Site Builder', 'astra')))));
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Site Builder', 'divino')))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Breadcrumbs);
 
@@ -60304,7 +60304,7 @@ const Canvas = () => {
     gap: "none"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "font-semibold text-text-primary text-[20px] leading-[30px] tracking-[-0.005em]"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Start customizing every part of your website.', 'astra')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ProButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Start customizing every part of your website.', 'divino')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ProButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: "ast-upgrade-btn",
     disableSpinner: true
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -60364,7 +60364,7 @@ function Card({
       case 'Inside Post/Page':
         return 'Design a layout in one place and display it on multiple pages/posts';
       case 'Hooks':
-        return 'Insert custom code or content using Astra hooks';
+        return 'Insert custom code or content using divino hooks';
       case '404 Page':
         return 'Change the design of your 404 page using the Site Builder';
       default:
@@ -60530,7 +60530,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _divino_utils_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @astra-utils/helpers */ "../utils/helpers.js");
+/* harmony import */ var _divino_utils_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @divino-utils/helpers */ "../utils/helpers.js");
 /* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/arrow-up-right.js");
 /* harmony import */ var _bsf_force_ui__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @bsf/force-ui */ "./node_modules/@bsf/force-ui/dist/force-ui.js");
 
@@ -60542,7 +60542,7 @@ const ProButton = ({
   className,
   isLink = false,
   url = divino_theme_builder.divino_pricing_page_url,
-  children = (0,_divino_utils_helpers__WEBPACK_IMPORTED_MODULE_2__.getAstraProTitle)(),
+  children = (0,_divino_utils_helpers__WEBPACK_IMPORTED_MODULE_2__.getdivinoProTitle)(),
   disableSpinner = false,
   spinnerPosition = 'left',
   Icon = lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -60551,8 +60551,8 @@ const ProButton = ({
   campaign = '',
   iconPosition = 'right' // <-- default position here
 }) => {
-  const onGetAstraPro = e => {
-    (0,_divino_utils_helpers__WEBPACK_IMPORTED_MODULE_2__.handleGetAstraPro)(e, {
+  const onGetdivinoPro = e => {
+    (0,_divino_utils_helpers__WEBPACK_IMPORTED_MODULE_2__.handleGetdivinoPro)(e, {
       url,
       campaign,
       disableSpinner,
@@ -60567,7 +60567,7 @@ const ProButton = ({
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bsf_force_ui__WEBPACK_IMPORTED_MODULE_3__.Button, {
     variant: isLink ? 'link' : 'primary',
     className: (0,_divino_utils_helpers__WEBPACK_IMPORTED_MODULE_2__.classNames)('inline-flex items-center', isLink ? 'gap-0 focus:ring-0 focus:ring-offset-0 focus:shadow-none focus:outline-none hover:no-underline [&>svg]:w-4 [&>svg]:h-4' : '', className),
-    onClick: onGetAstraPro,
+    onClick: onGetdivinoPro,
     icon: Icon && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Icon, {
       size: 16
     }),
@@ -60630,13 +60630,13 @@ const CustomSidebar = ({
     className: "w-6 h-6 text-gray-600"
   }), " ", (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     className: "text-text-secondary font-figtree font-normal text-base leading-6 tracking-normal"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('All Layouts', 'astra'))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bsf_force_ui__WEBPACK_IMPORTED_MODULE_3__.Sidebar.Body, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('All Layouts', 'divino'))))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_bsf_force_ui__WEBPACK_IMPORTED_MODULE_3__.Sidebar.Body, {
     className: "pb-5"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "ast-tb-sidebar-subtitle"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
     className: "text-text-tertiary"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Website Parts', 'astra'))), items.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_SidebarItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Website Parts', 'divino'))), items.map((item, index) => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_SidebarItem__WEBPACK_IMPORTED_MODULE_1__["default"], {
     key: index,
     label: item.label,
     icon: item.icon,
@@ -60651,7 +60651,7 @@ const CustomSidebar = ({
     className: "w-5 h-5 text-gray-400 w-[20px] h-[20px] text-icon-secondary group-hover:stroke-[#141338]"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "font-normal text-[16px] leading-[24px] text-text-secondary"
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Help', 'astra'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Help', 'divino'))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "ast-tb-sidebar-help ast-tb-sidebar-item py-3 rounded-md hover:bg-[#F3F3F8] hover:[color:#141338]"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ProButton__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: "ast-tb-sidebar-help text-link-primary font-figtree font-semibold text-base leading-6 tracking-normal",
@@ -60749,7 +60749,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const layoutItems = [{
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Header", "astra"),
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Header", "divino"),
   layout: "header",
   icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     width: "270",
@@ -60792,7 +60792,7 @@ const layoutItems = [{
     fill: "#E6E6EF"
   }))
 }, {
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Footer", "astra"),
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Footer", "divino"),
   layout: "footer",
   icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     width: "270",
@@ -60856,7 +60856,7 @@ const layoutItems = [{
     fill: "#E6E6EF"
   }))
 }, {
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Hooks", "astra"),
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Hooks", "divino"),
   layout: "hooks",
   icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     width: "270",
@@ -60915,7 +60915,7 @@ const layoutItems = [{
     "stroke-width": "2"
   }))
 }, {
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Inside Post/Page", "astra"),
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Inside Post/Page", "divino"),
   layout: "content",
   icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     width: "270",
@@ -60974,7 +60974,7 @@ const layoutItems = [{
     "stroke-width": "2"
   }))
 }, {
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Single", "astra"),
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Single", "divino"),
   layout: "template",
   template: "single",
   icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -61027,7 +61027,7 @@ const layoutItems = [{
     "stroke-width": "2"
   }))
 }, {
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Archive", "astra"),
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Archive", "divino"),
   layout: "template",
   template: "archive",
   icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -61090,7 +61090,7 @@ const layoutItems = [{
     "stroke-width": "2"
   }))
 }, {
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("404 Page", "astra"),
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("404 Page", "divino"),
   layout: "404-page",
   icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
     width: "270",
@@ -61178,49 +61178,49 @@ __webpack_require__.r(__webpack_exports__);
 
 (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], null);
 const sidebarItems = [{
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Header', 'astra'),
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Header', 'divino'),
   layout: 'header',
   template: '',
   icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
     className: "w-[20px] h-[20px] text-icon-secondary group-hover:stroke-[#141338]"
   })
 }, {
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Footer', 'astra'),
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Footer', 'divino'),
   layout: 'footer',
   template: '',
   icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
     className: "w-[20px] h-[20px] text-icon-secondary group-hover:stroke-[#141338]"
   })
 }, {
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Hooks', 'astra'),
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Hooks', 'divino'),
   layout: 'hooks',
   template: '',
   icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: "w-[20px] h-[20px] text-icon-secondary group-hover:stroke-[#141338]"
   })
 }, {
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Inside Post/Page', 'astra'),
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Inside Post/Page', 'divino'),
   layout: 'content',
   template: '',
   icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(lucide_react__WEBPACK_IMPORTED_MODULE_5__["default"], {
     className: "w-[20px] h-[20px] text-icon-secondary group-hover:stroke-[#141338]"
   })
 }, {
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Single', 'astra'),
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Single', 'divino'),
   layout: 'template',
   template: 'single',
   icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(lucide_react__WEBPACK_IMPORTED_MODULE_6__["default"], {
     className: "w-[20px] h-[20px] text-icon-secondary group-hover:stroke-[#141338]"
   })
 }, {
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Archive', 'astra'),
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Archive', 'divino'),
   layout: 'template',
   template: 'archive',
   icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(lucide_react__WEBPACK_IMPORTED_MODULE_7__["default"], {
     className: "w-[20px] h-[20px] text-icon-secondary group-hover:stroke-[#141338]"
   })
 }, {
-  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('404 Page', 'astra'),
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('404 Page', 'divino'),
   layout: '404-page',
   template: '',
   icon: (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
@@ -61295,7 +61295,7 @@ module.exports = window["ReactDOM"];
 /************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
-/******/ 	
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/ 		// Check if module is in cache
@@ -61309,14 +61309,14 @@ module.exports = window["ReactDOM"];
 /******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
-/******/ 	
+/******/
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -61329,7 +61329,7 @@ module.exports = window["ReactDOM"];
 /******/ 			return getter;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/create fake namespace object */
 /******/ 	(() => {
 /******/ 		var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
@@ -61359,7 +61359,7 @@ module.exports = window["ReactDOM"];
 /******/ 			return ns;
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -61371,12 +61371,12 @@ module.exports = window["ReactDOM"];
 /******/ 			}
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
-/******/ 	
+/******/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -61387,7 +61387,7 @@ module.exports = window["ReactDOM"];
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
 // This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.

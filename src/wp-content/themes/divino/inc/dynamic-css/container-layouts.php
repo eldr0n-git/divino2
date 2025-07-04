@@ -2,7 +2,7 @@
 /**
  * Container Layout - Dynamic CSS
  *
- * @package astra
+ * @package divino
  * @since 3.3.0
  */
 
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Init fire to add required compatibility for divi page bulder.
  *
- * Case: In customizer-defaults update case Astra v3.8.3 we introduced some padding for stretched layout, that should not load for page builder layouts, that is why this compatibility added here.
+ * Case: In customizer-defaults update case divino v3.8.3 we introduced some padding for stretched layout, that should not load for page builder layouts, that is why this compatibility added here.
  *
  * @param int $post_id Current post ID.
  *

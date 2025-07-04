@@ -2,8 +2,8 @@
 /**
  * Customizer Control: typography.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       1.0.0
  */
 
@@ -105,27 +105,27 @@ final class divino_Control_Typography extends WP_Customize_Control {
 	 * @param array                $args    Default parent's arguments.
 	 */
 	public function __construct( $manager, $id, $args = array() ) {
-		$this->ast_inherit         = __( 'Inherit', 'astra' );
+		$this->ast_inherit         = __( 'Inherit', 'divino' );
 		$this->ast_all_font_weight = array(
-			'100'       => __( 'Thin 100', 'astra' ),
-			'100italic' => __( '100 Italic', 'astra' ),
-			'200'       => __( 'Extra-Light 200', 'astra' ),
-			'200italic' => __( '200 Italic', 'astra' ),
-			'300'       => __( 'Light 300', 'astra' ),
-			'300italic' => __( '300 Italic', 'astra' ),
-			'400'       => __( 'Normal 400', 'astra' ),
-			'normal'    => __( 'Normal 400', 'astra' ),
-			'italic'    => __( '400 Italic', 'astra' ),
-			'500'       => __( 'Medium 500', 'astra' ),
-			'500italic' => __( '500 Italic', 'astra' ),
-			'600'       => __( 'Semi-Bold 600', 'astra' ),
-			'600italic' => __( '600 Italic', 'astra' ),
-			'700'       => __( 'Bold 700', 'astra' ),
-			'700italic' => __( '700 Italic', 'astra' ),
-			'800'       => __( 'Extra-Bold 800', 'astra' ),
-			'800italic' => __( '800 Italic', 'astra' ),
-			'900'       => __( 'Ultra-Bold 900', 'astra' ),
-			'900italic' => __( '900 Italic', 'astra' ),
+			'100'       => __( 'Thin 100', 'divino' ),
+			'100italic' => __( '100 Italic', 'divino' ),
+			'200'       => __( 'Extra-Light 200', 'divino' ),
+			'200italic' => __( '200 Italic', 'divino' ),
+			'300'       => __( 'Light 300', 'divino' ),
+			'300italic' => __( '300 Italic', 'divino' ),
+			'400'       => __( 'Normal 400', 'divino' ),
+			'normal'    => __( 'Normal 400', 'divino' ),
+			'italic'    => __( '400 Italic', 'divino' ),
+			'500'       => __( 'Medium 500', 'divino' ),
+			'500italic' => __( '500 Italic', 'divino' ),
+			'600'       => __( 'Semi-Bold 600', 'divino' ),
+			'600italic' => __( '600 Italic', 'divino' ),
+			'700'       => __( 'Bold 700', 'divino' ),
+			'700italic' => __( '700 Italic', 'divino' ),
+			'800'       => __( 'Extra-Bold 800', 'divino' ),
+			'800italic' => __( '800 Italic', 'divino' ),
+			'900'       => __( 'Ultra-Bold 900', 'divino' ),
+			'900italic' => __( '900 Italic', 'divino' ),
 		);
 		parent::__construct( $manager, $id, $args );
 	}

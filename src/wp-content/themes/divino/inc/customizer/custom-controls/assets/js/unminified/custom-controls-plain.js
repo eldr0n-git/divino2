@@ -3,7 +3,7 @@
  *
  * Handles Typography of the site
  *
- * @package Astra
+ * @package divino
  */
 
 ( function( $ ) {
@@ -39,8 +39,8 @@
 		{
 			$( '.customize-control-ast-font-family select' ).each( function(e) {
 
-				if( 'undefined' != typeof astra.customizer ) {
-					var fonts = astra.customizer.settings.google_fonts;
+				if( 'undefined' != typeof divino.customizer ) {
+					var fonts = divino.customizer.settings.google_fonts;
 					var optionName = $(this).data('name');
 
 					$(this).html( fonts );
@@ -173,7 +173,7 @@
 			inheritWeightObject = [ 'inherit' ],
 			weightObject        = [ '400', '600' ],
 			weightOptions       = '',
-			weightMap           = astraTypo;
+			weightMap           = divinoTypo;
 			if ( fontValue == 'inherit' ) {
 				weightValue     = init ? weightSelect.val() : 'inherit';
 			}

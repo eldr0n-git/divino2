@@ -3,7 +3,7 @@
  * Scroll To Top Addon
  *
  * @since 4.0.0
- * @package Astra
+ * @package divino
  */
 
 define( 'divino_SCROLL_TO_TOP_DIR', divino_THEME_DIR . 'inc/addons/scroll-to-top/' );
@@ -39,7 +39,7 @@ class divino_Scroll_To_Top {
 	 */
 	public function __construct() {
 
-		require_once divino_SCROLL_TO_TOP_DIR . 'classes/class-astra-scroll-to-top-loader.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound -- Not a template file so loading in a normal way.
+		require_once divino_SCROLL_TO_TOP_DIR . 'classes/class-divino-scroll-to-top-loader.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound -- Not a template file so loading in a normal way.
 
 		// Include front end files.
 		if ( ! is_admin() ) {

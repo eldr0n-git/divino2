@@ -2,9 +2,9 @@
 /**
  * Template for Blog Layout 6
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 4.6.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 4.6.0
  */
 
 ?>

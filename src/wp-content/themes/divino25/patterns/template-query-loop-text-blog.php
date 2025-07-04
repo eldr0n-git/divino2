@@ -1,3 +1,4 @@
+<!-- template-query-loop-text-blog.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Text blog query loop

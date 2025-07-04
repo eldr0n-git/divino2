@@ -2,7 +2,7 @@
 /**
  * Beaver Themer Compatibility File.
  *
- * @package Astra
+ * @package divino
  */
 
 // If plugin - 'Beaver Themer' not exist then return.
@@ -11,12 +11,12 @@ if ( ! class_exists( 'FLThemeBuilderLoader' ) || ! class_exists( 'FLThemeBuilder
 }
 
 /**
- * Astra Beaver Themer Compatibility
+ * divino Beaver Themer Compatibility
  */
 if ( ! class_exists( 'divino_Beaver_Themer' ) ) {
 
 	/**
-	 * Astra Beaver Themer Compatibility
+	 * divino Beaver Themer Compatibility
 	 *
 	 * @since 1.0.0
 	 */
@@ -77,7 +77,7 @@ if ( ! class_exists( 'divino_Beaver_Themer' ) ) {
 		/**
 		 * Compatibility CSS for Beaver Themer Builder.
 		 *
-		 * @param string $dynamic_css Astra Dynamic CSS.
+		 * @param string $dynamic_css divino Dynamic CSS.
 		 * @return string $dynamic_css Generated CSS.
 		 *
 		 * @since 4.6.15
@@ -120,7 +120,7 @@ if ( ! class_exists( 'divino_Beaver_Themer' ) ) {
 				$classes = array_diff(
 					$classes,
 					array(
-						// Astra common grid.
+						// divino common grid.
 						'ast-col-xs-1',
 						'ast-col-xs-2',
 						'ast-col-xs-3',
@@ -182,14 +182,14 @@ if ( ! class_exists( 'divino_Beaver_Themer' ) ) {
 						'ast-col-xl-11',
 						'ast-col-xl-12',
 
-						// Astra Blog / Single Post.
+						// divino Blog / Single Post.
 						'ast-article-post',
 						'ast-article-single',
 						'ast-separate-posts',
 						'remove-featured-img-padding',
 						'ast-featured-post',
 
-						// Astra Woocommerce.
+						// divino Woocommerce.
 						'ast-product-gallery-layout-vertical',
 						'ast-product-gallery-layout-horizontal',
 						'ast-product-gallery-with-no-image',
@@ -202,7 +202,7 @@ if ( ! class_exists( 'divino_Beaver_Themer' ) ) {
 						'ast-qv-on-image-click',
 						'ast-qv-after-summary',
 
-						'astra-woo-hover-swap',
+						'divino-woo-hover-swap',
 
 						'box-shadow-0',
 						'box-shadow-0-hover',
@@ -334,7 +334,7 @@ if ( ! class_exists( 'divino_Beaver_Themer' ) ) {
 		}
 
 		/**
-		 * Function to Astra theme parts
+		 * Function to divino theme parts
 		 *
 		 * @since 1.0.0
 		 */
@@ -344,49 +344,49 @@ if ( ! class_exists( 'divino_Beaver_Themer' ) ) {
 				array(
 					'label' => 'Page',
 					'hooks' => array(
-						'divino_body_top'    => __( 'Before Page', 'astra' ),
-						'divino_body_bottom' => __( 'After Page', 'astra' ),
+						'divino_body_top'    => __( 'Before Page', 'divino' ),
+						'divino_body_bottom' => __( 'After Page', 'divino' ),
 					),
 				),
 				array(
 					'label' => 'Header',
 					'hooks' => array(
-						'divino_header_before' => __( 'Before Header', 'astra' ),
-						'divino_header_after'  => __( 'After Header', 'astra' ),
+						'divino_header_before' => __( 'Before Header', 'divino' ),
+						'divino_header_after'  => __( 'After Header', 'divino' ),
 					),
 				),
 				array(
 					'label' => 'Content',
 					'hooks' => array(
-						'divino_primary_content_top'    => __( 'Before Content', 'astra' ),
-						'divino_primary_content_bottom' => __( 'After Content', 'astra' ),
+						'divino_primary_content_top'    => __( 'Before Content', 'divino' ),
+						'divino_primary_content_bottom' => __( 'After Content', 'divino' ),
 					),
 				),
 				array(
 					'label' => 'Footer',
 					'hooks' => array(
-						'divino_footer_before' => __( 'Before Footer', 'astra' ),
-						'divino_footer_after'  => __( 'After Footer', 'astra' ),
+						'divino_footer_before' => __( 'Before Footer', 'divino' ),
+						'divino_footer_after'  => __( 'After Footer', 'divino' ),
 					),
 				),
 				array(
 					'label' => 'Sidebar',
 					'hooks' => array(
-						'divino_sidebars_before' => __( 'Before Sidebar', 'astra' ),
-						'divino_sidebars_after'  => __( 'After Sidebar', 'astra' ),
+						'divino_sidebars_before' => __( 'Before Sidebar', 'divino' ),
+						'divino_sidebars_after'  => __( 'After Sidebar', 'divino' ),
 					),
 				),
 				array(
 					'label' => 'Posts',
 					'hooks' => array(
-						'loop_start'                 => __( 'Loop Start', 'astra' ),
-						'divino_entry_top'            => __( 'Before Post', 'astra' ),
-						'divino_entry_content_before' => __( 'Before Post Content', 'astra' ),
-						'divino_entry_content_after'  => __( 'After Post Content', 'astra' ),
-						'divino_entry_bottom'         => __( 'After Post', 'astra' ),
-						'divino_comments_before'      => __( 'Before Comments', 'astra' ),
-						'divino_comments_after'       => __( 'After Comments', 'astra' ),
-						'loop_end'                   => __( 'Loop End', 'astra' ),
+						'loop_start'                 => __( 'Loop Start', 'divino' ),
+						'divino_entry_top'            => __( 'Before Post', 'divino' ),
+						'divino_entry_content_before' => __( 'Before Post Content', 'divino' ),
+						'divino_entry_content_after'  => __( 'After Post Content', 'divino' ),
+						'divino_entry_bottom'         => __( 'After Post', 'divino' ),
+						'divino_comments_before'      => __( 'Before Comments', 'divino' ),
+						'divino_comments_after'       => __( 'After Comments', 'divino' ),
+						'loop_end'                   => __( 'Loop End', 'divino' ),
 					),
 				),
 			);

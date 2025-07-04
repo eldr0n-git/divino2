@@ -2,7 +2,7 @@
 /**
  * Below Header.
  *
- * @package     astra-builder
+ * @package     divino-builder
  * @link        https://www.brainstormforce.com
  * @since       3.0.0
  */
@@ -26,7 +26,7 @@ class divino_Below_Header {
 	public function __construct() {
 
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once divino_BELOW_HEADER_DIR . '/class-astra-below-header-loader.php';
+		require_once divino_BELOW_HEADER_DIR . '/class-divino-below-header-loader.php';
 
 		// Include front end files.
 		if ( ! is_admin() || divino_Builder_Customizer::divino_collect_customizer_builder_data() ) {

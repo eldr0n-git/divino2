@@ -1,9 +1,9 @@
 <?php
 /**
- * This file ensures that it is w.org Astra theme.
+ * This file ensures that it is w.org divino theme.
  *
- * @package Astra
- * @since Astra 4.8.4
+ * @package divino
+ * @since divino 4.8.4
  */
 
 /**

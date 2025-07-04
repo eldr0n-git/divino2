@@ -1,3 +1,4 @@
+<!-- services-subscriber-only-section.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Services, subscriber only section

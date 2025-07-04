@@ -2,7 +2,7 @@
 /**
  * Blog Helper Functions
  *
- * @package Astra
+ * @package divino
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -447,8 +447,8 @@ function divino_get_archive_description( $post_type ) {
 
 	if ( is_search() ) {
 		return have_posts()
-			? divino_get_i18n_option( 'section-search-page-title-found-custom-description', _x( '%astra%', 'Search Page Title: Subheading - When Results Found', 'astra' ) )
-			: divino_get_i18n_option( 'section-search-page-title-not-found-custom-description', _x( '%astra%', 'Search Page Title: Subheading - When Results Not Found', 'astra' ) );
+			? divino_get_i18n_option( 'section-search-page-title-found-custom-description', _x( '%divino%', 'Search Page Title: Subheading - When Results Found', 'divino' ) )
+			: divino_get_i18n_option( 'section-search-page-title-not-found-custom-description', _x( '%divino%', 'Search Page Title: Subheading - When Results Not Found', 'divino' ) );
 	}
 
 	$get_archive_description = get_the_archive_description();
@@ -701,7 +701,7 @@ function divino_primary_class_blog_layout( $classes ) {
 		if ( ! ( defined( 'divino_EXT_VER' ) && divino_Ext_Extension::is_active( 'blog-pro' ) ) ) {
 			/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 
-			// If a old pro user has used blog-layout-1 to 3 and disabled astra addon then moved layout to 'blog-layout-4'.
+			// If a old pro user has used blog-layout-1 to 3 and disabled divino addon then moved layout to 'blog-layout-4'.
 			if ( 'blog-layout-1' === $blog_layout || 'blog-layout-2' === $blog_layout || 'blog-layout-3' === $blog_layout ) {
 				$blog_layout = 'blog-layout-4';
 			}

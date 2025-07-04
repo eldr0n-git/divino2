@@ -1,3 +1,4 @@
+<!-- more-posts.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: More posts

@@ -1,10 +1,10 @@
 <?php
 /**
- * Site Layout Option for Astra Theme.
+ * Site Layout Option for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,10 +20,10 @@ if ( ! class_exists( 'divino_Site_Layout_Configs' ) ) {
 		/**
 		 * Register Site Layout Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -36,7 +36,7 @@ if ( ! class_exists( 'divino_Site_Layout_Configs' ) ) {
 					'default'     => divino_get_option( 'site-content-width' ),
 					'section'     => 'section-container-layout',
 					'priority'    => 10,
-					'title'       => __( 'Container Width', 'astra' ),
+					'title'       => __( 'Container Width', 'divino' ),
 					'divider'     => array( 'ast_class' => 'ast-top-section-divider' ),
 					'context'     => defined( 'divino_EXT_VER' ) && divino_Ext_Extension::is_active( 'site-layouts' ) ? array(
 						divino_Builder_Helper::$general_tab_config,
@@ -60,7 +60,7 @@ if ( ! class_exists( 'divino_Site_Layout_Configs' ) ) {
 					'default'     => divino_get_option( 'narrow-container-max-width' ),
 					'section'     => 'section-container-layout',
 					'priority'    => 10,
-					'title'       => __( 'Narrow Container Width', 'astra' ),
+					'title'       => __( 'Narrow Container Width', 'divino' ),
 					'suffix'      => 'px',
 					'divider'     => array( 'ast_class' => 'ast-top-section-spacing' ),
 					'input_attrs' => array(

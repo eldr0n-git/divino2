@@ -1,9 +1,9 @@
 <?php
 /**
- * Styling Options for Astra Theme.
+ * Styling Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
+ * @package     divino
+ * @link        https://wpdivino.com/
  * @since       1.4.3
  */
 
@@ -20,10 +20,10 @@ if ( ! class_exists( 'divino_Adv_Footer_Colors_Configs' ) ) {
 		/**
 		 * Register Advanced Footer Color Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 			$_configs = array(
@@ -36,7 +36,7 @@ if ( ! class_exists( 'divino_Adv_Footer_Colors_Configs' ) ) {
 					'default'   => divino_get_option( 'footer-widget-background-group' ),
 					'type'      => 'control',
 					'control'   => 'ast-settings-group',
-					'title'     => __( 'Background Color', 'astra' ),
+					'title'     => __( 'Background Color', 'divino' ),
 					'section'   => 'section-footer-adv',
 					'transport' => 'postMessage',
 					'divider'   => array( 'ast_class' => 'ast-bottom-divider' ),
@@ -60,7 +60,7 @@ if ( ! class_exists( 'divino_Adv_Footer_Colors_Configs' ) ) {
 					'default'   => divino_get_option( 'footer-widget-content-group' ),
 					'type'      => 'control',
 					'control'   => 'ast-settings-group',
-					'title'     => __( 'Content Colors', 'astra' ),
+					'title'     => __( 'Content Colors', 'divino' ),
 					'section'   => 'section-footer-adv',
 					'transport' => 'postMessage',
 					'priority'  => 48,
@@ -82,7 +82,7 @@ if ( ! class_exists( 'divino_Adv_Footer_Colors_Configs' ) ) {
 					'default'   => divino_get_option( 'footer-widget-link-color-group' ),
 					'type'      => 'control',
 					'control'   => 'ast-color-group',
-					'title'     => __( 'Link Color', 'astra' ),
+					'title'     => __( 'Link Color', 'divino' ),
 					'section'   => 'section-footer-adv',
 					'transport' => 'postMessage',
 					'priority'  => 48,
@@ -107,7 +107,7 @@ if ( ! class_exists( 'divino_Adv_Footer_Colors_Configs' ) ) {
 					'parent'  => divino_THEME_SETTINGS . '[footer-widget-content-group]',
 					'section' => 'section-footer-adv',
 					'control' => 'ast-color',
-					'title'   => __( 'Title Color', 'astra' ),
+					'title'   => __( 'Title Color', 'divino' ),
 					'default' => divino_get_option( 'footer-adv-wgt-title-color' ),
 				),
 
@@ -120,7 +120,7 @@ if ( ! class_exists( 'divino_Adv_Footer_Colors_Configs' ) ) {
 					'parent'  => divino_THEME_SETTINGS . '[footer-widget-content-group]',
 					'section' => 'section-footer-adv',
 					'control' => 'ast-color',
-					'title'   => __( 'Text Color', 'astra' ),
+					'title'   => __( 'Text Color', 'divino' ),
 					'default' => divino_get_option( 'footer-adv-text-color' ),
 				),
 
@@ -133,7 +133,7 @@ if ( ! class_exists( 'divino_Adv_Footer_Colors_Configs' ) ) {
 					'parent'  => divino_THEME_SETTINGS . '[footer-widget-link-color-group]',
 					'section' => 'section-footer-adv',
 					'control' => 'ast-color',
-					'title'   => __( 'Normal', 'astra' ),
+					'title'   => __( 'Normal', 'divino' ),
 					'default' => divino_get_option( 'footer-adv-link-color' ),
 				),
 
@@ -146,7 +146,7 @@ if ( ! class_exists( 'divino_Adv_Footer_Colors_Configs' ) ) {
 					'parent'  => divino_THEME_SETTINGS . '[footer-widget-link-color-group]',
 					'section' => 'section-footer-adv',
 					'control' => 'ast-color',
-					'title'   => __( 'Hover', 'astra' ),
+					'title'   => __( 'Hover', 'divino' ),
 					'default' => divino_get_option( 'footer-adv-link-h-color' ),
 				),
 
@@ -160,7 +160,7 @@ if ( ! class_exists( 'divino_Adv_Footer_Colors_Configs' ) ) {
 					'section' => 'section-footer-adv',
 					'control' => 'ast-background',
 					'default' => divino_get_option( 'footer-adv-bg-obj' ),
-					'label'   => __( 'Background', 'astra' ),
+					'label'   => __( 'Background', 'divino' ),
 				),
 			);
 

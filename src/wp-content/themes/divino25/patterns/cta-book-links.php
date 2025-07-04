@@ -1,3 +1,4 @@
+<!-- cta-book-links.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Call to action with book links

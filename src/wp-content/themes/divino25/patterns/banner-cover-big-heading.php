@@ -1,3 +1,4 @@
+<!-- banner-cover-big-heading.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Cover with big heading

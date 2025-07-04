@@ -1,3 +1,4 @@
+<!-- template-home-with-sidebar-news-blog.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: News blog with sidebar

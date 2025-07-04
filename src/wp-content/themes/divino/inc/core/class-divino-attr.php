@@ -1,10 +1,10 @@
 <?php
 /**
- * Astra Attributes Class.
+ * divino Attributes Class.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.6.2
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.6.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

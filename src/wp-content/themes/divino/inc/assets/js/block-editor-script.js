@@ -4,12 +4,12 @@ window.addEventListener( 'load', function(e) {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-	if ( astraColors?.is_dark_palette ) {
-		document.documentElement.classList.add('astra-dark-mode-enable');
+	if ( divinoColors?.is_dark_palette ) {
+		document.documentElement.classList.add('divino-dark-mode-enable');
 	}
 });
 
-// Function to add block editor dynamic styles. 
+// Function to add block editor dynamic styles.
 function blockEditorDynamicStyles() {
 	setTimeout(() => {
 		const iframes = document.getElementsByTagName('iframe');
@@ -20,7 +20,7 @@ function blockEditorDynamicStyles() {
 			return element ? element.cloneNode(true) : null;
 		}
 
-		const googleFontsStyle = cloneLinkElement('astra-google-fonts-css');
+		const googleFontsStyle = cloneLinkElement('divino-google-fonts-css');
 
 		const appendLinkIfNotExists = (iframeDoc, clonedLink, linkId) => {
 			if (clonedLink && !iframeDoc.getElementById(linkId)) {
@@ -32,7 +32,7 @@ function blockEditorDynamicStyles() {
 			try {
 				const iframeDoc = iframe?.contentWindow?.document || iframe?.contentDocument;
 				if (iframeDoc?.head) {
-					appendLinkIfNotExists(iframeDoc, googleFontsStyle, 'astra-google-fonts-css');
+					appendLinkIfNotExists(iframeDoc, googleFontsStyle, 'divino-google-fonts-css');
 				}
 			} catch {
 				// Access denied to iframe document.
@@ -48,7 +48,7 @@ function addTitleVisibility() {
 		editorDocument = document,
 		postTitleOption = ( undefined !== wp.data.select( 'core/editor' ) && null !== wp.data.select( 'core/editor' ) && undefined !== wp.data.select( 'core/editor' ).getEditedPostAttribute( 'meta' ) && wp.data.select( 'core/editor' ).getEditedPostAttribute( 'meta' )['site-post-title'] ) ? wp.data.select( 'core/editor' ).getEditedPostAttribute( 'meta' )['site-post-title'] : '';
 
-	if ( astraColors.ast_wp_version_higher_6_3 ) {
+	if ( divinoColors.ast_wp_version_higher_6_3 ) {
 		let desktopPreview = document.getElementsByClassName('is-desktop-preview'),
 			tabletPreview = document.getElementsByClassName('is-tablet-preview'),
 			mobilePreview = document.getElementsByClassName('is-mobile-preview'),
@@ -66,7 +66,7 @@ function addTitleVisibility() {
 		}
 
         // Addressed the WordPress 6.5 issue involving an extraneous iframe layer.
-        if ( ! iframe && astraColors.ast_wp_version_higher_6_4 ) {
+        if ( ! iframe && divinoColors.ast_wp_version_higher_6_4 ) {
             let _iframe = document.querySelector('.editor-canvas__iframe') || document.querySelector('.block-editor-iframe__scale-container iframe[name="editor-canvas"]');
             editorDocument = _iframe ? _iframe.contentWindow.document : editorDocument;
 
@@ -133,13 +133,13 @@ function addTitleVisibility() {
 }
 
 function siteLogoImageChange() {
-	let mobileLogoState = astraColors.mobile_logo_state;
+	let mobileLogoState = divinoColors.mobile_logo_state;
 
 	if (!mobileLogoState) {
 		return;
 	}
 
-	let mobileLogo = astraColors.mobile_logo;
+	let mobileLogo = divinoColors.mobile_logo;
 	// Added OR condtion to check iframe content from WordPress 6.6 structure.
 	let iframe = document.querySelector('.editor-canvas__iframe') || document.querySelector('.block-editor-iframe__scale-container iframe[name="editor-canvas"]');
 
@@ -165,8 +165,8 @@ function divino_onload_function() {
 
 	/* Do things after DOM has fully loaded */
 
-	var astraMetaBox = document.querySelector( '#divino_settings_meta_box' );
-	if( astraMetaBox != null ){
+	var divinoMetaBox = document.querySelector( '#divino_settings_meta_box' );
+	if( divinoMetaBox != null ){
 
 		var titleCheckbox = document.getElementById('site-post-title');
 
@@ -194,13 +194,13 @@ function divino_onload_function() {
 			var titleBlock = document.querySelector( '.edit-post-visual-editor__post-title-wrapper' ),
 				editorDocument = document;
 
-			// Excuting responsive site logo change function. 
+			// Excuting responsive site logo change function.
 			siteLogoImageChange();
 			// Adding title visibility icon on wp.data.subscribe.
 			addTitleVisibility();
 			// Block editor dynamic style function.
 			blockEditorDynamicStyles();
-			if ( astraColors.ast_wp_version_higher_6_3 ) {
+			if ( divinoColors.ast_wp_version_higher_6_3 ) {
 				let desktopPreview = document.getElementsByClassName('is-desktop-preview'),
 					tabletPreview = document.getElementsByClassName('is-tablet-preview'),
 					mobilePreview = document.getElementsByClassName('is-mobile-preview'),
@@ -218,9 +218,9 @@ function divino_onload_function() {
 				}
 
 				// Addressed the WordPress 6.5 issue involving an extraneous iframe layer.
-				if ( ! iframe && astraColors.ast_wp_version_higher_6_4 ) {
-					const _iframe = document.querySelector('.editor-canvas__iframe') || document.querySelector('.block-editor-iframe__scale-container iframe[name="editor-canvas"]');					
-					
+				if ( ! iframe && divinoColors.ast_wp_version_higher_6_4 ) {
+					const _iframe = document.querySelector('.editor-canvas__iframe') || document.querySelector('.block-editor-iframe__scale-container iframe[name="editor-canvas"]');
+
 					if ( !! _iframe ){
 						editorDocument = _iframe.contentWindow.document ;
 					}
@@ -233,7 +233,7 @@ function divino_onload_function() {
 			// Compatibility for updating layout in editor with direct reflection.
 			const contentLayout = ( undefined !== wp.data.select( 'core/editor' ) && null !== wp.data.select( 'core/editor' ) && undefined !== wp.data.select( 'core/editor' ).getEditedPostAttribute( 'meta' ) && wp.data.select( 'core/editor' ).getEditedPostAttribute( 'meta' )['ast-site-content-layout'] ) ? wp.data.select( 'core/editor' ).getEditedPostAttribute( 'meta' )['ast-site-content-layout'] : 'default',
 				bodyClass       = document.querySelector('body');
-				editorBodyClass = astraColors.ast_wp_version_higher_6_3 ? editorDocument.querySelector('html') : false;
+				editorBodyClass = divinoColors.ast_wp_version_higher_6_3 ? editorDocument.querySelector('html') : false;
 			const contentStyle = ( undefined !== wp.data.select( 'core/editor' ) && null !== wp.data.select( 'core/editor' ) && undefined !== wp.data.select( 'core/editor' ).getEditedPostAttribute( 'meta' ) && wp.data.select( 'core/editor' ).getEditedPostAttribute( 'meta' )['site-content-style'] ) ? wp.data.select( 'core/editor' ).getEditedPostAttribute( 'meta' )['site-content-style'] : 'default';
 			const sidebarStyle = ( undefined !== wp.data.select( 'core/editor' ) && null !== wp.data.select( 'core/editor' ) && undefined !== wp.data.select( 'core/editor' ).getEditedPostAttribute( 'meta' ) && wp.data.select( 'core/editor' ).getEditedPostAttribute( 'meta' )['site-sidebar-style'] ) ? wp.data.select( 'core/editor' ).getEditedPostAttribute( 'meta' )['site-sidebar-style'] : 'default';
 			const sidebarLayout = ( undefined !== wp.data.select( 'core/editor' ) && null !== wp.data.select( 'core/editor' ) && undefined !== wp.data.select( 'core/editor' ).getEditedPostAttribute( 'meta' ) && wp.data.select( 'core/editor' ).getEditedPostAttribute( 'meta' )['site-sidebar-layout'] ) ? wp.data.select( 'core/editor' ).getEditedPostAttribute( 'meta' )['site-sidebar-layout'] : 'default';
@@ -471,7 +471,7 @@ function divino_onload_function() {
 				let colorCode = customColorPickerButtons[btnCount].innerText,
 					transformedCode = colorCode.toLowerCase();
 				if ( colorCode.indexOf( 'VAR(--AST-GLOBAL-COLOR' ) > -1 ) {
-					customColorPickerButtons[btnCount].innerHTML = astraColors[ transformedCode ];
+					customColorPickerButtons[btnCount].innerHTML = divinoColors[ transformedCode ];
 				}
 			}
 
@@ -479,7 +479,7 @@ function divino_onload_function() {
 			const titleInput     = editorDocument.querySelector('.editor-post-title__input');
 			const visibilityIcon = editorDocument.querySelector('.title-visibility');
 			if( null != titleInput && null != visibilityIcon ) {
-				if ( ! astraColors.ast_wp_version_higher_6_3 ) {
+				if ( ! divinoColors.ast_wp_version_higher_6_3 ) {
 					editorDocument.addEventListener('click', function (event){
 						if( ! titleBlock.contains( event.target ) ){
 							visibilityIcon.classList.remove('ast-show-visibility-icon');
@@ -532,7 +532,7 @@ function divino_onload_function() {
 			}
 
 			// Live reflections for page background setting.
-			if ( astraColors.is_divino_pro_colors_activated ) {
+			if ( divinoColors.is_divino_pro_colors_activated ) {
 				const backgroundToggle = (undefined !== wp.data.select('core/editor') &&
 				null !== wp.data.select('core/editor') &&
 				undefined !== wp.data.select('core/editor').getEditedPostAttribute('meta') &&
@@ -558,13 +558,13 @@ function divino_onload_function() {
 
 	// Redirect to Site Builder on click of "View Posts" Icon if Site Builder layout.
 	if ( document && document.body ) {
-		const isSiteBuilderLayout = document.body.classList.contains( 'post-type-astra-advanced-hook' );
+		const isSiteBuilderLayout = document.body.classList.contains( 'post-type-divino-advanced-hook' );
 		if ( isSiteBuilderLayout ) {
 			const viewPostsIcon = document.querySelector( '#editor .interface-navigable-region .edit-post-header > div a.components-button.edit-post-fullscreen-mode-close' );
 			if ( viewPostsIcon ) {
 				viewPostsIcon.addEventListener( 'click', function(e) {
 					e.preventDefault();
-					window.location.href = astraColors.site_builder_url;
+					window.location.href = divinoColors.site_builder_url;
 				});
 			}
 		}
@@ -579,10 +579,10 @@ const updatePageBackground = ( apply_customizer_default = false, isUnboxedContai
 
 	// Document as per wp version.
 	let editorDoc = document;
-	
+
 	let _iframe = document.querySelector("#editor iframe.editor-canvas__iframe") || document.querySelector('.block-editor-iframe__scale-container iframe[name="editor-canvas"]');
-	
-	if (_iframe && astraColors.ast_wp_version_higher_6_4) {
+
+	if (_iframe && divinoColors.ast_wp_version_higher_6_4) {
 		editorDoc = _iframe.contentWindow.document;
 	}
 
@@ -590,7 +590,7 @@ const updatePageBackground = ( apply_customizer_default = false, isUnboxedContai
 		tabletPreview = editorDoc.getElementsByClassName('is-tablet-preview'),
 		mobilePreview = editorDoc.getElementsByClassName('is-mobile-preview'),
 		devicePreview = desktopPreview[0];
-	if ( astraColors.ast_wp_version_higher_6_3 ) {
+	if ( divinoColors.ast_wp_version_higher_6_3 ) {
 
 		if ( tabletPreview.length > 0 ) {
 			devicePreview = tabletPreview[0];
@@ -654,7 +654,7 @@ const updatePageBackground = ( apply_customizer_default = false, isUnboxedContai
 	if ( desktopPreview.length > 0 ) {
 
 		// Get the background object css values and update page background.
-		const desktopCSS = astraGetResponsiveBackgroundObj(bgObj, 'desktop');
+		const desktopCSS = divinoGetResponsiveBackgroundObj(bgObj, 'desktop');
 		applyStylesToElement('#editor .edit-post-visual-editor', desktopCSS, document );
 
 		// Check current layout.
@@ -663,19 +663,19 @@ const updatePageBackground = ( apply_customizer_default = false, isUnboxedContai
 			is_boxed_based_layout = document.querySelector('body').classList.contains('ast-separate-container');
 		}
 
-		if ( astraColors.apply_content_bg_fullwidth && ( ! is_boxed_based_layout ) ) {
+		if ( divinoColors.apply_content_bg_fullwidth && ( ! is_boxed_based_layout ) ) {
 
 			/** Fullwidth with Content Bg */
 			// Get the background object css values and update page content background.
-			const desktopContentCSS = astraGetResponsiveBackgroundObj(contentObj, 'desktop');
+			const desktopContentCSS = divinoGetResponsiveBackgroundObj(contentObj, 'desktop');
 			applyStylesToElement('.editor-styles-wrapper', desktopContentCSS, editorDoc );
 
 		}
-		else if ( ! astraColors.apply_content_bg_fullwidth && ( ! is_boxed_based_layout ) ) {
+		else if ( ! divinoColors.apply_content_bg_fullwidth && ( ! is_boxed_based_layout ) ) {
 
 			/** Fullwidth with Page Bg */
 			// Get the background object css values and update page background.
-			const desktopCSS = astraGetResponsiveBackgroundObj(bgObj, 'desktop');
+			const desktopCSS = divinoGetResponsiveBackgroundObj(bgObj, 'desktop');
 			applyStylesToElement('.editor-styles-wrapper', desktopCSS, document );
 
 		}
@@ -683,11 +683,11 @@ const updatePageBackground = ( apply_customizer_default = false, isUnboxedContai
 
 			/** Boxed Layouts with Content Bg & Page Bg */
 			// Get the background object css values and update page background.
-			const desktopCSS = astraGetResponsiveBackgroundObj(bgObj, 'desktop');
+			const desktopCSS = divinoGetResponsiveBackgroundObj(bgObj, 'desktop');
 			applyStylesToElement('#editor .edit-post-visual-editor', desktopCSS, document );
 
 			// Get the background object css values and update page content background.
-			const desktopContentCSS = astraGetResponsiveBackgroundObj(contentObj, 'desktop');
+			const desktopContentCSS = divinoGetResponsiveBackgroundObj(contentObj, 'desktop');
 			applyStylesToElement('.editor-styles-wrapper', desktopContentCSS, editorDoc );
 
 		}
@@ -707,21 +707,21 @@ const updatePageBackground = ( apply_customizer_default = false, isUnboxedContai
 			is_boxed_based_layout = document.querySelector('body').classList.contains('ast-separate-container');
 		}
 
-		if ( astraColors.apply_content_bg_fullwidth && ( ! is_boxed_based_layout ) ) {
+		if ( divinoColors.apply_content_bg_fullwidth && ( ! is_boxed_based_layout ) ) {
 
 			/** Fullwidth with Content Bg */
 			// Get the background object css values and update page content background.
-			const tabletContentCSS = astraGetResponsiveBackgroundObj(contentObj, 'tablet');
+			const tabletContentCSS = divinoGetResponsiveBackgroundObj(contentObj, 'tablet');
 			applyStylesToElement('.editor-styles-wrapper', tabletContentCSS, editorDoc );
 
 			// Set page background to black to indicate that page background not applicable.
 			applyStylesToElement('#editor .edit-post-visual-editor', {'background-color' : '#363636'}, document );
 		}
-		else if ( ! astraColors.apply_content_bg_fullwidth && ( ! is_boxed_based_layout ) ) {
+		else if ( ! divinoColors.apply_content_bg_fullwidth && ( ! is_boxed_based_layout ) ) {
 
 			/** Fullwidth with Page Bg */
 			// Get the background object css values and update page background.
-			const tabletCSS = astraGetResponsiveBackgroundObj(bgObj, 'tablet');
+			const tabletCSS = divinoGetResponsiveBackgroundObj(bgObj, 'tablet');
 			applyStylesToElement('.editor-styles-wrapper', tabletCSS, document );
 
 		}
@@ -729,11 +729,11 @@ const updatePageBackground = ( apply_customizer_default = false, isUnboxedContai
 
 			/** Boxed Layouts with Content Bg & Page Bg */
 			// Get the background object css values and update page background.
-			const tabletCSS = astraGetResponsiveBackgroundObj(bgObj, 'tablet');
+			const tabletCSS = divinoGetResponsiveBackgroundObj(bgObj, 'tablet');
 			applyStylesToElement('#editor .edit-post-visual-editor', tabletCSS, document );
 
 			// Get the background object css values and update page content background.
-			const tabletContentCSS = astraGetResponsiveBackgroundObj(contentObj, 'tablet');
+			const tabletContentCSS = divinoGetResponsiveBackgroundObj(contentObj, 'tablet');
 			applyStylesToElement('.editor-styles-wrapper', tabletContentCSS, editorDoc );
 
 		}
@@ -746,21 +746,21 @@ const updatePageBackground = ( apply_customizer_default = false, isUnboxedContai
 			is_boxed_based_layout = document.querySelector('body').classList.contains('ast-separate-container');
 		}
 
-		if ( astraColors.apply_content_bg_fullwidth && ( ! is_boxed_based_layout ) ) {
+		if ( divinoColors.apply_content_bg_fullwidth && ( ! is_boxed_based_layout ) ) {
 
 			/** Fullwidth with Content Bg */
 			// Get the background object css values and update page content background.
-			const mobileContentCSS = astraGetResponsiveBackgroundObj(contentObj, 'mobile');
+			const mobileContentCSS = divinoGetResponsiveBackgroundObj(contentObj, 'mobile');
 			applyStylesToElement('.editor-styles-wrapper', mobileContentCSS, editorDoc );
 
 			// Set page background to black to indicate that page background not applicable.
 			applyStylesToElement('#editor .edit-post-visual-editor', {'background-color' : '#363636'}, document );
 		}
-		else if ( ! astraColors.apply_content_bg_fullwidth && ( ! is_boxed_based_layout ) ) {
+		else if ( ! divinoColors.apply_content_bg_fullwidth && ( ! is_boxed_based_layout ) ) {
 
 			/** Fullwidth with Page Bg */
 			// Get the background object css values and update page background.
-			const mobileCSS = astraGetResponsiveBackgroundObj(bgObj, 'mobile');
+			const mobileCSS = divinoGetResponsiveBackgroundObj(bgObj, 'mobile');
 			applyStylesToElement('.editor-styles-wrapper', mobileCSS, document );
 
 		}
@@ -768,11 +768,11 @@ const updatePageBackground = ( apply_customizer_default = false, isUnboxedContai
 
 			/** Boxed Layouts with Content Bg & Page Bg */
 			// Get the background object css values and update page background.
-			const mobileCSS = astraGetResponsiveBackgroundObj(bgObj, 'mobile');
+			const mobileCSS = divinoGetResponsiveBackgroundObj(bgObj, 'mobile');
 			applyStylesToElement('#editor .edit-post-visual-editor', mobileCSS, document );
 
 			// Get the background object css values and update page content background.
-			const mobileContentCSS = astraGetResponsiveBackgroundObj(contentObj, 'mobile');
+			const mobileContentCSS = divinoGetResponsiveBackgroundObj(contentObj, 'mobile');
 			applyStylesToElement('.editor-styles-wrapper', mobileContentCSS, editorDoc );
 
 		}
@@ -801,7 +801,7 @@ function applyStylesToElement( selector, styles, docObj ) {
 /*
 * Generate Responsive Background Color CSS.
 */
-function astraGetResponsiveBackgroundObj(bgObjRes, device) {
+function divinoGetResponsiveBackgroundObj(bgObjRes, device) {
  const genBgCss = {};
 
  const bgObj = bgObjRes[device];
@@ -901,13 +901,13 @@ function astraGetResponsiveBackgroundObj(bgObjRes, device) {
 
 document.body.addEventListener('mousedown', function () {
 	var blockCssMode = document.querySelector('body').classList.contains('ast-block-legacy')
-	var fontCss = document.getElementById('astra-google-fonts-css');
+	var fontCss = document.getElementById('divino-google-fonts-css');
 	if( true === blockCssMode ){
-		var blockCss = document.getElementById('astra-block-editor-styles-css');
-		var inlineCss = document.getElementById('astra-block-editor-styles-inline-css');
+		var blockCss = document.getElementById('divino-block-editor-styles-css');
+		var inlineCss = document.getElementById('divino-block-editor-styles-inline-css');
 	} else {
-		var blockCss = document.getElementById('astra-wp-editor-styles-css');
-		var inlineCss = document.getElementById('astra-wp-editor-styles-inline-css');
+		var blockCss = document.getElementById('divino-wp-editor-styles-css');
+		var inlineCss = document.getElementById('divino-wp-editor-styles-inline-css');
 	}
 
 	var blockFixCss = null !== blockCss ? blockCss.cloneNode(true) : null;
@@ -920,17 +920,17 @@ document.body.addEventListener('mousedown', function () {
 		let mobilePreview = document.getElementsByClassName('is-mobile-preview');
 
 		if (0 !== tabletPreview.length || 0 !== mobilePreview.length) {
-			var googleFontId = 'astra-google-fonts-css';
+			var googleFontId = 'divino-google-fonts-css';
 			if( true === blockCssMode ){
-				var styleTagId = 'astra-block-editor-styles-inline-css';
-				var styleTagBlockId = 'astra-block-editor-styles-css';
+				var styleTagId = 'divino-block-editor-styles-inline-css';
+				var styleTagBlockId = 'divino-block-editor-styles-css';
 			} else {
-				var styleTagId = 'astra-wp-editor-styles-inline-css';
-				var styleTagBlockId = 'astra-wp-editor-styles-css';
+				var styleTagId = 'divino-wp-editor-styles-inline-css';
+				var styleTagBlockId = 'divino-wp-editor-styles-css';
 			}
-			var styleTagId = 'astra-block-editor-styles-inline-css';
-			var styleTagBlockId = 'astra-block-editor-styles-css';
-			googleFontId = 'astra-google-fonts-css';
+			var styleTagId = 'divino-block-editor-styles-inline-css';
+			var styleTagBlockId = 'divino-block-editor-styles-css';
+			googleFontId = 'divino-google-fonts-css';
 			let preview = tabletPreview[0] || mobilePreview[0];
 
 				let iframe = preview.getElementsByTagName('iframe')[0];

@@ -1,10 +1,10 @@
 <?php
 /**
- * WooCommerce Options for Astra Theme.
+ * WooCommerce Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 3.9.2
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 3.9.2
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -18,12 +18,12 @@ if ( ! class_exists( 'divino_Woo_Shop_Misc_Layout_Configs' ) ) {
 	 */
 	class divino_Woo_Shop_Misc_Layout_Configs extends divino_Customizer_Config_Base {
 		/**
-		 * Register Astra-WooCommerce Misc Customizer Configurations.
+		 * Register divino-WooCommerce Misc Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 3.9.2
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -37,8 +37,8 @@ if ( ! class_exists( 'divino_Woo_Shop_Misc_Layout_Configs' ) ) {
 					'default'     => divino_get_option( 'single-product-plus-minus-button' ),
 					'type'        => 'control',
 					'section'     => 'section-woo-misc',
-					'title'       => __( 'Enable Quantity Plus and Minus', 'astra' ),
-					'description' => __( 'Adds plus and minus buttons besides product quantity', 'astra' ),
+					'title'       => __( 'Enable Quantity Plus and Minus', 'divino' ),
+					'description' => __( 'Adds plus and minus buttons besides product quantity', 'divino' ),
 					'priority'    => 59,
 					'control'     => 'ast-toggle-control',
 				),
@@ -46,7 +46,7 @@ if ( ! class_exists( 'divino_Woo_Shop_Misc_Layout_Configs' ) ) {
 			);
 
 			/**
-			 * Option: Adds tabs only if astra addons is enabled.
+			 * Option: Adds tabs only if divino addons is enabled.
 			 */
 			if ( divino_has_pro_woocommerce_addon() ) {
 				$_configs[] = array(
@@ -60,7 +60,7 @@ if ( ! class_exists( 'divino_Woo_Shop_Misc_Layout_Configs' ) ) {
 			}
 
 			if ( divino_showcase_upgrade_notices() ) {
-				// Learn More link if Astra Pro is not activated.
+				// Learn More link if divino Pro is not activated.
 				$_configs[] = array(
 					'name'     => divino_THEME_SETTINGS . '[ast-woo-misc-pro-items]',
 					'type'     => 'control',
@@ -68,31 +68,31 @@ if ( ! class_exists( 'divino_Woo_Shop_Misc_Layout_Configs' ) ) {
 					'campaign' => 'woocommerce',
 					'choices'  => array(
 						'two'   => array(
-							'title' => __( 'Modern input style', 'astra' ),
+							'title' => __( 'Modern input style', 'divino' ),
 						),
 						'one'   => array(
-							'title' => __( 'Sale badge modifications', 'astra' ),
+							'title' => __( 'Sale badge modifications', 'divino' ),
 						),
 						'three' => array(
-							'title' => __( 'Ecommerce steps navigation', 'astra' ),
+							'title' => __( 'Ecommerce steps navigation', 'divino' ),
 						),
 						'four'  => array(
-							'title' => __( 'Quantity updater designs', 'astra' ),
+							'title' => __( 'Quantity updater designs', 'divino' ),
 						),
 						'five'  => array(
-							'title' => __( 'Modern my-account page', 'astra' ),
+							'title' => __( 'Modern my-account page', 'divino' ),
 						),
 						'six'   => array(
-							'title' => __( 'Downloads, Orders grid view', 'astra' ),
+							'title' => __( 'Downloads, Orders grid view', 'divino' ),
 						),
 						'seven' => array(
-							'title' => __( 'Modern thank-you page design', 'astra' ),
+							'title' => __( 'Modern thank-you page design', 'divino' ),
 						),
 					),
 					'section'  => 'section-woo-misc',
 					'default'  => '',
 					'priority' => 999,
-					'title'    => __( 'Access extra conversion tools to make more profit from your eCommerce store', 'astra' ),
+					'title'    => __( 'Access extra conversion tools to make more profit from your eCommerce store', 'divino' ),
 					'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),
 					'context'  => array(),
 				);

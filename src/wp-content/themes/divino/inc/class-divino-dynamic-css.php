@@ -1,11 +1,11 @@
 <?php
 /**
- * Custom Styling output for Astra Theme.
+ * Custom Styling output for divino Theme.
  *
- * @package     Astra
+ * @package     divino
  * @subpackage  Class
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @link        https://divino.kz/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -24,8 +24,8 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 		/**
 		 * Return CSS Output
 		 *
-		 * @param  string $dynamic_css          Astra Dynamic CSS.
-		 * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+		 * @param  string $dynamic_css          divino Dynamic CSS.
+		 * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
 		 * @return string Generated CSS.
 		 */
 		public static function return_output( $dynamic_css, $dynamic_css_filtered = '' ) {
@@ -340,7 +340,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 			$primary_submenu_b_color      = divino_get_option( 'primary-submenu-b-color', $theme_color );
 			$primary_submenu_item_b_color = divino_get_option( 'primary-submenu-item-b-color', '#eaeaea' );
 
-			// Astra and WordPress-5.8 compatibility.
+			// divino and WordPress-5.8 compatibility.
 			$is_wp_5_8_support_enabled = self::is_block_editor_support_enabled();
 
 			// Gutenberg editor improvement.
@@ -648,7 +648,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 					'max-width' => divino_get_css_value( $header_logo_width['desktop'], 'px' ),
 					'width'     => divino_get_css_value( $header_logo_width['desktop'], 'px' ),
 				),
-				'.astra-logo-svg'                        => array(
+				'.divino-logo-svg'                        => array(
 					'width' => divino_get_css_value( $header_logo_width['desktop'], 'px' ),
 				),
 
@@ -859,8 +859,8 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 			}
 
 			/*  This is a fix issue with logo height for normal and transparent logo so that they are the same */
-			if ( ! apply_filters( 'divino_site_svg_logo_equal_height', divino_get_option( 'astra-site-svg-logo-equal-height', true ) ) ) {
-				$css_output['.astra-logo-svg:not(.sticky-custom-logo .astra-logo-svg, .transparent-custom-logo .astra-logo-svg, .advanced-header-logo .astra-logo-svg)'] = array(
+			if ( ! apply_filters( 'divino_site_svg_logo_equal_height', divino_get_option( 'divino-site-svg-logo-equal-height', true ) ) ) {
+				$css_output['.divino-logo-svg:not(.sticky-custom-logo .divino-logo-svg, .transparent-custom-logo .divino-logo-svg, .advanced-header-logo .divino-logo-svg)'] = array(
 					'height' => divino_get_css_value( ! empty( $header_logo_width['desktop-svg-height'] ) && ! is_customize_preview() ? $header_logo_width['desktop-svg-height'] : '', 'px' ),
 				);
 			}
@@ -952,7 +952,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 
 			// Accessibility options.
 			$enable_site_accessibility        = divino_get_option( 'site-accessibility-toggle', false );
-			$html_selectors_focus_visible     = '.ast-search-menu-icon.slide-search a:focus-visible:focus-visible, .astra-search-icon:focus-visible, #close:focus-visible, a:focus-visible, .ast-menu-toggle:focus-visible, .site .skip-link:focus-visible, .wp-block-loginout input:focus-visible, .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper, .ast-header-navigation-arrow:focus-visible, .woocommerce .wc-proceed-to-checkout > .checkout-button:focus-visible, .woocommerce .woocommerce-MyAccount-navigation ul li a:focus-visible, .ast-orders-table__row .ast-orders-table__cell:focus-visible, .woocommerce .woocommerce-order-details .order-again > .button:focus-visible, .woocommerce .woocommerce-message a.button.wc-forward:focus-visible, .woocommerce #minus_qty:focus-visible, .woocommerce #plus_qty:focus-visible, a#ast-apply-coupon:focus-visible, .woocommerce .woocommerce-info a:focus-visible, .woocommerce .astra-shop-summary-wrap a:focus-visible, .woocommerce a.wc-forward:focus-visible, #ast-apply-coupon:focus-visible, .woocommerce-js .woocommerce-mini-cart-item a.remove:focus-visible, #close:focus-visible, .button.search-submit:focus-visible, #search_submit:focus, .normal-search:focus-visible, .ast-header-account-wrap:focus-visible, .woocommerce .ast-on-card-button.ast-quick-view-trigger:focus, .astra-cart-drawer-close:focus, .ast-single-variation:focus, .ast-woocommerce-product-gallery__image:focus, .ast-button:focus';
+			$html_selectors_focus_visible     = '.ast-search-menu-icon.slide-search a:focus-visible:focus-visible, .divino-search-icon:focus-visible, #close:focus-visible, a:focus-visible, .ast-menu-toggle:focus-visible, .site .skip-link:focus-visible, .wp-block-loginout input:focus-visible, .wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper, .ast-header-navigation-arrow:focus-visible, .woocommerce .wc-proceed-to-checkout > .checkout-button:focus-visible, .woocommerce .woocommerce-MyAccount-navigation ul li a:focus-visible, .ast-orders-table__row .ast-orders-table__cell:focus-visible, .woocommerce .woocommerce-order-details .order-again > .button:focus-visible, .woocommerce .woocommerce-message a.button.wc-forward:focus-visible, .woocommerce #minus_qty:focus-visible, .woocommerce #plus_qty:focus-visible, a#ast-apply-coupon:focus-visible, .woocommerce .woocommerce-info a:focus-visible, .woocommerce .divino-shop-summary-wrap a:focus-visible, .woocommerce a.wc-forward:focus-visible, #ast-apply-coupon:focus-visible, .woocommerce-js .woocommerce-mini-cart-item a.remove:focus-visible, #close:focus-visible, .button.search-submit:focus-visible, #search_submit:focus, .normal-search:focus-visible, .ast-header-account-wrap:focus-visible, .woocommerce .ast-on-card-button.ast-quick-view-trigger:focus, .divino-cart-drawer-close:focus, .ast-single-variation:focus, .ast-woocommerce-product-gallery__image:focus, .ast-button:focus';
 			$html_selectors_focus_only_inputs = 'input:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="password"]:focus, input[type="reset"]:focus, input[type="search"]:focus, input[type="number"]:focus, textarea:focus, .wp-block-search__input:focus, [data-section="section-header-mobile-trigger"] .ast-button-wrap .ast-mobile-menu-trigger-minimal:focus, .ast-mobile-popup-drawer.active .menu-toggle-close:focus, .woocommerce-ordering select.orderby:focus, #ast-scroll-top:focus, #coupon_code:focus, .woocommerce-page #comment:focus, .woocommerce #reviews #respond input#submit:focus, .woocommerce a.add_to_cart_button:focus, .woocommerce .button.single_add_to_cart_button:focus, .woocommerce .woocommerce-cart-form button:focus, .woocommerce .woocommerce-cart-form__cart-item .quantity .qty:focus, .woocommerce .woocommerce-billing-fields .woocommerce-billing-fields__field-wrapper .woocommerce-input-wrapper > .input-text:focus, .woocommerce #order_comments:focus, .woocommerce #place_order:focus, .woocommerce .woocommerce-address-fields .woocommerce-address-fields__field-wrapper .woocommerce-input-wrapper > .input-text:focus, .woocommerce .woocommerce-MyAccount-content form button:focus, .woocommerce .woocommerce-MyAccount-content .woocommerce-EditAccountForm .woocommerce-form-row .woocommerce-Input.input-text:focus, .woocommerce .ast-woocommerce-container .woocommerce-pagination ul.page-numbers li a:focus, body #content .woocommerce form .form-row .select2-container--default .select2-selection--single:focus, #ast-coupon-code:focus, .woocommerce.woocommerce-js .quantity input[type=number]:focus, .woocommerce-js .woocommerce-mini-cart-item .quantity input[type=number]:focus, .woocommerce p#ast-coupon-trigger:focus';
 
 			if ( $enable_site_accessibility ) {
@@ -1286,7 +1286,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 
 				$parse_css .= divino_parse_css(
 					array(
-						'.astra-cart-drawer.active' => array(
+						'.divino-cart-drawer.active' => array(
 							'width' => '80%',
 						),
 					),
@@ -1296,7 +1296,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 
 				$parse_css .= divino_parse_css(
 					array(
-						'.astra-cart-drawer.active' => array(
+						'.divino-cart-drawer.active' => array(
 							'width' => '100%',
 						),
 					),
@@ -2763,8 +2763,8 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 				$file_block_button_selector             = ! $block_editor_legacy_setup || $improve_gb_ui ? ', body .wp-block-file .wp-block-file__button' : '';
 				$file_block_button_hover_selector       = ! $block_editor_legacy_setup || $improve_gb_ui ? ', body .wp-block-file .wp-block-file__button:hover, body .wp-block-file .wp-block-file__button:focus' : '';
 				$search_page_btn_selector               = true === $update_customizer_strctural_defaults ? ', .search .search-submit' : '';
-				$woo_btns_selector                      = true === self::divino_woo_support_global_settings() ? ', .woocommerce-js a.button, .woocommerce button.button, .woocommerce .woocommerce-message a.button, .woocommerce #respond input#submit.alt, .woocommerce input.button.alt, .woocommerce input.button,.woocommerce input.button:disabled, .woocommerce input.button:disabled[disabled], .woocommerce input.button:disabled:hover, .woocommerce input.button:disabled[disabled]:hover, .woocommerce #respond input#submit, .woocommerce button.button.alt.disabled, .wc-block-grid__products .wc-block-grid__product .wp-block-button__link, .wc-block-grid__product-onsale, [CLASS*="wc-block"] button, .woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping), .woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons a.checkout, .woocommerce button.button.alt.disabled.wc-variation-selection-needed, [CLASS*="wc-block"] .wc-block-components-button' : '';
-				$woo_btns_hover_selector                = true === self::divino_woo_support_global_settings() ? ', .woocommerce-js a.button:hover, .woocommerce button.button:hover, .woocommerce .woocommerce-message a.button:hover,.woocommerce #respond input#submit:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce input.button.alt:hover, .woocommerce input.button:hover, .woocommerce button.button.alt.disabled:hover, .wc-block-grid__products .wc-block-grid__product .wp-block-button__link:hover, [CLASS*="wc-block"] button:hover, .woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping):hover, .woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons a.checkout:hover, .woocommerce button.button.alt.disabled.wc-variation-selection-needed:hover, [CLASS*="wc-block"] .wc-block-components-button:hover, [CLASS*="wc-block"] .wc-block-components-button:focus' : '';
+				$woo_btns_selector                      = true === self::divino_woo_support_global_settings() ? ', .woocommerce-js a.button, .woocommerce button.button, .woocommerce .woocommerce-message a.button, .woocommerce #respond input#submit.alt, .woocommerce input.button.alt, .woocommerce input.button,.woocommerce input.button:disabled, .woocommerce input.button:disabled[disabled], .woocommerce input.button:disabled:hover, .woocommerce input.button:disabled[disabled]:hover, .woocommerce #respond input#submit, .woocommerce button.button.alt.disabled, .wc-block-grid__products .wc-block-grid__product .wp-block-button__link, .wc-block-grid__product-onsale, [CLASS*="wc-block"] button, .woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping), .woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons a.checkout, .woocommerce button.button.alt.disabled.wc-variation-selection-needed, [CLASS*="wc-block"] .wc-block-components-button' : '';
+				$woo_btns_hover_selector                = true === self::divino_woo_support_global_settings() ? ', .woocommerce-js a.button:hover, .woocommerce button.button:hover, .woocommerce .woocommerce-message a.button:hover,.woocommerce #respond input#submit:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce input.button.alt:hover, .woocommerce input.button:hover, .woocommerce button.button.alt.disabled:hover, .wc-block-grid__products .wc-block-grid__product .wp-block-button__link:hover, [CLASS*="wc-block"] button:hover, .woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping):hover, .woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons a.checkout:hover, .woocommerce button.button.alt.disabled.wc-variation-selection-needed:hover, [CLASS*="wc-block"] .wc-block-components-button:hover, [CLASS*="wc-block"] .wc-block-components-button:focus' : '';
 				$v4_2_2_core_form_btns_styling_selector = true === self::divino_core_form_btns_styling() ? ', #comments .submit, .search .search-submit' : '';
 
 				/**
@@ -3750,10 +3750,10 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 				)                                => array(
 					'font-size' => divino_responsive_font( $heading_h6_font_size, 'tablet' ),
 				),
-				'.astra-logo-svg'                => array(
+				'.divino-logo-svg'                => array(
 					'width' => divino_get_css_value( $header_logo_width['tablet'], 'px' ),
 				),
-				'.astra-logo-svg:not(.sticky-custom-logo .astra-logo-svg, .transparent-custom-logo .astra-logo-svg, .advanced-header-logo .astra-logo-svg)' => array(
+				'.divino-logo-svg:not(.sticky-custom-logo .divino-logo-svg, .transparent-custom-logo .divino-logo-svg, .advanced-header-logo .divino-logo-svg)' => array(
 					'height' => divino_get_css_value( ! empty( $header_logo_width['tablet-svg-height'] ) && ! is_customize_preview() ? $header_logo_width['tablet-svg-height'] : '', 'px' ),
 				),
 				is_customize_preview() ? '.ast-sg-logo-section .custom-logo-link img, header .custom-logo-link img, .ast-header-break-point .site-logo-img .custom-mobile-logo-link img' : 'header .custom-logo-link img, .ast-header-break-point .site-logo-img .custom-mobile-logo-link img' => array(
@@ -3859,10 +3859,10 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 					'max-width' => divino_get_css_value( $header_logo_width['mobile'], 'px' ),
 					'width'     => divino_get_css_value( $header_logo_width['mobile'], 'px' ),
 				),
-				'.astra-logo-svg'                => array(
+				'.divino-logo-svg'                => array(
 					'width' => divino_get_css_value( $header_logo_width['mobile'], 'px' ),
 				),
-				'.astra-logo-svg:not(.sticky-custom-logo .astra-logo-svg, .transparent-custom-logo .astra-logo-svg, .advanced-header-logo .astra-logo-svg)' => array(
+				'.divino-logo-svg:not(.sticky-custom-logo .divino-logo-svg, .transparent-custom-logo .divino-logo-svg, .advanced-header-logo .divino-logo-svg)' => array(
 					'height' => divino_get_css_value( ! empty( $header_logo_width['mobile-svg-height'] ) && ! is_customize_preview() ? $header_logo_width['mobile-svg-height'] : '', 'px' ),
 				),
 				'.ast-header-break-point .site-logo-img .custom-mobile-logo-link img' => array(
@@ -3937,14 +3937,14 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 			}
 
 			/**
-			 * Astra Fonts
+			 * divino Fonts
 			 */
 			if ( apply_filters( 'divino_enable_default_fonts', true ) ) {
 				$divino_fonts          = '@font-face {';
-					$divino_fonts     .= 'font-family: "Astra";';
-					$divino_fonts     .= 'src: url(' . divino_THEME_URI . 'assets/fonts/astra.woff) format("woff"),';
-						$divino_fonts .= 'url(' . divino_THEME_URI . 'assets/fonts/astra.ttf) format("truetype"),';
-						$divino_fonts .= 'url(' . divino_THEME_URI . 'assets/fonts/astra.svg#astra) format("svg");';
+					$divino_fonts     .= 'font-family: "divino";';
+					$divino_fonts     .= 'src: url(' . divino_THEME_URI . 'assets/fonts/divino.woff) format("woff"),';
+						$divino_fonts .= 'url(' . divino_THEME_URI . 'assets/fonts/divino.ttf) format("truetype"),';
+						$divino_fonts .= 'url(' . divino_THEME_URI . 'assets/fonts/divino.svg#divino) format("svg");';
 					$divino_fonts     .= 'font-weight: normal;';
 					$divino_fonts     .= 'font-style: normal;';
 					$divino_fonts     .= 'font-display: ' . divino_get_fonts_display_property() . ';';
@@ -4021,7 +4021,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 
 			if ( is_search() || is_archive() || is_home() ) {
 				if ( ! $blog_addon_condition ) {
-					// If a old pro user has used blog-layout-1 to 3 and disabled astra addon then moved layout to 'blog-layout-4'.
+					// If a old pro user has used blog-layout-1 to 3 and disabled divino addon then moved layout to 'blog-layout-4'.
 					if ( 'blog-layout-1' === $blog_layout || 'blog-layout-2' === $blog_layout || 'blog-layout-3' === $blog_layout ) {
 						$blog_layout = 'blog-layout-4';
 					}
@@ -4399,7 +4399,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 
 			// Primary Submenu Border Width & Color.
 			$submenu_border_style = array(
-				'.ast-desktop .main-header-menu.submenu-with-border .sub-menu, .ast-desktop .main-header-menu.submenu-with-border .astra-full-megamenu-wrapper' => array(
+				'.ast-desktop .main-header-menu.submenu-with-border .sub-menu, .ast-desktop .main-header-menu.submenu-with-border .divino-full-megamenu-wrapper' => array(
 					'border-color' => esc_attr( $primary_submenu_b_color ),
 				),
 
@@ -4501,7 +4501,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 					'.ast-theme-transparent-header [CLASS*="ast-header-html-"] .ast-builder-html-element a:hover' => array(
 						'color' => esc_attr( $html_link_h_color ),
 					),
-					'.ast-theme-transparent-header .ast-header-search .astra-search-icon, .ast-theme-transparent-header .ast-header-search .search-field::placeholder, .ast-theme-transparent-header .ast-header-search .ast-icon'         => array(
+					'.ast-theme-transparent-header .ast-header-search .divino-search-icon, .ast-theme-transparent-header .ast-header-search .search-field::placeholder, .ast-theme-transparent-header .ast-header-search .ast-icon'         => array(
 						'color' => esc_attr( $search_icon_color ),
 					),
 					'.ast-theme-transparent-header .ast-header-search .ast-search-menu-icon .search-field, .ast-theme-transparent-header .ast-header-search .ast-search-menu-icon .search-field::placeholder'         => array(
@@ -4755,7 +4755,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 		}
 
 		/**
-		 * Astra update default font size and font weight.
+		 * divino update default font size and font weight.
 		 *
 		 * @since 4.6.5
 		 * @return bool
@@ -4806,14 +4806,14 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 		 */
 		public static function heading_font_size_comp() {
 			$divino_settings = divino_get_options();
-			return apply_filters( 'heading_font_size_compatibility', isset( $divino_settings['astra-heading-font-size-compatibility'] ) ? false : true );
+			return apply_filters( 'heading_font_size_compatibility', isset( $divino_settings['divino-heading-font-size-compatibility'] ) ? false : true );
 		}
 
 		/**
 		 * Return post meta CSS
 		 *
-		 * @param  string $dynamic_css          Astra Dynamic CSS.
-		 * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+		 * @param  string $dynamic_css          divino Dynamic CSS.
+		 * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
 		 * @return mixed              Return the CSS.
 		 */
 		public static function return_meta_output( $dynamic_css, $dynamic_css_filtered = '' ) {
@@ -4902,9 +4902,9 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 			} else {
 				// `.menu-item` required display:flex, although weight of this css increases because of which custom CSS added from child themes to be not working.
 				// Hence this is added to dynamic CSS which will be applied only if this filter `divino_submenu_below_header_fix` is enabled.
-				// @see https://github.com/brainstormforce/astra/pull/828
+				// @see https://github.com/brainstormforce/divino/pull/828
 				$submenu_below_header = array(
-					'.main-header-menu .menu-item, #astra-footer-menu .menu-item, .main-header-bar .ast-masthead-custom-menu-items' => array(
+					'.main-header-menu .menu-item, #divino-footer-menu .menu-item, .main-header-bar .ast-masthead-custom-menu-items' => array(
 						'-js-display'             => 'flex',
 						'display'                 => '-webkit-box',
 						'display'                 => '-webkit-flex',
@@ -4924,7 +4924,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 						'-ms-flex-direction'      => 'column',
 						'flex-direction'          => 'column',
 					),
-					'.main-header-menu > .menu-item > .menu-link, #astra-footer-menu > .menu-item > .menu-link' => array(
+					'.main-header-menu > .menu-item > .menu-link, #divino-footer-menu > .menu-item > .menu-link' => array(
 						'height'              => '100%',
 						'-webkit-box-align'   => 'center',
 						'-webkit-align-items' => 'center',
@@ -4996,13 +4996,13 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 					'.ast-header-break-point .main-header-bar .main-header-bar-navigation .page_item_has_children > .ast-menu-toggle::before, .ast-header-break-point .main-header-bar .main-header-bar-navigation .menu-item-has-children > .ast-menu-toggle::before, .ast-mobile-popup-drawer .main-header-bar-navigation .menu-item-has-children>.ast-menu-toggle::before, .ast-header-break-point .ast-mobile-header-wrap .main-header-bar-navigation .menu-item-has-children > .ast-menu-toggle::before' => array(
 						'font-weight'     => 'bold',
 						'content'         => '"\e900"',
-						'font-family'     => 'Astra',
+						'font-family'     => 'divino',
 						'text-decoration' => 'inherit',
 						'display'         => 'inline-block',
 					),
 					'.ast-header-break-point .main-navigation ul.sub-menu .menu-item .menu-link:before' => array(
 						'content'         => '"\e900"',
-						'font-family'     => 'Astra',
+						'font-family'     => 'divino',
 						'font-size'       => '.65em',
 						'text-decoration' => 'inherit',
 						'display'         => 'inline-block',
@@ -5010,7 +5010,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 						'margin-' . $default_right_rtl_left => '5px',
 					),
 					'.widget_search .search-form:after' => array(
-						'font-family'           => 'Astra',
+						'font-family'           => 'divino',
 						'font-size'             => '1.2em',
 						'font-weight'           => 'normal',
 						'content'               => '"\e8b6"',
@@ -5019,9 +5019,9 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 						$default_right_rtl_left => '15px',
 						'transform'             => 'translate(0, -50%)',
 					),
-					'.astra-search-icon::before'        => array(
+					'.divino-search-icon::before'        => array(
 						'content'                 => '"\e8b6"',
-						'font-family'             => 'Astra',
+						'font-family'             => 'divino',
 						'font-style'              => 'normal',
 						'font-weight'             => 'normal',
 						'text-decoration'         => 'inherit',
@@ -5033,7 +5033,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 					'.main-header-bar .main-header-bar-navigation .page_item_has_children > a:after, .main-header-bar .main-header-bar-navigation .menu-item-has-children > a:after, .menu-item-has-children .ast-header-navigation-arrow:after' => array(
 						'content'                 => '"\e900"',
 						'display'                 => 'inline-block',
-						'font-family'             => 'Astra',
+						'font-family'             => 'divino',
 						'font-size'               => '.6rem',
 						'font-weight'             => 'bold',
 						'text-rendering'          => 'auto',
@@ -5125,10 +5125,10 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 		/**
 		 * Conditionally iclude CSS Selectors with anchors in the typography settings.
 		 *
-		 * Historically Astra adds Colors/Typography CSS for headings and anchors for headings but this causes irregularities with the expected output.
+		 * Historically divino adds Colors/Typography CSS for headings and anchors for headings but this causes irregularities with the expected output.
 		 * For eg Link color does not work for the links inside headings.
 		 *
-		 * If filter `divino_include_achors_in_headings_typography` is set to true or Astra Option `include-headings-in-typography` is set to true, This will return selectors with anchors. Else This will return selectors without anchors.
+		 * If filter `divino_include_achors_in_headings_typography` is set to true or divino Option `include-headings-in-typography` is set to true, This will return selectors with anchors. Else This will return selectors without anchors.
 		 *
 		 * @since 1.4.9
 		 * @param String $selectors_with_achors CSS Selectors with anchors.
@@ -5368,7 +5368,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 		/**
 		 * Whether to remove or not following CSS which restricts logo size on responsive devices.
 		 *
-		 * @see https://github.com/brainstormforce/astra/commit/d09f63336b73d58c8f8951726edbc90671d7f419
+		 * @see https://github.com/brainstormforce/divino/commit/d09f63336b73d58c8f8951726edbc90671d7f419
 		 *
 		 * @since 3.6.0
 		 * @return bool false if it is an existing user, true if not.
@@ -5493,7 +5493,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 		}
 
 		/**
-		 * Astra Spectra Gutenberg Compatibility CSS.
+		 * divino Spectra Gutenberg Compatibility CSS.
 		 *
 		 * @since 3.9.4
 		 * @return bool false if it is an existing user , true if not.
@@ -5538,7 +5538,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 				display: inline-block;
 			}
 
-			.ast-site-header-cart i.astra-icon {
+			.ast-site-header-cart i.divino-icon {
 				font-size: 20px;
 				font-size: 1.3em;
 				font-style: normal;
@@ -5547,18 +5547,18 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 				padding: 0 2px;
 			}
 
-			.ast-site-header-cart i.astra-icon.no-cart-total:after,
+			.ast-site-header-cart i.divino-icon.no-cart-total:after,
 			.ast-header-break-point.ast-header-custom-item-outside .ast-edd-header-cart-info-wrap,
 			.ast-header-break-point.ast-header-custom-item-outside .ast-woo-header-cart-info-wrap {
 				display: none;
 			}
 
-			.ast-site-header-cart.ast-menu-cart-fill i.astra-icon,
-			.ast-edd-site-header-cart.ast-edd-menu-cart-fill span.astra-icon {
+			.ast-site-header-cart.ast-menu-cart-fill i.divino-icon,
+			.ast-edd-site-header-cart.ast-edd-menu-cart-fill span.divino-icon {
 				font-size: 1.1em;
 			}
 
-			.astra-cart-drawer {
+			.divino-cart-drawer {
 				position: fixed;
 				display: block;
 				visibility: hidden;
@@ -5593,7 +5593,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 				opacity: .5;
 			}
 
-			.astra-cart-drawer {
+			.divino-cart-drawer {
 				width: 460px;
 				height: 100%;
 				' . $ltr_left . ': 100%;
@@ -5602,7 +5602,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 				transform: translate3d(0%, 0, 0);
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-header {
+			.divino-cart-drawer .divino-cart-drawer-header {
 				position: absolute;
 				width: 100%;
 				text-align: ' . $ltr_left . ';
@@ -5615,143 +5615,143 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 				max-height: 3.5em;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-header .astra-cart-drawer-title {
+			.divino-cart-drawer .divino-cart-drawer-header .divino-cart-drawer-title {
 				color: var(--ast-global-color-2);
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-close .ast-close-svg {
+			.divino-cart-drawer .divino-cart-drawer-close .ast-close-svg {
 				width: 22px;
 				height: 22px;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content,
-			.astra-cart-drawer .astra-cart-drawer-content .widget_shopping_cart,
-			.astra-cart-drawer .astra-cart-drawer-content .widget_shopping_cart_content {
+			.divino-cart-drawer .divino-cart-drawer-content,
+			.divino-cart-drawer .divino-cart-drawer-content .widget_shopping_cart,
+			.divino-cart-drawer .divino-cart-drawer-content .widget_shopping_cart_content {
 				height: 100%;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content {
+			.divino-cart-drawer .divino-cart-drawer-content {
 				padding-top: 3.5em;
 			}
 
-			.astra-cart-drawer .ast-mini-cart-price-wrap .multiply-symbol{
+			.divino-cart-drawer .ast-mini-cart-price-wrap .multiply-symbol{
 				padding: 0 0.5em;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart-item .ast-mini-cart-price-wrap {
+			.divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart-item .ast-mini-cart-price-wrap {
 				float: ' . $ltr_right . ';
 				margin-top: 0.5em;
 				max-width: 50%;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart-item .variation {
+			.divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart-item .variation {
 				margin-top: 0.5em;
 				margin-bottom: 0.5em;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart-item .variation dt {
+			.divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart-item .variation dt {
 				font-weight: 500;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content .widget_shopping_cart_content {
+			.divino-cart-drawer .divino-cart-drawer-content .widget_shopping_cart_content {
 				display: flex;
 				flex-direction: column;
 				overflow: hidden;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content .widget_shopping_cart_content ul li {
+			.divino-cart-drawer .divino-cart-drawer-content .widget_shopping_cart_content ul li {
 				min-height: 60px;
 			}
 
-			.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__total {
+			.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__total {
 				display: flex;
 				justify-content: space-between;
 				padding: 0.7em 1.34em;
 				margin-bottom: 0;
 			}
 
-			.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__total strong,
-			.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__total .amount {
+			.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__total strong,
+			.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__total .amount {
 				width: 50%;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart {
+			.divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart {
 				padding: 1.3em;
 				flex: 1;
 				overflow: auto;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart a.remove {
+			.divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart a.remove {
 				width: 20px;
 				height: 20px;
 				line-height: 16px;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__total {
+			.divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__total {
 				padding: 1em 1.5em;
 				margin: 0;
 				text-align: center;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons {
+			.divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons {
 				padding: 1.34em;
 				text-align: center;
 				margin-bottom: 0;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button.checkout {
+			.divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons .button.checkout {
 				margin-' . $ltr_right . ': 0;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons a{
+			.divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons a{
 				width: 100%;
 			}
 
-			.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons a:nth-last-child(1) {
+			.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons a:nth-last-child(1) {
 				margin-bottom: 0;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content .edd-cart-item {
+			.divino-cart-drawer .divino-cart-drawer-content .edd-cart-item {
 				padding: .5em 2.6em .5em 1.5em;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content .edd-cart-item .edd-remove-from-cart::after {
+			.divino-cart-drawer .divino-cart-drawer-content .edd-cart-item .edd-remove-from-cart::after {
 				width: 20px;
 				height: 20px;
 				line-height: 16px;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content .edd-cart-number-of-items {
+			.divino-cart-drawer .divino-cart-drawer-content .edd-cart-number-of-items {
 				padding: 1em 1.5em 1em 1.5em;
 				margin-bottom: 0;
 				text-align: center;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content .edd_total {
+			.divino-cart-drawer .divino-cart-drawer-content .edd_total {
 				padding: .5em 1.5em;
 				margin: 0;
 				text-align: center;
 			}
 
-			.astra-cart-drawer .astra-cart-drawer-content .cart_item.edd_checkout {
+			.divino-cart-drawer .divino-cart-drawer-content .cart_item.edd_checkout {
 				padding: 1em 1.5em 0;
 				text-align: center;
 				margin-top: 0;
 			}
-			.astra-cart-drawer .widget_shopping_cart_content > .woocommerce-mini-cart__empty-message {
+			.divino-cart-drawer .widget_shopping_cart_content > .woocommerce-mini-cart__empty-message {
 				display: none;
 			}
-			.astra-cart-drawer .woocommerce-mini-cart__empty-message,
-			.astra-cart-drawer .cart_item.empty {
+			.divino-cart-drawer .woocommerce-mini-cart__empty-message,
+			.divino-cart-drawer .cart_item.empty {
 				text-align: center;
 				margin-top: 10px;
 			}
 
-			body.admin-bar .astra-cart-drawer {
+			body.admin-bar .divino-cart-drawer {
 				padding-top: 32px;
 			}
 			@media (max-width: 782px) {
-				body.admin-bar .astra-cart-drawer {
+				body.admin-bar .divino-cart-drawer {
 					padding-top: 46px;
 				}
 			}
@@ -5760,7 +5760,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 				overflow: hidden;
 			}
 
-			.ast-mobile-cart-active .astra-mobile-cart-overlay {
+			.ast-mobile-cart-active .divino-mobile-cart-overlay {
 				opacity: 1;
 				cursor: pointer;
 				visibility: visible;
@@ -5778,7 +5778,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 				width: 100%;
 			}
 
-			.astra-cart-drawer-content .ast-mini-cart-empty {
+			.divino-cart-drawer-content .ast-mini-cart-empty {
 				height: 100%;
 				display: flex;
 				flex-direction: column;
@@ -5786,7 +5786,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 				text-align: center;
 			}
 
-			.astra-cart-drawer-content .ast-mini-cart-empty .ast-mini-cart-message {
+			.divino-cart-drawer-content .ast-mini-cart-empty .ast-mini-cart-message {
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -5795,12 +5795,12 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 			}
 
 			@media (min-width: 546px) {
-				.astra-cart-drawer .astra-cart-drawer-content.ast-large-view .woocommerce-mini-cart__buttons {
+				.divino-cart-drawer .divino-cart-drawer-content.ast-large-view .woocommerce-mini-cart__buttons {
 					display: flex;
 				}
 
-				.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content.ast-large-view .woocommerce-mini-cart__buttons a,
-				.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content.ast-large-view .woocommerce-mini-cart__buttons a.checkout {
+				.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content.ast-large-view .woocommerce-mini-cart__buttons a,
+				.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content.ast-large-view .woocommerce-mini-cart__buttons a.checkout {
 					margin-top: 0;
 					margin-bottom: 0;
 				}
@@ -5812,7 +5812,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 			';
 			if ( is_rtl() ) {
 				$cart_static_css .= '
-				.ast-site-header-cart i.astra-icon:after {
+				.ast-site-header-cart i.divino-icon:after {
 					content: attr(data-cart-total);
 					position: absolute;
 					font-family: ' . divino_get_font_family( divino_body_font_family() ) . ';
@@ -5832,11 +5832,11 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 					text-align: center;
 					z-index: 3;
 				}
-				li.woocommerce-custom-menu-item .ast-site-header-cart i.astra-icon:after,
-				li.edd-custom-menu-item .ast-edd-site-header-cart span.astra-icon:after {
+				li.woocommerce-custom-menu-item .ast-site-header-cart i.divino-icon:after,
+				li.edd-custom-menu-item .ast-edd-site-header-cart span.divino-icon:after {
 					padding-right: 2px;
 				}
-				.astra-cart-drawer .astra-cart-drawer-close {
+				.divino-cart-drawer .divino-cart-drawer-close {
 					position: absolute;
 					top: 0.5em;
 					left: 0;
@@ -5846,7 +5846,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 					color: var(--ast-global-color-2);
 					background-color: transparent;
 				}
-				.astra-mobile-cart-overlay {
+				.divino-mobile-cart-overlay {
 					background-color: rgba(0, 0, 0, 0.4);
 					position: fixed;
 					top: 0;
@@ -5857,7 +5857,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 					opacity: 0;
 					transition: opacity 0.2s ease-in-out;
 				}
-				.astra-cart-drawer .astra-cart-drawer-content .edd-cart-item .edd-remove-from-cart {
+				.divino-cart-drawer .divino-cart-drawer-content .edd-cart-item .edd-remove-from-cart {
 					left: 1.2em;
 				}
 				.ast-header-break-point.ast-woocommerce-cart-menu.ast-hfb-header .ast-cart-menu-wrap, .ast-header-break-point.ast-hfb-header .ast-cart-menu-wrap,
@@ -5870,34 +5870,34 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 					text-align: left;
 				}
 
-				.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping) {
+				.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping) {
 					margin-left: 10px;
 					background-color: transparent;
 					border: 2px solid var( --ast-global-color-0 );
 					color: var( --ast-global-color-0 );
 				}
 
-				.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping):hover {
+				.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping):hover {
 					border-color: var( --ast-global-color-1 );
 					color: var( --ast-global-color-1 );
 				}
 
-				.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons a.checkout {
+				.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons a.checkout {
 					margin-right: 0;
 					margin-top: 10px;
 				}
 
-				.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__total strong{
+				.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__total strong{
 					padding-left: .5em;
 					text-align: right;
 					font-weight: 500;
 				}
 
-				.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__total .amount{
+				.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__total .amount{
 					text-align: left;
 				}
 
-				.astra-cart-drawer.active {
+				.divino-cart-drawer.active {
 					transform: translate3d(100%, 0, 0);
 					visibility: visible;
 				}
@@ -5906,7 +5906,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 
 			} else {
 				$cart_static_css .= '
-				.ast-site-header-cart i.astra-icon:after {
+				.ast-site-header-cart i.divino-icon:after {
 					content: attr(data-cart-total);
 					position: absolute;
 					font-family: ' . divino_get_font_family( divino_body_font_family() ) . ';
@@ -5926,11 +5926,11 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 					text-align: center;
 					z-index: 3;
 				}
-				li.woocommerce-custom-menu-item .ast-site-header-cart i.astra-icon:after,
-				li.edd-custom-menu-item .ast-edd-site-header-cart span.astra-icon:after {
+				li.woocommerce-custom-menu-item .ast-site-header-cart i.divino-icon:after,
+				li.edd-custom-menu-item .ast-edd-site-header-cart span.divino-icon:after {
 					padding-left: 2px;
 				}
-				.astra-cart-drawer .astra-cart-drawer-close {
+				.divino-cart-drawer .divino-cart-drawer-close {
 					position: absolute;
 					top: 0.5em;
 					right: 0;
@@ -5940,7 +5940,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 					color: var(--ast-global-color-2);
 					background-color: transparent;
 				}
-				.astra-mobile-cart-overlay {
+				.divino-mobile-cart-overlay {
 					background-color: rgba(0, 0, 0, 0.4);
 					position: fixed;
 					top: 0;
@@ -5951,7 +5951,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 					opacity: 0;
 					transition: opacity 0.2s ease-in-out;
 				}
-				.astra-cart-drawer .astra-cart-drawer-content .edd-cart-item .edd-remove-from-cart {
+				.divino-cart-drawer .divino-cart-drawer-content .edd-cart-item .edd-remove-from-cart {
 					right: 1.2em;
 				}
 				.ast-header-break-point.ast-woocommerce-cart-menu.ast-hfb-header .ast-cart-menu-wrap, .ast-header-break-point.ast-hfb-header .ast-cart-menu-wrap,
@@ -5964,11 +5964,11 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 					text-align: right;
 				}
 
-				.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping) {
+				.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping) {
 					margin-right: 10px;
 				}
 
-				.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping),
+				.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping),
 				.ast-site-header-cart .widget_shopping_cart .buttons .button:not(.checkout),
 				.ast-site-header-cart .ast-site-header-cart-data .ast-mini-cart-empty .woocommerce-mini-cart__buttons a.button {
 					background-color: transparent;
@@ -5978,13 +5978,13 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 					color: ' . esc_attr( $normal_border_color ) . ';
 				}
 
-				.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping):hover,
+				.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons .button:not(.checkout):not(.ast-continue-shopping):hover,
 				.ast-site-header-cart .widget_shopping_cart .buttons .button:not(.checkout):hover {
 					border-color: ' . $hover_border_color . ';
 					color: ' . esc_attr( $hover_border_color ) . ';
 				}
 
-				.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons a.checkout {
+				.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons a.checkout {
 					margin-left: 0;
 					margin-top: 10px;
 					border-style: solid;
@@ -5992,21 +5992,21 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 					border-color: ' . $normal_border_color . ';
 				}
 
-				.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__buttons a.checkout:hover {
+				.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__buttons a.checkout:hover {
 					border-color: ' . $hover_border_color . ';
 				}
 
-				.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__total strong{
+				.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__total strong{
 					padding-right: .5em;
 					text-align: left;
 					font-weight: 500;
 				}
 
-				.woocommerce-js .astra-cart-drawer .astra-cart-drawer-content .woocommerce-mini-cart__total .amount{
+				.woocommerce-js .divino-cart-drawer .divino-cart-drawer-content .woocommerce-mini-cart__total .amount{
 					text-align: right;
 				}
 
-				.astra-cart-drawer.active {
+				.divino-cart-drawer.active {
 					transform: translate3d(-100%, 0, 0);
 					visibility: visible;
 				}
@@ -6019,7 +6019,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 				.ast-edd-site-header-cart.ast-edd-menu-cart-outline .ast-edd-cart-menu-wrap, .ast-edd-site-header-cart.ast-edd-menu-cart-fill .ast-edd-cart-menu-wrap {
 					line-height: 1.8;
 				}';
-			// This CSS requires in case of :before Astra icons. But in case of SVGs this loads twice that's why removed this from static & loading conditionally.
+			// This CSS requires in case of :before divino icons. But in case of SVGs this loads twice that's why removed this from static & loading conditionally.
 			if ( false === divino_Icons::is_svg_icons() ) {
 				$cart_static_css .= '
 				.ast-site-header-cart .cart-container *,
@@ -6346,7 +6346,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 		}
 
 		/**
-		 * Upgrade Astra default button stylings & compatibility with Spectra buttons.
+		 * Upgrade divino default button stylings & compatibility with Spectra buttons.
 		 *
 		 * @return bool true|false.
 		 * @since 4.6.4
@@ -6397,7 +6397,7 @@ if ( ! class_exists( 'divino_Dynamic_CSS' ) ) {
 		}
 
 		/**
-		 * Upgrade Astra secondary button border to look style guide in sync.
+		 * Upgrade divino secondary button border to look style guide in sync.
 		 *
 		 * @return bool true|false.
 		 * @since 4.8.0

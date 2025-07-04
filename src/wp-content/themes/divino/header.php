@@ -1,12 +1,12 @@
 <?php
 /**
- * The header for Astra Theme.
+ * The header for Divino Theme.
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Astra
+ * @package Divino
  * @since 1.0.0
  */
 
@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php
 if ( apply_filters( 'divino_header_profile_gmpg_link', true ) ) {
 	?>
-	<link rel="profile" href="https://gmpg.org/xfn/11"> 
+	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<?php
 }
 ?>

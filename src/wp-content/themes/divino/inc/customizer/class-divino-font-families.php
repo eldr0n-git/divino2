@@ -2,9 +2,9 @@
 /**
  * Helper class for font settings.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.19
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.19
  */
 
 // Exit if accessed directly.
@@ -42,7 +42,7 @@ if ( ! class_exists( 'divino_Font_Families' ) ) {
 		 *
 		 * @since 1.0.19
 		 *
-		 * @return Array All the system fonts in Astra
+		 * @return Array All the system fonts in divino
 		 */
 		public static function get_system_fonts() {
 			if ( empty( self::$system_fonts ) ) {
@@ -106,7 +106,7 @@ if ( ! class_exists( 'divino_Font_Families' ) ) {
 		 *
 		 * @since 1.0.19
 		 *
-		 * @return Array All the custom fonts in Astra
+		 * @return Array All the custom fonts in divino
 		 */
 		public static function get_custom_fonts() {
 			$custom_fonts = array();
@@ -122,30 +122,30 @@ if ( ! class_exists( 'divino_Font_Families' ) ) {
 		 */
 		public static function font_variant_labels() {
 			return array(
-				'100'       => __( 'Thin 100', 'astra' ),
-				'200'       => __( 'Extra Light 200', 'astra' ),
-				'300'       => __( 'Light 300', 'astra' ),
-				'400'       => __( 'Regular 400', 'astra' ),
-				'500'       => __( 'Medium 500', 'astra' ),
-				'600'       => __( 'Semi-Bold 600', 'astra' ),
-				'700'       => __( 'Bold 700', 'astra' ),
-				'800'       => __( 'Extra-Bold 800', 'astra' ),
-				'900'       => __( 'Ultra-Bold 900', 'astra' ),
-				'100italic' => __( 'Thin 100 Italic', 'astra' ),
-				'200italic' => __( 'Extra Light 200 Italic', 'astra' ),
-				'300italic' => __( 'Light 300 Italic', 'astra' ),
-				'400italic' => __( 'Regular 400 Italic', 'astra' ),
-				'italic'    => __( 'Regular 400 Italic', 'astra' ),
-				'500italic' => __( 'Medium 500 Italic', 'astra' ),
-				'600italic' => __( 'Semi-Bold 600 Italic', 'astra' ),
-				'700italic' => __( 'Bold 700 Italic', 'astra' ),
-				'800italic' => __( 'Extra-Bold 800 Italic', 'astra' ),
-				'900italic' => __( 'Ultra-Bold 900 Italic', 'astra' ),
+				'100'       => __( 'Thin 100', 'divino' ),
+				'200'       => __( 'Extra Light 200', 'divino' ),
+				'300'       => __( 'Light 300', 'divino' ),
+				'400'       => __( 'Regular 400', 'divino' ),
+				'500'       => __( 'Medium 500', 'divino' ),
+				'600'       => __( 'Semi-Bold 600', 'divino' ),
+				'700'       => __( 'Bold 700', 'divino' ),
+				'800'       => __( 'Extra-Bold 800', 'divino' ),
+				'900'       => __( 'Ultra-Bold 900', 'divino' ),
+				'100italic' => __( 'Thin 100 Italic', 'divino' ),
+				'200italic' => __( 'Extra Light 200 Italic', 'divino' ),
+				'300italic' => __( 'Light 300 Italic', 'divino' ),
+				'400italic' => __( 'Regular 400 Italic', 'divino' ),
+				'italic'    => __( 'Regular 400 Italic', 'divino' ),
+				'500italic' => __( 'Medium 500 Italic', 'divino' ),
+				'600italic' => __( 'Semi-Bold 600 Italic', 'divino' ),
+				'700italic' => __( 'Bold 700 Italic', 'divino' ),
+				'800italic' => __( 'Extra-Bold 800 Italic', 'divino' ),
+				'900italic' => __( 'Ultra-Bold 900 Italic', 'divino' ),
 			);
 		}
 
 		/**
-		 * Google Fonts used in astra.
+		 * Google Fonts used in divino.
 		 * Array is generated from the google-fonts.json file.
 		 *
 		 * @since  1.0.19

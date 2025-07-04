@@ -1,10 +1,10 @@
 <?php
 /**
- * Astra Theme Customizer Configuration Base.
+ * divino Theme Customizer Configuration Base.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.4.3
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.4.3
  */
 
 // No direct access, please.
@@ -27,7 +27,7 @@ if ( ! class_exists( 'divino_Customizer_Config_Base' ) ) {
 		 * Constructor
 		 */
 		public function __construct() {
-			// Bail early if it is not astra customizer.
+			// Bail early if it is not divino customizer.
 			if ( ! divino_Customizer::is_divino_customizer() ) {
 				return;
 			}
@@ -38,10 +38,10 @@ if ( ! class_exists( 'divino_Customizer_Config_Base' ) ) {
 		/**
 		 * Base Method for Registering Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 			return $configurations;
@@ -63,7 +63,7 @@ if ( ! class_exists( 'divino_Customizer_Config_Base' ) ) {
 			}
 
 			// Description.
-			$content  = '<div class="astra-section-description">';
+			$content  = '<div class="divino-section-description">';
 			$content .= wp_kses_post( divino_get_prop( $args, 'description' ) );
 
 			// Links.
@@ -88,7 +88,7 @@ if ( ! class_exists( 'divino_Customizer_Config_Base' ) ) {
 				$content .= '</ul>';
 			}
 
-			$content .= '</div><!-- .astra-section-description -->';
+			$content .= '</div><!-- .divino-section-description -->';
 
 			return $content;
 		}

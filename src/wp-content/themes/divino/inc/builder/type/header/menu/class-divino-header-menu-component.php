@@ -1,9 +1,9 @@
 <?php
 /**
- * Menu for Astra theme.
+ * Menu for divino theme.
  *
- * @package     astra-builder
- * @link        https://wpastra.com/
+ * @package     divino-builder
+ * @link        https://wpdivino.com/
  * @since       3.0.0
  */
 
@@ -25,7 +25,7 @@ class divino_Header_Menu_Component {
 	 */
 	public function __construct() {
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once divino_HEADER_MENU_DIR . '/class-astra-header-menu-component-loader.php';
+		require_once divino_HEADER_MENU_DIR . '/class-divino-header-menu-component-loader.php';
 
 		// Include front end files.
 		if ( ! is_admin() || divino_Builder_Customizer::divino_collect_customizer_builder_data() ) {
@@ -46,16 +46,16 @@ class divino_Header_Menu_Component {
 		switch ( $index ) {
 			case 1:
 				$theme_location = 'primary';
-				$nav_label      = esc_attr__( 'Primary Site Navigation', 'astra' );
+				$nav_label      = esc_attr__( 'Primary Site Navigation', 'divino' );
 				break;
 			case 2:
 				$theme_location = 'secondary_menu';
-				$nav_label      = esc_attr__( 'Secondary Site Navigation', 'astra' );
+				$nav_label      = esc_attr__( 'Secondary Site Navigation', 'divino' );
 				break;
 			default:
 				$theme_location = 'menu_' . $index;
 				/* translators: %d: menu index number */
-				$nav_label = sprintf( esc_attr__( 'Menu %d Site Navigation', 'astra' ), $index );
+				$nav_label = sprintf( esc_attr__( 'Menu %d Site Navigation', 'divino' ), $index );
 				break;
 		}
 
@@ -71,7 +71,7 @@ class divino_Header_Menu_Component {
 		// Menu Animation.
 		$menu_animation = divino_get_option( 'header-menu' . $index . '-submenu-container-animation' );
 		if ( ! empty( $menu_animation ) ) {
-			$submenu_class .= ' astra-menu-animation-' . esc_attr( $menu_animation ) . ' ';
+			$submenu_class .= ' divino-menu-animation-' . esc_attr( $menu_animation ) . ' ';
 		}
 
 		// Menu hover animation.

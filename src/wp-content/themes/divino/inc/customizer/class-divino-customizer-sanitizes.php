@@ -1,10 +1,10 @@
 <?php
 /**
- * Astra Theme Customizer Sanitize.
+ * divino Theme Customizer Sanitize.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 // No direct access, please.
@@ -464,7 +464,7 @@ if ( ! class_exists( 'divino_Customizer_Sanitizes' ) ) {
 		 */
 		public static function validate_email( $validity, $value ) {
 			if ( ! is_email( $value ) ) {
-				$validity->add( 'required', __( 'Enter valid email address!', 'astra' ) );
+				$validity->add( 'required', __( 'Enter valid email address!', 'divino' ) );
 			}
 			return $validity;
 		}

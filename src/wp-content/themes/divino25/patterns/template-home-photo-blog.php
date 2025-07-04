@@ -1,3 +1,4 @@
+<!-- template-home-photo-blog.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Photo blog home

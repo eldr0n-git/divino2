@@ -119,15 +119,6 @@ add_action('parse_request', function($wp) {
             // Convert query var to taxonomy query
             $wp->query_vars['post_type'] = 'product';
             $wp->query_vars['product_kind'] = $term_slug;
-            $wp->query_vars['is_tax'] = true;
-            
-            // Set the main query to handle this as a taxonomy archive
-            global $wp_query;
-            $wp_query->is_tax = true;
-            $wp_query->is_archive = true;
-            $wp_query->is_home = false;
-            $wp_query->queried_object = $term;
-            $wp_query->queried_object_id = $term->term_id;
         }
     }
 });

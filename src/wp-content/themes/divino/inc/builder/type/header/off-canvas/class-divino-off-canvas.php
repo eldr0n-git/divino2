@@ -2,7 +2,7 @@
 /**
  * Off Canvas.
  *
- * @package     astra-builder
+ * @package     divino-builder
  * @link        https://www.brainstormforce.com
  * @since       3.0.0
  */
@@ -26,7 +26,7 @@ class divino_Off_Canvas {
 	public function __construct() {
 
 		// @codingStandardsIgnoreStart WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-		require_once divino_OFF_CANVAS_DIR . '/class-astra-off-canvas-loader.php';
+		require_once divino_OFF_CANVAS_DIR . '/class-divino-off-canvas-loader.php';
 
 		// Include front end files.
 		if ( ! is_admin() || divino_Builder_Customizer::divino_collect_customizer_builder_data() ) {

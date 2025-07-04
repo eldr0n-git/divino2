@@ -1,9 +1,9 @@
 <?php
 /**
- * Astra Widget Component Dynamic CSS.
+ * divino Widget Component Dynamic CSS.
  *
- * @package     astra-builder
- * @link        https://wpastra.com/
+ * @package     divino-builder
+ * @link        https://wpdivino.com/
  * @since       3.0.0
  */
 
@@ -38,7 +38,7 @@ class divino_Widget_Component_Dynamic_CSS {
 				continue;
 			}
 
-			$_section = ! divino_has_widgets_block_editor() ? 'sidebar-widgets-' . $builder_type . '-widget-' . $index : 'astra-sidebar-widgets-' . $builder_type . '-widget-' . $index;
+			$_section = ! divino_has_widgets_block_editor() ? 'sidebar-widgets-' . $builder_type . '-widget-' . $index : 'divino-sidebar-widgets-' . $builder_type . '-widget-' . $index;
 
 			$selector = '.' . $builder_type . '-widget-area[data-section="sidebar-widgets-' . $builder_type . '-widget-' . $index . '"]';
 

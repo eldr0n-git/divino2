@@ -5,9 +5,9 @@
  * 1. Functions which can be used for doing some operations on the values.
  * 2. Third party plugins compatibility functions.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://divino.kz/
+ * @since       divino 1.0.0
  */
 
 /**
@@ -42,8 +42,8 @@ if ( ! function_exists( 'divino_header_breakpoint_style' ) ) {
 	/**
 	 * Function to Add Header Breakpoint Style
 	 *
-	 * @param  string $dynamic_css          Astra Dynamic CSS.
-	 * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+	 * @param  string $dynamic_css          divino Dynamic CSS.
+	 * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
 	 * @since 1.5.2 Remove ob_start, ob_get_clean and .main-header-bar-wrap::before{content} for our .ast-header-break-point class
 	 * @since 1.0.0
 	 */
@@ -222,13 +222,13 @@ function divino_toggle_layout( $new_content_option, $level, $post_id = false, $o
 	}
 
 	// Meta layout migrations.
-	$meta_key              = divino_get_option_meta( 'astra-migrate-meta-layouts', '', true );
+	$meta_key              = divino_get_option_meta( 'divino-migrate-meta-layouts', '', true );
 	$migrated_user         = ! divino_Dynamic_CSS::divino_fullwidth_sidebar_support();
 	$third_party_meta_page = divino_third_party_archive_meta( 'site-content-layout' );
 	if ( 'meta' === $level && $migrated_user ) {
 		if ( false !== $third_party_meta_page ) {
 			$old_meta = $third_party_meta_page;
-			$meta_key = divino_third_party_archive_meta( 'astra-migrate-meta-layouts' );
+			$meta_key = divino_third_party_archive_meta( 'divino-migrate-meta-layouts' );
 		}
 		if ( $old_meta && 'set' !== $meta_key ) {
 			$dynamic_layout_option = divino_migrate_meta_layout( $old_meta );
@@ -443,7 +443,7 @@ function divino_get_theme_author_details() {
 	return apply_filters(
 		'divino_theme_author',
 		array(
-			'theme_name'       => esc_html__( 'Astra WordPress Theme', 'astra' ),
+			'theme_name'       => esc_html__( 'divino WordPress Theme', 'divino' ),
 			'theme_author_url' => divino_WEBSITE_BASE_URL,
 		)
 	);
@@ -493,23 +493,23 @@ function divino_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
 	$load_svg_menu_icons = false;
 
 	if ( defined( 'divino_EXT_VER' ) ) {
-		// Check whether Astra Pro is active + Nav menu addon is deactivate + menu registered by Astra only.
+		// Check whether divino Pro is active + Nav menu addon is deactivate + menu registered by divino only.
 		if ( ! divino_Ext_Extension::is_active( 'nav-menu' ) && isset( $args->menu_id ) && in_array( $args->menu_id, $divino_menu_locations ) ) {
 			$load_svg_menu_icons = true;
 		}
 	} else {
-		// Check menu registered by Astra only.
+		// Check menu registered by divino only.
 		if ( isset( $args->menu_id ) && in_array( $args->menu_id, $divino_menu_locations ) ) {
 			$load_svg_menu_icons = true;
 		}
 	}
 
 	if ( $load_svg_menu_icons || ( defined( 'divino_EXT_VER' ) && ! divino_Ext_Extension::is_active( 'nav-menu' ) ) ) {
-		// Assign icons to only those menu which are registered by Astra.
+		// Assign icons to only those menu which are registered by divino.
 		$icon = divino_Icons::get_icons( 'arrow' );
 	}
 
-	// Dropdown svg arrow for submenu for non Astra registered menu's
+	// Dropdown svg arrow for submenu for non divino registered menu's
 	$is_nav_menu_extension_inactive = defined( 'divino_EXT_VER' ) && ! divino_Ext_Extension::is_active( 'nav-menu' );
 
 	$special_menu_ids = array(
@@ -542,7 +542,7 @@ function divino_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
 	// Render arrow icon for special menu appearance or on pro deactivation or nav menu extension deactivation.
 	if ( $is_special_menu || $is_nav_menu_extension_inactive || ! defined( 'divino_EXT_VER' ) ) {
 		$custom_tabindex  = true === divino_Builder_Helper::$is_header_footer_builder_active ? 'tabindex="0"' : '';
-		$divino_arrow_icon = '<span role="' . esc_attr( $role ) . '" class="dropdown-menu-toggle ast-header-navigation-arrow" ' . $custom_tabindex . ' aria-expanded="false" aria-label="' . esc_attr__( 'Menu Toggle', 'astra' ) . '" >' . $icon . '</span>';
+		$divino_arrow_icon = '<span role="' . esc_attr( $role ) . '" class="dropdown-menu-toggle ast-header-navigation-arrow" ' . $custom_tabindex . ' aria-expanded="false" aria-label="' . esc_attr__( 'Menu Toggle', 'divino' ) . '" >' . $icon . '</span>';
 	}
 
 	foreach ( $item->classes as $value ) {
@@ -669,7 +669,7 @@ function divino_markup_close( $context, $args = array() ) {
 }
 
 /**
- * Provision to update display rules for visibility of Related Posts section in Astra.
+ * Provision to update display rules for visibility of Related Posts section in divino.
  *
  * @since 3.4.0
  * @return bool
@@ -697,10 +697,10 @@ function divino_is_elemetor_active() {
 }
 
 /**
- * Check the Astra addon version.
+ * Check the divino addon version.
  * For  major update and frequently we used version_compare, added a function for this for easy maintenance.
  *
- * @param string $version Astra addon version.
+ * @param string $version divino addon version.
  * @param string $compare Compare symbols.
  * @since  3.9.2
  */
@@ -857,7 +857,7 @@ function divino_has_global_color_format_support() {
  * @since 3.7.0
  */
 function divino_get_palette_colors() {
-	$color_palettes = get_option( 'astra-color-palettes', false );
+	$color_palettes = get_option( 'divino-color-palettes', false );
 
 	if ( ! $color_palettes ) {
 		$color_palettes = \divino_Global_Palette::get_default_color_palette();
@@ -891,7 +891,7 @@ function divino_get_palette_names() {
 		'palette_4' => 'Dark',
 	);
 
-	$color_palettes = get_option( 'astra-color-palettes', array() );
+	$color_palettes = get_option( 'divino-color-palettes', array() );
 
 	$palette_names = $default_palette_names;
 	if ( isset( $color_palettes['presetNames'] ) ) {
@@ -921,11 +921,11 @@ function divino_get_palette_names() {
  * @since 3.7.0
  */
 function divino_get_typography_presets() {
-	return get_option( 'astra-typography-presets', '' );
+	return get_option( 'divino-typography-presets', '' );
 }
 
 /**
- * Clear Astra + Astra Pro assets cache.
+ * Clear divino + divino Pro assets cache.
  *
  * @since 3.6.9
  * @return void
@@ -1016,12 +1016,12 @@ function divino_search_static_css() {
 		color: inherit;
 		background-color: #fff;
 	}
-	.ast-search-menu-icon .astra-search-icon {
+	.ast-search-menu-icon .divino-search-icon {
 		-js-display: flex;
 		display: flex;
 		line-height: normal;
 	}
-	.ast-search-menu-icon .astra-search-icon:focus {
+	.ast-search-menu-icon .divino-search-icon:focus {
 		outline: none;
 	}
 	.ast-search-menu-icon .search-field {
@@ -1119,7 +1119,7 @@ function divino_search_static_css() {
 }
 
 /**
- * Showcase "Upgrade to Pro" notices for Astra & here is the filter work as central control to enable/disable those notices from customizer, meta settings, admin area, pro post types pages.
+ * Showcase "Upgrade to Pro" notices for divino & here is the filter work as central control to enable/disable those notices from customizer, meta settings, admin area, pro post types pages.
  *
  * @since 3.9.4
  * @return bool
@@ -1197,18 +1197,18 @@ function divino_get_font_array_css( $font_family, $font_weight, $font_size, $fon
  */
 function divino_get_site_image_sizes( $add_custom = false ) {
 	$image_sizes = array(
-		'thumbnail'    => esc_html__( 'Thumbnail', 'astra' ),
-		'medium'       => esc_html__( 'Medium', 'astra' ),
-		'medium_large' => esc_html__( 'Medium Large', 'astra' ),
-		'large'        => esc_html__( 'Large', 'astra' ),
-		'full'         => esc_html__( 'Full Size', 'astra' ),
+		'thumbnail'    => esc_html__( 'Thumbnail', 'divino' ),
+		'medium'       => esc_html__( 'Medium', 'divino' ),
+		'medium_large' => esc_html__( 'Medium Large', 'divino' ),
+		'large'        => esc_html__( 'Large', 'divino' ),
+		'full'         => esc_html__( 'Full Size', 'divino' ),
 	);
 
 	// Gets the available intermediate image size names on site.
 	$all_sizes = get_intermediate_image_sizes();  // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.get_intermediate_image_sizes_get_intermediate_image_sizes -- Required for image sizes to work.
 
 	$refactored_sizes = array(
-		'full' => esc_html__( 'Full Size', 'astra' ),
+		'full' => esc_html__( 'Full Size', 'divino' ),
 	);
 
 	foreach ( $all_sizes as $size ) {
@@ -1222,7 +1222,7 @@ function divino_get_site_image_sizes( $add_custom = false ) {
 	/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 	if ( $add_custom && defined( 'divino_EXT_VER' ) && divino_Ext_Extension::is_active( 'blog-pro' ) ) {
 		/** @psalm-suppress UndefinedClass */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
-		$refactored_sizes['custom'] = esc_html__( 'Custom', 'astra' );
+		$refactored_sizes['custom'] = esc_html__( 'Custom', 'divino' );
 	}
 
 	return $refactored_sizes;
@@ -1289,7 +1289,7 @@ function divino_get_queried_post_types() {
 	$queried_post_types   = array_diff(
 		$queried_post_types,
 		array(
-			'astra-advanced-hook',
+			'divino-advanced-hook',
 			'divino_adv_header',
 			'elementor_library',
 			'brizy_template',
@@ -1454,7 +1454,7 @@ function divino_get_palette_presets() {
 }
 
 /**
- * Get Astra blog layout design.
+ * Get divino blog layout design.
  * Search / Blog.
  *
  * @return string $blog_layout.
@@ -1465,7 +1465,7 @@ function divino_get_blog_layout() {
 }
 
 /**
- * Get Astra blog posts per page count.
+ * Get divino blog posts per page count.
  * Search / Blog.
  *
  * @return int $blog_layout.
@@ -1480,12 +1480,12 @@ function divino_get_blog_posts_per_page() {
 }
 
 /**
- * Get the remote WP-Astra docs data.
+ * Get the remote WP-divino docs data.
  *
  * @since 4.6.0
  */
 function divino_remote_docs_data() {
-	$divino_docs_instance = divino_docs_loader_instance( divino_WEBSITE_BASE_URL . '/wp-json/powerful-docs/v1/get-docs', 'astra-docs' );
+	$divino_docs_instance = divino_docs_loader_instance( divino_WEBSITE_BASE_URL . '/wp-json/powerful-docs/v1/get-docs', 'divino-docs' );
 	return json_decode( $divino_docs_instance->get_remote_data() );
 }
 

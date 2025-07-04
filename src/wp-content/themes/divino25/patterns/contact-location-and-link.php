@@ -1,3 +1,4 @@
+<!-- contact-location-and-link.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Contact location and link

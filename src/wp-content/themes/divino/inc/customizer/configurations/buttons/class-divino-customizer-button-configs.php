@@ -1,10 +1,10 @@
 <?php
 /**
- * Astra Theme Customizer Configuration Base.
+ * divino Theme Customizer Configuration Base.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.4.3
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.4.3
  */
 
 // No direct access, please.
@@ -26,10 +26,10 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 		/**
 		 * Register Button Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -44,7 +44,7 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'default'   => divino_get_option( $id . 'button-preset-style' ),
 						'type'      => 'control',
 						'control'   => 'ast-button-presets',
-						'title'     => __( 'Button Presets', 'astra' ),
+						'title'     => __( 'Button Presets', 'divino' ),
 						'section'   => 'section-buttons',
 						'options'   => array(
 							'button_01' => array(
@@ -409,7 +409,7 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'default'   => divino_get_option( $id . 'theme-button-color-group' ),
 						'type'      => 'control',
 						'control'   => 'ast-color-group',
-						'title'     => __( 'Text Color', 'astra' ),
+						'title'     => __( 'Text Color', 'divino' ),
 						'section'   => 'section-buttons',
 						'transport' => 'postMessage',
 						'priority'  => 18,
@@ -423,7 +423,7 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'default'   => divino_get_option( $id . 'theme-button-bg-color-group' ),
 						'type'      => 'control',
 						'control'   => 'ast-color-group',
-						'title'     => __( 'Background Color', 'astra' ),
+						'title'     => __( 'Background Color', 'divino' ),
 						'section'   => 'section-buttons',
 						'transport' => 'postMessage',
 						'priority'  => 18.5,
@@ -437,7 +437,7 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'default'   => divino_get_option( $id . 'theme-button-border-color-group' ),
 						'type'      => 'control',
 						'control'   => 'ast-color-group',
-						'title'     => __( 'Border Color', 'astra' ),
+						'title'     => __( 'Border Color', 'divino' ),
 						'section'   => 'section-buttons',
 						'transport' => 'postMessage',
 						'priority'  => 18.5,
@@ -457,7 +457,7 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'control'           => 'ast-color',
 						'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 						'priority'          => 18.5,
-						'title'             => __( 'Normal', 'astra' ),
+						'title'             => __( 'Normal', 'divino' ),
 					),
 
 					/**
@@ -473,7 +473,7 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'control'           => 'ast-color',
 						'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 						'priority'          => 18.5,
-						'title'             => __( 'Hover', 'astra' ),
+						'title'             => __( 'Hover', 'divino' ),
 					),
 
 					/**
@@ -486,7 +486,7 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'parent'  => divino_THEME_SETTINGS . '[' . $id . 'theme-button-color-group]',
 						'section' => 'section-buttons',
 						'control' => 'ast-color',
-						'title'   => __( 'Normal', 'astra' ),
+						'title'   => __( 'Normal', 'divino' ),
 					),
 
 					/**
@@ -499,7 +499,7 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'parent'   => divino_THEME_SETTINGS . '[' . $id . 'theme-button-color-group]',
 						'section'  => 'section-buttons',
 						'control'  => 'ast-color',
-						'title'    => __( 'Hover', 'astra' ),
+						'title'    => __( 'Hover', 'divino' ),
 						'priority' => 39,
 					),
 
@@ -513,7 +513,7 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'parent'  => divino_THEME_SETTINGS . '[' . $id . 'theme-button-bg-color-group]',
 						'section' => 'section-buttons',
 						'control' => 'ast-color',
-						'title'   => __( 'Normal', 'astra' ),
+						'title'   => __( 'Normal', 'divino' ),
 					),
 
 					/**
@@ -526,7 +526,7 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'parent'   => divino_THEME_SETTINGS . '[' . $id . 'theme-button-bg-color-group]',
 						'section'  => 'section-buttons',
 						'control'  => 'ast-color',
-						'title'    => __( 'Hover', 'astra' ),
+						'title'    => __( 'Hover', 'divino' ),
 						'priority' => 40,
 					),
 
@@ -540,15 +540,15 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'control'           => 'ast-responsive-spacing',
 						'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 						'section'           => 'section-buttons',
-						'title'             => __( 'Padding', 'astra' ),
+						'title'             => __( 'Padding', 'divino' ),
 						'linked_choices'    => true,
 						'transport'         => 'postMessage',
 						'unit_choices'      => array( 'px', 'em', '%' ),
 						'choices'           => array(
-							'top'    => __( 'Top', 'astra' ),
-							'right'  => __( 'Right', 'astra' ),
-							'bottom' => __( 'Bottom', 'astra' ),
-							'left'   => __( 'Left', 'astra' ),
+							'top'    => __( 'Top', 'divino' ),
+							'right'  => __( 'Right', 'divino' ),
+							'bottom' => __( 'Bottom', 'divino' ),
+							'left'   => __( 'Left', 'divino' ),
 						),
 						'priority'          => 19,
 						'connected'         => false,
@@ -567,12 +567,12 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'suffix'         => 'px',
 						'priority'       => 19,
 						'default'        => divino_get_option( $id . 'theme-button-border-group-border-size' ),
-						'title'          => __( 'Border Width', 'astra' ),
+						'title'          => __( 'Border Width', 'divino' ),
 						'choices'        => array(
-							'top'    => __( 'Top', 'astra' ),
-							'right'  => __( 'Right', 'astra' ),
-							'bottom' => __( 'Bottom', 'astra' ),
-							'left'   => __( 'Left', 'astra' ),
+							'top'    => __( 'Top', 'divino' ),
+							'right'  => __( 'Right', 'divino' ),
+							'bottom' => __( 'Bottom', 'divino' ),
+							'left'   => __( 'Left', 'divino' ),
 						),
 						'divider'        => array( 'ast_class' => 'ast-top-divider ast-bottom-divider' ),
 					),
@@ -587,15 +587,15 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'control'           => 'ast-responsive-spacing',
 						'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_responsive_spacing' ),
 						'section'           => 'section-buttons',
-						'title'             => __( 'Border Radius', 'astra' ),
+						'title'             => __( 'Border Radius', 'divino' ),
 						'linked_choices'    => true,
 						'transport'         => 'postMessage',
 						'unit_choices'      => array( 'px', 'em', '%' ),
 						'choices'           => array(
-							'top'    => __( 'Top', 'astra' ),
-							'right'  => __( 'Right', 'astra' ),
-							'bottom' => __( 'Bottom', 'astra' ),
-							'left'   => __( 'Left', 'astra' ),
+							'top'    => __( 'Top', 'divino' ),
+							'right'  => __( 'Right', 'divino' ),
+							'bottom' => __( 'Bottom', 'divino' ),
+							'left'   => __( 'Left', 'divino' ),
 						),
 						'priority'          => 19,
 						'connected'         => false,
@@ -636,7 +636,7 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'type'     => 'control',
 						'control'  => 'ast-heading',
 						'section'  => 'section-transparent-header',
-						'title'    => __( 'Header Button', 'astra' ),
+						'title'    => __( 'Header Button', 'divino' ),
 						'settings' => array(),
 						'priority' => 40,
 						'context'  => array(
@@ -656,7 +656,7 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'default'   => divino_get_option( 'transparent-header-button-color-group' ),
 						'type'      => 'control',
 						'control'   => 'ast-settings-group',
-						'title'     => __( 'Colors', 'astra' ),
+						'title'     => __( 'Colors', 'divino' ),
 						'section'   => 'section-transparent-header',
 						'transport' => 'postMessage',
 						'priority'  => 40,
@@ -677,7 +677,7 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'default'   => divino_get_option( 'transparent-header-button-border-group' ),
 						'type'      => 'control',
 						'control'   => 'ast-settings-group',
-						'title'     => __( 'Border', 'astra' ),
+						'title'     => __( 'Border', 'divino' ),
 						'section'   => 'section-transparent-header',
 						'transport' => 'postMessage',
 						'priority'  => 40,
@@ -701,11 +701,11 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'type'              => 'sub-control',
 						'parent'            => divino_THEME_SETTINGS . '[transparent-header-button-color-group]',
 						'section'           => 'section-transparent-header',
-						'tab'               => __( 'Normal', 'astra' ),
+						'tab'               => __( 'Normal', 'divino' ),
 						'control'           => 'ast-color',
 						'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 						'priority'          => 10,
-						'title'             => __( 'Text Color', 'astra' ),
+						'title'             => __( 'Text Color', 'divino' ),
 					),
 
 					/**
@@ -718,11 +718,11 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'type'              => 'sub-control',
 						'parent'            => divino_THEME_SETTINGS . '[transparent-header-button-color-group]',
 						'section'           => 'section-transparent-header',
-						'tab'               => __( 'Hover', 'astra' ),
+						'tab'               => __( 'Hover', 'divino' ),
 						'control'           => 'ast-color',
 						'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 						'priority'          => 10,
-						'title'             => __( 'Text Color', 'astra' ),
+						'title'             => __( 'Text Color', 'divino' ),
 					),
 
 					/**
@@ -735,11 +735,11 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'type'              => 'sub-control',
 						'parent'            => divino_THEME_SETTINGS . '[transparent-header-button-color-group]',
 						'section'           => 'section-transparent-header',
-						'tab'               => __( 'Normal', 'astra' ),
+						'tab'               => __( 'Normal', 'divino' ),
 						'control'           => 'ast-color',
 						'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 						'priority'          => 10,
-						'title'             => __( 'Background Color', 'astra' ),
+						'title'             => __( 'Background Color', 'divino' ),
 					),
 
 					/**
@@ -752,11 +752,11 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'type'              => 'sub-control',
 						'parent'            => divino_THEME_SETTINGS . '[transparent-header-button-color-group]',
 						'section'           => 'section-transparent-header',
-						'tab'               => __( 'Hover', 'astra' ),
+						'tab'               => __( 'Hover', 'divino' ),
 						'control'           => 'ast-color',
 						'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 						'priority'          => 10,
-						'title'             => __( 'Background Color', 'astra' ),
+						'title'             => __( 'Background Color', 'divino' ),
 					),
 
 					// Option: Custom Menu Button Border.
@@ -778,12 +778,12 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 							),
 						),
 						'default'           => divino_get_option( 'header-main-rt-trans-section-button-padding' ),
-						'title'             => __( 'Padding', 'astra' ),
+						'title'             => __( 'Padding', 'divino' ),
 						'choices'           => array(
-							'top'    => __( 'Top', 'astra' ),
-							'right'  => __( 'Right', 'astra' ),
-							'bottom' => __( 'Bottom', 'astra' ),
-							'left'   => __( 'Left', 'astra' ),
+							'top'    => __( 'Top', 'divino' ),
+							'right'  => __( 'Right', 'divino' ),
+							'bottom' => __( 'Bottom', 'divino' ),
+							'left'   => __( 'Left', 'divino' ),
 						),
 					),
 
@@ -800,12 +800,12 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'linked_choices' => true,
 						'priority'       => 10,
 						'default'        => divino_get_option( 'header-main-rt-trans-section-button-border-size' ),
-						'title'          => __( 'Width', 'astra' ),
+						'title'          => __( 'Width', 'divino' ),
 						'choices'        => array(
-							'top'    => __( 'Top', 'astra' ),
-							'right'  => __( 'Right', 'astra' ),
-							'bottom' => __( 'Bottom', 'astra' ),
-							'left'   => __( 'Left', 'astra' ),
+							'top'    => __( 'Top', 'divino' ),
+							'right'  => __( 'Right', 'divino' ),
+							'bottom' => __( 'Bottom', 'divino' ),
+							'left'   => __( 'Left', 'divino' ),
 						),
 					),
 
@@ -822,7 +822,7 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'control'           => 'ast-color',
 						'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 						'priority'          => 12,
-						'title'             => __( 'Color', 'astra' ),
+						'title'             => __( 'Color', 'divino' ),
 					),
 
 					/**
@@ -837,7 +837,7 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'control'           => 'ast-color',
 						'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_alpha_color' ),
 						'priority'          => 14,
-						'title'             => __( 'Hover Color', 'astra' ),
+						'title'             => __( 'Hover Color', 'divino' ),
 					),
 
 					/**
@@ -853,7 +853,7 @@ if ( ! class_exists( 'divino_Customizer_Button_Configs' ) ) {
 						'suffix'      => 'px',
 						'transport'   => 'postMessage',
 						'priority'    => 16,
-						'title'       => __( 'Border Radius', 'astra' ),
+						'title'       => __( 'Border Radius', 'divino' ),
 						'input_attrs' => array(
 							'min'  => 0,
 							'step' => 1,

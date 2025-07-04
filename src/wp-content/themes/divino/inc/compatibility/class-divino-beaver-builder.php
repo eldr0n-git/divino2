@@ -2,7 +2,7 @@
 /**
  * Beaver Builder Compatibility File.
  *
- * @package Astra
+ * @package divino
  */
 
 // If plugin - 'Builder Builder' not exist then return.
@@ -11,12 +11,12 @@ if ( ! class_exists( 'FLBuilderModel' ) ) {
 }
 
 /**
- * Astra Beaver Builder Compatibility
+ * divino Beaver Builder Compatibility
  */
 if ( ! class_exists( 'divino_Beaver_Builder' ) ) {
 
 	/**
-	 * Astra Beaver Builder Compatibility
+	 * divino Beaver Builder Compatibility
 	 *
 	 * @since 1.0.0
 	 */
@@ -49,7 +49,7 @@ if ( ! class_exists( 'divino_Beaver_Builder' ) ) {
 		}
 
 		/**
-		 * Disable Astra's block editor attr which applied for further block layout CSS.
+		 * Disable divino's block editor attr which applied for further block layout CSS.
 		 *
 		 * @param bool $flag Flag to enable/disable entry content attr.
 		 * @param int  $post_id Post ID.
@@ -142,7 +142,7 @@ if ( ! class_exists( 'divino_Beaver_Builder' ) ) {
 		public function add_styles( $assets ) {
 
 			if ( ! empty( $assets['css'] ) ) {
-				$assets['css'] = array( 'astra-bb-builder' => 'compatibility/page-builder/bb-plugin' ) + $assets['css'];
+				$assets['css'] = array( 'divino-bb-builder' => 'compatibility/page-builder/bb-plugin' ) + $assets['css'];
 			}
 			return $assets;
 		}

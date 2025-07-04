@@ -2,9 +2,9 @@
 /**
  * Helper class for font settings.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 // Exit if accessed directly.

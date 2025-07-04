@@ -1,8 +1,8 @@
 <?php
 /**
- * Astra Builder Admin Loader.
+ * divino Builder Admin Loader.
  *
- * @package astra-builder
+ * @package divino-builder
  */
 
 // No direct access, please.
@@ -63,10 +63,10 @@ final class divino_Builder_Admin {
 	 */
 	public function migrate_to_builder() {
 
-		check_ajax_referer( 'astra-builder-module-nonce', 'nonce' );
+		check_ajax_referer( 'divino-builder-module-nonce', 'nonce' );
 
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_send_json_error( __( 'You don\'t have the access', 'astra' ) );
+			wp_send_json_error( __( 'You don\'t have the access', 'divino' ) );
 		}
 
 		/** @psalm-suppress PossiblyInvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
@@ -77,23 +77,23 @@ final class divino_Builder_Admin {
 		$migration_flag = divino_get_option( 'v3-option-migration', false );
 		divino_update_option( 'is-header-footer-builder', $migrate );
 		if ( $migrate && false === $migration_flag ) {
-			require_once divino_THEME_DIR . 'inc/theme-update/astra-builder-migration-updater.php';  // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+			require_once divino_THEME_DIR . 'inc/theme-update/divino-builder-migration-updater.php';  // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 			divino_header_builder_migration();
 		}
 		wp_send_json_success();
 	}
 
 	/**
-	 * Disable pro upgrade notice from all over in Astra.
+	 * Disable pro upgrade notice from all over in divino.
 	 *
 	 * @since 3.9.4
 	 */
 	public function disable_divino_pro_notices() {
 
-		check_ajax_referer( 'astra-upgrade-notices-nonce', 'security' );
+		check_ajax_referer( 'divino-upgrade-notices-nonce', 'security' );
 
 		if ( ! current_user_can( 'manage_options' ) ) {
-			wp_send_json_error( __( 'You don\'t have the access', 'astra' ) );
+			wp_send_json_error( __( 'You don\'t have the access', 'divino' ) );
 		}
 
 		/** @psalm-suppress PossiblyInvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort

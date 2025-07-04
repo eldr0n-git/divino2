@@ -2,7 +2,7 @@
 /**
  * Template part for displaying the a row of the footer
  *
- * @package Astra Builder
+ * @package divino Builder
  */
 
 $divino_footer_row = get_query_var( 'row' );
@@ -46,7 +46,7 @@ if ( divino_Builder_Helper::is_footer_row_empty( $divino_footer_row ) ) {
 		}
 
 		/**
-		 * Astra Render before Site container of Footer.
+		 * divino Render before Site container of Footer.
 		 */
 		do_action( "divino_footer_{$divino_footer_row}_container_before" );
 		?>
@@ -64,7 +64,7 @@ if ( divino_Builder_Helper::is_footer_row_empty( $divino_footer_row ) ) {
 			</div>
 		<?php
 		/**
-		 * Astra Render before Site container of Footer.
+		 * divino Render before Site container of Footer.
 		 */
 		do_action( "divino_footer_{$divino_footer_row}_container_after" );
 		?>

@@ -1,3 +1,4 @@
+<!-- template-archive-text-blog.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Text blog archive

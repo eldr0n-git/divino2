@@ -5,25 +5,25 @@
  */
 
 window.addEventListener( "load", function(e) {
-    astrawpWooQuantityButtons();
+    divinowpWooQuantityButtons();
     quantityInput();
 });
 
 
 // Here we are selecting the node that will be observed for mutations.
-const astraminiCarttargetNodes = document.querySelectorAll(".ast-site-header-cart");
+const divinominiCarttargetNodes = document.querySelectorAll(".ast-site-header-cart");
 
-astraminiCarttargetNodes.forEach(function(astraminiCarttargetNode) {
-    if (astraminiCarttargetNode != null) {
+divinominiCarttargetNodes.forEach(function(divinominiCarttargetNode) {
+    if (divinominiCarttargetNode != null) {
         const config = { attributes: false, childList: true, subtree: true };
-    
-        const astraMinicartObserver = () => {
-            astrawpWooQuantityButtons();
+
+        const divinoMinicartObserver = () => {
+            divinowpWooQuantityButtons();
             quantityInput();
         };
-    
-        const observer = new MutationObserver(astraMinicartObserver);
-        observer.observe(astraminiCarttargetNode, config);
+
+        const observer = new MutationObserver(divinoMinicartObserver);
+        observer.observe(divinominiCarttargetNode, config);
     }
 });
 
@@ -33,7 +33,7 @@ astraminiCarttargetNodes.forEach(function(astraminiCarttargetNode) {
 */
 jQuery( function( $ ) {
     $( document.body ).on( 'wc_fragments_refreshed', function() {
-        astrawpWooQuantityButtons();
+        divinowpWooQuantityButtons();
         quantityInput();
     });
 });
@@ -44,7 +44,7 @@ jQuery( function( $ ) {
         var send = XMLHttpRequest.prototype.send
         XMLHttpRequest.prototype.send = function() {
             this.addEventListener('load', function() {
-                astrawpWooQuantityButtons();
+                divinowpWooQuantityButtons();
             })
             return send.apply(this, arguments)
         }
@@ -52,9 +52,9 @@ jQuery( function( $ ) {
 })();
 
 /**
- * Astra WooCommerce Quantity Buttons.
+ * divino WooCommerce Quantity Buttons.
  */
-function astrawpWooQuantityButtons( $quantitySelector ) {
+function divinowpWooQuantityButtons( $quantitySelector ) {
 
     var $cart = document.querySelector( '.woocommerce div.product form.cart' );
 
@@ -193,7 +193,7 @@ function astrawpWooQuantityButtons( $quantitySelector ) {
                             update_cart_btn[btn].click();
                         }
                     }
-                    
+
                     const quantity = $quantityBox.value;
                     const itemHash = $quantityBox.getAttribute('name').replace(/cart\[([\w]+)\]\[qty\]/g, '$1');
 
@@ -211,15 +211,15 @@ function sendAjaxQuantityRequest(currentTarget, quantity, itemHash ) {
     // Send AJAX request from mini cart.
     const miniCart = currentTarget.closest( '.woocommerce-mini-cart' );
 
-    if ( miniCart && astra && astra.single_product_qty_ajax_nonce && astra.ajax_url ) {
+    if ( miniCart && divino && divino.single_product_qty_ajax_nonce && divino.ajax_url ) {
 
-        let qtyNonce = astra.single_product_qty_ajax_nonce;
+        let qtyNonce = divino.single_product_qty_ajax_nonce;
 
         miniCart.classList.add('ajax-mini-cart-qty-loading');
 
         // Creating a XMLHttpRequest object.
         let xhrRequest = new XMLHttpRequest();
-        xhrRequest.open( 'POST', astra.ajax_url, true );
+        xhrRequest.open( 'POST', divino.ajax_url, true );
 
         // Send the proper header information along with the request
         xhrRequest.setRequestHeader( "Content-Type", "application/x-www-form-urlencoded" );
@@ -237,7 +237,7 @@ function sendAjaxQuantityRequest(currentTarget, quantity, itemHash ) {
                     setTimeout(() => {
                         miniCart.classList.remove('ajax-mini-cart-qty-loading');
                     }, 500);
-                   
+
 
                     if ( typeof wc_add_to_cart_params === 'undefined' ) {
                         return;

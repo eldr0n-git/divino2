@@ -1,10 +1,10 @@
 <?php
 /**
- * Bottom Footer Options for Astra Theme.
+ * Bottom Footer Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -20,10 +20,10 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 		/**
 		 * Register Blog Layout Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
@@ -39,22 +39,22 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 			if ( false === $divino_backwards ) {
 				$old_blog_layouts = array(
 					'blog-layout-1' => array(
-						'label' => __( 'Layout 1', 'astra' ),
+						'label' => __( 'Layout 1', 'divino' ),
 						'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-1', false ) : '',
 					),
 					'blog-layout-2' => array(
-						'label' => __( 'Layout 2', 'astra' ),
+						'label' => __( 'Layout 2', 'divino' ),
 						'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-2', false ) : '',
 					),
 					'blog-layout-3' => array(
-						'label' => __( 'Layout 3', 'astra' ),
+						'label' => __( 'Layout 3', 'divino' ),
 						'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-3', false ) : '',
 					),
 				);
 
 				$old_blog_layouts_free = array(
 					'blog-layout-classic' => array(
-						'label' => __( 'Classic Layout', 'astra' ),
+						'label' => __( 'Classic Layout', 'divino' ),
 						'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-classic', false ) : '',
 					),
 				);
@@ -62,15 +62,15 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 
 			$new_blog_layouts = array(
 				'blog-layout-4' => array(
-					'label' => __( 'Grid', 'astra' ),
+					'label' => __( 'Grid', 'divino' ),
 					'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-4', false ) : '',
 				),
 				'blog-layout-5' => array(
-					'label' => __( 'List', 'astra' ),
+					'label' => __( 'List', 'divino' ),
 					'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-5', false ) : '',
 				),
 				'blog-layout-6' => array(
-					'label' => __( 'Cover', 'astra' ),
+					'label' => __( 'Cover', 'divino' ),
 					'path'  => class_exists( 'divino_Builder_UI_Controller' ) ? divino_Builder_UI_Controller::fetch_svg_icon( 'blog-layout-6', false ) : '',
 				),
 			);
@@ -100,10 +100,10 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'section'    => 'section-blog',
 					'priority'   => 50,
 					'transport'  => 'postMessage',
-					'title'      => __( 'Content Width', 'astra' ),
+					'title'      => __( 'Content Width', 'divino' ),
 					'choices'    => array(
-						'default' => __( 'Default', 'astra' ),
-						'custom'  => __( 'Custom', 'astra' ),
+						'default' => __( 'Default', 'divino' ),
+						'custom'  => __( 'Custom', 'divino' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -129,7 +129,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 							'value'    => 'custom',
 						),
 					),
-					'title'       => __( 'Custom Width', 'astra' ),
+					'title'       => __( 'Custom Width', 'divino' ),
 					'suffix'      => 'px',
 					'input_attrs' => array(
 						'min'  => 768,
@@ -146,15 +146,15 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'name'        => 'blog-post-content',
 					'parent'      => divino_THEME_SETTINGS . '[blog-post-structure]',
 					'section'     => 'section-blog',
-					'title'       => __( 'Post Content', 'astra' ),
+					'title'       => __( 'Post Content', 'divino' ),
 					'default'     => divino_get_option( 'blog-post-content' ),
 					'type'        => 'sub-control',
 					'control'     => 'ast-selector',
 					'linked'      => 'excerpt',
 					'priority'    => 75,
 					'choices'     => array(
-						'full-content' => __( 'Full Content', 'astra' ),
-						'excerpt'      => __( 'Excerpt', 'astra' ),
+						'full-content' => __( 'Full Content', 'divino' ),
+						'excerpt'      => __( 'Excerpt', 'divino' ),
 					),
 					'responsive'  => false,
 					'renderAs'    => 'text',
@@ -171,7 +171,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 				array(
 					'name'     => divino_THEME_SETTINGS . '[blog-divider]',
 					'section'  => 'section-blog',
-					'title'    => __( 'Blog Layout', 'astra' ),
+					'title'    => __( 'Blog Layout', 'divino' ),
 					'type'     => 'control',
 					'control'  => 'ast-heading',
 					'priority' => 14,
@@ -190,7 +190,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'section'           => 'section-blog',
 					'default'           => divino_get_option( 'blog-layout' ),
 					'priority'          => 14,
-					'title'             => __( 'Layout', 'astra' ),
+					'title'             => __( 'Layout', 'divino' ),
 					'choices'           => $blog_layout,
 				),
 
@@ -204,7 +204,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'control'      => 'ast-number',
 					'qty_selector' => true,
 					'section'      => 'section-blog',
-					'title'        => __( 'Post Per Page', 'astra' ),
+					'title'        => __( 'Post Per Page', 'divino' ),
 					'priority'     => 14,
 					'responsive'   => false,
 					'input_attrs'  => array(
@@ -221,7 +221,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 				array(
 					'name'     => divino_THEME_SETTINGS . '[archive-post-content-structure-divider]',
 					'section'  => 'section-blog',
-					'title'    => __( 'Posts Structure', 'astra' ),
+					'title'    => __( 'Posts Structure', 'divino' ),
 					'type'     => 'control',
 					'control'  => 'ast-heading',
 					'priority' => 51,
@@ -237,7 +237,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'sanitize_callback' => array( 'divino_Customizer_Sanitizes', 'sanitize_multi_choices' ),
 					'section'           => 'section-blog',
 					'priority'          => 52,
-					'title'             => __( 'Post Elements', 'astra' ),
+					'title'             => __( 'Post Elements', 'divino' ),
 					'divider'           => array( 'ast_class' => 'ast-top-spacing' ),
 					'choices'           => array(
 						'image'      => array(
@@ -245,43 +245,43 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 							'is_parent'   => true,
 							'main_index'  => 'image',
 							'clone_limit' => 1,
-							'title'       => __( 'Featured Image', 'astra' ),
+							'title'       => __( 'Featured Image', 'divino' ),
 						),
 						'category'   => array(
 							'clone'       => false,
 							'is_parent'   => true,
 							'main_index'  => 'category',
 							'clone_limit' => 1,
-							'title'       => __( 'Categories', 'astra' ),
+							'title'       => __( 'Categories', 'divino' ),
 						),
 						'tag'        => array(
 							'clone'       => false,
 							'is_parent'   => true,
 							'main_index'  => 'tag',
 							'clone_limit' => 1,
-							'title'       => __( 'Tags', 'astra' ),
+							'title'       => __( 'Tags', 'divino' ),
 						),
-						'title'      => __( 'Title', 'astra' ),
+						'title'      => __( 'Title', 'divino' ),
 						'title-meta' => array(
 							'clone'       => false,
 							'is_parent'   => true,
 							'main_index'  => 'title-meta',
 							'clone_limit' => 1,
-							'title'       => __( 'Post Meta', 'astra' ),
+							'title'       => __( 'Post Meta', 'divino' ),
 						),
 						'excerpt'    => array(
 							'clone'       => false,
 							'is_parent'   => true,
 							'main_index'  => 'excerpt',
 							'clone_limit' => 1,
-							'title'       => __( 'Excerpt', 'astra' ),
+							'title'       => __( 'Excerpt', 'divino' ),
 						),
 						'read-more'  => array(
 							'clone'       => false,
 							'is_parent'   => $if_divino_addon ? true : false,
 							'main_index'  => 'read-more',
 							'clone_limit' => 1,
-							'title'       => __( 'Read More', 'astra' ),
+							'title'       => __( 'Read More', 'divino' ),
 						),
 					),
 				),
@@ -299,10 +299,10 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'priority'   => 1,
 					'linked'     => 'date',
 					'transport'  => 'postMessage',
-					'title'      => __( 'Type', 'astra' ),
+					'title'      => __( 'Type', 'divino' ),
 					'choices'    => array(
-						'published' => __( 'Published', 'astra' ),
-						'updated'   => __( 'Last Updated', 'astra' ),
+						'published' => __( 'Published', 'divino' ),
+						'updated'   => __( 'Last Updated', 'divino' ),
 					),
 					'divider'    => array( 'ast_class' => 'ast-bottom-spacing' ),
 					'responsive' => false,
@@ -324,9 +324,9 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'priority'   => 2,
 					'responsive' => false,
 					'renderAs'   => 'text',
-					'title'      => __( 'Format', 'astra' ),
+					'title'      => __( 'Format', 'divino' ),
 					'choices'    => array(
-						''       => __( 'Default', 'astra' ),
+						''       => __( 'Default', 'divino' ),
 						'F j, Y' => 'November 6, 2010',
 						'Y-m-d'  => '2010-11-06',
 						'm/d/Y'  => '11/06/2010',
@@ -347,11 +347,11 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'linked'                 => 'image',
 					'priority'               => 5,
 					'control'                => 'ast-selector',
-					'title'                  => __( 'Image Ratio', 'astra' ),
+					'title'                  => __( 'Image Ratio', 'divino' ),
 					'choices'                => array(
-						''           => __( 'Original', 'astra' ),
-						'predefined' => __( 'Predefined', 'astra' ),
-						'custom'     => __( 'Custom', 'astra' ),
+						''           => __( 'Original', 'divino' ),
+						'predefined' => __( 'Predefined', 'divino' ),
+						'custom'     => __( 'Custom', 'divino' ),
 					),
 					'responsive'             => false,
 					'renderAs'               => 'text',
@@ -379,10 +379,10 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'priority'   => 10,
 					'control'    => 'ast-selector',
 					'choices'    => array(
-						'1/1'  => __( '1:1', 'astra' ),
-						'4/3'  => __( '4:3', 'astra' ),
-						'16/9' => __( '16:9', 'astra' ),
-						'2/1'  => __( '2:1', 'astra' ),
+						'1/1'  => __( '1:1', 'divino' ),
+						'4/3'  => __( '4:3', 'divino' ),
+						'16/9' => __( '16:9', 'divino' ),
+						'2/1'  => __( '2:1', 'divino' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -397,7 +397,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'type'              => 'sub-control',
 					'control'           => 'ast-number',
 					'transport'         => 'postMessage',
-					'title'             => __( 'Width', 'astra' ),
+					'title'             => __( 'Width', 'divino' ),
 					'qty_selector'      => true,
 					'parent'            => divino_THEME_SETTINGS . '[blog-post-structure]',
 					'section'           => 'section-blog',
@@ -416,7 +416,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'control'      => 'ast-number',
 					'qty_selector' => true,
 					'transport'    => 'postMessage',
-					'title'        => __( 'Height', 'astra' ),
+					'title'        => __( 'Height', 'divino' ),
 					'parent'       => divino_THEME_SETTINGS . '[blog-post-structure]',
 					'section'      => 'section-blog',
 					'linked'       => 'image',
@@ -432,7 +432,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'section'  => 'section-blog',
 					'priority' => 14,
 					'label'    => '',
-					'help'     => sprintf( /* translators: 1: link open markup, 2: link close markup */ __( 'Calculate a personalized image ratio using this %1$s online tool %2$s for your image dimensions.', 'astra' ), '<a href="' . esc_url( 'https://www.digitalrebellion.com/webapps/aspectcalc' ) . '" target="_blank">', '</a>' ),
+					'help'     => sprintf( /* translators: 1: link open markup, 2: link close markup */ __( 'Calculate a personalized image ratio using this %1$s online tool %2$s for your image dimensions.', 'divino' ), '<a href="' . esc_url( 'https://www.digitalrebellion.com/webapps/aspectcalc' ) . '" target="_blank">', '</a>' ),
 				),
 
 				/**
@@ -447,15 +447,15 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'type'       => 'sub-control',
 					'priority'   => 17,
 					'transport'  => 'postMessage',
-					'title'      => __( 'Hover Effect', 'astra' ),
+					'title'      => __( 'Hover Effect', 'divino' ),
 					'divider'    => array( 'ast_class' => 'ast-top-divider' ),
 					'control'    => 'ast-selector',
 					'responsive' => false,
 					'renderAs'   => 'text',
 					'choices'    => array(
-						'none'     => __( 'None', 'astra' ),
-						'zoom-in'  => __( 'Zoom In', 'astra' ),
-						'zoom-out' => __( 'Zoom Out', 'astra' ),
+						'none'     => __( 'None', 'divino' ),
+						'zoom-in'  => __( 'Zoom In', 'divino' ),
+						'zoom-out' => __( 'Zoom Out', 'divino' ),
 					),
 				),
 
@@ -471,7 +471,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'type'      => 'sub-control',
 					'priority'  => 17,
 					'transport' => 'postMessage',
-					'title'     => __( 'Image Size', 'astra' ),
+					'title'     => __( 'Image Size', 'divino' ),
 					'divider'   => array( 'ast_class' => 'ast-top-divider' ),
 					'control'   => 'ast-select',
 					'choices'   => divino_get_site_image_sizes(),
@@ -483,7 +483,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 				array(
 					'name'     => divino_THEME_SETTINGS . '[blog-post-color-divider]',
 					'section'  => 'section-blog',
-					'title'    => __( 'Post Cards', 'astra' ),
+					'title'    => __( 'Post Cards', 'divino' ),
 					'type'     => 'control',
 					'control'  => 'ast-heading',
 					'priority' => 1,
@@ -504,7 +504,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'control'   => 'ast-color',
 					'section'   => 'section-blog',
 					'priority'  => 2.5,
-					'title'     => __( 'Background Overlay', 'astra' ),
+					'title'     => __( 'Background Overlay', 'divino' ),
 					'transport' => 'postMessage',
 					'context'   => array(
 						divino_Builder_Helper::$design_tab_config,
@@ -527,7 +527,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'control'        => 'ast-responsive-spacing',
 					'transport'      => 'postMessage',
 					'section'        => 'section-blog',
-					'title'          => __( 'Border Radius', 'astra' ),
+					'title'          => __( 'Border Radius', 'divino' ),
 					'suffix'         => 'px',
 					'priority'       => $if_divino_addon ? 144 : 2.5,
 					'divider'        => array( 'ast_class' => 'ast-top-divider' ),
@@ -535,10 +535,10 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'linked_choices' => true,
 					'unit_choices'   => array( 'px', 'em', '%' ),
 					'choices'        => array(
-						'top'    => __( 'Top', 'astra' ),
-						'right'  => __( 'Right', 'astra' ),
-						'bottom' => __( 'Bottom', 'astra' ),
-						'left'   => __( 'Left', 'astra' ),
+						'top'    => __( 'Top', 'divino' ),
+						'right'  => __( 'Right', 'divino' ),
+						'bottom' => __( 'Bottom', 'divino' ),
+						'left'   => __( 'Left', 'divino' ),
 					),
 					'connected'      => false,
 				),
@@ -550,7 +550,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'name'       => 'blog-category-style',
 					'parent'     => divino_THEME_SETTINGS . '[blog-post-structure]',
 					'section'    => 'section-blog',
-					'title'      => __( 'Style', 'astra' ),
+					'title'      => __( 'Style', 'divino' ),
 					'default'    => divino_get_option( 'blog-category-style' ),
 					'type'       => 'sub-control',
 					'control'    => 'ast-selector',
@@ -558,9 +558,9 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'priority'   => 75,
 					'transport'  => 'refresh',
 					'choices'    => array(
-						'default'   => __( 'Default', 'astra' ),
-						'badge'     => __( 'Badge', 'astra' ),
-						'underline' => __( 'Underline', 'astra' ),
+						'default'   => __( 'Default', 'divino' ),
+						'badge'     => __( 'Badge', 'divino' ),
+						'underline' => __( 'Underline', 'divino' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -573,7 +573,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'name'       => 'blog-tag-style',
 					'parent'     => divino_THEME_SETTINGS . '[blog-post-structure]',
 					'section'    => 'section-blog',
-					'title'      => __( 'Style', 'astra' ),
+					'title'      => __( 'Style', 'divino' ),
 					'default'    => divino_get_option( 'blog-tag-style' ),
 					'type'       => 'sub-control',
 					'control'    => 'ast-selector',
@@ -581,9 +581,9 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'linked'     => 'tag',
 					'priority'   => 75,
 					'choices'    => array(
-						'default'   => __( 'Default', 'astra' ),
-						'badge'     => __( 'Badge', 'astra' ),
-						'underline' => __( 'Underline', 'astra' ),
+						'default'   => __( 'Default', 'divino' ),
+						'badge'     => __( 'Badge', 'divino' ),
+						'underline' => __( 'Underline', 'divino' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -596,7 +596,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'name'       => 'blog-post-meta-divider-type',
 					'parent'     => divino_THEME_SETTINGS . '[blog-post-structure]',
 					'section'    => 'section-blog',
-					'title'      => __( 'Divider Type', 'astra' ),
+					'title'      => __( 'Divider Type', 'divino' ),
 					'default'    => divino_get_option( 'blog-post-meta-divider-type' ),
 					'type'       => 'sub-control',
 					'transport'  => 'postMessage',
@@ -608,7 +608,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 						'-'    => '-',
 						'|'    => '|',
 						'•'    => '•',
-						'none' => __( 'None', 'astra' ),
+						'none' => __( 'None', 'divino' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -621,7 +621,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'name'       => 'blog-meta-category-style',
 					'parent'     => divino_THEME_SETTINGS . '[blog-meta]',
 					'section'    => 'section-blog',
-					'title'      => __( 'Style', 'astra' ),
+					'title'      => __( 'Style', 'divino' ),
 					'default'    => divino_get_option( 'blog-meta-category-style' ),
 					'type'       => 'sub-control',
 					'transport'  => 'postMessage',
@@ -629,8 +629,8 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'linked'     => 'category',
 					'priority'   => 75,
 					'choices'    => array(
-						'default'   => __( 'Default', 'astra' ),
-						'underline' => __( 'Underline', 'astra' ),
+						'default'   => __( 'Default', 'divino' ),
+						'underline' => __( 'Underline', 'divino' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -643,7 +643,7 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'name'       => 'blog-meta-tag-style',
 					'parent'     => divino_THEME_SETTINGS . '[blog-meta]',
 					'section'    => 'section-blog',
-					'title'      => __( 'Style', 'astra' ),
+					'title'      => __( 'Style', 'divino' ),
 					'default'    => divino_get_option( 'blog-meta-tag-style' ),
 					'type'       => 'sub-control',
 					'control'    => 'ast-selector',
@@ -651,8 +651,8 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 					'linked'     => 'tag',
 					'priority'   => 75,
 					'choices'    => array(
-						'default'   => __( 'Default', 'astra' ),
-						'underline' => __( 'Underline', 'astra' ),
+						'default'   => __( 'Default', 'divino' ),
+						'underline' => __( 'Underline', 'divino' ),
 					),
 					'responsive' => false,
 					'renderAs'   => 'text',
@@ -687,19 +687,19 @@ if ( ! class_exists( 'divino_Blog_Layout_Configs' ) ) {
 							'value'    => 'title-meta',
 						),
 					),
-					'title'             => __( 'Meta', 'astra' ),
+					'title'             => __( 'Meta', 'divino' ),
 					'choices'           => array(
-						'comments' => __( 'Comments', 'astra' ),
-						'category' => __( 'Categories', 'astra' ),
-						'author'   => __( 'Author', 'astra' ),
+						'comments' => __( 'Comments', 'divino' ),
+						'category' => __( 'Categories', 'divino' ),
+						'author'   => __( 'Author', 'divino' ),
 						'date'     => array(
 							'clone'       => false,
 							'is_parent'   => true,
 							'main_index'  => 'date',
 							'clone_limit' => 1,
-							'title'       => __( 'Date', 'astra' ),
+							'title'       => __( 'Date', 'divino' ),
 						),
-						'tag'      => __( 'Tags', 'astra' ),
+						'tag'      => __( 'Tags', 'divino' ),
 					),
 					'divider'           => array( 'ast_class' => 'ast-top-section-divider' ),
 				);

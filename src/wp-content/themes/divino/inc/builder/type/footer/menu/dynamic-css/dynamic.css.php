@@ -2,7 +2,7 @@
 /**
  * Footer Menu Colors - Dynamic CSS
  *
- * @package astra-builder
+ * @package divino-builder
  * @since 3.0.0
  */
 
@@ -18,8 +18,8 @@ add_filter( 'divino_dynamic_theme_css', 'divino_hb_footer_menu_dynamic_css', 11 
 /**
  * Dynamic CSS
  *
- * @param  string $dynamic_css          Astra Dynamic CSS.
- * @param  string $dynamic_css_filtered Astra Dynamic CSS Filters.
+ * @param  string $dynamic_css          divino Dynamic CSS.
+ * @param  string $dynamic_css_filtered divino Dynamic CSS Filters.
  * @return String Generated dynamic CSS for Footer Menu Colors.
  *
  * @since 3.0.0
@@ -32,7 +32,7 @@ function divino_hb_footer_menu_dynamic_css( $dynamic_css, $dynamic_css_filtered 
 
 	$_section = 'section-footer-menu';
 
-	$selector = '#astra-footer-menu';
+	$selector = '#divino-footer-menu';
 
 	$visibility_selector = '.footer-widget-area[data-section="section-footer-menu"]';
 
@@ -133,10 +133,10 @@ function divino_hb_footer_menu_dynamic_css( $dynamic_css, $dynamic_css_filtered 
 	$arr_footer_ul_desktop = array_merge( $arr_footer_ul_desktop, divino_get_responsive_background_obj( $menu_resp_bg_color, 'desktop' ) );
 
 	$css_output_desktop = array(
-		'.footer-widget-area[data-section="section-footer-menu"] .astra-footer-horizontal-menu' => array(
+		'.footer-widget-area[data-section="section-footer-menu"] .divino-footer-horizontal-menu' => array(
 			'justify-content' => $desktop_alignment,
 		),
-		'.footer-widget-area[data-section="section-footer-menu"] .astra-footer-vertical-menu .menu-item' => array(
+		'.footer-widget-area[data-section="section-footer-menu"] .divino-footer-vertical-menu .menu-item' => array(
 			'align-items' => $desktop_alignment,
 		),
 		$selector . ' .menu-item > a'                   => array(
@@ -169,15 +169,15 @@ function divino_hb_footer_menu_dynamic_css( $dynamic_css, $dynamic_css_filtered 
 	$arr_footer_ul_tablet = array_merge( $arr_footer_ul_tablet, divino_get_responsive_background_obj( $menu_resp_bg_color, 'tablet' ) );
 
 	$css_output_tablet = array(
-		'.footer-widget-area[data-section="section-footer-menu"] .astra-footer-tablet-horizontal-menu' => array(
+		'.footer-widget-area[data-section="section-footer-menu"] .divino-footer-tablet-horizontal-menu' => array(
 			'justify-content' => $tablet_alignment,
 			'display'         => 'flex',
 		),
-		'.footer-widget-area[data-section="section-footer-menu"] .astra-footer-tablet-vertical-menu' => array(
+		'.footer-widget-area[data-section="section-footer-menu"] .divino-footer-tablet-vertical-menu' => array(
 			'display'         => 'grid',
 			'justify-content' => $tablet_alignment,
 		),
-		'.footer-widget-area[data-section="section-footer-menu"] .astra-footer-tablet-vertical-menu .menu-item' => array(
+		'.footer-widget-area[data-section="section-footer-menu"] .divino-footer-tablet-vertical-menu .menu-item' => array(
 			'align-items' => $tablet_alignment,
 		),
 		$selector . ' .menu-item > a'                   => array(
@@ -211,15 +211,15 @@ function divino_hb_footer_menu_dynamic_css( $dynamic_css, $dynamic_css_filtered 
 
 	$css_output_mobile = array(
 		$selector                                       => divino_get_responsive_background_obj( $menu_resp_bg_color, 'mobile' ),
-		'.footer-widget-area[data-section="section-footer-menu"] .astra-footer-mobile-horizontal-menu' => array(
+		'.footer-widget-area[data-section="section-footer-menu"] .divino-footer-mobile-horizontal-menu' => array(
 			'justify-content' => $mobile_alignment,
 			'display'         => 'flex',
 		),
-		'.footer-widget-area[data-section="section-footer-menu"] .astra-footer-mobile-vertical-menu' => array(
+		'.footer-widget-area[data-section="section-footer-menu"] .divino-footer-mobile-vertical-menu' => array(
 			'display'         => 'grid',
 			'justify-content' => $mobile_alignment,
 		),
-		'.footer-widget-area[data-section="section-footer-menu"] .astra-footer-mobile-vertical-menu .menu-item' => array(
+		'.footer-widget-area[data-section="section-footer-menu"] .divino-footer-mobile-vertical-menu .menu-item' => array(
 			'align-items' => $mobile_alignment,
 		),
 		$selector . ' .menu-item > a'                   => array(
@@ -262,14 +262,14 @@ function divino_hb_footer_menu_dynamic_css( $dynamic_css, $dynamic_css_filtered 
  */
 function divino_footer_menu_static_css() {
 	$footer_menu_css = '
-	.footer-nav-wrap .astra-footer-vertical-menu {
+	.footer-nav-wrap .divino-footer-vertical-menu {
 		display: grid;
 	}
 	@media (min-width: 769px) {
-		.footer-nav-wrap .astra-footer-horizontal-menu li {
+		.footer-nav-wrap .divino-footer-horizontal-menu li {
 		  margin: 0;
 		}
-		.footer-nav-wrap .astra-footer-horizontal-menu a {
+		.footer-nav-wrap .divino-footer-horizontal-menu a {
 		  padding: 0 0.5em;
 		}
 	}';
@@ -277,20 +277,20 @@ function divino_footer_menu_static_css() {
 	if ( is_rtl() ) {
 		$footer_menu_css .= '
 		@media (min-width: 769px) {
-			.footer-nav-wrap .astra-footer-horizontal-menu li:first-child a {
+			.footer-nav-wrap .divino-footer-horizontal-menu li:first-child a {
 				padding-right: 0;
 			}
-			.footer-nav-wrap .astra-footer-horizontal-menu li:last-child a {
+			.footer-nav-wrap .divino-footer-horizontal-menu li:last-child a {
 				padding-left: 0;
 			}
 		}';
 	} else {
 		$footer_menu_css .= '
 		@media (min-width: 769px) {
-			.footer-nav-wrap .astra-footer-horizontal-menu li:first-child a {
+			.footer-nav-wrap .divino-footer-horizontal-menu li:first-child a {
 				padding-left: 0;
 			}
-			.footer-nav-wrap .astra-footer-horizontal-menu li:last-child a {
+			.footer-nav-wrap .divino-footer-horizontal-menu li:last-child a {
 				padding-right: 0;
 			}
 		}';

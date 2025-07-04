@@ -4,31 +4,31 @@
  * here. Your javascript should grab settings from customizer controls, and
  * then make any necessary changes to the page using jQuery.
  *
- * @package Astra
+ * @package divino
  * @since 3.0.0
  */
 
 ( function( $ ) {
 
-	var tablet_break_point    = astraBuilderPreview.tablet_break_point || 768,
-		mobile_break_point    = astraBuilderPreview.mobile_break_point || 544;
+	var tablet_break_point    = divinoBuilderPreview.tablet_break_point || 768,
+		mobile_break_point    = divinoBuilderPreview.mobile_break_point || 544;
 
 	// Close Icon Color.
 	divino_css(
-		'astra-settings[off-canvas-close-color]',
+		'divino-settings[off-canvas-close-color]',
 		'color',
 		'.ast-mobile-popup-drawer.active .menu-toggle-close'
 	);
 
 	// Off-Canvas Background Color.
-	wp.customize( 'astra-settings[off-canvas-background]', function( value ) {
+	wp.customize( 'divino-settings[off-canvas-background]', function( value ) {
 		value.bind( function( bg_obj ) {
 			var dynamicStyle = ' .ast-mobile-popup-drawer.active .ast-mobile-popup-inner, .ast-mobile-header-wrap .ast-mobile-header-content, .ast-desktop-header-content { {{css}} }';
 			divino_background_obj_css( wp.customize, bg_obj, 'off-canvas-background', dynamicStyle );
 		} );
 	} );
 
-	wp.customize( 'astra-settings[off-canvas-inner-spacing]', function ( value ) {
+	wp.customize( 'divino-settings[off-canvas-inner-spacing]', function ( value ) {
         value.bind( function ( spacing ) {
 			var dynamicStyle = '';
 			if( spacing != '' ) {
@@ -41,13 +41,13 @@
         } );
 	} );
 
-	wp.customize( 'astra-settings[mobile-header-type]', function ( value ) {
+	wp.customize( 'divino-settings[mobile-header-type]', function ( value ) {
         value.bind( function ( newVal ) {
 
 			var mobile_header = document.querySelectorAll( "#ast-mobile-header" );
 			var desktop_header = document.querySelectorAll( "#ast-desktop-header" );
 			var header_type = newVal;
-			var off_canvas_slide = ( typeof ( wp.customize._value['astra-settings[off-canvas-slide]'] ) != 'undefined' ) ? wp.customize._value['astra-settings[off-canvas-slide]']._value : 'right';
+			var off_canvas_slide = ( typeof ( wp.customize._value['divino-settings[off-canvas-slide]'] ) != 'undefined' ) ? wp.customize._value['divino-settings[off-canvas-slide]']._value : 'right';
 
 			var side_class = '';
 
@@ -92,7 +92,7 @@
         } );
 	} );
 
-	wp.customize( 'astra-settings[off-canvas-slide]', function ( value ) {
+	wp.customize( 'divino-settings[off-canvas-slide]', function ( value ) {
         value.bind( function ( newval ) {
 
 			var side_class = '';
@@ -113,7 +113,7 @@
 	} );
 
     // Padding.
-    wp.customize( 'astra-settings[off-canvas-padding]', function( value ) {
+    wp.customize( 'divino-settings[off-canvas-padding]', function( value ) {
         value.bind( function( padding ) {
             if(
                 padding.desktop.bottom != '' || padding.desktop.top != '' || padding.desktop.left != '' || padding.desktop.right != '' ||
@@ -152,7 +152,7 @@
 		} );
 	} );
 
-	wp.customize( 'astra-settings[header-builder-menu-toggle-target]', function ( value ) {
+	wp.customize( 'divino-settings[header-builder-menu-toggle-target]', function ( value ) {
         value.bind( function ( newval ) {
 			var menuTargetClass   = 'ast-builder-menu-toggle-' + newval + ' ';
 
@@ -162,7 +162,7 @@
 		} );
 	} );
 
-	wp.customize( 'astra-settings[header-offcanvas-content-alignment]', function ( value ) {
+	wp.customize( 'divino-settings[header-offcanvas-content-alignment]', function ( value ) {
         value.bind( function ( newval ) {
 
 			var alignment_class   = 'content-align-' + newval + ' ';

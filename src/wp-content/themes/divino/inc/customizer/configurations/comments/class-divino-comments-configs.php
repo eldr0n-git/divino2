@@ -1,10 +1,10 @@
 <?php
 /**
- * Comments options for Astra Theme.
+ * Comments options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 4.6.0
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 4.6.0
  */
 
 if ( ! class_exists( 'divino_Comments_Configs' ) ) {
@@ -16,10 +16,10 @@ if ( ! class_exists( 'divino_Comments_Configs' ) ) {
 		/**
 		 * Register Comments Customizer Configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 3.8.0
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 			$parent_section = 'section-blog-single';
@@ -35,7 +35,7 @@ if ( ! class_exists( 'divino_Comments_Configs' ) ) {
 				),
 				array(
 					'name'     => 'ast-sub-section-comments',
-					'title'    => __( 'Comments', 'astra' ),
+					'title'    => __( 'Comments', 'divino' ),
 					'type'     => 'section',
 					'section'  => $parent_section,
 					'panel'    => '',
@@ -46,7 +46,7 @@ if ( ! class_exists( 'divino_Comments_Configs' ) ) {
 					'section'  => $parent_section,
 					'type'     => 'control',
 					'control'  => 'ast-heading',
-					'title'    => __( 'Comments', 'astra' ),
+					'title'    => __( 'Comments', 'divino' ),
 					'priority' => 20,
 					'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),
 				),
@@ -58,7 +58,7 @@ if ( ! class_exists( 'divino_Comments_Configs' ) ) {
 					'section'  => $parent_section,
 					'priority' => 20,
 					'linked'   => 'ast-sub-section-comments',
-					'linkText' => __( 'Comments', 'astra' ),
+					'linkText' => __( 'Comments', 'divino' ),
 					'divider'  => array( 'ast_class' => 'ast-bottom-divider ast-bottom-section-divider' ),
 				),
 				array(
@@ -67,13 +67,13 @@ if ( ! class_exists( 'divino_Comments_Configs' ) ) {
 					'type'        => 'control',
 					'section'     => 'ast-sub-section-comments',
 					'priority'    => 20,
-					'title'       => __( 'Section Placement', 'astra' ),
+					'title'       => __( 'Section Placement', 'divino' ),
 					'control'     => 'ast-selector',
-					'description' => __( 'Decide whether to isolate or integrate the module with the entry content area.', 'astra' ),
+					'description' => __( 'Decide whether to isolate or integrate the module with the entry content area.', 'divino' ),
 					'choices'     => array(
-						''        => __( 'Default', 'astra' ),
-						'inside'  => __( 'Contained', 'astra' ),
-						'outside' => __( 'Separated', 'astra' ),
+						''        => __( 'Default', 'divino' ),
+						'inside'  => __( 'Contained', 'divino' ),
+						'outside' => __( 'Separated', 'divino' ),
 					),
 					'divider'     => array( 'ast_class' => 'ast-section-spacing' ),
 					'context'     => divino_Builder_Helper::$general_tab,
@@ -86,11 +86,11 @@ if ( ! class_exists( 'divino_Comments_Configs' ) ) {
 					'type'       => 'control',
 					'section'    => 'ast-sub-section-comments',
 					'priority'   => 20,
-					'title'      => __( 'Container Structure', 'astra' ),
+					'title'      => __( 'Container Structure', 'divino' ),
 					'control'    => 'ast-selector',
 					'choices'    => array(
-						'narrow' => __( 'Narrow', 'astra' ),
-						''       => __( 'Full Width', 'astra' ),
+						'narrow' => __( 'Narrow', 'divino' ),
+						''       => __( 'Full Width', 'divino' ),
 					),
 					'context'    => array(
 						divino_Builder_Helper::$general_tab_config,
@@ -111,11 +111,11 @@ if ( ! class_exists( 'divino_Comments_Configs' ) ) {
 					'type'       => 'control',
 					'section'    => 'ast-sub-section-comments',
 					'priority'   => 20,
-					'title'      => __( 'Form Position', 'astra' ),
+					'title'      => __( 'Form Position', 'divino' ),
 					'control'    => 'ast-selector',
 					'choices'    => array(
-						'below' => __( 'Below Comments', 'astra' ),
-						'above' => __( 'Above Comments', 'astra' ),
+						'below' => __( 'Below Comments', 'divino' ),
+						'above' => __( 'Above Comments', 'divino' ),
 					),
 					'context'    => divino_Builder_Helper::$general_tab,
 					'divider'    => array( 'ast_class' => 'ast-top-section-divider' ),

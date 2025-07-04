@@ -4,7 +4,7 @@
  * here. Your javascript should grab settings from customizer controls, and
  * then make any necessary changes to the page using jQuery.
  *
- * @package Astra Builder
+ * @package divino Builder
  * @since 3.0.0
  */
 
@@ -13,23 +13,23 @@
     var selector = '.ast-footer-copyright';
     var visibility_selector = '.ast-footer-copyright.ast-builder-layout-element';
 
-    var tablet_break_point    = astraBuilderPreview.tablet_break_point || 768,
-        mobile_break_point    = astraBuilderPreview.mobile_break_point || 544;
+    var tablet_break_point    = divinoBuilderPreview.tablet_break_point || 768,
+        mobile_break_point    = divinoBuilderPreview.mobile_break_point || 544;
 
     // HTML color.
     divino_css(
-        'astra-settings[footer-copyright-color]',
+        'divino-settings[footer-copyright-color]',
         'color',
         selector
     );
 
     // Typography CSS Generation.
     divino_responsive_font_size(
-        'astra-settings[font-size-section-footer-copyright]',
+        'divino-settings[font-size-section-footer-copyright]',
         selector
     );
 
-    wp.customize( 'astra-settings[footer-copyright-alignment]', function( value ) {
+    wp.customize( 'divino-settings[footer-copyright-alignment]', function( value ) {
         value.bind( function( alignment ) {
             if( alignment.desktop != '' || alignment.tablet != '' || alignment.mobile != '' ) {
                 var dynamicStyle = '';
@@ -55,7 +55,7 @@
     } );
 
     // Margin.
-    wp.customize( 'astra-settings[section-footer-copyright-margin]', function( value ) {
+    wp.customize( 'divino-settings[section-footer-copyright-margin]', function( value ) {
         value.bind( function( margin ) {
             if(
                 margin.desktop.bottom != '' || margin.desktop.top != '' || margin.desktop.left != '' || margin.desktop.right != '' ||

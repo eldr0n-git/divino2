@@ -1,10 +1,10 @@
 <?php
 /**
- * Styling Options for Astra Theme.
+ * Styling Options for divino Theme.
  *
- * @package     Astra
- * @link        https://wpastra.com/
- * @since       Astra 1.0.15
+ * @package     divino
+ * @link        https://wpdivino.com/
+ * @since       divino 1.0.15
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -22,22 +22,22 @@ if ( ! class_exists( 'divino_Single_Typo_Configs' ) ) {
 		/**
 		 * Register Single Typography configurations.
 		 *
-		 * @param Array                $configurations Astra Customizer Configurations.
+		 * @param Array                $configurations divino Customizer Configurations.
 		 * @param WP_Customize_Manager $wp_customize instance of WP_Customize_Manager.
 		 * @since 1.4.3
-		 * @return Array Astra Customizer Configurations with updated configurations.
+		 * @return Array divino Customizer Configurations with updated configurations.
 		 */
 		public function register_configuration( $configurations, $wp_customize ) {
 
 			$_configs = array();
 
-			// Learn More link if Astra Pro is not activated.
+			// Learn More link if divino Pro is not activated.
 			if ( divino_showcase_upgrade_notices() ) {
 
 				$_configs = array(
 
 					/**
-					 * Option: Astra Pro blog single post's options.
+					 * Option: divino Pro blog single post's options.
 					 */
 					array(
 						'name'     => divino_THEME_SETTINGS . '[ast-single-post-items]',
@@ -46,35 +46,35 @@ if ( ! class_exists( 'divino_Single_Typo_Configs' ) ) {
 						'campaign' => 'blog-single',
 						'choices'  => array(
 							'one'   => array(
-								'title' => __( 'Author Box with Social Share', 'astra' ),
+								'title' => __( 'Author Box with Social Share', 'divino' ),
 							),
 							'two'   => array(
-								'title' => __( 'Auto load previous posts', 'astra' ),
+								'title' => __( 'Auto load previous posts', 'divino' ),
 							),
 							'three' => array(
-								'title' => __( 'Single post navigation control', 'astra' ),
+								'title' => __( 'Single post navigation control', 'divino' ),
 							),
 							'four'  => array(
-								'title' => __( 'Custom featured images size', 'astra' ),
+								'title' => __( 'Custom featured images size', 'divino' ),
 							),
 							'seven' => array(
-								'title' => __( 'Single post read time', 'astra' ),
+								'title' => __( 'Single post read time', 'divino' ),
 							),
 							'five'  => array(
-								'title' => __( 'Extended typography options', 'astra' ),
+								'title' => __( 'Extended typography options', 'divino' ),
 							),
 							'six'   => array(
-								'title' => __( 'Extended spacing options', 'astra' ),
+								'title' => __( 'Extended spacing options', 'divino' ),
 							),
 							'eight' => array(
-								'title' => __( 'Social sharing options', 'astra' ),
+								'title' => __( 'Social sharing options', 'divino' ),
 							),
 						),
 						'section'  => 'section-blog-single',
 						'default'  => '',
 						'priority' => 999,
 						'context'  => array(),
-						'title'    => __( 'Extensive range of tools to help blog pages stand out.', 'astra' ),
+						'title'    => __( 'Extensive range of tools to help blog pages stand out.', 'divino' ),
 						'divider'  => array( 'ast_class' => 'ast-top-section-divider' ),
 					),
 				);

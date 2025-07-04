@@ -3,10 +3,10 @@
  *
  * Handles toggling the navigation menu for Addon widget
  *
- * @package Astra
+ * @package divino
  */
 
-astraToggleSetupPro = function( mobileHeaderType, body, menu_click_listeners ) {
+divinoToggleSetupPro = function( mobileHeaderType, body, menu_click_listeners ) {
 
 	var flag = false;
 	var menuToggleAllLength;
@@ -46,8 +46,8 @@ astraToggleSetupPro = function( mobileHeaderType, body, menu_click_listeners ) {
 
 				if (!menu_click_listeners[i]) {
 					menu_click_listeners[i] = menu_toggle_all[i];
-					menu_toggle_all[i].removeEventListener('click', astraNavMenuToggle);
-					menu_toggle_all[i].addEventListener('click', astraNavMenuToggle, false);
+					menu_toggle_all[i].removeEventListener('click', divinoNavMenuToggle);
+					menu_toggle_all[i].addEventListener('click', divinoNavMenuToggle, false);
 				}
 			}
 
@@ -65,8 +65,8 @@ astraToggleSetupPro = function( mobileHeaderType, body, menu_click_listeners ) {
                     if (divino_menu_toggle.length > 0) {
 
                         for (var j = 0; j < divino_menu_toggle.length; j++) {
-                            divino_menu_toggle[j].removeEventListener('click', AstraToggleSubMenu);
-                            divino_menu_toggle[j].addEventListener('click', AstraToggleSubMenu, false);
+                            divino_menu_toggle[j].removeEventListener('click', divinoToggleSubMenu);
+                            divino_menu_toggle[j].addEventListener('click', divinoToggleSubMenu, false);
                         }
                     }
                 }
@@ -75,7 +75,7 @@ astraToggleSetupPro = function( mobileHeaderType, body, menu_click_listeners ) {
     }
 }
 
-astraNavMenuTogglePro = function ( event, body, mobileHeaderType, thisObj ) {
+divinoNavMenuTogglePro = function ( event, body, mobileHeaderType, thisObj ) {
 
     event.preventDefault();
 
@@ -95,14 +95,14 @@ astraNavMenuTogglePro = function ( event, body, mobileHeaderType, thisObj ) {
     if ( 'desktop' === event.currentTarget.trigger_type ) {
 
         if ( null !== desktop_menu && '' !== desktop_menu && undefined !== desktop_menu ) {
-            astraToggleClass(desktop_menu, 'toggle-on');
+            divinoToggleClass(desktop_menu, 'toggle-on');
             if (desktop_menu.classList.contains('toggle-on')) {
                 desktop_menu.style.display = 'block';
             } else {
                 desktop_menu.style.display = '';
             }
         }
-        astraToggleClass(desktop_toggle, 'toggled');
+        divinoToggleClass(desktop_toggle, 'toggled');
         if ( desktop_toggle.classList.contains( 'toggled' ) ) {
             body.classList.add("ast-main-header-nav-open");
             if ( 'dropdown' === mobileHeaderType ) {
@@ -144,10 +144,10 @@ astraNavMenuTogglePro = function ( event, body, mobileHeaderType, thisObj ) {
     var menu_class = thisObj.getAttribute('class') || '';
 
     if ( menu_class.indexOf('main-header-menu-toggle') !== -1 ) {
-        astraToggleClass(__main_header_all[event_index], 'toggle-on');
-        astraToggleClass(menu_toggle_all[event_index], 'toggled');
+        divinoToggleClass(__main_header_all[event_index], 'toggle-on');
+        divinoToggleClass(menu_toggle_all[event_index], 'toggled');
         if ( sticky_header && 1 < menu_toggle_all.length ) {
-            astraToggleClass(menu_toggle_all['1'], 'toggled');
+            divinoToggleClass(menu_toggle_all['1'], 'toggled');
         }
         if (__main_header_all[event_index].classList.contains('toggle-on')) {
             __main_header_all[event_index].style.display = 'block';

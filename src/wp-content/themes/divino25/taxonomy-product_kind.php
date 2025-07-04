@@ -10,6 +10,8 @@ woocommerce_output_content_wrapper(); // обычно открывает <div cl
 
 wc_get_template_part( 'archive', 'product' ); // реальный шаблон WooCommerce
 
+echo '<!-- using divino25 taxonomy-product_kind.php -->';
 woocommerce_output_content_wrapper_end();
 
 get_footer( 'shop' ); // аналогично
+

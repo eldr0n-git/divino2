@@ -1,3 +1,4 @@
+<!-- cta-heading-search.php from divino25 theme  patterns-->
 <?php
 /**
  * Title: Heading and search form
