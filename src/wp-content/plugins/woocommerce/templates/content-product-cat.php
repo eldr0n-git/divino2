@@ -55,3 +55,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 	do_action( 'woocommerce_after_subcategory', $category );
 	?>
 </li>
+echo '<!-- divino25 content-product-cat.php   -->';

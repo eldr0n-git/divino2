@@ -65,3 +65,6 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 	do_action( 'woocommerce_after_shop_loop_item' );
 	?>
 </li>
+
+
+echo '<!-- divino25 content-product.php   -->';

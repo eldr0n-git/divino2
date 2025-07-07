@@ -1,4 +1,4 @@
-<!-- footer.php from divino25 theme  patterns-->
+<!-- footer.php start from divino25 theme  patterns-->
 <?php
 /**
  * Title: Footer

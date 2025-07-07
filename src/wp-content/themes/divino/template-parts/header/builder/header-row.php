@@ -53,6 +53,18 @@ if ( divino_Builder_Helper::is_row_empty( $divino_header_row, 'header', 'desktop
 							?>
 						</div>
 					<?php } ?>
+
+                     <div class="search">
+                        <form role="search__form" method="get" class="search-form" action="<?php echo esc_url(home_url('/')); ?>">
+                            <label>
+                                <span class="screen-reader-text">Поиск по названию:</span>
+                                <input type="search" class="search__input" placeholder="Поиск по названию" value="<?php echo get_search_query(); ?>" name="s" />
+                                <input type="hidden" name="post_type" value="product" />
+                            </label>
+                            <button type="submit" class="search__submit">🔍</button>
+                        </form>
+                    </div>
+
 						<?php if ( divino_Builder_Helper::has_center_column( $divino_header_row ) ) { ?>
 							<div class="site-header-<?php echo esc_attr( $divino_header_row ); ?>-section-center site-header-section ast-flex ast-grid-section-center">
 								<?php

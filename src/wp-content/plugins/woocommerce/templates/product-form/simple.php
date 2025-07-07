@@ -29,3 +29,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</div>
 </div>
 <!-- /wp:woocommerce/product-section -->
+
+<!-- divino25 simple.php   -->

@@ -3,7 +3,7 @@
  * Loader Functions
  *
  * @package     divino
- * @link        https://wpdivino.com/
+ * @link        https://divino.kz/
  * @since       divino 1.0.0
  */
 
@@ -278,6 +278,8 @@ if ( ! class_exists( 'divino_Enqueue_Scripts' ) ) {
 			$all_assets = self::theme_assets();
 			$styles     = $all_assets['css'];
 			$scripts    = $all_assets['js'];
+
+			wp_enqueue_style( 'divino-style', get_stylesheet_uri(), array(), divino_THEME_VERSION, 'all' );
 
 			if ( is_array( $styles ) && ! empty( $styles ) ) {
 				// Register & Enqueue Styles.

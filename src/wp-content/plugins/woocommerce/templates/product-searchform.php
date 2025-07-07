@@ -26,3 +26,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<button type="submit" value="<?php echo esc_attr_x( 'Search', 'submit button', 'woocommerce' ); ?>" class="<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ); ?>"><?php echo esc_html_x( 'Search', 'submit button', 'woocommerce' ); ?></button>
 	<input type="hidden" name="post_type" value="product" />
 </form>
+echo '<!-- divino25 product-searchform.php   -->';

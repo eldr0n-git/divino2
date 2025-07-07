@@ -33,6 +33,10 @@ Text Domain: divino
     --input-brd-size: var(--brd-size);
     --input-brs: var(--brs);
     --input-text-color: #6D5561;
+
+    --header-logo-width: 225px;
+    --product-card-image-height: 600px;
+    --gallery-card-image-height: 370px;
 }
 
 /*
@@ -91,7 +95,7 @@ h1 {
 }
 .wp-block-site-title a {
     background-image: url('assets/images/divino-logo.svg');
-    width: 225px;
+    width: var( --header-logo-width);
     height: 83px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -402,4 +406,16 @@ footer {
 	aspect-ratio: 260 / 370;
 	object-fit: cover;
 	display: block;
+}
+
+/* Product image styles */
+.woocommerce div.product div.images img {
+
+    height: var(--product-card-image-height, 600px);
+    object-fit: contain;
+}
+/* grid view */
+.wc-block-components-product-image img {
+    height: var(--gallery-card-image-height, 370px);
+    object-fit: contain;
 }

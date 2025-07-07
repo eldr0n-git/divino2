@@ -3,8 +3,8 @@
  * Menu Header Configuration.
  *
  * @package     divino
- * @link        https://wpdivino.com/
- * @since       4.5.2
+ * @link        https://divino.kz/
+ * @since       1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Register menu header builder Customizer Configurations.
  *
- * @since 4.5.2
+ * @since 1.0.0
  * @return array divino Customizer Configurations with updated configurations.
  */
 function divino_header_menu_configuration() {
