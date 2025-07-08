@@ -33,8 +33,16 @@ get_header( 'shop' ); ?>
 
 		<?php while ( have_posts() ) : ?>
 			<?php the_post(); ?>
-
+            <?php
+                /**
+                 * woocommerce_before_single_product hook.
+                 *
+                 * @hooked woocommerce_show_messages - 10
+                 */
+                do_action( 'woocommerce_before_single_product' );?>
 			<?php wc_get_template_part( 'content', 'single-product' ); ?>
+
+
 
 		<?php endwhile; // end of the loop. ?>
 

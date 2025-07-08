@@ -211,3 +211,12 @@ add_theme_support('post-thumbnails');
 add_image_size('product-card', 260, 370, true); // true — жёсткая обрезка
 
 add_filter( 'woocommerce_template_debug_mode', '__return_true' );
+
+// try to disable cropping for product thumbnails
+add_filter( 'woocommerce_get_image_size_thumbnail', function( $size ) {
+    return array(
+        'width'  => 0, // Default thumbnail width (adjust as needed)
+        'height' => 600,   // Set height to 0 to maintain original aspect ratio
+        'crop'   => 0,   // Disable cropping (0 or false)
+    );
+} );

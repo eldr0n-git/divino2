@@ -18,6 +18,7 @@ Text Domain: divino
     --brd-size: 2px;
     --brs: 4px;
 
+    --body-bg-color: #FBF5F7;
     --primary-color: #C7383E;
     --primary-bg-primary: #C7383E;
     --primary-text-color: #fff;
@@ -43,6 +44,9 @@ Text Domain: divino
  * Link styles
  * https://github.com/WordPress/gutenberg/issues/42319
  */
+body {
+    background-color: var(--body-bg-color);
+}
 a {
 	text-decoration-thickness: 1px !important;
 	text-underline-offset: .1em;
@@ -83,7 +87,7 @@ h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption, p {
 h1 {
     font-family: 'Literata', serif;
     font-weight: 500;
-    font-size: 48px;
+    font-size: 42px;
     letter-spacing: -1px;
 }
 /*
@@ -412,10 +416,16 @@ footer {
 .woocommerce div.product div.images img {
 
     height: var(--product-card-image-height, 600px);
-    object-fit: contain;
+    object-fit: contain ;
 }
 /* grid view */
 .wc-block-components-product-image img {
     height: var(--gallery-card-image-height, 370px);
-    object-fit: contain;
+    object-fit: contain !important;
+}
+
+.woocommerce div.product div.images.woocommerce-product-gallery{
+    background:#fff;
+    padding: calc(var(--pd)*3) 0;
+    border-radius: calc(var(--brs) * 2 );
 }
