@@ -95,4 +95,6 @@ echo '<!-- using divino25 archive-product.php -->';
  */
 do_action( 'woocommerce_sidebar' );
 
+do_action( 'woocommerce_sidebar' );
+
 get_footer( 'shop' );

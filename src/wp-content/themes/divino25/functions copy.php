@@ -278,7 +278,6 @@ function add_product_country_filter() {
     if (!empty($terms) && !is_wp_error($terms)) {
         echo '<div class="widget woocommerce widget_product_region">';
         echo '<h3 class="widget-title">Страны</h3>';
-        echo '<form class="filter-form" method="get">';
         echo '<ul>';
 
         foreach ($terms as $term) {
@@ -290,13 +289,11 @@ function add_product_country_filter() {
                     $active_class = ' class="active"';
                 }
                 echo '<li' . $active_class . '>';
-                echo '<label><input type="checkbox" name="region[]" value="' . $term->slug . '" ' . (isset($_GET['region']) && in_array($term->slug, $_GET['region']) ? 'checked' : '') . '> ' . $term->name . ' (' . $term->count . ')</label>';
+                echo '<a href="' . get_term_link($term) . '">' . $term->name . ' (' . $term->count . ')</a>';
                 echo '</li>';
             }
         }
         echo '</ul>';
-        echo '<button type="submit">Применить</button>';
-        echo '</form>';
         echo '</div>';
     }
 }

@@ -96,4 +96,4 @@ do_action( 'woocommerce_after_main_content' );
 
 get_footer( 'shop' );
 
-echo '<!-- divino25 archive-product.php   -->';
+echo '<!-- woo templates archive-product.php   -->';

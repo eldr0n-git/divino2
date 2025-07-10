@@ -20,3 +20,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 wc_get_template( 'archive-product.php' );
+
+echo '<!-- woo templates taxonomy-product-cat.php   -->';

@@ -129,7 +129,7 @@
                     <a href="<?php echo function_exists('wc_get_cart_url') ? esc_url(wc_get_cart_url()) : esc_url(home_url('/cart/')); ?>" class="basket-toggle__link">
                         <span class="basket-toggle__icon"></span>
                         <span class="basket-toggle__label">Корзина</span>
-                        <span class="basket-toggle__count" data-count="<?php echo WC()->cart->get_cart_contents_count(); ?>"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+                        <span class="basket-toggle__count" data-count="<?php echo divino_get_cart_contents_count(); ?>"><?php echo divino_get_cart_contents_count(); ?></span>
                     </a>
                 </div>
             </div>

@@ -67,4 +67,4 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 </li>
 
 
-echo '<!-- divino25 content-product.php   -->';
+<!-- woo templates content-product.php     -->

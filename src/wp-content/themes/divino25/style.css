@@ -40,7 +40,7 @@ Text Domain: divino
     --product-card-image-height: 600px;
     --gallery-card-image-height: 370px;
 
-    
+
 }
 
 /*
@@ -455,7 +455,7 @@ footer {
     flex-basis: 300px;
 }
 .sp-main-column {
-    
+
 }
 .sp-order-cnt {
     flex-basis: 200px !important;
@@ -524,3 +524,36 @@ footer {
     height: 200px;
     width: auto;
 }
+
+.dv-cart .wc-block-cart__main .wc-block-cart__sidebar {
+    background:#fff;
+    padding: 0 15px;
+}
+
+/* Catalogue ! */
+.dv-collection > div{
+    display: flex;
+}
+.wc-block-product {
+    background-color: #fff;
+}
+.wc-block-product-template {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr !important;
+}
+/* Filter Sidebar */
+.shop-filters-sidebar {
+    width: 25%;
+    margin-right: 3%;
+    background: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.woocommerce ul.products {
+    width: 72%;
+}
+
+
+
+
