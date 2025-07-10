@@ -18,6 +18,7 @@ Text Domain: divino
     --brd-size: 2px;
     --brs: 4px;
 
+    --ok-text-color: #407D54;
     --body-bg-color: #FBF5F7;
     --primary-color: #C7383E;
     --primary-bg-primary: #C7383E;
@@ -38,6 +39,8 @@ Text Domain: divino
     --header-logo-width: 225px;
     --product-card-image-height: 600px;
     --gallery-card-image-height: 370px;
+
+    
 }
 
 /*
@@ -55,11 +58,17 @@ a {
 a:focus {
     outline: none;
 }
+.has-medium-font-size{
+    font-size: 18px;
+}
 
 /* Focus styles */
 :where(.wp-site-blocks *:focus) {
-	outline-width: 2px;
-	outline-style: solid;
+	/* outline-width: 2px;
+	outline-style: solid; */
+}
+.wp-block-post-title {
+    max-width: var(--wp--style--global--wide-size) !important;
 }
 
 /* Increase the bottom margin on submenus, so that the outline is visible. */
@@ -90,6 +99,14 @@ h1 {
     font-size: 42px;
     letter-spacing: -1px;
 }
+
+/* h1 margins */
+.dv-cart .wp-block-woocommerce-cart {
+    margin-top: calc(var(--pd) * 2);
+    margin-bottom: calc(var(--pd) * 2);
+}
+
+
 /*
  * Change the position of the more block on the front, by making it a block level element.
  * https://github.com/WordPress/gutenberg/issues/65934
@@ -428,4 +445,82 @@ footer {
     background:#fff;
     padding: calc(var(--pd)*3) 0;
     border-radius: calc(var(--brs) * 2 );
+}
+
+.sp-main-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 2fr 1fr !important;
+}
+.sp-image-cnt{
+    flex-basis: 300px;
+}
+.sp-main-column {
+    
+}
+.sp-order-cnt {
+    flex-basis: 200px !important;
+    padding-left: calc(var(--pd) * 2);
+}
+.sp-order-price .woocommerce-Price-amount:before{
+    content: 'Цена';
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    margin-right: 2px;
+    display: block;
+    color: var(--airy-secondary-text-color);
+}
+.sp-order-price .woocommerce-Price-amount{
+    font-size: 28px;
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+}
+
+.sp-order-add-to-cart {
+    margin: 20px 0;
+}
+
+.single_add_to_cart_button {
+    background-color: var(--primary-bg-primary);
+    color: var(--primary-text-color);
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    border-radius: var(--brs);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* нотисы */
+.wc-block-components-notice-banner .wc-block-components-notice-banner__content {
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    line-height: 24px;
+}
+.wc-block-components-notice-banner.is-success{
+    color: var(--ok-text-color);
+}
+
+.wp-block-woocommerce-product-collection-no-results {
+    padding: calc(var(--pd) * 4);
+    font-size: 16px;
+    font-family: 'Rubik', serif;
+}
+
+.dv-cart .wc-block-cart__main,
+.dv-cart .wp-block-woocommerce-cart-order-summary-block {
+    font-size: 16px;
+    font-family: 'Rubik', serif;
+}
+.wc-block-cart-item__image {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.wc-block-cart-item__image img {
+    height: 200px;
+    width: auto;
 }
