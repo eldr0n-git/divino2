@@ -24,21 +24,6 @@ if ( ! function_exists( 'divino_post_format_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'divino_post_format_setup' );
 
-// // Enqueues editor-style.css in the editors.
-// if ( ! function_exists( 'divino_editor_style' ) ) :
-// 	/**
-// 	 * Enqueues editor-style.css in the editors.
-// 	 *
-// 	 * @since divino 1.0
-// 	 *
-// 	 * @return void
-// 	 */
-// 	function divino_editor_style() {
-// 		add_editor_style( get_parent_theme_file_uri( 'assets/css/editor-style.css' ) );
-// 	}
-// endif;
-// add_action( 'after_setup_theme', 'divino_editor_style' );
-
 // Enqueues style.css on the front.
 if ( ! function_exists( 'divino_enqueue_styles' ) ) :
 	/**
@@ -59,10 +44,7 @@ if ( ! function_exists( 'divino_enqueue_styles' ) ) :
 endif;
 add_action( 'wp_enqueue_scripts', 'divino_enqueue_styles' );
 
-
-
 // FONTS
-// Enqueue the Onest font from Google Fonts
 function main_enqueue_onest_font() {
     wp_enqueue_style(
         'onest-font',
@@ -88,40 +70,9 @@ function main_enqueue_title_font() {
     );
 }
 
-
 add_action('wp_enqueue_scripts', 'main_enqueue_onest_font');
 add_action('wp_enqueue_scripts', 'main_enqueue_rubik_font');
 add_action('wp_enqueue_scripts', 'main_enqueue_title_font');
-
-
-// // Registers custom block styles.
-// if ( ! function_exists( 'divino_block_styles' ) ) :
-// 	/**
-// 	 * Registers custom block styles.
-// 	 *
-// 	 * @since divino 1.0
-// 	 *
-// 	 * @return void
-// 	 */
-// 	function divino_block_styles() {
-// 		register_block_style(
-// 			'core/list',
-// 			array(
-// 				'name'         => 'checkmark-list',
-// 				'label'        => __( 'Checkmark', 'divino' ),
-// 				'inline_style' => '
-// 				ul.is-style-checkmark-list {
-// 					list-style-type: "\2713";
-// 				}
-
-// 				ul.is-style-checkmark-list li {
-// 					padding-inline-start: 1ch;
-// 				}',
-// 			)
-// 		);
-// 	}
-// endif;
-// add_action( 'init', 'divino_block_styles' );
 
 // Registers pattern categories.
 if ( ! function_exists( 'divino_pattern_categories' ) ) :
@@ -133,7 +84,6 @@ if ( ! function_exists( 'divino_pattern_categories' ) ) :
 	 * @return void
 	 */
 	function divino_pattern_categories() {
-
 		register_block_pattern_category(
 			'divino_page',
 			array(
@@ -198,29 +148,21 @@ add_action('save_post_product', function ($post_id) {
     error_log('Тип товара: ' . json_encode(wp_get_post_terms($post_id, 'product_type', ['fields' => 'names'])));
 });
 
-add_action('wp_loaded', function () {
-    $taxonomies = get_taxonomies([], 'names');
-    //error_log('Зарегистрированные таксономии: ' . print_r($taxonomies, true));
-});
-
-
 //=====================================================================================
 // IMAGES SIZE CATALOG
 add_theme_support('post-thumbnails');
-// Добавляем размер изображения для карточек товаров
-add_image_size('product-card', 260, 370, true); // true — жёсткая обрезка
+add_image_size('product-card', 260, 370, true);
 
 add_filter( 'woocommerce_template_debug_mode', '__return_true' );
 
-// try to disable cropping for product thumbnails
+// Disable cropping for product thumbnails
 add_filter( 'woocommerce_get_image_size_thumbnail', function( $size ) {
     return array(
-        'width'  => 0, // Default thumbnail width (adjust as needed)
-        'height' => 600,   // Set height to 0 to maintain original aspect ratio
-        'crop'   => 0,   // Disable cropping (0 or false)
+        'width'  => 0,
+        'height' => 600,
+        'crop'   => 0,
     );
 } );
-
 
 if ( ! function_exists( 'divino_get_cart_contents_count' ) ) {
     function divino_get_cart_contents_count() {
@@ -234,9 +176,10 @@ if ( ! function_exists( 'divino_get_cart_contents_count' ) ) {
 //=====================================================================================
 // Add filters to catalog page
 require_once __DIR__ . '/divino25-filters.php';
-// Добавляем сайдбар для фильтров
+
+// Sidebar for filters
 function add_woocommerce_sidebar() {
-    if (is_shop() || is_product_category() || is_product_tag() || is_tax('product_kind')) {
+    if (is_shop() || is_product_category() || is_product_tag() || is_tax('product_kind') || is_tax('region') || isset($_GET['region'])) {
         echo '<div class="shop-sidebar">';
         dynamic_sidebar('shop-filters');
         echo '</div>';
@@ -244,8 +187,7 @@ function add_woocommerce_sidebar() {
 }
 add_action('woocommerce_sidebar', 'add_woocommerce_sidebar');
 
-
-// Кастомный виджет для таксономии product_kind
+// Custom widget for product_kind taxonomy
 function add_product_kind_filter() {
     $terms = get_terms(array(
         'taxonomy' => 'product_kind',
@@ -258,7 +200,6 @@ function add_product_kind_filter() {
         foreach ($terms as $term) {
             $current_term = get_queried_object();
             $active_class = '';
-            // Проверяем, активен ли текущий термин
             if ($current_term && isset($current_term->term_id) && $current_term->term_id == $term->term_id) {
                 $active_class = ' class="active"';
             }
@@ -270,6 +211,7 @@ function add_product_kind_filter() {
         echo '</div>';
     }
 }
+
 function add_product_country_filter() {
     $terms = get_terms(array(
         'taxonomy' => 'region',
@@ -278,25 +220,37 @@ function add_product_country_filter() {
     if (!empty($terms) && !is_wp_error($terms)) {
         echo '<div class="widget woocommerce widget_product_region">';
         echo '<h3 class="widget-title">Страны</h3>';
-        echo '<ul>';
+        echo '<form class="filter-form" method="get">';
 
+        // Preserve existing query parameters
+        foreach ($_GET as $key => $value) {
+            if ($key !== 'region') {
+                if (is_array($value)) {
+                    foreach ($value as $val) {
+                        echo '<input type="hidden" name="' . esc_attr($key) . '[]" value="' . esc_attr($val) . '">';
+                    }
+                } else {
+                    echo '<input type="hidden" name="' . esc_attr($key) . '" value="' . esc_attr($value) . '">';
+                }
+            }
+        }
+
+        echo '<ul>';
         foreach ($terms as $term) {
             if ( $term->parent == 0 ) {
-                $current_term = get_queried_object();
-                $active_class = '';
-                // Проверяем, активен ли текущий термин
-                if ($current_term && isset($current_term->term_id) && $current_term->term_id == $term->term_id) {
-                    $active_class = ' class="active"';
-                }
-                echo '<li' . $active_class . '>';
-                echo '<a href="' . get_term_link($term) . '">' . $term->name . ' (' . $term->count . ')</a>';
+                $checked = isset($_GET['region']) && in_array($term->slug, (array)$_GET['region']) ? 'checked' : '';
+                echo '<li>';
+                echo '<label><input type="checkbox" name="region[]" value="' . esc_attr($term->slug) . '" ' . $checked . '> ' . esc_html($term->name) . ' (' . $term->count . ')</label>';
                 echo '</li>';
             }
         }
         echo '</ul>';
+        echo '<button type="submit">Применить</button>';
+        echo '</form>';
         echo '</div>';
     }
 }
+
 function add_product_region_filter() {
     $terms = get_terms(array(
         'taxonomy' => 'region',
@@ -306,17 +260,15 @@ function add_product_region_filter() {
         echo '<div class="widget woocommerce widget_product_region">';
         echo '<h3 class="widget-title">Регионы</h3>';
         echo '<ul>';
-
         foreach ($terms as $term) {
             if ( $term->parent != 0 ) {
                 $current_term = get_queried_object();
                 $active_class = '';
-                // Проверяем, активен ли текущий термин
                 if ($current_term && isset($current_term->term_id) && $current_term->term_id == $term->term_id) {
                     $active_class = ' class="active"';
                 }
                 echo '<li' . $active_class . '>';
-                echo '<a href="' . get_term_link($term) . '">' . $term->name . ' (' . $term->count . ')</a>';
+                echo '<a href="' . get_term_link($term) . '">' . esc_html($term->name) . ' (' . $term->count . ')</a>';
                 echo '</li>';
             }
         }
@@ -325,32 +277,24 @@ function add_product_region_filter() {
     }
 }
 
-// Регистрируем область виджетов
-// Добавляем фильтры перед списком товаров
-
-
-
-// Добавляем фильтры перед списком товаров
+// Add filters before shop loop
 function add_shop_filters() {
-    if (is_shop() || is_product_category() || is_product_tag() || is_tax('product_kind')) {
+    if (is_shop() || is_product_category() || is_product_tag() || is_tax('product_kind') || is_tax('region') || isset($_GET['region'])) {
         echo '<div class="shop-filters-sidebar">';
         echo '<h3>Фильтры</h3>';
 
-        // Категории товаров
+        // Product categories
         the_widget('WC_Widget_Product_Categories', array('title' => 'Категории'));
 
-        // Кастомная таксономия product_kind
+        // Custom filters
         add_product_kind_filter();
-        // Кастомная таксономия region - только страны
         add_product_country_filter();
-        // Кастомная таксономия region -только регионы
         add_product_region_filter();
 
-
-        // Цена
+        // Price filter
         the_widget('WC_Widget_Price_Filter', array('title' => 'Цена'));
 
-        // Другие атрибуты (если есть)
+        // Color attribute if exists
         if (taxonomy_exists('pa_color')) {
             the_widget('WC_Widget_Layered_Nav', array('title' => 'Цвет', 'attribute' => 'pa_color'));
         }
@@ -358,3 +302,33 @@ function add_shop_filters() {
     }
 }
 add_action('woocommerce_before_shop_loop', 'add_shop_filters', 5);
+
+function add_region_query_var( $vars ) {
+    $vars[] = 'region';
+    return $vars;
+}
+add_filter( 'query_vars', 'add_region_query_var' );
+
+function divino_region_filter_as_archive( $query ) {
+    if ( ! is_admin() && $query->is_main_query() ) {
+        $region = $query->get( 'region' );
+        if ( ! empty( $region ) ) {
+            $query->set( 'post_type', 'product' );
+            $query->set( 'tax_query', array(
+                array(
+                    'taxonomy' => 'region',
+                    'field'    => 'slug',
+                    'terms'    => (array) $region,
+                ),
+            ) );
+            
+            // Make WordPress and WooCommerce recognize this as a product archive page
+            $query->set( 'is_shop', true );
+            $query->set( 'is_product_taxonomy', true );
+            $query->set( 'is_tax', true );
+        }
+    }
+}
+add_action( 'pre_get_posts', 'divino_region_filter_as_archive' );
+
+

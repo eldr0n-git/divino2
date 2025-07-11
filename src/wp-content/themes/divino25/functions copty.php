@@ -303,32 +303,85 @@ function add_shop_filters() {
 }
 add_action('woocommerce_before_shop_loop', 'add_shop_filters', 5);
 
-function add_region_query_var( $vars ) {
-    $vars[] = 'region';
-    return $vars;
-}
-add_filter( 'query_vars', 'add_region_query_var' );
-
-function divino_region_filter_as_archive( $query ) {
-    if ( ! is_admin() && $query->is_main_query() ) {
-        $region = $query->get( 'region' );
-        if ( ! empty( $region ) ) {
+// FIXED: Improved query handling for region filters
+function divino_filter_products_by_region( $query ) {
+    if ( ! is_admin() && $query->is_main_query() && ! is_woocommerce() ) {
+        if ( isset( $_GET['region'] ) && ! empty( $_GET['region'] ) ) {
+            // Set the query to be a product query
             $query->set( 'post_type', 'product' );
-            $query->set( 'tax_query', array(
-                array(
-                    'taxonomy' => 'region',
-                    'field'    => 'slug',
-                    'terms'    => (array) $region,
-                ),
-            ) );
-            
-            // Make WordPress and WooCommerce recognize this as a product archive page
-            $query->set( 'is_shop', true );
-            $query->set( 'is_product_taxonomy', true );
-            $query->set( 'is_tax', true );
+
+            // Get WooCommerce posts per page setting
+            $posts_per_page = get_option( 'posts_per_page', 10 );
+            if ( function_exists( 'wc_get_loop_prop' ) ) {
+                $posts_per_page = wc_get_loop_prop( 'posts_per_page', $posts_per_page );
+            }
+            $query->set( 'posts_per_page', $posts_per_page );
+
+            // Sanitize the input
+            $regions = array_map( 'sanitize_text_field', (array) $_GET['region'] );
+
+            // Add tax_query for region filter
+            $tax_query = $query->get( 'tax_query' ) ? $query->get( 'tax_query' ) : array();
+            $tax_query[] = array(
+                'taxonomy' => 'region',
+                'field'    => 'slug',
+                'terms'    => $regions,
+                'operator' => 'IN',
+            );
+            $query->set( 'tax_query', $tax_query );
+
+            // Add meta_query for WooCommerce product visibility
+            $meta_query = $query->get( 'meta_query' ) ? $query->get( 'meta_query' ) : array();
+            $meta_query[] = array(
+                'key'     => '_visibility',
+                'value'   => array( 'catalog', 'visible' ),
+                'compare' => 'IN'
+            );
+            $query->set( 'meta_query', $meta_query );
         }
     }
 }
-add_action( 'pre_get_posts', 'divino_region_filter_as_archive' );
+add_action( 'pre_get_posts', 'divino_filter_products_by_region' );
 
+// // FIXED: Simplified template forcing
+// function force_archive_product_template( $template ) {
+//     if ( isset( $_GET['region'] ) && ! empty( $_GET['region'] ) ) {
+//         // Look for the archive-product.php template
+//         $new_template = locate_template( array( '/woocommerce/archive-product.php', 'archive-product.php' ) );
+//         if ( $new_template ) {
+//             // Set WooCommerce flags
+//             global $woocommerce_loop;
+//             if ( ! isset( $woocommerce_loop ) ) {
+//                 $woocommerce_loop = array();
+//             }
+//             $woocommerce_loop['is_shortcode'] = false;
 
+//             return $new_template;
+//         }
+//     }
+//     return $template;
+// }
+// add_filter( 'template_include', 'force_archive_product_template', 99 );
+
+// FIXED: Body classes for WooCommerce
+function add_woocommerce_body_classes( $classes ) {
+    if ( isset( $_GET['region'] ) && ! empty( $_GET['region'] ) ) {
+        $classes[] = 'woocommerce';
+        $classes[] = 'woocommerce-shop';
+        $classes[] = 'woocommerce-page';
+    }
+    return $classes;
+}
+add_filter( 'body_class', 'add_woocommerce_body_classes' );
+
+// FIXED: Set WooCommerce conditional tags
+function set_woocommerce_conditionals() {
+    if ( isset( $_GET['region'] ) && ! empty( $_GET['region'] ) ) {
+        add_filter( 'woocommerce_is_shop', '__return_true' );
+        add_filter( 'woocommerce_is_product_archive', '__return_true' );
+    }
+}
+add_action( 'wp', 'set_woocommerce_conditionals' );
+
+// REMOVED: Conflicting custom_woocommerce_template_loader function
+// The previous version was causing conflicts with the template_include filter
