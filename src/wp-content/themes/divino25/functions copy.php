@@ -292,9 +292,10 @@ function add_product_region_filter() {
 function add_shop_filters() {
     if (is_shop() || is_product_category() || is_product_tag() || is_tax('product_kind') || is_tax('region') || isset($_GET['region'])) {
         echo '<div class="shop-filters-sidebar">';
+        echo '<h3>Фильтры</h3>';
 
         // Product categories
-        //the_widget('WC_Widget_Product_Categories', array('title' => 'Категории'));
+        the_widget('WC_Widget_Product_Categories', array('title' => 'Категории'));
 
         // Custom filters
         add_product_kind_filter();

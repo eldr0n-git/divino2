@@ -95,7 +95,6 @@ echo '<!-- using divino25 archive-product.php -->';
  * @hooked woocommerce_get_sidebar - 10
  */
 do_action( 'woocommerce_sidebar' );
-
-do_action( 'woocommerce_sidebar' );
+       
 
 get_footer();

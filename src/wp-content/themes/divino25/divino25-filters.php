@@ -10,7 +10,7 @@ function divino25_add_filters() {
 }
 
 function divino25_filter_scripts() {
-    if (is_shop() || is_product_category() || is_product_tag() || is_tax('product_kind')) {
+    if (is_shop() || is_product_category() || is_product_tag() || is_tax('product_kind') || is_tax('region')) {
         wp_enqueue_script('divino25-filter-script', get_stylesheet_directory_uri() . '/assets/js/filters.js', array('jquery'), '1.0', true);
     }
 }
