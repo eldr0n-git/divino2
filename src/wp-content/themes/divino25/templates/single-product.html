@@ -19,11 +19,11 @@
 
 			<!-- wp:woocommerce/product-rating {"isDescendentOfSingleProductTemplate":true} /-->
 
-			
+
 
 			<!-- wp:post-excerpt {"__woocommerceNamespace":"woocommerce/product-query/product-summary", "excerptLength":100} /-->
 
-			
+
 
 			<!-- wp:woocommerce/product-meta -->
 			<div class="wp-block-woocommerce-product-meta">
@@ -41,12 +41,17 @@
 			<!-- /wp:woocommerce/product-meta -->
 		</div>
 		<!-- /wp:column -->
-        <div class="sp-order-cnt wp-block-column">
-			<div class="sp-order-price">
-                <!-- wp:woocommerce/product-price {"isDescendentOfSingleProductTemplate":true, "fontSize":"large"} /-->
+        <div class="sp-order wp-block-column">
+            <div class="sp-order-cnt">
+                <div class="sp-order-price">
+                    <!-- wp:woocommerce/product-price {"isDescendentOfSingleProductTemplate":true, "fontSize":"large"} /-->
+                </div>
+                <div class="sp-order-add-to-cart">
+                    <!-- wp:woocommerce/add-to-cart-form /-->
+                </div>
             </div>
-            <div class="sp-order-add-to-cart">
-                <!-- wp:woocommerce/add-to-cart-form /-->
+            <div class="ti_wishlists__cnt">
+                [ti_wishlists_addtowishlist]
             </div>
 		</div>
 	</div>
