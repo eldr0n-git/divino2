@@ -144,9 +144,9 @@ footer .wp-block-site-title a {
   }
 
 .catalog-toggle {
-    background-color: var(--primary-bg);
+    /* background-color: var(--primary-bg);
     color: var(--primary-text-color);
-    border: var(--primary-brd-size) solid var(--primary-brd-color);
+    border: var(--primary-brd-size) solid var(--primary-brd-color); */
     border-radius: 8px;
     padding: calc(var(--pd) - 4px) var(--pd);
     cursor: pointer;
@@ -154,11 +154,22 @@ footer .wp-block-site-title a {
     font-size: 18px;
     font-weight: 600;
     display: flex;
-    border: 3px solid transparent;
-    transition: all 0.1s ease-in-out;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--primary-bg-hover);
+  color: var(--primary-text-color);
+  box-shadow: 0 8px 16px #FF4C5500, 0 -1px 1px rgba(255,255,255,0.0) inset; 
 }
+
 .catalog-toggle.active {
-    border-color: #000;
+    outline: 4px solid #1B181821;
+}
+.catalog-toggle:hover,
+.catalog-toggle.active {
+    background-color: var(--primary-bg-hover);
+    color: var(--primary-text-color);
+    box-shadow: 0 8px 16px #FF4C5540, 0 -4px 0px rgba(219, 86, 86, 0.8) inset;
+   
 }
 
 .catalog-toggle .button__text::before {
@@ -409,6 +420,8 @@ z-index: 1000;
 .product-kind-breadcrumb > a {
     color: var(--primary-color);
 }
+
+
 .product-kind-breadcrumb > span{
     padding-left: 10px;
     padding-right: 10px;
@@ -743,7 +756,7 @@ footer {
 
 }
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle:hover,
-.woocommerce .widget_price_filter .ui-slider .ui-slider-handle:focus {
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle:active {
     background-color: var(--primary-bg-hover);
 }
 
