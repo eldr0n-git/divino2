@@ -155,10 +155,10 @@ footer .wp-block-site-title a {
     font-weight: 600;
     display: flex;
     border: none;
-    transition: all 0.2s ease-in-out;
-    background-color: var(--primary-bg-hover);
+    transition: all 0.1s ease-in-out;
+    background-color: var(--primary-bg);
   color: var(--primary-text-color);
-  box-shadow: 0 8px 16px #FF4C5500, 0 -1px 1px rgba(255,255,255,0.0) inset; 
+  box-shadow: 0 8px 16px #FF4C5500, 0 -1px 1px rgba(255,255,255,0.0) inset;
 }
 
 .catalog-toggle.active {
@@ -169,7 +169,7 @@ footer .wp-block-site-title a {
     background-color: var(--primary-bg-hover);
     color: var(--primary-text-color);
     box-shadow: 0 8px 16px #FF4C5540, 0 -4px 0px rgba(219, 86, 86, 0.8) inset;
-   
+
 }
 
 .catalog-toggle .button__text::before {
@@ -392,6 +392,7 @@ z-index: 1000;
     margin-left: -50px;
     padding-left: 50px;
     justify-content: center;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.1), 0 -3px 0 rgba(0,0,0,0.1) inset;
 }
 .veil{
     background-color: rgba(0,0,0, 0.5);
@@ -575,7 +576,6 @@ footer {
     display: flex;
 }
 
-
 .dv-collection .wp-block-button.wc-block-components-product-button .wc-block-components-product-button__button {
     background-color: var(--primary-bg);
     color: var(--primary-text-color);
@@ -587,6 +587,10 @@ footer {
     border-radius: var(--brs);
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+}
+
+.wp-element-button:has(span[data-wp-text="state.addToCartText"]) {
+    background-color: var(--ok-bg-color) !important;
 }
 .ti_wishlists__cnt {
     padding: 0 0 0 20px;
@@ -763,4 +767,40 @@ footer {
 .woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content {
     background: linear-gradient(180deg, #000 0%, #615C5C 80%, #000 100%);
 
+}
+
+/* Countries */
+.product-regions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.country, .country a, .region a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--airy-secondary-text-color);
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+}
+.country a:before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    margin-right: 4px;
+    margin-top: -2px;
+}
+.country.country-france a:before  {
+    background-image: url('assets/images/flags.svg?#fr');
+}
+.country.country-italy a:before{
+    background-image: url('assets/images/flags.svg?#it');
+}
+.country.country-spain a:before{
+    background-image: url('assets/images/flags.svg?#es');
 }

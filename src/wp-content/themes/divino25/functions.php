@@ -189,7 +189,7 @@ require_once __DIR__ . '/divino25-filters.php';
 add_action('woocommerce_sidebar', 'add_shop_filters');
 
 // Shortcode for WooCommerce sidebar
-function divino_woocommerce_sidebar_shortcode() { 
+function divino_woocommerce_sidebar_shortcode() {
     ob_start(); // Включаем буферизацию вывода
     do_action( 'woocommerce_sidebar' ); // Выполняем хук, его вывод попадет в буфер
     return ob_get_clean(); // Возвращаем содержимое буфера и очищаем его
@@ -331,7 +331,7 @@ function divino_region_filter_as_archive( $query ) {
                     'terms'    => (array) $region,
                 ),
             ) );
-            
+
             // Make WordPress and WooCommerce recognize this as a product archive page
             $query->set( 'is_shop', true );
             $query->set( 'is_product_taxonomy', true );
@@ -340,5 +340,39 @@ function divino_region_filter_as_archive( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'divino_region_filter_as_archive' );
+
+// Reverse the order of terms in the 'region' taxonomy when displayed
+function reverse_region_terms_order($terms, $post_id, $taxonomy) {
+    if ($taxonomy === 'region') {
+        return array_reverse($terms);
+    }
+    return $terms;
+}
+add_filter('get_the_terms', 'reverse_region_terms_order', 10, 3);
+
+add_filter('render_block', function ($block_content, $block) {
+    // Проверяем, что это блок wp:post-terms и таксономия region
+    if ($block['blockName'] === 'core/post-terms' && isset($block['attrs']['term']) && $block['attrs']['term'] === 'region') {
+        // Получаем текущий пост
+        $post_id = get_the_ID();
+        $terms = get_the_terms($post_id, 'region');
+
+        if (!empty($terms) && !is_wp_error($terms)) {
+            // Формируем кастомный HTML
+            $custom_output = '<div class="product-regions text-center">';
+            foreach ($terms as $key => $term) {
+                if ($key > 0) {
+                    $custom_output .= '<span class="region"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></span>';
+                } else {
+                    $custom_output .= '<span class="country country-'.$term->slug.'"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></span>';
+                }
+            }
+            $custom_output .= '</div>';
+
+            return $custom_output;
+        }
+    }
+    return $block_content;
+}, 10, 2);
 
 
