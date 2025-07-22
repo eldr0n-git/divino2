@@ -595,18 +595,15 @@ footer {
 .ti_wishlists__cnt {
     padding: 0 0 0 20px;
 }
-.tinv-wraper.tinv-wishlist.tinvwl-above_thumb-add-to-cart {
-    left: initial;
-    right: calc(var(--pd) * 2);
-}
-.tinv-wraper.tinv-wishlist.tinvwl-above_thumb-add-to-cart > a {
-    padding: var(--pd);
-}
+
 .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart::before {
     font-size: 38px;
-    color: var(--primary-color);
+    color: var(--airy-secondary-text-color);
     width: initial !important;
     height: initial !important;
+}
+.tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart:hover::before {
+    color: var(--primary-bg-hover);
 }
 .tinv-wishlist .tinvwl_add_to_wishlist_button {
     font-size: 14px;
@@ -619,9 +616,7 @@ footer {
     white-space: nowrap;
     padding: 0;
 }
-.tinv-wishlist .tinvwl_add_to_wishlist_button::before:hover {
-    color: var(--primary-color);
-}
+
 .tinvwl-product-in-list {
     display: flex;
     align-items: center;
@@ -635,16 +630,48 @@ footer {
     padding: 5px;
 }
 .tinvwl-product-in-list::before {
-    color: #fff !important;
-    font-size: 24px !important;
-    background: var(--ok-bg-color);
+    color: var(--primary-color) !important;
 }
 
 .tinvwl-icon-heart-plus::before {
     color: var(--airy-secondary-text-color);
     font-size: 38px !important;
 }
+.tinv-wishlist .tinvwl_add_to_wishlist_button:hover::before,
+.tinvwl-product-in-list:hover::before
+ {
+    color: var(--primary-bg-hover) !important;
+}
 
+/* icon over product card Wishlist */
+.tinv-wraper.tinv-wishlist.tinvwl-above_thumb-add-to-cart {
+    left: initial;
+    /* right: calc(var(--pd) * 2); */
+    right: 0;
+}
+.tinv-wraper.tinv-wishlist.tinvwl-above_thumb-add-to-cart > a {
+    padding: var(--pd);
+}
+.wc-block-product .tinvwl_add_to_wishlist_button::before{
+    position: relative !important;
+    left: initial !important;
+    top: initial !important;
+}
+.wc-block-product .tinvwl_add_to_wishlist_button{
+    top: initial !important;
+    right: 10px !important;
+    margin: initial !important;
+    width: initial !important;
+    height: initial !important;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px !important;
+}
+.wc-block-product .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart-plus.no-txt::before, .tinv-wishlist .tinvwl_add_to_wishlist_button.tinvwl-icon-heart.no-txt::before {
+    margin: 0 !important;
+    padding: 0 !important;
+}
 /* Product card */
 .wp-block-post-title > a {
     font-size: 18px;
