@@ -498,7 +498,16 @@ footer {
 .sp-order-add-to-cart {
     margin: 20px 0 0 0;
 }
-
+.sp-product__articul p {
+    margin-top: 0;
+}
+.sp-product__articul .custom-product-sku{
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    color: var(--airy-secondary-text-color);
+    margin-bottom: 20px;
+}
 .single_add_to_cart_button {
     background-color: var(--primary-bg);
     color: var(--primary-text-color);

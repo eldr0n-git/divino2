@@ -376,3 +376,15 @@ add_filter('render_block', function ($block_content, $block) {
 }, 10, 2);
 
 
+// Убираем текст "SKU:" из вывода артикула
+// function custom_remove_sku_label($block_content, $block) {
+//     // Проверяем, что это блок product-sku
+//     if (isset($block['blockName']) && $block['blockName'] === 'woocommerce/product-sku') {
+//         // Убираем текст "SKU:" из HTML
+//         $block_content = preg_replace('/SKU:\s*/', '', $block_content);
+//         // Или более точно убираем span с классом label
+//         $block_content = preg_replace('/<span[^>]*class="[^"]*wc-block-components-product-sku__label[^"]*"[^>]*>.*?<\/span>\s*/', '', $block_content);
+//     }
+//     return $block_content;
+// }
+// add_filter('render_block', 'custom_remove_sku_label', 10, 2);
