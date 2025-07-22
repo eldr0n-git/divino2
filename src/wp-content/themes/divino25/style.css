@@ -228,11 +228,15 @@ footer .wp-block-site-title a {
     border: var(--input-brd-size) solid var(--input-brd-color);
     border-radius: var(--input-brs);
     padding: 7px 10px;
-    font-size: 14px;
+    font-size: 18px;
     color: var(--input-text-color);
     font-family: 'Rubik', sans-serif;
     padding: var(--pd);
     width: 100%;
+}
+.search__input:focus-visible {
+    outline: none;
+    border-color: var(--primary-bg);
 }
 .search__submit{
     font-size: 0;
