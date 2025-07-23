@@ -30,4 +30,3 @@ if ( ! headers_sent() ) {
 	?>
 </head>
 <body <?php body_class(); ?>>
-echo

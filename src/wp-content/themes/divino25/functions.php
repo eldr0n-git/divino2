@@ -388,3 +388,16 @@ add_filter('render_block', function ($block_content, $block) {
 //     return $block_content;
 // }
 // add_filter('render_block', 'custom_remove_sku_label', 10, 2);
+
+add_filter('woocommerce_get_stock_html', 'custom_stock_html', 10, 2);
+
+// Hiding Number of Products
+function custom_stock_html($html, $product) {
+    // Проверяем, есть ли товар в наличии
+    if ($product->is_in_stock()) {
+        return '<p class="sp-stock in-stock">В наличии</p>';
+    } else {
+        return '<p class="sp-stock out-of-stock">Нет в наличии</p>';
+    }
+    return $html; // Возвращаем исходный HTML, если ничего не изменилось
+}

@@ -222,6 +222,7 @@ class WC_XML_Import_Plugin {
             foreach ($warehouse->Item as $item) {
                 $article = (string)$item->Article;
                 $price_period = (string)$item->PricePeriod;
+                $price = (string)preg_replace('/\s+/', '', $item->Price);;
 
                 if (!isset($warehouses[$warehouse_name])) {
                     $warehouses[$warehouse_name] = array();
@@ -234,7 +235,7 @@ class WC_XML_Import_Plugin {
                 $warehouses[$warehouse_name][$article][] = array(
                     'Article' => $article,
                     'Name' => (string)$item->Name,
-                    'Price' => (float)str_replace(' ', '', (string)$item->Price),
+                    'Price' => $price,
                     'Quantity' => (int)$item->Quantity,
                     'PricePeriod' => $price_period,
                     'Description' => (string)$item->Description

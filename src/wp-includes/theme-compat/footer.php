@@ -32,8 +32,9 @@ _deprecated_file(
 </div>
 </div>
 
+<!-- Gorgeous design by Michael Heilemann - http://binarybonsai.com/ -->
+<?php /* "Just what do you think you're doing Dave?" */ ?>
 
 		<?php wp_footer(); ?>
 </body>
-<!-- fallback for themes that don't have a footer.php -->
 </html>

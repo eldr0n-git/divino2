@@ -22,5 +22,3 @@ else :
 endif;
 
 get_footer( 'embed' );
-
-echo '<!-- .wp-embed embed -->';

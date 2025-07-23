@@ -524,7 +524,17 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 }
-
+.sp-stock.in-stock {
+    color: var(--ok-text-color);
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+}
+.sp-stock.in-stock::before {
+    content: '';
+    display: block;
+    font-weight: 500;
+}
 /* нотисы */
 .wc-block-components-notice-banner .wc-block-components-notice-banner__content {
     font-size: 16px;
