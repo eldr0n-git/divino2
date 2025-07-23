@@ -534,6 +534,9 @@ footer {
     content: '';
     display: block;
     font-weight: 500;
+    background-image: url('assets/images/general.svg?#check-green');
+    width: 16px;
+    height: 16px;
 }
 /* нотисы */
 .wc-block-components-notice-banner .wc-block-components-notice-banner__content {
