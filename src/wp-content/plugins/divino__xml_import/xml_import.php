@@ -2,7 +2,7 @@
 /**
  * Plugin Name: DIVINO WooCommerce XML Import
  * Description: Импорт товаров из XML файла в WooCommerce
- * Version: 1.01
+ * Version: 1.03
  * Author: eldr0n
  */
 
@@ -222,7 +222,7 @@ class WC_XML_Import_Plugin {
             foreach ($warehouse->Item as $item) {
                 $article = (string)$item->Article;
                 $price_period = (string)$item->PricePeriod;
-                $price = (string)preg_replace('/\s+/', '', $item->Price);;
+                $price = (string)preg_replace('/\s+/', '', $item->Price);
 
                 if (!isset($warehouses[$warehouse_name])) {
                     $warehouses[$warehouse_name] = array();
@@ -324,6 +324,9 @@ class WC_XML_Import_Plugin {
                 $product->set_stock_status('outofstock');
             }
 
+            // Обновляем артикул (SKU)
+            $product->set_sku($item['Article']);
+
             $product->save();
 
         } else {
@@ -346,9 +349,12 @@ class WC_XML_Import_Plugin {
 
             $product->set_status('publish');
 
+            // Устанавливаем артикул (SKU)
+            $product->set_sku($item['Article']);
+
             $product_id = $product->save();
 
-            // Сохраняем артикул в мета поле
+            // Сохраняем артикул в мета поле для поиска
             update_post_meta($product_id, '_article', $item['Article']);
         }
 
