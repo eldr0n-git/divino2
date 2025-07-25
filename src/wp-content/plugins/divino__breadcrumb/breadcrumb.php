@@ -2,7 +2,7 @@
 /**
  * Plugin Name: DIVINO Product Kind Breadcrumb
  * Description: Кастомный breadcrumb для WooCommerce с использованием таксономии product_kind вместо стандартных категорий
- * Version: 1.1.1
+ * Version: 1.1.2
  * Author: eldr0n
  * website URI: https://divino.kz
  * Text Domain: product-kind-breadcrumb
@@ -336,7 +336,7 @@ public function display_breadcrumb_fallback() {
 
             $breadcrumb[] = esc_html(get_the_title());
 
-        } elseif (is_tax('product_kind') || is_tax('product_cat')) {
+        } elseif (is_tax('product_kind') || is_tax('product_cat') || is_tax('region')) {
             // === ARCHIVE PAGE ===
             $current_term = get_queried_object();
             $taxonomy = $current_term->taxonomy;
@@ -448,6 +448,7 @@ public function display_breadcrumb_fallback() {
                 break;
             }
         }
+
 
         return $depth;
     }
@@ -593,7 +594,8 @@ public function display_breadcrumb_fallback() {
             is_account_page() ||
             is_product() ||
             is_tax('product_kind') ||
-            is_tax('product_cat')
+            is_tax('product_cat') ||
+            is_tax('region')
         ) {
             $this->display_breadcrumb();
         }
@@ -791,10 +793,18 @@ function product_kind_breadcrumb($args = array()) {
     if (
         is_product() ||
         is_tax('product_kind') ||
-        is_tax('product_cat')
+        is_tax('product_cat') ||
+        is_tax('region')
     ) {
         // Вызываем метод класса для отображения breadcrumb
         ProductKindBreadcrumb::get_instance()->display_breadcrumb($args);
     }
 }
 ?>
+
+
+
+
+
+
+

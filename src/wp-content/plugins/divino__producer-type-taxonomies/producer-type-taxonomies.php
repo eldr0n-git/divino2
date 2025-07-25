@@ -102,7 +102,7 @@ function divino_register_taxonomies() {
         'show_in_rest' => true,
         'rewrite' => ['slug' => 'brand'],
     ]);
-    
+
     // Add rewrite tag for legacy ?product_kind=red-wine format
     add_rewrite_tag('%product_kind%', '([^&]+)');
 }
@@ -111,10 +111,10 @@ function divino_register_taxonomies() {
 add_action('parse_request', function($wp) {
     if (isset($_GET['product_kind']) && !empty($_GET['product_kind'])) {
         $term_slug = sanitize_text_field($_GET['product_kind']);
-        
+
         // Check if the term exists in the product_kind taxonomy
         $term = get_term_by('slug', $term_slug, 'product_kind');
-        
+
         if ($term) {
             // Convert query var to taxonomy query
             $wp->query_vars['post_type'] = 'product';
@@ -122,4 +122,5 @@ add_action('parse_request', function($wp) {
         }
     }
 });
+
 

@@ -376,19 +376,6 @@ add_filter('render_block', function ($block_content, $block) {
 }, 10, 2);
 
 
-// Убираем текст "SKU:" из вывода артикула
-// function custom_remove_sku_label($block_content, $block) {
-//     // Проверяем, что это блок product-sku
-//     if (isset($block['blockName']) && $block['blockName'] === 'woocommerce/product-sku') {
-//         // Убираем текст "SKU:" из HTML
-//         $block_content = preg_replace('/SKU:\s*/', '', $block_content);
-//         // Или более точно убираем span с классом label
-//         $block_content = preg_replace('/<span[^>]*class="[^"]*wc-block-components-product-sku__label[^"]*"[^>]*>.*?<\/span>\s*/', '', $block_content);
-//     }
-//     return $block_content;
-// }
-// add_filter('render_block', 'custom_remove_sku_label', 10, 2);
-
 add_filter('woocommerce_get_stock_html', 'custom_stock_html', 10, 2);
 
 // Hiding Number of Products
@@ -401,3 +388,53 @@ function custom_stock_html($html, $product) {
     }
     return $html; // Возвращаем исходный HTML, если ничего не изменилось
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+add_filter('woocommerce_page_title', 'divino_custom_woocommerce_title');
+function divino_custom_woocommerce_title($title) {
+    if (is_shop()) {
+        return 'Все наши вина'; // главная страница магазина
+    }
+
+    if (is_product_category('red-wine')) {
+        return 'Красные вина';
+    }
+
+    if (is_product_tag('sparkling')) {
+        return 'Игристые шедевры';
+    }
+
+    return $title; // по умолчанию
+}
+
+
+
+
+
+
