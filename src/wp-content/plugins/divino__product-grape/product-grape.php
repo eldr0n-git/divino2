@@ -97,8 +97,8 @@ add_action('save_post_product', function ($post_id) {
 
 function render_grape_variety_box($post) {
     $terms = wp_get_post_terms($post->ID, 'product_kind', ['fields' => 'slugs']);
-    if (!in_array('wine', $terms)) {
-        echo '<p>Доступно только для товаров типа "Вино".</p>';
+    if (!in_array('wine', $terms) && !in_array('champagne-and-sparkling', $terms)) {
+        echo '<p>Доступно только для товаров типа "Вино" или "Шампанское и игристое". </p>';
         return;
     }
 
@@ -118,7 +118,7 @@ function render_grape_variety_box($post) {
             esc_attr($item['name'])
         );
         printf(
-            ' <input name="grape_varieties[%d][percent]" value="%s" placeholder="Процент" style="width: 20%%;" />',
+            ' <input class="grape-percent" name="grape_varieties[%d][percent]" value="%s" placeholder="Процент" style="width: 20%%;" />',
             $index,
             esc_attr($item['percent'])
         );
@@ -155,7 +155,7 @@ function addGrapeVarietyRow() {
     div.className = 'grape-variety-row';
     div.innerHTML = `
         <input class="grape-name" name="grape_varieties[\${index}][name]" placeholder="Сорт винограда" style="width: 45%;" />
-        <input name="grape_varieties[\${index}][percent]" placeholder="Процент" style="width: 20%;" />
+        <input class="grape-percent" name="grape_varieties[\${index}][percent]" placeholder="Процент" style="width: 20%;" value="100" min="0" max="100" step="1" />
     `;
     wrapper.appendChild(div);
     initAutocomplete(); // переинициализация

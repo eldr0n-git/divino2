@@ -37,7 +37,7 @@ class ProductKindBreadcrumb {
     private static $instance = null;
 
     // Версия плагина
-    public $version = '1.1.1';
+    public $version = '1.1.2';
 
     // Путь к плагину
     public $plugin_path;
@@ -800,7 +800,6 @@ function product_kind_breadcrumb($args = array()) {
         ProductKindBreadcrumb::get_instance()->display_breadcrumb($args);
     }
 }
-?>
 
 
 

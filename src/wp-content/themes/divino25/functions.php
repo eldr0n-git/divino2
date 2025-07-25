@@ -231,7 +231,7 @@ function add_product_country_filter() {
     if (!empty($terms) && !is_wp_error($terms)) {
         echo '<div class="widget woocommerce widget_product_region">';
         echo '<h3 class="widget-title">Страны</h3>';
-        echo '<form class="filter-form" method="get">';
+        echo '<form class="filter-form" method="post">';
 
         // Preserve existing query parameters
         foreach ($_GET as $key => $value) {
