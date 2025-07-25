@@ -4,6 +4,7 @@
 /node_modules
 /mysql_data
 /mysql_data2
+/logs
 /db
 /db_data
 /src/wp-content/uploads
