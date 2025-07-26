@@ -10,6 +10,9 @@ if (!defined('ABSPATH')) exit;
 
 define('DIVINO_WINESTYLE_PATH', plugin_dir_path(__FILE__));
 
+// Include shortcode functionality
+require_once DIVINO_WINESTYLE_PATH . 'includes/shortcode.php';
+
 // require_once DIVINO_WINESTYLE_PATH . 'includes/admin-settings.php';
 
 // Регистрация таксономии "Стиль вина"
