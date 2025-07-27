@@ -1,0 +1,74 @@
+/* Frontend Styles for Divino Sugar Timeline */
+.divino-sugar-timeline {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.timeline-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.timeline-header strong {
+    margin-right: 10px;
+}
+
+.current-sugar-value {
+    font-weight: bold;
+    color: #a02c2c;
+}
+
+.timeline-track {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.timeline-track::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #ccc;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.timeline-point-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.timeline-point {
+    width: 16px;
+    height: 16px;
+    background-color: #ccc;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-point.active {
+    background-color: #a02c2c;
+    transform: scale(1.3);
+    border-color: #fff;
+}
+
+.timeline-label {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+    text-align: center;
+    max-width: 80px;
+}

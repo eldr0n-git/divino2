@@ -43,6 +43,7 @@ Text Domain: divino
     --product-card-image-height: 600px;
     --gallery-card-image-height: 370px;
 
+    --product-text-color: #302e2e;
 
 }
 
@@ -538,6 +539,23 @@ footer {
     width: 16px;
     height: 16px;
 }
+.sp-base-info p strong, 
+.sp-base-info .product-region strong,
+.sp-base-info .grape-varieties h3 {
+    font-size: 17px;
+    font-family: 'Onest', sans-serif;
+    font-weight: 300;
+    color: var(--product-text-color);
+}
+.sp-base-info p,
+.sp-base-info .product-region,
+.sp-base-info .grape-varieties {
+    font-size: 17px;
+    font-family: 'Onest', sans-serif;
+    font-weight: 500;
+    color: var(--product-text-color);
+}
+
 /* нотисы */
 .wc-block-components-notice-banner .wc-block-components-notice-banner__content {
     font-size: 16px;

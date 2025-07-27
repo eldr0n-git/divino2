@@ -19,11 +19,9 @@
 
 			<!-- wp:woocommerce/product-rating {"isDescendentOfSingleProductTemplate":true} /-->
 
-
-
+            <div class="sp-base-info">
 			<!-- wp:post-excerpt {"__woocommerceNamespace":"woocommerce/product-query/product-summary", "excerptLength":100} /-->
-
-
+        </div>
 
 			<!-- wp:woocommerce/product-meta -->
 			<div class="wp-block-woocommerce-product-meta">
@@ -40,9 +38,15 @@
 					<!-- wp:shortcode -->
 					[divino_wine_style]
 					<!-- /wp:shortcode -->
+                    
 
 				</div>
 				<!-- /wp:group -->
+                <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+                    <!-- wp:shortcode -->
+                    [divino_sugar]
+                    <!-- /wp:shortcode -->
+                <!-- /wp:group -->
 			</div>
 			<!-- /wp:woocommerce/product-meta -->
 		</div>
