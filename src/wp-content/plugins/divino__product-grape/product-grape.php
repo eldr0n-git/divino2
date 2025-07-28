@@ -186,9 +186,10 @@ add_action('woocommerce_single_product_summary', 'divino_show_grape_varieties', 
 function divino_show_grape_varieties() {
     global $post;
 
-    // Только для товаров с типом "Вино"
+    // Только для товаров с типом "Вино" или "Шампанское и игристое"
+
     $terms = wp_get_post_terms($post->ID, 'product_kind', ['fields' => 'slugs']);
-    if (!in_array('wine', $terms)) {
+    if (!in_array('wine', $terms) && !in_array('champagne-and-sparkling', $terms)) {
         return;
     }
 
@@ -197,12 +198,27 @@ function divino_show_grape_varieties() {
         return;
     }
 
-    echo '<div class="grape-varieties"><h3>Сорта винограда</h3><ul>';
+    echo '<div class="grape-varieties"><h3>Сорта винограда:</h3><ul class="grape-varieties-list">';
+    if ( count($varieties) > 1 ) {
+        $show_diagram = true;
+    } else {
+
+    }
     foreach ($varieties as $item) {
         $name = esc_html($item['name'] ?? '');
         $percent = esc_html($item['percent'] ?? '');
         if ($name) {
-            echo "<li>{$name}" . ($percent !== '' ? " — {$percent}%" : '') . "</li>";
+            echo "<li class='grape-item'>";
+            if ( $show_diagram ) {
+                echo "<span class='grape-name'>{$name}</span>";
+                echo "<div class='grape-diagram'>";
+                echo "<div class='grape-diagram__bar' style='width: {$percent}%;'></div>";
+                echo "<span class='grape-percent'>{$percent}%</span>";
+                echo "</div>";
+            } else {
+                echo "<span>{$name}" . ($percent !== '' ? " — {$percent}%" : '') . "</span>";
+            }
+            echo "</li>";
         }
     }
     echo '</ul></div>';

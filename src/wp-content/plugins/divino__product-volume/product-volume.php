@@ -67,13 +67,17 @@ add_action('save_post_product', function ($post_id) {
     }
 });
 
-// (опционально) Отобразить на странице товара
+// Отобразить на странице товара
 add_action('woocommerce_single_product_summary', function () {
     global $post;
     $volume = get_post_meta($post->ID, '_product_volume', true);
 
     $terms = wp_get_post_terms($post->ID, 'product_kind', ['fields' => 'slugs']);
-    if (!empty($volume) && in_array('wine', $terms)) {
-        echo '<p class="product-volume">Объём: ' . esc_html($volume) . ' мл</p>';
+    if (!empty($volume)) {
+        echo '<div class="product-volume">';
+        echo '<strong>Объём:</strong>';
+        echo '<span>' . esc_html($volume) . ' мл</span>';
+        echo '</div>';
     }
+
 }, 26);

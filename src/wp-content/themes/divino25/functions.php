@@ -350,30 +350,41 @@ function reverse_region_terms_order($terms, $post_id, $taxonomy) {
 }
 add_filter('get_the_terms', 'reverse_region_terms_order', 10, 3);
 
+
+// Custom render for product region
+// Ваш существующий фильтр для архивов
 add_filter('render_block', function ($block_content, $block) {
-    // Проверяем, что это блок wp:post-terms и таксономия region
     if ($block['blockName'] === 'core/post-terms' && isset($block['attrs']['term']) && $block['attrs']['term'] === 'region') {
-        // Получаем текущий пост
-        $post_id = get_the_ID();
-        $terms = get_the_terms($post_id, 'region');
-
-        if (!empty($terms) && !is_wp_error($terms)) {
-            // Формируем кастомный HTML
-            $custom_output = '<div class="product-regions text-center">';
-            foreach ($terms as $key => $term) {
-                if ($key > 0) {
-                    $custom_output .= '<span class="region"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></span>';
-                } else {
-                    $custom_output .= '<span class="country country-'.$term->slug.'"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></span>';
-                }
-            }
-            $custom_output .= '</div>';
-
-            return $custom_output;
-        }
+        return render_product_regions();
     }
     return $block_content;
 }, 10, 2);
+
+// Для single product
+add_action('woocommerce_single_product_summary', function() {
+    echo render_product_regions();
+}, 25);
+
+// Общая функция
+function render_product_regions() {
+    $post_id = get_the_ID();
+    $terms = get_the_terms($post_id, 'region');
+
+    if (!empty($terms) && !is_wp_error($terms)) {
+        $output = '<div class="product-regions text-center">';
+        foreach ($terms as $key => $term) {
+            if ($key > 0) {
+                $output .= '<span class="region"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></span>';
+            } else {
+                $output .= '<span class="country country-'.$term->slug.'"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></span>';
+            }
+        }
+        $output .= '</div>';
+        return $output;
+    }
+
+    return '';
+}
 
 
 add_filter('woocommerce_get_stock_html', 'custom_stock_html', 10, 2);
@@ -396,9 +407,37 @@ function custom_stock_html($html, $product) {
 
 
 
+add_filter('render_block', function ($block_content, $block) {
+    // Проверяем, что это блок post-excerpt с WooCommerce namespace
+    if ($block['blockName'] === 'core/post-excerpt' &&
+        isset($block['attrs']['__woocommerceNamespace']) &&
+        $block['attrs']['__woocommerceNamespace'] === 'woocommerce/product-query/product-summary') {
 
+        $post_id = get_the_ID();
+        $product = wc_get_product($post_id);
 
+        if ($product) {
+            // Получаем короткое описание
+            $excerpt = $product->get_short_description();
 
+            // Кастомная обработка
+            if (!empty($excerpt)) {
+                // Применяем длину из атрибутов блока
+                $excerpt_length = isset($block['attrs']['excerptLength']) ? $block['attrs']['excerptLength'] : 55;
+                $excerpt = wp_trim_words($excerpt, $excerpt_length);
+
+                // Кастомный HTML
+                $custom_content = '<div class="custom-product-excerpt">';
+                $custom_content .= '<p class="product-short-description">' . $excerpt . '</p>';
+                $custom_content .= '</div>';
+
+                return $custom_content;
+            }
+        }
+    }
+
+    return $block_content;
+}, 10, 2);
 
 
 

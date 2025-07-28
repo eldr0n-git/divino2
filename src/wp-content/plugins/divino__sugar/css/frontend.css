@@ -1,26 +1,9 @@
 /* Frontend Styles for Divino Sugar Timeline */
-.divino-sugar-timeline {
-    margin: 20px 0;
-    padding: 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-}
-
-.timeline-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.timeline-header strong {
-    margin-right: 10px;
-}
-
+/*
 .current-sugar-value {
     font-weight: bold;
     color: #a02c2c;
-}
+} */
 
 .timeline-track {
     display: flex;

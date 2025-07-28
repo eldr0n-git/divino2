@@ -13,13 +13,13 @@ if (!defined('ABSPATH')) {
 }
 
 class DivinoSugar {
-    
+
     public function __construct() {
         add_action('add_meta_boxes', array($this, 'add_sugar_metabox'));
         add_action('save_post', array($this, 'save_sugar_content'));
         add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_scripts'));
     }
-    
+
     /**
      * Добавляет метабокс для содержания сахара
      */
@@ -33,22 +33,22 @@ class DivinoSugar {
             'high'
         );
     }
-    
+
     /**
      * Отображает содержимое метабокса
      */
     public function render_sugar_metabox($post) {
         // Добавляем nonce для безопасности
         wp_nonce_field('divino_sugar_save', 'divino_sugar_nonce');
-        
+
         // Проверяем тип товара
         $allowed_kinds = ['wine', 'champagne-and-sparkling']; // Разрешенные типы товаров
         $terms = wp_get_post_terms($post->ID, 'product_kind', ['fields' => 'slugs']);
         $meta_product_kind = get_post_meta($post->ID, 'product_kind', true);
-        
+
         // Определяем тип продукта для настройки слайдера
         $product_type = '';
-        
+
         // Сначала пробуем через таксономию
         if (!empty($terms) && array_intersect($allowed_kinds, $terms)) {
             if (in_array('wine', $terms)) {
@@ -61,17 +61,17 @@ class DivinoSugar {
         elseif (!empty($meta_product_kind) && in_array($meta_product_kind, $allowed_kinds)) {
             $product_type = $meta_product_kind;
         }
-        
+
         // Если тип не подходит, показываем сообщение
         if (empty($product_type)) {
             echo '<p>Метабокс содержания сахара доступен только для вин и игристых напитков.</p>';
             return;
         }
-        
+
         // Получаем сохраненные значения
         $sugar_content = get_post_meta($post->ID, '_divino_sugar_content', true);
         $sugar_content = $sugar_content ? floatval($sugar_content) : 0;
-        
+
         ?>
         <table class="form-table">
             <tr>
@@ -79,12 +79,12 @@ class DivinoSugar {
                     <label for="divino_sugar_content">Содержание сахара (г/л)</label>
                 </th>
                 <td>
-                    <input type="number" 
-                           id="divino_sugar_content" 
-                           name="divino_sugar_content" 
-                           value="<?php echo esc_attr($sugar_content); ?>" 
-                           step="0.1" 
-                           min="0" 
+                    <input type="number"
+                           id="divino_sugar_content"
+                           name="divino_sugar_content"
+                           value="<?php echo esc_attr($sugar_content); ?>"
+                           step="0.1"
+                           min="0"
                            style="width: 100px;" />
                     <span id="sugar-unit">г/л</span>
                 </td>
@@ -100,9 +100,9 @@ class DivinoSugar {
                 </td>
             </tr>
         </table>
-        
+
         <input type="hidden" id="divino-product-type" value="<?php echo esc_attr($product_type); ?>" />
-        
+
         <style>
             #sugar-slider {
                 height: 20px;
@@ -112,7 +112,7 @@ class DivinoSugar {
                 margin: 20px 0;
                 cursor: pointer;
             }
-            
+
             #sugar-slider::before {
                 content: '';
                 position: absolute;
@@ -126,11 +126,11 @@ class DivinoSugar {
                 cursor: grab;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.2);
             }
-            
+
             #sugar-slider:active::before {
                 cursor: grabbing;
             }
-            
+
             #sugar-labels {
                 display: flex;
                 justify-content: space-between;
@@ -138,7 +138,7 @@ class DivinoSugar {
                 color: #666;
                 margin-top: 10px;
             }
-            
+
             .sugar-label {
                 text-align: center;
                 flex: 1;
@@ -148,14 +148,14 @@ class DivinoSugar {
                 margin: 0 2px;
                 border-radius: 3px;
             }
-            
+
             .sugar-label.active {
                 background: #0073aa;
                 color: white;
                 font-weight: bold;
             }
         </style>
-        
+
         <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
             const input = document.getElementById('divino_sugar_content');
@@ -163,9 +163,9 @@ class DivinoSugar {
             const labelsContainer = document.getElementById('sugar-labels');
             const currentCategory = document.getElementById('current-category');
             const productType = document.getElementById('divino-product-type').value;
-            
+
             console.log('Product type from hidden field:', productType);
-            
+
             // Конфигурации для разных типов продуктов
             const wineConfig = {
                 categories: [
@@ -176,7 +176,7 @@ class DivinoSugar {
                 ],
                 maxValue: 100
             };
-            
+
             const champagneConfig = {
                 categories: [
                     { name: 'Brut Nature/Zero', min: 0, max: 3, label: 'Brut Nature<br>(0-3 г/л)' },
@@ -189,7 +189,7 @@ class DivinoSugar {
                 ],
                 maxValue: 80
             };
-            
+
             // Выбираем конфигурацию в зависимости от типа продукта
             let currentConfig;
             if (productType === 'wine') {
@@ -200,7 +200,7 @@ class DivinoSugar {
                 console.error('Unknown product type:', productType);
                 return;
             }
-            
+
             function setupSlider() {
                 // Создаем лейблы
                 labelsContainer.innerHTML = '';
@@ -211,15 +211,15 @@ class DivinoSugar {
                     label.dataset.index = index;
                     labelsContainer.appendChild(label);
                 });
-                
+
                 updateSliderPosition();
             }
-            
+
             function updateSliderPosition() {
                 const value = parseFloat(input.value) || 0;
                 let position = 0;
                 let activeCategory = null;
-                
+
                 // Находим активную категорию
                 for (let i = 0; i < currentConfig.categories.length; i++) {
                     const category = currentConfig.categories[i];
@@ -232,51 +232,51 @@ class DivinoSugar {
                         break;
                     }
                 }
-                
+
                 // Обновляем позицию слайдера
                 slider.style.setProperty('--position', position + '%');
                 slider.style.background = `linear-gradient(to right, #f0f0f0 ${position}%, #0073aa ${position}%)`;
-                
+
                 // Обновляем активный лейбл
                 document.querySelectorAll('.sugar-label').forEach((label, index) => {
                     label.classList.toggle('active', activeCategory && index === currentConfig.categories.indexOf(activeCategory));
                 });
-                
+
                 // Обновляем текущую категорию
                 currentCategory.textContent = activeCategory ? activeCategory.name : 'Не определено';
             }
-            
+
             function handleSliderClick(event) {
                 const rect = slider.getBoundingClientRect();
                 const clickX = event.clientX - rect.left;
                 const percentage = (clickX / rect.width) * 100;
-                
+
                 // Определяем категорию по проценту
                 const categoryIndex = Math.floor(percentage / (100 / currentConfig.categories.length));
                 const categoryClampedIndex = Math.max(0, Math.min(categoryIndex, currentConfig.categories.length - 1));
                 const category = currentConfig.categories[categoryClampedIndex];
-                
+
                 // Вычисляем значение внутри категории
                 const categoryWidth = 100 / currentConfig.categories.length;
                 const categoryStartPercent = categoryClampedIndex * categoryWidth;
                 const categoryProgress = (percentage - categoryStartPercent) / categoryWidth;
                 const value = category.min + (categoryProgress * (category.max - category.min));
-                
+
                 input.value = Math.max(0, Math.round(value * 10) / 10);
                 updateSliderPosition();
             }
-            
+
             // Обработчики событий
             input.addEventListener('input', updateSliderPosition);
             slider.addEventListener('click', handleSliderClick);
-            
+
             // Инициализация
             setupSlider();
         });
         </script>
         <?php
     }
-    
+
     /**
      * Сохраняет значение содержания сахара
      */
@@ -285,38 +285,38 @@ class DivinoSugar {
         if (!isset($_POST['divino_sugar_nonce']) || !wp_verify_nonce($_POST['divino_sugar_nonce'], 'divino_sugar_save')) {
             return;
         }
-        
+
         // Проверяем права пользователя
         if (!current_user_can('edit_post', $post_id)) {
             return;
         }
-        
+
         // Проверяем автосохранение
         if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
             return;
         }
-        
+
         // Сохраняем содержание сахара
         if (isset($_POST['divino_sugar_content'])) {
             $sugar_content = floatval($_POST['divino_sugar_content']);
             update_post_meta($post_id, '_divino_sugar_content', $sugar_content);
         }
     }
-    
+
     /**
      * Подключает скрипты и стили для админки
      */
     public function enqueue_admin_scripts($hook) {
         global $post;
-        
+
         if ($hook !== 'post.php' && $hook !== 'post-new.php') {
             return;
         }
-        
+
         if (!$post || $post->post_type !== 'product') {
             return;
         }
-        
+
         wp_enqueue_script('jquery');
     }
 }
@@ -337,7 +337,7 @@ function divino_get_sugar_content($product_id) {
 function divino_get_sugar_category($product_id) {
     $sugar_content = floatval(divino_get_sugar_content($product_id));
     $product_kind = get_post_meta($product_id, 'product_kind', true);
-    
+
     if ($product_kind === 'wine') {
         if ($sugar_content <= 4) return 'Сухое вино';
         if ($sugar_content <= 12) return 'Полусухое вино';
@@ -352,7 +352,7 @@ function divino_get_sugar_category($product_id) {
         if ($sugar_content <= 50) return 'Demi-Sec';
         return 'Doux';
     }
-    
+
     return '';
 }
 
@@ -381,12 +381,12 @@ function divino_sugar_frontend_shortcode_handler( $atts ) {
     }
 
     // Enqueue the frontend CSS file
-    wp_enqueue_style(
-        'divino-sugar-frontend-css',
-        plugin_dir_url( __FILE__ ) . 'css/frontend.css',
-        [],
-        '1.2'
-    );
+    // wp_enqueue_style(
+    //     'divino-sugar-frontend-css',
+    //     plugin_dir_url( __FILE__ ) . 'css/frontend.css',
+    //     [],
+    //     '1.2'
+    // );
 
     // Define the ranges for wine and champagne
     $wine_ranges = [
@@ -421,26 +421,24 @@ function divino_sugar_frontend_shortcode_handler( $atts ) {
         $active_label = $ranges[0]['label'];
     }
 
-    //return '<h1>EEEEEEEEEEEEEEEEE</h1>';
-
     // Start output buffering to capture HTML
     ob_start();
     ?>
-    <div class="divino-sugar-timeline">
-        <div class="timeline-header">
-            <strong>Сладость:</strong>
-            <span class="current-sugar-value"><?php echo esc_html($active_label); ?></span>
-        </div>
-        <div class="timeline-track">
-            <?php foreach ($ranges as $range): ?>
-                <?php
-                    $is_active = ($active_label === $range['label']) ? 'active' : '';
-                ?>
-                <div class="timeline-point-wrapper">
-                    <div class="timeline-point <?php echo $is_active; ?>"></div>
-                    <div class="timeline-label"><?php echo esc_html($range['label']); ?></div>
-                </div>
-            <?php endforeach; ?>
+
+    <div class="slider-scale-set">
+        <div class="slider-scale">
+            <div class="slider-scale__title">
+                <strong>Сладость:</strong>
+                <span class="current-sugar-value"><?php echo esc_html($active_label); ?></span>
+            </div>
+            <div class="slider-scale__track">
+                <?php foreach ($ranges as $range): ?>
+                    <?php
+                        $is_active = ($active_label === $range['label']) ? 'active' : '';
+                    ?>
+                    <div class="slider-scale__point-wrapper <?php echo $is_active; ?>">
+                        <div class="slider-scale__point"></div>
+                        <div class="slider-scale__label"><?php echo esc_html($range['label']); ?></div></div><?php endforeach; ?></div>
         </div>
     </div>
     <?php
