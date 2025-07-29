@@ -45,10 +45,12 @@ Text Domain: divino
 
     --product-text-color: #302e2e;
 
+    --el-colored-secondary: #f0e2e2;
     --slider-height: 8px;
-    --slider-bg-color: #f0e2e2;
+    --slider-bg-color: var(--el-colored-secondary)  ;
 
     --label-width: 175px;
+
 }
 
 /*
@@ -219,6 +221,7 @@ footer .wp-block-site-title a {
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
     background: #fff;
+    border-radius: var(--brs)
 }
 
 .catalog-menu li a:hover {
@@ -641,8 +644,9 @@ footer {
 }
 
 .dv-collection .wp-block-button.wc-block-components-product-button .wc-block-components-product-button__button {
-    background-color: var(--primary-bg);
-    color: var(--primary-text-color);
+    background-color: var(--primary-text-color);
+    color: var(--primary-bg);
+    outline: var(--brd-size) solid var(--input-brd-color);
     border: none;
     padding: 12px 20px;
     font-size: 16px;
@@ -653,9 +657,9 @@ footer {
     transition: background-color 0.3s ease-in-out;
 }
 
-.wp-element-button:has(span[data-wp-text="state.addToCartText"]) {
+/* .wp-element-button:has(span[data-wp-text="state.addToCartText"]) {
     background-color: var(--ok-bg-color) !important;
-}
+} */
 .ti_wishlists__cnt {
     padding: 0 0 0 20px;
 }
@@ -1019,4 +1023,37 @@ footer {
 .grape-diagram .grape-percent {
     text-indent: 5px;
     font-size: 14px;
+}
+.sp-base-info .product-region {
+    display: none;
+}
+.sp-base-info .product-regions {
+    padding-left: var(--label-width);
+}
+.sp-base-info .product-regions  a{
+    font-size: 18px;
+    color: var(--product-text-color);
+}
+.sp-base-info .product-regions .country a::before{
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+}
+.product-regions .region a::before{
+    content: '';
+    background-color: var(--el-colored-secondary);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 9px;
+    margin-top: 1px;
+}
+
+.product--added {
+    background-color: var(--ok-bg-color) !important;
+
+}
+.product--added > span {
+    color: var(--airy-color);
 }

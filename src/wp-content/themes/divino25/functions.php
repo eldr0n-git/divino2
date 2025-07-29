@@ -352,7 +352,7 @@ add_filter('get_the_terms', 'reverse_region_terms_order', 10, 3);
 
 
 // Custom render for product region
-// Ваш существующий фильтр для архивов
+// Ваш существующий фильтр для archive-product
 add_filter('render_block', function ($block_content, $block) {
     if ($block['blockName'] === 'core/post-terms' && isset($block['attrs']['term']) && $block['attrs']['term'] === 'region') {
         return render_product_regions();
@@ -360,10 +360,10 @@ add_filter('render_block', function ($block_content, $block) {
     return $block_content;
 }, 10, 2);
 
-// Для single product
+// Для single-product
 add_action('woocommerce_single_product_summary', function() {
     echo render_product_regions();
-}, 25);
+}, 19);
 
 // Общая функция
 function render_product_regions() {
@@ -382,7 +382,6 @@ function render_product_regions() {
         $output .= '</div>';
         return $output;
     }
-
     return '';
 }
 
@@ -406,38 +405,6 @@ function custom_stock_html($html, $product) {
 
 
 
-
-add_filter('render_block', function ($block_content, $block) {
-    // Проверяем, что это блок post-excerpt с WooCommerce namespace
-    if ($block['blockName'] === 'core/post-excerpt' &&
-        isset($block['attrs']['__woocommerceNamespace']) &&
-        $block['attrs']['__woocommerceNamespace'] === 'woocommerce/product-query/product-summary') {
-
-        $post_id = get_the_ID();
-        $product = wc_get_product($post_id);
-
-        if ($product) {
-            // Получаем короткое описание
-            $excerpt = $product->get_short_description();
-
-            // Кастомная обработка
-            if (!empty($excerpt)) {
-                // Применяем длину из атрибутов блока
-                $excerpt_length = isset($block['attrs']['excerptLength']) ? $block['attrs']['excerptLength'] : 55;
-                $excerpt = wp_trim_words($excerpt, $excerpt_length);
-
-                // Кастомный HTML
-                $custom_content = '<div class="custom-product-excerpt">';
-                $custom_content .= '<p class="product-short-description">' . $excerpt . '</p>';
-                $custom_content .= '</div>';
-
-                return $custom_content;
-            }
-        }
-    }
-
-    return $block_content;
-}, 10, 2);
 
 
 
