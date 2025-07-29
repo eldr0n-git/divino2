@@ -18,6 +18,7 @@
 			<!-- wp:post-title {"level": 1, "__woocommerceNamespace":"woocommerce/product-query/product-title"} /-->
 			<!-- wp:woocommerce/product-rating {"isDescendentOfSingleProductTemplate":true} /-->
             <div class="sp-base-info">
+                <!-- wp:post-terms {"term":"product_kind","prefix":"Тип: "} /-->
 			    <!-- wp:post-excerpt {"__woocommerceNamespace":"woocommerce/product-query/product-summary", "excerptLength":100} /-->
 
 
@@ -28,10 +29,9 @@
 			<div class="wp-block-woocommerce-product-meta">
 				<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 				<div class="wp-block-group">
-					<!-- wp:woocommerce/product-sku /-->
-					<!-- wp:post-terms {"term":"product_cat","prefix":"Category: "} /-->
+
 					<!-- wp:post-terms {"term":"product_tag","prefix":"Tags: "} /-->
-					<!-- wp:post-terms {"term":"product_kind","prefix":"Тип: "} /-->
+
 
 					<!-- wp:shortcode -->
 					[divino_wine_style]

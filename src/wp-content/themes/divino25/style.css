@@ -548,13 +548,15 @@ footer {
 }
 .sp-base-info .product-volume,
 .sp-base-info .grape-varieties,
-.sp-base-info .product-region {
+.sp-base-info .product-region,
+.sp-base-info .taxonomy-product_kind {
     margin: var(--pd) 0;
 }
 .sp-base-info p strong,
 .sp-base-info .product-region strong,
 .sp-base-info .grape-varieties h3,
-.sp-base-info .product-volume strong{
+.sp-base-info .product-volume strong,
+.sp-base-info .taxonomy-product_kind .wp-block-post-terms__prefix {
     font-size: 18px;
     font-family: 'Onest', sans-serif;
     font-weight: 300;
@@ -566,11 +568,22 @@ footer {
 .sp-base-info p,
 .sp-base-info .product-region,
 .sp-base-info .grape-varieties,
-.sp-base-info .product-volume span {
+.sp-base-info .product-volume span,
+.sp-base-info .taxonomy-product_kind {
     font-size: 18px;
     font-family: 'Onest', sans-serif;
     font-weight: 500;
     color: var(--product-text-color);
+
+}
+.sp-base-info  a {
+    text-decoration: none;
+    color: var(--product-text-color);
+}
+.sp-base-info  a:hover,
+.sp-base-info .product-regions a:hover{
+    text-decoration: none;
+    color: var(--primary-color);
 }
 .sp-base-info .grape-varieties h3 {
     margin: 0;
@@ -1039,6 +1052,7 @@ footer {
     height: 36px;
     margin-right: 10px;
 }
+/* divider between regions */
 .product-regions .region a::before{
     content: '';
     background-color: var(--el-colored-secondary);
@@ -1048,6 +1062,7 @@ footer {
     display: inline-block;
     margin-right: 9px;
     margin-top: 1px;
+    filter: contrast(0.8);
 }
 
 .product--added {
