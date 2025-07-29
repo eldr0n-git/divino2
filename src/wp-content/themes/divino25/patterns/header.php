@@ -111,11 +111,16 @@
                             ]);
 
                             if (!is_wp_error($child_terms) && !empty($child_terms)) {
+                                $counterx = 0;
                                 foreach ($child_terms as $child_term) {
-                                    $link = get_term_link($child_term);
+                                    if ( $counterx < 2 ) {
+                                         $link = get_term_link($child_term);
                                     if (!is_wp_error($link)) {
                                         echo '<li class="cat_menu__item"><a href="' . esc_url($link) . '" class="cat_menu__link">' . esc_html($child_term->name) . '</a></li>';
                                     }
+                                    $counterx++;
+                                    }
+
                                 }
                             }
                         }

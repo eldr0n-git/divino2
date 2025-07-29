@@ -276,6 +276,9 @@ footer .wp-block-site-title a {
     margin-top: 0;
 
 }
+.cat_menu {
+    overflow: hidden;
+}
 .cat_menu__item {
     font-size: 16px;
     font-family: 'Rubik', sans-serif;
