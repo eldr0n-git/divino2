@@ -43,9 +43,9 @@ add_action('save_post_product', function ($post_id) {
 function get_all_product_brands() {
     global $wpdb;
     $results = $wpdb->get_col("
-        SELECT DISTINCT meta_value 
-        FROM $wpdb->postmeta 
-        WHERE meta_key = '_product_brand' 
+        SELECT DISTINCT meta_value
+        FROM $wpdb->postmeta
+        WHERE meta_key = '_product_brand'
         AND meta_value != ''
     ");
     return array_filter(array_unique($results));
@@ -58,7 +58,7 @@ add_action('woocommerce_single_product_summary', function () {
     if ($brand) {
         echo '<p><strong>Производитель:</strong> ' . esc_html($brand) . '</p>';
     }
-}, 20);
+}, 10);
 
 add_action('wp_ajax_get_all_product_brands', function () {
     $terms = get_terms([

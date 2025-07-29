@@ -401,8 +401,22 @@ function custom_stock_html($html, $product) {
 
 
 
-
-
+/* * Скрытие блока post-terms для таксономии product_kind
+ * Этот фильтр удаляет блок post-terms, если он относится к таксономии product_kind
+ */
+add_filter('get_the_terms', function($terms, $post_id, $taxonomy) {
+    if ($taxonomy === 'product_kind' && !empty($terms)) {
+        // Фильтруем только дочерние термины (у которых parent != 0)
+        $filtered_terms = array();
+        foreach ($terms as $term) {
+            if ($term->parent != 0) { // Только дочерние термины
+                $filtered_terms[] = $term;
+            }
+        }
+        return !empty($filtered_terms) ? $filtered_terms : false;
+    }
+    return $terms;
+}, 10, 3);
 
 
 
