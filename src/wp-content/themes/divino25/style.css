@@ -54,6 +54,8 @@ Text Domain: divino
     /* header */
     --title_section-height: 110px;
     --cat_section-height: 90px;
+    --catalogue-toggle-width: 140px;
+
 }
 
 /*
@@ -151,6 +153,7 @@ footer .wp-block-site-title a {
 .catalog-dropdown {
     position: relative;
     display: inline-block;
+    min-width: var(--catalogue-toggle-width);
   }
 
 .catalog-toggle {
@@ -232,7 +235,7 @@ footer .wp-block-site-title a {
 }
 .search-block {
     position: relative;
-    width: 50%;
+    width: 100%;
 }
 .search__input {
     background-color: var(--input-bg-color);
@@ -271,6 +274,8 @@ footer .wp-block-site-title a {
     padding: 0 !important;
     border-bottom: 2px solid var(--input-brd-color);
     height: var(--title_section-height);
+    justify-content: flex-start;
+    gap: 0;
 }
 .cat_section {
     display: flex;
@@ -279,11 +284,14 @@ footer .wp-block-site-title a {
     /* a fix to align with logo*/
     padding: 10px 0;
     margin-top: 0;
-
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0;
 }
 .cat_menu {
     overflow: hidden;
-    margin-left: -123px !important;
+    margin-left: calc( var(--header-logo-width) - var(--catalogue-toggle-width)) !important;
+    width: 100%;
 }
 .cat_menu__item {
     font-size: 16px;
