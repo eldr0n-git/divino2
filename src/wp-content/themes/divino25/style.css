@@ -26,6 +26,7 @@ Text Domain: divino
     --primary-bg: #C7383E;
     --primary-bg-hover: #FB636A;
     --primary-text-color: #fff;
+    ---brd-color: #C7383E;
 
     --airy-color: #F4F5F7;
     --airy-bg-color: transparent;
@@ -56,6 +57,9 @@ Text Domain: divino
     --cat_section-height: 90px;
     --catalogue-toggle-width: 140px;
 
+    /* forms */
+    --form-bg-color: #fff;
+    --form-cnt-pd: calc(var(--pd) * 3);
 }
 
 /*
@@ -76,6 +80,18 @@ a:focus {
 .has-medium-font-size{
     font-size: 18px;
 }
+
+.woocommerce .button.wp-element-button {
+    background-color: var(--primary-bg);
+    color: var(--primary-text-color);
+    border-radius: var(--brs);
+}
+.woocommerce .button.wp-element-button:hover {
+    background-color: var(--primary-bg-hover);
+    color: var(--primary-text-color);
+
+}
+
 
 /* Focus styles */
 :where(.wp-site-blocks *:focus) {
@@ -115,6 +131,9 @@ h1 {
     letter-spacing: -1px;
 }
 
+main {
+    margin-top: 0 !important;
+}
 /* h1 margins */
 .dv-cart .wp-block-woocommerce-cart {
     margin-top: calc(var(--pd) * 2);
@@ -529,6 +548,14 @@ footer {
 
 .sp-order-add-to-cart {
     margin: 20px 0 0 0;
+}
+.sp-order-add-to-cart .input-text {
+    border: var(--input-brd-size) solid var(--input-brd-color);
+    border-radius: var(--input-brs);
+    color: var(--input-text-color);
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
 }
 .sp-product__articul p {
     margin-top: 0;
@@ -1196,4 +1223,146 @@ footer {
     font-weight: bold;
     color: var(--product-text-color);
     font-size: 1.1em;
+}
+
+
+.divino__price-slider-values-holder {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -18px;
+
+}
+.divino__price-slider-values-holder span{
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+.price_slider_amount br{
+    display: none;
+}
+.divino__hidethispricelabel {
+    display: none !important;
+}
+
+
+/* LOGIN FORM */
+.woocommerce form.login, 
+.woocommerce form.register{
+    background-color: var(--form-bg-color);
+    box-shadow: 0 10px 15px rgba(0,0,0, 0.25) ;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-content: center;
+    align-self: center;
+    margin: 0;
+}
+.woocommerce form.login label, 
+.woocommerce form.register label, 
+.lost_password a{
+    font-size:  16px;
+    color: var(--form-text-color);
+    font-weight: 400;
+    font-family: 'Rubik', sans-serif;
+    margin-bottom: 0;
+}
+.woocommerce form.login .input-text, 
+.woocommerce form.register .input-text{
+    font-size:  20px !important;
+    color: var(--input-text-color);
+    font-weight: 500;
+    font-family: 'Rubik', sans-serif;
+}
+.woocommerce {
+    /* max-width: initial !important; */
+    display: flex;
+    flex-direction: column;
+}
+.woocommerce form.login .form-row,
+.woocommerce form.register .form-row {
+    display: flex;
+    flex-direction: column;
+}
+.lost_password a:hover {
+    color: var(--primary-color);
+}
+.woocommerce-form-login__submit {
+    margin: 0 !important;
+}
+.lost_password {
+    margin: 0;
+}
+
+.woocommerce-MyAccount-navigation {
+    display: flex;
+    flex-direction: column;
+    width: initial !important;
+}
+.woocommerce-account .woocommerce-MyAccount-navigation ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+}
+.woocommerce-account .woocommerce-MyAccount-navigation li {
+    padding: 0;
+    display: flex;
+}
+.woocommerce-MyAccount-navigation ul li a {
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    color: var(--primary-text-color);
+    background-color: var(--primary-bg);
+    padding: 10px 15px;
+}
+.woocommerce-account .woocommerce-MyAccount-navigation ul li a:hover {
+    text-decoration: none;
+    background-color: var(--primary-bg-hover);
+}
+.woocommerce-MyAccount-navigation ul li:first-child a {
+    border-radius: var(--brs) 0 0 0;
+}
+.woocommerce-MyAccount-navigation ul li:last-child a {
+    border-radius: 0  var(--brs) 0 0;
+}
+.woocommerce-account .woocommerce-MyAccount-content {
+    background-color: var(--form-bg-color);
+    padding: var(--form-cnt-pd);
+    width: initial;
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+}
+.woocommerce-account .woocommerce-MyAccount-content p strong {
+    border-bottom: 4px solid var(--primary-bg-hover);
+}
+.woocommerce-account .woocommerce-MyAccount-content p a {
+    font-weight: 400;
+}
+.woocommerce-account .woocommerce-MyAccount-content p a:hover {
+    color: var(--primary-color);
+}
+.woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active a {
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    text-decoration-thickness: auto;
+    font-weight: 500;
+    box-shadow: 0 3px var(---brd-color) inset;
+}
+
+.woocommerce-Input--text {
+    outline: none;
+}
+
+.woocommerce-MyAccount-content .input-text {
+    padding: 10px 15px !important;
+    border: var(--input-brd-size) solid var(--input-brd-color) !important;
+    font-size: 16px !important;
+}
+.woocommerce-page form .form-row label {
+    margin-bottom: 1px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Rubik', sans-serif;
 }
