@@ -12,7 +12,7 @@ jQuery(document).ready(function($) {
         window.location.href = url;
     });
 
-    // customize the add to cart button behavior
+    // customize the add to cart button styling
     $('.add_to_cart_button').on('click', function(e) {
         $(this).addClass('product--added');
     });

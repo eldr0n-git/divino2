@@ -22,7 +22,7 @@
 		<div class="title_section wp-block-group alignwide" style="padding-top:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30)">
 			<!-- wp:site-title {"level":0} /-->
 
-            <div class="search">
+            <div class="search-block">
                 <form role="search__form" method="get" class="search-form" action="<?php echo esc_url(home_url('/')); ?>">
                     <label>
                         <span class="screen-reader-text">Поиск по названию:</span>
@@ -75,7 +75,8 @@
                     toggle.classList.toggle('active');
                     menu.style.opacity = (menu.style.opacity === '1') ? '0' : '1';
                     veil.style.opacity = (veil.style.opacity === '1') ? '0' : '1';
-                    menu.style.top = '212px'; // Reset top position to default
+
+                    menu.classList.toggle('megamenu--active');
                 });
 
                 document.addEventListener('click', () => {
@@ -84,6 +85,7 @@
                     menu.style.opacity = 0;
                     veil.style.opacity = 0;
                     toggle.classList.remove('active');
+                    menu.classList.remove('megamenu--active'); // Reset top position to default
                 });
             });
             </script>
