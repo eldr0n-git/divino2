@@ -1561,3 +1561,59 @@ fieldset legend {
     outline: none;
     border-color: var(--input-brd-color-focus) !important;
 }
+
+.woocommerce-Reviews-title {
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.star-rating {
+    color: var(--primary-color)
+}
+.comment-text {
+    background-color: #fff;
+}
+.woocommerce-review__published-date {
+    font-size: 12px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    color: var(--airy-secondary-text-color);
+}
+.woocommerce-review__dash {
+    display: none;
+}
+.woocommerce #reviews #comments ol.commentlist {
+    font-family: 'Onest', sans-serif;
+}
+.woocommerce p.stars a::before{
+    color: var(--primary-color);
+}
+.woocommerce #review_form #respond .form-submit input {
+    background-color: var(--primary-bg);
+    color: var(--primary-text-color);
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    border-radius: var(--brs);
+    cursor: pointer;
+}
+.woocommerce #review_form #respond textarea {
+    outline: none;
+    border-radius: var(--brs-lg);
+    border: var(--input-brd-size) solid var(--input-brd-color);
+    padding: var(--pd);
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+}
+.woocommerce #review_form #respond textarea:focus {
+    border-color: var(--input-brd-color-focus);
+}
+
+/* BODY colors */
+body.divino25-product-kind-white-wine {
+    background-color: #FFF7E9;
+}
