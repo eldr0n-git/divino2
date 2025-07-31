@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Divino Vintage
  * Description: Плагин для группировки товаров по винтажу/году выпуска
- * Version: 1.0.29
+ * Version: 1.0.30
  * Author: eldr0n
  */
 
@@ -85,6 +85,13 @@ class WC_Vintage_Products {
     }
 
     /**
+     * Тестовый AJAX обработчик
+     */
+    public function test_ajax() {
+        wp_send_json_success('AJAX работает корректно!');
+    }
+
+    /**
      * Добавляем метабоксы в панель редактирования товара
      */
     public function add_vintage_meta_boxes() {
@@ -135,6 +142,9 @@ class WC_Vintage_Products {
             $post->ID
         ));
 
+        // Создаем nonce для AJAX запросов
+        $ajax_nonce = wp_create_nonce('vintage_ajax_nonce');
+
         echo '<div id="vintage-groups-container">';
         echo '<h4>Текущие группы:</h4>';
 
@@ -142,7 +152,7 @@ class WC_Vintage_Products {
             foreach ($current_groups as $group) {
                 echo '<div class="vintage-group-item" data-group-id="' . $group->id . '">';
                 echo '<strong>' . esc_html($group->group_name) . '</strong> ';
-                echo '<button type="button" class="button remove-from-group" data-group-id="' . $group->id . '">Удалить из группы</button>';
+                echo '<button type="button" class="button remove-from-group" data-group-id="' . $group->id . '" data-nonce="' . $ajax_nonce . '">Удалить из группы</button>';
                 echo '</div>';
             }
         } else {
@@ -151,9 +161,39 @@ class WC_Vintage_Products {
 
         echo '<hr>';
         echo '<h4>Создать новую группу или добавить в существующую:</h4>';
+
+        // Получаем все существующие группы
+        $all_groups = $wpdb->get_results("SELECT * FROM $table_name ORDER BY group_name");
+
         echo '<table class="form-table">';
+
+        // Выбор существующей группы или создание новой
         echo '<tr>';
-        echo '<th><label for="group_name">Название группы:</label></th>';
+        echo '<th><label>Действие:</label></th>';
+        echo '<td>';
+        echo '<label><input type="radio" name="group_action" value="create" checked> Создать новую группу</label><br>';
+        echo '<label><input type="radio" name="group_action" value="existing"> Добавить в существующую группу</label>';
+        echo '</td>';
+        echo '</tr>';
+
+        // Селект для существующих групп
+        echo '<tr id="existing_group_row" style="display: none;">';
+        echo '<th><label for="existing_group_select">Выберите группу:</label></th>';
+        echo '<td>';
+        echo '<select id="existing_group_select" name="existing_group_select" style="width: 300px;">';
+        echo '<option value="">-- Выберите группу --</option>';
+        if ($all_groups) {
+            foreach ($all_groups as $group) {
+                echo '<option value="' . $group->id . '">' . esc_html($group->group_name) . '</option>';
+            }
+        }
+        echo '</select>';
+        echo '</td>';
+        echo '</tr>';
+
+        // Поле для нового названия группы
+        echo '<tr id="new_group_row">';
+        echo '<th><label for="group_name">Название новой группы:</label></th>';
         echo '<td><input type="text" id="group_name" name="group_name" style="width: 300px;" placeholder="Например: Вино Шато Марго" /></td>';
         echo '</tr>';
         echo '<tr>';
@@ -168,7 +208,7 @@ class WC_Vintage_Products {
         echo '</tr>';
         echo '</table>';
         echo '<p class="submit">';
-        echo '<button type="button" id="create_vintage_group" class="button button-primary">Создать/Обновить группу</button>';
+        echo '<button type="button" id="create_vintage_group" class="button button-primary">Создать группу/Добавить в группу</button>';
         echo '</p>';
         echo '</div>';
 
@@ -181,6 +221,17 @@ class WC_Vintage_Products {
             console.log('Vintage Products: jQuery ready, version:', $.fn.jquery);
 
             let selectedProducts = [];
+
+            // Обработчик переключения между созданием новой группы и добавлением в существующую
+            $('input[name="group_action"]').on('change', function() {
+                if ($(this).val() === 'existing') {
+                    $('#existing_group_row').show();
+                    $('#new_group_row').hide();
+                } else {
+                    $('#existing_group_row').hide();
+                    $('#new_group_row').show();
+                }
+            });
 
             // Тест AJAX - сразу привязываем к существующей кнопке
             $('#test_ajax').on('click', function(e) {
@@ -296,39 +347,74 @@ class WC_Vintage_Products {
             $('#create_vintage_group').on('click', function(e) {
                 e.preventDefault();
 
-                const groupName = $('#group_name').val().trim();
+                const action = $('input[name="group_action"]:checked').val();
+                let groupName = '';
+                let existingGroupId = '';
+
+                if (action === 'existing') {
+                    existingGroupId = $('#existing_group_select').val();
+                    groupName = $('#existing_group_select option:selected').text();
+
+                    if (!existingGroupId) {
+                        alert('Выберите существующую группу');
+                        return;
+                    }
+                } else {
+                    groupName = $('#group_name').val().trim();
+
+                    if (!groupName) {
+                        alert('Введите название группы');
+                        return;
+                    }
+                }
+
                 const productIds = $('#selected_product_ids').val();
 
-                console.log('Creating group:', groupName, 'with products:', productIds);
+                console.log('Action:', action, 'Group:', groupName, 'Existing ID:', existingGroupId, 'Products:', productIds);
 
-                if (!groupName) {
-                    alert('Введите название группы');
+                // Для добавления в существующую группу товары не обязательны (добавляем только текущий товар)
+                if (action === 'create' && !productIds) {
+                    alert('Выберите хотя бы один товар для новой группы');
                     return;
                 }
 
-                if (!productIds) {
-                    alert('Выберите хотя бы один товар для группы');
-                    return;
-                }
-
+                // Добавляем скрытые поля
                 $('<input>').attr({
                     type: 'hidden',
-                    name: 'group_name_hidden',
-                    value: groupName
+                    name: 'group_action_hidden',
+                    value: action
                 }).appendTo('#post');
+
+                if (action === 'existing') {
+                    $('<input>').attr({
+                        type: 'hidden',
+                        name: 'existing_group_id_hidden',
+                        value: existingGroupId
+                    }).appendTo('#post');
+                } else {
+                    $('<input>').attr({
+                        type: 'hidden',
+                        name: 'group_name_hidden',
+                        value: groupName
+                    }).appendTo('#post');
+                }
 
                 $('<input>').attr({
                     type: 'hidden',
                     name: 'selected_product_ids_hidden',
-                    value: productIds
+                    value: productIds || ''
                 }).appendTo('#post');
 
                 $('#publish').click();
             });
 
+            // ИСПРАВЛЕННЫЙ обработчик удаления из группы
             $('.remove-from-group').on('click', function() {
                 const groupId = $(this).data('group-id');
                 const productId = <?php echo $post->ID; ?>;
+                const nonce = $(this).data('nonce'); // Получаем nonce из data-атрибута
+
+                console.log('Remove from group - Group ID:', groupId, 'Product ID:', productId, 'Nonce:', nonce);
 
                 if (confirm('Вы уверены, что хотите удалить товар из этой группы?')) {
                     $.ajax({
@@ -337,7 +423,8 @@ class WC_Vintage_Products {
                         data: {
                             action: 'remove_product_from_vintage_group',
                             group_id: groupId,
-                            product_id: productId
+                            product_id: productId,
+                            _ajax_nonce: nonce // Передаем nonce
                         },
                         success: function(response) {
                             console.log('Remove from group response:', response);
@@ -349,7 +436,8 @@ class WC_Vintage_Products {
                         },
                         error: function(xhr, status, error) {
                             console.log('Remove from group error:', error);
-                            alert('AJAX ошибка при удалении из группы');
+                            console.log('XHR responseText:', xhr.responseText);
+                            alert('AJAX ошибка при удалении из группы: ' + error);
                         }
                     });
                 }
@@ -395,11 +483,82 @@ class WC_Vintage_Products {
         }
 
         // Обработка групп винтажных товаров
-        if (isset($_POST['group_name_hidden']) && isset($_POST['selected_product_ids_hidden'])) {
+        if (isset($_POST['group_action_hidden'])) {
+            $action = $_POST['group_action_hidden'];
+
+            if ($action === 'existing' && isset($_POST['existing_group_id_hidden'])) {
+                // Добавляем в существующую группу
+                $existing_group_id = intval($_POST['existing_group_id_hidden']);
+                $selected_products = isset($_POST['selected_product_ids_hidden']) ? $_POST['selected_product_ids_hidden'] : '';
+
+                error_log('Vintage Products: Adding to existing group ' . $existing_group_id . ', products: ' . $selected_products);
+                $this->add_to_existing_group($existing_group_id, $selected_products, $post_id);
+
+            } elseif ($action === 'create' && isset($_POST['group_name_hidden']) && isset($_POST['selected_product_ids_hidden'])) {
+                // Создаем новую группу
+                error_log('Vintage Products: Found group data - name: ' . $_POST['group_name_hidden'] . ', products: ' . $_POST['selected_product_ids_hidden']);
+                $this->save_vintage_group($_POST['group_name_hidden'], $_POST['selected_product_ids_hidden'], $post_id);
+            }
+        } elseif (isset($_POST['group_name_hidden']) && isset($_POST['selected_product_ids_hidden'])) {
+            // Обратная совместимость со старым форматом
             error_log('Vintage Products: Found group data - name: ' . $_POST['group_name_hidden'] . ', products: ' . $_POST['selected_product_ids_hidden']);
             $this->save_vintage_group($_POST['group_name_hidden'], $_POST['selected_product_ids_hidden'], $post_id);
         } else {
             error_log('Vintage Products: No group data found');
+        }
+    }
+
+    /**
+     * Добавление товара в существующую группу
+     */
+    private function add_to_existing_group($group_id, $product_ids_string, $current_product_id) {
+        global $wpdb;
+
+        error_log('Vintage Products: add_to_existing_group called');
+        error_log('Vintage Products: Group ID: ' . $group_id);
+        error_log('Vintage Products: Product IDs string: ' . $product_ids_string);
+        error_log('Vintage Products: Current product ID: ' . $current_product_id);
+
+        $table_name = $wpdb->prefix . 'vintage_product_groups';
+
+        // Получаем существующую группу
+        $existing_group = $wpdb->get_row($wpdb->prepare(
+            "SELECT * FROM $table_name WHERE id = %d",
+            $group_id
+        ));
+
+        if (!$existing_group) {
+            error_log('Vintage Products: Group not found');
+            return;
+        }
+
+        // Получаем существующие ID товаров в группе
+        $existing_ids = array_filter(array_map('intval', explode(',', $existing_group->product_ids)));
+
+        // Добавляем текущий товар
+        if (!in_array($current_product_id, $existing_ids)) {
+            $existing_ids[] = $current_product_id;
+        }
+
+        // Добавляем выбранные товары (если есть)
+        if (!empty($product_ids_string)) {
+            $selected_ids = array_filter(array_map('intval', explode(',', $product_ids_string)));
+            $existing_ids = array_unique(array_merge($existing_ids, $selected_ids));
+        }
+
+        $final_ids = implode(',', $existing_ids);
+        error_log('Vintage Products: Final product IDs for existing group: ' . $final_ids);
+
+        // Обновляем группу
+        $result = $wpdb->update(
+            $table_name,
+            array('product_ids' => $final_ids),
+            array('id' => $group_id)
+        );
+
+        error_log('Vintage Products: Update existing group result: ' . $result);
+        if ($wpdb->last_error) {
+            error_log('Vintage Products: DB error: ' . $wpdb->last_error);
         }
     }
 
@@ -467,201 +626,8 @@ class WC_Vintage_Products {
     }
 
     /**
-     * Скрипт для футера админки
+     * AJAX поиск товаров
      */
-    public function admin_footer_script() {
-        global $post;
-
-        // Проверяем, что мы на странице редактирования товара
-        if (!$post || $post->post_type !== 'product') {
-            return;
-        }
-        ?>
-        <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            console.log('Vintage Products script loaded');
-
-            let selectedProducts = [];
-
-            // Тест AJAX
-            $('#test_ajax').click(function(e) {
-                e.preventDefault();
-                console.log('Testing AJAX...');
-
-                $.ajax({
-                    url: ajaxurl,
-                    type: 'POST',
-                    data: {
-                        action: 'test_vintage_ajax'
-                    },
-                    success: function(response) {
-                        console.log('Test AJAX success:', response);
-                        alert('AJAX работает: ' + response.data);
-                    },
-                    error: function(xhr, status, error) {
-                        console.log('Test AJAX error:', error);
-                        console.log('XHR:', xhr);
-                        alert('AJAX ошибка: ' + error);
-                    }
-                });
-            });
-
-            // Автозаполнение для поиска товаров
-            $('#product_search').autocomplete({
-                source: function(request, response) {
-                    console.log('Searching for:', request.term);
-                    $.ajax({
-                        url: ajaxurl,
-                        type: 'GET',
-                        data: {
-                            action: 'search_products_for_vintage',
-                            term: request.term
-                        },
-                        success: function(data) {
-                            console.log('AJAX response:', data);
-                            response(data);
-                        },
-                        error: function(xhr, status, error) {
-                            console.log('AJAX error:', error);
-                            console.log('XHR:', xhr);
-                            response([]);
-                        }
-                    });
-                },
-                minLength: 2,
-                select: function(event, ui) {
-                    console.log('Selected product:', ui.item);
-                    addProductToSelection(ui.item.id, ui.item.label);
-                    $(this).val('');
-                    return false;
-                }
-            });
-
-            // Добавление товара в выбранные
-            function addProductToSelection(productId, productName) {
-                // Проверяем, не добавлен ли уже товар
-                if (selectedProducts.find(p => p.id == productId)) {
-                    alert('Этот товар уже добавлен');
-                    return;
-                }
-
-                selectedProducts.push({
-                    id: productId,
-                    name: productName
-                });
-
-                updateSelectedProductsDisplay();
-                updateHiddenField();
-            }
-
-            // Обновление отображения выбранных товаров
-            function updateSelectedProductsDisplay() {
-                let html = '<div class="selected-products-container">';
-                html += '<h4>Выбранные товары:</h4>';
-
-                selectedProducts.forEach(function(product, index) {
-                    html += '<div class="selected-product-item" data-product-id="' + product.id + '">';
-                    html += '<span>' + product.name + '</span>';
-                    html += '<button type="button" class="button remove-product" data-index="' + index + '">×</button>';
-                    html += '</div>';
-                });
-
-                html += '</div>';
-                $('#selected_products').html(html);
-            }
-
-            // Обновление скрытого поля с ID товаров
-            function updateHiddenField() {
-                const ids = selectedProducts.map(p => p.id).join(',');
-                $('#selected_product_ids').val(ids);
-                console.log('Updated selected IDs:', ids);
-            }
-
-            // Удаление товара из выбранных
-            $(document).on('click', '.remove-product', function() {
-                const index = $(this).data('index');
-                selectedProducts.splice(index, 1);
-                updateSelectedProductsDisplay();
-                updateHiddenField();
-            });
-
-            // Создание группы
-            $('#create_vintage_group').click(function(e) {
-                e.preventDefault();
-
-                const groupName = $('#group_name').val().trim();
-                const productIds = $('#selected_product_ids').val();
-
-                console.log('Creating group:', groupName, 'with products:', productIds);
-
-                if (!groupName) {
-                    alert('Введите название группы');
-                    return;
-                }
-
-                if (!productIds) {
-                    alert('Выберите хотя бы один товар для группы');
-                    return;
-                }
-
-                // Добавляем скрытые поля к форме для сохранения
-                if ($('input[name="group_name_hidden"]').length === 0) {
-                    $('<input>').attr({
-                        type: 'hidden',
-                        name: 'group_name_hidden',
-                        value: groupName
-                    }).appendTo('#post');
-                } else {
-                    $('input[name="group_name_hidden"]').val(groupName);
-                }
-
-                if ($('input[name="selected_product_ids_hidden"]').length === 0) {
-                    $('<input>').attr({
-                        type: 'hidden',
-                        name: 'selected_product_ids_hidden',
-                        value: productIds
-                    }).appendTo('#post');
-                } else {
-                    $('input[name="selected_product_ids_hidden"]').val(productIds);
-                }
-
-                // Сохраняем пост
-                $('#publish').click();
-            });
-
-            // Удаление из группы
-            $(document).on('click', '.remove-from-group', function() {
-                const groupId = $(this).data('group-id');
-                const productId = $('#post_ID').val();
-
-                if (confirm('Вы уверены, что хотите удалить товар из этой группы?')) {
-                    $.ajax({
-                        url: ajaxurl,
-                        type: 'POST',
-                        data: {
-                            action: 'remove_product_from_vintage_group',
-                            group_id: groupId,
-                            product_id: productId
-                        },
-                        success: function(response) {
-                            console.log('Remove from group response:', response);
-                            if (response.success) {
-                                location.reload();
-                            } else {
-                                alert('Ошибка при удалении из группы: ' + response.data);
-                            }
-                        },
-                        error: function(xhr, status, error) {
-                            console.log('Remove from group error:', error);
-                            alert('AJAX ошибка при удалении из группы');
-                        }
-                    });
-                }
-            });
-        });
-        </script>
-        <?php
-    }
     public function ajax_search_products() {
         if (!current_user_can('edit_posts')) {
             wp_die();
@@ -704,19 +670,15 @@ class WC_Vintage_Products {
             return;
         }
 
-        if ($post->post_type != 'product') {
+        if (!$post || $post->post_type != 'product') {
             return;
         }
 
         wp_enqueue_script('jquery-ui-autocomplete');
 
-
-        wp_localize_script('vintage-products-admin', 'vintage_ajax', array(
-            'ajax_url' => admin_url('admin-ajax.php'),
-            'nonce' => wp_create_nonce('vintage_ajax_nonce')
-        ));
-
-        wp_enqueue_style('vintage-products-admin', plugin_dir_url(__FILE__) . 'admin.css', array(), '1.0.0');
+        // Добавляем стили прямо в хедер
+        $css = $this->get_admin_css();
+        wp_add_inline_style('wp-admin', $css);
     }
 
     /**
@@ -871,13 +833,21 @@ class WC_Vintage_Products {
         }
         ';
     }
+
+    /**
+     * ИСПРАВЛЕННЫЙ AJAX обработчик удаления товара из группы
+     */
     public function ajax_remove_product_from_group() {
+        // Проверяем права доступа
         if (!current_user_can('edit_posts')) {
             wp_send_json_error('Недостаточно прав');
+            return;
         }
 
-        if (!wp_verify_nonce($_POST['_ajax_nonce'], 'vintage_ajax_nonce')) {
+        // Проверяем nonce
+        if (!isset($_POST['_ajax_nonce']) || !wp_verify_nonce($_POST['_ajax_nonce'], 'vintage_ajax_nonce')) {
             wp_send_json_error('Неверный nonce');
+            return;
         }
 
         global $wpdb;
@@ -885,6 +855,8 @@ class WC_Vintage_Products {
 
         $group_id = intval($_POST['group_id']);
         $product_id = intval($_POST['product_id']);
+
+        error_log('Vintage Products: Removing product ' . $product_id . ' from group ' . $group_id);
 
         // Получаем группу
         $group = $wpdb->get_row($wpdb->prepare(
@@ -894,6 +866,7 @@ class WC_Vintage_Products {
 
         if (!$group) {
             wp_send_json_error('Группа не найдена');
+            return;
         }
 
         // Удаляем товар из списка
@@ -902,18 +875,28 @@ class WC_Vintage_Products {
 
         if (empty($product_ids)) {
             // Если в группе не осталось товаров, удаляем группу
-            $wpdb->delete($table_name, array('id' => $group_id));
+            $result = $wpdb->delete($table_name, array('id' => $group_id));
+            error_log('Vintage Products: Deleted empty group, result: ' . $result);
         } else {
             // Обновляем группу
-            $wpdb->update(
+            $result = $wpdb->update(
                 $table_name,
                 array('product_ids' => implode(',', $product_ids)),
                 array('id' => $group_id)
             );
+            error_log('Vintage Products: Updated group with remaining products, result: ' . $result);
         }
 
-        wp_send_json_success('Товар удален из группы');
+        if ($result !== false) {
+            wp_send_json_success('Товар успешно удален из группы');
+        } else {
+            wp_send_json_error('Ошибка при удалении товара из группы: ' . $wpdb->last_error);
+        }
     }
+
+    /**
+     * Отображение связанных винтажных товаров на фронтенде
+     */
     public function display_vintage_products() {
         global $product, $wpdb;
 
@@ -963,7 +946,6 @@ class WC_Vintage_Products {
                 });
 
                 echo '<div class="vintage-group">';
-                // echo '<h4>' . esc_html($group->group_name) . '</h4>';
                 echo '<div class="vintage-products-list">';
 
                 foreach ($related_products as $item) {

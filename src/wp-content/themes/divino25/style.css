@@ -593,7 +593,7 @@ footer {
     font-weight: 500;
     border-radius: var(--brs);
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.1s ease-in-out;
 }
 .sp-stock.in-stock {
     color: var(--ok-text-color);
@@ -1176,7 +1176,7 @@ footer {
     padding: 5px 15px;
     border: var(--brd-size) solid var(--el-colored-secondary);
     border-radius: var(--brs);
-    background: transparent;
+    background: #fff;
 }
 
 .vintage-product-item:hover {
@@ -1205,7 +1205,7 @@ footer {
     background-color: #fff;
     padding: 15px;
     border-radius: var(--brs-lg);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow:  0 9px 14px rgba(0,0,0,0.2);
     z-index: 2;
     margin-top: -275px;
     max-width: 250px;
@@ -1553,4 +1553,11 @@ fieldset legend {
 }
 .woocommerce-account .addresses .title .edit {
     float: initial !important;
+}
+.woocommerce div.product form.cart div.quantity .qty:hover {
+    border-color: var(--input-brd-color-hover) !important;
+}
+.woocommerce div.product form.cart div.quantity .qty:focus {
+    outline: none;
+    border-color: var(--input-brd-color-focus) !important;
 }
