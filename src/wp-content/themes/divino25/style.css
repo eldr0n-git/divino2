@@ -10,6 +10,7 @@ Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: divino
+User pwd: I$Z6u$$z8pB0wN3glDR&KYE2
 */
 
 
@@ -36,6 +37,8 @@ Text Domain: divino
 
     --input-bg-color: #F4F5F7;
     --input-brd-color: #DEDEE2;
+    --input-brd-color-hover: #c2c2c2;
+    --input-brd-color-focus: #C7383E;
     --input-brd-size: var(--brd-size);
     --input-brs: var(--brs);
     --input-text-color: #6D5561;
@@ -50,7 +53,9 @@ Text Domain: divino
     --slider-height: 8px;
     --slider-bg-color: var(--el-colored-secondary)  ;
 
+    --label-text-color: rgb(17,17,17);
     --label-width: 175px;
+    --legend-text-color: rgb(174, 174, 174);
 
     /* header */
     --title_section-height: 110px;
@@ -131,9 +136,17 @@ h1 {
     letter-spacing: -1px;
 }
 
+body > .wp-site-blocks {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 main {
     margin-top: 0 !important;
+    flex-grow: 1;
 }
+
+
 /* h1 margins */
 .dv-cart .wp-block-woocommerce-cart {
     margin-top: calc(var(--pd) * 2);
@@ -269,7 +282,7 @@ footer .wp-block-site-title a {
 }
 .search__input:focus-visible {
     outline: none;
-    border-color: var(--primary-bg);
+    border-color: var(--input-brd-color-focus);
 }
 .search__submit{
     font-size: 0;
@@ -327,6 +340,9 @@ footer .wp-block-site-title a {
 }
 .cat_menu__item:not(:first-child) {
     margin-left: 40px;
+}
+.basket-toggle {
+    padding: 0 0 0 45px;
 }
 .basket-toggle__link {
     display: flex;
@@ -1247,7 +1263,7 @@ footer {
 
 
 /* LOGIN FORM */
-.woocommerce form.login, 
+.woocommerce form.login,
 .woocommerce form.register{
     background-color: var(--form-bg-color);
     box-shadow: 0 10px 15px rgba(0,0,0, 0.25) ;
@@ -1258,8 +1274,8 @@ footer {
     align-self: center;
     margin: 0;
 }
-.woocommerce form.login label, 
-.woocommerce form.register label, 
+.woocommerce form.login label,
+.woocommerce form.register label,
 .lost_password a{
     font-size:  16px;
     color: var(--form-text-color);
@@ -1267,7 +1283,7 @@ footer {
     font-family: 'Rubik', sans-serif;
     margin-bottom: 0;
 }
-.woocommerce form.login .input-text, 
+.woocommerce form.login .input-text,
 .woocommerce form.register .input-text{
     font-size:  20px !important;
     color: var(--input-text-color);
@@ -1351,10 +1367,36 @@ footer {
     box-shadow: 0 3px var(---brd-color) inset;
 }
 
-.woocommerce-Input--text {
+.woocommerce-Input--text,
+.woocommerce-Input--email,
+.woocommerce-Input--password,
+.woocommerce-page form .form-row input.input-text, .woocommerce-page form .form-row select, .woocommerce-page form .form-row textarea.input-text {
     outline: none;
 }
+.woocommerce-Input.woocommerce-Input--text,
+.woocommerce-Input.woocommerce-Input--email,
+.woocommerce-Input.woocommerce-Input--password,
+.woocommerce-page form .form-row input.input-text, .woocommerce-page form .form-row select, .woocommerce-page form .form-row textarea.input-text {
+    padding: 10px 15px !important;
+    border: var(--input-brd-size) solid var(--input-brd-color) !important;
+    font-size: 16px !important;
+    color: var(--input-text-color) !important;
+    font-family: 'Rubik', sans-serif !important;
+    background-color: var(--input-bg-color) !important;
+}
+.woocommerce-Input.woocommerce-Input--text:hover,
+.woocommerce-Input.woocommerce-Input--email:hover,
+.woocommerce-Input.woocommerce-Input--password:hover,
+.woocommerce-page form .form-row input.input-text:hover, .woocommerce-page form .form-row select:hover, .woocommerce-page form .form-row textarea.input-text:hover {
+    border-color: var(--input-brd-color-hover) !important;
+}
 
+.woocommerce-Input.woocommerce-Input--text:focus,
+.woocommerce-Input.woocommerce-Input--email:focus,
+.woocommerce-Input.woocommerce-Input--password:focus,
+.woocommerce-page form .form-row input.input-text:focus, .woocommerce-page form .form-row select:focus, .woocommerce-page form .form-row textarea.input-text:focus {
+    border-color: var(--input-brd-color-focus) !important;
+}
 .woocommerce-MyAccount-content .input-text {
     padding: 10px 15px !important;
     border: var(--input-brd-size) solid var(--input-brd-color) !important;
@@ -1365,4 +1407,150 @@ footer {
     font-size: 16px;
     font-weight: 400;
     font-family: 'Rubik', sans-serif;
+}
+fieldset {
+    border: var(--input-brd-size) solid var(--input-brd-color);
+    border-radius: var(--brs-lg);
+}
+fieldset legend {
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    color: var(--legend-text-color);
+    padding: 0 10px;
+}
+.woocommerce-page form .form-row label {
+    color: var(--label-text-color)
+}
+
+.tinv-header {
+    /* line-height: 20px; */
+}
+.tinv-header h2 {
+    margin: 0;
+}
+.tinvwl-table-manage-list {
+    border: var(--input-brd-size) solid var(--input-brd-color);
+    border-radius: var(--brs-lg);
+
+}
+.tinv-wishlist table.tinvwl-table-manage-list {
+ padding:0;
+  margin:0;
+  border:0;
+}
+.tinv-wishlist table th {
+    padding: 7px 15px;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: var(--input-bg-color);
+}
+.tinvwl-table-manage-list .tinvwl-full {
+
+}
+.tinvwl-table-manage-list .product-name,
+.tinvwl-table-manage-list .product-date  {
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    color: var(--product-text-color);
+    line-height: 20px;
+}
+.tinvwl-table-manage-list .product-name a {
+    text-decoration: none;
+}
+.tinvwl-input-group .form-control {
+    height: initial;
+}
+.tinvwl-input-group .form-control,
+.tinvwl-table-manage-list .button {
+    font-size: 13px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    color: var(--input-text-color);
+    background-color: var(--input-bg-color);
+    border: var(--input-brd-size) solid var(--input-brd-color);
+    padding: 7px 15px;
+    border-radius: var(--brs);
+    cursor: pointer;
+}
+.tinvwl-table-manage-list .product-remove button {
+    cursor: pointer;
+}
+.tinvwl-table-manage-list .product-remove button:hover {
+    background-color: var(--primary-bg-hover);
+    color: var(--primary-text-color);
+}
+.tinvwl-input-group .form-control:hover,
+.tinvwl-table-manage-list .button:hover {
+    background-color: var(--input-bg-color-hover);
+    border-color: var(--input-brd-color-hover);
+}
+.tinvwl-table-manage-list .product-name a:hover {
+    color: var(--primary-color);
+}
+.tinvwl-table-manage-list .woocommerce-Price-amount {
+    white-space: nowrap;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+}
+.tinvwl-table-manage-list .woocommerce-Price-amount bdi {
+    font-family: 'Rubik', sans-serif;
+}
+.tinv-wishlist.woocommerce .stock.in-stock {
+    color: var(--ok-text-color);
+    font-size: 13px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.tinv-wishlist .product-stock i {
+    margin-right: 7px;
+}
+.tinv-wishlist .product-action button{
+    background-color: var(--primary-bg);
+    color: var(--primary-text-color);
+    border-radius: var(--brs);
+    border: none;
+    padding: 7px 13px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.tinv-wishlist .product-action button:hover {
+    background-color: var(--primary-bg-hover);
+}
+
+.woocommerce-Address-title a{
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    color: var(--primary-text-color);
+    padding: 10px 15px;
+    display: flex !important;
+    background-color: var(--primary-bg);
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--brs);
+}
+.woocommerce-Address-title a:before {
+    content: '';
+    display: inline-flex;
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 10px;
+    background-image: url('assets/images/general.svg?#plus');
+    transition: all 0.3s ease-in-out;
+}
+.woocommerce-Address-title a:hover {
+    background-color: var(--primary-bg-hover);
+    color: var(--primary-text-color);
+}
+.woocommerce-Address-title a:hover:before {
+    rotate: 90deg;
+}
+.woocommerce-account .addresses .title .edit {
+    float: initial !important;
 }

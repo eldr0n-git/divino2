@@ -419,11 +419,78 @@ add_filter('get_the_terms', function($terms, $post_id, $taxonomy) {
 }, 10, 3);
 
 
+/* * Отключение полей платёжного адреса в WooCommerce
+ * Этот фильтр удаляет все поля платёжного адреса из формы оформления заказа
+ */
+add_filter( 'woocommerce_checkout_fields', 'disable_billing_address_fields' );
+function disable_billing_address_fields( $fields ) {
+    // Удаляем все поля платёжного адреса на странице оформления заказа
+    $fields['billing'] = array();
+    return $fields;
+}
+
+add_filter( 'woocommerce_enable_order_notes_field', '__return_false' ); // Отключаем поле заметок к заказу
+
+add_filter( 'woocommerce_my_account_get_addresses', 'disable_billing_address_my_account', 10, 2 );
+function disable_billing_address_my_account( $addresses ) {
+    // Удаляем платёжный адрес из раздела "Адреса" в личном кабинете
+    unset( $addresses['billing'] );
+    return $addresses;
+}
+
+add_filter( 'woocommerce_my_account_edit_address_field', 'hide_billing_address_fields', 10, 2 );
+function hide_billing_address_fields( $fields, $type ) {
+    // Скрываем поля редактирования платёжного адреса
+    if ( $type === 'billing' ) {
+        $fields = array();
+    }
+    return $fields;
+}
 
 
 
+// Добавляем JavaScript для автоматического заполнения поля страны
+add_action( 'wp_footer', 'auto_fill_country_script' );
 
+function auto_fill_country_script() {
+    if ( is_account_page() ) {
+        ?>
+        <script type="text/javascript">
+        jQuery(document).ready(function($) {
+            // Скрываем поле страны
+            $('#shipping_country_field, #billing_country_field').hide();
 
+            // Автоматически устанавливаем значение
+            $('#shipping_country, #billing_country').val('KZ');
+
+            // При отправке формы убеждаемся, что значение установлено
+            $('form.edit-address').on('submit', function() {
+                if ($('#shipping_country').length && $('#shipping_country').val() === '') {
+                    $('#shipping_country').val('KZ');
+                }
+                if ($('#billing_country').length && $('#billing_country').val() === '') {
+                    $('#billing_country').val('KZ');
+                }
+            });
+        });
+        </script>
+        <?php
+    }
+}
+
+// CSS для скрытия поля
+add_action( 'wp_head', 'hide_country_field_styles' );
+
+function hide_country_field_styles() {
+    if ( is_account_page() ) {
+        echo '<style>
+            #shipping_country_field,
+            #billing_country_field {
+                display: none !important;
+            }
+        </style>';
+    }
+}
 
 
 
