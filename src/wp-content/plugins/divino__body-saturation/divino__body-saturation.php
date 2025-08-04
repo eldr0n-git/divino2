@@ -75,3 +75,64 @@ function divino_enqueue_saturation_assets($hook) {
     }
 }
 add_action('admin_enqueue_scripts', 'divino_enqueue_saturation_assets');
+
+// Функция для получения значения насыщенности
+function divino_get_body_saturation($post_id = null) {
+    if (!$post_id) {
+        $post_id = get_the_ID();
+    }
+    
+    $value = get_post_meta($post_id, '_body_saturation', true);
+    if (empty($value)) {
+        $value = 4; // Значение по умолчанию
+    }
+    
+    return $value;
+}
+
+// Шорткод для вывода значения насыщенности
+function divino_body_saturation_shortcode($atts) {
+    $atts = shortcode_atts(array(
+        'post_id' => null,
+    ), $atts, 'body_saturation');
+    
+    $wine_body_range = [
+        ['label' => 'Легкое', 'value' => '1'],
+        ['label' => '', 'value' => '2'],
+        ['label' => '', 'value' => '3'],
+        ['label' => '', 'value' => '4'],
+        ['label' => '', 'value' => '5'],
+        ['label' => '', 'value' => '6'],
+        ['label' => 'Полнотелое', 'value' => '7'] 
+    ];
+
+    $post_id = $atts['post_id'] ? intval($atts['post_id']) : get_the_ID();
+    $value = divino_get_body_saturation($post_id);
+    
+    // Start output buffering to capture HTML
+    ob_start();
+    ?>
+
+    <div class="slider-scale-set">
+        <div class="slider-scale">
+            <div class="slider-scale__title">
+                <strong>Насыщенность:</strong>
+            </div>
+            <div class="slider-scale__track">
+                <?php foreach ($wine_body_range as $wine_body_value): ?>
+                    <?php
+                        $is_active = ($value === $wine_body_value['value']) ? 'active' : '';
+                    ?>
+                    <div class="slider-scale__point-wrapper <?php echo $is_active; ?>">
+                        <div class="slider-scale__point"></div>
+                        <div class="slider-scale__label"><?php echo esc_html($wine_body_value['label']); ?></div></div><?php endforeach; ?></div>
+        </div>
+    </div>
+    <?php
+    // Return the captured HTML
+    return ob_get_clean();
+
+
+
+}
+add_shortcode('body_saturation', 'divino_body_saturation_shortcode');

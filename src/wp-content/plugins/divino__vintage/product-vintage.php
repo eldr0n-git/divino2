@@ -200,16 +200,16 @@ class WC_Vintage_Products {
         echo '<th><label for="related_products">Связанные товары:</label></th>';
         echo '<td>';
         echo '<input type="text" id="product_search" placeholder="Начните вводить название товара..." style="width: 400px;" />';
-        echo '<button type="button" id="test_ajax" class="button" style="margin-left: 10px;">Тест AJAX</button>';
         echo '<div id="search_results"></div>';
         echo '<div id="selected_products"></div>';
         echo '<input type="hidden" id="selected_product_ids" name="selected_product_ids" />';
         echo '</td>';
+        echo '<tr>';
+        echo '<td>';
+        echo '<button type="button" id="create_vintage_group" class="button button-primary">Создать группу/Добавить в группу</button>';
+        echo '</td>';
         echo '</tr>';
         echo '</table>';
-        echo '<p class="submit">';
-        echo '<button type="button" id="create_vintage_group" class="button button-primary">Создать группу/Добавить в группу</button>';
-        echo '</p>';
         echo '</div>';
 
         // Добавляем скрипт прямо здесь
@@ -233,29 +233,7 @@ class WC_Vintage_Products {
                 }
             });
 
-            // Тест AJAX - сразу привязываем к существующей кнопке
-            $('#test_ajax').on('click', function(e) {
-                e.preventDefault();
-                console.log('Test AJAX button clicked');
-
-                $.ajax({
-                    url: '<?php echo admin_url('admin-ajax.php'); ?>',
-                    type: 'POST',
-                    data: {
-                        action: 'test_vintage_ajax'
-                    },
-                    success: function(response) {
-                        console.log('Test AJAX success:', response);
-                        alert('AJAX работает: ' + JSON.stringify(response));
-                    },
-                    error: function(xhr, status, error) {
-                        console.log('Test AJAX error:', error);
-                        console.log('Status:', status);
-                        console.log('XHR responseText:', xhr.responseText);
-                        alert('AJAX ошибка: ' + error + ' Status: ' + status);
-                    }
-                });
-            });
+ 
 
             // Проверяем наличие jQuery UI
             if (typeof $.ui === 'undefined' || typeof $.ui.autocomplete === 'undefined') {

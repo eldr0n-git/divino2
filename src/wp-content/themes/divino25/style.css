@@ -1617,3 +1617,37 @@ fieldset legend {
 body.divino25-product-kind-white-wine {
     background-color: #FFF7E9;
 }
+
+
+/* BASKET */
+.wc-block-cart-items__row .wc-block-components-product-name {
+    text-decoration: none;
+    font-family: 'Onest', sans-serif;
+    font-size: 18px;
+}
+table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__quantity .wc-block-cart-item__remove-link {
+    font-weight: 400;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__quantity .wc-block-cart-item__remove-link:hover {
+    color: var(--primary-color);
+}
+table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__quantity .wc-block-cart-item__remove-link::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    margin-right: 5px;
+    background-image: url('assets/images/general.svg?#delete');
+}
+.wp-block-woocommerce-cart-order-summary-block {
+    background-color: #fff;
+    padding: var(--pd);
+    border-radius: var(--brs-lg);
+    box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+}

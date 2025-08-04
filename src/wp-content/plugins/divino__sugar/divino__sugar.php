@@ -438,8 +438,7 @@ function divino_sugar_frontend_shortcode_handler( $atts ) {
                     ?>
                     <div class="slider-scale__point-wrapper <?php echo $is_active; ?>">
                         <div class="slider-scale__point"></div>
-                        <div class="slider-scale__label"><?php echo esc_html($range['label']); ?></div></div><?php endforeach; ?></div>
-        </div>
+                        <div class="slider-scale__label"><?php echo esc_html($range['label']); ?></div></div><?php endforeach; ?></div></div>
     </div>
     <?php
     // Return the captured HTML
