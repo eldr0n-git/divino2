@@ -372,8 +372,18 @@ function render_product_regions() {
 
     if (!empty($terms) && !is_wp_error($terms)) {
         $output = '<div class="product-regions text-center">';
+        
+
+        // Сортируем термины: сначала родительские, потом дочерние
+        usort($terms, function($a, $b) {
+            if ($a->parent === $b->parent) {
+                return 0;
+            }
+            return ($a->parent === 0) ? -1 : 1; // Сначала родительские, потом дочерние
+        });
+
         foreach ($terms as $key => $term) {
-            if ($key > 0) {
+            if ( $term->parent !== 0) {
                 $output .= '<span class="region"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></span>';
             } else {
                 $output .= '<span class="country country-'.$term->slug.'"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></span>';
