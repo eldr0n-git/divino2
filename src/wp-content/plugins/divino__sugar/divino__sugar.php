@@ -448,4 +448,49 @@ function divino_sugar_frontend_shortcode_handler( $atts ) {
     return ob_get_clean();
 }
 
+add_shortcode( 'divino_sugar_short', 'divino_sugar_shortcode_short' );
+function divino_sugar_shortcode_short( $atts ) {
+    global $post;
+
+    $sugar_content = get_post_meta( $post->ID, '_divino_sugar_content', true );
+    $product_kind = wp_get_post_terms($post->ID, 'product_kind', ['fields' => 'slugs'])[0];
+
+    // Only proceed if we have the necessary data
+    if ( empty( $sugar_content ) || ! in_array( $product_kind, [ 'wine', 'champagne-and-sparkling' ] ) ) {
+        return '';
+    }
+
+    // Define the ranges for wine and champagne
+    $wine_ranges = [
+        ['label' => 'Сухое', 'min' => 0, 'max' => 4],
+        ['label' => 'Полусухое', 'min' => 4, 'max' => 12],
+        ['label' => 'Полусладкое', 'min' => 12, 'max' => 45],
+        ['label' => 'Сладкое', 'min' => 45, 'max' => 999] // High max for "more than"
+    ];
+    $champagne_ranges = [
+        ['label' => 'Brut Nature', 'min' => 0, 'max' => 3],
+        ['label' => 'Extra Brut', 'min' => 3, 'max' => 6],
+        ['label' => 'Brut', 'min' => 6, 'max' => 12],
+        ['label' => 'Extra Dry', 'min' => 12, 'max' => 17],
+        ['label' => 'Sec', 'min' => 17, 'max' => 32],
+        ['label' => 'Demi-Sec', 'min' => 32, 'max' => 50],
+        ['label' => 'Doux', 'min' => 50, 'max' => 999] // High max for "more than"
+    ];
+
+    $ranges = ($product_kind === 'wine') ? $wine_ranges : $champagne_ranges;
+    $sugar_float = floatval($sugar_content);
+    $active_label = '';
+
+    // Find the active label based on sugar content
+    foreach ($ranges as $index => $range) {
+        if ($sugar_float > $range['min'] && $sugar_float <= $range['max']) {
+            $active_label = $range['label'];
+            break;
+        }
+    }
+
+    
+    return '<span class="divino_sugar_short">'. $active_label .'</span>';
+}
+
 ?>

@@ -28,6 +28,7 @@ function divino_wine_style_shortcode() {
         return $term->name;
     }, $wine_styles);
     
-    return '<div class="wine-style-display"><span class="wine-style-label">Стиль: </span>' . implode(', ', $style_names) . '</div>';
+    return '<span class="wine-style"><span class="value">' . implode(', ', $style_names) . '</span></span>';
+    // return '<div class="wine-style-display"><strong class="wine-style-label">Стиль: </strong><span class="wine-style-value">' . implode(', ', $style_names) . '</span></div>';
 }
 add_shortcode('divino_wine_style', 'divino_wine_style_shortcode');

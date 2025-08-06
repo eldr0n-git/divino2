@@ -17,8 +17,21 @@
 		<div class="sp-main-column wp-block-column">
 			<!-- wp:post-title {"level": 1, "__woocommerceNamespace":"woocommerce/product-query/product-title"} /-->
 			<!-- wp:woocommerce/product-rating {"isDescendentOfSingleProductTemplate":true} /-->
+            <div class="key-features">
+                <!-- wp:post-terms {"term":"product_kind"} /-->
+                
+                <!-- wp:shortcode -->
+                    [divino_sugar_short]
+                <!-- /wp:shortcode -->
+                <!-- wp:shortcode -->
+                    [product_countries]
+                <!-- /wp:shortcode -->
+                <!-- wp:shortcode -->
+                    [divino_wine_style]
+                <!-- /wp:shortcode -->
+            </div>
             <div class="sp-base-info">
-                <!-- wp:post-terms {"term":"product_kind","prefix":"Тип: "} /-->
+                
                 <!-- wp:post-terms {"term":"product_brand","prefix":"Производитель: "} /-->
 			    <!-- wp:post-excerpt {"__woocommerceNamespace":"woocommerce/product-query/product-summary", "excerptLength":100} /-->
             </div>
@@ -29,9 +42,7 @@
 				<div class="wp-block-group">
 
 					<!-- wp:post-terms {"term":"product_tag","prefix":"Tags: "} /-->
-					<!-- wp:shortcode -->
-					[divino_wine_style]
-					<!-- /wp:shortcode -->
+
 				</div>
 				<!-- /wp:group -->
                 <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->

@@ -363,7 +363,7 @@ add_filter('render_block', function ($block_content, $block) {
 // Для single-product
 add_action('woocommerce_single_product_summary', function() {
     echo render_product_regions();
-}, 19);
+}, 18);
 
 // Общая функция
 function render_product_regions() {
@@ -606,8 +606,166 @@ function divino_custom_woocommerce_title($title) {
     return $title; // по умолчанию
 }
 
+/* * Customize the HTML output of the New Products block
+ */
+add_filter('woocommerce_blocks_product_grid_item_html', 'customize_new_products_block_html', 10, 3);
+function customize_new_products_block_html($html, $data, $product) {
+    // Кастомный HTML для каждого продукта в блоке
+    $html = '<li class="divino-product-item">';
+    $html .= '<a href="' . esc_url($data->permalink) . '">' . $data->image . '</a>';
+    $html .= '<div class="divino-price">' . $data->price . '</div>';
+    $html .= '<a href="' . esc_url($data->permalink) . '">' . esc_html($data->title) . '</a>';
+    $html .= '</li>';
+    return $html;
+}
 
 
 
+
+/**
+ * Shortcode для вывода регионов товара
+ * Использование: [product_regions] или [product_regions product_id="123"]
+ */
+function divino_product_regions_shortcode($atts) {
+    // Получаем атрибуты шорткода
+    $atts = shortcode_atts(array(
+        'product_id' => null, // ID товара (необязательный)
+        'class' => '', // Дополнительный CSS класс (необязательный)
+    ), $atts, 'product_regions');
+    
+    // Определяем ID товара
+    if ($atts['product_id']) {
+        $post_id = intval($atts['product_id']);
+    } else {
+        $post_id = get_the_ID();
+    }
+    
+    // Проверяем, что ID товара валиден
+    if (!$post_id || get_post_type($post_id) !== 'product') {
+        return ''; // Возвращаем пустую строку, если это не товар
+    }
+    
+    // Получаем термины таксономии region
+    $terms = get_the_terms($post_id, 'region');
+    
+    if (empty($terms) || is_wp_error($terms)) {
+        return ''; // Возвращаем пустую строку, если нет регионов
+    }
+    
+    // Формируем вывод
+    $additional_class = $atts['class'] ? ' ' . sanitize_html_class($atts['class']) : '';
+    $output = '<div class="product-regions text-center' . $additional_class . '">';
+    
+    // Сортируем термины: сначала родительские, потом дочерние
+    usort($terms, function($a, $b) {
+        if ($a->parent === $b->parent) {
+            return 0;
+        }
+        return ($a->parent === 0) ? -1 : 1; // Сначала родительские, потом дочерние
+    });
+    
+    foreach ($terms as $key => $term) {
+        if ($term->parent !== 0) {
+            // Дочерний термин (регион)
+            $output .= '<span class="region"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></span>';
+        } else {
+            // Родительский термин (страна)
+            $output .= '<span class="country country-' . esc_attr($term->slug) . '"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></span>';
+        }
+    }
+    
+    $output .= '</div>';
+    
+    return $output;
+}
+
+// Регистрируем шорткод
+add_shortcode('product_regions', 'divino_product_regions_shortcode');
+
+/**
+ * Дополнительный шорткод для вывода только стран товара
+ * Использование: [product_countries] или [product_countries product_id="123"]
+ */
+function divino_product_countries_shortcode($atts) {
+    $atts = shortcode_atts(array(
+        'product_id' => null,
+        'class' => '',
+    ), $atts, 'product_countries');
+    
+    if ($atts['product_id']) {
+        $post_id = intval($atts['product_id']);
+    } else {
+        $post_id = get_the_ID();
+    }
+    
+    if (!$post_id || get_post_type($post_id) !== 'product') {
+        return '';
+    }
+    
+    $terms = get_the_terms($post_id, 'region');
+    
+    if (empty($terms) || is_wp_error($terms)) {
+        return '';
+    }
+    
+    $additional_class = $atts['class'] ? ' ' . sanitize_html_class($atts['class']) : '';
+    $output = '<div class="product-countries' . $additional_class . '">';
+    
+    foreach ($terms as $term) {
+        if ($term->parent === 0) { // Только родительские термины (страны)
+            $output .= '<span class="country country-' . esc_attr($term->slug) . '"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></span>';
+        }
+    }
+    
+    $output .= '</div>';
+    
+    return $output;
+}
+
+// Регистрируем дополнительный шорткод
+add_shortcode('product_countries', 'divino_product_countries_shortcode');
+
+/**
+ * Шорткод для вывода только регионов товара (без стран)
+ * Использование: [product_regions_only] или [product_regions_only product_id="123"]
+ */
+function divino_product_regions_only_shortcode($atts) {
+    $atts = shortcode_atts(array(
+        'product_id' => null,
+        'class' => '',
+    ), $atts, 'product_regions_only');
+    
+    if ($atts['product_id']) {
+        $post_id = intval($atts['product_id']);
+    } else {
+        $post_id = get_the_ID();
+    }
+    
+    if (!$post_id || get_post_type($post_id) !== 'product') {
+        return '';
+    }
+    
+    $terms = get_the_terms($post_id, 'region');
+    
+    if (empty($terms) || is_wp_error($terms)) {
+        return '';
+    }
+    
+    $additional_class = $atts['class'] ? ' ' . sanitize_html_class($atts['class']) : '';
+    $output = '<div class="product-regions-only' . $additional_class . '">';
+    
+    foreach ($terms as $term) {
+        if ($term->parent !== 0) { // Только дочерние термины (регионы)
+            $output .= '<span class="region"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></span>';
+        }
+    }
+    
+    $output .= '</div>';
+    
+    return $output;
+}
+
+// Регистрируем третий шорткод
+add_shortcode('product_regions_only', 'divino_product_regions_only_shortcode');
 
 

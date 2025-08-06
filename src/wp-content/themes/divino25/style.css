@@ -44,8 +44,7 @@ User pwd: I$Z6u$$z8pB0wN3glDR&KYE2
     --input-text-color: #6D5561;
 
     --header-logo-width: 225px;
-    --product-card-image-height: 600px;
-    --gallery-card-image-height: 370px;
+
 
     --product-text-color: #302e2e;
 
@@ -65,6 +64,15 @@ User pwd: I$Z6u$$z8pB0wN3glDR&KYE2
     /* forms */
     --form-bg-color: #fff;
     --form-cnt-pd: calc(var(--pd) * 3);
+
+    /* product grid */
+    --product-card-image-height: 600px;
+    --gallery-card-image-height: 370px;
+    --gallery-card-image-width: 250px;
+
+    --red-wine-color: var(--primary-bg);
+    --white-wine-color: #E4C270;
+    --rose-wine-color: #e4709a;
 }
 
 /*
@@ -509,7 +517,7 @@ footer {
 .product-card-image {
 	width: 100%;
 	height: auto;
-	aspect-ratio: 260 / 370;
+	aspect-ratio: 260 / var(--product-card-image-height);
 	object-fit: cover;
 	display: block;
 }
@@ -583,6 +591,17 @@ footer {
     font-weight: 400;
     color: var(--airy-secondary-text-color);
     margin-bottom: 20px;
+    display: flex;
+}
+.sp-product__articul .custom-product-sku::before{
+    content: '';
+    width: 18px;
+    height: 18px;
+    background-image: url('assets/images/ico-sku.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: block;
+    margin-right: 5px;
 }
 .single_add_to_cart_button {
     background-color: var(--primary-bg);
@@ -610,12 +629,16 @@ footer {
     width: 16px;
     height: 16px;
 }
+.wine-style-display {
+    display: flex;
+}
 .sp-base-info .product-volume,
 .sp-base-info .grape-varieties,
 .sp-base-info .product-region,
 .sp-base-info .taxonomy-product_kind,
 .sp-base-info .taxonomy-product_brand,
-.sp-base-info .vintage-products-section {
+.sp-base-info .vintage-products-section,
+.wine-style-display {
     margin: var(--pd) 0;
 }
 .sp-base-info p strong,
@@ -624,7 +647,8 @@ footer {
 .sp-base-info .product-volume strong,
 .sp-base-info .taxonomy-product_kind .wp-block-post-terms__prefix,
 .sp-base-info .taxonomy-product_brand .wp-block-post-terms__prefix,
-.sp-base-info .vintage-products-section h3 {
+.sp-base-info .vintage-products-section h3,
+.wine-style-display strong {
     font-size: 18px;
     font-family: 'Onest', sans-serif;
     font-weight: 300;
@@ -640,13 +664,20 @@ footer {
 .sp-base-info .product-volume span,
 .sp-base-info .taxonomy-product_kind,
 .sp-base-info .taxonomy-product_brand,
-.sp-base-info .vintage-products-section {
+.sp-base-info .vintage-products-section,
+.wine-style-value {
     font-size: 18px;
     font-family: 'Onest', sans-serif;
     font-weight: 500;
     color: var(--product-text-color);
     display: flex;
     align-items: end;
+}
+.sp-base-info .grape-varieties {
+    align-items: center;
+}
+.wine-style-value{
+    text-indent: 4px;
 }
 .sp-base-info  a {
     text-decoration: none;
@@ -714,8 +745,14 @@ footer {
     position: relative;
     padding: var(--pd);
     border-radius: var(--brs-lg);
+    max-width: var(--gallery-card-image-width);
 }
-.dv-collection .wc-block-product-template {
+.wc-block-product h2 {
+    line-height: initial !important;
+    margin-bottom: 0;
+}
+.dv-collection .wc-block-product-template,
+.wc-block-grid__products {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr !important;
     gap: var(--pd);
@@ -826,7 +863,8 @@ footer {
     padding: 0 !important;
 }
 /* Product card */
-.wp-block-post-title > a {
+.wp-block-post-title > a,
+.wc-block-grid__product-title {
     font-size: 18px;
     font-family: 'Onest', serif;
     font-weight: 400;
@@ -837,6 +875,7 @@ footer {
     overflow: hidden;
     max-height: 50px;
     text-overflow: ellipsis;
+    margin: 0;
 }
 
 
@@ -1718,14 +1757,138 @@ table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__quantit
     margin-top: 3px;
 }
 
+/* Убираем стрелки у input type="number" */
 /* Для Chrome, Safari, Edge, Opera */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
 /* Для Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
+}
+
+.wc-block-cart__empty-cart__title.with-empty-cart-icon::before {
+    background-image: url('assets/images/empty-cart.jpg') !important;
+    width: 350px !important;
+    height: 350px !important;
+    mask-image: none;
+    border-radius: 50%;
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+}
+
+.wp-block-woocommerce-empty-cart-block {
+    background-color: #fff;
+    border-radius: var(--brs-lg);
+}
+
+h2.wp-block-heading {
+    font-family: 'Literata', sans-serif;
+    font-weight: 700;
+}
+
+/* PRODUCT GRID */
+.wc-block-grid__products {
+    list-style: none;
+}
+.wc-block-grid__products .wc-block-grid__product-image,
+.woocommerce-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--gallery-card-image-height) !important;
+}
+.wc-block-grid__products .wc-block-grid__product-image img {
+    width: auto;
+    height: 100%;
+}
+.divino-product-item {
+    padding: 0 calc(var(--pd) * 2);
+}
+.wc-block-grid__products a,
+.wc-block-grid__products a div {
+    text-decoration: none;
+}
+.wc-block-grid__products a:hover div {
+    color: var(--primary-color)
+}
+
+
+/* key-features block */
+.key-features {
+    display: flex;
+    align-items: center;
+    padding: calc( var(--pd) * 0.6) var(--pd);
+    /* border: 2px solid var(--input-brd-color); */
+    border-radius: var(--brs-lg);
+    background: linear-gradient(45deg, var(--primary-bg) 0%, #000 90%);
+    position: relative;
+    width: calc(100% - 65px);
+}
+.key-features::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-image: url('assets/images/bottle-right.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 65px;
+    height: 40px;
+    right: -46px;
+    background-size: cover;
+}
+body.divino25-product-kind-red-wine .key-features {
+    background: linear-gradient(45deg, var(--red-wine-color) 0%, #000 90%);
+}
+body.divino25-product-kind-white-wine .key-features {
+    background: linear-gradient(45deg, var(--white-wine-color) 0%, #000 90%);
+}
+.key-features > * {
+    margin-right: var(--pd);
+    display: flex;
+}
+.key-features > p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.key-features > *:not(:first-child)::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--airy-secondary-text-color);
+    margin-left: var(--pd);
+    margin: 9px 12px 0 0;
+    opacity: 0.5;
+}
+.key-features .wine-style,
+.key-features .taxonomy-product_kind,
+.key-features .divino_sugar_short,
+.key-features .country a {
+    font-family: 'Rubik', serif;
+    font-size: 16px;
+    color: var(--airy-color);
+    font-weight: 500;   
+}
+
+
+.key-features .taxonomy-product_kind a {
+    text-decoration: none;
+}
+.tinv-wishlist table.tinvwl-table-manage-list {
+    max-width: 1200px;
+  margin: 0 auto !important;
+}
+
+.button.tinvwl_button_close {
+    background-color: var(--primary-bg);
+    color: var(--primary-text-color);
+    color: var(--primary-text-color);
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
 }
