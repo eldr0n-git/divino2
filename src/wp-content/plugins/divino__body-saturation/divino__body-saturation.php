@@ -42,6 +42,10 @@ function divino_render_body_saturation_metabox($post) {
         </div>
         <input type="range" id="divino_body_saturation" name="divino_body_saturation" min="1" max="7" value="<?php echo esc_attr($value); ?>" class="divino-saturation-slider">
         <div id="divino-saturation-value-display"><?php echo esc_attr($value); ?></div>
+        <div style="display:flex; align-items: center">
+            <input type="checkbox" name="divino_body_saturation_save" id="divino_body_saturation_save">
+            <label for="divino_body_saturation_save">Сохранить насыщенность</label>
+        </div>
     </div>
     <?php
 }
@@ -58,7 +62,7 @@ function divino_save_body_saturation($post_id) {
         return;
     }
 
-    if (isset($_POST['divino_body_saturation'])) {
+    if (isset($_POST['divino_body_saturation_save']) && $_POST['divino_body_saturation_save'] === 'on' && isset($_POST['divino_body_saturation'])) {
         update_post_meta($post_id, '_body_saturation', sanitize_text_field($_POST['divino_body_saturation']));
     }
 }

@@ -16,4 +16,10 @@ jQuery(document).ready(function($) {
     $('.add_to_cart_button').on('click', function(e) {
         $(this).addClass('product--added');
     });
+
+
+
+
+
+
 });

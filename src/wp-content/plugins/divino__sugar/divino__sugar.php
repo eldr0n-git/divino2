@@ -125,6 +125,8 @@ class DivinoSugar {
                 transform: translateX(-50%);
                 cursor: grab;
                 box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+                left: var(--position, 0%);
+                margin-top: -2px;
             }
 
             #sugar-slider:active::before {
@@ -236,6 +238,7 @@ class DivinoSugar {
                 // Обновляем позицию слайдера
                 slider.style.setProperty('--position', position + '%');
                 slider.style.background = `linear-gradient(to right, #f0f0f0 ${position}%, #0073aa ${position}%)`;
+
 
                 // Обновляем активный лейбл
                 document.querySelectorAll('.sugar-label').forEach((label, index) => {

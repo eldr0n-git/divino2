@@ -572,6 +572,7 @@ footer {
     font-family: 'Rubik', sans-serif;
     font-weight: 500;
     font-size: 20px;
+    background-color: var(--input-bg-color);
 }
 .sp-product__articul p {
     margin-top: 0;
@@ -631,6 +632,7 @@ footer {
     display: inline-flex;
     min-width: var(--label-width);
     max-width: var(--label-width);
+
 }
 .sp-base-info p,
 .sp-base-info .product-region,
@@ -643,7 +645,8 @@ footer {
     font-family: 'Onest', sans-serif;
     font-weight: 500;
     color: var(--product-text-color);
-
+    display: flex;
+    align-items: end;
 }
 .sp-base-info  a {
     text-decoration: none;
@@ -1554,6 +1557,9 @@ fieldset legend {
 .woocommerce-account .addresses .title .edit {
     float: initial !important;
 }
+.woocommerce div.product form.cart div.quantity {
+    margin: 0 10px 0 0 !important;
+}
 .woocommerce div.product form.cart div.quantity .qty:hover {
     border-color: var(--input-brd-color-hover) !important;
 }
@@ -1650,4 +1656,76 @@ table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__quantit
     padding: var(--pd);
     border-radius: var(--brs-lg);
     box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+}
+
+
+/* input type number customization */
+.divino-number-input__wrapper {
+    position: relative;
+    display: flex;
+}
+
+.divino-number-input__input {
+    border-radius: var(--brs);
+    padding-right: 25px !important;/* Место для кнопок */
+}
+
+.divino-number-input__increment, .divino-number-input__decrement {
+    width: 22px;
+    height: 19px;
+    border: none;
+    background-color: var(--airy-secondary-text-color);
+    color: var(--airy-color);
+    cursor: pointer;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    line-height: 18px;
+    text-decoration: none;
+    font-size: 0.001px;
+}
+.divino-number-input__increment {
+    top: 2px;
+    border-radius: 0 calc( var(--brs) - 2px) 0 0;
+    background-image: url('assets/images/general.svg?#plus');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-bottom: var(--brd-size) solid var(--input-brd-color);
+}
+.divino-number-input__decrement {
+    bottom: 2px;
+    border-radius: 0 0 calc( var(--brs) - 2px) 0;
+    background-image: url('assets/images/general.svg?#minus');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.divino-number-input__increment:hover, 
+.divino-number-input__decrement:hover {
+    background-color: var(--primary-bg-hover);
+    color: var(--primary-text-color);
+}
+.divino-number-input__increment:active, 
+.divino-number-input__decrement:active {
+    background-color: var(--primary-bg);
+}
+.divino-number-input__buttonWrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-left: -35px;
+    margin-top: 3px;
+}
+
+/* Для Chrome, Safari, Edge, Opera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Для Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
 }

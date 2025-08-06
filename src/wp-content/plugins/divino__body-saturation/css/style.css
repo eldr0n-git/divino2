@@ -33,16 +33,18 @@
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: #4CAF50;
+    background: #0073aa;
     cursor: pointer;
+    border: none;
 }
 
 .divino-saturation-slider::-moz-range-thumb {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background: #4CAF50;
+    background: #0073aa;
     cursor: pointer;
+    border: none;
 }
 
 #divino-saturation-value-display {
@@ -50,4 +52,24 @@
     font-size: 14px;
     font-weight: bold;
     color: #333;
+}
+
+.divino-saturation-slider-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 4px;
+}
+.divino-saturation-slider-container input[type="checkbox"] {
+    height: 18px;
+  width: 18px;
+  margin: 0 5px -1px 0;
+}
+.divino-saturation-slider-container:has( input[type="checkbox"]:checked ){
+    background-color: #e9ffec;
+    border-color: #56e76c;
+}
+.divino-saturation-slider-container label {
+    padding: 5px 0;
 }
