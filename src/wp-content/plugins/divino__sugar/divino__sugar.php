@@ -450,10 +450,23 @@ function divino_sugar_frontend_shortcode_handler( $atts ) {
 
 add_shortcode( 'divino_sugar_short', 'divino_sugar_shortcode_short' );
 function divino_sugar_shortcode_short( $atts ) {
-    global $post;
+    if ( ! function_exists( 'wc_get_product' ) ) {
+        return '';
+    }
+    $product = wc_get_product();
+    if ( ! $product ) {
+        return '';
+    }
+    $post_id = $product->get_id();
 
-    $sugar_content = get_post_meta( $post->ID, '_divino_sugar_content', true );
-    $product_kind = wp_get_post_terms($post->ID, 'product_kind', ['fields' => 'slugs'])[0];
+    $sugar_content = get_post_meta( $post_id, '_divino_sugar_content', true );
+    $product_kind_terms = wp_get_post_terms($post_id, 'product_kind', ['fields' => 'slugs']);
+
+    if ( is_wp_error($product_kind_terms) || empty($product_kind_terms) ) {
+        return '';
+    }
+
+    $product_kind = $product_kind_terms[0];
 
     // Only proceed if we have the necessary data
     if ( empty( $sugar_content ) || ! in_array( $product_kind, [ 'wine', 'champagne-and-sparkling' ] ) ) {

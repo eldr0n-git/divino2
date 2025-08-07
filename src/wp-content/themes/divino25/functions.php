@@ -769,3 +769,48 @@ function divino_product_regions_only_shortcode($atts) {
 add_shortcode('product_regions_only', 'divino_product_regions_only_shortcode');
 
 
+function catalogue_enqueue_scripts() {
+    // Регистрируем и подключаем JS-файл
+    wp_enqueue_script(
+        'catalogue-script', // Уникальный идентификатор скрипта
+        get_theme_file_uri('/assets/js/catalogue.js'), 
+
+        '1.0.0', 
+        true // Загружать в футере (true) или в хедере (false)
+    );
+}
+add_action('wp_enqueue_scripts', 'catalogue_enqueue_scripts');
+
+/**
+ * Функция для установки контекста товара в Query Loop блоке
+ * Заменяет шорткоды на версии с product_id
+ *
+ * @param string $block_content Содержимое блока
+ * @param array $block Массив атрибутов блока
+ * @return string Изменённое содержимое блока
+ */
+function set_product_context_for_query_loop($block_content, $block) {
+    // Проверяем, что мы в Query Loop блоке
+    if ($block['blockName'] === 'core/query' || 
+        (isset($block['attrs']['query']['postType']) && $block['attrs']['query']['postType'] === 'product')) {
+        
+        global $post;
+        if ($post && $post->post_type === 'product') {
+            $product_id = $post->ID;
+            
+            // Заменяем шорткоды, добавляя product_id
+            $block_content = str_replace(
+                ['[divino_sugar_short]', '[divino_wine_style]'],
+                [
+                    '[divino_sugar_short product_id="' . $product_id . '"]',
+                    '[divino_wine_style product_id="' . $product_id . '"]'
+                ],
+                $block_content
+            );
+        }
+    }
+    
+    return $block_content;
+}
+add_filter('render_block', 'set_product_context_for_query_loop', 10, 2);
+

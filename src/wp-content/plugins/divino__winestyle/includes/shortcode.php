@@ -1,25 +1,27 @@
 <?php
 // Shortcode to display wine style for wine products only
 function divino_wine_style_shortcode() {
-    global $post;
-    
-    // Check if this is a product
-    if (!is_singular('product')) {
+    if ( ! function_exists( 'wc_get_product' ) ) {
         return '';
     }
+    $product = wc_get_product();
+    if ( ! $product ) {
+        return '';
+    }
+    $post_id = $product->get_id();
     
     // Check if product has product_kind taxonomy with value "wine"
-    $product_kinds = wp_get_post_terms($post->ID, 'product_kind', array('fields' => 'slugs'));
+    $product_kinds = wp_get_post_terms($post_id, 'product_kind', array('fields' => 'slugs'));
     
     // Only display wine style for wine products
-    if (!in_array('wine', $product_kinds)) {
+    if (is_wp_error($product_kinds) || !in_array('wine', $product_kinds)) {
         return '';
     }
     
     // Get wine style terms
-    $wine_styles = wp_get_post_terms($post->ID, 'wine_style');
+    $wine_styles = wp_get_post_terms($post_id, 'wine_style');
     
-    if (empty($wine_styles)) {
+    if (empty($wine_styles) || is_wp_error($wine_styles)) {
         return '';
     }
     

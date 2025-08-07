@@ -18,8 +18,4 @@ jQuery(document).ready(function($) {
     });
 
 
-
-
-
-
 });
