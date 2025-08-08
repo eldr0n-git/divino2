@@ -1,0 +1,14 @@
+{
+    "apiVersion": 2,
+    "name": "divino/sugar",
+    "title": "Divino: Sugar",
+    "category": "woocommerce",
+    "icon": "carrot",
+    "description": "Выводит характеристику сахара для товара.",
+    "supports": {
+      "html": false
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style.css"
+  }
+  

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Divino Sugar
  * Description: Добавляет метабокс для управления содержанием сахара в винах и игристых напитках
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Divino
  * Text Domain: divino-sugar
  */
@@ -506,4 +506,69 @@ function divino_sugar_shortcode_short( $atts ) {
     return '<span class="divino_sugar_short">'. $active_label .'</span>';
 }
 
-?>
+
+// ---------- Шорткод (оставляем совместимость) ----------
+function divino_sugar_short_func() {
+    global $product;
+    $product_id = get_the_ID(); // ID товара в текущей итерации Query Loop
+    
+    if ( ! $product instanceof WC_Product ) {
+        return '';
+    }
+    $sugar_content = get_post_meta( $product->get_id(), '_divino_sugar_content', true );
+    $product_kind_terms = get_the_terms( $product_id, 'product_kind' );
+
+    if ( is_wp_error($product_kind_terms) || empty($product_kind_terms) ) {
+        return '';
+    } else {
+        $product_kind = $product_kind_terms[0]->slug;        
+    }
+
+    $wine_slugs = ['wine', 'red-wine', 'white-wine', 'rose-wine'];
+    
+    // Define the ranges for wine and champagne
+    $wine_ranges = [
+        ['label' => 'Сухое', 'min' => 0, 'max' => 4],
+        ['label' => 'Полусухое', 'min' => 4, 'max' => 12],
+        ['label' => 'Полусладкое', 'min' => 12, 'max' => 45],
+        ['label' => 'Сладкое', 'min' => 45, 'max' => 999] // High max for "more than"
+    ];
+    $champagne_ranges = [
+        ['label' => 'Brut Nature', 'min' => 0, 'max' => 3],
+        ['label' => 'Extra Brut', 'min' => 3, 'max' => 6],
+        ['label' => 'Brut', 'min' => 6, 'max' => 12],
+        ['label' => 'Extra Dry', 'min' => 12, 'max' => 17],
+        ['label' => 'Sec', 'min' => 17, 'max' => 32],
+        ['label' => 'Demi-Sec', 'min' => 32, 'max' => 50],
+        ['label' => 'Doux', 'min' => 50, 'max' => 999] // High max for "more than"
+    ];
+
+    // Determine which ranges to use based on product_kind
+    $ranges = ( in_array($product_kind, $wine_slugs) ) ? $wine_ranges : $champagne_ranges;
+    $sugar_float = floatval($sugar_content);
+    $active_label = '';
+
+    // Find the active label based on sugar content
+    foreach ($ranges as $index => $range) {
+        if ($sugar_float > $range['min'] && $sugar_float <= $range['max']) {
+            $active_label = $range['label'];
+            break;
+        }
+    }
+
+
+    return '<div class="divino-sugar">' . esc_html( $active_label ) . '</div>';
+}
+add_shortcode( 'divino_sugar_short', 'divino_sugar_short_func' );
+
+// ---------- Гутенберг-блок ----------
+function divino_sugar_register_block() {
+    register_block_type( 'divino/sugar', array(
+        'render_callback' => 'divino_sugar_block_render',
+    ) );
+}
+add_action( 'init', 'divino_sugar_register_block' );
+
+function divino_sugar_block_render( $attributes, $content ) {
+    return divino_sugar_short_func();
+}
