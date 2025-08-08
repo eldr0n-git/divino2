@@ -24,7 +24,7 @@ class CustomProductSKU {
         add_shortcode('custom_sku', array($this, 'display_sku_shortcode'));
 
         // Регистрируем блок для Gutenberg
-        add_action('init', array($this, 'register_block'));
+        //add_action('init', array($this, 'register_block'));
     }
 
     /**
@@ -44,6 +44,9 @@ class CustomProductSKU {
             $product = wc_get_product($atts['product_id']);
         } else {
             global $product;
+            if ( ! $product || ! is_a( $product, 'WC_Product' ) ) {
+                $product = wc_get_product( get_the_ID() );
+            }
         }
 
         // Проверяем, что продукт существует и есть артикул
@@ -127,9 +130,11 @@ class CustomProductSKU {
      * Рендер блока
      */
     public function render_block($attributes) {
+
         $class = isset($attributes['className']) ? $attributes['className'] : 'custom-product-sku';
         $prefix = isset($attributes['prefix']) ? $attributes['prefix'] : '';
         $suffix = isset($attributes['suffix']) ? $attributes['suffix'] : '';
+
 
         return $this->display_sku_shortcode(array(
             'class' => $class,
@@ -175,4 +180,18 @@ function custom_product_sku($product_id = null, $args = array()) {
 function custom_product_sku_display($product_id = null, $args = array()) {
     echo custom_product_sku($product_id, $args);
 }
-?>
+function test() {
+    return 'test';
+}
+
+// ---------- Гутенберг-блок ----------
+function divino_sku_register_block() {
+    register_block_type( 'divino/sku', array(
+        'render_callback' => 'divino_sku_block_render',
+    ) );
+}
+add_action( 'init', 'divino_sku_register_block' );
+
+function divino_sku_block_render( $attributes, $content ) {
+    return custom_product_sku();
+}

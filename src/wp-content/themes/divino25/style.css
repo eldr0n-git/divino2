@@ -2039,3 +2039,10 @@ body.divino25-product-kind-white-wine .key-features {
     text-decoration: none;
     margin: 0 10px;
 }
+
+.view-list__product-sku {
+    display: flex;
+    font-family: 'Rubik', serif;
+    font-size: 14px;
+    color: var(--airy-secondary-text-color);
+}
