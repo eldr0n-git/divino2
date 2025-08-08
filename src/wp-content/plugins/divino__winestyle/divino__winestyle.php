@@ -123,3 +123,5 @@ function divino_migrate_wine_styles_data() {
     // Ставим флаг, что миграция завершена
     update_option('divino_wine_style_migration_done', true);
 }
+
+

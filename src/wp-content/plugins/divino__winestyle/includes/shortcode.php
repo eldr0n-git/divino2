@@ -34,3 +34,16 @@ function divino_wine_style_shortcode() {
     // return '<div class="wine-style-display"><strong class="wine-style-label">Стиль: </strong><span class="wine-style-value">' . implode(', ', $style_names) . '</span></div>';
 }
 add_shortcode('divino_wine_style', 'divino_wine_style_shortcode');
+
+
+// ---------- Гутенберг-блок ----------
+function divino_winestyle_register_block() {
+    register_block_type( 'divino/winestyle', array(
+        'render_callback' => 'divino_winestyle_block_render',
+    ) );
+}
+add_action( 'init', 'divino_winestyle_register_block' );
+
+function divino_winestyle_block_render( $attributes, $content ) {
+    return divino_wine_style_shortcode();
+}
