@@ -6728,36 +6728,7 @@ return array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3
 	),
-	'checkout-billing-address-block' => array(
-		'name' => 'woocommerce/checkout-billing-address-block',
-		'version' => '1.0.0',
-		'title' => 'Billing Address',
-		'description' => 'Collect your customer\'s billing address.',
-		'category' => 'woocommerce',
-		'supports' => array(
-			'align' => false,
-			'html' => false,
-			'multiple' => false,
-			'reusable' => false,
-			'inserter' => false,
-			'lock' => false
-		),
-		'attributes' => array(
-			'lock' => array(
-				'type' => 'object',
-				'default' => array(
-					'remove' => true,
-					'move' => true
-				)
-			)
-		),
-		'parent' => array(
-			'woocommerce/checkout-fields-block'
-		),
-		'textdomain' => 'woocommerce',
-		'$schema' => 'https://schemas.wp.org/trunk/block.json',
-		'apiVersion' => 3
-	),
+	
 	'checkout-contact-information-block' => array(
 		'name' => 'woocommerce/checkout-contact-information-block',
 		'version' => '1.0.0',

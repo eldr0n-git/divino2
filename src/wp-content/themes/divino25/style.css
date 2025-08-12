@@ -77,6 +77,9 @@ User pwd: I$Z6u$$z8pB0wN3glDR&KYE2
 
     /* shadows */
     --block-xl-shadow: 0 20px 35px rgba(0,0,0,0.1);
+
+
+    --th-bg-color: #5b4949;
 }
 
 /*
@@ -739,7 +742,8 @@ footer {
 }
 .wc-block-cart-item__image img {
     height: 200px;
-    width: auto;
+    width: auto !important;
+    max-width: initial !important;
 }
 
 .dv-cart .wc-block-cart__main .wc-block-cart__sidebar {
@@ -747,6 +751,10 @@ footer {
     padding: 0 15px;
 }
 
+.wc-block-cart__submit-container a{
+    background-color: var(--primary-bg);
+    border-radius: 0 0 var(--brs-lg) var(--brs-lg);
+}
 /* Catalogue ! */
 .dv-collection {
     display: flex;
@@ -2045,4 +2053,103 @@ body.divino25-product-kind-white-wine .key-features {
     font-family: 'Rubik', serif;
     font-size: 14px;
     color: var(--airy-secondary-text-color);
+}
+
+/* после нажатия кнопки добавить в корзину появляется надпись, стилизуем её */
+.added_to_cart.wc_forward {
+    margin: 0;
+    padding: 0 15px 10px 15px;
+    background: var(--ok-bg-color);
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: var(--brs);
+    position: relative;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.added_to_cart.wc_forward::before {
+    content: '';
+    display: block;
+
+    --r:2px; /* border radius */
+  
+    width: 24px;
+    aspect-ratio: 1/cos(30deg);
+    -webkit-mask:
+      linear-gradient(#0000 calc(3*var(--r)/2),#000 0),
+      radial-gradient(var(--r) at 50% calc(2*var(--r)),#000 98%,#0000 101%);
+    clip-path: polygon(50% 0,100% 100%,0 100%);
+    background: var(--ok-bg-color);
+    margin-top: -17px;
+}
+
+/* Оформление заказа */
+.wc-block-checkout__main fieldset {
+  padding: 0;
+  background-color: #f3e2da !important;
+  box-shadow: var(--block-xl-shadow) !important;
+  border: 1px solid #dfcbbe !important;
+}
+.wc-block-checkout__main h2.wc-block-components-title {
+    background-color: var(--th-bg-color);
+    color: var(--primary-text-color);
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    padding: calc(var(--pd) /2 ) var(--pd);
+    border-radius: var(--brs) var(--brs) 0 0;
+}
+.wc-block-components-checkout-step__heading {
+    margin: 0 !important;
+}
+
+.wc-block-components-checkout-step__container {
+    padding: 0 var(--pd) var(--pd) var(--pd) !important;
+}
+.wc-block-components-checkout-step__description {
+    font-size: 13px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    color: var(--airy-secondary-text-color);
+    margin-bottom: 0;
+    padding: 10px !important;
+}
+.wc-block-components-text-input  input[type="text"] {
+    height: 3em !important;
+    font-size: 18px !important;
+    outline: none !important;
+    padding: calc(var(--pd) /2 ) var(--pd) !important;
+}
+.wc-block-components-text-input label {
+    font-size: 16px !important;
+    font-family: 'Rubik', sans-serif !important;
+    font-weight: 400 !important;
+    color: var(--form-text-color) !important;
+    margin-bottom: 5px;
+}
+#billing-fields {
+    /*display: none !important;*/
+}
+.wc-block-components-checkout-place-order-button {
+    background-color: var(--primary-bg);
+    color: var(--primary-text-color);
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    padding: calc(var(--pd) /2 ) var(--pd);
+    border-radius: var(--brs);
+    cursor: pointer;
+}
+.wc-block-components-checkout-place-order-button:hover {
+    background-color: var(--primary-bg-hover);
+    color: var(--primary-text-color);
+}
+.wc-block-components-checkout-return-to-cart-button {
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
 }
