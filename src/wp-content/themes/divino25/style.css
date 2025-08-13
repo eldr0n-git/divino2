@@ -2154,6 +2154,7 @@ body.divino25-product-kind-white-wine .key-features {
     font-weight: 500;
 }
 
+.wp-block-woocommerce-order-confirmation-additional-information.wc-block-order-confirmation-additional-information.alignwide,
 .wc_payment_method.payment_method_cod {
     display: none !important;
 }

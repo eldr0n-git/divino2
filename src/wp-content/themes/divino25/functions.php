@@ -1074,3 +1074,134 @@ add_filter('render_block', 'set_product_context_for_query_loop', 10, 2);
 // // Вставить в functions.php вашей темы или в свой плагин
 // add_filter( 'woocommerce_checkout_is_block_based', '__return_false', 100 );
 
+
+// AJAX обработчик входа пользователя
+add_action('wp_ajax_custom_user_login', 'handle_custom_user_login');
+add_action('wp_ajax_nopriv_custom_user_login', 'handle_custom_user_login');
+
+function handle_custom_user_login() {
+    // Проверяем nonce
+    if (!wp_verify_nonce($_POST['security'], 'custom_login_nonce')) {
+        wp_die(json_encode(array('success' => false, 'data' => 'Ошибка безопасности')));
+    }
+    
+    $username = sanitize_text_field($_POST['username']);
+    $password = $_POST['password'];
+    $remember = isset($_POST['remember']) ? true : false;
+    
+    // Попытка входа
+    $user = wp_authenticate($username, $password);
+    
+    if (is_wp_error($user)) {
+        wp_die(json_encode(array('success' => false, 'data' => $user->get_error_message())));
+    }
+    
+    // Вход успешен
+    wp_set_current_user($user->ID);
+    wp_set_auth_cookie($user->ID, $remember);
+    
+    wp_die(json_encode(array('success' => true, 'data' => 'Вход выполнен успешно')));
+}
+
+// AJAX обработчик регистрации пользователя
+add_action('wp_ajax_custom_user_register', 'handle_custom_user_register');
+add_action('wp_ajax_nopriv_custom_user_register', 'handle_custom_user_register');
+
+function handle_custom_user_register() {
+    // Проверяем nonce
+    if (!wp_verify_nonce($_POST['security'], 'custom_register_nonce')) {
+        wp_die(json_encode(array('success' => false, 'data' => 'Ошибка безопасности')));
+    }
+    
+    // Проверяем, разрешена ли регистрация
+    if (!get_option('users_can_register')) {
+        wp_die(json_encode(array('success' => false, 'data' => 'Регистрация отключена')));
+    }
+    
+    $username = sanitize_text_field($_POST['username']);
+    $email = sanitize_email($_POST['email']);
+    $password = $_POST['password'];
+    
+    // Валидация
+    if (empty($username) || empty($email) || empty($password)) {
+        wp_die(json_encode(array('success' => false, 'data' => 'Заполните все поля')));
+    }
+    
+    if (!is_email($email)) {
+        wp_die(json_encode(array('success' => false, 'data' => 'Некорректный email')));
+    }
+    
+    if (username_exists($username)) {
+        wp_die(json_encode(array('success' => false, 'data' => 'Пользователь с таким именем уже существует')));
+    }
+    
+    if (email_exists($email)) {
+        wp_die(json_encode(array('success' => false, 'data' => 'Пользователь с таким email уже существует')));
+    }
+    
+    // Создаем пользователя
+    $user_id = wp_create_user($username, $password, $email);
+    
+    if (is_wp_error($user_id)) {
+        wp_die(json_encode(array('success' => false, 'data' => $user_id->get_error_message())));
+    }
+    
+    // Автоматический вход после регистрации
+    wp_set_current_user($user_id);
+    wp_set_auth_cookie($user_id);
+    
+    wp_die(json_encode(array('success' => true, 'data' => 'Регистрация прошла успешно')));
+}
+
+// Сохранение кастомного поля WhatsApp
+add_action('woocommerce_checkout_update_order_meta', 'save_custom_checkout_field_whatsapp');
+function save_custom_checkout_field_whatsapp($order_id) {
+    if (!empty($_POST['billing_whatsapp'])) {
+        update_post_meta($order_id, '_billing_whatsapp', sanitize_text_field($_POST['billing_whatsapp']));
+    }
+}
+
+// Отображение поля WhatsApp в админке заказа
+add_action('woocommerce_admin_order_data_after_billing_address', 'display_whatsapp_in_admin_order');
+function display_whatsapp_in_admin_order($order) {
+    $whatsapp = get_post_meta($order->get_id(), '_billing_whatsapp', true);
+    if ($whatsapp) {
+        echo '<p><strong>WhatsApp:</strong> ' . esc_html($whatsapp) . '</p>';
+    }
+}
+
+// Добавление поля WhatsApp в email уведомления
+add_action('woocommerce_email_customer_details', 'add_whatsapp_to_emails', 20, 4);
+function add_whatsapp_to_emails($order, $sent_to_admin, $plain_text, $email) {
+    $whatsapp = get_post_meta($order->get_id(), '_billing_whatsapp', true);
+    
+    if ($whatsapp) {
+        if ($plain_text) {
+            echo "\nWhatsApp: " . $whatsapp . "\n";
+        } else {
+            echo '<p><strong>WhatsApp:</strong> ' . esc_html($whatsapp) . '</p>';
+        }
+    }
+}
+
+// Валидация полей при оформлении заказа
+add_action('woocommerce_checkout_process', 'validate_custom_checkout_fields');
+function validate_custom_checkout_fields() {
+    // Валидация телефона
+    if (empty($_POST['billing_phone'])) {
+        wc_add_notice('Пожалуйста, укажите номер телефона.', 'error');
+    }
+    
+    // Валидация WhatsApp (если заполнен)
+    if (!empty($_POST['billing_whatsapp'])) {
+        $whatsapp = sanitize_text_field($_POST['billing_whatsapp']);
+        if (!preg_match('/^[\+]?[0-9\s\-\(\)]+$/', $whatsapp)) {
+            wc_add_notice('Пожалуйста, введите корректный номер WhatsApp.', 'error');
+        }
+    }
+    
+    // Валидация адреса
+    if (empty($_POST['billing_address_1'])) {
+        wc_add_notice('Пожалуйста, укажите адрес доставки.', 'error');
+    }
+}
