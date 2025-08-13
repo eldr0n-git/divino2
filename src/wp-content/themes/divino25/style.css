@@ -2153,3 +2153,7 @@ body.divino25-product-kind-white-wine .key-features {
     font-family: 'Rubik', sans-serif;
     font-weight: 500;
 }
+
+.wc_payment_method.payment_method_cod {
+    display: none !important;
+}

@@ -827,131 +827,94 @@ function set_product_context_for_query_loop($block_content, $block) {
 }
 add_filter('render_block', 'set_product_context_for_query_loop', 10, 2);
 
-/* убираем СПОСОБ ОПЛАТЫ из Заказа */
-add_filter( 'woocommerce_cart_needs_payment', '__return_false' );
-
-/* убираем Платёжный адрес из Заказа */
-add_filter( 'woocommerce_checkout_fields', function( $fields ) {
-    unset( $fields['billing'] ); // убираем весь раздел "Платёжный адрес"
-    return $fields;
-});
-
-add_filter( 'woocommerce_get_country_locale', function( $locale ) {
-    // если WC не загружен или нет корзины — ничего не делаем
-    if ( ! function_exists( 'WC' ) || ! WC()->cart ) {
-        return $locale;
-    }
-
-    // если корзина требует доставку — оставляем адресы
-    if ( WC()->cart->needs_shipping() ) {
-        return $locale;
-    }
-
-    // прячем поля адреса (оставляем country и имена)
-    foreach ( $locale as $country_code => $fields ) {
-        $locale[ $country_code ]['address_1'] = [ 'required' => false, 'hidden' => true ];
-        $locale[ $country_code ]['address_2'] = [ 'required' => false, 'hidden' => true ];
-        $locale[ $country_code ]['city']      = [ 'required' => false, 'hidden' => true ];
-        $locale[ $country_code ]['state']     = [ 'required' => false, 'hidden' => true ];
-        $locale[ $country_code ]['postcode']  = [ 'required' => false, 'hidden' => true ];
-        $locale[ $country_code ]['company']   = [ 'required' => false, 'hidden' => true ];
-    }
-
-    return $locale;
-}, 20 );
 
 
+// /* убираем СПОСОБ ОПЛАТЫ из Заказа */
+// add_filter( 'woocommerce_cart_needs_payment', '__return_false' );
 
-add_action( 'woocommerce_init', function() {
+// /* убираем Платёжный адрес из Заказа */
+// add_filter( 'woocommerce_checkout_fields', function( $fields ) {
+//     unset( $fields['billing'] ); // убираем весь раздел "Платёжный адрес"
+//     return $fields;
+// });
 
-    if ( ! function_exists( 'woocommerce_register_additional_checkout_field' ) ) {
-        return;
-    }
+// add_filter( 'woocommerce_get_country_locale', function( $locale ) {
+//     // если WC не загружен или нет корзины — ничего не делаем
+//     if ( ! function_exists( 'WC' ) || ! WC()->cart ) {
+//         return $locale;
+//     }
 
-    // Телефон (будет в блоке Contact)
-    woocommerce_register_additional_checkout_field( array(
-        'id'       => 'myplugin/phone',
-        'label'    => __( 'Телефон', 'my-text-domain' ),
-        'location' => 'contact',
-        'type'     => 'text',
-        'required' => true,
-    ) );
+//     // если корзина требует доставку — оставляем адресы
+//     if ( WC()->cart->needs_shipping() ) {
+//         return $locale;
+//     }
 
-    // WhatsApp (необязательно)
-    woocommerce_register_additional_checkout_field( array(
-        'id'       => 'myplugin/whatsapp',
-        'label'    => __( 'WhatsApp', 'my-text-domain' ),
-        'location' => 'contact',
-        'type'     => 'text',
-        'required' => false,
-    ) );
+//     // прячем поля адреса (оставляем country и имена)
+//     foreach ( $locale as $country_code => $fields ) {
+//         $locale[ $country_code ]['address_1'] = [ 'required' => false, 'hidden' => true ];
+//         $locale[ $country_code ]['address_2'] = [ 'required' => false, 'hidden' => true ];
+//         $locale[ $country_code ]['city']      = [ 'required' => false, 'hidden' => true ];
+//         $locale[ $country_code ]['state']     = [ 'required' => false, 'hidden' => true ];
+//         $locale[ $country_code ]['postcode']  = [ 'required' => false, 'hidden' => true ];
+//         $locale[ $country_code ]['company']   = [ 'required' => false, 'hidden' => true ];
+//     }
 
-} );
+//     return $locale;
+// }, 20 );
 
-add_action( 'woocommerce_admin_order_data_after_billing_address', function( $order ) {
-    $order_id = $order->get_id();
-    $phone = get_post_meta( $order_id, '_wc_other/myplugin/phone', true );
-    $whatsapp = get_post_meta( $order_id, '_wc_other/myplugin/whatsapp', true );
 
-    if ( $phone ) {
-        echo '<p><strong>Телефон:</strong> ' . esc_html( $phone ) . '</p>';
-    }
-    if ( $whatsapp ) {
-        echo '<p><strong>WhatsApp:</strong> ' . esc_html( $whatsapp ) . '</p>';
-    }
-} );
 
-// Убираем ненужные поля и отключаем их обязательность
-add_filter('woocommerce_checkout_fields', function ($fields) {
-    // Полностью удаляем блоки адреса
-    unset($fields['billing']['billing_address_1']);
-    unset($fields['billing']['billing_address_2']);
-    unset($fields['billing']['billing_city']);
-    unset($fields['billing']['billing_postcode']);
-    unset($fields['billing']['billing_country']);
-    unset($fields['billing']['billing_state']);
-    unset($fields['billing']['billing_company']);
+// // Убираем ненужные поля и отключаем их обязательность
+// add_filter('woocommerce_checkout_fields', function ($fields) {
+//     // Полностью удаляем блоки адреса
+//     unset($fields['billing']['billing_address_1']);
+//     unset($fields['billing']['billing_address_2']);
+//     unset($fields['billing']['billing_city']);
+//     unset($fields['billing']['billing_postcode']);
+//     unset($fields['billing']['billing_country']);
+//     unset($fields['billing']['billing_state']);
+//     unset($fields['billing']['billing_company']);
     
-    // Делаем имя и фамилию необязательными, если не нужны
-    if (isset($fields['billing']['billing_first_name'])) {
-        $fields['billing']['billing_first_name']['required'] = false;
-    }
-    if (isset($fields['billing']['billing_last_name'])) {
-        $fields['billing']['billing_last_name']['required'] = false;
-    }
+//     // Делаем имя и фамилию необязательными, если не нужны
+//     if (isset($fields['billing']['billing_first_name'])) {
+//         $fields['billing']['billing_first_name']['required'] = false;
+//     }
+//     if (isset($fields['billing']['billing_last_name'])) {
+//         $fields['billing']['billing_last_name']['required'] = false;
+//     }
 
-    return $fields;
-}, 999);
+//     return $fields;
+// }, 999);
 
-// Дополнительно убираем валидацию ненужных полей
-add_filter('woocommerce_billing_fields', function ($fields) {
-    foreach ($fields as $key => $field) {
-        if (in_array($key, [
-            'billing_address_1',
-            'billing_address_2',
-            'billing_city',
-            'billing_postcode',
-            'billing_country',
-            'billing_state',
-            'billing_company',
-        ])) {
-            unset($fields[$key]);
-        }
-    }
-    return $fields;
-}, 999);
+// // Дополнительно убираем валидацию ненужных полей
+// add_filter('woocommerce_billing_fields', function ($fields) {
+//     foreach ($fields as $key => $field) {
+//         if (in_array($key, [
+//             'billing_address_1',
+//             'billing_address_2',
+//             'billing_city',
+//             'billing_postcode',
+//             'billing_country',
+//             'billing_state',
+//             'billing_company',
+//         ])) {
+//             unset($fields[$key]);
+//         }
+//     }
+//     return $fields;
+// }, 999);
 
-// Добавляем поле WhatsApp
-add_filter('woocommerce_checkout_fields', function ($fields) {
-    $fields['billing']['billing_whatsapp'] = [
-        'type'        => 'text',
-        'label'       => 'WhatsApp',
-        'required'    => false,
-        'priority'    => 25,
-        'class'       => ['form-row-wide'],
-    ];
-    return $fields;
-});
+// // Добавляем поле WhatsApp
+// add_filter('woocommerce_checkout_fields', function ($fields) {
+//     $fields['billing']['billing_whatsapp'] = [
+//         'type'        => 'text',
+//         'label'       => 'WhatsApp',
+//         'required'    => false,
+//         'priority'    => 25,
+//         'class'       => ['form-row-wide'],
+//     ];
+//     return $fields;
+// });
 
 // // 1. Убираем все поля платёжного адреса
 // add_filter( 'woocommerce_checkout_fields', function( $fields ) {
@@ -1108,6 +1071,6 @@ add_filter('woocommerce_checkout_fields', function ($fields) {
 // }
 
 
-// Вставить в functions.php вашей темы или в свой плагин
-add_filter( 'woocommerce_checkout_is_block_based', '__return_false', 100 );
+// // Вставить в functions.php вашей темы или в свой плагин
+// add_filter( 'woocommerce_checkout_is_block_based', '__return_false', 100 );
 
