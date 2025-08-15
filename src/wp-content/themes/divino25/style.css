@@ -773,7 +773,7 @@ footer {
 .wc-block-list__products {
     display: flex;
     flex-direction: column;
-    
+
 }
 .dv-collection.grid .wc-block-product-template,
 .wc-block-grid__products {
@@ -1757,12 +1757,12 @@ table.wc-block-cart-items .wc-block-cart-items__row .wc-block-cart-item__quantit
     background-repeat: no-repeat;
     background-size: contain;
 }
-.divino-number-input__increment:hover, 
+.divino-number-input__increment:hover,
 .divino-number-input__decrement:hover {
     background-color: var(--primary-bg-hover);
     color: var(--primary-text-color);
 }
-.divino-number-input__increment:active, 
+.divino-number-input__increment:active,
 .divino-number-input__decrement:active {
     background-color: var(--primary-bg);
 }
@@ -1893,7 +1893,7 @@ body.divino25-product-kind-white-wine .key-features {
     font-family: 'Rubik', serif;
     font-size: 16px;
     color: var(--airy-color);
-    font-weight: 500;   
+    font-weight: 500;
 }
 
 
@@ -2019,7 +2019,8 @@ body.divino25-product-kind-white-wine .key-features {
     max-height: initial;
     margin: 0;
 }
-.view-list__product-control .add_to_cart_button {
+.view-list__product-control .add_to_cart_button,
+.view-list__product-control .wp-block-button.wc-block-components-product-button .wc-block-components-product-button__button {
     background-color: var(--primary-bg);
     color: var(--primary-text-color);
     font-family: 'Rubik', sans-serif;
@@ -2027,11 +2028,13 @@ body.divino25-product-kind-white-wine .key-features {
     font-weight: 500;
     border-radius: var(--brs);
 }
-.view-list__product-control .add_to_cart_button:hover {
+.view-list__product-control .add_to_cart_button:hover,
+.view-list__product-control .wp-block-button.wc-block-components-product-button .wc-block-components-product-button__button:hover {
     background-color: var(--primary-bg-hover);
     color: var(--primary-text-color);
 }
-.view-list__product-control .add_to_cart_button:active {
+.view-list__product-control .add_to_cart_button:active,
+.view-list__product-control .wp-block-button.wc-block-components-product-button .wc-block-components-product-button__button:active {
     background-color: var(--primary-bg-active);
     color: var(--primary-text-color);
 }
@@ -2076,7 +2079,7 @@ body.divino25-product-kind-white-wine .key-features {
     display: block;
 
     --r:2px; /* border radius */
-  
+
     width: 24px;
     aspect-ratio: 1/cos(30deg);
     -webkit-mask:
@@ -2157,4 +2160,50 @@ body.divino25-product-kind-white-wine .key-features {
 .wp-block-woocommerce-order-confirmation-additional-information.wc-block-order-confirmation-additional-information.alignwide,
 .wc_payment_method.payment_method_cod {
     display: none !important;
+}
+
+/* WooCommerce Login Form */
+form.woocommerce-form.woocommerce-form-login.login {
+    margin-bottom: var(--pd-lg);
+}
+form.woocommerce-form.woocommerce-form-login.login p{
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    color: var(--form-text-color);
+}
+
+form.woocommerce-form.woocommerce-form-login.login .form-row {
+    display: flex !important;
+    width: 100% !important;
+}
+#order_review.woocommerce-checkout-review-order table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+}
+
+#customer_details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--pd-lg);
+    background-color: var(--form-bg-color);
+    border-radius: var(--brs-lg);
+    box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+}
+#customer_details #payment .woocommerce-privacy-policy-text {
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    color: var(--form-text-color);
+    margin-bottom: 0;
+}
+#customer_details .col-1{
+    width: 100%;
+}
+#place_order{
+    width: 100%;
 }

@@ -21,6 +21,10 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./src:/var/www/html
+    environment:
+      - PHP_UPLOAD_MAX_FILESIZE=64M
+      - PHP_POST_MAX_SIZE=64M
+      - PHP_MEMORY_LIMIT=512M
     networks:
       - network_divino
     depends_on:
@@ -50,6 +54,7 @@ services:
     environment:
       PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: root
+      UPLOAD_LIMIT: 64M
     ports:
       - "8080:80"
     networks:

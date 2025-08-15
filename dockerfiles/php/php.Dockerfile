@@ -145,6 +145,8 @@ VOLUME /var/www/html
 
 COPY --chown=www-data:www-data wp-config-docker.php /usr/src/wordpress/
 COPY docker-entrypoint.sh /usr/local/bin/
+# Копируем кастомный php.ini
+COPY ./custom-php.ini /usr/local/etc/php/conf.d/custom-php.ini
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["php-fpm"]

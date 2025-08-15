@@ -9,7 +9,7 @@
  * @since divino theme 1.0
  */
 
- 
+
 
 // Adds theme support for post formats.
 if ( ! function_exists( 'divino_post_format_setup' ) ) :
@@ -385,7 +385,7 @@ function render_product_regions() {
 
     if (!empty($terms) && !is_wp_error($terms)) {
         $output = '<div class="product-regions text-center">';
-        
+
 
         // Сортируем термины: сначала родительские, потом дочерние
         usort($terms, function($a, $b) {
@@ -645,30 +645,30 @@ function divino_product_regions_shortcode($atts) {
         'product_id' => null, // ID товара (необязательный)
         'class' => '', // Дополнительный CSS класс (необязательный)
     ), $atts, 'product_regions');
-    
+
     // Определяем ID товара
     if ($atts['product_id']) {
         $post_id = intval($atts['product_id']);
     } else {
         $post_id = get_the_ID();
     }
-    
+
     // Проверяем, что ID товара валиден
     if (!$post_id || get_post_type($post_id) !== 'product') {
         return ''; // Возвращаем пустую строку, если это не товар
     }
-    
+
     // Получаем термины таксономии region
     $terms = get_the_terms($post_id, 'region');
-    
+
     if (empty($terms) || is_wp_error($terms)) {
         return ''; // Возвращаем пустую строку, если нет регионов
     }
-    
+
     // Формируем вывод
     $additional_class = $atts['class'] ? ' ' . sanitize_html_class($atts['class']) : '';
     $output = '<div class="product-regions text-center' . $additional_class . '">';
-    
+
     // Сортируем термины: сначала родительские, потом дочерние
     usort($terms, function($a, $b) {
         if ($a->parent === $b->parent) {
@@ -676,7 +676,7 @@ function divino_product_regions_shortcode($atts) {
         }
         return ($a->parent === 0) ? -1 : 1; // Сначала родительские, потом дочерние
     });
-    
+
     foreach ($terms as $key => $term) {
         if ($term->parent !== 0) {
             // Дочерний термин (регион)
@@ -686,9 +686,9 @@ function divino_product_regions_shortcode($atts) {
             $output .= '<span class="country country-' . esc_attr($term->slug) . '"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></span>';
         }
     }
-    
+
     $output .= '</div>';
-    
+
     return $output;
 }
 
@@ -704,34 +704,34 @@ function divino_product_countries_shortcode($atts) {
         'product_id' => null,
         'class' => '',
     ), $atts, 'product_countries');
-    
+
     if ($atts['product_id']) {
         $post_id = intval($atts['product_id']);
     } else {
         $post_id = get_the_ID();
     }
-    
+
     if (!$post_id || get_post_type($post_id) !== 'product') {
         return '';
     }
-    
+
     $terms = get_the_terms($post_id, 'region');
-    
+
     if (empty($terms) || is_wp_error($terms)) {
         return '';
     }
-    
+
     $additional_class = $atts['class'] ? ' ' . sanitize_html_class($atts['class']) : '';
     $output = '<div class="product-countries' . $additional_class . '">';
-    
+
     foreach ($terms as $term) {
         if ($term->parent === 0) { // Только родительские термины (страны)
             $output .= '<span class="country country-' . esc_attr($term->slug) . '"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></span>';
         }
     }
-    
+
     $output .= '</div>';
-    
+
     return $output;
 }
 
@@ -747,34 +747,34 @@ function divino_product_regions_only_shortcode($atts) {
         'product_id' => null,
         'class' => '',
     ), $atts, 'product_regions_only');
-    
+
     if ($atts['product_id']) {
         $post_id = intval($atts['product_id']);
     } else {
         $post_id = get_the_ID();
     }
-    
+
     if (!$post_id || get_post_type($post_id) !== 'product') {
         return '';
     }
-    
+
     $terms = get_the_terms($post_id, 'region');
-    
+
     if (empty($terms) || is_wp_error($terms)) {
         return '';
     }
-    
+
     $additional_class = $atts['class'] ? ' ' . sanitize_html_class($atts['class']) : '';
     $output = '<div class="product-regions-only' . $additional_class . '">';
-    
+
     foreach ($terms as $term) {
         if ($term->parent !== 0) { // Только дочерние термины (регионы)
             $output .= '<span class="region"><a href="' . esc_url(get_term_link($term)) . '">' . esc_html($term->name) . '</a></span>';
         }
     }
-    
+
     $output .= '</div>';
-    
+
     return $output;
 }
 
@@ -786,9 +786,9 @@ function catalogue_enqueue_scripts() {
     // Регистрируем и подключаем JS-файл
     wp_enqueue_script(
         'catalogue-script', // Уникальный идентификатор скрипта
-        get_theme_file_uri('/assets/js/catalogue.js'), 
+        get_theme_file_uri('/assets/js/catalogue.js'),
 
-        '1.0.0', 
+        '1.0.0',
         true // Загружать в футере (true) или в хедере (false)
     );
 }
@@ -804,13 +804,13 @@ add_action('wp_enqueue_scripts', 'catalogue_enqueue_scripts');
  */
 function set_product_context_for_query_loop($block_content, $block) {
     // Проверяем, что мы в Query Loop блоке
-    if ($block['blockName'] === 'core/query' || 
+    if ($block['blockName'] === 'core/query' ||
         (isset($block['attrs']['query']['postType']) && $block['attrs']['query']['postType'] === 'product')) {
-        
+
         global $post;
         if ($post && $post->post_type === 'product') {
             $product_id = $post->ID;
-            
+
             // Заменяем шорткоды, добавляя product_id
             $block_content = str_replace(
                 ['[divino_sugar_short]', '[divino_wine_style]'],
@@ -822,7 +822,7 @@ function set_product_context_for_query_loop($block_content, $block) {
             );
         }
     }
-    
+
     return $block_content;
 }
 add_filter('render_block', 'set_product_context_for_query_loop', 10, 2);
@@ -874,7 +874,7 @@ add_filter('render_block', 'set_product_context_for_query_loop', 10, 2);
 //     unset($fields['billing']['billing_country']);
 //     unset($fields['billing']['billing_state']);
 //     unset($fields['billing']['billing_company']);
-    
+
 //     // Делаем имя и фамилию необязательными, если не нужны
 //     if (isset($fields['billing']['billing_first_name'])) {
 //         $fields['billing']['billing_first_name']['required'] = false;
@@ -1084,22 +1084,22 @@ function handle_custom_user_login() {
     if (!wp_verify_nonce($_POST['security'], 'custom_login_nonce')) {
         wp_die(json_encode(array('success' => false, 'data' => 'Ошибка безопасности')));
     }
-    
+
     $username = sanitize_text_field($_POST['username']);
     $password = $_POST['password'];
     $remember = isset($_POST['remember']) ? true : false;
-    
+
     // Попытка входа
     $user = wp_authenticate($username, $password);
-    
+
     if (is_wp_error($user)) {
         wp_die(json_encode(array('success' => false, 'data' => $user->get_error_message())));
     }
-    
+
     // Вход успешен
     wp_set_current_user($user->ID);
     wp_set_auth_cookie($user->ID, $remember);
-    
+
     wp_die(json_encode(array('success' => true, 'data' => 'Вход выполнен успешно')));
 }
 
@@ -1112,44 +1112,44 @@ function handle_custom_user_register() {
     if (!wp_verify_nonce($_POST['security'], 'custom_register_nonce')) {
         wp_die(json_encode(array('success' => false, 'data' => 'Ошибка безопасности')));
     }
-    
+
     // Проверяем, разрешена ли регистрация
     if (!get_option('users_can_register')) {
         wp_die(json_encode(array('success' => false, 'data' => 'Регистрация отключена')));
     }
-    
+
     $username = sanitize_text_field($_POST['username']);
     $email = sanitize_email($_POST['email']);
     $password = $_POST['password'];
-    
+
     // Валидация
     if (empty($username) || empty($email) || empty($password)) {
         wp_die(json_encode(array('success' => false, 'data' => 'Заполните все поля')));
     }
-    
+
     if (!is_email($email)) {
         wp_die(json_encode(array('success' => false, 'data' => 'Некорректный email')));
     }
-    
+
     if (username_exists($username)) {
         wp_die(json_encode(array('success' => false, 'data' => 'Пользователь с таким именем уже существует')));
     }
-    
+
     if (email_exists($email)) {
         wp_die(json_encode(array('success' => false, 'data' => 'Пользователь с таким email уже существует')));
     }
-    
+
     // Создаем пользователя
     $user_id = wp_create_user($username, $password, $email);
-    
+
     if (is_wp_error($user_id)) {
         wp_die(json_encode(array('success' => false, 'data' => $user_id->get_error_message())));
     }
-    
+
     // Автоматический вход после регистрации
     wp_set_current_user($user_id);
     wp_set_auth_cookie($user_id);
-    
+
     wp_die(json_encode(array('success' => true, 'data' => 'Регистрация прошла успешно')));
 }
 
@@ -1174,7 +1174,7 @@ function display_whatsapp_in_admin_order($order) {
 add_action('woocommerce_email_customer_details', 'add_whatsapp_to_emails', 20, 4);
 function add_whatsapp_to_emails($order, $sent_to_admin, $plain_text, $email) {
     $whatsapp = get_post_meta($order->get_id(), '_billing_whatsapp', true);
-    
+
     if ($whatsapp) {
         if ($plain_text) {
             echo "\nWhatsApp: " . $whatsapp . "\n";
@@ -1191,7 +1191,7 @@ function validate_custom_checkout_fields() {
     if (empty($_POST['billing_phone'])) {
         wc_add_notice('Пожалуйста, укажите номер телефона.', 'error');
     }
-    
+
     // Валидация WhatsApp (если заполнен)
     if (!empty($_POST['billing_whatsapp'])) {
         $whatsapp = sanitize_text_field($_POST['billing_whatsapp']);
@@ -1199,7 +1199,7 @@ function validate_custom_checkout_fields() {
             wc_add_notice('Пожалуйста, введите корректный номер WhatsApp.', 'error');
         }
     }
-    
+
     // Валидация адреса
     if (empty($_POST['billing_address_1'])) {
         wc_add_notice('Пожалуйста, укажите адрес доставки.', 'error');

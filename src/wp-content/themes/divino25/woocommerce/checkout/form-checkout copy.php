@@ -27,13 +27,13 @@ if ( ! empty( $checkout->checkout_fields ) || ! empty( $checkout->shipping_metho
 
 		<div class="col2-set" id="customer_details">
 			<div class="col-1">
-
+				
 				<?php if ( ! is_user_logged_in() ) : ?>
 					<!-- Форма для неавторизованных пользователей -->
 					<div class="checkout-login-register" style="background: #f9f9f9; padding: 20px; margin-bottom: 20px; border-radius: 5px;">
 						<h3><?php esc_html_e( 'Уже есть аккаунт?', 'woocommerce' ); ?></h3>
 						<p><?php esc_html_e( 'Если у вас уже есть аккаунт, пожалуйста войдите в систему.', 'woocommerce' ); ?></p>
-
+						
 						<div class="login-register-buttons" style="margin: 15px 0;">
 							<button type="button" class="button" id="show-login-form"><?php esc_html_e( 'Войти', 'woocommerce' ); ?></button>
 							<button type="button" class="button" id="show-register-form"><?php esc_html_e( 'Регистрация', 'woocommerce' ); ?></button>
@@ -126,17 +126,6 @@ if ( ! empty( $checkout->checkout_fields ) || ! empty( $checkout->shipping_metho
 							<input type="text" class="input-text" name="billing_address_1" id="billing_address_1" placeholder="<?php esc_attr_e( 'Улица, дом, квартира', 'woocommerce' ); ?>" value="<?php echo esc_attr( $checkout->get_value( 'billing_address_1' ) ); ?>" autocomplete="address-line1" required />
 						</p>
 
-						<!-- Город -->
-						<p class="form-row form-row-first validate-required" id="billing_city_field">
-							<label for="billing_city"><?php esc_html_e( 'Город', 'woocommerce' ); ?> <abbr class="required" title="обязательное поле">*</abbr></label>
-							<input type="text" class="input-text" name="billing_city" id="billing_city" placeholder="<?php esc_attr_e( 'Введите ваш город', 'woocommerce' ); ?>" value="<?php echo esc_attr( $checkout->get_value( 'billing_city' ) ); ?>" autocomplete="address-level2" required />
-						</p>
-
-						<!-- Скрытые обязательные поля для WooCommerce -->
-						<input type="hidden" name="billing_country" id="billing_country" value="KZ" />
-						<input type="hidden" name="billing_state" id="billing_state" value="" />
-						<input type="hidden" name="billing_postcode" id="billing_postcode" value="000000" />
-
 						<!-- Дополнительная информация (необязательно) -->
 						<p class="form-row form-row-wide" id="order_comments_field">
 							<label for="order_comments"><?php esc_html_e( 'Примечания к заказу', 'woocommerce' ); ?> <span class="optional">(необязательно)</span></label>
@@ -159,13 +148,7 @@ if ( ! empty( $checkout->checkout_fields ) || ! empty( $checkout->shipping_metho
 		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 
 	<?php endif; ?>
-
-	<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
-
-	<?php do_action( 'woocommerce_checkout_billing' ); ?>
-
-	<?php do_action( 'woocommerce_checkout_shipping' ); ?>
-
+	
 </form>
 
 <script>
@@ -175,30 +158,30 @@ jQuery(document).ready(function($) {
 		$('#register-form').hide();
 		$('#login-form').toggle();
 	});
-
+	
 	$('#show-register-form').on('click', function() {
 		$('#login-form').hide();
 		$('#register-form').toggle();
 	});
-
+	
 	$('#continue-as-guest').on('click', function() {
 		$('#login-form, #register-form').hide();
 		$('.checkout-login-register').fadeOut();
 	});
-
+	
 	// AJAX вход
 	$('#login-submit').on('click', function(e) {
 		e.preventDefault();
-
+		
 		var username = $('#login_username').val();
 		var password = $('#login_password').val();
 		var remember = $('#rememberme').is(':checked');
-
+		
 		if (!username || !password) {
 			alert('Пожалуйста, заполните все поля');
 			return;
 		}
-
+		
 		$.ajax({
 			type: 'POST',
 			dataType: 'json',
@@ -219,20 +202,20 @@ jQuery(document).ready(function($) {
 			}
 		});
 	});
-
+	
 	// AJAX регистрация
 	$('#register-submit').on('click', function(e) {
 		e.preventDefault();
-
+		
 		var username = $('#reg_username').val();
 		var email = $('#reg_email').val();
 		var password = $('#reg_password').val();
-
+		
 		if (!username || !email || !password) {
 			alert('Пожалуйста, заполните все поля');
 			return;
 		}
-
+		
 		$.ajax({
 			type: 'POST',
 			dataType: 'json',
@@ -253,61 +236,6 @@ jQuery(document).ready(function($) {
 				}
 			}
 		});
-	});
-
-	// Маска для телефонных номеров
-	function formatPhoneNumber(input) {
-		var value = input.val().replace(/\D/g, '');
-
-		if (value.length > 0) {
-			if (value.startsWith('8')) {
-				value = '7' + value.substring(1);
-			}
-			if (!value.startsWith('7')) {
-				value = '7' + value;
-			}
-
-			var formatted = '+' + value;
-			if (value.length > 1) {
-				formatted = '+' + value.substring(0, 1) + ' (' + value.substring(1, 4);
-			}
-			if (value.length > 4) {
-				formatted += ') ' + value.substring(4, 7);
-			}
-			if (value.length > 7) {
-				formatted += '-' + value.substring(7, 9);
-			}
-			if (value.length > 9) {
-				formatted += '-' + value.substring(9, 11);
-			}
-
-			input.val(formatted);
-		}
-	}
-
-	// Применяем маску к полям телефона
-	$('#billing_phone, #billing_whatsapp').on('input', function() {
-		formatPhoneNumber($(this));
-	});
-
-	// Валидация формы перед отправкой
-	$('form.checkout').on('submit', function(e) {
-		var hasErrors = false;
-
-		// Проверяем обязательные поля
-		$('input[required]').each(function() {
-			if (!$(this).val().trim()) {
-				hasErrors = true;
-				$(this).addClass('error');
-			} else {
-				$(this).removeClass('error');
-			}
-		});
-
-		if (hasErrors) {
-			e.preventDefault();
-			alert('Пожалуйста, заполните все обязательные поля');
-		}
 	});
 });
 </script>
@@ -349,16 +277,6 @@ jQuery(document).ready(function($) {
 .optional {
 	color: #999;
 	font-size: 0.9em;
-}
-
-.input-text.error {
-	border-color: #e74c3c !important;
-	box-shadow: 0 0 5px rgba(231, 76, 60, 0.3);
-}
-
-/* Скрываем стандартные поля WooCommerce, если они отображаются */
-.woocommerce-billing-fields .woocommerce-input-wrapper {
-	display: none;
 }
 </style>
 
