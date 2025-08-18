@@ -1,0 +1,15 @@
+{
+  "apiVersion": 3,
+  "name": "divino/slider",
+  "version": "1.0.0",
+  "title": "Divino Slider",
+  "category": "widgets",
+  "icon": "images-alt2",
+  "description": "Динамический слайдер Divino (редактируйте слайды в админке)",
+  "supports": {
+    "html": false
+  },
+  "example": {},
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php"
+}

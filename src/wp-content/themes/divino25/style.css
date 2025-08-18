@@ -2208,3 +2208,23 @@ form.woocommerce-form.woocommerce-form-login.login .form-row {
 #place_order{
     width: 100%;
 }
+.swiper-button-prev,
+.swiper-button-next {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255,255,255,0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2), 0 1px 0px rgba(255,255,255,0.4) inset, 0 1px 1px rgba(255,255,255,0.4) inset;
+    transition: all 0.1s ease-in-out;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 1.2em !important;
+    color: var(--primary-color);
+    text-shadow: 0 1px 1px rgba(255,255,255,0.4);
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background-color: #fff;
+}   
