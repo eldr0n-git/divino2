@@ -309,8 +309,8 @@ footer .wp-block-site-title a {
     position: absolute;
     right: 0;
     top: 0;
-    margin-top: 15px;
-    margin-right: 12px;
+    margin-top: 16px;
+    margin-right: 17px;
     background-color: transparent;
 }
 .title_section {
@@ -344,6 +344,7 @@ footer .wp-block-site-title a {
     font-size: 16px;
     font-family: 'Rubik', sans-serif;
     list-style-type: none;
+    font-weight: 400;
 }
 .cat_menu__item a {
     text-decoration: none;
@@ -2143,7 +2144,7 @@ body.divino25-product-kind-white-wine .key-features {
     font-family: 'Rubik', sans-serif;
     font-size: 16px;
     font-weight: 500;
-    padding: calc(var(--pd) /2 ) var(--pd);
+    padding: calc(var(--pd) / 2 ) var(--pd);
     border-radius: var(--brs);
     cursor: pointer;
 }
