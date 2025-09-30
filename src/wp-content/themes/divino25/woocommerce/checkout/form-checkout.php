@@ -19,6 +19,26 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 if ( ! empty( $checkout->checkout_fields ) || ! empty( $checkout->shipping_methods ) ) {
 ?>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("Checkout script loaded");
+    document.querySelector('#billing_phone').addEventListener('focusout', (event) => {
+        // Проверяем, находится ли новый элемент с фокусом вне .my-element
+        if (!event.currentTarget.contains(event.relatedTarget)) {
+            const phoneInput = document.querySelector('#billing_phone');
+            const whatsappInput = document.querySelector('#billing_whatsapp');
+            if ( whatsappInput ) {
+                if ( !whatsappInput.value ) {
+                    whatsappInput.value = phoneInput.value;
+                }
+            }
+        }
+    });
+});
+
+
+</script>
+
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url( wc_get_checkout_url() ); ?>" enctype="multipart/form-data">
 
 	<?php if ( $checkout->get_checkout_fields() ) : ?>
@@ -90,17 +110,29 @@ if ( ! empty( $checkout->checkout_fields ) || ! empty( $checkout->shipping_metho
 					<h3><?php esc_html_e( 'Контактная информация', 'woocommerce' ); ?></h3>
 
 					<div class="woocommerce-billing-fields__field-wrapper">
+                        <!-- Город -->
+						<p class="form-row form-row-first validate-required" id="billing_city_field">
+							<label for="billing_city"><?php esc_html_e( 'Город', 'woocommerce' ); ?> <abbr class="required" title="обязательное поле">*</abbr></label>
+							<select class="input-select" name="billing_city" id="billing_city" value="<?php echo esc_attr( $checkout->get_value( 'billing_city' ) ); ?>" required>
+                                <option value="Астана">Астана</option>
+                                <option value="Караганда">Караганда</option>
+                            </select>
+						</p>
 						<!-- Имя -->
-						<p class="form-row form-row-first validate-required" id="billing_first_name_field">
+						<p class="form-row form-row-last validate-required" id="billing_name_field">
+							<label for="billing_name"><?php esc_html_e( 'Имя', 'woocommerce' ); ?> <abbr class="required" title="обязательное поле">*</abbr></label>
+							<input type="text" class="input-text" name="billing_name" id="billing_name" placeholder="<?php esc_attr_e( 'Введите ваше имя', 'woocommerce' ); ?>" value="<?php echo esc_attr( $checkout->get_value( 'billing_name' ) ); ?>" autocomplete="given-name" required />
+						</p>
+						<!-- <p class="form-row form-row-first validate-required" id="billing_first_name_field">
 							<label for="billing_first_name"><?php esc_html_e( 'Имя', 'woocommerce' ); ?> <abbr class="required" title="обязательное поле">*</abbr></label>
 							<input type="text" class="input-text" name="billing_first_name" id="billing_first_name" placeholder="<?php esc_attr_e( 'Введите ваше имя', 'woocommerce' ); ?>" value="<?php echo esc_attr( $checkout->get_value( 'billing_first_name' ) ); ?>" autocomplete="given-name" required />
-						</p>
+						</p> -->
 
 						<!-- Фамилия -->
-						<p class="form-row form-row-last validate-required" id="billing_last_name_field">
+						<!-- <p class="form-row form-row-last validate-required" id="billing_last_name_field">
 							<label for="billing_last_name"><?php esc_html_e( 'Фамилия', 'woocommerce' ); ?> <abbr class="required" title="обязательное поле">*</abbr></label>
 							<input type="text" class="input-text" name="billing_last_name" id="billing_last_name" placeholder="<?php esc_attr_e( 'Введите вашу фамилию', 'woocommerce' ); ?>" value="<?php echo esc_attr( $checkout->get_value( 'billing_last_name' ) ); ?>" autocomplete="family-name" required />
-						</p>
+						</p> -->
 
 						<!-- Телефон -->
 						<p class="form-row form-row-first validate-required validate-phone" id="billing_phone_field">
@@ -114,23 +146,22 @@ if ( ! empty( $checkout->checkout_fields ) || ! empty( $checkout->shipping_metho
 							<input type="tel" class="input-text" name="billing_whatsapp" id="billing_whatsapp" placeholder="<?php esc_attr_e( 'Введите номер WhatsApp', 'woocommerce' ); ?>" value="<?php echo esc_attr( $checkout->get_value( 'billing_whatsapp' ) ); ?>" autocomplete="tel" />
 						</p>
 
+
+
 						<!-- Email -->
-						<p class="form-row form-row-wide validate-required validate-email" id="billing_email_field">
+						<!-- <p class="form-row form-row-wide validate-required validate-email" id="billing_email_field">
 							<label for="billing_email"><?php esc_html_e( 'Email адрес', 'woocommerce' ); ?> <abbr class="required" title="обязательное поле">*</abbr></label>
 							<input type="email" class="input-text" name="billing_email" id="billing_email" placeholder="<?php esc_attr_e( 'Введите ваш email', 'woocommerce' ); ?>" value="<?php echo esc_attr( $checkout->get_value( 'billing_email' ) ); ?>" autocomplete="email" required />
-						</p>
+						</p> -->
+
 
 						<!-- Адрес -->
-						<p class="form-row form-row-wide validate-required" id="billing_address_1_field">
+						<!-- <p class="form-row form-row-wide validate-required" id="billing_address_1_field">
 							<label for="billing_address_1"><?php esc_html_e( 'Адрес доставки', 'woocommerce' ); ?> <abbr class="required" title="обязательное поле">*</abbr></label>
 							<input type="text" class="input-text" name="billing_address_1" id="billing_address_1" placeholder="<?php esc_attr_e( 'Улица, дом, квартира', 'woocommerce' ); ?>" value="<?php echo esc_attr( $checkout->get_value( 'billing_address_1' ) ); ?>" autocomplete="address-line1" required />
-						</p>
+						</p> -->
 
-						<!-- Город -->
-						<p class="form-row form-row-first validate-required" id="billing_city_field">
-							<label for="billing_city"><?php esc_html_e( 'Город', 'woocommerce' ); ?> <abbr class="required" title="обязательное поле">*</abbr></label>
-							<input type="text" class="input-text" name="billing_city" id="billing_city" placeholder="<?php esc_attr_e( 'Введите ваш город', 'woocommerce' ); ?>" value="<?php echo esc_attr( $checkout->get_value( 'billing_city' ) ); ?>" autocomplete="address-level2" required />
-						</p>
+
 
 						<!-- Скрытые обязательные поля для WooCommerce -->
 						<input type="hidden" name="billing_country" id="billing_country" value="KZ" />

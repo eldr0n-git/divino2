@@ -146,7 +146,6 @@ class Divino_Slider {
     
     public function frontend_scripts() {
         wp_enqueue_style('wc-slider-frontend-css', DIVINO_SLIDER_PLUGIN_PATH . 'frontend-style.css', array(), DIVINO_SLIDER_VERSION);
-        wp_enqueue_script('wc-slider-frontend-js', DIVINO_SLIDER_PLUGIN_PATH . 'frontend-script.js', array('jquery'), DIVINO_SLIDER_VERSION, true);
         
         // Получаем настройки слайдера
         $settings = get_option('wc_slider_settings', array('slide_duration' => 5000));

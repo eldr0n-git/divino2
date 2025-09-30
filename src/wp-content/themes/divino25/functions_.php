@@ -445,12 +445,12 @@ add_filter('get_the_terms', function($terms, $post_id, $taxonomy) {
 /* * Отключение полей платёжного адреса в WooCommerce
  * Этот фильтр удаляет все поля платёжного адреса из формы оформления заказа
  */
-add_filter( 'woocommerce_checkout_fields', 'disable_billing_address_fields' );
-function disable_billing_address_fields( $fields ) {
-    // Удаляем все поля платёжного адреса на странице оформления заказа
-    $fields['billing'] = array();
-    return $fields;
-}
+// add_filter( 'woocommerce_checkout_fields', 'disable_billing_address_fields' );
+// function disable_billing_address_fields( $fields ) {
+//     // Удаляем все поля платёжного адреса на странице оформления заказа
+//     $fields['billing'] = array();
+//     return $fields;
+// }
 
 add_filter( 'woocommerce_enable_order_notes_field', '__return_false' ); // Отключаем поле заметок к заказу
 
@@ -501,7 +501,19 @@ function auto_fill_country_script() {
     }
 }
 
+// CSS для скрытия поля
+add_action( 'wp_head', 'hide_country_field_styles' );
 
+function hide_country_field_styles() {
+    if ( is_account_page() ) {
+        echo '<style>
+            #shipping_country_field,
+            #billing_country_field {
+                display: none !important;
+            }
+        </style>';
+    }
+}
 
 
 // Remove Downloads tab from My Account
@@ -817,255 +829,6 @@ add_filter('render_block', 'set_product_context_for_query_loop', 10, 2);
 
 
 
-/* убираем СПОСОБ ОПЛАТЫ из Заказа */
-add_filter( 'woocommerce_cart_needs_payment', '__return_false' );
-
-/* убираем Платёжный адрес из Заказа */
-add_filter( 'woocommerce_checkout_fields', function( $fields ) {
-    unset( $fields['billing'] ); // убираем весь раздел "Платёжный адрес"
-    return $fields;
-});
-
-// add_filter( 'woocommerce_get_country_locale', function( $locale ) {
-//     // если WC не загружен или нет корзины — ничего не делаем
-//     if ( ! function_exists( 'WC' ) || ! WC()->cart ) {
-//         return $locale;
-//     }
-
-//     // если корзина требует доставку — оставляем адресы
-//     if ( WC()->cart->needs_shipping() ) {
-//         return $locale;
-//     }
-
-//     // прячем поля адреса (оставляем country и имена)
-//     foreach ( $locale as $country_code => $fields ) {
-//         $locale[ $country_code ]['address_1'] = [ 'required' => false, 'hidden' => true ];
-//         $locale[ $country_code ]['address_2'] = [ 'required' => false, 'hidden' => true ];
-//         $locale[ $country_code ]['city']      = [ 'required' => false, 'hidden' => true ];
-//         $locale[ $country_code ]['state']     = [ 'required' => false, 'hidden' => true ];
-//         $locale[ $country_code ]['postcode']  = [ 'required' => false, 'hidden' => true ];
-//         $locale[ $country_code ]['company']   = [ 'required' => false, 'hidden' => true ];
-//     }
-
-//     return $locale;
-// }, 20 );
-
-
-
-// Убираем ненужные поля и отключаем их обязательность
-add_filter('woocommerce_checkout_fields', function ($fields) {
-
-
-    // Полностью удаляем блоки адреса
-    unset($fields['billing']['billing_first_name']);
-    unset($fields['billing']['billing_address_1']);
-    unset($fields['billing']['billing_address_2']);
-    unset($fields['billing']['billing_city']);
-    unset($fields['billing']['billing_postcode']);
-    unset($fields['billing']['billing_country']);
-    unset($fields['billing']['billing_state']);
-    unset($fields['billing']['billing_company']);
-
-    // Делаем имя и фамилию необязательными, если не нужны
-    if (isset($fields['billing']['billing_first_name'])) {
-        $fields['billing']['billing_first_name']['required'] = false;
-    }
-    if (isset($fields['billing']['billing_last_name'])) {
-        $fields['billing']['billing_last_name']['required'] = false;
-    }
-
-    return $fields;
-}, 999);
-
-// Дополнительно убираем валидацию ненужных полей
-add_filter('woocommerce_billing_fields', function ($fields) {
-    foreach ($fields as $key => $field) {
-        if (in_array($key, [
-            'billing_address_1',
-            'billing_address_2',
-            'billing_city',
-            'billing_postcode',
-            'billing_country',
-            'billing_state',
-            'billing_company',
-        ])) {
-            unset($fields[$key]);
-        }
-    }
-    return $fields;
-}, 999);
-
-// // Добавляем поле WhatsApp
-// add_filter('woocommerce_checkout_fields', function ($fields) {
-//     $fields['billing']['billing_whatsapp'] = [
-//         'type'        => 'text',
-//         'label'       => 'WhatsApp',
-//         'required'    => false,
-//         'priority'    => 25,
-//         'class'       => ['form-row-wide'],
-//     ];
-//     return $fields;
-// });
-
-// // 1. Убираем все поля платёжного адреса
-// add_filter( 'woocommerce_checkout_fields', function( $fields ) {
-//     unset($fields['billing']); // удаляем все поля биллинга
-//     return $fields;
-// }, 999 );
-
-// // 2. Делаем так, чтобы WooCommerce не требовал адрес
-// add_filter( 'woocommerce_cart_needs_payment', '__return_false' );
-// add_filter( 'woocommerce_cart_needs_shipping', '__return_false' );
-
-// // 3. Добавляем кастомные поля
-// add_action( 'woocommerce_after_checkout_billing_form', function( $checkout ) {
-//     woocommerce_form_field( 'contact_phone', [
-//         'type'        => 'text',
-//         'class'       => ['form-row-wide'],
-//         'label'       => 'Номер телефона',
-//         'required'    => true,
-//     ], $checkout->get_value( 'contact_phone' ) );
-
-//     woocommerce_form_field( 'contact_whatsapp', [
-//         'type'        => 'text',
-//         'class'       => ['form-row-wide'],
-//         'label'       => 'WhatsApp',
-//         'required'    => false,
-//     ], $checkout->get_value( 'contact_whatsapp' ) );
-// });
-
-// // 4. Сохраняем кастомные поля
-// add_action( 'woocommerce_checkout_update_order_meta', function( $order_id ) {
-//     if ( isset( $_POST['contact_phone'] ) ) {
-//         update_post_meta( $order_id, 'contact_phone', sanitize_text_field( $_POST['contact_phone'] ) );
-//     }
-//     if ( isset( $_POST['contact_whatsapp'] ) ) {
-//         update_post_meta( $order_id, 'contact_whatsapp', sanitize_text_field( $_POST['contact_whatsapp'] ) );
-//     }
-// });
-
-
-
-
-// // Удаление полей платежного адреса
-// add_filter('woocommerce_checkout_fields', 'remove_billing_address_fields', 20);
-// function remove_billing_address_fields($fields) {
-//     unset($fields['billing']['billing_company']);
-//     unset($fields['billing']['billing_address_1']);
-//     unset($fields['billing']['billing_address_2']);
-//     unset($fields['billing']['billing_city']);
-//     unset($fields['billing']['billing_postcode']);
-//     unset($fields['billing']['billing_country']);
-//     unset($fields['billing']['billing_state']);
-//     return $fields;
-// }
-
-// // Скрытие способов оплаты, если нужно
-// add_filter('woocommerce_available_payment_gateways', 'set_default_payment_gateway');
-// function set_default_payment_gateway($gateways) {
-//     $default_gateway = 'cod'; // Замените 'cod' на ID вашего метода оплаты
-//     if (count($gateways) > 1) {
-//         foreach ($gateways as $id => $gateway) {
-//             if ($id !== $default_gateway) {
-//                 unset($gateways[$id]);
-//             }
-//         }
-//     }
-//     return $gateways;
-// }
-
-// // Добавление полей "Номер телефона" и "WhatsApp"
-// add_filter('woocommerce_checkout_fields', 'add_phone_whatsapp_fields', 10);
-// function add_phone_whatsapp_fields($fields) {
-//     $fields['billing']['billing_phone']['required'] = true;
-//     $fields['billing']['billing_phone']['label'] = __('Номер телефона', 'woocommerce');
-//     $fields['billing']['billing_phone']['priority'] = 30;
-
-//     $fields['billing']['billing_whatsapp'] = array(
-//         'type' => 'tel',
-//         'label' => __('WhatsApp', 'woocommerce'),
-//         'required' => false,
-//         'class' => array('form-row-wide'),
-//         'priority' => 31,
-//     );
-
-//     return $fields;
-// }
-
-// // Регистрация кастомного поля WhatsApp для блочного чекаута
-// add_action('woocommerce_blocks_checkout_fields', 'register_whatsapp_field_for_blocks');
-// function register_whatsapp_field_for_blocks($fields) {
-//     $fields['billing_whatsapp'] = [
-//         'label' => __('WhatsApp', 'woocommerce'),
-//         'required' => false,
-//         'type' => 'tel',
-//         'priority' => 31,
-//     ];
-//     return $fields;
-// }
-
-// // Обновление данных через REST API
-// add_filter('woocommerce_rest_checkout_fields', 'add_whatsapp_field_to_rest', 10, 2);
-// function add_whatsapp_field_to_rest($response, $fields) {
-//     $response['billing_whatsapp'] = [
-//         'label' => __('WhatsApp', 'woocommerce'),
-//         'required' => false,
-//         'type' => 'tel',
-//     ];
-//     return $response;
-// }
-
-// // Серверная валидация поля WhatsApp
-// add_action('woocommerce_checkout_process', 'validate_whatsapp_field');
-// function validate_whatsapp_field() {
-//     if (!empty($_POST['billing_whatsapp'])) {
-//         $whatsapp = sanitize_text_field($_POST['billing_whatsapp']);
-//         // Проверка: начинается с "+" и содержит 10–15 цифр
-//         if (!preg_match('/^\+[0-9]{10,15}$/', $whatsapp)) {
-//             wc_add_notice(__('Пожалуйста, введите корректный номер WhatsApp (например, +1234567890).'), 'error');
-//         }
-//     }
-// }
-
-// // Сохранение значения поля WhatsApp
-// add_action('woocommerce_checkout_update_order_meta', 'save_whatsapp_field');
-// function save_whatsapp_field($order_id) {
-//     if (!empty($_POST['billing_whatsapp'])) {
-//         $whatsapp = sanitize_text_field($_POST['billing_whatsapp']);
-//         if (preg_match('/^\+[0-9]{10,15}$/', $whatsapp)) {
-//             update_post_meta($order_id, '_billing_whatsapp', $whatsapp);
-//         }
-//     }
-// }
-
-// // Отображение WhatsApp в админ-панели
-// add_action('woocommerce_admin_order_data_after_billing_address', 'display_whatsapp_in_admin_order', 10, 1);
-// function display_whatsapp_in_admin_order($order) {
-//     $whatsapp = get_post_meta($order->get_id(), '_billing_whatsapp', true);
-//     if ($whatsapp) {
-//         echo '<p><strong>' . __('WhatsApp') . ':</strong> ' . esc_html($whatsapp) . '</p>';
-//     }
-// }
-
-// // Подключение кастомного JavaScript
-// add_action('wp_enqueue_scripts', 'enqueue_custom_checkout_script');
-// function enqueue_custom_checkout_script() {
-//     if (is_checkout()) {
-//         wp_enqueue_script(
-//             'custom-checkout',
-//             get_template_directory_uri() . '/assets/js/custom-checkout.js',
-//             ['wp-hooks'],
-//             '1.0.1',
-//             true
-//         );
-//     }
-// }
-
-
-// // Вставить в functions.php вашей темы или в свой плагин
-// add_filter( 'woocommerce_checkout_is_block_based', '__return_false', 100 );
-
-
 // AJAX обработчик входа пользователя
 add_action('wp_ajax_custom_user_login', 'handle_custom_user_login');
 add_action('wp_ajax_nopriv_custom_user_login', 'handle_custom_user_login');
@@ -1143,75 +906,198 @@ function handle_custom_user_register() {
 
     wp_die(json_encode(array('success' => true, 'data' => 'Регистрация прошла успешно')));
 }
-// ПОЛЯ ЧЕКАУТА СОХРАНЕНИЕ, ВАЛИДАЦИЯ, ОТОБРАЖЕНИЕ В АДМИНКЕ И EMAIL 
-// Сохранение кастомных полей при оформлении заказа
-add_action('woocommerce_checkout_update_order_meta', 'save_custom_checkout_fields');
-function save_custom_checkout_fields($order_id) {
-    if (!empty($_POST['billing_city'])) {
-        update_post_meta($order_id, '_billing_city', sanitize_text_field($_POST['billing_city']));
+
+// Сохранение кастомного поля WhatsApp
+// add_action('woocommerce_checkout_update_order_meta', 'save_custom_checkout_field_whatsapp');
+// function save_custom_checkout_field_whatsapp($order_id) {
+//     if (!empty($_POST['billing_whatsapp'])) {
+//         update_post_meta($order_id, '_billing_whatsapp', sanitize_text_field($_POST['billing_whatsapp']));
+//     }
+// }
+
+// Отображение поля WhatsApp в админке заказа
+// add_action('woocommerce_admin_order_data_after_billing_address', 'display_whatsapp_in_admin_order');
+// function display_whatsapp_in_admin_order($order) {
+//     $whatsapp = get_post_meta($order->get_id(), '_billing_whatsapp', true);
+//     if ($whatsapp) {
+//         echo '<p><strong>WhatsApp:</strong> ' . esc_html($whatsapp) . '</p>';
+//     }
+// }
+
+// Добавление поля WhatsApp в email уведомления
+// add_action('woocommerce_email_customer_details', 'add_whatsapp_to_emails', 20, 4);
+// function add_whatsapp_to_emails($order, $sent_to_admin, $plain_text, $email) {
+//     $whatsapp = get_post_meta($order->get_id(), '_billing_whatsapp', true);
+
+//     if ($whatsapp) {
+//         if ($plain_text) {
+//             echo "\nWhatsApp: " . $whatsapp . "\n";
+//         } else {
+//             echo '<p><strong>WhatsApp:</strong> ' . esc_html($whatsapp) . '</p>';
+//         }
+//     }
+// }
+
+// Валидация полей при оформлении заказа
+// add_action('woocommerce_checkout_process', 'validate_custom_checkout_fields');
+// function validate_custom_checkout_fields() {
+//     // Валидация телефона
+//     if (empty($_POST['billing_phone'])) {
+//         wc_add_notice('Пожалуйста, укажите номер телефона.', 'error');
+//     }
+
+//     // Валидация WhatsApp (если заполнен)
+//     if (!empty($_POST['billing_whatsapp'])) {
+//         $whatsapp = sanitize_text_field($_POST['billing_whatsapp']);
+//         if (!preg_match('/^[\+]?[0-9\s\-\(\)]+$/', $whatsapp)) {
+//             wc_add_notice('Пожалуйста, введите корректный номер WhatsApp.', 'error');
+//         }
+//     }
+
+//     // Валидация адреса
+//     if (empty($_POST['billing_address_1'])) {
+//         wc_add_notice('Пожалуйста, укажите адрес доставки.', 'error');
+//     }
+// }
+
+
+/* функции сохранения данных формы заказа */
+add_filter('woocommerce_checkout_fields', 'customize_checkout_fields');
+function customize_checkout_fields($fields) {
+    // Удаляем ВСЕ ненужные поля billing
+    unset($fields['billing']['billing_company']);
+    unset($fields['billing']['billing_address_2']);
+    unset($fields['billing']['billing_city']);
+    unset($fields['billing']['billing_state']);
+    unset($fields['billing']['billing_postcode']);
+    
+    // Оставляем и настраиваем нужные поля
+    $fields['billing']['billing_first_name']['required'] = true;
+    $fields['billing']['billing_first_name']['placeholder'] = 'Введите ваше имя';
+    
+    $fields['billing']['billing_last_name']['required'] = true;
+    $fields['billing']['billing_last_name']['placeholder'] = 'Введите вашу фамилию';
+    
+    $fields['billing']['billing_phone']['required'] = true;
+    $fields['billing']['billing_phone']['placeholder'] = '+7 (___) ___-__-__';
+    
+    $fields['billing']['billing_email']['required'] = true;
+    $fields['billing']['billing_email']['placeholder'] = 'ваш@email.com';
+    
+    $fields['billing']['billing_address_1']['required'] = true;
+    $fields['billing']['billing_address_1']['label'] = 'Адрес доставки';
+    $fields['billing']['billing_address_1']['placeholder'] = 'Улица, дом, квартира';
+    
+    // Добавляем поле WhatsApp
+    $fields['billing']['billing_whatsapp'] = array(
+        'label'       => 'WhatsApp',
+        'placeholder' => '+7 (___) ___-__-__',
+        'required'    => false,
+        'class'       => array('form-row-wide'),
+        'clear'       => true,
+        'priority'    => 25,
+        'type'        => 'tel'
+    );
+    
+    // Скрываем поле страны, но оставляем его в форме
+    $fields['billing']['billing_country']['default'] = 'KZ';
+    $fields['billing']['billing_country']['class'][] = 'hidden-country-field';
+    
+    // Удаляем все shipping поля
+    $fields['shipping'] = array();
+    
+    // Удаляем поле заметок
+    unset($fields['order']['order_comments']);
+    
+    return $fields;
+}
+
+// 2. Принудительно устанавливаем значения по умолчанию
+add_filter('woocommerce_checkout_get_value', 'set_checkout_field_defaults', 10, 2);
+function set_checkout_field_defaults($value, $input) {
+    if ($input === 'billing_country') {
+        return 'KZ';
     }
-    if (!empty($_POST['billing_name'])) {
-        update_post_meta($order_id, '_billing_name', sanitize_text_field($_POST['billing_name']));
+    return $value;
+}
+
+
+
+// // Отображение всех полей в админке заказа
+// add_action('woocommerce_admin_order_data_after_billing_address', 'display_custom_fields_in_admin_order');
+// function display_custom_fields_in_admin_order($order) {
+//     // Отображаем только WhatsApp, остальные поля отображаются автоматически
+//     $whatsapp = get_post_meta($order->get_id(), '_billing_whatsapp', true);
+//     if ($whatsapp) {
+//         echo '<p><strong>WhatsApp:</strong> ' . esc_html($whatsapp) . '</p>';
+//     }
+// }
+
+
+// // Добавление полей в email уведомления
+// add_action('woocommerce_email_customer_details', 'add_custom_fields_to_emails', 20, 4);
+// function add_custom_fields_to_emails($order, $sent_to_admin, $plain_text, $email) {
+//     $whatsapp = get_post_meta($order->get_id(), '_billing_whatsapp', true);
+    
+//     if ($whatsapp) {
+//         if ($plain_text) {
+//             echo "\nWhatsApp: " . $whatsapp . "\n";
+//         } else {
+//             echo '<p><strong>WhatsApp:</strong> ' . esc_html($whatsapp) . '</p>';
+//         }
+//     }
+// }
+
+
+
+// 3. Простая валидация только для WhatsApp
+add_action('woocommerce_checkout_process', 'simple_checkout_validation');
+function simple_checkout_validation() {
+    // Проверяем только WhatsApp, если он заполнен
+    if (!empty($_POST['billing_whatsapp'])) {
+        $whatsapp = sanitize_text_field($_POST['billing_whatsapp']);
+        if (strlen($whatsapp) < 10) {
+            wc_add_notice('Введите корректный номер WhatsApp.', 'error');
+        }
     }
+}
+// add_action('woocommerce_checkout_process', 'validate_checkout_fields_custom');
+// function validate_checkout_fields_custom() {
+//     // Проверяем только кастомное поле WhatsApp, остальные поля WooCommerce проверит сам
+//     if (!empty($_POST['billing_whatsapp'])) {
+//         $whatsapp = sanitize_text_field($_POST['billing_whatsapp']);
+//         // Простая проверка на наличие цифр и допустимых символов
+//         if (!preg_match('/^[\+]?[0-9\s\-\(\)]+$/', $whatsapp)) {
+//             wc_add_notice('Пожалуйста, введите корректный номер WhatsApp.', 'error');
+//         }
+//     }
+// }
+
+// 4. Сохранение кастомных полей
+add_action('woocommerce_checkout_update_order_meta', 'save_whatsapp_field');
+function save_whatsapp_field($order_id) {
     if (!empty($_POST['billing_whatsapp'])) {
         update_post_meta($order_id, '_billing_whatsapp', sanitize_text_field($_POST['billing_whatsapp']));
     }
-    if (!empty($_POST['billing_phone'])) {
-        update_post_meta($order_id, '_billing_phone', sanitize_text_field($_POST['billing_phone']));
-    }
-    if (!empty($_POST['billing_address_1'])) {
-        update_post_meta($order_id, '_billing_address_1', sanitize_text_field($_POST['billing_address_1']));
-    }
-    if (!empty($_POST['order_comments'])) {
-        update_post_meta($order_id, '_order_comments', sanitize_text_field($_POST['order_comments']));
-    }
+    
+    // Принудительно сохраняем страну
+    update_post_meta($order_id, '_billing_country', 'KZ');
+    update_post_meta($order_id, '_shipping_country', 'KZ');
 }
 
-// Отображение поля кастомных полей в админке заказа
-add_action('woocommerce_admin_order_data_after_billing_address', 'display_customFields_in_admin_order');
-function display_customFields_in_admin_order($order) {
+// 5. Отображение в админке
+add_action('woocommerce_admin_order_data_after_billing_address', 'display_whatsapp_in_admin');
+function display_whatsapp_in_admin($order) {
     $whatsapp = get_post_meta($order->get_id(), '_billing_whatsapp', true);
-    $phone = get_post_meta($order->get_id(), '_billing_phone', true);
-    $name = get_post_meta($order->get_id(), '_billing_name', true);
-    $addr = get_post_meta($order->get_id(), '_billing_address_1', true);
-    $comments = get_post_meta($order->get_id(), '_order_comments', true);
-    $city = get_post_meta($order->get_id(), '_billing_city', true);
-    if ($city) {
-        echo '<p><strong>Город:</strong> ' . esc_html($city) . '</p>';
-    }
-    if ($name) {
-        echo '<p><strong>Имя:</strong> ' . esc_html($name) . '</p>';
-    }
-    if ($phone) {
-        echo '<p><strong>Телефон:</strong> ' . esc_html($phone) . '</p>';
-    }
     if ($whatsapp) {
         echo '<p><strong>WhatsApp:</strong> ' . esc_html($whatsapp) . '</p>';
     }
-    if ($addr) {
-        echo '<p><strong>Адрес:</strong> ' . esc_html($addr) . '</p>';
-    }
-    if ($comments) {
-        echo '<p><strong>Комментарии:</strong> ' . esc_html($comments) . '</p>';
-    }
 }
 
-// Добавление кастомных полeй в email уведомления
-add_action('woocommerce_email_customer_details', 'add_customFields_to_emails', 20, 4);
-function add_customFields_to_emails($order, $sent_to_admin, $plain_text, $email) {
+// 6. Добавление в email
+add_action('woocommerce_email_customer_details', 'add_whatsapp_to_email', 20, 4);
+function add_whatsapp_to_email($order, $sent_to_admin, $plain_text, $email) {
     $whatsapp = get_post_meta($order->get_id(), '_billing_whatsapp', true);
-    $phone = get_post_meta($order->get_id(), '_billing_phone', true);
-    $name = get_post_meta($order->get_id(), '_billing_name', true);
-    $addr = get_post_meta($order->get_id(), '_billing_address_1', true);
-    $comments = get_post_meta($order->get_id(), '_order_comments', true);
-    $city = get_post_meta($order->get_id(), '_billing_city', true);
-    if ($name) {
-        if ($plain_text) {
-            echo "\Имя: " . $name . "\n";
-        } else {
-            echo '<p><strong>Имя:</strong> ' . esc_html($name) . '</p>';
-        }
-    }
     if ($whatsapp) {
         if ($plain_text) {
             echo "\nWhatsApp: " . $whatsapp . "\n";
@@ -1219,79 +1105,75 @@ function add_customFields_to_emails($order, $sent_to_admin, $plain_text, $email)
             echo '<p><strong>WhatsApp:</strong> ' . esc_html($whatsapp) . '</p>';
         }
     }
-    if ($phone) {
-        if ($plain_text) {
-            echo "\Телефон: " . $phone . "\n";
-        } else {
-            echo '<p><strong>Телефон:</strong> ' . esc_html($phone) . '</p>';
+}
+
+// 7. CSS для скрытия поля страны
+add_action('wp_head', 'checkout_custom_styles');
+function checkout_custom_styles() {
+    if (is_checkout()) {
+        ?>
+        <style>
+        .hidden-country-field,
+        #billing_country_field {
+            display: none !important;
         }
-    }
-    // if ($addr) {
-    //     if ($plain_text) {
-    //         echo "\Адрес: " . $addr . "\n";
-    //     } else {
-    //         echo '<p><strong>Адрес:</strong> ' . esc_html($addr) . '</p>';
-    //     }
-    // }
-    if ($comments) {
-        if ($plain_text) {
-            echo "\Комментарии: " . $comments . "\n";
-        } else {
-            echo '<p><strong>Комментарии:</strong> ' . esc_html($comments) . '</p>';
-        }
-    }
-    if ($city) {
-        if ($plain_text) {
-            echo "\Город: " . $city . "\n";
-        } else {
-            echo '<p><strong>Город:</strong> ' . esc_html($city) . '</p>';
-        }
+        </style>
+        <?php
     }
 }
 
-
-// Валидация полей при оформлении заказа
-add_action('woocommerce_checkout_process', 'validate_custom_checkout_fields');
-function validate_custom_checkout_fields() {
-    // Валидация города
-    if (empty($_POST['billing_city'])) {
-        wc_add_notice('Пожалуйста, укажите город.', 'error');
+// 8. JavaScript для обеспечения корректной работы
+add_action('wp_footer', 'checkout_custom_script');
+function checkout_custom_script() {
+    if (is_checkout()) {
+        ?>
+        <script>
+        jQuery(document).ready(function($) {
+            // Устанавливаем Казахстан
+            $('#billing_country').val('KZ');
+            
+            // При любых обновлениях checkout
+            $(document.body).on('updated_checkout', function() {
+                $('#billing_country').val('KZ');
+            });
+            
+            // Отладка: выводим значения полей при отправке формы
+            $('form.checkout').on('submit', function() {
+                console.log('Отправляем форму...');
+                console.log('Имя:', $('#billing_first_name').val());
+                console.log('Фамилия:', $('#billing_last_name').val());
+                console.log('Телефон:', $('#billing_phone').val());
+                console.log('Email:', $('#billing_email').val());
+                console.log('Адрес:', $('#billing_address_1').val());
+                console.log('WhatsApp:', $('#billing_whatsapp').val());
+                console.log('Страна:', $('#billing_country').val());
+            });
+        });
+        </script>
+        <?php
     }
-
-    // Валидация телефона
-    if (empty($_POST['billing_phone'])) {
-        wc_add_notice('Пожалуйста, укажите номер телефона.', 'error');
-    }
-
-    // Валидация WhatsApp (если заполнен)
-    if (!empty($_POST['billing_whatsapp'])) {
-        $whatsapp = sanitize_text_field($_POST['billing_whatsapp']);
-        if (!preg_match('/^[\+]?[0-9\s\-\(\)]+$/', $whatsapp)) {
-            wc_add_notice('Пожалуйста, введите корректный номер WhatsApp.', 'error');
-        }
-    }
-
-    // Валидация адреса
-    // if (empty($_POST['billing_address_1'])) {
-    //     wc_add_notice('Пожалуйста, укажите адрес доставки.', 'error');
-    // }
 }
-add_action( 'admin_enqueue_scripts', function() {
-    wp_enqueue_style(
-        'my-admin-styles',
-        get_stylesheet_directory_uri() . '/admin.css', // путь к css
-        [],
-        '1.0.0'
-    );
-});
 
-// ЧТОБЫ НЕ ЗАПУСКАЛСЯ ПОИСК ПУСТОЙ СТРОКИ
-add_action('template_redirect', function () {
-    if (is_search() && empty(get_query_var('s'))) {
-        // редирект на главную или 404
-        wp_redirect(home_url());
-        exit;
-    }
-});
+// 9. Ограничиваем страны только Казахстаном
+add_filter('woocommerce_countries_allowed_countries', 'restrict_countries');
+add_filter('woocommerce_countries_shipping_countries', 'restrict_countries');
+function restrict_countries($countries) {
+    return array('KZ' => 'Казахстан');
+}
 
+// 10. Устанавливаем страну по умолчанию
+add_filter('default_checkout_billing_country', function() { return 'KZ'; });
+add_filter('default_checkout_shipping_country', function() { return 'KZ'; });
 
+// 11. Отладочная функция (ВРЕМЕННО - удалите после решения проблемы)
+add_action('woocommerce_checkout_process', 'debug_checkout_data', 5);
+function debug_checkout_data() {
+    error_log('=== DEBUG CHECKOUT DATA ===');
+    error_log('POST данные: ' . print_r($_POST, true));
+    error_log('Имя: ' . (isset($_POST['billing_first_name']) ? $_POST['billing_first_name'] : 'НЕТ'));
+    error_log('Фамилия: ' . (isset($_POST['billing_last_name']) ? $_POST['billing_last_name'] : 'НЕТ'));
+    error_log('Телефон: ' . (isset($_POST['billing_phone']) ? $_POST['billing_phone'] : 'НЕТ'));
+    error_log('Email: ' . (isset($_POST['billing_email']) ? $_POST['billing_email'] : 'НЕТ'));
+    error_log('Адрес: ' . (isset($_POST['billing_address_1']) ? $_POST['billing_address_1'] : 'НЕТ'));
+    error_log('=== END DEBUG ===');
+}
