@@ -148,7 +148,6 @@ add_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_rela
  * @see woocommerce_template_single_meta()
  * @see woocommerce_template_single_sharing()
  */
-
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
@@ -257,6 +256,15 @@ add_action( 'woocommerce_cart_is_empty', 'wc_empty_cart_message', 10 );
  */
 add_action( 'wp_footer', 'wc_print_js', 25 );
 add_action( 'wp_body_open', 'woocommerce_demo_store' );
+add_action(
+	'wp_footer',
+	function () {
+		// Fallback for pre-WP5.2 themes that don't support wp_body_open.
+		if ( 0 === did_action( 'wp_body_open' ) ) {
+			woocommerce_demo_store();
+		}
+	}
+);
 
 /**
  * Order details.

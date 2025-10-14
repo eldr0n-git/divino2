@@ -2423,3 +2423,144 @@ body.error404 #wp-block-search__input-1:focus{
 .wp-block-search__button:hover {
     background-color: var(--primary-bg-hover);
 }
+.product-kind-menu__list {
+    display: grid;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.product-kind-menu__item {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    display: flex;
+}
+.product-kind-menu__item .product-kind-menu__link {
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    position: relative;
+    width: 150px;
+    height: 200px;
+    padding: 0;
+}
+.product-kind-menu__item .product-kind-menu__link .text {
+    position: absolute;
+    top: 43px;
+    left: 18px;
+    max-width: 81px;
+    line-height: 16px;
+    font-size: 18px;
+}
+
+.product-kind-menu__item .product-kind-menu__link .product-kind-menu__image{
+    background-size: contain;
+    display: block;
+    width: 150px;
+    height: 200px;
+    background-position: 20px 25px;
+    background-repeat: no-repeat;
+    clip-path: circle(100px at 90px 90px);
+}
+.product-kind-menu__item.product-kind-red-wine .product-kind-menu__link .product-kind-menu__image{
+    background-image: url('assets/images/product_kind/red-wine.webp');
+}
+.product-kind-menu__item.product-kind-white-wine .product-kind-menu__link .product-kind-menu__image{
+    background-image: url('assets/images/product_kind/white-wine.webp');
+}
+.product-kind-menu__item.product-kind-rose-wine .product-kind-menu__link .product-kind-menu__image{
+    background-image: url('assets/images/product_kind/rose-wine.webp');
+}
+.product-kind-menu__item.product-kind-whiskey .product-kind-menu__link .product-kind-menu__image{
+    background-image: url('assets/images/product_kind/whiskey.webp');
+}
+.product-kind-menu__item.product-kind-vodka .product-kind-menu__link .product-kind-menu__image{
+    background-image: url('assets/images/product_kind/vodka.webp');
+}
+.product-kind-menu__item.product-kind-jin .product-kind-menu__link .product-kind-menu__image{
+    background-image: url('assets/images/product_kind/jin.webp');
+}
+.product-kind-menu__item.product-kind-cognac .product-kind-menu__link .product-kind-menu__image{
+    background-image: url('assets/images/product_kind/cognac.webp');
+}
+.product-kind-menu__item.product-kind-liquor .product-kind-menu__link .product-kind-menu__image{
+    background-image: url('assets/images/product_kind/liquor.webp');
+}
+.product-kind-menu__item.product-kind-rum .product-kind-menu__link .product-kind-menu__image{
+    background-image: url('assets/images/product_kind/rum.webp');
+}
+.product-kind-menu__item.product-kind-champagne .product-kind-menu__link .product-kind-menu__image{
+    background-image: url('assets/images/product_kind/champagne.webp');
+}
+.product-kind-menu__item.product-kind-sparkling .product-kind-menu__link .product-kind-menu__image{
+    background-image: url('assets/images/product_kind/sparkling.webp');
+}
+.product-kind-menu__item.product-kind-tequila .product-kind-menu__link .product-kind-menu__image{
+    background-image: url('assets/images/product_kind/tequila.webp');
+}
+.product-kind-menu__item .product-kind-menu__link::before {
+    content: '';
+    display: block;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    position: absolute;
+    margin-bottom: 10px;
+    margin-left: 12px;
+}
+.product-kind-menu__item.product-kind-red-wine .product-kind-menu__link::before {
+    background-color: rgba(161,28,28,0.4);
+}
+.product-kind-menu__item.product-kind-white-wine .product-kind-menu__link::before {
+    background-color: rgba(161, 154, 28, 0.2);
+}
+.product-kind-menu__item.product-kind-rose-wine .product-kind-menu__link::before {
+    background-color: rgba(241, 77, 129, 0.2);
+}
+.product-kind-menu__item.product-kind-whiskey .product-kind-menu__link::before {
+    background-color: rgba(249, 185, 46, 0.2);
+}
+.product-kind-menu__item.product-kind-vodka .product-kind-menu__link::before {
+    background-color: rgba(131, 131, 131, 0.2);
+}
+.product-kind-menu__item.product-kind-jin .product-kind-menu__link::before {
+    background-color: rgba(46, 235, 249, 0.2);
+}
+.product-kind-menu__item.product-kind-cognac .product-kind-menu__link::before {
+    background-color: rgba(143, 66, 4, 0.2);
+}
+.product-kind-menu__item.product-kind-liquor .product-kind-menu__link::before {
+    background-color: rgba(156, 225, 73, 0.2);
+}
+.product-kind-menu__item.product-kind-rum .product-kind-menu__link::before {
+    background-color: rgba(241, 214, 97, 0.2);
+}
+.product-kind-menu__item.product-kind-champagne .product-kind-menu__link::before {
+    background-color: rgba(85, 156, 76, 0.2);
+}
+.product-kind-menu__item.product-kind-sparkling .product-kind-menu__link::before {
+    background-color: rgba(143, 156, 76, 0.2);
+}
+.product-kind-menu__item.product-kind-tequila .product-kind-menu__link::before {
+    background-color: rgba(189, 207, 101, 0.2);
+}
+.product-kind-menu__image.product-kind-menu__masked{
+
+}
+.product-kind-menu__link {
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    color: var(--form-text-color);
+    text-decoration: none;
+    padding: 7px 15px;
+    display: flex;
+}
+
+.product-kind-menu__link:hover {
+    transform: translateY(-2px);
+}

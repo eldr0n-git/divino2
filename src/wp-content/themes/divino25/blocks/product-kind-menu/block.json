@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "divino/product-kind-menu",
+    "title": "Product Kind Menu",
+    "category": "widgets",
+    "icon": "menu",
+    "description": "Меню из таксономии product_kind",
+    "supports": {
+      "html": false
+    },
+    "textdomain": "divino",
+    "editorScript": "file:./index.js",
+    "render": "file:./render.php"
+  }

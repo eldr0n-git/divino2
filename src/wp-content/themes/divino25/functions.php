@@ -1295,3 +1295,25 @@ add_action('template_redirect', function () {
 });
 
 
+
+
+/**
+ * Регистрация блока Product Kind Menu
+ */
+function divino_register_product_kind_menu_block() {
+    register_block_type(__DIR__ . '/blocks/product-kind-menu');
+}
+add_action('init', 'divino_register_product_kind_menu_block');
+
+/**
+ * Подключение стилей для Product Kind Menu
+ */
+function divino_enqueue_product_kind_menu_styles() {
+    wp_enqueue_style(
+        'divino-product-kind-menu',
+        get_template_directory_uri() . '/assets/css/product-kind-menu.css',
+        array(),
+        '1.0.0'
+    );
+}
+add_action('wp_enqueue_scripts', 'divino_enqueue_product_kind_menu_styles');
