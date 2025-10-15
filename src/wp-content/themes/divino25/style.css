@@ -792,13 +792,7 @@ footer {
     grid-template-columns: 1fr 1fr 1fr 1fr !important;
     gap: var(--pd);
 }
-.wc-block-grid__product-price {
-    font-size: 16px !important;
-    font-family: 'Rubik', sans-serif;
-    font-weight: 500;
-    color: #000;
-    display: flex;
-}
+
 
 .dv-collection .wc-block-product .product-regions {
     justify-content: center;
@@ -2100,6 +2094,9 @@ body.divino25-product-kind-white-wine .key-features {
     max-height: initial;
     margin: 0;
 }
+.view-list__product-control .wc-block-components-product-button .wp-block-button__link span{
+    text-wrap: nowrap;
+}
 .view-list__product-control .add_to_cart_button,
 .view-list__product-control .wp-block-button.wc-block-components-product-button .wc-block-components-product-button__button {
     background-color: var(--primary-bg);
@@ -2601,4 +2598,22 @@ body.error404 #wp-block-search__input-1:focus{
 .wc-block-components-quantity-selector > .wc-block-components-quantity-selector__button--minus:hover {
     background-color: var(--primary-bg-hover);
     color: var(--primary-text-color);
+}
+/* New Products Block */
+.divino-product-item__title{
+    font-size: 20px;
+    font-family: 'Onest', serif;
+    font-weight: 500;
+    text-decoration: none;
+    min-height: initial;
+    max-height: initial;
+    margin: 0;
+    margin-bottom: 7px;
+}
+.divino-product-item__price {
+    font-size: 24px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 15px;
 }

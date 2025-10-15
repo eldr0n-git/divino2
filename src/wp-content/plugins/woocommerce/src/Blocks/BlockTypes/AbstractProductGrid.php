@@ -564,7 +564,7 @@ abstract class AbstractProductGrid extends AbstractDynamicBlock {
 			return '';
 		}
 
-		return '<div class="wc-block-grid__product-title">' . wp_kses_post( $product->get_title() ) . '</div>';
+		return '' . wp_kses_post( $product->get_title() ) . '   ';
 	}
 
 	/**

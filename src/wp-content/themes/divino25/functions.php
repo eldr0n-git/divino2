@@ -613,9 +613,9 @@ add_filter('woocommerce_blocks_product_grid_item_html', 'customize_new_products_
 function customize_new_products_block_html($html, $data, $product) {
     // Кастомный HTML для каждого продукта в блоке
     $html = '<li class="divino-product-item">';
-    $html .= '<a href="' . esc_url($data->permalink) . '">' . $data->image . '</a>';
-    $html .= '<div class="divino-price">' . $data->price . '</div>';
-    $html .= '<a href="' . esc_url($data->permalink) . '">' . esc_html($data->title) . '</a>';
+    $html .= '<a class="divino-product-item__image" href="' . esc_url($data->permalink) . '">' . $data->image . '</a>';
+    $html .= '<div class="divino-product-item__price">' . $data->price . '</div>';
+    $html .= '<a class="divino-product-item__title" href="' . esc_url($data->permalink) . '">' . esc_html($data->title) . '</a>';
     $html .= '</li>';
     return $html;
 }
@@ -1143,7 +1143,7 @@ function handle_custom_user_register() {
 
     wp_die(json_encode(array('success' => true, 'data' => 'Регистрация прошла успешно')));
 }
-// ПОЛЯ ЧЕКАУТА СОХРАНЕНИЕ, ВАЛИДАЦИЯ, ОТОБРАЖЕНИЕ В АДМИНКЕ И EMAIL 
+// ПОЛЯ ЧЕКАУТА СОХРАНЕНИЕ, ВАЛИДАЦИЯ, ОТОБРАЖЕНИЕ В АДМИНКЕ И EMAIL
 // Сохранение кастомных полей при оформлении заказа
 add_action('woocommerce_checkout_update_order_meta', 'save_custom_checkout_fields');
 function save_custom_checkout_fields($order_id) {
