@@ -1,0 +1,114 @@
+/* Age Verification Modal Styles */
+.age-modal {
+    display: none;
+    position: fixed;
+    z-index: 999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s ease-in;
+}
+
+.age-modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.age-modal-content {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.4s ease-out;
+}
+
+.age-modal-icon {
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+.age-modal-icon svg {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.age-modal-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 15px 0;
+}
+
+.age-modal-text {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0 0 30px 0;
+}
+
+.age-verify-button {
+    background-color: #27ae60;
+    color: white;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.age-verify-button:hover {
+    background-color: #229954;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+}
+
+.age-verify-button:active {
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .age-modal-content {
+        padding: 30px 20px;
+    }
+
+    .age-modal-title {
+        font-size: 24px;
+    }
+
+    .age-modal-text {
+        font-size: 14px;
+    }
+
+    .age-verify-button {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+}

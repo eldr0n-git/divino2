@@ -295,6 +295,9 @@ footer .wp-block-site-title a {
     padding: var(--pd);
     width: 100%;
 }
+.search__input:hover {
+    border-color: var(--input-brd-color-hover);
+}
 .search__input:focus-visible {
     outline: none;
     border-color: var(--input-brd-color-focus);
@@ -371,6 +374,9 @@ footer .wp-block-site-title a {
     border: var(--input-brd-size) solid var(--input-brd-color);
     padding: 6px 8px;
     border-radius: 8px;
+}
+.basket-toggle__link:hover {
+    border-color: var(--input-brd-color-hover);
 }
 .basket-toggle__icon {
     width: 32px;
@@ -2314,7 +2320,7 @@ form.woocommerce-form.woocommerce-form-login.login .form-row {
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
     background-color: #fff;
-}   
+}
 .wp-block-woocommerce-order-confirmation-status{
     display: flex;
     flex-direction: column;
@@ -2322,7 +2328,7 @@ form.woocommerce-form.woocommerce-form-login.login .form-row {
     align-items: center;
     background: #fff;
     margin-top: 50px !important;
-    padding-bottom: 50px; 
+    padding-bottom: 50px;
     border-radius: var(--brs-lg);
 }
 .wp-block-woocommerce-order-confirmation-status h1 {
@@ -2347,7 +2353,7 @@ form.woocommerce-form.woocommerce-form-login.login .form-row {
     font-weight: 500;
     color: var(--form-text-color);
     width: 50%;
-    text-align: center; 
+    text-align: center;
     background: url('assets/images/bg-pattern.svg') repeat;
     padding: 30px;
     border-radius: 30px;
@@ -2563,4 +2569,36 @@ body.error404 #wp-block-search__input-1:focus{
 
 .product-kind-menu__link:hover {
     transform: translateY(-2px);
+}
+.product-kind-menu__link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+.woocommerce-ordering select{
+    border-radius: var(--brs);
+    border: var(--input-brd-size) solid var(--input-brd-color);
+    background-color: var(--input-bg-color);
+    outline: none;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+    padding: calc(var(--pd) /2 ) var(--pd);
+    color: var(--airy-secondary-text-color)
+}
+.woocommerce-ordering select:hover{
+    border-color: var(--input-brd-color-hover);
+    color: var(--input-text-color)
+}
+.wc-block-components-quantity-selector:hover {
+    border-color: var(--input-brd-color-hover);
+    background-color: #fff;
+}
+.wc-block-components-quantity-selector > .wc-block-components-quantity-selector__button--plus:hover,
+.wc-block-components-quantity-selector > .wc-block-components-quantity-selector__button--minus:hover {
+    background-color: var(--primary-bg-hover);
+    color: var(--primary-text-color);
 }
