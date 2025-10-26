@@ -551,7 +551,8 @@ footer {
     width: 1165px;
     padding: 0 calc(var(--pd) * 2);
 }
-.wc-block-components-product-image img {
+.wc-block-components-product-image img,
+.product-card-image {
     height: var(--gallery-card-image-height, 370px);
     object-fit: contain !important;
     mix-blend-mode: multiply;
@@ -2458,6 +2459,7 @@ body.error404 #wp-block-search__input-1:focus{
     max-width: 81px;
     line-height: 16px;
     font-size: 18px;
+    z-index: 1;
 }
 
 .product-kind-menu__item .product-kind-menu__link .product-kind-menu__image{
@@ -2505,6 +2507,9 @@ body.error404 #wp-block-search__input-1:focus{
 .product-kind-menu__item.product-kind-tequila .product-kind-menu__link .product-kind-menu__image{
     background-image: url('assets/images/product_kind/tequila.webp');
 }
+.product-kind-menu__item.product-kind-beer .product-kind-menu__link .product-kind-menu__image{
+    background-image: url('assets/images/product_kind/beer.webp');
+}
 .product-kind-menu__item .product-kind-menu__link::before {
     content: '';
     display: block;
@@ -2550,6 +2555,9 @@ body.error404 #wp-block-search__input-1:focus{
 }
 .product-kind-menu__item.product-kind-tequila .product-kind-menu__link::before {
     background-color: rgba(189, 207, 101, 0.2);
+}
+.product-kind-menu__item.product-kind-beer .product-kind-menu__link::before {
+    background-color: rgba(118, 229, 91, 0.2);
 }
 .product-kind-menu__image.product-kind-menu__masked{
 

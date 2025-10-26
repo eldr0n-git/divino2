@@ -1125,4 +1125,3 @@ add_action('wp_enqueue_scripts', 'divino_enqueue_product_kind_menu_styles');
 // update_option( 'woocommerce_price_thousand_sep', ' ' ); // Разделитель тысяч
 // update_option( 'woocommerce_price_decimal_sep', ',' ); // Разделитель дробной части
 // update_option( 'woocommerce_price_num_decimals', 0 ); // Убрать дробную часть
-

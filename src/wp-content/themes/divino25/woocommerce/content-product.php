@@ -24,7 +24,7 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 	if ( $img_small ) :
 	?>
 		<picture>
-			<source srcset="<?php echo esc_url( $img_small[0] ); ?>.webp" type="image/webp">
+			<source srcset="<?php echo esc_url( $img_small[0] ); ?>" type="image/webp">
 			<img src="<?php echo esc_url( $img_small[0] ); ?>"
 			     width="260"
 			     height="370"
@@ -35,21 +35,13 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 	<?php endif; ?>
 
 	<?php
-	// Заголовок и цена внутри ссылки
-	?>
-	<h2 class="woocommerce-loop-product__title"><?php the_title(); ?></h2>
-	<?php woocommerce_template_loop_price(); ?>
-
-	<?php
-	// Название товара (повторно, если нужно)
+	// Заголовок и цена (ОДИН РАЗ через хуки)
 	do_action( 'woocommerce_shop_loop_item_title' );
-
-	// Рейтинг и цена (если нужно)
 	do_action( 'woocommerce_after_shop_loop_item_title' );
 
 	// Закрытие ссылки + кнопка "в корзину"
 	do_action( 'woocommerce_after_shop_loop_item' );
 
-	echo '<!-- divino25 content-product.php -->';
+	echo '<!-- divino25 content-product.php FIXED -->';
 	?>
-</li><!-- divino25 content-product.php -->
+</li>
