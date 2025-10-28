@@ -3,7 +3,7 @@
  * Plugin Name: DIVINO Custom Related Products
  * Plugin URI:
  * Description: Кастомные похожие товары с приоритетом по таксономиям: product_kind, region, wine_style, tags
- * Version: 2.0.0
+ * Version: 1.1.32
  * Author: eldr0n
  * Author URI:
  * License: GPL v2 or later
@@ -25,7 +25,7 @@ class Custom_Related_Products {
     private $optional_taxonomies = array('wine_style');
 
     public function __construct() {
-        error_log('DIVINO: Плагин инициализирован! v2.0');
+        //error_log('DIVINO: Плагин инициализирован! v1.1.32');
         
         add_action('init', array($this, 'register_gutenberg_block'));
         add_action('init', array($this, 'register_block_pattern'));
@@ -34,7 +34,7 @@ class Custom_Related_Products {
         
         add_shortcode('divino_related_products', array($this, 'shortcode_related_products'));
         
-        error_log('DIVINO: Шорткод divino_related_products зарегистрирован');
+        //error_log('DIVINO: Шорткод divino_related_products зарегистрирован');
     }
 
     public function register_gutenberg_block() {
@@ -81,7 +81,7 @@ class Custom_Related_Products {
     }
 
     public function shortcode_related_products($atts) {
-        error_log('DIVINO: Шорткод вызван!');
+        //error_log('DIVINO: Шорткод вызван!');
         
         $atts = shortcode_atts(array(
             'limit' => 4,
@@ -95,33 +95,33 @@ class Custom_Related_Products {
     public function render_block($attributes) {
         global $post;
 
-        error_log('DIVINO render_block: ВЫЗВАН для товара ID = ' . ($post ? $post->ID : 'NULL'));
+        // error_log('DIVINO render_block: ВЫЗВАН для товара ID = ' . ($post ? $post->ID : 'NULL'));
 
-        if (!is_product() && !$post) {
-            return '<div style="padding:20px;background:#fff3cd;border:1px solid #ffc107;"><strong>DEBUG:</strong> Этот блок работает только на странице товара.</div>';
-        }
+        // if (!is_product() && !$post) {
+        //     return '<div style="padding:20px;background:#fff3cd;border:1px solid #ffc107;"><strong>DEBUG:</strong> Этот блок работает только на странице товара.</div>';
+        // }
 
         $product_id = $post ? $post->ID : get_the_ID();
         $limit = isset($attributes['limit']) ? intval($attributes['limit']) : 4;
         $columns = isset($attributes['columns']) ? intval($attributes['columns']) : 4;
         $title = isset($attributes['title']) ? esc_html($attributes['title']) : 'Похожие товары';
 
-        error_log('DIVINO render_block: Вызываем get_custom_related_products для товара ' . $product_id);
+        //error_log('DIVINO render_block: Вызываем get_custom_related_products для товара ' . $product_id);
 
         $related_ids = $this->get_custom_related_products(array(), $product_id, array('limit' => $limit));
 
-        error_log('DIVINO render_block: Получено ' . count($related_ids) . ' товаров: ' . implode(',', $related_ids));
+        //error_log('DIVINO render_block: Получено ' . count($related_ids) . ' товаров: ' . implode(',', $related_ids));
 
-        if (empty($related_ids)) {
-            error_log('DIVINO render_block: Блок скрыт - нет похожих товаров');
-            return '';
-        }
+        // if (empty($related_ids)) {
+        //     error_log('DIVINO render_block: Блок скрыт - нет похожих товаров');
+        //     return '';
+        // }
 
         ob_start();
         ?>
         <section class="custom-related-products related products">
             <?php if ($title): ?>
-                <h2><?php echo $title; ?></h2>
+                <h2 class="wp-block-heading"><?php echo $title; ?></h2>
             <?php endif; ?>
             
             <ul class="products columns-<?php echo esc_attr($columns); ?>">
@@ -151,7 +151,7 @@ class Custom_Related_Products {
 
         $exclude_ids = array($product_id);
         
-        error_log('========== DIVINO: Начинаем поиск для товара ID: ' . $product_id . ' ==========');
+        //error_log('========== DIVINO: Начинаем поиск для товара ID: ' . $product_id . ' ==========');
 
         foreach ($this->taxonomies_priority as $taxonomy_combo) {
             if (count($related_products) >= $limit) {
@@ -169,10 +169,10 @@ class Custom_Related_Products {
                 
                 if (empty($terms) || is_wp_error($terms)) {
                     if (in_array($tax, $this->optional_taxonomies)) {
-                        error_log('DIVINO: ' . $tax . ' отсутствует, пропускаем (опционально)');
+                        //error_log('DIVINO: ' . $tax . ' отсутствует, пропускаем (опционально)');
                         continue;
                     }
-                    error_log('DIVINO: ' . $tax . ' отсутствует (обязательно) - пропускаем комбинацию ' . $taxonomy_combo);
+                    //error_log('DIVINO: ' . $tax . ' отсутствует (обязательно) - пропускаем комбинацию ' . $taxonomy_combo);
                     $has_all_required = false;
                     break;
                 }
@@ -189,13 +189,13 @@ class Custom_Related_Products {
                     $terms = $filtered_terms;
                     
                     if (empty($terms)) {
-                        error_log('DIVINO: ' . $tax . ' - нет конечных терминов - пропускаем комбинацию ' . $taxonomy_combo);
+                        //error_log('DIVINO: ' . $tax . ' - нет конечных терминов - пропускаем комбинацию ' . $taxonomy_combo);
                         $has_all_required = false;
                         break;
                     }
                 }
                 
-                error_log('DIVINO: ' . $tax . ' - используем термины: ' . implode(',', $terms));
+                //error_log('DIVINO: ' . $tax . ' - используем термины: ' . implode(',', $terms));
 
                 $tax_query[] = array(
                     'taxonomy' => $tax,
@@ -209,11 +209,11 @@ class Custom_Related_Products {
             }
 
             if (!$has_all_required || count($tax_query) <= 1) {
-                error_log('DIVINO: Пропускаем комбинацию ' . $taxonomy_combo);
+                //error_log('DIVINO: Пропускаем комбинацию ' . $taxonomy_combo);
                 continue;
             }
 
-            error_log('DIVINO: === Ищем по комбинации: ' . implode(' + ', $combo_description) . ' ===');
+            //error_log('DIVINO: === Ищем по комбинации: ' . implode(' + ', $combo_description) . ' ===');
 
             $args_query = array(
                 'post_type' => 'product',
@@ -263,27 +263,27 @@ class Custom_Related_Products {
                         
                         if (!$has_match) {
                             $is_valid = false;
-                            error_log('DIVINO: Товар ID ' . $found_id . ' НЕ ПРОШЕЛ по ' . $tax);
+                            //error_log('DIVINO: Товар ID ' . $found_id . ' НЕ ПРОШЕЛ по ' . $tax);
                         }
                     }
                     
                     if ($is_valid && !in_array($found_id, $related_products)) {
                         $related_products[] = $found_id;
                         $found_count++;
-                        error_log('DIVINO: ✓ Товар ID ' . $found_id . ' добавлен. Проверка: ' . implode(', ', $validation_log));
+                        //error_log('DIVINO: ✓ Товар ID ' . $found_id . ' добавлен. Проверка: ' . implode(', ', $validation_log));
                     }
                 }
                 wp_reset_postdata();
-                error_log('DIVINO: Найдено и добавлено ' . $found_count . ' товаров');
+                //error_log('DIVINO: Найдено и добавлено ' . $found_count . ' товаров');
             }
         }
 
         if (empty($related_products)) {
-            error_log('DIVINO: ========== Похожие товары не найдены, блок скрыт ==========');
+            //error_log('DIVINO: ========== Похожие товары не найдены, блок скрыт ==========');
             return array();
         }
 
-        error_log('DIVINO: ========== Итого возвращаем ' . count($related_products) . ' товаров: ' . implode(', ', $related_products) . ' ==========');
+        //error_log('DIVINO: ========== Итого возвращаем ' . count($related_products) . ' товаров: ' . implode(', ', $related_products) . ' ==========');
         return array_slice($related_products, 0, $limit);
     }
 }

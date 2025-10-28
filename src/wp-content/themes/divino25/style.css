@@ -552,7 +552,8 @@ footer {
     padding: 0 calc(var(--pd) * 2);
 }
 .wc-block-components-product-image img,
-.product-card-image {
+.woocommerce-loop-product__link picture,
+.woocommerce ul.products li.product a img {
     height: var(--gallery-card-image-height, 370px);
     object-fit: contain !important;
     mix-blend-mode: multiply;
@@ -578,10 +579,21 @@ footer {
 .sp-main-column {
 
 }
+.sp-order .ti_wishlists__cnt {
+    padding: 0;
+}
+.tinv-wraper.tinv-wishlist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 .sp-order-cnt {
     flex-basis: 200px !important;
-    padding-left: calc(var(--pd) * 2);
+    padding: var(--pd) calc(var(--pd) * 2);
     background-color: #fff;
+    border-radius: var(--brs-lg);
 }
 .sp-order-price .woocommerce-Price-amount:before{
     content: 'Цена';
