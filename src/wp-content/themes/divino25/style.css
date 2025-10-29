@@ -2637,3 +2637,101 @@ body.error404 #wp-block-search__input-1:focus{
     color: var(--primary-color);
     margin-bottom: 15px;
 }
+
+/* page WHERE-TO-BUY */
+.shops__picture {
+    display: block;
+    width: 338px;
+    height: 428px;
+    border-radius: var(--brs-lg);
+    box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+    margin-bottom: var(--pd);
+}
+.shops {
+    display: flex;
+}
+.shops__info{
+    display: flex;
+    flex-direction: column;
+}
+.shops__item:not(:first-child) {
+    margin-left: var(--pd-lg);
+}
+.shops__showMap {
+    background-color: var(--primary-bg);
+    color: var(--primary-text-color);
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: var(--brs);
+    padding: calc(var(--pd) /2 ) var(--pd);
+    text-decoration: none;
+    display: flex;
+    margin-top: auto;
+    text-align: center;
+    justify-content: center;
+}
+.shops__title{
+    font-size: 20px;
+    font-family: 'Onest', serif;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+}
+.shops__address{
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    margin: 0 0 10px 0;
+    color: var(--form-text-color);
+}
+.shops__address::before{
+    font-family: 'dashicons';
+    display: inline-block;
+    margin-right: 8px;
+    content: "\f230";
+
+}
+.shops__workhours-title {
+    font-size: 13px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    margin: 0 0 5px 0;
+    color: #5b4949;
+}
+.shops__workhours-value {
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    margin: 0 0 5px 0;
+    color: #5b4949;
+    display: flex;
+}
+.shops__workhours-value::before{
+    font-family: 'dashicons';
+    display: inline-block;
+    margin-right: 8px;
+    content: "\f469";
+
+}
+.shops__runWhatsapp {
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    margin: 0 0 5px 0;
+    color: #0b7a2d;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    margin: var(--pd) 0;
+}
+.shops__runWhatsapp::before{
+    font-family: 'dashicons';
+    display: inline-block;
+    margin-right: 8px;
+    content: "\f19a";
+    font-size: 24px;
+}
+
+
+/* & page WHERE-TO-BUY */
