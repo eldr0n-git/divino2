@@ -45,7 +45,7 @@
                         </a>
                     </li>
                     <li class="mainNav__item">
-                        <a href="<?php echo function_exists('wc_get_cart_url') ? esc_url(wc_get_cart_url()) : esc_url(home_url('/cart/')); ?>" class="mainNav__link mainNav__link--contact">
+                        <a href="<?php echo esc_url(home_url('/?page_id=553')); ?>" class="mainNav__link mainNav__link--contact">
                             <span class="mainNav__linktext">Задать вопрос</span>
                         </a>
                     </li>

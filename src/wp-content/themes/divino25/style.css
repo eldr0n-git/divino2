@@ -70,6 +70,7 @@ User pwd: I$Z6u$$z8pB0wN3glDR&KYE2
     --product-card-image-height: 600px;
     --gallery-card-image-height: 370px;
     --gallery-card-image-width: 250px;
+    --gallery-card-title-height: 60px;
 
     --red-wine-color: var(--primary-bg);
     --white-wine-color: #E4C270;
@@ -101,12 +102,14 @@ a:focus {
     font-size: 18px;
 }
 
-.woocommerce .button.wp-element-button {
+.woocommerce .button.wp-element-button,
+.wp-block-post-content .button{
     background-color: var(--primary-bg);
     color: var(--primary-text-color);
     border-radius: var(--brs);
 }
-.woocommerce .button.wp-element-button:hover {
+.woocommerce .button.wp-element-button:hover,
+.wp-block-post-content .button:hover {
     background-color: var(--primary-bg-hover);
     color: var(--primary-text-color);
 
@@ -668,6 +671,17 @@ footer {
     background-image: url('assets/images/general.svg?#check-green');
     width: 16px;
     height: 16px;
+}
+.divino-wine-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: var(--pd-lg);
+    margin-bottom: var(--pd-lg);
+}
+.divino-wine-details > * {
+    font-size: 18px;
+    font-family: 'Onest', sans-serif;
+    font-weight: 400;
 }
 .wine-style-display {
     display: flex;
@@ -2735,3 +2749,12 @@ body.error404 #wp-block-search__input-1:focus{
 
 
 /* & page WHERE-TO-BUY */
+.woocommerce .custom-related-products ul.products li.product .woocommerce-loop-product__title
+{
+    font-family: 'Onest', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: var(--pd);
+    min-height: var(--gallery-card-title-height);
+    max-height: var(--gallery-card-title-height);
+}

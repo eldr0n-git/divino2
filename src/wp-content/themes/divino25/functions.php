@@ -607,6 +607,7 @@ function divino_custom_woocommerce_title($title) {
     return $title; // по умолчанию
 }
 
+
 /* * Customize the HTML output of the New Products block
  */
 add_filter('woocommerce_blocks_product_grid_item_html', 'customize_new_products_block_html', 10, 3);
@@ -620,6 +621,36 @@ function customize_new_products_block_html($html, $data, $product) {
     return $html;
 }
 
+add_filter( 'render_block', 'divino_add_classes_to_new_products_block', 10, 2 );
+function divino_add_classes_to_new_products_block( $block_content, $block ) {
+    // Проверяем, что это блок WooCommerce "Новые товары"
+    if ( isset( $block['blockName'] ) && $block['blockName'] === 'woocommerce/product-new' ) {
+
+        // Добавляем классы к основному контейнеру блока
+        $classes = 'wp-block-group has-global-padding is-layout-constrained wp-block-group-is-layout-constrained';
+
+        // Добавляем классы в обертку, если её нет
+        if ( strpos( $block_content, 'class="' ) !== false ) {
+            // Вставляем в первый тег с class=
+            $block_content = preg_replace(
+                '/class="([^"]+)"/',
+                'class="$1 ' . esc_attr( $classes ) . '"',
+                $block_content,
+                1
+            );
+        } else {
+            // Если нет class, просто добавляем
+            $block_content = preg_replace(
+                '/(<[a-z]+)/',
+                '$1 class="' . esc_attr( $classes ) . '"',
+                $block_content,
+                1
+            );
+        }
+    }
+
+    return $block_content;
+}
 
 
 
@@ -1125,3 +1156,26 @@ add_action('wp_enqueue_scripts', 'divino_enqueue_product_kind_menu_styles');
 // update_option( 'woocommerce_price_thousand_sep', ' ' ); // Разделитель тысяч
 // update_option( 'woocommerce_price_decimal_sep', ',' ); // Разделитель дробной части
 // update_option( 'woocommerce_price_num_decimals', 0 ); // Убрать дробную часть
+
+
+
+// Customize Delievery address form
+add_filter( 'woocommerce_default_address_fields', 'divino___customize_address_fields' );
+function divino___customize_address_fields( $fields ) {
+
+    // Удаляем ненужные поля
+    unset( $fields['state'] );     // Область / район
+    unset( $fields['postcode'] );  // Почтовый индекс
+
+    // Заменяем поле "Город" (city) на select
+    $fields['city']['type'] = 'select';
+    $fields['city']['options'] = [
+        ''          => 'Выберите город',
+        'Астана'    => 'Астана',
+        'Караганда' => 'Караганда',
+    ];
+    $fields['city']['label'] = 'Населённый пункт';
+    $fields['city']['required'] = true;
+
+    return $fields;
+}

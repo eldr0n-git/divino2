@@ -124,6 +124,8 @@ define('WP_DEBUG_DISPLAY', false);
 // @ini_set( 'display_errors', 0 );
 // define('FS_METHOD', 'direct');
 
+// отключение rest API для плагина contacts form7
+define( 'WPCF7_USE_PIPE', false );
 
 
 /* Add any custom values between this line and the "stop editing" line. */

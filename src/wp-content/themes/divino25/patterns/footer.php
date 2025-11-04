@@ -43,7 +43,7 @@
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|80"}},"layout":{"type":"flex","flexWrap":"wrap","verticalAlignment":"top","justifyContent":"space-between"}} -->
 			<div class="wp-block-group">
 				<!-- wp:navigation {"overlayMenu":"never","layout":{"type":"flex","orientation":"vertical"}} -->
-					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Магазины', 'divino' ); ?>","url":"#"} /-->
+					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Магазины', 'divino' ); ?>","url":"?page_id=46"} /-->
 
 					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Как купить', 'divino' ); ?>","url":"#"} /-->
 
