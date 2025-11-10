@@ -3,7 +3,7 @@
  * Plugin Name: Divino Slider
  * Description: Простой слайдер с управлением слайдами через админ-панель и динамическим блоком Гутенберга.
  * Version: 1.0.0
- * Author: You
+ * Author: eldr0n
  * Text Domain: divino-slider
  */
 

@@ -1137,12 +1137,13 @@ footer {
 }
 
 .slider-scale__point {
-    width: 72px;
     height: var(--slider-height);;
     background-color: var(--slider-bg-color);
     border-radius: 4px;
-    /* border: 2px solid #fff; */
-
+    flex-grow: 1;
+    display: flex;
+    width: 100%;
+    max-width: 50px;
 }
 .slider-scale__point-wrapper {
     position: relative;
@@ -1151,6 +1152,7 @@ footer {
     display: flex;
     align-items: center;
     flex-direction: column;
+    flex: 1;
 }
 .slider-scale__point-wrapper.active .slider-scale__point {
     background-color: var(--primary-bg);
@@ -1942,12 +1944,13 @@ h2.wp-block-heading {
 .key-features {
     display: flex;
     align-items: center;
-    padding: calc( var(--pd) * 0.6) var(--pd);
+    padding: 0 var(--pd);
     /* border: 2px solid var(--input-brd-color); */
     border-radius: var(--brs-lg);
     background: linear-gradient(45deg, var(--primary-bg) 0%, #000 90%);
     position: relative;
     width: calc(100% - 65px);
+    min-height: 41px;
 }
 .key-features::after {
     content: '';
@@ -1995,6 +1998,7 @@ body.divino25-product-kind-white-wine .key-features {
     color: var(--airy-color);
     font-weight: 500;
     word-break: keep-all;
+    white-space: nowrap;
 }
 
 
