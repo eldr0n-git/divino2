@@ -47,7 +47,7 @@
 
 					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Как купить', 'divino' ); ?>","url":"#"} /-->
 
-					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Гарантии', 'divino' ); ?>","url":"#"} /-->
+					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Пользовательское соглашение', 'divino' ); ?>","url":"?page_id=559"} /-->
 
 					<!-- wp:navigation-link {"label":"<?php esc_html_e( 'Франшиза', 'divino' ); ?>","url":"#"} /-->
 				<!-- /wp:navigation -->
