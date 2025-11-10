@@ -2771,3 +2771,6 @@ body.error404 #wp-block-search__input-1:focus{
     font-size: 36px;
     margin: 0;
 }
+.product-title-volume {
+    white-space: nowrap;
+}
