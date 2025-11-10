@@ -74,6 +74,7 @@ User pwd: I$Z6u$$z8pB0wN3glDR&KYE2
 
     --red-wine-color: var(--primary-bg);
     --white-wine-color: #E4C270;
+    --white-wine-bg-color: #FFFBF2;
     --rose-wine-color: #e4709a;
 
     /* shadows */
@@ -1779,7 +1780,7 @@ fieldset legend {
 
 /* BODY colors */
 body.divino25-product-kind-white-wine {
-    background-color: #FFF7E9;
+    background-color: var(--white-wine-bg-color);
 }
 
 
@@ -2761,4 +2762,12 @@ body.error404 #wp-block-search__input-1:focus{
     margin-bottom: var(--pd);
     min-height: var(--gallery-card-title-height);
     max-height: var(--gallery-card-title-height);
+}
+
+
+.product-custom-name {
+    font-family: 'Literata', serif;
+    font-weight: 500;
+    font-size: 36px;
+    margin: 0;
 }
