@@ -678,6 +678,7 @@ footer {
     grid-template-columns: 1fr 1fr;
     grid-gap: var(--pd-lg);
     margin-bottom: var(--pd-lg);
+    background-color: #fff;
 }
 .divino-wine-details > * {
     font-size: 18px;
@@ -2813,13 +2814,45 @@ main .main-title h1 {
     cursor: pointer;
 }
 
+main .page-cnt {
+    background-color: #fff;
+    padding: var(--pd-lg);
+}
 /* FOOD */
+.foodList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+
+.foodItem {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .foodItem__icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: var(--pd);
+    width: 180px;
+    height: 180px;
+    margin-bottom: 7px;
     display: block;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 108%;
+}
+.foodItem__title {
+    font-size: 16px;
+    color: var(--input-text-color);
+}
+.foodItem__icon--snacks {
+    background-image: url('assets/images/food/snacks.webp');
+}
+.foodItem__icon--game {
+    background-image: url('assets/images/food/game.webp');
+}
+.foodItem__icon--steak {
+    background-image: url('assets/images/food/steak.webp');
 }

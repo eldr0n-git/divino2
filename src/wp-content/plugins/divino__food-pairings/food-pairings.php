@@ -551,7 +551,7 @@ class WC_Food_Pairings {
 
         $output = '<div class="food-pairings">';
         $output .= '<h3>Сочетания с едой:</h3>';
-        $output .= '<ul>';
+        $output .= '<ul class="foodList">';
 
         foreach ($food_items as $food_id) {
             $food_post = get_post($food_id);
