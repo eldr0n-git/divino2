@@ -2812,3 +2812,14 @@ main .main-title h1 {
     border: none;
     cursor: pointer;
 }
+
+/* FOOD */
+.foodItem__icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: var(--pd);
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

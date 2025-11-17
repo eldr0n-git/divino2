@@ -330,9 +330,9 @@ class WC_Food_Pairings {
                 <h4>Выбранные блюда:</h4>
                 <div id="selected-food-items">
                     <?php foreach ($all_food_ids as $food_id): ?>
-                        <?php 
+                        <?php
                         $food_id = (int) $food_id;
-                        if ($food_id > 0) : 
+                        if ($food_id > 0) :
                             $food_title = get_the_title($food_id);
                             if ($food_title): ?>
                                 <span class="selected-item" data-id="<?php echo $food_id; ?>">
@@ -558,7 +558,10 @@ class WC_Food_Pairings {
             if ($food_post) {
                 $food_title = $food_post->post_title;
                 $food_slug = $food_post->post_name;
-                $output .= '<li class="' . esc_attr($food_slug) . '">' . esc_html($food_title) . '</li>';
+                $output .= '<li class="foodItem">'
+                                . '<div class="foodItem__icon foodItem__icon--' . esc_attr($food_slug) . '"></div>'
+                                . '<span class="foodItem__title">' . esc_html($food_title) . '</span>'
+                            . '</li>';
             }
         }
 
