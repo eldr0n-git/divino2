@@ -2774,3 +2774,31 @@ body.error404 #wp-block-search__input-1:focus{
 .product-title-volume {
     white-space: nowrap;
 }
+main .main-title {
+    display: flex;
+}
+main .main-title h1 {
+    flex: 1 1 auto;
+}
+.widget_price_filter p {
+    display: none;
+}
+.price_slider_amount .button {
+    order: 2;
+}
+.price_slider_amount  .price_label {
+    text-align: initial;
+    display: flex;
+    justify-content: space-around;
+}
+.shop-filters-sidebar button {
+    background-color: var(--primary-bg);
+    color: var(--primary-text-color);
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: var(--brs);
+    padding: calc(var(--pd) /2 ) var(--pd);
+    border: none;
+    cursor: pointer;
+}
