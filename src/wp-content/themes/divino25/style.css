@@ -1233,7 +1233,9 @@ footer {
     margin-top: 1px;
     filter: contrast(0.8);
 }
-
+.dv-collection .wc-block-product .product-regions span a:hover {
+    color: var(--primary-color);
+}
 .product--added {
     background-color: var(--ok-bg-color) !important;
 
@@ -2126,6 +2128,9 @@ body.divino25-product-kind-white-wine .key-features {
     max-height: initial;
     margin: 0;
 }
+.view-list__product-info .wp-block-post-title > a .product-title-volume {
+    opacity: 0.5;
+}
 .view-list__product-control .wc-block-components-product-button .wp-block-button__link span{
     text-wrap: nowrap;
 }
@@ -2162,7 +2167,12 @@ body.divino25-product-kind-white-wine .key-features {
     text-decoration: none;
     margin: 0 10px;
 }
-
+.view-list__product-key-features *:not(a) {
+    cursor: default;
+}
+.view-list__product-key-features a:hover {
+    color: var(--primary-color);
+}
 .view-list__product-sku {
     display: flex;
     font-family: 'Rubik', serif;

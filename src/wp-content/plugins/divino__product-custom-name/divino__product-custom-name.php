@@ -1,24 +1,15 @@
 <?php
 /**
  * Plugin Name: Divino Product Custom Name
- * Plugin URI: https://divino.kz
+ * Plugin URI: https://example.com
  * Description: Добавляет возможность указать дополнительное наименование товара
  * Version: 1.0.0
- * Author: eldr0n
+ * Author: Your Name
  * Text Domain: divino-custom-name
  * Domain Path: /languages
  * Requires at least: 5.8
  * Requires PHP: 7.4
  */
-
-/*
-<?php echo do_blocks('<!-- wp:divino/product-custom-name /-->'); ?>
-<?php echo do_blocks('<!-- wp:divino/product-custom-name {"prefix":"Название: "} /-->'); ?>
-<?php echo do_blocks('<!-- wp:divino/product-custom-name {"prefix":"Оригинал: ","suffix":" ™"} /-->'); ?>
-<?php divino_the_product_custom_name(); ?>
- */
-
-
 
 if (!defined('ABSPATH')) {
     exit;
@@ -209,7 +200,8 @@ class Divino_Product_Custom_Name {
         $class_name = isset($attributes['className']) ? esc_attr($attributes['className']) : '';
 
         $output = '<div class="divino-product-custom-name ' . $class_name . '">';
-        $output .= esc_html($prefix) . esc_html($custom_name) . esc_html($suffix);
+        // $output .= esc_html($prefix) . esc_html($custom_name) . esc_html($suffix);
+        $output .= $custom_name;
         $output .= '</div>';
 
         return $output;
