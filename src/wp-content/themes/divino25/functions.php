@@ -1181,18 +1181,3 @@ function divino___customize_address_fields( $fields ) {
 }
 
 
-/* * Подключение кастомных стилей в админке WooCommerce
- */
-function divino_woocommerce_admin_styles( $hook ) {
-    // Можно указать конкретные страницы админки, чтобы стили грузились только там
-    // Например, только на странице редактирования заказа:
-    // if ( 'toplevel_page_wc-settings' !== $hook ) return;
-echo get_stylesheet_directory_uri();
-    wp_enqueue_style(
-        'divino-woocommerce-admin-style',
-        get_stylesheet_directory_uri() . '/css/divino-woocommerce-admin.css',
-        array(),
-        '1.0.0'
-    );
-}
-add_action( 'admin_enqueue_scripts', 'divino_woocommerce_admin_styles' );

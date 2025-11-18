@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: DIVINO Ctaloguer Product Kind Title
+ * Plugin Name: DIVINO Cataloguer Product Kind Title
  * Description: Изменяет заголовок архива для таксономии product_kind
  * Version: 1.0
  * Author: eldr0n

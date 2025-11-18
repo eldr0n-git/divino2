@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the WordPress - 6.8.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-09-30 19:16:19+0000\n"
+"PO-Revision-Date: 2025-11-12 11:13:48+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : ((n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14)) ? 1 : 2);\n"
-"X-Generator: GlotPress/4.0.1\n"
+"X-Generator: GlotPress/4.0.3\n"
 "Language: ru\n"
 "Project-Id-Version: WordPress - 6.8.x - Development\n"
 
@@ -16418,10 +16418,6 @@ msgctxt "Comma-separated list of search stopwords in your language"
 msgid "about,an,are,as,at,be,by,com,for,from,how,in,is,it,of,on,or,that,the,this,to,was,what,when,where,who,will,with,www"
 msgstr "а,без,бы,в,где,для,да,до,за,и,из,или,к,как,когда,ли,на,над,ни,но,о,об,от,перед,по,под,при,про,с,у,через,чтобы,www"
 
-#: wp-includes/post-template.php:1810
-msgid "This content is password protected. To view it please enter your password below:"
-msgstr "Это содержимое защищено паролем. Для его просмотра введите, пожалуйста, пароль:"
-
 #: wp-includes/class-wp-http-curl.php:283
 #: wp-includes/class-wp-http-streams.php:336
 msgid "Failed to write request to temporary file."
@@ -19228,6 +19224,10 @@ msgstr "%s [Текущая редакция]"
 #: wp-includes/post-template.php:1926 wp-includes/post-template.php:1987
 msgid "%s [Autosave]"
 msgstr "%s [Автосохранение]"
+
+#: wp-includes/post-template.php:1810
+msgid "This content is password protected. To view it please enter your password below:"
+msgstr "Эта запись защищена паролем. Для её просмотра введите, пожалуйста, пароль:"
 
 #. translators: 'Home' as in a website's home page.
 #: wp-includes/blocks/home-link.php:140 wp-includes/post-template.php:1471
