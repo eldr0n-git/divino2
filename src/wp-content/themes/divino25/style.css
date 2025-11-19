@@ -21,7 +21,7 @@ User pwd: I$Z6u$$z8pB0wN3glDR&KYE2
     --brs: 4px;
     --brs-lg: 8px;
 
-    --ok-text-color: #407D54;
+    --ok-text-color: #4EA269;
     --ok-bg-color: #49C171;
     --body-bg-color: #FBF5F7;
     --primary-color: #C7383E;
@@ -664,14 +664,17 @@ footer {
     font-size: 16px;
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
+    display: flex;
 }
 .sp-stock.in-stock::before {
     content: '';
     display: block;
     font-weight: 500;
     background-image: url('assets/images/general.svg?#check-green');
-    width: 16px;
-    height: 16px;
+    width: 21px;
+    height: 21px;
+    background-size: cover;
+    margin-right: 7px;
 }
 .divino-wine-details {
     display: grid;
