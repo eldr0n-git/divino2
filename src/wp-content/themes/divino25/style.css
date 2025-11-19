@@ -1145,7 +1145,7 @@ footer {
     flex-grow: 1;
     display: flex;
     width: 100%;
-    max-width: 50px;
+    /* max-width: 50px; */
 }
 .slider-scale__point-wrapper {
     position: relative;
@@ -1156,13 +1156,13 @@ footer {
     flex-direction: column;
     flex: 1;
 }
-.slider-scale__point-wrapper:first-child{
+/* .slider-scale__point-wrapper:first-child{
     justify-content: flex-start;
     align-items: flex-start;
 }
 .slider-scale__point-wrapper:last-child{
     align-items: flex-end;
-}
+} */
 .slider-scale__point-wrapper.active .slider-scale__point {
     background-color: var(--primary-bg);
 
