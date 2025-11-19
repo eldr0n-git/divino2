@@ -3,8 +3,8 @@
  * Plugin Name: Divino Product Custom Name
  * Plugin URI: https://example.com
  * Description: Добавляет возможность указать дополнительное наименование товара
- * Version: 1.0.0
- * Author: Your Name
+ * Version: 1.0.4
+ * Author: eldr0n
  * Text Domain: divino-custom-name
  * Domain Path: /languages
  * Requires at least: 5.8

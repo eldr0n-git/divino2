@@ -1156,6 +1156,13 @@ footer {
     flex-direction: column;
     flex: 1;
 }
+.slider-scale__point-wrapper:first-child{
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.slider-scale__point-wrapper:last-child{
+    align-items: flex-end;
+}
 .slider-scale__point-wrapper.active .slider-scale__point {
     background-color: var(--primary-bg);
 

@@ -334,7 +334,7 @@ public function display_breadcrumb_fallback() {
             //     }
             // }
 
-            $breadcrumb[] = esc_html(get_the_title());
+            $breadcrumb[] = get_the_title();
 
         } elseif (is_tax('product_kind') || is_tax('product_cat') || is_tax('region')) {
             // === ARCHIVE PAGE ===
@@ -649,7 +649,7 @@ public function display_breadcrumb_fallback() {
         // Чекбоксы
         $checkboxes = array(
             'show_home' => __('Показывать "Главная"', 'product-kind-breadcrumb'),
-            'show_shop' => __('Показывать "Магазин"', 'product-kind-breadcrumb'),
+            'show_shop' => __('Показывать "Каталог"', 'product-kind-breadcrumb'),
             'auto_replace' => __('Автоматически заменять стандартный breadcrumb', 'product-kind-breadcrumb'),
             'force_hide_default' => __('Принудительно скрывать все стандартные breadcrumb', 'product-kind-breadcrumb'),
             'debug_mode' => __('Режим отладки (показывать информацию о breadcrumb)', 'product-kind-breadcrumb')
