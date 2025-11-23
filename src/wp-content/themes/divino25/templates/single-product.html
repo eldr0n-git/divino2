@@ -85,10 +85,14 @@
         <h2 class="product-custom-name">
             <!-- wp:divino/product-custom-name /-->
         </h2>
+
+        <div class="food-pairings">
+            [divino_food_pairings]
+        </div>
         <div class="divino-wine-details">
 
 
-            [divino_food_pairings]
+
 
             <!-- wp:wc-wine-details/vineyards {"prefix":"Виноградники: "} /-->
             <!-- wp:wc-wine-details/production-method {"prefix":"Способ производства: "} /-->
@@ -104,8 +108,8 @@
 </main>
 
 <!-- wp:columns {"align":"wide"} -->
-<div class="sp-main-grid wp-block-columns alignwide">
-    <div class="has-global-padding">
+<div class="divino-producer wp-block-columns alignwide">
+    <div class="divino-producer__cnt">
         <!-- wp:shortcode -->
         [producer_info]
         <!-- /wp:shortcode -->
@@ -113,8 +117,8 @@
 </div>
 <!-- /wp:columns {"align":"wide"} -->
 
-<div class="wp-block-columns alignwide">
-    <div class="has-global-padding">
+<div class="custom-related-products wp-block-columns  is-layout-constrained">
+    <div class="custom-related-products__cnt has-global-padding alignwide">
         <!-- wp:pattern {"slug":"divino/custom-related-products"} /-->
      </div>
 </div>

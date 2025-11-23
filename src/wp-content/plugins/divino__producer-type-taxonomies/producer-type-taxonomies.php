@@ -251,7 +251,7 @@ function divino_producer_info_shortcode($atts) {
     }
     
     if (!$brand_id) {
-        return '<div class="divino-producer-info">Производитель не указан</div>';
+        return '<div class="divino-producer-info"></div>';
     }
     
     $term = get_term($brand_id, 'product_brand');
@@ -262,76 +262,53 @@ function divino_producer_info_shortcode($atts) {
     // Получаем метаданные
     $background_image = get_term_meta($brand_id, 'brand_background_image', true);
     $background_color = get_term_meta($brand_id, 'brand_background_color', true);
+    $logo_image = get_term_meta($brand_id, 'thumbnail_id', true);
     $image_url = $background_image ? wp_get_attachment_url($background_image) : '';
-    
+    $logo_url = $logo_image ? wp_get_attachment_url($logo_image) : '';
+
+
     // Формируем стили
     $style = [];
     if ($background_color) {
-        $style[] = 'background-color: ' . esc_attr($background_color);
+        $style_logoWrap[] = 'background-color: ' . esc_attr($background_color);
     }
     if ($image_url) {
         $style[] = 'background-image: url(' . esc_url($image_url) . ')';
         $style[] = 'background-size: cover';
         $style[] = 'background-position: center';
     }
+    if ($logo_url) {
+        $style_logo[] = 'background-image: url(' . esc_url($logo_url) . ')';
+    }
+
+
+
     $style_attr = !empty($style) ? ' style="' . implode('; ', $style) . '"' : '';
+    $style_attr_logoUrl = !empty($style_logo) ? ' style="' . implode('; ', $style_logo) . '"' : '';
+    $style_attr_logoWrap = !empty($style_logoWrap) ? ' style="' . implode('; ', $style_logoWrap) . '"' : '';
     
     // Формируем HTML
     ob_start();
     ?>
-    <div class="divino-producer-info"<?php echo $style_attr; ?>>
-        <div class="divino-producer-content">
-            <h2 class="divino-producer-name"><?php echo esc_html($term->name); ?></h2>
-            <?php if ($term->description): ?>
-                <div class="divino-producer-description">
-                    <?php echo wp_kses_post($term->description); ?>
+    <div class="divino-producer-info" <?php echo $style_attr; ?>>
+        <div class="divino-producer-content has-global-padding">
+            <div class="divino-producer__wrap">
+                <div class="divino-producer__logo-wrap" <?php echo $style_attr_logoWrap; ?>>
+                    <div class="divino-producer__logo" <?php echo $style_attr_logoUrl; ?>></div>
                 </div>
-            <?php endif; ?>
-            <a href="<?php echo esc_url(get_term_link($term)); ?>" class="divino-producer-link">
-                Все товары производителя →
-            </a>
+                <div class="divino-producer__data">
+                    <h2 class="divino-producer-name"><?php echo esc_html($term->name); ?></h2>
+                    <?php if ($term->description): ?>
+                        <div class="divino-producer-description alignwide ">
+                            <?php echo wp_kses_post($term->description); ?>
+                        </div>
+                    <?php endif; ?>
+                    <a href="<?php echo esc_url(get_term_link($term)); ?>" class="divino-producer-link">Все товары производителя →</a>
+                </div>
+            </div>
         </div>
     </div>
     <?php
     return ob_get_clean();
 }
 
-// Добавляем базовые стили для шорткода на фронтенде
-add_action('wp_enqueue_scripts', 'divino_enqueue_producer_styles');
-function divino_enqueue_producer_styles() {
-    wp_add_inline_style('wp-block-library', '
-        .divino-producer-info {
-            padding: 40px 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            position: relative;
-            overflow: hidden;
-        }
-        .divino-producer-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .divino-producer-name {
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        .divino-producer-description {
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        .divino-producer-link {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #333;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-        .divino-producer-link:hover {
-            background: #555;
-        }
-    ');
-}

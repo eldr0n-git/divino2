@@ -825,7 +825,16 @@ footer {
     gap: var(--pd);
 }
 
-
+.wc-block-cart-items tbody {
+    background-color: #fff;
+}
+.wc-block-cart-item__total {
+    justify-content: initial;
+    display: table-cell;
+}
+.wc-block-cart-item__image {
+    padding: var(--pd);
+}
 .dv-collection .wc-block-product .product-regions {
     justify-content: center;
 }
@@ -2145,6 +2154,10 @@ body.divino25-product-kind-white-wine .key-features {
 .view-list__product-control .wc-block-components-product-button .wp-block-button__link span{
     text-wrap: nowrap;
 }
+.view-list__product-control .wp-block-woocommerce-product-price .woocommerce-Price-amount {
+    font-size: 24px;
+    font-weight: 500;
+}
 .view-list__product-control .add_to_cart_button,
 .view-list__product-control .wp-block-button.wc-block-components-product-button .wc-block-components-product-button__button {
     background-color: var(--primary-bg);
@@ -2827,11 +2840,25 @@ main .main-title h1 {
 main .page-cnt {
     background-color: #fff;
     padding: var(--pd-lg);
+    box-shadow: var(--block-xl-shadow);
+    border-radius: var(--brs-lg);
+}
+.page-cnt h3 {
+    font-family: 'Rubik', serif;
+    font-size: 16px;
+    background-color: var(--primary-bg);
+    color: var(--primary-text-color);
+    padding: 7px 15px;
+    border-radius: 0 var(--brs) var(--brs) 0 ;
+    margin-left: calc( calc(var(--pd) * 3) * -1);
 }
 /* FOOD */
 .foodList {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    /*display: grid;
+    grid-template-columns: 1fr 1fr  1fr  1fr ;
+    grid-gap: var(--pd-lg);*/
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
@@ -2842,6 +2869,9 @@ main .page-cnt {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    flex: 1 1 auto;
 }
 .foodItem__icon {
     width: 180px;
@@ -2866,3 +2896,158 @@ main .page-cnt {
 .foodItem__icon--steak {
     background-image: url('assets/images/food/steak.webp');
 }
+.foodItem__icon--beef {
+    background-image: url('assets/images/food/beef.webp');
+}
+.foodItem__icon--pasta {
+    background-image: url('assets/images/food/pasta.webp');
+}
+.foodItem__icon--sausages {
+    background-image: url('assets/images/food/sausages.webp');
+}
+.foodItem__icon--cheese {
+    background-image: url('assets/images/food/cheese.webp');
+}
+.foodItem__icon--red-meat {
+    background-image: url('assets/images/food/red-meat.webp');
+}
+.foodItem__icon--fish {
+    background-image: url('assets/images/food/fish.webp');
+}
+.foodItem__icon--grilled {
+    background-image: url('assets/images/food/grilled.webp');
+}
+.foodItem__icon--grilled-chicken {
+    background-image: url('assets/images/food/grilled-chicken.webp');
+}
+.foodItem__icon--lamb {
+    background-image: url('assets/images/food/lamb.webp');
+}
+.foodItem__icon--lobster {
+    background-image: url('assets/images/food/lobster.webp');
+}
+.foodItem__icon--oysters {
+    background-image: url('assets/images/food/oysters.webp');
+}
+.foodItem__icon--pork {
+    background-image: url('assets/images/food/pork.webp');
+}
+.foodItem__icon--venison {
+    background-image: url('assets/images/food/venison.webp');
+}
+.foodItem__icon--white-meat {
+    background-image: url('assets/images/food/white-meat.webp');
+}
+
+/* producer block */
+.divino-producer{
+    display: flex;
+    flex: 1 1 auto;
+    width: 100%;
+}
+.divino-producer__cnt {
+    width: 100%;
+}
+.divino-producer-info {
+    width: 100%;
+}
+.divino-producer-info::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 360px;
+    background-size: contain;
+    background-repeat: repeat-x;
+    background-position: bottom center;
+    position: absolute;
+    transform: rotate(180deg);
+}
+.divino-producer-info::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 360px;
+    background-size: contain;
+    background-repeat: repeat-x;
+    background-position: bottom center;
+    position: absolute;
+    margin-top: -360px;
+}
+.divino25-product-kind-red-wine .divino-producer-info::before,
+.divino25-product-kind-red-wine .divino-producer-info::after
+{
+    background-image: url('assets/images/producer-border__red-wine.webp');
+}
+.divino25-product-kind-white-wine .divino-producer-info::before,
+.divino25-product-kind-white-wine .divino-producer-info::after
+{
+    background-image: url('assets/images/producer-border__white-wine.webp');
+}
+.divino-producer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 0;
+}
+.divino-producer__wrap {
+    max-width: 1200px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.3);;
+}
+.divino-producer-name {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-family: 'Literata', serif;
+}
+.divino-producer-description {
+    margin-bottom: 20px;
+    font-family: 'Onest', sans-serif;
+    font-size: 18px;
+}
+.divino-producer-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--airy-secondary-text-color);
+    border: 1px solid var(--airy-secondary-text-color);
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+}
+.divino-producer-link:hover {
+    color: var(--primary-color)
+}
+
+.divino-producer__logo {
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.divino-producer__logo-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    border-radius: var(--brs-lg) 0 0 var(--brs-lg);
+}
+.divino-producer__data {
+    background-color: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    padding: 0 60px;
+    border-radius: 0 var(--brs-lg) var(--brs-lg) 0;
+}
+#tab-description {
+    font-family: 'Onest', serif;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.custom-related-products__cnt {
+    width: 100%;
+}
+
