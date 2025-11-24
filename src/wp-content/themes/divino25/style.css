@@ -141,6 +141,23 @@ a:focus {
 	outline-offset: 0;
 }
 
+
+
+@font-face{
+    font-family: "ClarendonBT-Black";
+    src: url("/wp-content/themes/divino25/assets/fonts/clarendon/webfont/61f356f2235a72c3d6b8d0d9cefb1c11.eot");
+    src: url("/wp-content/themes/divino25/assets/fonts/clarendon/webfont/61f356f2235a72c3d6b8d0d9cefb1c11.eot?#iefix")format("embedded-opentype"),
+        url("/wp-content/themes/divino25/assets/fonts/clarendon/webfont/61f356f2235a72c3d6b8d0d9cefb1c11.woff")format("woff"),
+        url("/wp-content/themes/divino25/assets/fonts/clarendon/webfont/61f356f2235a72c3d6b8d0d9cefb1c11.woff2")format("woff2"),
+        url("/wp-content/themes/divino25/assets/fonts/clarendon/webfont/61f356f2235a72c3d6b8d0d9cefb1c11.ttf")format("truetype"),
+        url("/wp-content/themes/divino25/assets/fonts/clarendon/webfont/61f356f2235a72c3d6b8d0d9cefb1c11.svg#Clarendon Blk BT Black")format("svg");
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;
+}
+
+
+
 /*
  * Progressive enhancement to reduce widows and orphans
  * https://github.com/WordPress/gutenberg/issues/55190
@@ -578,7 +595,8 @@ footer {
     grid-template-columns: 1fr 2fr 1fr !important;
 }
 .sp-image-cnt{
-    flex-basis: 300px;
+    flex-basis: 400px;
+    min-width: 400px;
 }
 .sp-main-column {
 
@@ -2799,7 +2817,8 @@ body.error404 #wp-block-search__input-1:focus{
 }
 
 
-.product-custom-name {
+.product-custom-name,
+.page-cnt h2 {
     font-family: 'Literata', serif;
     font-weight: 500;
     font-size: 36px;
@@ -2837,7 +2856,7 @@ main .main-title h1 {
     cursor: pointer;
 }
 
-main .page-cnt {
+.page-cnt {
     background-color: #fff;
     padding: var(--pd-lg);
     box-shadow: var(--block-xl-shadow);
@@ -2851,6 +2870,7 @@ main .page-cnt {
     padding: 7px 15px;
     border-radius: 0 var(--brs) var(--brs) 0 ;
     margin-left: calc( calc(var(--pd) * 3) * -1);
+    padding-left: calc(var(--pd) * 3);
 }
 /* FOOD */
 .foodList {
@@ -3051,3 +3071,26 @@ main .page-cnt {
     width: 100%;
 }
 
+/* Rating block */ 
+.rating__value {
+    font-size: 48px;
+    font-family: 'Literata', serif;
+    font-weight: 700;
+    color: var(--primary-color);
+    color: #F0EAEA;
+  text-shadow: 2px 3px 0px #df9bb2, 1px 1px 5px rgba(0,0,0,0.125);
+  background-color: var(--airy-bg-color);
+  outline: 2px solid var(--airy-border-color);
+  border-radius: 50%;
+  flex: 0;
+}
+.rating{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.divino-rating-icon {
+    width: 140px;
+    height: 140px;
+}
