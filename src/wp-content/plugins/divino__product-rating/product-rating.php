@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Divino Product Rating
- * Plugin URI: https://example.com
+ * Plugin URI: https://divino.kz
  * Description: Плагин для создания кастомных рейтингов товаров WooCommerce
  * Version: 1.0.19
  * Author: eldr0n
