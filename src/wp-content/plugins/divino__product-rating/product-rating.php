@@ -505,6 +505,7 @@ class Divino_Product_Rating {
         <div class="divino-rating-block">
             <h2>Рейтинги и награды</h2>
             
+            <div class="divino-rating-list">
             <?php foreach ($ratings as $rating_data) : 
                 $rating = $wpdb->get_row($wpdb->prepare(
                     "SELECT * FROM {$this->table_name} WHERE id = %d", 
@@ -512,39 +513,61 @@ class Divino_Product_Rating {
                 ));
                 if ($rating) :
             ?>
-                <div class="divino-rating-item" style="margin-bottom: 30px; padding: 20px; background: #f9f9f9; border-left: 4px solid #2271b1;">
-                    <div class="rating">
-                        <div class="rating__value">
-                            <?php echo esc_html($rating_data['value']); ?>
-                        </div>
-                        <div class="rating__title">
-                            <?php echo esc_html($rating->name); ?>
-                        </div>
+
+                
+                <div class="divino-rating-item">
+                    <div class="divino-rating-icon">
+                        <?php
+                            $path = get_stylesheet_directory() . '/assets/images/awards/'.$rating->label.'.svg';
+                            $svg  = file_get_contents($path);
+                            // Значение рейтинга для замены в шаблоне SVG
+                            $new_value = $rating_data['value'];
+                            // Заменяем содержимое <text id="value">...</text>
+                            $svg = preg_replace_callback(
+                                '/<text[^>]*id="value"[^>]*>.*?<\/text>/s',
+                                function ($matches) use ($new_value) {
+                                    return preg_replace('/>.*?</', '>' . $new_value . '<', $matches[0]);
+                                },
+                                $svg
+                            );
+                            echo $svg; 
+                        ?>
                     </div>
-                    <!-- <h4 style="margin-top: 0;">
-                        <?php echo esc_html($rating->name); ?>
-                        <span style="float: right; font-size: 1.2em; color: #2271b1;">
-                            <?php echo esc_html($rating->label); ?>: <?php echo esc_html($rating_data['value']); ?> / <?php echo esc_html($rating->max_scale); ?>
-                        </span>
-                    </h4> -->
-                    
-                    <?php if (!empty($rating_data['summary'])) : ?>
-                        <div class="divino-rating-summary" style="margin-bottom: 15px;">
-                            <strong>Общее резюме:</strong>
-                            <p style="margin: 5px 0;"><?php echo esc_html($rating_data['summary']); ?></p>
+                    <div class="rating__cnt">
+                        <div class="rating">
+                            <!-- <div class="rating__value">
+                                <?php echo esc_html($rating_data['value']); ?>
+                            </div> -->
+                            <div class="rating__title">
+                                <?php echo esc_html($rating->name); ?>
+                            </div>
                         </div>
-                    <?php endif; ?>
-                    
-                    <?php if (!empty($rating_data['notes'])) : ?>
-                        <div class="divino-rating-notes">
-                            <strong>Дегустационные заметки:</strong>
-                            <p style="margin: 5px 0;"><?php echo nl2br(esc_html($rating_data['notes'])); ?></p>
-                        </div>
-                    <?php endif; ?>
+                        <!-- <h4 style="margin-top: 0;">
+                            <?php echo esc_html($rating->name); ?>
+                            <span style="float: right; font-size: 1.2em; color: #2271b1;">
+                                <?php echo esc_html($rating->label); ?>: <?php echo esc_html($rating_data['value']); ?> / <?php echo esc_html($rating->max_scale); ?>
+                            </span>
+                        </h4> -->
+                        
+                        <?php if (!empty($rating_data['summary'])) : ?>
+                            <div class="divino-rating-summary">
+                                <strong>Общее резюме:</strong>
+                                <p><?php echo esc_html($rating_data['summary']); ?></p>
+                            </div>
+                        <?php endif; ?>
+                        
+                        <?php if (!empty($rating_data['notes'])) : ?>
+                            <div class="divino-rating-notes">
+                                <strong>Дегустационные заметки:</strong>
+                                <p><?php echo nl2br(esc_html($rating_data['notes'])); ?></p>
+                            </div>
+                        <?php endif; ?>
+                    </div>
                 </div>
             <?php 
                 endif;
             endforeach; ?>
+            </div>
         </div>
         <?php
         return ob_get_clean();
@@ -568,21 +591,25 @@ class Divino_Product_Rating {
         
         ob_start();
         ?>
-        <div class="divino-rating-values-only">
-            <?php foreach ($ratings as $rating_data) : 
+        <a class="divino-rating-values-only" href="#divino-ratings">
+            <?php 
+                $currentRating = 0;
+                foreach ($ratings as $rating_data) : 
                 $rating = $wpdb->get_row($wpdb->prepare(
                     "SELECT * FROM {$this->table_name} WHERE id = %d", 
                     $rating_data['rating_id']
                 ));
-                if ($rating) :
+                $currentRating++;
+                // Limit output of award badges to 3 cause fo layout issues
+                if ($rating && $currentRating < 4) :
             ?>
                 <span class="divino-rating-item">
-                    <span class="divino-label"><?php echo esc_html($rating->label); ?>:</span>
+                    <!-- <span class="divino-label"><?php echo esc_html($rating->label); ?>:</span> -->
                     <div class="divino-rating-icon">
                         <?php
                             $path = get_stylesheet_directory() . '/assets/images/awards/'.$rating->label.'.svg';
                             $svg  = file_get_contents($path);
-                            // Значение, которое хочешь вставить
+                            // Значение рейтинга для замены в шаблоне SVG
                             $new_value = $rating_data['value'];
                             // Заменяем содержимое <text id="value">...</text>
                             $svg = preg_replace_callback(
@@ -595,12 +622,12 @@ class Divino_Product_Rating {
                             echo $svg; 
                         ?>
                     </div>
-                    <span class="divino-value"><?php echo esc_html($rating_data['value']); ?></span>
+                    <!-- <span class="divino-value"><?php echo esc_html($rating_data['value']); ?></span> -->
                 </span>
             <?php 
                 endif;
             endforeach; ?>
-        </div>
+        </a>
         <?php
         return ob_get_clean();
     }
