@@ -3102,9 +3102,12 @@ main .main-title h1 {
 }
 .divino-rating-list {
     margin-top: 50px;
+    display: flex;
 }
 .divino-rating-item {
     display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
 }
 .rating__cnt {
     display: flex;
@@ -3115,6 +3118,7 @@ main .main-title h1 {
     width: 200px;
     height: 200px;
     min-width: 200px;
+    z-index: 1;
 }
 .short-ratings .divino-rating-icon {
     width: 140px;
@@ -3128,4 +3132,36 @@ main .main-title h1 {
     font-family: 'Literata', serif;
     font-size: 24px;
     font-weight: 500;
+}
+.divino-rating-notes p {
+    font-family: 'Onest', serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+.divino-rating-notes strong {
+    font-family: 'Rubik', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+.divino-rating-summary {
+
+}
+.rating__wrap {
+    border: 1px solid var(--airy-secondary-text-color);
+    padding: var(--pd-lg);
+    border-radius: var(--brs-lg);
+    margin-top: calc(var(--pd-lg) * -1);
+}
+.divino-rating-summary p {
+    font-family: 'Literata', serif;
+    font-size: 24px;
+    color: var(--primary-color);
+    font-style: italic;
+}
+.rating__block {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--pd);
+    flex-direction: column;
 }

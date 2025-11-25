@@ -516,23 +516,7 @@ class Divino_Product_Rating {
 
                 
                 <div class="divino-rating-item">
-                    <div class="divino-rating-icon">
-                        <?php
-                            $path = get_stylesheet_directory() . '/assets/images/awards/'.$rating->label.'.svg';
-                            $svg  = file_get_contents($path);
-                            // Значение рейтинга для замены в шаблоне SVG
-                            $new_value = $rating_data['value'];
-                            // Заменяем содержимое <text id="value">...</text>
-                            $svg = preg_replace_callback(
-                                '/<text[^>]*id="value"[^>]*>.*?<\/text>/s',
-                                function ($matches) use ($new_value) {
-                                    return preg_replace('/>.*?</', '>' . $new_value . '<', $matches[0]);
-                                },
-                                $svg
-                            );
-                            echo $svg; 
-                        ?>
-                    </div>
+                    
                     <div class="rating__cnt">
                         <div class="rating">
                             <!-- <div class="rating__value">
@@ -548,20 +532,40 @@ class Divino_Product_Rating {
                                 <?php echo esc_html($rating->label); ?>: <?php echo esc_html($rating_data['value']); ?> / <?php echo esc_html($rating->max_scale); ?>
                             </span>
                         </h4> -->
-                        
-                        <?php if (!empty($rating_data['summary'])) : ?>
-                            <div class="divino-rating-summary">
-                                <strong>Общее резюме:</strong>
-                                <p><?php echo esc_html($rating_data['summary']); ?></p>
+                        <div class="rating__block">
+                            <div class="divino-rating-icon">
+                                <?php
+                                    $path = get_stylesheet_directory() . '/assets/images/awards/'.$rating->label.'.svg';
+                                    $svg  = file_get_contents($path);
+                                    // Значение рейтинга для замены в шаблоне SVG
+                                    $new_value = $rating_data['value'];
+                                    // Заменяем содержимое <text id="value">...</text>
+                                    $svg = preg_replace_callback(
+                                        '/<text[^>]*id="value"[^>]*>.*?<\/text>/s',
+                                        function ($matches) use ($new_value) {
+                                            return preg_replace('/>.*?</', '>' . $new_value . '<', $matches[0]);
+                                        },
+                                        $svg
+                                    );
+                                    echo $svg; 
+                                ?>
                             </div>
-                        <?php endif; ?>
-                        
-                        <?php if (!empty($rating_data['notes'])) : ?>
-                            <div class="divino-rating-notes">
-                                <strong>Дегустационные заметки:</strong>
-                                <p><?php echo nl2br(esc_html($rating_data['notes'])); ?></p>
+                            <div class="rating__wrap">
+                                <?php if (!empty($rating_data['summary'])) : ?>
+                                    <div class="divino-rating-summary">
+                                        <!-- <strong>Общее резюме:</strong> -->
+                                        <p><?php echo esc_html($rating_data['summary']); ?></p>
+                                    </div>
+                                <?php endif; ?>
+                                
+                                <?php if (!empty($rating_data['notes'])) : ?>
+                                    <div class="divino-rating-notes">
+                                        <strong>Дегустационные заметки:</strong>
+                                        <p><?php echo nl2br(esc_html($rating_data['notes'])); ?></p>
+                                    </div>
+                                <?php endif; ?>
                             </div>
-                        <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             <?php 
