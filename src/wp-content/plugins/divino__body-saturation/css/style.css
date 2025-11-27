@@ -1,75 +1,54 @@
 .divino-saturation-slider-container {
-    padding: 10px;
-    text-align: center;
+    padding: 10px 0;
+}
+
+.divino-saturation-status {
+    margin-bottom: 10px;
+    padding: 5px 0;
+}
+
+.divino-saturation-status strong {
+    margin-right: 5px;
 }
 
 .divino-saturation-labels {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-size: 12px;
     color: #666;
 }
 
 .divino-saturation-slider {
-    -webkit-appearance: none;
     width: 100%;
-    height: 8px;
-    border-radius: 5px;
-    background: #d3d3d3;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
+    margin-bottom: 10px;
 }
 
-.divino-saturation-slider:hover {
-    opacity: 1;
-}
-
-.divino-saturation-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: #0073aa;
-    cursor: pointer;
-    border: none;
-}
-
-.divino-saturation-slider::-moz-range-thumb {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: #0073aa;
-    cursor: pointer;
-    border: none;
-}
-
-#divino-saturation-value-display {
-    margin-top: 10px;
-    font-size: 14px;
+#divino-saturation-value-display,
+#divino-acidity-value-display,
+#divino-tannins-value-display {
+    text-align: center;
     font-weight: bold;
-    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #2271b1;
 }
 
-.divino-saturation-slider-container {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-top: 4px;
+.divino-reset-btn {
+    margin-left: 10px;
 }
-.divino-saturation-slider-container input[type="checkbox"] {
-    height: 18px;
-  width: 18px;
-  margin: 0 5px -1px 0;
+
+.divino-reset-notice {
+    animation: fadeIn 0.3s ease-in;
 }
-.divino-saturation-slider-container:has( input[type="checkbox"]:checked ){
-    background-color: #e9ffec;
-    border-color: #56e76c;
-}
-.divino-saturation-slider-container label {
-    padding: 5px 0;
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

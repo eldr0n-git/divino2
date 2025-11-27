@@ -728,7 +728,7 @@ footer {
 .sp-base-info .taxonomy-product_brand .wp-block-post-terms__prefix,
 .sp-base-info .vintage-products-section h3,
 .wine-style-display strong {
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Onest', sans-serif;
     font-weight: 300;
     color: var(--product-text-color);
@@ -3165,3 +3165,6 @@ main .main-title h1 {
     margin-bottom: var(--pd);
     flex-direction: column;
 }
+/* .slider-scale__point-wrapper p {
+    display: none;
+} */
