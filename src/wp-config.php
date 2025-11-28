@@ -118,6 +118,7 @@ $table_prefix = getenv_docker('WORDPRESS_TABLE_PREFIX', 'wp_');
 //MY DEBUGGING
 define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_LOG', true );
+define('WC_DEBUG_TRANSLATIONS', true);
 
 define( 'WC_LOG_THRESHOLD', 'debug' );
 define('WP_DEBUG_DISPLAY', false);
