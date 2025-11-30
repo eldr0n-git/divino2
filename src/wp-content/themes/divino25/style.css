@@ -798,6 +798,25 @@ footer {
     font-size: 16px;
     font-family: 'Rubik', serif;
 }
+.dv-cart .product-name a{
+    font-size: 18px;
+    font-family: 'Onest', serif;
+    font-weight: 400;
+    color: var(--product-text-color);
+    text-decoration: none;
+    border-bottom: 2px solid var(--input-brd-color-focus);
+}
+.cart-collaterals {
+    width: initial !important;
+    display: flex;
+}
+.cart-collaterals::before,
+.cart-collaterals::after {
+    display: none !important;
+}
+.wp-block-woocommerce-cart-order-summary-block .woocommerce{
+    max-width: initial !important;
+}
 .wc-block-cart-item__image {
     display: flex;
     align-content: center;
@@ -2973,6 +2992,10 @@ main .main-title h1 {
 .divino-producer-info {
     width: 100%;
 }
+.divino-producer-info:empty,
+#divino-ratings .page-cnt:empty {
+    display: none;
+}
 .divino-producer-info::before {
     content: '';
     display: block;
@@ -3075,16 +3098,10 @@ main .main-title h1 {
 
 /* Rating block */ 
 .rating__value {
-    font-size: 48px;
-    font-family: 'Literata', serif;
-    font-weight: 700;
+    font-size: 13px;
+    font-family: 'Rubik', serif;
+    font-weight: 500;
     color: var(--primary-color);
-    color: #F0EAEA;
-  text-shadow: 2px 3px 0px #df9bb2, 1px 1px 5px rgba(0,0,0,0.125);
-  background-color: var(--airy-bg-color);
-  outline: 2px solid var(--airy-border-color);
-  border-radius: 50%;
-  flex: 0;
 }
 .rating{
     display: flex;
@@ -3096,6 +3113,9 @@ main .main-title h1 {
     margin-top: -150px;
     display: flex;
     justify-content: center;
+}
+.short-ratings:empty{
+    margin: initial
 }
 .short-ratings .divino-rating-item:not(:first-child) {
     margin-left: -30px;
@@ -3164,6 +3184,69 @@ main .main-title h1 {
     align-items: center;
     margin-bottom: var(--pd);
     flex-direction: column;
+}
+.rating__label {
+    font-family: 'Rubik', serif;
+    font-size: 13px;
+    font-weight: 400;
+    padding-right: 3px;
+}
+.rating__item {
+    display: flex;
+    cursor: default;
+}
+.view-list__rating {
+    margin: 5px 0 0 5px ;
+}
+.view-list__rating .rating__item{
+    padding: 1px 3px;
+    background-color: var(--el-colored-secondary);
+    border-radius: var(--brs);
+    margin-bottom: 3px;
+}
+.view-list__rating .rating__item-WE{
+    background-color: #e5d2e1;
+    border: 1px solid #caa8c2;
+}
+.view-list__rating .rating__item-WE * {
+    color: #ae7ca2
+}
+.view-list__rating .rating__item-WS{
+    background-color: #e1c7cb;
+    border: 1px solid #c69797;
+}
+.view-list__rating .rating__item-WS * {
+    color: #9e5f61
+}
+.view-list__rating .rating__item-RP{
+    background-color: #d2d6e5;
+    border: 1px solid #96aac2;
+}
+.view-list__rating .rating__item-RP * {
+    color: #5f6f9e
+}
+.view-list__rating .rating__item-JS{
+    background-color: #cbe4dc;
+    border: 1px solid #a2c7c4;
+}
+.view-list__rating .rating__item-JS * {
+    color: #5f9e95
+}
+.rating__item-Vivino{
+    background-color: #e5d2e1;
+    border: 1px solid #caa8c2;
+}
+.rating__item-Vivino * {
+    color: #ae7ca2
+}
+.rating__item br, 
+.divino-rating br{
+    display: none;
+}
+
+.view-list__rating {
+    position: absolute;
+    z-index: 1;
 }
 /* .slider-scale__point-wrapper p {
     display: none;

@@ -26,22 +26,32 @@ $label = ! empty( $args['product_name'] ) ? sprintf( esc_html__( '%s quantity', 
 ?>
 <script defer>
     document.addEventListener('DOMContentLoaded', () => {
-        document.querySelector('.divino-number-input__increment').addEventListener('click', (event) => {
-            event.preventDefault();
-            let input = document.querySelector('.divino-number-input__input');
-            input.value = parseInt(input.value) + 1;
-        });
-        
-        document.querySelector('.divino-number-input__decrement').addEventListener('click', (event) => {
-            event.preventDefault();
-            let input = document.querySelector('.divino-number-input__input');
-            let inputValue = parseInt(input.value);
-            if ( inputValue > 1 ) {
-                input.value = parseInt(input.value) - 1;
-            }            
+        // Делегируем события на ближайший статичный контейнер
+        // Чаще всего это <table>, <tbody> или какой-то .cart-table, .woocommerce-cart-form и т.д.
+        document.body.addEventListener('click', (e) => {
+            const incrementBtn = e.target.closest('.divino-number-input__increment');
+            const decrementBtn = e.target.closest('.divino-number-input__decrement');
+            const input = document.querySelector('.divino-number-input__input');
+            if (incrementBtn) {
+                e.preventDefault();
+                if (input) {
+                    input.value = parseInt(input.value || 0) + 1;
+                    input.dispatchEvent(new Event('change', { bubbles: true })); // важно для обновления корзины
+                }
+            }
 
+            if (decrementBtn) {
+                e.preventDefault();
+                if (input) {
+                    let value = parseInt(input.value || 0);
+                    if (value > 1) {
+                        input.value = value - 1;
+                        input.dispatchEvent(new Event('change', { bubbles: true }));
+                    }
+                }
+            }
         });
-    });    
+    });
 </script>
 <div class="quantity">
 	<?php

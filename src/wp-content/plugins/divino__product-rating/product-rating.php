@@ -11,7 +11,8 @@
  * Requires PHP: 7.4
  * Шорткоды
  * [divino_rating_block] - полный блок с резюме, заметками и всеми рейтингами
- * [divino_rating_values] - только значения рейтингов в формате "Ярлык: Значение"
+ * [divino_rating_values] - Значок и передача в SVG значения рейтинга
+ * [divino_extrashort_rating] - только значения рейтингов в формате "Ярлык: Значение"
  */
 
 if (!defined('ABSPATH')) {
@@ -32,6 +33,7 @@ class Divino_Product_Rating {
         add_action('save_post', array($this, 'save_product_rating_meta'));
         add_shortcode('divino_rating_block', array($this, 'rating_block_shortcode'));
         add_shortcode('divino_rating_values', array($this, 'rating_values_shortcode'));
+        add_shortcode('divino_extrashort_rating', array($this, 'extrashort_rating_shortcode'));
         add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_scripts'));
         add_action('admin_post_divino_save_rating', array($this, 'handle_save_rating'));
         add_action('admin_post_divino_delete_rating', array($this, 'handle_delete_rating'));
@@ -577,6 +579,48 @@ class Divino_Product_Rating {
         return ob_get_clean();
     }
     
+    /**
+     * Шорткод для вывода только значений рейтингов
+     */
+    public function extrashort_rating_shortcode($atts) {
+        global $post, $wpdb;
+        
+        if (!$post || get_post_type($post) !== 'product') {
+            return '';
+        }
+        
+        $ratings = get_post_meta($post->ID, '_divino_product_ratings', true);
+        
+        if (empty($ratings)) {
+            return '';
+        }
+        
+        ob_start();
+        ?>
+        <div class="divino-rating">
+            <?php 
+                $currentRating = 0;
+                foreach ($ratings as $rating_data) : 
+                $rating = $wpdb->get_row($wpdb->prepare(
+                    "SELECT * FROM {$this->table_name} WHERE id = %d", 
+                    $rating_data['rating_id']
+                ));
+                $currentRating++;
+                // Limit output of award badges to 3 cause fo layout issues
+                if ($rating && $currentRating < 4) :
+            ?>
+                <span class="rating__item rating__item-<?php echo esc_html($rating->label); ?>">
+                    <span class="rating__label"><?php echo esc_html($rating->label); ?>:</span>
+                    <span class="rating__value"><?php echo esc_html($rating_data['value']); ?></span>
+                </span>
+            <?php 
+                endif;
+            endforeach; ?>
+        </div>
+        <?php
+        return ob_get_clean();
+    }
+
     /**
      * Шорткод для вывода только значений рейтингов
      */
