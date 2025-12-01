@@ -563,6 +563,7 @@ add_filter('template_include', function($template) {
     $product_id = get_the_ID();
     $terms = get_the_terms($product_id, 'product_kind');
 
+    $slug = '';
 
     if ( is_singular( 'product' ) ) {
         global $post;
