@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Divino Vintage
  * Description: Плагин для группировки товаров по винтажу/году выпуска
- * Version: 1.0.30
+ * Version: 1.0.40
  * Author: eldr0n
  */
 
@@ -16,8 +16,13 @@ class WC_Vintage_Products {
     public function __construct() {
         // Проверяем WooCommerce сразу при создании объекта
         add_action('plugins_loaded', array($this, 'init'));
+        register_activation_hook(__FILE__, array($this, 'activate_plugin'));
     }
 
+    public function activate_plugin() {
+        // Выполняется только при активации плагина
+        $this->create_vintage_groups_table();
+    }
     public function init() {
         // Проверяем, активен ли WooCommerce
         if (!class_exists('WooCommerce')) {
@@ -42,8 +47,6 @@ class WC_Vintage_Products {
         // Подключаем стили и скрипты
         add_action('admin_enqueue_scripts', array($this, 'admin_scripts'));
 
-        // Создаем таблицу если её нет
-        $this->create_vintage_groups_table();
     }
 
     /**
@@ -233,7 +236,7 @@ class WC_Vintage_Products {
                 }
             });
 
- 
+
 
             // Проверяем наличие jQuery UI
             if (typeof $.ui === 'undefined' || typeof $.ui.autocomplete === 'undefined') {
