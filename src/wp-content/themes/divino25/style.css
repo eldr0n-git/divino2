@@ -2913,6 +2913,7 @@ main .main-title h1 {
     margin-right: 30px;
     margin-bottom: 30px;
     flex: 1 1 auto;
+    max-width: 220px;
 }
 .foodItem__icon {
     width: 180px;
@@ -3096,7 +3097,7 @@ main .main-title h1 {
     width: 100%;
 }
 
-/* Rating block */ 
+/* Rating block */
 .rating__value {
     font-size: 13px;
     font-family: 'Rubik', serif;
@@ -3239,7 +3240,7 @@ main .main-title h1 {
 .rating__item-Vivino * {
     color: #ae7ca2
 }
-.rating__item br, 
+.rating__item br,
 .divino-rating br{
     display: none;
 }
