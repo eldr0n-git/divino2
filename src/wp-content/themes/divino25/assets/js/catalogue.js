@@ -120,4 +120,34 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopPropagation();
         });
     }
+
+    /* ====================================
+       SEARCH TOGGLE (MOBILE)
+       ==================================== */
+    const searchToggleMobile = document.querySelector('.search-toggle-mobile');
+    const searchFormMobile = document.querySelector('.search-form--mobile-fullwidth');
+
+    if (searchToggleMobile && searchFormMobile) {
+        searchToggleMobile.addEventListener('click', function(e) {
+            e.stopPropagation();
+            searchFormMobile.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Close search form when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!searchFormMobile.contains(e.target) && !searchToggleMobile.contains(e.target)) {
+                searchFormMobile.classList.remove('active');
+                searchToggleMobile.classList.remove('active');
+            }
+        });
+
+        // Close search form on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && searchFormMobile.classList.contains('active')) {
+                searchFormMobile.classList.remove('active');
+                searchToggleMobile.classList.remove('active');
+            }
+        });
+    }
 });

@@ -316,6 +316,10 @@ footer .wp-block-site-title a {
 .search-block {
     position: relative;
     width: 100%;
+
+}
+.search-block .search-form {
+    display: none;
 }
 .search__input {
     background-color: var(--input-bg-color);
@@ -3315,6 +3319,84 @@ main .main-title h1 {
     background-color: var(--primary-bg-hover);
 }
 
+/* ====================================
+   SEARCH TOGGLE (MOBILE)
+   ==================================== */
+
+/* Search toggle button - hidden on desktop */
+.search-toggle-mobile {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: 10px;
+}
+
+.search-toggle-mobile__icon {
+    width: 24px;
+    height: 24px;
+    stroke: var(--primary-color);
+}
+
+.search-toggle-mobile:hover .search-toggle-mobile__icon {
+    stroke: var(--primary-bg-hover);
+}
+
+/* Transform search icon to cross when active */
+.search-toggle-mobile__icon--close {
+    display: none;
+}
+
+.search-toggle-mobile.active .search-toggle-mobile__icon--search {
+    display: none;
+}
+
+.search-toggle-mobile.active .search-toggle-mobile__icon--close {
+    display: block;
+}
+
+/* Mobile search form - hidden by default, full width */
+.search-form--mobile-fullwidth {
+    display: none;
+    position: fixed;
+    top: 143px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 1100;
+}
+.searchMobile__cnt .search__submit {
+    margin-top: 33px;
+    margin-right: 33px;
+}
+.searchMobile__cnt {
+    padding: 15px;
+}
+.search-form--mobile-fullwidth.active {
+    display: block;
+}
+
+/* Desktop search form - always visible */
+.search-form--desktop {
+    display: block;
+}
+
+/* Show search toggle on mobile only */
+@media (max-width: 1023px) {
+    .search-toggle-mobile {
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Hide desktop search form on mobile */
+    .search-form--desktop {
+        display: none;
+    }
+}
+
 /* Show burger menu toggle on mobile only */
 @media (min-width: 1024px) {
     .burger-menu-toggle {
@@ -3501,6 +3583,9 @@ body.burger-menu-open {
         flex-direction: row;
     }
     .woocommerce-MyAccount-navigation ul li a {
-        display: inline;
+        display: inline;    
+    }
+    .search-block .search-form {
+        display: block;
     }
 }

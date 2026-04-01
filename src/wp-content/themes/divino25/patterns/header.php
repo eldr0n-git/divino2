@@ -23,7 +23,8 @@
 			<!-- wp:site-title {"level":0} /-->
 
             <div class="search-block">
-                <form role="search__form" method="get" class="search-form" action="<?php echo esc_url(home_url('/')); ?>">
+                <!-- Desktop Search Form (always visible on desktop) -->
+                <form role="search__form" method="get" class="search-form search-form--desktop" action="<?php echo esc_url(home_url('/')); ?>">
                     <label>
                         <span class="screen-reader-text">Поиск по названию:</span>
                         <input type="search" class="search__input" placeholder="Поиск по названию" value="<?php echo get_search_query(); ?>" name="s" />
@@ -31,6 +32,19 @@
                     </label>
                     <button type="submit" class="search__submit">🔍</button>
                 </form>
+
+                <!-- Mobile Search Toggle Button -->
+                <button class="search-toggle-mobile" aria-label="Поиск">
+                    <!-- Search Icon -->
+                    <svg class="search-toggle-mobile__icon search-toggle-mobile__icon--search" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <!-- Close Icon -->
+                    <svg class="search-toggle-mobile__icon search-toggle-mobile__icon--close" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 6l12 12M18 6L6 18"></path>
+                    </svg>
+                </button>
             </div>
 
 
@@ -287,6 +301,18 @@
         </ul>
     </nav>
 </div>
+
+<!-- Mobile Search Form (full width, outside header) -->
+<form role="search__form" method="get" class="search-form--mobile-fullwidth" action="<?php echo esc_url(home_url('/')); ?>">
+    <div class="searchMobile__cnt">
+        <label>
+            <span class="screen-reader-text">Поиск по названию:</span>
+        </label>
+        <input type="search" class="search__input" placeholder="Поиск по названию" value="<?php echo get_search_query(); ?>" name="s" />
+        <input type="hidden" name="post_type" value="product" />
+        <button type="submit" class="search__submit">🔍</button>
+    </div>
+</form>
 
  <div class="veil actionMegamenuVeil"></div>
 
