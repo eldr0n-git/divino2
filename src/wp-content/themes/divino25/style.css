@@ -99,6 +99,10 @@ a {
 a:focus {
     outline: none;
 }
+
+
+
+
 .has-medium-font-size{
     font-size: 18px;
 }
@@ -154,6 +158,12 @@ a:focus {
     font-weight:normal;
     font-style:normal;
     font-display:swap;
+}
+
+
+
+.mainNav {
+    display: none;
 }
 
 
@@ -275,6 +285,7 @@ footer .wp-block-site-title a {
     max-width: var(--wp--style--global--wide-size);
     display: flex;
     flex-grow: 1;
+
 }
 .catalog-menu > ul {
     display: flex;
@@ -284,6 +295,7 @@ footer .wp-block-site-title a {
     flex-grow: 1;
     margin: 0;
     padding-bottom: 30px;
+    flex-direction: column;
 }
 
 .catalog-menu li a {
@@ -367,6 +379,7 @@ footer .wp-block-site-title a {
     overflow: hidden;
     margin-left: calc( var(--header-logo-width) - var(--catalogue-toggle-width)) !important;
     width: 100%;
+    display: none;
 }
 .cat_menu__item {
     font-size: 16px;
@@ -485,15 +498,14 @@ footer .wp-block-site-title a {
 .megamenu{
     position: absolute;
     display: flex;
-    width: calc(100% - 50px);
+    width: 100%;
     max-width: initial;
     margin: 0;
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s ease-in-out;
     top: 0px;
-z-index: 1000;
-
+    z-index: 1000;
 }
 .megamenu__cnt {
     width: 100%;
@@ -1430,7 +1442,6 @@ footer {
     box-shadow: 0 10px 15px rgba(0,0,0, 0.25) ;
     display: flex;
     flex-direction: column;
-    width: 50%;
     align-content: center;
     align-self: center;
     margin: 0;
@@ -1438,7 +1449,7 @@ footer {
 .woocommerce form.login label,
 .woocommerce form.register label,
 .lost_password a{
-    font-size:  16px;
+    font-size:  13px;
     color: var(--form-text-color);
     font-weight: 400;
     font-family: 'Rubik', sans-serif;
@@ -1478,8 +1489,9 @@ footer {
 }
 .woocommerce-account .woocommerce-MyAccount-navigation ul {
     display: flex;
-    flex-direction: row;
     margin: 0;
+    flex-direction: column;
+    flex-grow: 1;
 }
 .woocommerce-account .woocommerce-MyAccount-navigation li {
     padding: 0;
@@ -1492,6 +1504,8 @@ footer {
     color: var(--primary-text-color);
     background-color: var(--primary-bg);
     padding: 10px 15px;
+    display: flex;
+    flex-grow: 1;
 }
 .woocommerce-account .woocommerce-MyAccount-navigation ul li a:hover {
     text-decoration: none;
@@ -3252,3 +3266,241 @@ main .main-title h1 {
 /* .slider-scale__point-wrapper p {
     display: none;
 } */
+
+/* ====================================
+   BURGER MENU STYLES
+   ==================================== */
+
+/* Burger Menu Toggle Button */
+.burger-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: 15px;
+    margin-right: 10px;
+    z-index: 1100;
+    position: relative;
+}
+
+.burger-menu-toggle__line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--primary-color);
+    margin: 3px 0;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+.burger-menu-toggle.active .burger-menu-toggle__line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger-menu-toggle.active .burger-menu-toggle__line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu-toggle.active .burger-menu-toggle__line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.burger-menu-toggle:hover .burger-menu-toggle__line {
+    background-color: var(--primary-bg-hover);
+}
+
+/* Show burger menu toggle on mobile only */
+@media (min-width: 1024px) {
+    .burger-menu-toggle {
+        display: none;
+    }
+}
+
+/* Burger Menu Overlay */
+.burger-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 85%;
+    max-width: 350px;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 1200;
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto;
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.3);
+    padding-top: 60px;
+}
+
+.burger-menu-overlay.active {
+    left: 0;
+}
+
+/* Burger Menu Overlay Background */
+.burger-menu-overlay__bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1199;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.burger-menu-overlay__bg.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Close Button */
+.burger-menu__close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1201;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+    padding: 0;
+}
+
+.burger-menu__close-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.burger-menu__close-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: rotate(45deg);
+    position: relative;
+}
+
+.burger-menu__close-btn span::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    transform: rotate(90deg);
+}
+
+/* Burger Menu Navigation */
+.burger-menu__nav {
+    padding: 0 20px 30px 20px;
+}
+
+.burger-menu__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.burger-menu__item {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.burger-menu__link {
+    display: flex;
+    align-items: center;
+    padding: 14px 10px;
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 400;
+    transition: all 0.2s ease;
+}
+
+.burger-menu__link-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 12px;
+    flex-shrink: 0;
+    display: block;
+}
+
+.burger-menu__link:hover {
+    color: var(--primary-color);
+    background-color: #fafafa;
+}
+
+.burger-menu__link-text {
+    flex: 1;
+}
+
+/* Burger Menu Headings */
+.burger-menu__item--heading {
+    background-color: #f9f9f9;
+    border-bottom: none;
+    padding: 15px 10px 10px 10px;
+    margin-top: 10px;
+}
+
+.burger-menu__heading {
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Child items indentation */
+.burger-menu__item--child .burger-menu__link {
+    padding-left: 25px;
+}
+
+/* Body scroll lock when menu is open */
+body.burger-menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+/* Desktop - show mainNav, keep burger hidden */
+@media (min-width: 1024px) {
+    .mainNav {
+        display: block;
+    }
+    .megamenu {    
+        width: calc(100% - 50px);
+    }
+    .cat_menu {
+        display: block;
+    }
+    .woocommerce form.login,
+    .woocommerce form.register{
+        width: 50%;
+    }
+    .woocommerce form.login label,
+    .woocommerce form.register label,
+    .lost_password a{
+        font-size:  16px;
+    }
+    .woocommerce-account .woocommerce-MyAccount-navigation ul {
+        flex-direction: row;
+    }
+    .woocommerce-MyAccount-navigation ul li a {
+        display: inline;
+    }
+}

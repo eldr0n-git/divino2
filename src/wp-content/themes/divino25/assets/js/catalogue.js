@@ -39,3 +39,85 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+/* ====================================
+   BURGER MENU
+   ==================================== */
+document.addEventListener('DOMContentLoaded', function() {
+    const burgerToggle = document.querySelector('.burger-menu-toggle');
+    const burgerOverlay = document.getElementById('burgerMenuOverlay');
+    const burgerClose = document.getElementById('burgerMenuClose');
+    const burgerLinks = document.querySelectorAll('.burger-menu__link');
+
+    function openBurgerMenu() {
+        if (burgerToggle) {
+            burgerToggle.classList.add('active');
+        }
+        if (burgerOverlay) {
+            burgerOverlay.classList.add('active');
+        }
+        document.body.classList.add('burger-menu-open');
+    }
+
+    function closeBurgerMenu() {
+        if (burgerToggle) {
+            burgerToggle.classList.remove('active');
+        }
+        if (burgerOverlay) {
+            burgerOverlay.classList.remove('active');
+        }
+        document.body.classList.remove('burger-menu-open');
+    }
+
+    // Toggle menu open/close
+    if (burgerToggle) {
+        burgerToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (burgerOverlay && burgerOverlay.classList.contains('active')) {
+                closeBurgerMenu();
+            } else {
+                openBurgerMenu();
+            }
+        });
+    }
+
+    // Close button
+    if (burgerClose) {
+        burgerClose.addEventListener('click', function(e) {
+            e.stopPropagation();
+            closeBurgerMenu();
+        });
+    }
+
+    // Close on link click
+    if (burgerLinks.length > 0) {
+        burgerLinks.forEach(function(link, index) {
+            link.addEventListener('click', function() {
+                closeBurgerMenu();
+            });
+        });
+    }
+
+    // Close on overlay click (outside the menu)
+    document.addEventListener('click', function(e) {
+        if (burgerOverlay && burgerOverlay.classList.contains('active')) {
+            if (!burgerOverlay.contains(e.target) && !burgerToggle.contains(e.target)) {
+                closeBurgerMenu();
+            }
+        }
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && burgerOverlay && burgerOverlay.classList.contains('active')) {
+            closeBurgerMenu();
+        }
+    });
+
+    // Prevent clicks inside overlay from closing it
+    if (burgerOverlay) {
+        burgerOverlay.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+});
