@@ -617,7 +617,7 @@ function customize_new_products_block_html($html, $data, $product) {
     $html = '<li class="divino-product-item">';
     $html .= '<a class="divino-product-item__image" href="' . esc_url($data->permalink) . '">' . $data->image . '</a>';
     $html .= '<div class="divino-product-item__price">' . $data->price . '</div>';
-    $html .= '<a class="divino-product-item__title" href="' . esc_url($data->permalink) . '">' . esc_html($data->title) . '</a>';
+    $html .= '<a class="divino-product-item__title" href="' . esc_url($data->permalink) . '">' . $data->title . '</a>';
     $html .= '</li>';
     return $html;
 }
