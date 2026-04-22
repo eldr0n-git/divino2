@@ -15,8 +15,10 @@ namespace Smush\Core\Modules;
 use Exception;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
+use Smush\Core\Bulk\Bulk_Optimize;
 use Smush\Core\Core;
 use Smush\Core\Installer;
+use Smush\Core\Membership\Membership;
 use Smush\Core\Settings;
 use Smush\Core\Helper;
 use WP_Error;
@@ -57,6 +59,7 @@ class Dir extends Abstract_Module {
 	 * @var Helpers\DScanner
 	 */
 	public $scanner;
+	private $membership;
 
 	/**
 	 * Dir constructor.
@@ -66,6 +69,8 @@ class Dir extends Abstract_Module {
 		if ( ! is_admin() ) {
 			return;
 		}
+
+		$this->membership = Membership::get_instance();
 
 		/**
 		 * Handle Ajax request 'smush_get_directory_list'.
@@ -107,7 +112,6 @@ class Dir extends Abstract_Module {
 			$current_screen = get_current_screen();
 			$current_page   = ! empty( $current_screen ) ? $current_screen->base : '';
 		}
-
 
 		if ( false === strpos( $current_page, 'page_smush-bulk' ) ) {
 			return;
@@ -186,7 +190,7 @@ class Dir extends Abstract_Module {
 			wp_die( esc_html__( 'Unauthorized', 'wp-smushit' ), 403 );
 		}
 		$this->scanner->init_scan();
-		do_action('wp_smush_directory_smush_start');
+		do_action( 'wp_smush_directory_smush_start' );
 		wp_send_json_success();
 	}
 
@@ -278,22 +282,6 @@ class Dir extends Abstract_Module {
 			wp_send_json_error( $error_msg );
 		}
 
-		// Check smush limit for free users.
-		if ( ! WP_Smush::is_pro() ) {
-			// Free version bulk smush, check the transient counter value.
-			$should_continue = Core::check_bulk_limit( false, 'dir_sent_count' );
-
-			// Send a error for the limit.
-			if ( ! $should_continue ) {
-				wp_send_json_error(
-					array(
-						'error'    => 'dir_smush_limit_exceeded',
-						'continue' => false,
-					)
-				);
-			}
-		}
-
 		$scanned_images = $this->get_unsmushed_images();
 		$image          = $this->get_image( $id, '', $scanned_images );
 
@@ -364,9 +352,6 @@ class Dir extends Abstract_Module {
 				$id
 			)
 		); // Db call ok; no-cache ok.
-
-		// Update bulk limit transient.
-		Core::update_smush_count( 'dir_sent_count' );
 	}
 
 	/**
@@ -457,9 +442,10 @@ class Dir extends Abstract_Module {
 	public function get_unsmushed_images() {
 		global $wpdb;
 
-		$condition = 'image_size IS NULL';
-		if ( $this->settings->get( 'lossy' ) ) {
-			$condition .= ' OR lossy <> 1';
+		$condition   = 'image_size IS NULL';
+		$lossy_level = $this->settings->get_lossy_level_setting();
+		if ( $lossy_level > 0 ) {
+			$condition .= ' OR lossy IS NULL OR lossy < ' . intval( $lossy_level );
 		}
 
 		if ( $this->settings->get( 'strip_exif' ) ) {
@@ -549,7 +535,7 @@ class Dir extends Abstract_Module {
 		}
 
 		// Verify nonce.
-		check_ajax_referer( 'smush_get_dir_list', 'list_nonce' );
+		check_ajax_referer( 'wp-smush-ajax', '_ajax_nonce' );
 
 		$dir  = filter_input( INPUT_GET, 'dir', FILTER_SANITIZE_SPECIAL_CHARS );
 		$tree = $this->get_directory_tree( $dir );
@@ -560,6 +546,22 @@ class Dir extends Abstract_Module {
 		}
 
 		wp_send_json( $tree );
+	}
+
+	public function get_directory_list() {
+		if ( ! Helper::is_user_allowed( 'manage_options' ) || ! is_user_logged_in() ) {
+			Helper::logger()->dir()->error( 'Unauthorized - Permission access.' );
+			return new WP_Error( 'unauthorized', __( 'Unauthorized', 'wp-smushit' ) );
+		}
+
+		$tree = $this->get_directory_tree();
+
+		if ( ! is_array( $tree ) ) {
+			Helper::logger()->dir()->error( 'Unauthorized - Directory empty.' );
+			return new WP_Error( 'unauthorized', __( 'Unauthorized', 'wp-smushit' ) );
+		}
+
+		return $tree;
 	}
 
 	/**
@@ -933,7 +935,7 @@ class Dir extends Abstract_Module {
 		}
 
 		// Verify nonce.
-		check_ajax_referer( 'smush_get_image_list', 'image_list_nonce' );
+		check_ajax_referer( 'wp-smush-ajax', '_ajax_nonce' );
 
 		// Check if directory path is set or not.
 		if ( empty( $_POST['smush_path'] ) ) { // Input var ok.
@@ -1202,7 +1204,7 @@ class Dir extends Abstract_Module {
 		// Get the Smushed count, and stats sum.
 		foreach ( $results as $image ) {
 			if ( ! is_null( $image['image_size'] ) ) {
-				$smushed ++;
+				$smushed++;
 			}
 			// Summation of stats.
 			foreach ( $image as $k => $v ) {
@@ -1342,5 +1344,4 @@ class Dir extends Abstract_Module {
 			<?php
 		}
 	}
-
 }

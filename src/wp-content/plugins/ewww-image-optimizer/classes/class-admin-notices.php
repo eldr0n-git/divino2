@@ -30,6 +30,8 @@ final class Admin_Notices extends Base {
 		\add_action( 'load-plugins.php', array( $this, 'load_notices' ) );
 		\add_action( 'admin_notices', array( $this, 'thumbnail_regen_notice' ) );
 		\add_action( 'network_admin_notices', array( $this, 'easyio_site_initialized_notice' ) );
+		\add_action( 'exactdn_as3cf_cname_active', array( $this, 'exactdn_as3cf_cname_active_notice' ) );
+		\add_action( 'exactdn_domain_mismatch', array( $this, 'exactdn_domain_mismatch_notice' ) );
 
 		// Prevent Autoptimize from displaying its image optimization notice.
 		\remove_action( 'admin_notices', 'autoptimizeMain::notice_plug_imgopt' );
@@ -556,6 +558,67 @@ final class Admin_Notices extends Base {
 	}
 
 	/**
+	 * Let the user know they need to disable the WP Offload Media CNAME.
+	 */
+	public function exactdn_as3cf_cname_active_notice() {
+		if ( ! current_user_can( apply_filters( 'ewww_image_optimizer_admin_permissions', '' ) ) ) {
+			return;
+		}
+		?>
+		<div id="ewww-image-optimizer-notice-exactdn-as3cf-cname-active" class="notice notice-error">
+			<p>
+				<?php esc_html_e( 'Easy IO cannot optimize your images while using a custom domain (CNAME) in WP Offload Media. Please disable the custom domain in the WP Offload Media settings.', 'ewww-image-optimizer' ); ?>
+			</p>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Let the user know the local domain appears to have changed from what Easy IO has recorded in the db.
+	 */
+	public function exactdn_domain_mismatch_notice() {
+		if ( ! current_user_can( apply_filters( 'ewww_image_optimizer_admin_permissions', '' ) ) ) {
+			return;
+		}
+		if ( ! $this->get_option( 'ewww_image_optimizer_exactdn' ) ) {
+			return;
+		}
+		global $exactdn;
+		if ( ! isset( $exactdn->upload_domain ) ) {
+			return;
+		}
+		$stored_local_domain = $exactdn->get_exactdn_option( 'local_domain' );
+		if ( empty( $stored_local_domain ) ) {
+			return;
+		}
+		if ( false === strpos( $stored_local_domain, '.' ) ) {
+			$stored_local_domain = base64_decode( $stored_local_domain );
+		}
+		?>
+		<div id="ewww-image-optimizer-notice-exactdn-domain-mismatch" class="notice notice-warning">
+			<p>
+				<?php
+				printf(
+					/* translators: 1: old domain name, 2: current domain name */
+					esc_html__( 'Easy IO detected that the Site URL has changed since the initial activation (previously %1$s, currently %2$s).', 'ewww-image-optimizer' ),
+					'<strong>' . esc_html( $stored_local_domain ) . '</strong>',
+					'<strong>' . esc_html( $exactdn->upload_domain ) . '</strong>'
+				);
+				?>
+				<br>
+				<?php
+				printf(
+					/* translators: %s: settings page */
+					esc_html__( 'Please visit the %s to refresh the Easy IO settings and verify activation status.', 'ewww-image-optimizer' ),
+					'<a href="' . esc_url( ewww_image_optimizer_get_settings_link() ) . '">' . esc_html__( 'settings page', 'ewww-image-optimizer' ) . '</a>'
+				);
+				?>
+			</p>
+		</div>
+		<?php
+	}
+
+	/**
 	 * Lets the user know WooCommerce has regenerated thumbnails and that they need to take action.
 	 */
 	public function wc_regen_notice() {
@@ -800,6 +863,41 @@ final class Admin_Notices extends Base {
 	}
 
 	/**
+	 * Output a more concise notice/status regarding exec() and missing tools on the settings/bulk pages.
+	 */
+	public function concise_utils_status() {
+		?>
+		<?php if ( \ewwwio()->local->should_display_exec_notice() ) : ?>
+			<?php if ( \ewwwio()->local->hosting_requires_api() ) : ?>
+					<?php $this->hosting_requires_api_notice(); ?>
+			<?php else : ?>
+			<div id='ewww-image-optimizer-warning-exec' class='notice notice-warning is-dismissible'>
+				<?php
+				\printf(
+					/* translators: %s: link to 'start your premium trial' */
+					\esc_html__( 'Your web server does not meet the requirements for free server-based compression. You may %s for 5x more compression, PNG/GIF/PDF compression, and more. Otherwise, continue with free cloud-based JPG compression.', 'ewww-image-optimizer' ),
+					"<a href='https://ewww.io/plans/'>" . \esc_html__( 'start your premium trial', 'ewww-image-optimizer' ) . '</a>'
+				);
+				\ewwwio_help_link( 'https://docs.ewww.io/article/29-what-is-exec-and-why-do-i-need-it', '592dd12d0428634b4a338c39' );
+				?>
+			</div>
+			<?php endif; ?>
+			<?php $this->display_exec_dismiss_script(); ?>
+		<?php elseif ( \ewwwio()->local->tools_missing ) : ?>
+			<?php
+			if ( ! \is_dir( \EWWW_IMAGE_OPTIMIZER_TOOL_PATH ) ) {
+				$this->tool_folder_notice();
+			} elseif ( ! is_writable( \EWWW_IMAGE_OPTIMIZER_TOOL_PATH ) || ! \is_readable( \EWWW_IMAGE_OPTIMIZER_TOOL_PATH ) ) {
+				$this->tool_folder_permissions_notice();
+			} elseif ( ! \is_executable( \EWWW_IMAGE_OPTIMIZER_TOOL_PATH ) && \PHP_OS !== 'WINNT' ) {
+				$this->tool_folder_permissions_notice();
+			}
+			?>
+		<?php endif; ?>
+		<?php
+	}
+
+	/**
 	 * Outputs the script to dismiss the 'exec' notice.
 	 */
 	public function display_exec_dismiss_script() {
@@ -864,6 +962,8 @@ final class Admin_Notices extends Base {
 			$webhost = 'Kinsta';
 		} elseif ( \defined( 'WPNET_INIT_PLUGIN_VERSION' ) ) {
 			$webhost = 'WP NET';
+		} elseif ( ! empty( $_ENV['WPAAS_V2_SITE_ID'] ) ) {
+			$webhost = 'GoDaddy Managed';
 		} else {
 			return;
 		}

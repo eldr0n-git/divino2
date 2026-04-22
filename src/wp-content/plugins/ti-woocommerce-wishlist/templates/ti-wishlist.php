@@ -43,7 +43,9 @@ wp_enqueue_script( 'tinvwl' );
 				<?php if ( isset( $wishlist_table_row['colm_date'] ) && $wishlist_table_row['colm_date'] ) { ?>
 					<th class="product-date"><?php esc_html_e( 'Date Added', 'ti-woocommerce-wishlist' ); ?></th>
 				<?php } ?>
-
+				<?php if ( isset( $wishlist_table_row['colm_stock'] ) && $wishlist_table_row['colm_stock'] ) { ?>
+					<th class="product-stock"><?php esc_html_e( 'Stock Status', 'ti-woocommerce-wishlist' ); ?></th>
+				<?php } ?>
 				<?php if ( isset( $wishlist_table_row['add_to_cart'] ) && $wishlist_table_row['add_to_cart'] ) { ?>
 					<th class="product-action">&nbsp;</th>
 				<?php } ?>
@@ -147,11 +149,7 @@ wp_enqueue_script( 'tinvwl' );
 								if ( ! array_key_exists( 'class', $availability ) ) {
 									$availability['class'] = '';
 								}
-								if ( 'out-of-stock' === $availability['class'] ) {
-									$availability_html = '<p class="stock ' . esc_attr( $availability['class'] ) . '"><span><i class="ftinvwl ftinvwl-times"></i></span><span class="tinvwl-txt">' . esc_html__( 'Out of stock', 'ti-woocommerce-wishlist' ) . '</span></p>';
-								} else {
-									$availability_html = '<p class="stock ' . esc_attr( $availability['class'] ) . '"><span><i class="ftinvwl ftinvwl-check"></i></span><span class="tinvwl-txt">' . esc_html__( 'In stock', 'ti-woocommerce-wishlist' ) . '</span></p>';
-								}
+								$availability_html = empty( $availability['availability'] ) ? '<p class="stock ' . esc_attr( $availability['class'] ) . '"><span><i class="ftinvwl ftinvwl-check"></i></span><span class="tinvwl-txt">' . esc_html__( 'In stock', 'ti-woocommerce-wishlist' ) . '</span></p>' : '<p class="stock ' . esc_attr( $availability['class'] ) . '"><span><i class="ftinvwl ftinvwl-' . ( ( 'out-of-stock' === esc_attr( $availability['class'] ) ? 'times' : 'check' ) ) . '"></i></span><span>' . wp_kses_post( $availability['availability'] ) . '</span></p>';
 
 								echo apply_filters( 'tinvwl_wishlist_item_status', $availability_html, $availability['availability'], $wl_product, $product ); // WPCS: xss ok.
 								?>

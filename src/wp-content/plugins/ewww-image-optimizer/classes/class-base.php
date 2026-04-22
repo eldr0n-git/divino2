@@ -326,7 +326,7 @@ class Base {
 			$potential_logs = \scandir( $this->content_dir );
 			if ( $this->is_iterable( $potential_logs ) ) {
 				foreach ( $potential_logs as $potential_log ) {
-					if ( $this->str_ends_with( $potential_log, '.log' ) && false !== strpos( $potential_log, strtolower( __NAMESPACE__ ) . '-debug-' ) && is_file( $this->content_dir . $potential_log ) ) {
+					if ( \str_ends_with( $potential_log, '.log' ) && false !== strpos( $potential_log, strtolower( __NAMESPACE__ ) . '-debug-' ) && is_file( $this->content_dir . $potential_log ) ) {
 						return $this->content_dir . $potential_log;
 					}
 				}
@@ -462,6 +462,25 @@ class Base {
 		}
 		$safe_arg = "'" . \str_replace( "'", "'\\''", $arg ) . "'";
 		return $safe_arg;
+	}
+
+	/**
+	 * Ensures a file path is UTF-8 encoded.
+	 *
+	 * @param string $path The file path to check.
+	 * @return string The UTF-8 encoded file path.
+	 */
+	public function ensure_utf8_path( $path ) {
+		if ( ! \function_exists( '\mb_convert_encoding' ) ) {
+			return $path;
+		}
+		if (
+			( \function_exists( '\wp_is_valid_utf8' ) && ! \wp_is_valid_utf8( $path ) ) ||
+			( ! \function_exists( '\wp_is_valid_utf8' ) && ! \seems_utf8( $path ) )
+		) {
+			$path = \mb_convert_encoding( $path, 'UTF-8' );
+		}
+		return $path;
 	}
 
 	/**
@@ -797,7 +816,7 @@ class Base {
 		}
 		if ( \is_null( self::$use_network_options ) ) {
 			self::$use_network_options = false;
-			if ( ! \function_exists( 'is_plugin_active_for_network' ) && \is_multisite() ) {
+			if ( ! \function_exists( '\is_plugin_active_for_network' ) && \is_multisite() ) {
 				// Need to include the plugin library for the is_plugin_active function.
 				require_once ABSPATH . 'wp-admin/includes/plugin.php';
 			}
@@ -1062,6 +1081,26 @@ class Base {
 	}
 
 	/**
+	 * Get the dimensions of an image.
+	 *
+	 * Differs from the core wp_getimagesize() in that it always returns an array with two values.
+	 *
+	 * @param string $filename The filename of an image.
+	 * @return array Array of width and height, both set to false on failure.
+	 */
+	public function getimagesize( $filename ) {
+		$width  = false;
+		$height = false;
+
+		$image_data = \wp_getimagesize( $filename );
+		if ( \is_array( $image_data ) && ! empty( $image_data[0] ) && ! empty( $image_data[1] ) ) {
+			$width  = (int) $image_data[0];
+			$height = (int) $image_data[1];
+		}
+		return array( $width, $height );
+	}
+
+	/**
 	 * Check the mimetype of the given file with magic mime strings/patterns.
 	 *
 	 * @param string $path The absolute path to the file.
@@ -1313,7 +1352,7 @@ class Base {
 	public function memory_limit() {
 		if ( \defined( 'EIO_MEMORY_LIMIT' ) && EIO_MEMORY_LIMIT ) {
 			$memory_limit = EIO_MEMORY_LIMIT;
-		} elseif ( \function_exists( 'ini_get' ) ) {
+		} elseif ( \function_exists( '\ini_get' ) ) {
 			$memory_limit = \ini_get( 'memory_limit' );
 		} else {
 			if ( ! \defined( 'EIO_MEMORY_LIMIT' ) ) {
@@ -1348,21 +1387,17 @@ class Base {
 	}
 
 	/**
-	 * Performs a case-sensitive check indicating if
-	 * the haystack ends with needle.
+	 * Wrapper around size_format to remove the decimal from sizes in bytes.
 	 *
-	 * @param string $haystack The string to search in.
-	 * @param string $needle   The substring to search for in the `$haystack`.
-	 * @return bool True if `$haystack` ends with `$needle`, otherwise false.
+	 * @param int $size A filesize in bytes.
+	 * @param int $precision Number of places after the decimal separator.
+	 * @return string Human-readable filesize.
 	 */
-	public function str_ends_with( $haystack, $needle ) {
-		if ( '' === $haystack && '' !== $needle ) {
-			return false;
-		}
-
-		$len = \strlen( $needle );
-
-		return 0 === \substr_compare( $haystack, $needle, -$len, $len );
+	public function size_format( $size, $precision = 1 ) {
+			// Convert it to human readable format.
+			$size_str = \size_format( $size, $precision );
+			// Remove spaces and extra decimals when measurement is in bytes.
+			return \preg_replace( '/\.0+ B ?/', ' B', $size_str );
 	}
 
 	/**
@@ -1557,21 +1592,29 @@ class Base {
 		}
 		if ( 0 === \strpos( $url, WP_CONTENT_URL ) ) {
 			$path = \str_replace( WP_CONTENT_URL, WP_CONTENT_DIR, $url );
-			$this->debug_message( "trying $path based on " . WP_CONTENT_URL );
+			$this->debug_message( "trying $path based on WP_CONTENT_URL " . WP_CONTENT_URL );
 		} elseif ( 0 === \strpos( $url, $this->relative_home_url ) ) {
 			$path = \str_replace( $this->relative_home_url, ABSPATH, $url );
-			$this->debug_message( "trying $path based on " . $this->relative_home_url );
+			$this->debug_message( "trying $path based on relative home URL and ABSPATH" . $this->relative_home_url );
 		} elseif ( 0 === \strpos( $url, $this->home_url ) ) {
 			$path = \str_replace( $this->home_url, ABSPATH, $url );
-			$this->debug_message( "trying $path based on " . $this->home_url );
+			$this->debug_message( "trying $path based on home_url and ABSPATH" . $this->home_url );
 		} else {
 			$this->debug_message( 'not a valid local image' );
 			return false;
 		}
 		$path_parts = \explode( '?', $path );
 		if ( $this->is_file( $path_parts[0] . $extension ) ) {
-			$this->debug_message( 'local file found' );
+			$this->debug_message( 'local file found (appended)' );
 			return $path_parts[0];
+		}
+		if ( ! empty( $extension ) ) {
+			$path_info     = pathinfo( $path_parts[0] );
+			$replaced_path = $path_info['dirname'] . '/' . $path_info['filename'] . $extension;
+			if ( $this->is_file( $replaced_path ) ) {
+				$this->debug_message( 'local file found (replaced)' );
+				return $path_parts[0];
+			}
 		}
 		if ( \class_exists( '\HMWP_Classes_ObjController' ) ) {
 			$hmwp_file_handler = \HMWP_Classes_ObjController::getClass( 'HMWP_Models_Files' );
@@ -1582,8 +1625,16 @@ class Base {
 				$this->debug_message( "trying $path from HMWP" );
 				$path_parts = \explode( '?', $path );
 				if ( $this->is_file( $path_parts[0] . $extension ) ) {
-					$this->debug_message( 'local file found' );
+					$this->debug_message( 'local file found (appended)' );
 					return $path_parts[0];
+				}
+				if ( ! empty( $extension ) ) {
+					$path_info     = pathinfo( $path_parts[0] );
+					$replaced_path = $path_info['dirname'] . '/' . $path_info['filename'] . $extension;
+					if ( $this->is_file( $replaced_path ) ) {
+						$this->debug_message( 'local file found (replaced)' );
+						return $path_parts[0];
+					}
 				}
 			}
 		}
@@ -1632,10 +1683,10 @@ class Base {
 		if ( empty( $url ) ) {
 			return false;
 		}
-		if ( 0 === \strpos( $url, '//' ) ) {
+		if ( \str_starts_with( $url, '//' ) ) {
 			$url = ( \is_ssl() ? 'https:' : 'http:' ) . $url;
 		}
-		if ( false === \strpos( $url, 'http' ) && '/' !== \substr( $url, 0, 1 ) ) {
+		if ( ! \str_starts_with( $url, 'http' ) && ! \str_starts_with( $url, '/' ) && ! \str_starts_with( $url, '.' ) ) {
 			$url = ( \is_ssl() ? 'https://' : 'http://' ) . $url;
 		}
 		// Because encoded ampersands in the filename break things.

@@ -1,5 +1,14 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# WordPress core (не трекаем, обновляется отдельно)
+/src/wp-admin/
+/src/wp-includes/
+/src/wp-*.php
+/src/index.php
+/src/xmlrpc.php
+/src/readme.html
+/src/license.txt
+
 # dependencies
 /node_modules
 /mysql_data
@@ -9,6 +18,9 @@
 /db_data
 /src/wp-content/uploads
 /src/wp-content/debug.log
+/src/wp-content/languages/
+/src/wp-content/upgrade/
+/src/wp-content/upgrade-temp-backup/
 /.pnp
 /.svn
 .pnp.js

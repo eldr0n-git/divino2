@@ -19,8 +19,12 @@ if ($issues) {
             echo 'Composer detected issues in your platform:' . PHP_EOL.PHP_EOL . str_replace('You are running '.PHP_VERSION.'.', '', implode(PHP_EOL, $issues)) . PHP_EOL.PHP_EOL;
         }
     }
-    trigger_error(
-        'Composer detected issues in your platform: ' . implode(' ', $issues),
-        E_USER_ERROR
-    );
+	$message = 'Composer detected issues in your platform: ' . implode(' ', $issues);
+
+	if (PHP_VERSION_ID >= 80400) {
+		throw new Error($message);
+	} else {
+		trigger_error($message, E_USER_ERROR);
+	}
+
 }
