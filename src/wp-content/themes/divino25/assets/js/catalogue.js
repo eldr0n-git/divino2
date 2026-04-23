@@ -2,28 +2,34 @@
 document.addEventListener('DOMContentLoaded', () => {
     const listButton = document.querySelector(".view__switch--list");
     const gridButton = document.querySelector(".view__switch--grid");
+    const catalogue = document.querySelector(".dv-collection");
+
+    // Force grid on mobile
+    if (window.innerWidth <= 1023 && catalogue) {
+        catalogue.classList.remove("list");
+        catalogue.classList.add("grid");
+    }
+
     if ( listButton ){
         listButton.addEventListener("click", function(e) {
             e.preventDefault();
-            const catalogue = document.querySelector(".dv-collection");
             if ( catalogue ){
                 catalogue.classList.remove("grid");
                 catalogue.classList.add("list");
                 this.classList.add("active");
                 document.querySelector(".view__switch--grid").classList.remove("active");
-            }  
+            }
         });
     }
     if ( gridButton ) {
         gridButton.addEventListener("click", function(e) {
             e.preventDefault();
-            const catalogue = document.querySelector(".dv-collection");
             if ( catalogue ){
                 catalogue.classList.remove("list");
                 catalogue.classList.add("grid");
                 this.classList.add("active");
                 document.querySelector(".view__switch--list").classList.remove("active");
-            }  
+            }
         });
     }
 });
@@ -150,4 +156,48 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    /* ====================================
+       MOBILE FILTERS SIDEBAR
+       ==================================== */
+    const filtersToggle = document.getElementById('filtersToggle');
+    const filtersSidebar = document.getElementById('shopFiltersSidebar');
+    const filtersClose = document.getElementById('filtersClose');
+    const filtersBackdrop = document.getElementById('filtersBackdrop');
+
+    function openFilters() {
+        if (filtersSidebar) filtersSidebar.classList.add('active');
+        if (filtersBackdrop) filtersBackdrop.classList.add('active');
+        document.body.classList.add('filters-open');
+    }
+
+    function closeFilters() {
+        if (filtersSidebar) filtersSidebar.classList.remove('active');
+        if (filtersBackdrop) filtersBackdrop.classList.remove('active');
+        document.body.classList.remove('filters-open');
+    }
+
+    if (filtersToggle) {
+        filtersToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            openFilters();
+        });
+    }
+
+    if (filtersClose) {
+        filtersClose.addEventListener('click', function(e) {
+            e.stopPropagation();
+            closeFilters();
+        });
+    }
+
+    if (filtersBackdrop) {
+        filtersBackdrop.addEventListener('click', closeFilters);
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && filtersSidebar && filtersSidebar.classList.contains('active')) {
+            closeFilters();
+        }
+    });
 });

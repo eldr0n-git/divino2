@@ -304,10 +304,8 @@ function add_product_region_filter() {
 // Add filters before shop loop
 function add_shop_filters() {
     if (is_shop() || is_product_category() || is_product_tag() || is_tax('product_kind') || is_tax('region') || isset($_GET['region'])) {
-        echo '<div class="shop-filters-sidebar">';
-
-        // Product categories
-        //the_widget('WC_Widget_Product_Categories', array('title' => 'Категории'));
+        echo '<div class="shop-filters-sidebar" id="shopFiltersSidebar">';
+        echo '<button class="filters-sidebar__close" id="filtersClose" aria-label="Закрыть фильтры"></button>';
 
         // Custom filters
         add_product_kind_filter();
@@ -322,8 +320,19 @@ function add_shop_filters() {
             the_widget('WC_Widget_Layered_Nav', array('title' => 'Цвет', 'attribute' => 'pa_color'));
         }
         echo '</div>';
+        echo '<div class="filters-backdrop" id="filtersBackdrop"></div>';
     }
 }
+
+function add_mobile_filter_toggle() {
+    if (is_shop() || is_product_category() || is_product_tag() || is_tax('product_kind') || is_tax('region') || isset($_GET['region'])) {
+        echo '<button class="filters-mobile-toggle" id="filtersToggle" aria-label="Открыть фильтры">';
+        echo '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4h12M4 8h8M6 12h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+        echo 'Фильтры';
+        echo '</button>';
+    }
+}
+add_action('woocommerce_before_shop_loop', 'add_mobile_filter_toggle', 5);
 //add_action('woocommerce_before_shop_loop', 'add_shop_filters', 5);
 
 function add_region_query_var( $vars ) {
@@ -979,37 +988,40 @@ function handle_custom_user_register() {
 }
 // ПОЛЯ ЧЕКАУТА СОХРАНЕНИЕ, ВАЛИДАЦИЯ, ОТОБРАЖЕНИЕ В АДМИНКЕ И EMAIL
 // Сохранение кастомных полей при оформлении заказа
-add_action('woocommerce_checkout_update_order_meta', 'save_custom_checkout_fields');
-function save_custom_checkout_fields($order_id) {
+// Срабатывает и для классического, и для блочного checkout
+add_action('woocommerce_checkout_order_created', 'save_custom_checkout_fields');
+add_action('woocommerce_store_api_checkout_order_processed', 'save_custom_checkout_fields');
+function save_custom_checkout_fields($order) {
     if (!empty($_POST['billing_city'])) {
-        update_post_meta($order_id, '_billing_city', sanitize_text_field($_POST['billing_city']));
+        $order->update_meta_data('_billing_city', sanitize_text_field($_POST['billing_city']));
     }
     if (!empty($_POST['billing_name'])) {
-        update_post_meta($order_id, '_billing_name', sanitize_text_field($_POST['billing_name']));
+        $order->update_meta_data('_billing_name', sanitize_text_field($_POST['billing_name']));
     }
     if (!empty($_POST['billing_whatsapp'])) {
-        update_post_meta($order_id, '_billing_whatsapp', sanitize_text_field($_POST['billing_whatsapp']));
+        $order->update_meta_data('_billing_whatsapp', sanitize_text_field($_POST['billing_whatsapp']));
     }
     if (!empty($_POST['billing_phone'])) {
-        update_post_meta($order_id, '_billing_phone', sanitize_text_field($_POST['billing_phone']));
+        $order->update_meta_data('_billing_phone', sanitize_text_field($_POST['billing_phone']));
     }
     if (!empty($_POST['billing_address_1'])) {
-        update_post_meta($order_id, '_billing_address_1', sanitize_text_field($_POST['billing_address_1']));
+        $order->update_meta_data('_billing_address_1', sanitize_text_field($_POST['billing_address_1']));
     }
     if (!empty($_POST['order_comments'])) {
-        update_post_meta($order_id, '_order_comments', sanitize_text_field($_POST['order_comments']));
+        $order->update_meta_data('_order_comments', sanitize_text_field($_POST['order_comments']));
     }
+    $order->save();
 }
 
 // Отображение поля кастомных полей в админке заказа
 add_action('woocommerce_admin_order_data_after_billing_address', 'display_customFields_in_admin_order');
 function display_customFields_in_admin_order($order) {
-    $whatsapp = get_post_meta($order->get_id(), '_billing_whatsapp', true);
-    $phone = get_post_meta($order->get_id(), '_billing_phone', true);
-    $name = get_post_meta($order->get_id(), '_billing_name', true);
-    $addr = get_post_meta($order->get_id(), '_billing_address_1', true);
-    $comments = get_post_meta($order->get_id(), '_order_comments', true);
-    $city = get_post_meta($order->get_id(), '_billing_city', true);
+    $whatsapp = $order->get_meta('_billing_whatsapp');
+    $phone    = $order->get_meta('_billing_phone');
+    $name     = $order->get_meta('_billing_name');
+    $addr     = $order->get_meta('_billing_address_1');
+    $comments = $order->get_meta('_order_comments');
+    $city     = $order->get_meta('_billing_city');
     if ($city) {
         echo '<p><strong>Город:</strong> ' . esc_html($city) . '</p>';
     }
@@ -1033,12 +1045,12 @@ function display_customFields_in_admin_order($order) {
 // Добавление кастомных полeй в email уведомления
 add_action('woocommerce_email_customer_details', 'add_customFields_to_emails', 20, 4);
 function add_customFields_to_emails($order, $sent_to_admin, $plain_text, $email) {
-    $whatsapp = get_post_meta($order->get_id(), '_billing_whatsapp', true);
-    $phone = get_post_meta($order->get_id(), '_billing_phone', true);
-    $name = get_post_meta($order->get_id(), '_billing_name', true);
-    $addr = get_post_meta($order->get_id(), '_billing_address_1', true);
-    $comments = get_post_meta($order->get_id(), '_order_comments', true);
-    $city = get_post_meta($order->get_id(), '_billing_city', true);
+    $whatsapp = $order->get_meta('_billing_whatsapp');
+    $phone    = $order->get_meta('_billing_phone');
+    $name     = $order->get_meta('_billing_name');
+    $addr     = $order->get_meta('_billing_address_1');
+    $comments = $order->get_meta('_order_comments');
+    $city     = $order->get_meta('_billing_city');
     if ($name) {
         if ($plain_text) {
             echo "\Имя: " . $name . "\n";
@@ -1083,6 +1095,30 @@ function add_customFields_to_emails($order, $sent_to_admin, $plain_text, $email)
     }
 }
 
+
+// Отображение кастомных полей на странице подтверждения заказа
+// Для блочного шаблона order-confirmation — woocommerce_thankyou не срабатывает,
+// поэтому добавляем поля через render_block после блока billing-address
+add_filter('render_block', 'display_customFields_on_order_confirmation', 10, 2);
+function display_customFields_on_order_confirmation($block_content, $block) {
+    if ($block['blockName'] !== 'woocommerce/order-confirmation-summary') {
+        return $block_content;
+    }
+    $order_id = isset($_GET['order-received']) ? absint($_GET['order-received']) : 0;
+    if (!$order_id) return $block_content;
+    $order = wc_get_order($order_id);
+    if (!$order) return $block_content;
+    $order_key = isset($_GET['key']) ? sanitize_text_field(wp_unslash($_GET['key'])) : '';
+    if (!hash_equals($order->get_order_key(), $order_key)) return $block_content;
+    $phone    = $order->get_meta('_billing_phone');
+    $whatsapp = $order->get_meta('_billing_whatsapp');
+    if (!$phone && !$whatsapp) return $block_content;
+    $html = '<div class="wc-order-confirmation-custom-fields">';
+    if ($phone)    $html .= '<p><strong>Телефон:</strong> ' . esc_html($phone) . '</p>';
+    if ($whatsapp) $html .= '<p><strong>WhatsApp:</strong> ' . esc_html($whatsapp) . '</p>';
+    $html .= '</div>';
+    return $block_content . $html;
+}
 
 // Валидация полей при оформлении заказа
 add_action('woocommerce_checkout_process', 'validate_custom_checkout_fields');
