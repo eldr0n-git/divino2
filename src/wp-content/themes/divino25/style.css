@@ -615,6 +615,8 @@ footer {
     min-width: 400px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .sp-main-column {
 
@@ -2563,14 +2565,18 @@ body.error404 #wp-block-search__input-1:focus{
     background-color: var(--primary-bg-hover);
 }
 .product-kind-menu__list {
-    display: grid;
-    flex-wrap: wrap;
+    /* display: grid;
+    
     gap: 1rem;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; */
+    flex-wrap: wrap;
+    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
-    justify-content: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-content: flex-start;
+    gap: 3rem;
 }
 .product-kind-menu__item {
     justify-content: center;
@@ -3410,6 +3416,105 @@ main .main-title h1 {
 
 /* Show search toggle on mobile only */
 @media (max-width: 1023px) {
+    .custom-related-products .add_to_cart_button {
+        display: block !important;
+        text-align: center;
+    }
+    .woocommerce ul.products li.product .price {
+        text-align: center;
+    }
+    .woocommerce ul.products[class*="columns-"] li.product, .woocommerce-page ul.products[class*="columns-"] li.product {
+        width: 100% !important;
+    }
+    .rating__wrap {
+        padding: var(--pd);
+        border-radius: var(--brs-lg);
+        margin-top: calc(var(--pd) * -1);
+    }
+    .rating__cnt {
+        margin-left: 0;
+    }
+    .divino-producer__data {
+        padding: 0 var(--pd-lg);
+    }
+    .sp-order-cnt .woocommerce-Price-amount {
+        font-size: 22px !important;
+    }
+    .slider-scale__label {
+        font-size: 12px;
+    }
+    .slider-scale {
+        flex-direction: column;
+    }
+    .sp-base-info .product-volume, .sp-base-info .grape-varieties, .sp-base-info .product-region, .sp-base-info .taxonomy-product_kind, .sp-base-info .taxonomy-product_brand, .sp-base-info .vintage-products-section, .wine-style-display {
+        display: flex;
+    }
+    .sp-base-info p, .sp-base-info .product-region, .sp-base-info .grape-varieties, .sp-base-info .product-volume span, .sp-base-info .taxonomy-product_kind, .sp-base-info .taxonomy-product_brand, .sp-base-info .vintage-products-section, .wine-style-value,.sp-base-info .product-regions a {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .sp-base-info p strong, .sp-base-info .product-region strong, .sp-base-info .grape-varieties h3, .sp-base-info .product-volume strong, .sp-base-info .taxonomy-product_kind .wp-block-post-terms__prefix, .sp-base-info .taxonomy-product_brand .wp-block-post-terms__prefix, .sp-base-info .vintage-products-section h3, .wine-style-display strong {
+        font-size: 14px !important;
+        max-width: 120px;
+        display: flex;
+        min-width: 120px;
+        text-align: right;
+        padding-right: 7px;
+        justify-content: flex-end;
+    }
+    .short-ratings .divino-rating-icon {
+        width: 120px;
+        height: 120px;
+        min-width: 120px;
+    }
+    #tab-description,
+    .divino-producer-description {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    .wp-block-post-excerpt__excerpt {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    .foodItem {
+        margin-right: var(--pd);
+        flex: 0 0 0;
+    }
+    .page-cnt {
+        padding: var(--pd) !important;
+    }
+    .foodList {
+        padding-left: 0;
+    }
+    .foodItem__title {
+        font-size: 14px;
+    }
+    .foodItem__icon {
+        width: 130px;
+        height: 130px;
+    }
+    .divino-wine-details > * {
+        font-size: 13px;
+    }
+    .divino-wine-details {
+        flex-direction: column;
+        display: flex;
+    }
+    .custom-related-products .products {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .divino-rating-item {
+        margin-bottom: 50px;
+    }
+    .divino-rating-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .divino-producer__wrap {
+        flex-direction: column;
+    }
     .divino-sugar:empty {
         display: none;
     } 
@@ -3555,9 +3660,7 @@ main .main-title h1 {
     /* .key-features > :not(:first-child)::before {
         margin: 0px 12px 0 0;
     } */
-    .sp-base-info .product-volume strong {
-        min-width: initial;
-    }   
+
     .woocommerce div.product div.images .woocommerce-product-gallery__wrapper .zoomImg {
         height: 500px !important;
     }
