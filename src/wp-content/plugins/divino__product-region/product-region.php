@@ -45,14 +45,37 @@ add_filter('parse_query', function ($query) {
         ];
     }
 });
-// Добавление поля для выбора региона на странице редактирования товара
+// При сохранении товара автоматически добавляем все родительские регионы
+add_action('save_post_product', function ($post_id) {
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (!current_user_can('edit_post', $post_id)) return;
+
+    $term_ids = wp_get_post_terms($post_id, 'region', ['fields' => 'ids']);
+    if (empty($term_ids) || is_wp_error($term_ids)) return;
+
+    $all_ids = $term_ids;
+    foreach ($term_ids as $term_id) {
+        $ancestors = get_ancestors($term_id, 'region', 'taxonomy');
+        $all_ids   = array_merge($all_ids, $ancestors);
+    }
+    $all_ids = array_unique(array_map('intval', $all_ids));
+
+    if (count($all_ids) !== count($term_ids)) {
+        wp_set_post_terms($post_id, $all_ids, 'region');
+    }
+}, 20);
+
+// Вывод региона на странице товара — от родителя к дочернему
 add_action('woocommerce_single_product_summary', function () {
     $terms = get_the_terms(get_the_ID(), 'region');
-    if ($terms && !is_wp_error($terms)) {
-        $names = array_map('esc_html', wp_list_pluck($terms, 'name'));
-        echo '<div class="product-region"><strong>Регион:</strong> ' . implode(', ', $names) . '</div>';
-    }
-}, 21); // Позиция после excerpt
+    if (empty($terms) || is_wp_error($terms)) return;
+
+    // Сортируем: сначала корневые (parent=0), потом дочерние
+    usort($terms, fn($a, $b) => $a->parent - $b->parent);
+
+    $names = array_map(fn($t) => esc_html($t->name), $terms);
+    echo '<div class="product-region"><strong>Регион:</strong> ' . implode(', ', $names) . '</div>';
+}, 21);
 
 
 

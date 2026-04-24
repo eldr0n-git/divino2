@@ -27,6 +27,7 @@ class WC_Food_Pairings {
         add_action('wp_ajax_get_popular_food', array($this, 'ajax_get_popular_food'));
         add_action('wp_ajax_save_pairing', array($this, 'ajax_save_pairing'));
         add_action('wp_ajax_delete_pairing', array($this, 'ajax_delete_pairing'));
+        add_action('wp_ajax_update_pairing', array($this, 'ajax_update_pairing'));
         add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_scripts'));
         add_shortcode('divino_food_pairings', array($this, 'food_pairings_shortcode'));
 
@@ -206,6 +207,37 @@ class WC_Food_Pairings {
                 </div>
             </div>
 
+            <!-- Модальное окно редактирования -->
+            <div id="edit-pairing-modal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,.5); z-index:9999; overflow-y:auto;">
+                <div class="card" style="max-width:700px; margin:60px auto; position:relative;">
+                    <button type="button" id="close-edit-modal" style="position:absolute;top:12px;right:12px;background:none;border:none;font-size:20px;cursor:pointer;line-height:1;">×</button>
+                    <h2>Редактировать сочетание</h2>
+                    <form id="edit-pairing-form">
+                        <input type="hidden" id="edit-pairing-id">
+                        <table class="form-table">
+                            <tr>
+                                <th><label>Сорта винограда</label></th>
+                                <td style="position:relative;">
+                                    <input type="text" id="edit-grape-varieties" class="regular-text" placeholder="Начните вводить сорт винограда...">
+                                    <div id="edit-selected-grapes"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><label>Блюда</label></th>
+                                <td style="position:relative;">
+                                    <input type="text" id="edit-food-items" class="regular-text" placeholder="Начните вводить название блюда...">
+                                    <div id="edit-selected-food"></div>
+                                </td>
+                            </tr>
+                        </table>
+                        <p class="submit">
+                            <input type="submit" class="button button-primary" value="Сохранить изменения">
+                            <button type="button" class="button" id="cancel-edit-pairing">Отмена</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+
             <!-- Список существующих сочетаний -->
             <div id="pairings-list">
                 <h2>Существующие сочетания</h2>
@@ -235,6 +267,15 @@ class WC_Food_Pairings {
                                     </td>
                                     <td><?php echo $pairing->created_at; ?></td>
                                     <td>
+                                        <?php
+                                        $food_ids_arr   = array_filter(array_map('trim', explode(',', $pairing->food_items)));
+                                        $food_names_arr = array_map('get_the_title', $food_ids_arr);
+                                        ?>
+                                        <button class="button button-small edit-pairing"
+                                                data-id="<?php echo $pairing->id; ?>"
+                                                data-grapes="<?php echo esc_attr($pairing->grape_varieties); ?>"
+                                                data-food-ids="<?php echo esc_attr(implode(',', $food_ids_arr)); ?>"
+                                                data-food-names="<?php echo esc_attr(implode('|||', $food_names_arr)); ?>">Редактировать</button>
                                         <button class="button button-small delete-pairing" data-id="<?php echo $pairing->id; ?>">Удалить</button>
                                     </td>
                                 </tr>
@@ -487,6 +528,36 @@ class WC_Food_Pairings {
             wp_send_json_success('Сочетание удалено');
         } else {
             wp_send_json_error('Ошибка удаления');
+        }
+    }
+
+    public function ajax_update_pairing() {
+        global $wpdb;
+
+        $pairing_id      = intval($_POST['pairing_id']);
+        $grape_varieties = sanitize_text_field($_POST['grape_varieties'] ?? '');
+        $food_ids_raw    = $_POST['food_ids'] ?? '';
+        $food_ids        = array_filter(array_map('intval', explode(',', $food_ids_raw)));
+
+        if (!$pairing_id || empty($grape_varieties) || empty($food_ids)) {
+            wp_send_json_error('Недостаточно данных');
+        }
+
+        $table_name = $wpdb->prefix . 'food_pairings';
+
+        $result = $wpdb->update(
+            $table_name,
+            [
+                'grape_varieties' => $grape_varieties,
+                'food_items'      => implode(',', $food_ids),
+            ],
+            ['id' => $pairing_id]
+        );
+
+        if ($result !== false) {
+            wp_send_json_success('Сочетание обновлено');
+        } else {
+            wp_send_json_error('Ошибка обновления');
         }
     }
 

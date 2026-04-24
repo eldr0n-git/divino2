@@ -4,6 +4,8 @@ jQuery(document).ready(function($) {
     var selectedGrapes = [];
     var selectedFoodPairing = [];
     var selectedFoodProduct = [];
+    var editSelectedGrapes = [];
+    var editSelectedFood = [];
 
     // Показать/скрыть форму создания сочетания
     $('#create-pairing-btn').on('click', function() {
@@ -106,6 +108,14 @@ jQuery(document).ready(function($) {
             if (selectedGrapes.some(grape => grape.id === item.id)) return;
             selectedGrapes.push(item);
             updateSelectedGrapes();
+        } else if (type === 'edit-grape') {
+            if (editSelectedGrapes.some(function(g) { return g.id === item.id; })) return;
+            editSelectedGrapes.push(item);
+            updateEditSelectedGrapes();
+        } else if (type === 'edit-food') {
+            if (editSelectedFood.some(function(f) { return f.id === item.id; })) return;
+            editSelectedFood.push(item);
+            updateEditSelectedFood();
         } else if (type === 'food') {
             if (context === 'pairing') {
                 if (selectedFoodPairing.some(food => food.id === item.id)) return;
@@ -227,6 +237,125 @@ jQuery(document).ready(function($) {
                 location.reload();
             } else {
                 alert('Ошибка сохранения: ' + response.data);
+            }
+        });
+    });
+
+    // ─── Редактирование сочетания ────────────────────────────────────
+
+    function openEditModal(id, grapes, foodIds, foodNames) {
+        editSelectedGrapes = grapes
+            ? grapes.split(', ').map(function(name) { return { id: name, title: name }; })
+            : [];
+
+        var ids    = foodIds    ? foodIds.split(',')    : [];
+        var names  = foodNames  ? foodNames.split('|||') : [];
+        editSelectedFood = ids.map(function(id, i) {
+            return { id: parseInt(id, 10), title: names[i] || id };
+        });
+
+        $('#edit-pairing-id').val(id);
+        $('#edit-grape-varieties').val('');
+        $('#edit-food-items').val('');
+        updateEditSelectedGrapes();
+        updateEditSelectedFood();
+        $('#edit-pairing-modal').fadeIn(150);
+    }
+
+    function closeEditModal() {
+        $('#edit-pairing-modal').fadeOut(150);
+        editSelectedGrapes = [];
+        editSelectedFood = [];
+    }
+
+    $(document).on('click', '.edit-pairing', function() {
+        var $btn = $(this);
+        openEditModal(
+            $btn.data('id'),
+            $btn.data('grapes'),
+            String($btn.data('food-ids')),
+            $btn.data('food-names')
+        );
+    });
+
+    $('#close-edit-modal, #cancel-edit-pairing').on('click', closeEditModal);
+    $('#edit-pairing-modal').on('click', function(e) {
+        if ($(e.target).is('#edit-pairing-modal')) closeEditModal();
+    });
+
+    // Автозаполнение в форме редактирования
+    $('#edit-grape-varieties').on('input', function() {
+        var search = $(this).val();
+        if (search.length > 1) {
+            $.get(wcFoodPairings.ajax_url, { action: 'search_grape_varieties', search: search }, function(data) {
+                showAutocomplete(data, '#edit-grape-varieties', 'edit-grape');
+            });
+        } else {
+            hideAutocomplete();
+        }
+    });
+
+    $('#edit-food-items').on('input', function() {
+        var search = $(this).val();
+        if (search.length > 1) {
+            $.get(wcFoodPairings.ajax_url, { action: 'search_food', search: search }, function(data) {
+                showAutocomplete(data, '#edit-food-items', 'edit-food');
+            });
+        } else {
+            hideAutocomplete();
+        }
+    });
+
+    function updateEditSelectedGrapes() {
+        var $container = $('#edit-selected-grapes');
+        $container.empty();
+        $.each(editSelectedGrapes, function(i, grape) {
+            var $item = $('<span class="selected-item" data-id="' + grape.id + '">' + grape.title + ' <span class="remove">×</span></span>');
+            $item.find('.remove').on('click', function() {
+                editSelectedGrapes = editSelectedGrapes.filter(function(g) { return g.id !== grape.id; });
+                updateEditSelectedGrapes();
+            });
+            $container.append($item);
+        });
+    }
+
+    function updateEditSelectedFood() {
+        var $container = $('#edit-selected-food');
+        $container.empty();
+        $.each(editSelectedFood, function(i, food) {
+            var $item = $('<span class="selected-item" data-id="' + food.id + '">' + food.title + ' <span class="remove">×</span></span>');
+            $item.find('.remove').on('click', function() {
+                editSelectedFood = editSelectedFood.filter(function(f) { return f.id !== food.id; });
+                updateEditSelectedFood();
+            });
+            $container.append($item);
+        });
+    }
+
+    // Сохранить изменения
+    $('#edit-pairing-form').on('submit', function(e) {
+        e.preventDefault();
+
+        if (editSelectedGrapes.length === 0 || editSelectedFood.length === 0) {
+            alert('Выберите хотя бы один сорт винограда и одно блюдо.');
+            return;
+        }
+
+        var grapeNames = editSelectedGrapes.map(function(g) { return g.title; }).join(', ');
+        var foodIds    = editSelectedFood.map(function(f) { return f.id; }).join(',');
+
+        $.post(wcFoodPairings.ajax_url, {
+            action:          'update_pairing',
+            pairing_id:      $('#edit-pairing-id').val(),
+            grape_varieties: grapeNames,
+            food_ids:        foodIds,
+            _ajax_nonce:     wcFoodPairings.nonce
+        }, function(response) {
+            if (response.success) {
+                closeEditModal();
+                location.reload();
+            } else {
+                alert('Ошибка: ' + response.data);
             }
         });
     });

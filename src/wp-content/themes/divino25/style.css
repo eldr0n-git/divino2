@@ -1156,6 +1156,9 @@ footer {
 .country.country-spain a:before{
     background-image: url('assets/images/flags.svg?#es');
 }
+.country.country-iceland a:before{
+    background-image: url('assets/images/flags.svg?#is');
+}
 
 .sliders-scale-set {
     display: flex;
@@ -3211,6 +3214,9 @@ main .main-title h1 {
     border-radius: var(--brs-lg);
     margin-top: calc(var(--pd-lg) * -1);
 }
+.rating__wrap:empty {
+    display: none;
+}
 .divino-rating-summary p {
     font-family: 'Literata', serif;
     font-size: 24px;
@@ -4026,6 +4032,9 @@ body.burger-menu-open {
     width: 100%;
 }
 .social-buttons {
+    display: none;
+}
+.divino-sugar:empty {
     display: none;
 }
 /* Mobile slide title fix */

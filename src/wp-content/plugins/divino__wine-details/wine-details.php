@@ -200,6 +200,14 @@ class Divino_Wine_Details {
         if (isset($_POST['wine_tasting_notes'])) {
             update_post_meta($post_id, '_wine_tasting_notes', sanitize_textarea_field($_POST['wine_tasting_notes']));
         }
+
+        if (isset($_POST['wine_vineyards'])) {
+            update_post_meta($post_id, '_wine_vineyards', sanitize_textarea_field($_POST['wine_vineyards']));
+        }
+
+        if (isset($_POST['wine_interesting'])) {
+            update_post_meta($post_id, '_wine_interesting', sanitize_textarea_field($_POST['wine_interesting']));
+        }
     }
     
     /**

@@ -30,7 +30,7 @@ add_action('init', function () {
         'public' => false,
         'show_ui' => true,
         'show_in_menu' => 'edit.php?post_type=product',
-        'supports' => ['title', 'editor'],
+        'supports' => ['title', 'editor', 'thumbnail'],
         'menu_icon' => 'dashicons-carrot',
     ]);
 });
@@ -54,6 +54,62 @@ add_action('add_meta_boxes', function () {
         'side'
     );
 
+    // Метабокс для оригинального названия
+    add_meta_box(
+        'grape_name_original',
+        'Наименование оригинал',
+        function ($post) {
+            $value = get_post_meta($post->ID, '_grape_name_original', true);
+            ?>
+            <input type="text"
+                   name="grape_name_original"
+                   value="<?= esc_attr($value) ?>"
+                   placeholder="Sauvignon Blanc"
+                   style="width: 100%;" />
+            <?php
+        },
+        'grape_variety',
+        'side'
+    );
+
+    // Метабокс для гастрономических сочетаний
+    add_meta_box(
+        'grape_food_pairings',
+        'Гастрономические сочетания',
+        function ($post) {
+            $saved = get_post_meta($post->ID, '_grape_food_pairings', true);
+            if (!is_array($saved)) $saved = [];
+
+            $options = [
+                'red-meat'    => 'Красное мясо',
+                'white-meat'  => 'Белое мясо / Птица',
+                'game'        => 'Дичь',
+                'fish'        => 'Рыба',
+                'seafood'     => 'Морепродукты',
+                'pasta-pizza' => 'Паста / Пицца',
+                'hard-cheese' => 'Твёрдые сыры',
+                'soft-cheese' => 'Мягкие сыры',
+                'vegetables'  => 'Овощи / Гриль',
+                'mushrooms'   => 'Грибы',
+                'spicy'       => 'Острые блюда',
+                'desserts'    => 'Десерты',
+                'aperitif'    => 'Аперитив',
+            ];
+
+            echo '<div style="display:flex;flex-wrap:wrap;gap:6px 16px;">';
+            foreach ($options as $key => $label) {
+                $checked = in_array($key, $saved) ? 'checked' : '';
+                echo "<label style='display:flex;align-items:center;gap:4px;white-space:nowrap;'>";
+                echo "<input type='checkbox' name='grape_food_pairings[]' value='" . esc_attr($key) . "' {$checked}>";
+                echo esc_html($label);
+                echo "</label>";
+            }
+            echo '</div>';
+        },
+        'grape_variety',
+        'normal'
+    );
+
     // Метабокс для продуктов
     add_meta_box(
         'wine_grape_varieties',
@@ -70,6 +126,16 @@ add_action('save_post_grape_variety', function ($post_id) {
     if (isset($_POST['grape_color'])) {
         update_post_meta($post_id, '_grape_color', sanitize_text_field($_POST['grape_color']));
     }
+    if (isset($_POST['grape_name_original'])) {
+        update_post_meta($post_id, '_grape_name_original', sanitize_text_field($_POST['grape_name_original']));
+    }
+    $allowed = [
+        'red-meat', 'white-meat', 'game', 'fish', 'seafood',
+        'pasta-pizza', 'hard-cheese', 'soft-cheese', 'vegetables',
+        'mushrooms', 'spicy', 'desserts', 'aperitif',
+    ];
+    $pairings = array_intersect((array) ($_POST['grape_food_pairings'] ?? []), $allowed);
+    update_post_meta($post_id, '_grape_food_pairings', array_values($pairings));
 });
 
 add_action('save_post_product', function ($post_id) {
