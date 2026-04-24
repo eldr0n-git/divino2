@@ -2576,7 +2576,7 @@ body.error404 #wp-block-search__input-1:focus{
     margin: 0;
     padding: 0;
     justify-content: flex-start;
-    gap: 3rem;
+    gap: 2rem;
 }
 .product-kind-menu__item {
     justify-content: center;
@@ -3416,6 +3416,12 @@ main .main-title h1 {
 
 /* Show search toggle on mobile only */
 @media (max-width: 1023px) {
+    .search-form--mobile-fullwidth {
+        top: var(--title_section-height);
+    }
+    
+
+
     .custom-related-products .add_to_cart_button {
         display: block !important;
         text-align: center;
@@ -3735,10 +3741,13 @@ main .main-title h1 {
         font-size: 13px !important;
         margin: 0 5px;
     }
+    .cat_section {
+        justify-content: space-between;
+    }
     h1 {
         margin: 10px 0;
         line-height: 32px;
-        font-size: 36px;
+        font-size: 32px;
     }
     main .main-title {
         flex-direction: column;
@@ -4016,15 +4025,49 @@ body.burger-menu-open {
     position: fixed;
     width: 100%;
 }
-
+.social-buttons {
+    display: none;
+}
 /* Mobile slide title fix */
 @media (max-width: 1023px) {
+    .tinv-wishlist table.tinvwl-table-manage-list {
+        max-width: initial !important;
+    }
+    .wishlist_item {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .wishlist_item > * {
+        padding: 5px !important;
+    }
+    .woocommerce-account .woocommerce-MyAccount-content {
+        padding: var(--pd);
+        font-size: 14px;
+    }
+    .shops__item:not(:first-child){
+        margin: 0 !important;
+    }
+    .shops {
+        flex-direction: column;
+    }
+    .key-features .wine-style, .key-features .taxonomy-product_kind, .key-features .divino-sugar, .key-features .country a {
+        position: relative;
+        z-index: 1;
+        font-size: 14px;
+    }
+    .sp-main-column {
+        overflow: hidden;
+    }
+    .key-features::after {
+        right: -35px;
+    }
+
     h2.divino-slide-title {
         font-size: 38px !important;
         line-height: 1cap !important;
         padding: 4% !important;
         text-wrap: auto;
-        word-break: break-all;
+        /* word-break: break-all; */
         letter-spacing: -2px !important;
         opacity: 0.5;
     }
