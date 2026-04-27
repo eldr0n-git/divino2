@@ -1,0 +1,46 @@
+{
+  "name_original": "Amarone della Valpolicella Docg 2011 0,75",
+  "name_ru": "Амароне Делла Валполичэлла Докг 2011",
+  "producer": "Amarone",
+  "country": "Италия",
+  "region": "Вальполичелла Классика, Венето",
+  "wine_style": "сухое красное (из подвяленного винограда — апассименто)",
+  "grape_varieties": [
+    "Corvina Veronese",
+    "Corvinone",
+    "Rondinella"
+  ],
+  "alcohol_percent": 16.0,
+  "serving_temperature_c": {
+    "min": 18,
+    "max": 20
+  },
+  "sugar_content": "dry (<5 г/л)",
+  "production_method": "Апассименто (dried grapes): виноград подвяливают 3–4 месяца, затем прессуют и ферментируют",
+  "aging": "минимум 2 года в дубовых бочках (3 для Riserva)",
+  "tasting_notes": {
+    "appearance": "тёмно-гранатовое",
+    "nose": "вишня в шоколаде, чернослив, инжир, кофе, специи, кожа",
+    "palate": "мощное, бархатное, тёплое, многослойное",
+    "finish": "очень долгое, тёплое"
+  },
+  "vineyards": "холмы к северу от Вероны, вулканические почвы",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Амароне — уникальное итальянское вино из подвяленного винограда (апассименто): ягоды сушат 3–4 месяца, что концентрирует сахар и вкус. Итоговое вино — одно из самых мощных в мире (15–17°).",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Amarone",
+    "Вальполичелла Классика"
+  ],
+  "image_search_query": "Amarone della Valpolicella Docg 2011 wine bottle",
+  "_id": 80,
+  "_sku": "372",
+  "_title_source": "Amarone della Valpolicella Docg 2011 0,75"
+}

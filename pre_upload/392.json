@@ -1,0 +1,40 @@
+{
+  "name_original": "Giordano Eventus  bianco 0,75",
+  "name_ru": "Гьордано Евентус Бьянко",
+  "producer": "Giordano",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "белое вино"
+  ],
+  "image_search_query": "Giordano Eventus  bianco wine bottle",
+  "_id": 205,
+  "_sku": "392",
+  "_title_source": "Giordano Eventus  bianco 0,75"
+}

@@ -1,0 +1,42 @@
+{
+  "name_original": "Morellino di Scansano Docg 2015  rosso 0,75",
+  "name_ru": "Мореллино Ди Скансано Докг 2015 Россо",
+  "producer": "Morellino",
+  "country": "Италия",
+  "region": "Скансано, Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Sangiovese (Morellino)"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Docg: минимум 12 месяцев",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "Маремма Тосканская",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Скансано, Тоскана (Италия). ",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Скансано"
+  ],
+  "image_search_query": "Morellino di Scansano Docg 2015  rosso wine bottle",
+  "_id": 250,
+  "_sku": "395",
+  "_title_source": "Morellino di Scansano Docg 2015  rosso 0,75"
+}

@@ -1,0 +1,42 @@
+{
+  "name_original": "Valpolicella Ripasso Classico 2014 красное 0,5",
+  "name_ru": "Валполичэлла Рипассо Классико 2014 Красное 0,5",
+  "producer": "Valpolicella",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Corvina Veronese",
+    "Rondinella",
+    "Molinara"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Риппассо: Вальполичелла перебраживает на выжимках Амароне, что обогащает вкус",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "Classico"
+  ],
+  "image_search_query": "Valpolicella Ripasso Classico 2014 красное wine bottle",
+  "_id": 317,
+  "_sku": "62",
+  "_title_source": "Valpolicella Ripasso Classico 2014 красное 0,5"
+}

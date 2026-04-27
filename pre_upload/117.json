@@ -1,0 +1,44 @@
+{
+  "name_original": "Vino Leonia Pomino rose Mill spumante DOC 2012   0,75",
+  "name_ru": "Вино Леонья Помино Росе Милл Спуманте Док 2012",
+  "producer": "Leonia",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое розовое",
+  "grape_varieties": [
+    "Sangiovese",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Метод Шарма (Charmat): вторичная ферментация в герметичных резервуарах под давлением",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). ",
+  "tags": [
+    "розовое вино",
+    "игристое вино",
+    "Италия",
+    "Тоскана"
+  ],
+  "image_search_query": "Vino Leonia Pomino rose Mill spumante DOC 2012 wine bottle",
+  "_id": 339,
+  "_sku": "117",
+  "_title_source": "Vino Leonia Pomino rose Mill spumante DOC 2012   0,75"
+}

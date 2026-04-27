@@ -1,0 +1,44 @@
+{
+  "name_original": "Emozione Vino rosso Barbera d'Asti Docg 2016 0,75",
+  "name_ru": "Емоцьоне Вино Россо Барбера Д'асти Докг 2016",
+  "producer": "Emozione",
+  "country": "Италия",
+  "region": "Асти, Пьемонт",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Barbera"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<2 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "без выдержки или до 12 месяцев",
+  "tasting_notes": {
+    "appearance": "рубиново-фиолетовое",
+    "nose": "черная вишня, слива, фиалка",
+    "palate": "сочное, высокая кислотность, мягкие танины, ягоды",
+    "finish": "чистое, фруктовое"
+  },
+  "vineyards": "холмы Монферрато",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Асти, Пьемонт (Италия). Главный сорт — Barbera.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Barbera",
+    "Асти"
+  ],
+  "image_search_query": "Emozione Vino rosso Barbera d'Asti Docg 2016 wine bottle",
+  "_id": 184,
+  "_sku": "450",
+  "_title_source": "Emozione Vino rosso Barbera d'Asti Docg 2016 0,75"
+}

@@ -1,0 +1,43 @@
+{
+  "name_original": "11146 Villa Maria Private Bin Riesling blanc вино 0.75 л",
+  "name_ru": "11146 Вилла Марья Привате Бин Рьеслинг Бланк Вино",
+  "producer": "Villa Maria Estate",
+  "country": "Новая Зеландия",
+  "region": "Мальборо",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Riesling"
+  ],
+  "alcohol_percent": 12.0,
+  "serving_temperature_c": {
+    "min": 8,
+    "max": 10
+  },
+  "sugar_content": "dry (<5 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "бледно-жёлтое с зелёными отблесками",
+    "nose": "цитрус, персик, бензин, минерал",
+    "palate": "хрустящее, яркая кислотность, минеральное",
+    "finish": "долгое, минеральное"
+  },
+  "vineyards": "Мальборо, Новая Зеландия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Один из старейших и наиболее узнаваемых производителей Новой Зеландии, основан в 1961 году.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Новая Зеландия",
+    "Riesling"
+  ],
+  "image_search_query": "11146 Villa Maria Private Bin Riesling blanc   л wine bottle",
+  "_id": 692,
+  "_sku": "022306049922",
+  "_title_source": "11146 Villa Maria Private Bin Riesling blanc вино 0.75 л"
+}

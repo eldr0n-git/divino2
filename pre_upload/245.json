@@ -1,0 +1,43 @@
+{
+  "name_original": "Etna Freudo di Mezzo Rosso DOC 2015 0,75",
+  "name_ru": "Етна Фрэдо Ди Меццо Россо Док 2015",
+  "producer": "Etna",
+  "country": "Италия",
+  "region": "Этна, Сицилия",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Nerello Mascalese",
+    "Nerello Cappuccio (красные)"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "12–24 месяца в бочках",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "вулканические склоны Этны, пепельные почвы",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Этна, Сицилия (Италия). ",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Этна"
+  ],
+  "image_search_query": "Etna Freudo di Mezzo Rosso DOC 2015 wine bottle",
+  "_id": 186,
+  "_sku": "245",
+  "_title_source": "Etna Freudo di Mezzo Rosso DOC 2015 0,75"
+}

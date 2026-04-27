@@ -1,0 +1,45 @@
+{
+  "name_original": "Puglia Rosso Igt Passito 2016 0,75",
+  "name_ru": "Пульья Россо Игт Пассито 2016",
+  "producer": "Puglia",
+  "country": "Италия",
+  "region": "Апулия",
+  "wine_style": "сладкое белое (пассито)",
+  "grape_varieties": [
+    "Passito"
+  ],
+  "alcohol_percent": 14.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 14
+  },
+  "sugar_content": "sweet (>60 г/л)",
+  "production_method": "Апассименто (dried grapes): виноград подвяливают 3–4 месяца, затем прессуют и ферментируют",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "янтарно-золотистое",
+    "nose": "абрикос, инжир, мёд, сухофрукты, цветы",
+    "palate": "насыщенное, сладкое, маслянистое",
+    "finish": "очень долгое"
+  },
+  "vineyards": "равнины юга Италии",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Апулия (Италия). Главный сорт — Passito.",
+  "tags": [
+    "красное вино",
+    "белое вино",
+    "сладкое вино",
+    "Италия",
+    "Passito",
+    "Апулия"
+  ],
+  "image_search_query": "Puglia Rosso Igt Passito 2016 wine bottle",
+  "_id": 275,
+  "_sku": "185",
+  "_title_source": "Puglia Rosso Igt Passito 2016 0,75"
+}

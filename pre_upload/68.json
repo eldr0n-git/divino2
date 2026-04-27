@@ -1,0 +1,42 @@
+{
+  "name_original": "Aglianico Beneventano 2014 красное 0,75",
+  "name_ru": "Алььянико Беневентано 2014 Красное",
+  "producer": "Aglianico",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Aglianico"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<2 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "тёмно-рубиновое",
+    "nose": "черная вишня, смола, табак, специи",
+    "palate": "полнотелое, мощные танины, высокая кислотность, черные ягоды",
+    "finish": "долгое, минеральное"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Aglianico"
+  ],
+  "image_search_query": "Aglianico Beneventano 2014 красное wine bottle",
+  "_id": 395,
+  "_sku": "68",
+  "_title_source": "Aglianico Beneventano 2014 красное 0,75"
+}

@@ -1,0 +1,47 @@
+{
+  "name_original": "Hoya de Cadenas cava brut rosado 0.75 розовое",
+  "name_ru": "Оиа Де Каденас Кава Брут Росадо",
+  "producer": "Hoya de Cadenas (Grupo Covinca)",
+  "country": "Испания",
+  "region": "Утьель-Рекена, Валенсия",
+  "wine_style": "игристое белое сухое (metodo tradicional)",
+  "grape_varieties": [
+    "Macabeo",
+    "Xarel·lo",
+    "Parellada"
+  ],
+  "alcohol_percent": 11.5,
+  "serving_temperature_c": {
+    "min": 6,
+    "max": 8
+  },
+  "sugar_content": "brut (<12 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "минимум 9 месяцев на осадке (15 для Reserva)",
+  "tasting_notes": {
+    "appearance": "бледно-соломенное",
+    "nose": "зелёное яблоко, лимон, белые цветы, свежий хлеб",
+    "palate": "свежее, хрустящее, игристое",
+    "finish": "среднее, чистое"
+  },
+  "vineyards": "Пенедес, известняковые почвы",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Входит в кооператив Covinca, один из лидеров DO Utiel-Requena.",
+  "tags": [
+    "белое вино",
+    "игристое вино",
+    "сухое вино",
+    "Испания",
+    "Cava",
+    "Кава (Пенедес"
+  ],
+  "image_search_query": "Hoya de Cadenas cava brut rosado  розовое wine bottle",
+  "_id": 221,
+  "_sku": "484",
+  "_title_source": "Hoya de Cadenas cava brut rosado 0.75 розовое"
+}

@@ -1,0 +1,46 @@
+{
+  "name_original": "Verdicchio dei Castelli di Jesi Classico Riserva DOCG 2014 0,75",
+  "name_ru": "Вердикчьо Дэй Кастелли Ди Йеси Классико Рисерва Докг 2014",
+  "producer": "Verdicchio",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Verdicchio"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "соломенно-жёлтое",
+    "nose": "яблоко, цитрус, миндаль, ваниль, кедр, дуб",
+    "palate": "свежее, хрустящее, с дубовыми оттенками",
+    "finish": "долгое, с нотами специй и дуба"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Verdicchio.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Италия",
+    "Verdicchio",
+    "Тоскана",
+    "Резерва",
+    "Classico"
+  ],
+  "image_search_query": "Verdicchio dei Castelli di Jesi Classico Riserva DOCG 2014 wine bottle",
+  "_id": 324,
+  "_sku": "253",
+  "_title_source": "Verdicchio dei Castelli di Jesi Classico Riserva DOCG 2014 0,75"
+}

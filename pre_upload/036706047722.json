@@ -1,0 +1,41 @@
+{
+  "name_original": "Шамп. Louis Roederer Brut Rose Vintage/ЛуиРодерерБрют РозеВинтаж 0,75 роз.сух.2010",
+  "name_ru": "Шамп. Лоуис Рёдерер Брут Росе Винтадже/луиродерербрют Розевинтаж",
+  "producer": "Louis Roederer",
+  "country": "Франция",
+  "region": "Шампань (Реймс)",
+  "wine_style": "сухое розовое",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "brut (<12 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "Шампань (Реймс), Франция",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Один из немногих независимых домов Шампани. Создатели Кристаля.",
+  "tags": [
+    "розовое вино",
+    "игристое вино"
+  ],
+  "image_search_query": "Шамп. Louis Roederer Brut Rose Vintage/ЛуиРодерерБрют РозеВинтаж  роз.сух.2010 wine bottle",
+  "_id": 816,
+  "_sku": "036706047722",
+  "_title_source": "Шамп. Louis Roederer Brut Rose Vintage/ЛуиРодерерБрют РозеВинтаж 0,75 роз.сух.2010"
+}

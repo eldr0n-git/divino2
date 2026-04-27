@@ -1,0 +1,45 @@
+{
+  "name_original": "Raiza Crianza Tempranillo Rioja 0.75 красное сухое",
+  "name_ru": "Раица Крьянца Темпранилло Рьойа",
+  "producer": "Bodega Bodegas Raíza",
+  "country": "Испания",
+  "region": "Риоха",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Tempranillo"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Crianza: 12 мес бочка; Reserva: 12+ мес бочка + 12 мес бутылка; Gran Reserva: 18+ мес бочка",
+  "tasting_notes": {
+    "appearance": "рубиново-гранатовое",
+    "nose": "черная вишня, ваниль, кожа, табак",
+    "palate": "средней полноты, элегантное",
+    "finish": "долгое, с нотами дуба"
+  },
+  "vineyards": "долина реки Эбро",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Риохская бодега, работающая с Tempranillo.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Испания",
+    "Tempranillo",
+    "Риоха",
+    "Крианса"
+  ],
+  "image_search_query": "Raiza Crianza Tempranillo Rioja  красное сухое wine bottle",
+  "_id": 277,
+  "_sku": "500",
+  "_title_source": "Raiza Crianza Tempranillo Rioja 0.75 красное сухое"
+}

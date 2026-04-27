@@ -1,0 +1,44 @@
+{
+  "name_original": "Guardia dei Mori Bianco Vermentino IGT 0,75",
+  "name_ru": "Гуардья Дэй Мори Бьянко Верментино Игт",
+  "producer": "Guardia",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Vermentino"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "соломенно-жёлтое с зелёными отблесками",
+    "nose": "цитрус, белые цветы, персик, миндаль",
+    "palate": "свежее, минеральное, лёгкая горчинка в финале",
+    "finish": "чистое, минеральное"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Vermentino.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Италия",
+    "Vermentino",
+    "Тоскана"
+  ],
+  "image_search_query": "Guardia dei Mori Bianco Vermentino IGT wine bottle",
+  "_id": 410,
+  "_sku": "420",
+  "_title_source": "Guardia dei Mori Bianco Vermentino IGT 0,75"
+}

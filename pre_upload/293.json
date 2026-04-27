@@ -1,0 +1,44 @@
+{
+  "name_original": "Sur Sur Sicilia Grillo DOC Bianco 2016 0,75",
+  "name_ru": "Сур Сур Сичилья Грилло Док Бьянко 2016",
+  "producer": "Sur",
+  "country": "Италия",
+  "region": "Сицилия",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Grillo"
+  ],
+  "alcohol_percent": 12.5,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "от 6 до 12 месяцев",
+  "tasting_notes": {
+    "appearance": "золотисто-соломенное",
+    "nose": "цитрус, тропические фрукты, белые цветы",
+    "palate": "свежее, минеральное",
+    "finish": "среднее"
+  },
+  "vineyards": "Сицилия, средиземноморский климат",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Сицилия (Италия). Главный сорт — Grillo.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Италия",
+    "Grillo",
+    "Сицилия"
+  ],
+  "image_search_query": "Sur Sur Sicilia Grillo DOC Bianco 2016 wine bottle",
+  "_id": 301,
+  "_sku": "293",
+  "_title_source": "Sur Sur Sicilia Grillo DOC Bianco 2016 0,75"
+}

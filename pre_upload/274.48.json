@@ -1,0 +1,44 @@
+{
+  "name_original": "Ben Rye Passito Di Pantelleria DOC 2015 0.375",
+  "name_ru": "Бен Рие Пассито Ди Пантеллерья Док 2015 0.375",
+  "producer": "Ben",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сладкое белое (пассито)",
+  "grape_varieties": [
+    "Passito"
+  ],
+  "alcohol_percent": 14.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 14
+  },
+  "sugar_content": "sweet (>60 г/л)",
+  "production_method": "Апассименто (dried grapes): виноград подвяливают 3–4 месяца, затем прессуют и ферментируют",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "янтарно-золотистое",
+    "nose": "абрикос, инжир, мёд, сухофрукты, цветы",
+    "palate": "насыщенное, сладкое, маслянистое",
+    "finish": "очень долгое"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Passito.",
+  "tags": [
+    "белое вино",
+    "сладкое вино",
+    "Италия",
+    "Passito",
+    "Тоскана"
+  ],
+  "image_search_query": "Ben Rye Passito Di Pantelleria DOC 2015 wine bottle",
+  "_id": 114,
+  "_sku": "274.48",
+  "_title_source": "Ben Rye Passito Di Pantelleria DOC 2015 0.375"
+}

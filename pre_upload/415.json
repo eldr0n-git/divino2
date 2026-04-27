@@ -1,0 +1,42 @@
+{
+  "name_original": "Bellamico Bianco Falanghina Beneventano 0,75",
+  "name_ru": "Белламико Бьянко Фалангина Беневентано",
+  "producer": "Bellamico (De Martino)",
+  "country": "Италия",
+  "region": "варьируется",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Falanghina"
+  ],
+  "alcohol_percent": 12.5,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "соломенно-жёлтое",
+    "nose": "яблоко, груша, цитрус, белые цветы",
+    "palate": "свежее, фруктовое, хрустящее",
+    "finish": "среднее"
+  },
+  "vineyards": "варьируется, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Линейка итальянских вин различных регионов под брендом Bellamico.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Falanghina"
+  ],
+  "image_search_query": "Bellamico Bianco Falanghina Beneventano wine bottle",
+  "_id": 107,
+  "_sku": "415",
+  "_title_source": "Bellamico Bianco Falanghina Beneventano 0,75"
+}

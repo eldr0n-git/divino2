@@ -1,0 +1,48 @@
+{
+  "name_original": "Blason Rose Perrier Jouet Champagne 0,75",
+  "name_ru": "Бласон Росе Перрьер Йоуэт Чампанье",
+  "producer": "Perrier-Jouët",
+  "country": "Франция",
+  "region": "Шампань (Эперне)",
+  "wine_style": "игристое белое сухое (méthode champenoise)",
+  "grape_varieties": [
+    "Chardonnay",
+    "Pinot Noir",
+    "Pinot Meunier"
+  ],
+  "alcohol_percent": 12.0,
+  "serving_temperature_c": {
+    "min": 6,
+    "max": 8
+  },
+  "sugar_content": "brut (<12 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "минимум 15 месяцев на осадке (36 для миллезимных)",
+  "tasting_notes": {
+    "appearance": "золотисто-соломенное",
+    "nose": "бриошь, тост, цитрус, яблоко, дрожжи",
+    "palate": "кремовое, живое, изысканное",
+    "finish": "долгое, ореховое"
+  },
+  "vineyards": "меловые почвы Шампани",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Дом Шампани основан в 1811 году. Известен Belle Époque с цветочным флаконом в стиле ар-нуво.",
+  "tags": [
+    "белое вино",
+    "розовое вино",
+    "игристое вино",
+    "сухое вино",
+    "Франция",
+    "Champagne",
+    "Шампань"
+  ],
+  "image_search_query": "Blason Rose Perrier Jouet Champagne wine bottle",
+  "_id": 120,
+  "_sku": "353",
+  "_title_source": "Blason Rose Perrier Jouet Champagne 0,75"
+}

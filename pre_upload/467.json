@@ -1,0 +1,47 @@
+{
+  "name_original": "Asolo Prosecco Superiore Spumante Docg 2018 0,75",
+  "name_ru": "Асоло Просекко Суперьоре Спуманте Докг 2018",
+  "producer": "Asolo",
+  "country": "Италия",
+  "region": "Тревизо / Конельяно-Вальдоббьядене, Венето",
+  "wine_style": "игристое белое сухое",
+  "grape_varieties": [
+    "Glera"
+  ],
+  "alcohol_percent": 11.0,
+  "serving_temperature_c": {
+    "min": 6,
+    "max": 8
+  },
+  "sugar_content": "extra dry (12–17 г/л)",
+  "production_method": "Метод Шарма (Charmat): вторичная ферментация в герметичных резервуарах под давлением",
+  "aging": "без выдержки (inox)",
+  "tasting_notes": {
+    "appearance": "бледно-соломенное",
+    "nose": "яблоко, груша, белые цветы, персик",
+    "palate": "лёгкое, свежее, игристое",
+    "finish": "короткое, чистое"
+  },
+  "vineyards": "холмы Тревизо",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Prosecco производится методом Charmat (вторичная ферментация в резервуаре) в отличие от Шампани. DOCG Conegliano-Valdobbiadene — высшая категория Просекко.",
+  "tags": [
+    "белое вино",
+    "розовое вино",
+    "игристое вино",
+    "сухое вино",
+    "Италия",
+    "Prosecco",
+    "Тревизо / Конельяно-Вальдоббьядене",
+    "Superiore"
+  ],
+  "image_search_query": "Asolo Prosecco Superiore Spumante Docg 2018 wine bottle",
+  "_id": 398,
+  "_sku": "467",
+  "_title_source": "Asolo Prosecco Superiore Spumante Docg 2018 0,75"
+}

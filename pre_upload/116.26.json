@@ -1,0 +1,45 @@
+{
+  "name_original": "Leonia Pomino brut Millesimato spumante bianco DOC 2013  1,5",
+  "name_ru": "Леонья Помино Брут Миллесимато Спуманте Бьянко Док 2013 1,5",
+  "producer": "Leonia",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "игристое",
+  "grape_varieties": [
+    "Sangiovese",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 6,
+    "max": 8
+  },
+  "sugar_content": "brut (<12 г/л)",
+  "production_method": "Метод Шарма (Charmat): вторичная ферментация в герметичных резервуарах под давлением",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). ",
+  "tags": [
+    "белое вино",
+    "игристое вино",
+    "Италия",
+    "Тоскана",
+    "магнум 1.5 л"
+  ],
+  "image_search_query": "Leonia Pomino brut Millesimato spumante bianco DOC 2013 wine bottle",
+  "_id": 233,
+  "_sku": "116.26",
+  "_title_source": "Leonia Pomino brut Millesimato spumante bianco DOC 2013  1,5"
+}

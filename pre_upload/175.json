@@ -1,0 +1,41 @@
+{
+  "name_original": "Chianti Corte Medicea Docg 2015 0,75",
+  "name_ru": "Чьянти Корте Медичэа Докг 2015",
+  "producer": "Chianti",
+  "country": "Италия",
+  "region": "Кьянти, Тоскана",
+  "wine_style": "сухое вино",
+  "grape_varieties": [
+    "Sangiovese"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 14,
+    "max": 16
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Classico: минимум 12 месяцев; Riserva: 24 месяца",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистый регион между Флоренцией и Сиеной",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Кьянти, Тоскана (Италия). ",
+  "tags": [
+    "Италия",
+    "Кьянти"
+  ],
+  "image_search_query": "Chianti Corte Medicea Docg 2015 wine bottle",
+  "_id": 150,
+  "_sku": "175",
+  "_title_source": "Chianti Corte Medicea Docg 2015 0,75"
+}

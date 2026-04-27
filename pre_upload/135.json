@@ -1,0 +1,42 @@
+{
+  "name_original": "Vino rosso Morellino di Scansano DOCG 2015 Santa Maria  0,75",
+  "name_ru": "Вино Россо Мореллино Ди Скансано Докг 2015 Санта Марья",
+  "producer": "rosso",
+  "country": "Италия",
+  "region": "Скансано, Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Sangiovese (Morellino)"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Docg: минимум 12 месяцев",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "Маремма Тосканская",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Скансано, Тоскана (Италия). ",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Скансано"
+  ],
+  "image_search_query": "Vino rosso Morellino di Scansano DOCG 2015 Santa Maria wine bottle",
+  "_id": 357,
+  "_sku": "135",
+  "_title_source": "Vino rosso Morellino di Scansano DOCG 2015 Santa Maria  0,75"
+}

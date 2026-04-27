@@ -1,0 +1,42 @@
+{
+  "name_original": "Le Pavone Passito Di Brachetto 0.375",
+  "name_ru": "Ле Павоне Пассито Ди Брачетто 0.375",
+  "producer": "Le",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "сладкое белое (пассито)",
+  "grape_varieties": [
+    "Passito"
+  ],
+  "alcohol_percent": 14.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 14
+  },
+  "sugar_content": "sweet (>60 г/л)",
+  "production_method": "Апассименто (dried grapes): виноград подвяливают 3–4 месяца, затем прессуют и ферментируют",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "янтарно-золотистое",
+    "nose": "абрикос, инжир, мёд, сухофрукты, цветы",
+    "palate": "насыщенное, сладкое, маслянистое",
+    "finish": "очень долгое"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "белое вино",
+    "сладкое вино",
+    "Passito"
+  ],
+  "image_search_query": "Le Pavone Passito Di Brachetto wine bottle",
+  "_id": 231,
+  "_sku": "327",
+  "_title_source": "Le Pavone Passito Di Brachetto 0.375"
+}

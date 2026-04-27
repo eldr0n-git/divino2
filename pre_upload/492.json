@@ -1,0 +1,43 @@
+{
+  "name_original": "Raiza Rioja red Reserva 0.75 белое сухое",
+  "name_ru": "Раица Рьойа Ред Ресерва",
+  "producer": "Bodega Bodegas Raíza",
+  "country": "Испания",
+  "region": "Риоха",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Tempranillo",
+    "Garnacha"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Crianza: 12 мес бочка; Reserva: 12+ мес бочка + 12 мес бутылка; Gran Reserva: 18+ мес бочка",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи, ваниль, кедр, дуб",
+    "palate": "сбалансированное, фруктовое, с дубовыми оттенками",
+    "finish": "долгое, с нотами специй и дуба"
+  },
+  "vineyards": "долина реки Эбро",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Риохская бодега, работающая с Tempranillo.",
+  "tags": [
+    "красное вино",
+    "Испания",
+    "Риоха"
+  ],
+  "image_search_query": "Raiza Rioja red Reserva  белое сухое wine bottle",
+  "_id": 278,
+  "_sku": "492",
+  "_title_source": "Raiza Rioja red Reserva 0.75 белое сухое"
+}

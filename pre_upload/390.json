@@ -1,0 +1,44 @@
+{
+  "name_original": "Schioppettino Doc Colli Orientali 2016 0,75",
+  "name_ru": "Щьоппеттино Док Колли Орьентали 2016",
+  "producer": "Schioppettino",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Schioppettino"
+  ],
+  "alcohol_percent": 12.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<2 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "вишня, черный перец, специи",
+    "palate": "изысканное, пикантное",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Schioppettino.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Schioppettino",
+    "Тоскана"
+  ],
+  "image_search_query": "Schioppettino Doc Colli Orientali 2016 wine bottle",
+  "_id": 290,
+  "_sku": "390",
+  "_title_source": "Schioppettino Doc Colli Orientali 2016 0,75"
+}

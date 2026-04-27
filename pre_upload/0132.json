@@ -1,0 +1,41 @@
+{
+  "name_original": "Brunello di Montalcino DOCG 2011 Castelgiocondo  0,75",
+  "name_ru": "Брунелло Ди Монталчино Докг 2011 Кастелгьокондо",
+  "producer": "Brunello",
+  "country": "Италия",
+  "region": "Монтальчино, Тоскана",
+  "wine_style": "сухое вино",
+  "grape_varieties": [
+    "Sangiovese Grosso (Brunello)"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 14,
+    "max": 16
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "минимум 5 лет от урожая (6 для Riserva)",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмы Монтальчино, глинисто-известняковые почвы",
+  "ratings": {
+    "wine_spectator": 92,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Brunello di Montalcino — одно из самых долгоживущих красных вин мира. Выдерживается минимум 5 лет; некоторые Riserva хранятся 50+ лет.",
+  "tags": [
+    "Италия",
+    "Монтальчино"
+  ],
+  "image_search_query": "Brunello di Montalcino DOCG 2011 Castelgiocondo wine bottle",
+  "_id": 124,
+  "_sku": "0132",
+  "_title_source": "Brunello di Montalcino DOCG 2011 Castelgiocondo  0,75"
+}

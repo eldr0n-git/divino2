@@ -1,0 +1,40 @@
+{
+  "name_original": "Konigs-Cuvee Barrique trocken 0,75 красное сухое",
+  "name_ru": "Конигс-кувее Баррике Трокен",
+  "producer": "Konigs-Cuvee",
+  "country": "Германия",
+  "region": "Германия (Рейн / Пфальц)",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Ферментация и/или выдержка в новых малых французских бочках (баррик, 225 л)",
+  "aging": "12–18 месяцев в малых французских баррик-бочках (225 л)",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи, ваниль, кедр, дуб",
+    "palate": "сбалансированное, фруктовое, с дубовыми оттенками",
+    "finish": "долгое, с нотами специй и дуба"
+  },
+  "vineyards": "Германия (Рейн / Пфальц), Германия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "Германия"
+  ],
+  "image_search_query": "Konigs-Cuvee Barrique trocken  красное сухое wine bottle",
+  "_id": 226,
+  "_sku": "520",
+  "_title_source": "Konigs-Cuvee Barrique trocken 0,75 красное сухое"
+}

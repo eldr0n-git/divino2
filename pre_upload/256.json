@@ -1,0 +1,40 @@
+{
+  "name_original": "Giuseppe Galliano Brut nature VSQ 2012 0,75",
+  "name_ru": "Джиусеппе Галльяно Брут Натуре Вск 2012",
+  "producer": "Galliano (Federico/Giuseppe/Giovanni)",
+  "country": "Италия",
+  "region": "Пьемонт",
+  "wine_style": "игристое",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 6,
+    "max": 8
+  },
+  "sugar_content": "brut nature (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "Пьемонт, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Несколько поколений семьи Гальяно производят метод классик в Пьемонте.",
+  "tags": [
+    "игристое вино"
+  ],
+  "image_search_query": "Giuseppe Galliano Brut nature VSQ 2012 wine bottle",
+  "_id": 211,
+  "_sku": "256",
+  "_title_source": "Giuseppe Galliano Brut nature VSQ 2012 0,75"
+}

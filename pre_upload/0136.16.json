@@ -1,0 +1,44 @@
+{
+  "name_original": "Vino Pomino Vinsanto DOC 2008   0,5",
+  "name_ru": "Вино Помино Винсанто Док 2008 0,5",
+  "producer": "Pomino",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сладкое белое (Vin Santo)",
+  "grape_varieties": [
+    "Vinsanto"
+  ],
+  "alcohol_percent": 15.0,
+  "serving_temperature_c": {
+    "min": 12,
+    "max": 14
+  },
+  "sugar_content": "sweet (>80 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "янтарное",
+    "nose": "орехи, мёд, сухофрукты, ваниль, карамель",
+    "palate": "плотное, сладкое, окисленное",
+    "finish": "очень долгое"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Vinsanto.",
+  "tags": [
+    "белое вино",
+    "сладкое вино",
+    "Италия",
+    "Vinsanto",
+    "Тоскана"
+  ],
+  "image_search_query": "Vino Pomino Vinsanto DOC 2008 wine bottle",
+  "_id": 342,
+  "_sku": "0136.16",
+  "_title_source": "Vino Pomino Vinsanto DOC 2008   0,5"
+}

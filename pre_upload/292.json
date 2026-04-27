@@ -1,0 +1,43 @@
+{
+  "name_original": "Guado al Tasso Bolgheri Superiore DOC 2014 0,75",
+  "name_ru": "Гуадо Ал Тассо Болгери Суперьоре Док 2014",
+  "producer": "Guado",
+  "country": "Италия",
+  "region": "Больгери, Тоскана",
+  "wine_style": "сухое вино",
+  "grape_varieties": [
+    "Cabernet Sauvignon",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 14,
+    "max": 16
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "от 12 до 24 месяцев в дубовых бочках",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "прибрежный регион Маремма",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Больгери, Тоскана (Италия). ",
+  "tags": [
+    "Италия",
+    "Больгери",
+    "Superiore"
+  ],
+  "image_search_query": "Guado al Tasso Bolgheri Superiore DOC 2014 wine bottle",
+  "_id": 216,
+  "_sku": "292",
+  "_title_source": "Guado al Tasso Bolgheri Superiore DOC 2014 0,75"
+}

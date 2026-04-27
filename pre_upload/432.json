@@ -1,0 +1,40 @@
+{
+  "name_original": "Vino bianco Beneficio 2018 0,75",
+  "name_ru": "Вино Бьянко Бенефикьо 2018",
+  "producer": "bianco",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "белое вино"
+  ],
+  "image_search_query": "Vino bianco Beneficio 2018 wine bottle",
+  "_id": 329,
+  "_sku": "432",
+  "_title_source": "Vino bianco Beneficio 2018 0,75"
+}

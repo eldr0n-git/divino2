@@ -1,0 +1,38 @@
+{
+  "name_original": "Favola  2015 белое 0,75",
+  "name_ru": "Фавола 2015 Белое",
+  "producer": "Favola",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [],
+  "image_search_query": "Favola  2015 белое wine bottle",
+  "_id": 190,
+  "_sku": "54",
+  "_title_source": "Favola  2015 белое 0,75"
+}

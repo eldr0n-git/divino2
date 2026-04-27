@@ -1,0 +1,41 @@
+{
+  "name_original": "Вино Joseph Drouhin, Petit Chablis / Пти Шабли Жозеф Друен 0,75 2015",
+  "name_ru": "Вино Йосеф Друин, Петит Чаблис / Пти Шабли Жозеф Друен",
+  "producer": "Joseph Drouhin",
+  "country": "Франция",
+  "region": "Бургундия (Бон)",
+  "wine_style": "сухое вино",
+  "grape_varieties": [
+    "Chardonnay"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 14,
+    "max": 16
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "нержавеющая сталь, без дуба",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "известняково-глинистые почвы кимериджа",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Знаменитый бургундский негоциант и виноградарь, основан в 1880 году.",
+  "tags": [
+    "Франция",
+    "Шабли"
+  ],
+  "image_search_query": "Joseph Drouhin, Petit Chablis / Пти Шабли Жозеф Друен  2015 wine bottle",
+  "_id": 734,
+  "_sku": "036706046522",
+  "_title_source": "Вино Joseph Drouhin, Petit Chablis / Пти Шабли Жозеф Друен 0,75 2015"
+}

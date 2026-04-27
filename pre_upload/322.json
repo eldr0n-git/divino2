@@ -1,0 +1,44 @@
+{
+  "name_original": "Chiaranda Chardonnay Contessa Entellina DOC 2015 0,75",
+  "name_ru": "Чьяранда Чардоннаи Контесса Ентеллина Док 2015",
+  "producer": "Chiaranda",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Chardonnay"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "золотисто-жёлтое",
+    "nose": "яблоко, груша, цитрус, дуб, ваниль",
+    "palate": "округлое, маслянистое или хрустящее в зависимости от выдержки",
+    "finish": "долгое"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Chardonnay.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Италия",
+    "Chardonnay",
+    "Тоскана"
+  ],
+  "image_search_query": "Chiaranda Chardonnay Contessa Entellina DOC 2015 wine bottle",
+  "_id": 153,
+  "_sku": "322",
+  "_title_source": "Chiaranda Chardonnay Contessa Entellina DOC 2015 0,75"
+}

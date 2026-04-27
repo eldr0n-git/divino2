@@ -1,0 +1,43 @@
+{
+  "name_original": "Вино Ravenswood, Vintners Blend Chardonnay 13.5% (США, бел. сух. 0,75)",
+  "name_ru": "Вино Равенсвоод, Винтнерс Бленд Чардоннаи 13.5% (сша, Бел. Сух.",
+  "producer": "Ravenswood Winery",
+  "country": "США",
+  "region": "Соному, Калифорния",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Chardonnay"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "золотисто-жёлтое",
+    "nose": "яблоко, груша, цитрус, дуб, ваниль",
+    "palate": "округлое, маслянистое или хрустящее в зависимости от выдержки",
+    "finish": "долгое"
+  },
+  "vineyards": "Соному, Калифорния, США",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Знаменитый производитель Zinfandel в Калифорнии, девиз: No Wimpy Wines.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "ЮАР",
+    "Chardonnay"
+  ],
+  "image_search_query": "Ravenswood, Vintners Blend Chardonnay 13.5% (США, бел. сух. ) wine bottle",
+  "_id": 738,
+  "_sku": "036706023022",
+  "_title_source": "Вино Ravenswood, Vintners Blend Chardonnay 13.5% (США, бел. сух. 0,75)"
+}

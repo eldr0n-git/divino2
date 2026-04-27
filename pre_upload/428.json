@@ -1,0 +1,43 @@
+{
+  "name_original": "Vino Rosso Toscana Igt 2015 Villa Antinori 0.375",
+  "name_ru": "Вино Россо Тоскана Игт 2015 Вилла Антинори 0.375",
+  "producer": "Marchesi Antinori",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Sangiovese",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Одна из старейших винодельческих семей Тосканы, основана в XIV веке. Пионеры движения Super Tuscans.",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Тоскана"
+  ],
+  "image_search_query": "Vino Rosso Toscana Igt 2015 Villa Antinori wine bottle",
+  "_id": 441,
+  "_sku": "428",
+  "_title_source": "Vino Rosso Toscana Igt 2015 Villa Antinori 0.375"
+}

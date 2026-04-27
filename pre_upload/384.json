@@ -1,0 +1,44 @@
+{
+  "name_original": "Montepulciano d'Abruzzo Doc Vezzani 2016 Vino rosso 0,75",
+  "name_ru": "Монтепулкьяно Д'абруццо Док Веццани 2016 Вино Россо",
+  "producer": "Montepulciano",
+  "country": "Италия",
+  "region": "Абруццо",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Montepulciano"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "тёмно-рубиновое",
+    "nose": "черная вишня, слива, фиалка",
+    "palate": "насыщенное, мягкие танины",
+    "finish": "долгое"
+  },
+  "vineyards": "Центральная Италия, предгорья Апеннин",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Абруццо (Италия). Главный сорт — Montepulciano.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Montepulciano",
+    "Абруццо"
+  ],
+  "image_search_query": "Montepulciano d'Abruzzo Doc Vezzani 2016 Vino rosso wine bottle",
+  "_id": 249,
+  "_sku": "384",
+  "_title_source": "Montepulciano d'Abruzzo Doc Vezzani 2016 Vino rosso 0,75"
+}

@@ -1,0 +1,43 @@
+{
+  "name_original": "Вино Ravenswood, Vintners Blend Cabernet Sauvignon 13.5% (США, кр. сух. 0,75)",
+  "name_ru": "Вино Равенсвоод, Винтнерс Бленд Кабернет Совиньон 13.5% (сша, Кр. Сух.",
+  "producer": "Ravenswood Winery",
+  "country": "США",
+  "region": "Соному, Калифорния",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Cabernet sauvignon"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "тёмно-рубиновое",
+    "nose": "смородина, черника, кедр, зелёный перец",
+    "palate": "полнотелое, структурированные танины",
+    "finish": "долгое, с нотами специй"
+  },
+  "vineyards": "Соному, Калифорния, США",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Знаменитый производитель Zinfandel в Калифорнии, девиз: No Wimpy Wines.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "ЮАР",
+    "Cabernet sauvignon"
+  ],
+  "image_search_query": "Ravenswood, Vintners Blend Cabernet Sauvignon 13.5% (США, кр. сух. ) wine bottle",
+  "_id": 737,
+  "_sku": "036706019822",
+  "_title_source": "Вино Ravenswood, Vintners Blend Cabernet Sauvignon 13.5% (США, кр. сух. 0,75)"
+}

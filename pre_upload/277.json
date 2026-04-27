@@ -1,0 +1,44 @@
+{
+  "name_original": "La Fuga Chardonnay Contessa Entellina DOC 2016 0,75",
+  "name_ru": "Ла Фуга Чардоннаи Контесса Ентеллина Док 2016",
+  "producer": "La",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Chardonnay"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "золотисто-жёлтое",
+    "nose": "яблоко, груша, цитрус, дуб, ваниль",
+    "palate": "округлое, маслянистое или хрустящее в зависимости от выдержки",
+    "finish": "долгое"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Chardonnay.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Италия",
+    "Chardonnay",
+    "Тоскана"
+  ],
+  "image_search_query": "La Fuga Chardonnay Contessa Entellina DOC 2016 wine bottle",
+  "_id": 228,
+  "_sku": "277",
+  "_title_source": "La Fuga Chardonnay Contessa Entellina DOC 2016 0,75"
+}

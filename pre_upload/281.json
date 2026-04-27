@@ -1,0 +1,44 @@
+{
+  "name_original": "Lumera Sicilia Rosato DOC 2016 0,75",
+  "name_ru": "Лумера Сичилья Росато Док 2016",
+  "producer": "Lumera",
+  "country": "Италия",
+  "region": "Сицилия",
+  "wine_style": "сухое розовое",
+  "grape_varieties": [
+    "Rosato"
+  ],
+  "alcohol_percent": 12.5,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<5 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "от 6 до 12 месяцев",
+  "tasting_notes": {
+    "appearance": "розово-лососёвое",
+    "nose": "клубника, малина, белые цветы",
+    "palate": "свежее, лёгкое, фруктовое",
+    "finish": "короткое, чистое"
+  },
+  "vineyards": "Сицилия, средиземноморский климат",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Сицилия (Италия). Главный сорт — Rosato.",
+  "tags": [
+    "розовое вино",
+    "сухое вино",
+    "Италия",
+    "Rosato",
+    "Сицилия"
+  ],
+  "image_search_query": "Lumera Sicilia Rosato DOC 2016 wine bottle",
+  "_id": 237,
+  "_sku": "281",
+  "_title_source": "Lumera Sicilia Rosato DOC 2016 0,75"
+}

@@ -1,0 +1,42 @@
+{
+  "name_original": "Вино Jose Pariente, Sauvignon Blanс / Совиньон Блан, Хосе Париенте 0,75",
+  "name_ru": "Вино Йосе Парьенте, Совиньон Бланс / Совиньон Блан, Хосе Париенте",
+  "producer": "José Pariente",
+  "country": "Испания",
+  "region": "Руэда",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Sauvignon blanc"
+  ],
+  "alcohol_percent": 12.5,
+  "serving_temperature_c": {
+    "min": 8,
+    "max": 10
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "бледно-жёлтое с зелёными отблесками",
+    "nose": "крыжовник, цитрус, трава, белая смородина, бузина",
+    "palate": "свежее, яркая кислотность, ароматное",
+    "finish": "чистое, длинное"
+  },
+  "vineyards": "Руэда, Испания",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Семейная винодельня в Руэде, специализируется на сортах Verdejo и Sauvignon Blanc.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Sauvignon blanc"
+  ],
+  "image_search_query": "Jose Pariente, Sauvignon Blanс / Совиньон Блан, Хосе Париенте wine bottle",
+  "_id": 733,
+  "_sku": "036706037922",
+  "_title_source": "Вино Jose Pariente, Sauvignon Blanс / Совиньон Блан, Хосе Париенте 0,75"
+}

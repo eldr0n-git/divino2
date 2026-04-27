@@ -1,0 +1,47 @@
+{
+  "name_original": "Belle Epoque Perrier Jouet Champagne 2011 0,75",
+  "name_ru": "Белле Епоке Перрьер Йоуэт Чампанье 2011",
+  "producer": "Perrier-Jouët",
+  "country": "Франция",
+  "region": "Шампань (Эперне)",
+  "wine_style": "игристое",
+  "grape_varieties": [
+    "Chardonnay",
+    "Pinot Noir",
+    "Pinot Meunier"
+  ],
+  "alcohol_percent": 12.0,
+  "serving_temperature_c": {
+    "min": 6,
+    "max": 8
+  },
+  "sugar_content": "brut (<12 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "минимум 15 месяцев на осадке (36 для миллезимных)",
+  "tasting_notes": {
+    "appearance": "золотисто-соломенное",
+    "nose": "бриошь, тост, цитрус, яблоко, дрожжи",
+    "palate": "кремовое, живое, изысканное",
+    "finish": "долгое, ореховое"
+  },
+  "vineyards": "меловые почвы Шампани",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Дом Шампани основан в 1811 году. Известен Belle Époque с цветочным флаконом в стиле ар-нуво.",
+  "tags": [
+    "белое вино",
+    "игристое вино",
+    "сухое вино",
+    "Франция",
+    "Champagne",
+    "Шампань"
+  ],
+  "image_search_query": "Belle Epoque Perrier Jouet Champagne 2011 wine bottle",
+  "_id": 113,
+  "_sku": "331",
+  "_title_source": "Belle Epoque Perrier Jouet Champagne 2011 0,75"
+}

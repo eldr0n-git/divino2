@@ -1,0 +1,41 @@
+{
+  "name_original": "Jadot Macon Villages белое сухое вино",
+  "name_ru": "Йадот Макон Вилладжес Белое Сухое Вино",
+  "producer": "Louis Jadot",
+  "country": "Франция",
+  "region": "Бургундия (Бон)",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Chardonnay"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "без выдержки в дубе или кратко",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "известняковые почвы",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Крупнейший негоциант Бургундии, основан в 1859 году.",
+  "tags": [
+    "Франция",
+    "Макон"
+  ],
+  "image_search_query": "Jadot Macon Villages белое сухое wine bottle",
+  "_id": 825,
+  "_sku": "019206065922",
+  "_title_source": "Jadot Macon Villages белое сухое вино"
+}

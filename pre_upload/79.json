@@ -1,0 +1,42 @@
+{
+  "name_original": "Falanghina Beneventano 2015 белое 0,75",
+  "name_ru": "Фалангина Беневентано 2015 Белое",
+  "producer": "Falanghina",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Falanghina"
+  ],
+  "alcohol_percent": 12.5,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "соломенно-жёлтое",
+    "nose": "яблоко, груша, цитрус, белые цветы",
+    "palate": "свежее, фруктовое, хрустящее",
+    "finish": "среднее"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Falanghina"
+  ],
+  "image_search_query": "Falanghina Beneventano 2015 белое wine bottle",
+  "_id": 188,
+  "_sku": "79",
+  "_title_source": "Falanghina Beneventano 2015 белое 0,75"
+}

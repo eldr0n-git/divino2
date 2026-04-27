@@ -1,0 +1,42 @@
+{
+  "name_original": "Вино Te Muna Road Sauvignon Blan,Craggy Range/Те Муна Роуд Совиньон Блан,Крэгги ,0.75",
+  "name_ru": "Вино Те Муна Роад Совиньон Блан,краджи Рандже/те Муна Роуд Совиньон Блан,крэгги ,",
+  "producer": "Craggy Range",
+  "country": "Новая Зеландия",
+  "region": "Хокс Бэй / Мартинборо",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Sauvignon blanc"
+  ],
+  "alcohol_percent": 12.5,
+  "serving_temperature_c": {
+    "min": 8,
+    "max": 10
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "бледно-жёлтое с зелёными отблесками",
+    "nose": "крыжовник, цитрус, трава, белая смородина, бузина",
+    "palate": "свежее, яркая кислотность, ароматное",
+    "finish": "чистое, длинное"
+  },
+  "vineyards": "Хокс Бэй / Мартинборо, Новая Зеландия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Элитный производитель, специализируется на терруарных винах.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Sauvignon blanc"
+  ],
+  "image_search_query": "Te Muna Road Sauvignon Blan,Craggy Range/Те Муна Роуд Совиньон Блан,Крэгги , wine bottle",
+  "_id": 740,
+  "_sku": "036706014922",
+  "_title_source": "Вино Te Muna Road Sauvignon Blan,Craggy Range/Те Муна Роуд Совиньон Блан,Крэгги ,0.75"
+}

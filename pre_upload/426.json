@@ -1,0 +1,44 @@
+{
+  "name_original": "Bellamico rosso Nero d'Avola Sicilia DOC 2017 0,75",
+  "name_ru": "Белламико Россо Неро Д'авола Сичилья Док 2017",
+  "producer": "Bellamico (De Martino)",
+  "country": "Италия",
+  "region": "варьируется",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Nero d'avola"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "от 6 до 12 месяцев",
+  "tasting_notes": {
+    "appearance": "тёмно-рубиновое",
+    "nose": "черная слива, сухофрукты, специи",
+    "palate": "насыщенное, бархатистые танины",
+    "finish": "долгое, пряное"
+  },
+  "vineyards": "Сицилия, средиземноморский климат",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Линейка итальянских вин различных регионов под брендом Bellamico.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Nero d'avola",
+    "Сицилия"
+  ],
+  "image_search_query": "Bellamico rosso Nero d'Avola Sicilia DOC 2017 wine bottle",
+  "_id": 111,
+  "_sku": "426",
+  "_title_source": "Bellamico rosso Nero d'Avola Sicilia DOC 2017 0,75"
+}

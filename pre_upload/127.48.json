@@ -1,0 +1,47 @@
+{
+  "name_original": "Amarone classico DOCG 2011 Costasera 0,375 rosso",
+  "name_ru": "Амароне Классико Докг 2011 Костасера 0,375 Россо",
+  "producer": "Amarone",
+  "country": "Италия",
+  "region": "Вальполичелла Классика, Венето",
+  "wine_style": "сухое красное (из подвяленного винограда — апассименто)",
+  "grape_varieties": [
+    "Corvina Veronese",
+    "Corvinone",
+    "Rondinella"
+  ],
+  "alcohol_percent": 16.0,
+  "serving_temperature_c": {
+    "min": 18,
+    "max": 20
+  },
+  "sugar_content": "dry (<5 г/л)",
+  "production_method": "Апассименто (dried grapes): виноград подвяливают 3–4 месяца, затем прессуют и ферментируют",
+  "aging": "минимум 2 года в дубовых бочках (3 для Riserva)",
+  "tasting_notes": {
+    "appearance": "тёмно-гранатовое",
+    "nose": "вишня в шоколаде, чернослив, инжир, кофе, специи, кожа",
+    "palate": "мощное, бархатное, тёплое, многослойное",
+    "finish": "очень долгое, тёплое"
+  },
+  "vineyards": "холмы к северу от Вероны, вулканические почвы",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": 4.4,
+    "james_suckling": null
+  },
+  "interesting_facts": "Амароне — уникальное итальянское вино из подвяленного винограда (апассименто): ягоды сушат 3–4 месяца, что концентрирует сахар и вкус. Итоговое вино — одно из самых мощных в мире (15–17°).",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Amarone",
+    "Вальполичелла Классика",
+    "Classico"
+  ],
+  "image_search_query": "Amarone classico DOCG 2011 Costasera  rosso wine bottle",
+  "_id": 77,
+  "_sku": "127.48",
+  "_title_source": "Amarone classico DOCG 2011 Costasera 0,375 rosso"
+}

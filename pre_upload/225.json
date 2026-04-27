@@ -1,0 +1,40 @@
+{
+  "name_original": "Bala Perdida red oaked 2016 0,75",
+  "name_ru": "Бала Пердида Ред Оакед 2016",
+  "producer": "Bodegas La Bala Perdida",
+  "country": "Испания",
+  "region": "Ла Манча",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "Ла Манча, Испания",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Испанская бодега, производящая выдержанные красные вина.",
+  "tags": [
+    "красное вино"
+  ],
+  "image_search_query": "Bala Perdida red oaked 2016 wine bottle",
+  "_id": 90,
+  "_sku": "225",
+  "_title_source": "Bala Perdida red oaked 2016 0,75"
+}

@@ -1,0 +1,45 @@
+{
+  "name_original": "Concerto Grosso Gewurztraminer Alto Adige DOC 2016",
+  "name_ru": "Кончэрто Гроссо Джевурцтраминер Алто Адидже Док 2016",
+  "producer": "Concerto",
+  "country": "Италия",
+  "region": "Альто Адидже (Судтироль)",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Gewurztraminer"
+  ],
+  "alcohol_percent": 14.0,
+  "serving_temperature_c": {
+    "min": 8,
+    "max": 10
+  },
+  "sugar_content": "dry (<5 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "золотисто-жёлтое",
+    "nose": "личи, роза, имбирь, мускат",
+    "palate": "ароматное, маслянистое, пряное",
+    "finish": "долгое, пряное"
+  },
+  "vineyards": "альпийские склоны",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Альто Адидже (Судтироль) (Италия). Главный сорт — Gewurztraminer.",
+  "tags": [
+    "красное вино",
+    "белое вино",
+    "сухое вино",
+    "Италия",
+    "Gewurztraminer",
+    "Альто Адидже (Судтироль)"
+  ],
+  "image_search_query": "Concerto Grosso Gewurztraminer Alto Adige DOC 2016 wine bottle",
+  "_id": 165,
+  "_sku": "326",
+  "_title_source": "Concerto Grosso Gewurztraminer Alto Adige DOC 2016"
+}

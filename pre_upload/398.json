@@ -1,0 +1,44 @@
+{
+  "name_original": "Malvasia Nera Igt Salento Comera 2016  rosso 0,75",
+  "name_ru": "Малвасья Нера Игт Саленто Комера 2016 Россо",
+  "producer": "Malvasia",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Malvasia nera"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<4 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "тёмно-рубиновое",
+    "nose": "черный инжир, сухофрукты, специи",
+    "palate": "мягкое, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Malvasia nera.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Malvasia nera",
+    "Тоскана"
+  ],
+  "image_search_query": "Malvasia Nera Igt Salento Comera 2016  rosso wine bottle",
+  "_id": 239,
+  "_sku": "398",
+  "_title_source": "Malvasia Nera Igt Salento Comera 2016  rosso 0,75"
+}

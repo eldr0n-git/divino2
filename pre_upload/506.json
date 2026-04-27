@@ -1,0 +1,43 @@
+{
+  "name_original": "Weissburgunder trocken 0.75 белое сухое",
+  "name_ru": "Вэйссбургундер Трокен",
+  "producer": "Weissburgunder",
+  "country": "Германия",
+  "region": "Германия (Рейн / Пфальц)",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Weissburgunder"
+  ],
+  "alcohol_percent": 12.5,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "бледно-золотистое",
+    "nose": "яблоко, белая смородина, цветы акации",
+    "palate": "деликатное, свежее",
+    "finish": "среднее"
+  },
+  "vineyards": "Германия (Рейн / Пфальц), Германия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Германия",
+    "Weissburgunder"
+  ],
+  "image_search_query": "Weissburgunder trocken  белое сухое wine bottle",
+  "_id": 375,
+  "_sku": "506",
+  "_title_source": "Weissburgunder trocken 0.75 белое сухое"
+}

@@ -1,0 +1,38 @@
+{
+  "name_original": "Вино Yalumba, Patchwork Shiraz / Пэтчворк Шираз, Ялумба, 0.75, 2011",
+  "name_ru": "Вино Иалумба, Патчворк Ширац / Пэтчворк Шираз, Ялумба,",
+  "producer": "Yalumba",
+  "country": "Австралия",
+  "region": "Баросса Вэлли",
+  "wine_style": "сухое вино",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 14,
+    "max": 16
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "Баросса Вэлли, Австралия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Старейшая семейная винодельня Австралии, основана в 1849 году.",
+  "tags": [],
+  "image_search_query": "Yalumba, Patchwork Shiraz / Пэтчворк Шираз, Ялумба, , 2011 wine bottle",
+  "_id": 741,
+  "_sku": "036706005822",
+  "_title_source": "Вино Yalumba, Patchwork Shiraz / Пэтчворк Шираз, Ялумба, 0.75, 2011"
+}

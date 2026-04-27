@@ -1,0 +1,43 @@
+{
+  "name_original": "Altos de Raiza Rioja tinto 0.75 красное сухое",
+  "name_ru": "Алтос Де Раица Рьойа Тинто",
+  "producer": "Bodega Bodegas Raíza",
+  "country": "Испания",
+  "region": "Риоха",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Tempranillo",
+    "Garnacha"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Crianza: 12 мес бочка; Reserva: 12+ мес бочка + 12 мес бутылка; Gran Reserva: 18+ мес бочка",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "долина реки Эбро",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Риохская бодега, работающая с Tempranillo.",
+  "tags": [
+    "красное вино",
+    "Испания",
+    "Риоха"
+  ],
+  "image_search_query": "Altos de Raiza Rioja tinto  красное сухое wine bottle",
+  "_id": 75,
+  "_sku": "491",
+  "_title_source": "Altos de Raiza Rioja tinto 0.75 красное сухое"
+}

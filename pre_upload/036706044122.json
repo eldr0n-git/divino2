@@ -1,0 +1,38 @@
+{
+  "name_original": "Вино AF, Dehesa La Granja Cosecha Seleccion / Дееса Ла Гранха Косеча Селек. 0.75 2002",
+  "name_ru": "Вино Аф, Дееса Ла Гранйа Косеча Селеккьон / Дееса Ла Гранха Косеча Селек.",
+  "producer": "Dehesa La Granja",
+  "country": "Испания",
+  "region": "Кастилья-и-Леон",
+  "wine_style": "сухое вино",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 14,
+    "max": 16
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "Кастилья-и-Леон, Испания",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Проект Алехандро Фернандеса (El Vinculero) в Саморе.",
+  "tags": [],
+  "image_search_query": "AF, Dehesa La Granja Cosecha Seleccion / Дееса Ла Гранха Косеча Селек.  2002 wine bottle",
+  "_id": 728,
+  "_sku": "036706044122",
+  "_title_source": "Вино AF, Dehesa La Granja Cosecha Seleccion / Дееса Ла Гранха Косеча Селек. 0.75 2002"
+}

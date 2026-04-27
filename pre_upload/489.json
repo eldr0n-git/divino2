@@ -1,0 +1,44 @@
+{
+  "name_original": "Finca del Mar Merlot Crianza 0.75 красное сухое",
+  "name_ru": "Финка Дел Мар Мерлот Крьянца",
+  "producer": "Finca del Mar (Vicente Gandía)",
+  "country": "Испания",
+  "region": "Валенсия",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Merlot"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Crianza: не менее 12 месяцев в дубовых бочках",
+  "tasting_notes": {
+    "appearance": "рубиновое с фиолетовым",
+    "nose": "слива, черная вишня, шоколад, трюфель",
+    "palate": "мягкое, бархатистое, полнотелое",
+    "finish": "долгое, мягкое"
+  },
+  "vineyards": "Валенсия, Испания",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Линейка Vicente Gandía, ориентированная на международные рынки.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Испания",
+    "Merlot",
+    "Крианса"
+  ],
+  "image_search_query": "Finca del Mar Merlot Crianza  красное сухое wine bottle",
+  "_id": 195,
+  "_sku": "489",
+  "_title_source": "Finca del Mar Merlot Crianza 0.75 красное сухое"
+}

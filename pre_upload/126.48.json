@@ -1,0 +1,44 @@
+{
+  "name_original": "Valpolicella Classico DOC 2015 Bonacosta  0,375",
+  "name_ru": "Валполичэлла Классико Док 2015 Бонакоста 0,375",
+  "producer": "Valpolicella",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое вино",
+  "grape_varieties": [
+    "Corvina Veronese",
+    "Rondinella",
+    "Molinara"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 14,
+    "max": 16
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). ",
+  "tags": [
+    "Италия",
+    "Тоскана",
+    "Classico"
+  ],
+  "image_search_query": "Valpolicella Classico DOC 2015 Bonacosta wine bottle",
+  "_id": 315,
+  "_sku": "126.48",
+  "_title_source": "Valpolicella Classico DOC 2015 Bonacosta  0,375"
+}

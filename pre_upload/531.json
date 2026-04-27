@@ -1,0 +1,43 @@
+{
+  "name_original": "Dornfelder trocken 0.75 красное сухое",
+  "name_ru": "Дорнфелдер Трокен",
+  "producer": "Dornfelder",
+  "country": "Германия",
+  "region": "Германия (Рейн / Пфальц)",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Dornfelder"
+  ],
+  "alcohol_percent": 12.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "тёмно-рубиновое, почти чёрное",
+    "nose": "вишня, черника, слива",
+    "palate": "мягкое, фруктовое, низкие танины",
+    "finish": "среднее"
+  },
+  "vineyards": "Германия (Рейн / Пфальц), Германия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Германия",
+    "Dornfelder"
+  ],
+  "image_search_query": "Dornfelder trocken  красное сухое wine bottle",
+  "_id": 180,
+  "_sku": "531",
+  "_title_source": "Dornfelder trocken 0.75 красное сухое"
+}

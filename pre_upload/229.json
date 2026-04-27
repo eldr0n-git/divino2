@@ -1,0 +1,48 @@
+{
+  "name_original": "Toni Arraez Cava Brut Riserva 0,75",
+  "name_ru": "Тони Аррэц Кава Брут Рисерва",
+  "producer": "Bodegas Arraez",
+  "country": "Испания",
+  "region": "Фонтанарес, Валенсия",
+  "wine_style": "игристое",
+  "grape_varieties": [
+    "Macabeo",
+    "Xarel·lo",
+    "Parellada"
+  ],
+  "alcohol_percent": 11.5,
+  "serving_temperature_c": {
+    "min": 6,
+    "max": 8
+  },
+  "sugar_content": "brut (<12 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "минимум 9 месяцев на осадке (15 для Reserva)",
+  "tasting_notes": {
+    "appearance": "бледно-соломенное",
+    "nose": "зелёное яблоко, лимон, белые цветы, свежий хлеб, ваниль, кедр, дуб",
+    "palate": "свежее, хрустящее, игристое, с дубовыми оттенками",
+    "finish": "долгое, с нотами специй и дуба"
+  },
+  "vineyards": "Пенедес, известняковые почвы",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Семейная бодега, специализирующаяся на Monastrell и Verdil.",
+  "tags": [
+    "белое вино",
+    "игристое вино",
+    "сухое вино",
+    "Испания",
+    "Cava",
+    "Кава (Пенедес",
+    "Резерва"
+  ],
+  "image_search_query": "Toni Arraez Cava Brut Riserva wine bottle",
+  "_id": 432,
+  "_sku": "229",
+  "_title_source": "Toni Arraez Cava Brut Riserva 0,75"
+}

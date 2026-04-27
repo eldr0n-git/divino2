@@ -1,0 +1,42 @@
+{
+  "name_original": "Greco di Tufo 2015 белое 0,75",
+  "name_ru": "Греко Ди Туфо 2015 Белое",
+  "producer": "Greco",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Greco di tufo"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "соломенно-жёлтое с золотым",
+    "nose": "персик, абрикос, минерал, белые цветы",
+    "palate": "плотное, минеральное, кислотное",
+    "finish": "долгое"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Greco di tufo"
+  ],
+  "image_search_query": "Greco di Tufo 2015 белое wine bottle",
+  "_id": 215,
+  "_sku": "63",
+  "_title_source": "Greco di Tufo 2015 белое 0,75"
+}

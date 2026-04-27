@@ -1,0 +1,44 @@
+{
+  "name_original": "Corte Balda rosso Primitivo Salento IGT 0,75",
+  "name_ru": "Корте Балда Россо Примитиво Саленто Игт",
+  "producer": "Corte",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Primitivo"
+  ],
+  "alcohol_percent": 14.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<4 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "тёмно-рубиновое",
+    "nose": "черная слива, ежевика, шоколад, специи",
+    "palate": "полнотелое, бархатные танины, тёмные фрукты, ваниль",
+    "finish": "долгое, тёплое"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Primitivo генетически идентичен американскому Zinfandel — ДНК-тест 1990-х годов подтвердил, что это один и тот же сорт, завезённый из Хорватии (Crljenak Kaštelanski).",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Primitivo",
+    "Тоскана"
+  ],
+  "image_search_query": "Corte Balda rosso Primitivo Salento IGT wine bottle",
+  "_id": 169,
+  "_sku": "417",
+  "_title_source": "Corte Balda rosso Primitivo Salento IGT 0,75"
+}

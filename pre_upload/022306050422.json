@@ -1,0 +1,43 @@
+{
+  "name_original": "11148 Villa Maria Private Bin Gewurztraminer blanc вино 0.75 л",
+  "name_ru": "11148 Вилла Марья Привате Бин Джевурцтраминер Бланк Вино",
+  "producer": "Villa Maria Estate",
+  "country": "Новая Зеландия",
+  "region": "Мальборо",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Gewurztraminer"
+  ],
+  "alcohol_percent": 14.0,
+  "serving_temperature_c": {
+    "min": 8,
+    "max": 10
+  },
+  "sugar_content": "dry (<5 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "золотисто-жёлтое",
+    "nose": "личи, роза, имбирь, мускат",
+    "palate": "ароматное, маслянистое, пряное",
+    "finish": "долгое, пряное"
+  },
+  "vineyards": "Мальборо, Новая Зеландия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Один из старейших и наиболее узнаваемых производителей Новой Зеландии, основан в 1961 году.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Новая Зеландия",
+    "Gewurztraminer"
+  ],
+  "image_search_query": "11148 Villa Maria Private Bin Gewurztraminer blanc   л wine bottle",
+  "_id": 693,
+  "_sku": "022306050422",
+  "_title_source": "11148 Villa Maria Private Bin Gewurztraminer blanc вино 0.75 л"
+}

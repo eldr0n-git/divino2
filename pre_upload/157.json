@@ -1,0 +1,44 @@
+{
+  "name_original": "Vino Pomino bianco riserva DOC 2015 Benefizio 0,75",
+  "name_ru": "Вино Помино Бьянко Рисерва Док 2015 Бенефицьо",
+  "producer": "Pomino",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Sangiovese",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи, ваниль, кедр, дуб",
+    "palate": "сбалансированное, фруктовое, с дубовыми оттенками",
+    "finish": "долгое, с нотами специй и дуба"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). ",
+  "tags": [
+    "белое вино",
+    "Италия",
+    "Тоскана",
+    "Резерва"
+  ],
+  "image_search_query": "Vino Pomino bianco riserva DOC 2015 Benefizio wine bottle",
+  "_id": 341,
+  "_sku": "157",
+  "_title_source": "Vino Pomino bianco riserva DOC 2015 Benefizio 0,75"
+}

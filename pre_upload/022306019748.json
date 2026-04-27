@@ -1,0 +1,40 @@
+{
+  "name_original": "Villa Antinori Rosso вино 0,375",
+  "name_ru": "Вилла Антинори Россо Вино 0,375",
+  "producer": "Marchesi Antinori",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "Тоскана, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Одна из старейших винодельческих семей Тосканы, основана в XIV веке. Пионеры движения Super Tuscans.",
+  "tags": [
+    "красное вино"
+  ],
+  "image_search_query": "Villa Antinori Rosso wine bottle",
+  "_id": 459,
+  "_sku": "022306019748",
+  "_title_source": "Villa Antinori Rosso вино 0,375"
+}

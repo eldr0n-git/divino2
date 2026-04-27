@@ -1,0 +1,43 @@
+{
+  "name_original": "Vino rosso Monferrato Rosso Doc 2016 Minetta  0.75",
+  "name_ru": "Вино Россо Монферрато Россо Док 2016 Минетта",
+  "producer": "rosso",
+  "country": "Италия",
+  "region": "Монферрато, Пьемонт",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Barbera",
+    "Grignolino"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмы Монферрато",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Монферрато, Пьемонт (Италия). ",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Монферрато"
+  ],
+  "image_search_query": "Vino rosso Monferrato Rosso Doc 2016 Minetta wine bottle",
+  "_id": 436,
+  "_sku": "430",
+  "_title_source": "Vino rosso Monferrato Rosso Doc 2016 Minetta  0.75"
+}

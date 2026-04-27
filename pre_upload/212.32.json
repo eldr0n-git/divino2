@@ -1,0 +1,41 @@
+{
+  "name_original": "Mala Vida Roble red oaked 2014  3L",
+  "name_ru": "Мала Вида Робле Ред Оакед 2014 3л",
+  "producer": "Mala Vida (Familia Nin-Ortiz)",
+  "country": "Испания",
+  "region": "Приорат, Каталония",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "Приорат, Каталония, Испания",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Небольшое хозяйство в Приорате.",
+  "tags": [
+    "красное вино",
+    "джеробоам 3 л"
+  ],
+  "image_search_query": "Mala Vida Roble red oaked 2014  3L wine bottle",
+  "_id": 419,
+  "_sku": "212.32",
+  "_title_source": "Mala Vida Roble red oaked 2014  3L"
+}

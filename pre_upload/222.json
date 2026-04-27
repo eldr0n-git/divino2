@@ -1,0 +1,41 @@
+{
+  "name_original": "Vivir Sin Dormir Organic red oaked 2016 0.75",
+  "name_ru": "Вивир Син Дормир Органик Ред Оакед 2016",
+  "producer": "Vivir sin Dormir (Bodegas Los Pinos)",
+  "country": "Испания",
+  "region": "Утьель-Рекена",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Органическое виноделие: без синтетических пестицидов и гербицидов, сертифицировано",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "Утьель-Рекена, Испания",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Органические вина из Бобаля.",
+  "tags": [
+    "красное вино",
+    "органическое вино"
+  ],
+  "image_search_query": "Vivir Sin Dormir Organic red oaked 2016 wine bottle",
+  "_id": 372,
+  "_sku": "222",
+  "_title_source": "Vivir Sin Dormir Organic red oaked 2016 0.75"
+}

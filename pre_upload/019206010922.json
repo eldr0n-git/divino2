@@ -1,0 +1,41 @@
+{
+  "name_original": "Jadot Beaujolais Village красное сухое",
+  "name_ru": "Йадот Беойолаис Вилладже Красное Сухое",
+  "producer": "Louis Jadot",
+  "country": "Франция",
+  "region": "Бургундия (Бон)",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Gamay"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "короткая, 3–6 месяцев",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "гранитные почвы",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Крупнейший негоциант Бургундии, основан в 1859 году.",
+  "tags": [
+    "Франция",
+    "Божоле"
+  ],
+  "image_search_query": "Jadot Beaujolais Village красное сухое wine bottle",
+  "_id": 824,
+  "_sku": "019206010922",
+  "_title_source": "Jadot Beaujolais Village красное сухое"
+}

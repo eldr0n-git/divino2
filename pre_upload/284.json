@@ -1,0 +1,44 @@
+{
+  "name_original": "Kastelaz Alto Adige Gewurztraminer Vigna DOC 2016 0,75",
+  "name_ru": "Кастелац Алто Адидже Джевурцтраминер Виньа Док 2016",
+  "producer": "Kastelaz",
+  "country": "Италия",
+  "region": "Альто Адидже (Судтироль)",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Gewurztraminer"
+  ],
+  "alcohol_percent": 14.0,
+  "serving_temperature_c": {
+    "min": 8,
+    "max": 10
+  },
+  "sugar_content": "dry (<5 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "золотисто-жёлтое",
+    "nose": "личи, роза, имбирь, мускат",
+    "palate": "ароматное, маслянистое, пряное",
+    "finish": "долгое, пряное"
+  },
+  "vineyards": "альпийские склоны",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Альто Адидже (Судтироль) (Италия). Главный сорт — Gewurztraminer.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Италия",
+    "Gewurztraminer",
+    "Альто Адидже (Судтироль)"
+  ],
+  "image_search_query": "Kastelaz Alto Adige Gewurztraminer Vigna DOC 2016 wine bottle",
+  "_id": 225,
+  "_sku": "284",
+  "_title_source": "Kastelaz Alto Adige Gewurztraminer Vigna DOC 2016 0,75"
+}

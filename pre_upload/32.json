@@ -1,0 +1,40 @@
+{
+  "name_original": "Metodo Classico вино игристое 0.75",
+  "name_ru": "Методо Классико Вино Игристое",
+  "producer": "Metodo",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "игристое",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 6,
+    "max": 8
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Méthode Classique / Metodo Classico: вторичная ферментация в бутылке, выдержка на осадке",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "Classico"
+  ],
+  "image_search_query": "Metodo Classico  игристое wine bottle",
+  "_id": 244,
+  "_sku": "32",
+  "_title_source": "Metodo Classico вино игристое 0.75"
+}

@@ -1,0 +1,43 @@
+{
+  "name_original": "Vino rosso riserva chianti Rufina DOCG 2013 Nippozzano 0,75",
+  "name_ru": "Вино Россо Рисерва Чьянти Руфина Докг 2013 Ниппоццано",
+  "producer": "rosso",
+  "country": "Италия",
+  "region": "Кьянти, Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Sangiovese"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Classico: минимум 12 месяцев; Riserva: 24 месяца",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи, ваниль, кедр, дуб",
+    "palate": "сбалансированное, фруктовое, с дубовыми оттенками",
+    "finish": "долгое, с нотами специй и дуба"
+  },
+  "vineyards": "холмистый регион между Флоренцией и Сиеной",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Кьянти, Тоскана (Италия). ",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Кьянти",
+    "Резерва"
+  ],
+  "image_search_query": "Vino rosso riserva chianti Rufina DOCG 2013 Nippozzano wine bottle",
+  "_id": 361,
+  "_sku": "110",
+  "_title_source": "Vino rosso riserva chianti Rufina DOCG 2013 Nippozzano 0,75"
+}

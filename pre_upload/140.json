@@ -1,0 +1,44 @@
+{
+  "name_original": "Vino rosso Maremma Toscana Cabernet DOC 2014  0,75",
+  "name_ru": "Вино Россо Маремма Тоскана Кабернет Док 2014",
+  "producer": "rosso",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Cabernet sauvignon"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "тёмно-рубиновое",
+    "nose": "смородина, черника, кедр, зелёный перец",
+    "palate": "полнотелое, структурированные танины",
+    "finish": "долгое, с нотами специй"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Cabernet sauvignon.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Cabernet sauvignon",
+    "Тоскана"
+  ],
+  "image_search_query": "Vino rosso Maremma Toscana Cabernet DOC 2014 wine bottle",
+  "_id": 356,
+  "_sku": "140",
+  "_title_source": "Vino rosso Maremma Toscana Cabernet DOC 2014  0,75"
+}

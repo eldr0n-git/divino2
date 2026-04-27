@@ -1,0 +1,44 @@
+{
+  "name_original": "Montefalco Rosso Sagrantino DOCG 2011 0,75",
+  "name_ru": "Монтефалко Россо Сагрантино Докг 2011",
+  "producer": "Montefalco",
+  "country": "Италия",
+  "region": "Монтефалько, Умбрия",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Sagrantino"
+  ],
+  "alcohol_percent": 14.5,
+  "serving_temperature_c": {
+    "min": 18,
+    "max": 20
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "минимум 37 месяцев (60 для Riserva)",
+  "tasting_notes": {
+    "appearance": "тёмно-рубиновое",
+    "nose": "ежевика, специи, смола, дуб",
+    "palate": "массивное, очень высокие танины, тёмные ягоды",
+    "finish": "очень долгое, терпкое"
+  },
+  "vineyards": "холмы Умбрии, красные галечные почвы",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Sagrantino — сорт с одним из самых высоких содержаний полифенолов среди всех вин в мире. Выращивается только в Монтефалько (Умбрия).",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Sagrantino",
+    "Монтефалько"
+  ],
+  "image_search_query": "Montefalco Rosso Sagrantino DOCG 2011 wine bottle",
+  "_id": 247,
+  "_sku": "317",
+  "_title_source": "Montefalco Rosso Sagrantino DOCG 2011 0,75"
+}

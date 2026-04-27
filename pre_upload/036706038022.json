@@ -1,0 +1,43 @@
+{
+  "name_original": "Вино BPdR, Bordeaux Rose / Бордо Розе Барон Филипп де Ротш 0,75",
+  "name_ru": "Вино Бпдр, Бордеокс Росе / Бордо Розе Барон Филипп Де Ротш",
+  "producer": "Вино",
+  "country": "Франция",
+  "region": "Бордо",
+  "wine_style": "сухое розовое",
+  "grape_varieties": [
+    "Cabernet Sauvignon",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "12–24 месяца в бочках",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "Левый и Правый берег Жиронды",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Бордо (Франция). ",
+  "tags": [
+    "розовое вино",
+    "Франция",
+    "Бордо"
+  ],
+  "image_search_query": "BPdR, Bordeaux Rose / Бордо Розе Барон Филипп де Ротш wine bottle",
+  "_id": 729,
+  "_sku": "036706038022",
+  "_title_source": "Вино BPdR, Bordeaux Rose / Бордо Розе Барон Филипп де Ротш 0,75"
+}

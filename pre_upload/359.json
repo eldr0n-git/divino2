@@ -1,0 +1,43 @@
+{
+  "name_original": "Rosso DelBepi Veneto IGT 2008 0,75",
+  "name_ru": "Россо Делбепи Венето Игт 2008",
+  "producer": "Rosso",
+  "country": "Италия",
+  "region": "Венето",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Corvina",
+    "Glera"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "от альпийских предгорий до Адриатики",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Венето (Италия). ",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Венето"
+  ],
+  "image_search_query": "Rosso DelBepi Veneto IGT 2008 wine bottle",
+  "_id": 425,
+  "_sku": "359",
+  "_title_source": "Rosso DelBepi Veneto IGT 2008 0,75"
+}

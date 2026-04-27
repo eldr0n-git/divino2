@@ -1,0 +1,47 @@
+{
+  "name_original": "Vino Franciacorta Docg Brut 0,75",
+  "name_ru": "Вино Франкьякорта Докг Брут",
+  "producer": "Franciacorta",
+  "country": "Италия",
+  "region": "Франчакорта, Ломбардия",
+  "wine_style": "игристое",
+  "grape_varieties": [
+    "Chardonnay",
+    "Pinot Noir",
+    "Pinot Bianco"
+  ],
+  "alcohol_percent": 12.5,
+  "serving_temperature_c": {
+    "min": 6,
+    "max": 8
+  },
+  "sugar_content": "brut (<12 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "минимум 18 месяцев на осадке (30 для Satèn/Rosé, 60 для Riserva)",
+  "tasting_notes": {
+    "appearance": "золотисто-соломенное",
+    "nose": "бриошь, цитрус, яблоко, белые цветы",
+    "palate": "кремовое, элегантное, тонкие пузырьки",
+    "finish": "долгое, изысканное"
+  },
+  "vineyards": "Ломбардия, к югу от озера Изео",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Франчакорта, Ломбардия (Италия). Главный сорт — Franciacorta.",
+  "tags": [
+    "белое вино",
+    "игристое вино",
+    "сухое вино",
+    "Италия",
+    "Franciacorta",
+    "Франчакорта"
+  ],
+  "image_search_query": "Vino Franciacorta Docg Brut wine bottle",
+  "_id": 337,
+  "_sku": "469",
+  "_title_source": "Vino Franciacorta Docg Brut 0,75"
+}

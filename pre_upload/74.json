@@ -1,0 +1,42 @@
+{
+  "name_original": "Corvina Veronese 2013 красное 0,75",
+  "name_ru": "Корвина Веронесе 2013 Красное",
+  "producer": "Corvina",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Corvina"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиново-гранатовое",
+    "nose": "вишня, черешня, специи",
+    "palate": "элегантное, средней плотности",
+    "finish": "чистое"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Corvina"
+  ],
+  "image_search_query": "Corvina Veronese 2013 красное wine bottle",
+  "_id": 171,
+  "_sku": "74",
+  "_title_source": "Corvina Veronese 2013 красное 0,75"
+}

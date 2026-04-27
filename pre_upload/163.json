@@ -1,0 +1,45 @@
+{
+  "name_original": "Barbera d'Asti Docg Superiore Nizza Canto di Luna 2013 0,75",
+  "name_ru": "Барбера Д'асти Докг Суперьоре Ницца Канто Ди Луна 2013",
+  "producer": "Barbera",
+  "country": "Италия",
+  "region": "Асти, Пьемонт",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Barbera"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<2 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "без выдержки или до 12 месяцев",
+  "tasting_notes": {
+    "appearance": "рубиново-фиолетовое",
+    "nose": "черная вишня, слива, фиалка",
+    "palate": "сочное, высокая кислотность, мягкие танины, ягоды",
+    "finish": "чистое, фруктовое"
+  },
+  "vineyards": "холмы Монферрато",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Асти, Пьемонт (Италия). Главный сорт — Barbera.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Barbera",
+    "Асти",
+    "Superiore"
+  ],
+  "image_search_query": "Barbera d'Asti Docg Superiore Nizza Canto di Luna 2013 wine bottle",
+  "_id": 94,
+  "_sku": "163",
+  "_title_source": "Barbera d'Asti Docg Superiore Nizza Canto di Luna 2013 0,75"
+}

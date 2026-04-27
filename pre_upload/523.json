@@ -1,0 +1,42 @@
+{
+  "name_original": "Blanc de Chardonnay 0.75 сухое",
+  "name_ru": "Бланк Де Чардоннаи",
+  "producer": "Blanc",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Chardonnay"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "золотисто-жёлтое",
+    "nose": "яблоко, груша, цитрус, дуб, ваниль",
+    "palate": "округлое, маслянистое или хрустящее в зависимости от выдержки",
+    "finish": "долгое"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Chardonnay"
+  ],
+  "image_search_query": "Blanc de Chardonnay  сухое wine bottle",
+  "_id": 400,
+  "_sku": "523",
+  "_title_source": "Blanc de Chardonnay 0.75 сухое"
+}

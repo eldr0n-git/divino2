@@ -1,0 +1,43 @@
+{
+  "name_original": "Vino Bianco Toscana IGT Villa Antinori 2017 0.375",
+  "name_ru": "Вино Бьянко Тоскана Игт Вилла Антинори 2017 0.375",
+  "producer": "Marchesi Antinori",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Sangiovese",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Одна из старейших винодельческих семей Тосканы, основана в XIV веке. Пионеры движения Super Tuscans.",
+  "tags": [
+    "белое вино",
+    "Италия",
+    "Тоскана"
+  ],
+  "image_search_query": "Vino Bianco Toscana IGT Villa Antinori 2017 wine bottle",
+  "_id": 334,
+  "_sku": "414",
+  "_title_source": "Vino Bianco Toscana IGT Villa Antinori 2017 0.375"
+}

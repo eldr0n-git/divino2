@@ -1,0 +1,43 @@
+{
+  "name_original": "GIORDANO Moscato Spumante Oro 0,75",
+  "name_ru": "Гьордано Москато Спуманте Оро",
+  "producer": "GIORDANO",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "игристое",
+  "grape_varieties": [
+    "Moscato"
+  ],
+  "alcohol_percent": 5.5,
+  "serving_temperature_c": {
+    "min": 6,
+    "max": 8
+  },
+  "sugar_content": "sweet (>90 г/л)",
+  "production_method": "Метод Шарма (Charmat): вторичная ферментация в герметичных резервуарах под давлением",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "бледно-золотистое",
+    "nose": "персик, абрикос, мёд, цветы акации",
+    "palate": "лёгкое, сладкое, игристое",
+    "finish": "короткое, сладкое"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "белое вино",
+    "игристое вино",
+    "сладкое вино",
+    "Moscato"
+  ],
+  "image_search_query": "GIORDANO Moscato Spumante Oro wine bottle",
+  "_id": 206,
+  "_sku": "388",
+  "_title_source": "GIORDANO Moscato Spumante Oro 0,75"
+}

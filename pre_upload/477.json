@@ -1,0 +1,43 @@
+{
+  "name_original": "Castillo de Liria white 0.75 белое сухое",
+  "name_ru": "Кастилло Де Лирья Вите",
+  "producer": "Castillo de Liria (Vicente Gandía)",
+  "country": "Испания",
+  "region": "Валенсия",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Nebbiolo",
+    "Barbera"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмы у Альп",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Marca histórica de Vicente Gandía, uno de los mayores productores de España.",
+  "tags": [
+    "белое вино",
+    "Италия",
+    "Пьемонт"
+  ],
+  "image_search_query": "Castillo de Liria white  белое сухое wine bottle",
+  "_id": 145,
+  "_sku": "477",
+  "_title_source": "Castillo de Liria white 0.75 белое сухое"
+}

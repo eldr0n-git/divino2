@@ -1,0 +1,42 @@
+{
+  "name_original": "Eduardo Bermejo Tempranillo 2015 0,75",
+  "name_ru": "Едуардо Бермейо Темпранилло 2015",
+  "producer": "Bodegas Eduardo Bermejo",
+  "country": "Испания",
+  "region": "Ла Оротава, Тенерифе",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Tempranillo"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиново-гранатовое",
+    "nose": "черная вишня, ваниль, кожа, табак",
+    "palate": "средней полноты, элегантное",
+    "finish": "долгое, с нотами дуба"
+  },
+  "vineyards": "Ла Оротава, Тенерифе, Испания",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Ведущая винодельня острова Тенерифе.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Tempranillo"
+  ],
+  "image_search_query": "Eduardo Bermejo Tempranillo 2015 wine bottle",
+  "_id": 182,
+  "_sku": "214",
+  "_title_source": "Eduardo Bermejo Tempranillo 2015 0,75"
+}

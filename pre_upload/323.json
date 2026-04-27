@@ -1,0 +1,44 @@
+{
+  "name_original": "Sherazade Nero dAvola Rosso Sicilia DOC 2016 0,75",
+  "name_ru": "Шерацаде Неро Давола Россо Сичилья Док 2016",
+  "producer": "Sherazade",
+  "country": "Италия",
+  "region": "Сицилия",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Nero d'avola"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "от 6 до 12 месяцев",
+  "tasting_notes": {
+    "appearance": "тёмно-рубиновое",
+    "nose": "черная слива, сухофрукты, специи",
+    "palate": "насыщенное, бархатистые танины",
+    "finish": "долгое, пряное"
+  },
+  "vineyards": "Сицилия, средиземноморский климат",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Сицилия (Италия). Главный сорт — Nero d'avola.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Nero d'avola",
+    "Сицилия"
+  ],
+  "image_search_query": "Sherazade Nero dAvola Rosso Sicilia DOC 2016 wine bottle",
+  "_id": 292,
+  "_sku": "323",
+  "_title_source": "Sherazade Nero dAvola Rosso Sicilia DOC 2016 0,75"
+}

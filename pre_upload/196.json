@@ -1,0 +1,44 @@
+{
+  "name_original": "Dolcetto d'Alba Doc Le Ciliegie 2015 0.75",
+  "name_ru": "Долчэтто Д'алба Док Ле Чильегье 2015",
+  "producer": "Dolcetto",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Dolcetto"
+  ],
+  "alcohol_percent": 12.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<2 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "глубокое рубиново-фиолетовое",
+    "nose": "черника, лакрица, миндаль",
+    "palate": "мягкое, горькое послевкусие, черные ягоды",
+    "finish": "умеренное, с миндальной горчинкой"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Dolcetto.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Dolcetto",
+    "Тоскана"
+  ],
+  "image_search_query": "Dolcetto d'Alba Doc Le Ciliegie 2015 wine bottle",
+  "_id": 178,
+  "_sku": "196",
+  "_title_source": "Dolcetto d'Alba Doc Le Ciliegie 2015 0.75"
+}

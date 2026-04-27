@@ -1,0 +1,41 @@
+{
+  "name_original": "Brut rose 0.75 сухое",
+  "name_ru": "Брут Росе",
+  "producer": "Brut",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "сухое розовое",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "brut (<12 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "розовое вино",
+    "игристое вино"
+  ],
+  "image_search_query": "Brut rose  сухое wine bottle",
+  "_id": 127,
+  "_sku": "521",
+  "_title_source": "Brut rose 0.75 сухое"
+}

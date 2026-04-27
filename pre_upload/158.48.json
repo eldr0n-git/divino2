@@ -1,0 +1,43 @@
+{
+  "name_original": "Vino rosso di Verona IGT 2013 Campofiorin  0,375",
+  "name_ru": "Вино Россо Ди Верона Игт 2013 Кампофьорин 0,375",
+  "producer": "rosso",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Sangiovese",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). ",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Тоскана"
+  ],
+  "image_search_query": "Vino rosso di Verona IGT 2013 Campofiorin wine bottle",
+  "_id": 352,
+  "_sku": "158.48",
+  "_title_source": "Vino rosso di Verona IGT 2013 Campofiorin  0,375"
+}

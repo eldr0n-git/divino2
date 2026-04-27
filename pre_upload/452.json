@@ -1,0 +1,44 @@
+{
+  "name_original": "Morosa Vino rosso Barbera d'Alba Doc 2016 0,75",
+  "name_ru": "Мороса Вино Россо Барбера Д'алба Док 2016",
+  "producer": "Morosa",
+  "country": "Италия",
+  "region": "Альба, Пьемонт",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Barbera"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<2 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "6–12 месяцев",
+  "tasting_notes": {
+    "appearance": "рубиново-фиолетовое",
+    "nose": "черная вишня, слива, фиалка",
+    "palate": "сочное, высокая кислотность, мягкие танины, ягоды",
+    "finish": "чистое, фруктовое"
+  },
+  "vineyards": "холмы Ланге",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Альба, Пьемонт (Италия). Главный сорт — Barbera.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Barbera",
+    "Альба"
+  ],
+  "image_search_query": "Morosa Vino rosso Barbera d'Alba Doc 2016 wine bottle",
+  "_id": 252,
+  "_sku": "452",
+  "_title_source": "Morosa Vino rosso Barbera d'Alba Doc 2016 0,75"
+}

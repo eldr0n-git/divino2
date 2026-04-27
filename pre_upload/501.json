@@ -1,0 +1,44 @@
+{
+  "name_original": "Xibrana tinto Crianza Priorat 0.75 красное сухое",
+  "name_ru": "Ксибрана Тинто Крьянца Прьорат",
+  "producer": "Bodegas Mas Sinén",
+  "country": "Испания",
+  "region": "Приорат",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Garnacha",
+    "Cariñena"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "12–24 месяца в дубе",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "сланцевые почвы (лликорелья)",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Экологическая бодега в Приорате.",
+  "tags": [
+    "красное вино",
+    "Испания",
+    "Приорат",
+    "Крианса"
+  ],
+  "image_search_query": "Xibrana tinto Crianza Priorat  красное сухое wine bottle",
+  "_id": 376,
+  "_sku": "501",
+  "_title_source": "Xibrana tinto Crianza Priorat 0.75 красное сухое"
+}

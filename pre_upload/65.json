@@ -1,0 +1,42 @@
+{
+  "name_original": "Colli di Luni Vermentino \"PIANACCE\" 2015 белое 0,375",
+  "name_ru": "Колли Ди Луни Верментино \"пьянакчэ\" 2015 Белое 0,375",
+  "producer": "Colli",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Vermentino"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "соломенно-жёлтое с зелёными отблесками",
+    "nose": "цитрус, белые цветы, персик, миндаль",
+    "palate": "свежее, минеральное, лёгкая горчинка в финале",
+    "finish": "чистое, минеральное"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Vermentino"
+  ],
+  "image_search_query": "Colli di Luni Vermentino \"PIANACCE\" 2015 белое wine bottle",
+  "_id": 164,
+  "_sku": "65",
+  "_title_source": "Colli di Luni Vermentino \"PIANACCE\" 2015 белое 0,375"
+}

@@ -1,0 +1,43 @@
+{
+  "name_original": "Vino rosso Toscana IGT 2014 Tenuta Frescobaldi di Castiglioni  0,75",
+  "name_ru": "Вино Россо Тоскана Игт 2014 Тенута Фрескобалди Ди Кастилььони",
+  "producer": "Marchesi de' Frescobaldi",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Sangiovese",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "700 лет истории, одна из главных тосканских фамилий. Владеют имениями Казтильони, Помино, Ниппоццано.",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Тоскана"
+  ],
+  "image_search_query": "Vino rosso Toscana IGT 2014 Tenuta Frescobaldi di Castiglioni wine bottle",
+  "_id": 362,
+  "_sku": "154",
+  "_title_source": "Vino rosso Toscana IGT 2014 Tenuta Frescobaldi di Castiglioni  0,75"
+}

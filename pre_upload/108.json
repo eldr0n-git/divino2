@@ -1,0 +1,43 @@
+{
+  "name_original": "Vino bianco Toscana IGT 2014 Poggio alle Gazze  0,75",
+  "name_ru": "Вино Бьянко Тоскана Игт 2014 Поджьо Алле Гацце",
+  "producer": "bianco",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Sangiovese",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). ",
+  "tags": [
+    "белое вино",
+    "Италия",
+    "Тоскана"
+  ],
+  "image_search_query": "Vino bianco Toscana IGT 2014 Poggio alle Gazze wine bottle",
+  "_id": 332,
+  "_sku": "108",
+  "_title_source": "Vino bianco Toscana IGT 2014 Poggio alle Gazze  0,75"
+}

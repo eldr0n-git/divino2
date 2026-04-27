@@ -1,0 +1,38 @@
+{
+  "name_original": "Fiolo вино белое игристое 0,75",
+  "name_ru": "Фьоло Вино Белое Игристое",
+  "producer": "Fiolo",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "игристое",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 6,
+    "max": 8
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [],
+  "image_search_query": "Fiolo  белое игристое wine bottle",
+  "_id": 197,
+  "_sku": "9",
+  "_title_source": "Fiolo вино белое игристое 0,75"
+}

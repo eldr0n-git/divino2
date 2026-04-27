@@ -1,0 +1,43 @@
+{
+  "name_original": "Trevenezie Igt 2017 San Zenone  bianco 0,75",
+  "name_ru": "Тревенецье Игт 2017 Сан Ценоне Бьянко",
+  "producer": "Trevenezie",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Sangiovese",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). ",
+  "tags": [
+    "белое вино",
+    "Италия",
+    "Тоскана"
+  ],
+  "image_search_query": "Trevenezie Igt 2017 San Zenone  bianco wine bottle",
+  "_id": 434,
+  "_sku": "385",
+  "_title_source": "Trevenezie Igt 2017 San Zenone  bianco 0,75"
+}

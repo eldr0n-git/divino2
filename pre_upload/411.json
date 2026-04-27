@@ -1,0 +1,44 @@
+{
+  "name_original": "Fiorito Pinot grigio delle Venezie DOC 2017",
+  "name_ru": "Фьорито Пинот Григьо Делле Венецье Док 2017",
+  "producer": "Fiorito",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Pinot grigio"
+  ],
+  "alcohol_percent": 12.5,
+  "serving_temperature_c": {
+    "min": 8,
+    "max": 10
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "бледно-золотистое",
+    "nose": "груша, яблоко, миндаль, цитрус",
+    "palate": "лёгкое, свежее, хрустящее",
+    "finish": "короткое, чистое"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Pinot grigio.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Италия",
+    "Pinot grigio",
+    "Тоскана"
+  ],
+  "image_search_query": "Fiorito Pinot grigio delle Venezie DOC 2017 wine bottle",
+  "_id": 454,
+  "_sku": "411",
+  "_title_source": "Fiorito Pinot grigio delle Venezie DOC 2017"
+}

@@ -1,0 +1,43 @@
+{
+  "name_original": "Primitivo di Manduria Dop 2014 Tavros 98 баллов 0,75",
+  "name_ru": "Примитиво Ди Мандурья Доп 2014 Таврос 98 Баллов",
+  "producer": "Primitivo",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Primitivo"
+  ],
+  "alcohol_percent": 14.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<4 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "тёмно-рубиновое",
+    "nose": "черная слива, ежевика, шоколад, специи",
+    "palate": "полнотелое, бархатные танины, тёмные фрукты, ваниль",
+    "finish": "долгое, тёплое"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": 98,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Primitivo генетически идентичен американскому Zinfandel — ДНК-тест 1990-х годов подтвердил, что это один и тот же сорт, завезённый из Хорватии (Crljenak Kaštelanski).",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Primitivo"
+  ],
+  "image_search_query": "Primitivo di Manduria Dop 2014 Tavros 98 баллов wine bottle",
+  "_id": 421,
+  "_sku": "7",
+  "_title_source": "Primitivo di Manduria Dop 2014 Tavros 98 баллов 0,75"
+}

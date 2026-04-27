@@ -1,0 +1,44 @@
+{
+  "name_original": "Vino brut Trento DOC Metodo classico Frescobaldi  0,75",
+  "name_ru": "Вино Брут Тренто Док Методо Классико Фрескобалди",
+  "producer": "Marchesi de' Frescobaldi",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "игристое",
+  "grape_varieties": [
+    "Sangiovese",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 6,
+    "max": 8
+  },
+  "sugar_content": "brut (<12 г/л)",
+  "production_method": "Méthode Classique / Metodo Classico: вторичная ферментация в бутылке, выдержка на осадке",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "700 лет истории, одна из главных тосканских фамилий. Владеют имениями Казтильони, Помино, Ниппоццано.",
+  "tags": [
+    "игристое вино",
+    "Италия",
+    "Тоскана",
+    "Classico"
+  ],
+  "image_search_query": "Vino brut Trento DOC Metodo classico Frescobaldi wine bottle",
+  "_id": 336,
+  "_sku": "130",
+  "_title_source": "Vino brut Trento DOC Metodo classico Frescobaldi  0,75"
+}

@@ -1,0 +1,44 @@
+{
+  "name_original": "Aglianico del Vulture DOC Horatius 2014",
+  "name_ru": "Алььянико Дел Вултуре Док Оратиус 2014",
+  "producer": "Aglianico",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Aglianico"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<2 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "тёмно-рубиновое",
+    "nose": "черная вишня, смола, табак, специи",
+    "palate": "полнотелое, мощные танины, высокая кислотность, черные ягоды",
+    "finish": "долгое, минеральное"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Aglianico.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Aglianico",
+    "Тоскана"
+  ],
+  "image_search_query": "Aglianico del Vulture DOC Horatius 2014 wine bottle",
+  "_id": 70,
+  "_sku": "177",
+  "_title_source": "Aglianico del Vulture DOC Horatius 2014"
+}

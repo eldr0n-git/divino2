@@ -1,0 +1,46 @@
+{
+  "name_original": "Soave Bianco Classico DOC 2016",
+  "name_ru": "Соаве Бьянко Классико Док 2016",
+  "producer": "Soave",
+  "country": "Италия",
+  "region": "Соаве, Венето",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Garganega",
+    "Trebbiano di Soave"
+  ],
+  "alcohol_percent": 12.0,
+  "serving_temperature_c": {
+    "min": 8,
+    "max": 10
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "нет обязательной",
+  "tasting_notes": {
+    "appearance": "соломенно-жёлтое",
+    "nose": "белый персик, яблоко, миндаль, цветы",
+    "palate": "лёгкое, свежее, деликатное",
+    "finish": "короткое, с миндальным оттенком"
+  },
+  "vineyards": "вулканические базальтовые почвы холмов Соаве",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Соаве, Венето (Италия). Главный сорт — Soave.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Италия",
+    "Soave",
+    "Соаве",
+    "Classico"
+  ],
+  "image_search_query": "Soave Bianco Classico DOC 2016 wine bottle",
+  "_id": 294,
+  "_sku": "263",
+  "_title_source": "Soave Bianco Classico DOC 2016"
+}

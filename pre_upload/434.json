@@ -1,0 +1,44 @@
+{
+  "name_original": "Vino bianco Ventola Gavi Docg 2018 0.75",
+  "name_ru": "Вино Бьянко Вентола Гави Докг 2018",
+  "producer": "bianco",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Cortese"
+  ],
+  "alcohol_percent": 12.5,
+  "serving_temperature_c": {
+    "min": 8,
+    "max": 10
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "бледно-золотистое",
+    "nose": "цитрус, белые цветы, минерал",
+    "palate": "свежее, хрустящее, элегантное",
+    "finish": "среднее, минеральное"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Gavi.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Италия",
+    "Gavi",
+    "Тоскана"
+  ],
+  "image_search_query": "Vino bianco Ventola Gavi Docg 2018 wine bottle",
+  "_id": 335,
+  "_sku": "434",
+  "_title_source": "Vino bianco Ventola Gavi Docg 2018 0.75"
+}

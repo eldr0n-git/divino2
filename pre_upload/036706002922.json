@@ -1,0 +1,42 @@
+{
+  "name_original": "Вино Rene Mure, Riesling Signature (semi-dry) / Рислинг Синьятюр (п/сух.), Рене 0.75",
+  "name_ru": "Вино Рене Муре, Рьеслинг Синьатуре (семи-дри) / Рислинг Синьятюр (п/сух.), Рене",
+  "producer": "René Muré",
+  "country": "Франция",
+  "region": "Руффак, Эльзас",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Riesling"
+  ],
+  "alcohol_percent": 12.0,
+  "serving_temperature_c": {
+    "min": 8,
+    "max": 10
+  },
+  "sugar_content": "dry (<5 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "бледно-жёлтое с зелёными отблесками",
+    "nose": "цитрус, персик, бензин, минерал",
+    "palate": "хрустящее, яркая кислотность, минеральное",
+    "finish": "долгое, минеральное"
+  },
+  "vineyards": "Руффак, Эльзас, Франция",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Семейная эльзасская винодельня с историей с 1650 года.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Riesling"
+  ],
+  "image_search_query": "Rene Mure, Riesling Signature (semi-dry) / Рислинг Синьятюр (п/сух.), Рене wine bottle",
+  "_id": 739,
+  "_sku": "036706002922",
+  "_title_source": "Вино Rene Mure, Riesling Signature (semi-dry) / Рислинг Синьятюр (п/сух.), Рене 0.75"
+}

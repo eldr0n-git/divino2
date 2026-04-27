@@ -1,0 +1,44 @@
+{
+  "name_original": "Alto Adige Pinot Noir Rosso DOC 2014 0,75",
+  "name_ru": "Алто Адидже Пинот Нойр Россо Док 2014",
+  "producer": "Alto",
+  "country": "Италия",
+  "region": "Альто Адидже (Судтироль)",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Pinot noir"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<2 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое, прозрачное",
+    "nose": "вишня, малина, грибы, земля",
+    "palate": "элегантное, шелковистые танины, бургундская элегантность",
+    "finish": "долгое, изысканное"
+  },
+  "vineyards": "альпийские склоны",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Альто Адидже (Судтироль) (Италия). Главный сорт — Pinot noir.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Pinot noir",
+    "Альто Адидже (Судтироль)"
+  ],
+  "image_search_query": "Alto Adige Pinot Noir Rosso DOC 2014 wine bottle",
+  "_id": 71,
+  "_sku": "282",
+  "_title_source": "Alto Adige Pinot Noir Rosso DOC 2014 0,75"
+}

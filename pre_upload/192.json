@@ -1,0 +1,44 @@
+{
+  "name_original": "Barbera d'Alba Doc le Ciliegie 2014 0,75",
+  "name_ru": "Барбера Д'алба Док Ле Чильегье 2014",
+  "producer": "Barbera",
+  "country": "Италия",
+  "region": "Альба, Пьемонт",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Barbera"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<2 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "6–12 месяцев",
+  "tasting_notes": {
+    "appearance": "рубиново-фиолетовое",
+    "nose": "черная вишня, слива, фиалка",
+    "palate": "сочное, высокая кислотность, мягкие танины, ягоды",
+    "finish": "чистое, фруктовое"
+  },
+  "vineyards": "холмы Ланге",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Альба, Пьемонт (Италия). Главный сорт — Barbera.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Barbera",
+    "Альба"
+  ],
+  "image_search_query": "Barbera d'Alba Doc le Ciliegie 2014 wine bottle",
+  "_id": 91,
+  "_sku": "192",
+  "_title_source": "Barbera d'Alba Doc le Ciliegie 2014 0,75"
+}

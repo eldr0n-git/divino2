@@ -1,0 +1,41 @@
+{
+  "name_original": "Barolo Docg Castelletto 2012 0.75",
+  "name_ru": "Бароло Докг Кастеллетто 2012",
+  "producer": "Barolo",
+  "country": "Италия",
+  "region": "Бароло, Пьемонт",
+  "wine_style": "сухое вино",
+  "grape_varieties": [
+    "Nebbiolo"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 14,
+    "max": 16
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "минимум 38 месяцев (62 для Riserva), не менее 18 в бочке",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмы Ланге на известково-глинистых почвах",
+  "ratings": {
+    "wine_spectator": 92,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Бароло называют «Королём итальянских вин» — выдержка не менее 3 лет обязательна по закону. Небиоло, из которого он делается, созревает последним в Пьемонте.",
+  "tags": [
+    "Италия",
+    "Бароло"
+  ],
+  "image_search_query": "Barolo Docg Castelletto 2012 wine bottle",
+  "_id": 104,
+  "_sku": "201",
+  "_title_source": "Barolo Docg Castelletto 2012 0.75"
+}

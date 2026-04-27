@@ -1,0 +1,43 @@
+{
+  "name_original": "Vino rose delle Venezie IGT 2015 Rosa Dei Masi  0,75",
+  "name_ru": "Вино Росе Делле Венецье Игт 2015 Роса Дэй Маси",
+  "producer": "Masi Agricola",
+  "country": "Италия",
+  "region": "Вальполичелла, Венето",
+  "wine_style": "сухое розовое",
+  "grape_varieties": [
+    "Sangiovese",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Один из ведущих производителей Амароне, разработали технологию двойного апассименто.",
+  "tags": [
+    "розовое вино",
+    "Италия",
+    "Тоскана"
+  ],
+  "image_search_query": "Vino rose delle Venezie IGT 2015 Rosa Dei Masi wine bottle",
+  "_id": 345,
+  "_sku": "133",
+  "_title_source": "Vino rose delle Venezie IGT 2015 Rosa Dei Masi  0,75"
+}

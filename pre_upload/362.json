@@ -1,0 +1,43 @@
+{
+  "name_original": "Giuseppe Quintarelli Rosso del Bepi Veneto IGT 2005",
+  "name_ru": "Джиусеппе Кинтарелли Россо Дел Бепи Венето Игт 2005",
+  "producer": "Giuseppe Quintarelli",
+  "country": "Италия",
+  "region": "Вальполичелла, Венето",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Corvina",
+    "Glera"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "от альпийских предгорий до Адриатики",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Легендарный артизан Венето, Амароне Квинтарелли — икона итинского виноделия.",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Венето"
+  ],
+  "image_search_query": "Giuseppe Quintarelli Rosso del Bepi Veneto IGT 2005 wine bottle",
+  "_id": 212,
+  "_sku": "362",
+  "_title_source": "Giuseppe Quintarelli Rosso del Bepi Veneto IGT 2005"
+}

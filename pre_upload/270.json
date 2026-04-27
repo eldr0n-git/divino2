@@ -1,0 +1,42 @@
+{
+  "name_original": "Chianti Classico DOCG 2015 Peppoli 0,75",
+  "name_ru": "Чьянти Классико Докг 2015 Пепполи",
+  "producer": "Chianti",
+  "country": "Италия",
+  "region": "Кьянти, Тоскана",
+  "wine_style": "сухое вино",
+  "grape_varieties": [
+    "Sangiovese"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 14,
+    "max": 16
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Classico: минимум 12 месяцев; Riserva: 24 месяца",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистый регион между Флоренцией и Сиеной",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Кьянти, Тоскана (Италия). ",
+  "tags": [
+    "Италия",
+    "Кьянти",
+    "Classico"
+  ],
+  "image_search_query": "Chianti Classico DOCG 2015 Peppoli wine bottle",
+  "_id": 148,
+  "_sku": "270",
+  "_title_source": "Chianti Classico DOCG 2015 Peppoli 0,75"
+}

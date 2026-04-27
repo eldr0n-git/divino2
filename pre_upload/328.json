@@ -1,0 +1,43 @@
+{
+  "name_original": "Angialis Vino bianco Isola dei Nuraghi IGT 2013 0,75",
+  "name_ru": "Ангьялис Вино Бьянко Исола Дэй Нураги Игт 2013",
+  "producer": "Angialis",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Sangiovese",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). ",
+  "tags": [
+    "белое вино",
+    "Италия",
+    "Тоскана"
+  ],
+  "image_search_query": "Angialis Vino bianco Isola dei Nuraghi IGT 2013 wine bottle",
+  "_id": 82,
+  "_sku": "328",
+  "_title_source": "Angialis Vino bianco Isola dei Nuraghi IGT 2013 0,75"
+}

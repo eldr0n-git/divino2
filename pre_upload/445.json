@@ -1,0 +1,41 @@
+{
+  "name_original": "Giovanni Galliano Vino Brut Rose 2016 VSQ 0,75",
+  "name_ru": "Гьованни Галльяно Вино Брут Росе 2016 Вск",
+  "producer": "Galliano (Federico/Giuseppe/Giovanni)",
+  "country": "Италия",
+  "region": "Пьемонт",
+  "wine_style": "сухое розовое",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "brut (<12 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "Пьемонт, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Несколько поколений семьи Гальяно производят метод классик в Пьемонте.",
+  "tags": [
+    "розовое вино",
+    "игристое вино"
+  ],
+  "image_search_query": "Giovanni Galliano Vino Brut Rose 2016 VSQ wine bottle",
+  "_id": 455,
+  "_sku": "445",
+  "_title_source": "Giovanni Galliano Vino Brut Rose 2016 VSQ 0,75"
+}

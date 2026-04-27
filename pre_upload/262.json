@@ -1,0 +1,43 @@
+{
+  "name_original": "Chardonnay Spumante Brut 0,75",
+  "name_ru": "Чардоннаи Спуманте Брут",
+  "producer": "Chardonnay",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "игристое",
+  "grape_varieties": [
+    "Chardonnay"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 6,
+    "max": 8
+  },
+  "sugar_content": "brut (<12 г/л)",
+  "production_method": "Метод Шарма (Charmat): вторичная ферментация в герметичных резервуарах под давлением",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "золотисто-жёлтое",
+    "nose": "яблоко, груша, цитрус, дуб, ваниль",
+    "palate": "округлое, маслянистое или хрустящее в зависимости от выдержки",
+    "finish": "долгое"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "белое вино",
+    "игристое вино",
+    "сухое вино",
+    "Chardonnay"
+  ],
+  "image_search_query": "Chardonnay Spumante Brut wine bottle",
+  "_id": 147,
+  "_sku": "262",
+  "_title_source": "Chardonnay Spumante Brut 0,75"
+}

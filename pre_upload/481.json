@@ -1,0 +1,44 @@
+{
+  "name_original": "Castillo de Liria tinto Reserva 0.75 красное сухое",
+  "name_ru": "Кастилло Де Лирья Тинто Ресерва",
+  "producer": "Castillo de Liria (Vicente Gandía)",
+  "country": "Испания",
+  "region": "Валенсия",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Nebbiolo",
+    "Barbera"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи, ваниль, кедр, дуб",
+    "palate": "сбалансированное, фруктовое, с дубовыми оттенками",
+    "finish": "долгое, с нотами специй и дуба"
+  },
+  "vineyards": "холмы у Альп",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Marca histórica de Vicente Gandía, uno de los mayores productores de España.",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Испания",
+    "Пьемонт"
+  ],
+  "image_search_query": "Castillo de Liria tinto Reserva  красное сухое wine bottle",
+  "_id": 144,
+  "_sku": "481",
+  "_title_source": "Castillo de Liria tinto Reserva 0.75 красное сухое"
+}

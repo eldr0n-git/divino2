@@ -1,0 +1,44 @@
+{
+  "name_original": "Bellamico rosso Cannonau di Sardegna DOC 0,75",
+  "name_ru": "Белламико Россо Канноно Ди Сарденьа Док",
+  "producer": "Bellamico (De Martino)",
+  "country": "Италия",
+  "region": "варьируется",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Cannonau"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<4 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиново-гранатовое",
+    "nose": "красные ягоды, фиалка, мята, специи",
+    "palate": "богатое, бархатистое",
+    "finish": "долгое"
+  },
+  "vineyards": "Сардиния, гранитные и известняковые почвы",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Линейка итальянских вин различных регионов под брендом Bellamico.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Cannonau",
+    "Сардиния"
+  ],
+  "image_search_query": "Bellamico rosso Cannonau di Sardegna DOC wine bottle",
+  "_id": 110,
+  "_sku": "427",
+  "_title_source": "Bellamico rosso Cannonau di Sardegna DOC 0,75"
+}

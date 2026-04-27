@@ -1,0 +1,44 @@
+{
+  "name_original": "Brolo di Campofiorin Oro rosso di Verona IGT 2013  1,5",
+  "name_ru": "Броло Ди Кампофьорин Оро Россо Ди Верона Игт 2013 1,5",
+  "producer": "Brolo",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Sangiovese",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). ",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Тоскана",
+    "магнум 1.5 л"
+  ],
+  "image_search_query": "Brolo di Campofiorin Oro rosso di Verona IGT 2013 wine bottle",
+  "_id": 122,
+  "_sku": "113.29",
+  "_title_source": "Brolo di Campofiorin Oro rosso di Verona IGT 2013  1,5"
+}

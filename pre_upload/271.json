@@ -1,0 +1,40 @@
+{
+  "name_original": "Autignan Vino Rosso 2014 0,75",
+  "name_ru": "Отиньан Вино Россо 2014",
+  "producer": "Autignan",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "красное вино"
+  ],
+  "image_search_query": "Autignan Vino Rosso 2014 wine bottle",
+  "_id": 88,
+  "_sku": "271",
+  "_title_source": "Autignan Vino Rosso 2014 0,75"
+}

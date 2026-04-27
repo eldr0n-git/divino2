@@ -1,0 +1,44 @@
+{
+  "name_original": "Galet Vino Bianco Langhe Riesling Doc 2017 0,75",
+  "name_ru": "Галет Вино Бьянко Ланге Рьеслинг Док 2017",
+  "producer": "Galet",
+  "country": "Италия",
+  "region": "Ланге, Пьемонт",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Riesling"
+  ],
+  "alcohol_percent": 12.0,
+  "serving_temperature_c": {
+    "min": 8,
+    "max": 10
+  },
+  "sugar_content": "dry (<5 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "бледно-жёлтое с зелёными отблесками",
+    "nose": "цитрус, персик, бензин, минерал",
+    "palate": "хрустящее, яркая кислотность, минеральное",
+    "finish": "долгое, минеральное"
+  },
+  "vineyards": "холмы Ланге",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Ланге, Пьемонт (Италия). Главный сорт — Riesling.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Италия",
+    "Riesling",
+    "Ланге"
+  ],
+  "image_search_query": "Galet Vino Bianco Langhe Riesling Doc 2017 wine bottle",
+  "_id": 702,
+  "_sku": "447",
+  "_title_source": "Galet Vino Bianco Langhe Riesling Doc 2017 0,75"
+}

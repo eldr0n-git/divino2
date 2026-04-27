@@ -1,0 +1,41 @@
+{
+  "name_original": "Dogma Blanc De Noirs Brut Nature VSQ 2013 0,75",
+  "name_ru": "Догма Бланк Де Нойрс Брут Натуре Вск 2013",
+  "producer": "Dogma",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "игристое",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 6,
+    "max": 8
+  },
+  "sugar_content": "brut nature (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "белое вино",
+    "игристое вино"
+  ],
+  "image_search_query": "Dogma Blanc De Noirs Brut Nature VSQ 2013 wine bottle",
+  "_id": 177,
+  "_sku": "279",
+  "_title_source": "Dogma Blanc De Noirs Brut Nature VSQ 2013 0,75"
+}

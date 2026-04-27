@@ -1,0 +1,41 @@
+{
+  "name_original": "Rio Sordo Barbaresco 0,75",
+  "name_ru": "Рьо Сордо Барбареско",
+  "producer": "Rio",
+  "country": "Италия",
+  "region": "Барбареско, Пьемонт",
+  "wine_style": "сухое вино",
+  "grape_varieties": [
+    "Nebbiolo"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 14,
+    "max": 16
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "минимум 26 месяцев (50 для Riserva)",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмы правого берега Танаро",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Барбареско, Пьемонт (Италия). ",
+  "tags": [
+    "Италия",
+    "Барбареско"
+  ],
+  "image_search_query": "Rio Sordo Barbaresco wine bottle",
+  "_id": 281,
+  "_sku": "20",
+  "_title_source": "Rio Sordo Barbaresco 0,75"
+}

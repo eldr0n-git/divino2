@@ -1,0 +1,42 @@
+{
+  "name_original": "Finca del Mar Chardonnay 0.75 белое сухое",
+  "name_ru": "Финка Дел Мар Чардоннаи",
+  "producer": "Finca del Mar (Vicente Gandía)",
+  "country": "Испания",
+  "region": "Валенсия",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Chardonnay"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "золотисто-жёлтое",
+    "nose": "яблоко, груша, цитрус, дуб, ваниль",
+    "palate": "округлое, маслянистое или хрустящее в зависимости от выдержки",
+    "finish": "долгое"
+  },
+  "vineyards": "Валенсия, Испания",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Линейка Vicente Gandía, ориентированная на международные рынки.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Chardonnay"
+  ],
+  "image_search_query": "Finca del Mar Chardonnay  белое сухое wine bottle",
+  "_id": 194,
+  "_sku": "487",
+  "_title_source": "Finca del Mar Chardonnay 0.75 белое сухое"
+}

@@ -1,0 +1,40 @@
+{
+  "name_original": "Биттер \"Americano Rosso\" 1.0 1/6",
+  "name_ru": "Биттер \"американо Россо\" 1.0 1/6",
+  "producer": "Биттер",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "красное вино"
+  ],
+  "image_search_query": "Биттер \"Americano Rosso\" 1.0 1/6 wine bottle",
+  "_id": 725,
+  "_sku": "003806192828",
+  "_title_source": "Биттер \"Americano Rosso\" 1.0 1/6"
+}

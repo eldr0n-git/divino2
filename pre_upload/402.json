@@ -1,0 +1,44 @@
+{
+  "name_original": "Merlot Venezia Giulia Igt 2015 0,75",
+  "name_ru": "Мерлот Венецья Джиулья Игт 2015",
+  "producer": "Merlot",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Merlot"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое с фиолетовым",
+    "nose": "слива, черная вишня, шоколад, трюфель",
+    "palate": "мягкое, бархатистое, полнотелое",
+    "finish": "долгое, мягкое"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Merlot.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Merlot",
+    "Тоскана"
+  ],
+  "image_search_query": "Merlot Venezia Giulia Igt 2015 wine bottle",
+  "_id": 243,
+  "_sku": "402",
+  "_title_source": "Merlot Venezia Giulia Igt 2015 0,75"
+}

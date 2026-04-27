@@ -1,0 +1,43 @@
+{
+  "name_original": "Divino Rosso IGT Sicilia 2016 0,75",
+  "name_ru": "Дивино Россо Игт Сичилья 2016",
+  "producer": "Divino",
+  "country": "Италия",
+  "region": "Сицилия",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Nero d'Avola",
+    "Nerello Mascalese"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "от 6 до 12 месяцев",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "Сицилия, средиземноморский климат",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Сицилия (Италия). ",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Сицилия"
+  ],
+  "image_search_query": "Divino Rosso IGT Sicilia 2016 wine bottle",
+  "_id": 176,
+  "_sku": "259",
+  "_title_source": "Divino Rosso IGT Sicilia 2016 0,75"
+}

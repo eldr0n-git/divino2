@@ -1,0 +1,40 @@
+{
+  "name_original": "Vino bianco semi sweet Bellamico 0,75 (medium)",
+  "name_ru": "Вино Бьянко Семи Свеет Белламико",
+  "producer": "Bellamico (De Martino)",
+  "country": "Италия",
+  "region": "варьируется",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "semi-sweet (20–50 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "варьируется, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Линейка итальянских вин различных регионов под брендом Bellamico.",
+  "tags": [
+    "белое вино"
+  ],
+  "image_search_query": "Vino bianco semi sweet Bellamico  (medium) wine bottle",
+  "_id": 463,
+  "_sku": "88.22",
+  "_title_source": "Vino bianco semi sweet Bellamico 0,75 (medium)"
+}

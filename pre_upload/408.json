@@ -1,0 +1,43 @@
+{
+  "name_original": "Papios Rosso Igt Terre Siciliane 2017 0,75",
+  "name_ru": "Папьос Россо Игт Терре Сичильяне 2017",
+  "producer": "Papios",
+  "country": "Италия",
+  "region": "Сицилия",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Nero d'Avola",
+    "Nerello Mascalese"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "от 6 до 12 месяцев",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "Сицилия, средиземноморский климат",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Сицилия (Италия). ",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Сицилия"
+  ],
+  "image_search_query": "Papios Rosso Igt Terre Siciliane 2017 wine bottle",
+  "_id": 259,
+  "_sku": "408",
+  "_title_source": "Papios Rosso Igt Terre Siciliane 2017 0,75"
+}

@@ -1,0 +1,44 @@
+{
+  "name_original": "Petit Verdot Igt 2015 0,75",
+  "name_ru": "Петит Вердот Игт 2015",
+  "producer": "Petit",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Petit verdot"
+  ],
+  "alcohol_percent": 14.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "тёмно-фиолетовое",
+    "nose": "черника, фиалка, специи, свинец",
+    "palate": "плотное, мощные танины",
+    "finish": "долгое, интенсивное"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Petit verdot.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Petit verdot",
+    "Тоскана"
+  ],
+  "image_search_query": "Petit Verdot Igt 2015 wine bottle",
+  "_id": 266,
+  "_sku": "186",
+  "_title_source": "Petit Verdot Igt 2015 0,75"
+}

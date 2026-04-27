@@ -1,0 +1,44 @@
+{
+  "name_original": "Vino rosso Negroamaro LGT Puglia 2015 Intrigo  0,75",
+  "name_ru": "Вино Россо Негроамаро Лгт Пульья 2015 Интриго",
+  "producer": "rosso",
+  "country": "Италия",
+  "region": "Апулия",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Negroamaro"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "тёмно-рубиновое",
+    "nose": "черная вишня, черника, средиземноморские травы, табак",
+    "palate": "плотное, бархатистое, терпкое",
+    "finish": "долгое"
+  },
+  "vineyards": "равнины юга Италии",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Апулия (Италия). Главный сорт — Negroamaro.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Negroamaro",
+    "Апулия"
+  ],
+  "image_search_query": "Vino rosso Negroamaro LGT Puglia 2015 Intrigo wine bottle",
+  "_id": 358,
+  "_sku": "0104",
+  "_title_source": "Vino rosso Negroamaro LGT Puglia 2015 Intrigo  0,75"
+}

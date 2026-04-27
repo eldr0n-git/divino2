@@ -1,0 +1,44 @@
+{
+  "name_original": "Safran Pinot grigio delle Venezie Doc 2018 0,75",
+  "name_ru": "Сафран Пинот Григьо Делле Венецье Док 2018",
+  "producer": "Safran",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Pinot grigio"
+  ],
+  "alcohol_percent": 12.5,
+  "serving_temperature_c": {
+    "min": 8,
+    "max": 10
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "бледно-золотистое",
+    "nose": "груша, яблоко, миндаль, цитрус",
+    "palate": "лёгкое, свежее, хрустящее",
+    "finish": "короткое, чистое"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Pinot grigio.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Италия",
+    "Pinot grigio",
+    "Тоскана"
+  ],
+  "image_search_query": "Safran Pinot grigio delle Venezie Doc 2018 wine bottle",
+  "_id": 288,
+  "_sku": "437",
+  "_title_source": "Safran Pinot grigio delle Venezie Doc 2018 0,75"
+}

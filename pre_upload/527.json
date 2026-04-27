@@ -1,0 +1,43 @@
+{
+  "name_original": "Cabernet Dorsa trocken 0.75 красное сухое",
+  "name_ru": "Кабернет Дорса Трокен",
+  "producer": "Cabernet",
+  "country": "Германия",
+  "region": "Германия (Рейн / Пфальц)",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Cabernet sauvignon"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "тёмно-рубиновое",
+    "nose": "смородина, черника, кедр, зелёный перец",
+    "palate": "полнотелое, структурированные танины",
+    "finish": "долгое, с нотами специй"
+  },
+  "vineyards": "Германия (Рейн / Пфальц), Германия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Германия",
+    "Cabernet sauvignon"
+  ],
+  "image_search_query": "Cabernet Dorsa trocken  красное сухое wine bottle",
+  "_id": 131,
+  "_sku": "527",
+  "_title_source": "Cabernet Dorsa trocken 0.75 красное сухое"
+}

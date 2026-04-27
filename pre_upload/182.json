@@ -1,0 +1,44 @@
+{
+  "name_original": "Piemonte Doc Albarossa Macchiaferro 2012 0.75",
+  "name_ru": "Пьемонте Док Албаросса Макчьяферро 2012",
+  "producer": "Piemonte",
+  "country": "Италия",
+  "region": "Пьемонт",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Albarossa"
+  ],
+  "alcohol_percent": 13.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "тёмно-рубиновое",
+    "nose": "черная слива, черника, специи",
+    "palate": "полнотелое, мягкие танины",
+    "finish": "долгое"
+  },
+  "vineyards": "холмы у Альп",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Пьемонт (Италия). Главный сорт — Albarossa.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Albarossa",
+    "Пьемонт"
+  ],
+  "image_search_query": "Piemonte Doc Albarossa Macchiaferro 2012 wine bottle",
+  "_id": 269,
+  "_sku": "182",
+  "_title_source": "Piemonte Doc Albarossa Macchiaferro 2012 0.75"
+}

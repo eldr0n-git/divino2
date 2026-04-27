@@ -1,0 +1,43 @@
+{
+  "name_original": "Bolgheri Le Serre Nuove Ornellaia Rosso DOC 2015 0,75",
+  "name_ru": "Болгери Ле Серре Нуове Орнеллаья Россо Док 2015",
+  "producer": "Tenuta dell'Ornellaia",
+  "country": "Италия",
+  "region": "Больгери, Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Cabernet Sauvignon",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "от 12 до 24 месяцев в дубовых бочках",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "прибрежный регион Маремма",
+  "ratings": {
+    "wine_spectator": 96,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": 98
+  },
+  "interesting_facts": "Культовое имение в Больгери, создатель Super Tuscans мирового уровня.",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Больгери"
+  ],
+  "image_search_query": "Bolgheri Le Serre Nuove Ornellaia Rosso DOC 2015 wine bottle",
+  "_id": 401,
+  "_sku": "267",
+  "_title_source": "Bolgheri Le Serre Nuove Ornellaia Rosso DOC 2015 0,75"
+}

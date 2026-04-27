@@ -2,7 +2,7 @@
 /**
  * Plugin Name: DIVINO WooCommerce XML Import
  * Description: Импорт товаров из XML файла в WooCommerce
- * Version: 1.03
+ * Version: 1.04
  * Author: eldr0n
  */
 
@@ -248,13 +248,11 @@ class WC_XML_Import_Plugin {
 
         foreach ($warehouses as $warehouse_name => $warehouse_articles) {
             foreach ($warehouse_articles as $article => $article_items) {
-                // Находим элемент с самым свежим PricePeriod
+                // Находим элемент с самым свежим PricePeriod; если PricePeriod пустой — берём первый
                 $latest_item = null;
-                $latest_date = '';
 
                 foreach ($article_items as $item) {
-                    if ($item['PricePeriod'] > $latest_date) {
-                        $latest_date = $item['PricePeriod'];
+                    if ($latest_item === null || $item['PricePeriod'] > $latest_item['PricePeriod']) {
                         $latest_item = $item;
                     }
                 }

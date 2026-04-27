@@ -1,0 +1,38 @@
+{
+  "name_original": "Rodeon 2015 розовое 0,75",
+  "name_ru": "Родеон 2015 Розовое",
+  "producer": "Rodeon",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "сухое розовое",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [],
+  "image_search_query": "Rodeon 2015 розовое wine bottle",
+  "_id": 283,
+  "_sku": "71",
+  "_title_source": "Rodeon 2015 розовое 0,75"
+}

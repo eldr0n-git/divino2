@@ -1,0 +1,43 @@
+{
+  "name_original": "Korem Vino Rosso Isola dei Nuraghi IGT 2014 0,75",
+  "name_ru": "Корем Вино Россо Исола Дэй Нураги Игт 2014",
+  "producer": "Korem",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Sangiovese",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). ",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Тоскана"
+  ],
+  "image_search_query": "Korem Vino Rosso Isola dei Nuraghi IGT 2014 wine bottle",
+  "_id": 413,
+  "_sku": "290",
+  "_title_source": "Korem Vino Rosso Isola dei Nuraghi IGT 2014 0,75"
+}

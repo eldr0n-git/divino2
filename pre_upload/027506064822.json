@@ -1,0 +1,42 @@
+{
+  "name_original": "Вино G.BYASS Alfonso Oloroso Sherry 2015 0,75",
+  "name_ru": "Вино Г.биасс Алфонсо Олоросо Шерри 2015",
+  "producer": "Вино",
+  "country": "Испания",
+  "region": "Херес-де-ла-Фронтера, Андалусия",
+  "wine_style": "сухое вино",
+  "grape_varieties": [
+    "Palomino Fino",
+    "Pedro Ximénez"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 14,
+    "max": 16
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "биологическое (флор) или окислительное старение, система солера",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "меловые почвы альбариса",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Херес-де-ла-Фронтера, Андалусия (Испания). ",
+  "tags": [
+    "Испания",
+    "Херес-де-ла-Фронтера"
+  ],
+  "image_search_query": "G.BYASS Alfonso Oloroso Sherry 2015 wine bottle",
+  "_id": 732,
+  "_sku": "027506064822",
+  "_title_source": "Вино G.BYASS Alfonso Oloroso Sherry 2015 0,75"
+}

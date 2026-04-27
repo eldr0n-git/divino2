@@ -1,0 +1,44 @@
+{
+  "name_original": "Piemonte Doc Chardonnay 2015 0,75",
+  "name_ru": "Пьемонте Док Чардоннаи 2015",
+  "producer": "Piemonte",
+  "country": "Италия",
+  "region": "Пьемонт",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Chardonnay"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "золотисто-жёлтое",
+    "nose": "яблоко, груша, цитрус, дуб, ваниль",
+    "palate": "округлое, маслянистое или хрустящее в зависимости от выдержки",
+    "finish": "долгое"
+  },
+  "vineyards": "холмы у Альп",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Пьемонт (Италия). Главный сорт — Chardonnay.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Италия",
+    "Chardonnay",
+    "Пьемонт"
+  ],
+  "image_search_query": "Piemonte Doc Chardonnay 2015 wine bottle",
+  "_id": 270,
+  "_sku": "170",
+  "_title_source": "Piemonte Doc Chardonnay 2015 0,75"
+}

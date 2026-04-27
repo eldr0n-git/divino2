@@ -1,0 +1,40 @@
+{
+  "name_original": "Calabuig white 2016 0,75",
+  "name_ru": "Калабуиг Вите 2016",
+  "producer": "Bodegas Calabuig",
+  "country": "Испания",
+  "region": "Утьель-Рекена",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "Утьель-Рекена, Испания",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Небольшая семейная бодега региона Утьель-Рекена.",
+  "tags": [
+    "белое вино"
+  ],
+  "image_search_query": "Calabuig white 2016 wine bottle",
+  "_id": 133,
+  "_sku": "227",
+  "_title_source": "Calabuig white 2016 0,75"
+}

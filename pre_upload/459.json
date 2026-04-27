@@ -1,0 +1,45 @@
+{
+  "name_original": "Canelli  Vino Bianco Moscato d'Asti Docg 2018 0,75",
+  "name_ru": "Канелли Вино Бьянко Москато Д'асти Докг 2018",
+  "producer": "Canelli",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "игристое белое сладкое",
+  "grape_varieties": [
+    "Moscato"
+  ],
+  "alcohol_percent": 5.5,
+  "serving_temperature_c": {
+    "min": 6,
+    "max": 8
+  },
+  "sugar_content": "sweet (>90 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "бледно-золотистое",
+    "nose": "персик, абрикос, мёд, цветы акации",
+    "palate": "лёгкое, сладкое, игристое",
+    "finish": "короткое, сладкое"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Moscato.",
+  "tags": [
+    "белое вино",
+    "игристое вино",
+    "сладкое вино",
+    "Италия",
+    "Moscato",
+    "Тоскана"
+  ],
+  "image_search_query": "Canelli  Vino Bianco Moscato d'Asti Docg 2018 wine bottle",
+  "_id": 135,
+  "_sku": "459",
+  "_title_source": "Canelli  Vino Bianco Moscato d'Asti Docg 2018 0,75"
+}

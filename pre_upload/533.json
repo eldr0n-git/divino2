@@ -1,0 +1,43 @@
+{
+  "name_original": "Spatburgunder Konig trocken 0.75 красное сухое",
+  "name_ru": "Спатбургундер Кониг Трокен",
+  "producer": "Spatburgunder",
+  "country": "Германия",
+  "region": "Германия (Рейн / Пфальц)",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Spatburgunder"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<2 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое, прозрачное",
+    "nose": "вишня, клубника, розы, дуб",
+    "palate": "элегантное, шелковистые танины",
+    "finish": "долгое, изысканное"
+  },
+  "vineyards": "Германия (Рейн / Пфальц), Германия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Германия",
+    "Spatburgunder"
+  ],
+  "image_search_query": "Spatburgunder Konig trocken  красное сухое wine bottle",
+  "_id": 300,
+  "_sku": "533",
+  "_title_source": "Spatburgunder Konig trocken 0.75 красное сухое"
+}

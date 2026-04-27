@@ -1,0 +1,44 @@
+{
+  "name_original": "Friulano Doc Friuli 2016   bianco 0,75",
+  "name_ru": "Фриулано Док Фриули 2016 Бьянко",
+  "producer": "Friulano",
+  "country": "Италия",
+  "region": "Фриули-Венеция-Джулия",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Friulano"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "нержавеющая сталь или краткая дубовая выдержка",
+  "tasting_notes": {
+    "appearance": "соломенно-жёлтое",
+    "nose": "белая слива, анис, белые цветы",
+    "palate": "плотное, маслянистое",
+    "finish": "долгое, с горьковатым финалом"
+  },
+  "vineyards": "предальпийские холмы",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Фриули-Венеция-Джулия (Италия). Главный сорт — Friulano.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Италия",
+    "Friulano",
+    "Фриули-Венеция-Джулия"
+  ],
+  "image_search_query": "Friulano Doc Friuli 2016   bianco wine bottle",
+  "_id": 201,
+  "_sku": "387",
+  "_title_source": "Friulano Doc Friuli 2016   bianco 0,75"
+}

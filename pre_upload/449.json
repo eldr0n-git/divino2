@@ -1,0 +1,44 @@
+{
+  "name_original": "Crinet Vino rosso Grignolino d'Asti Doc 2017 0,75",
+  "name_ru": "Кринет Вино Россо Гриньолино Д'асти Док 2017",
+  "producer": "Crinet",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Grignolino"
+  ],
+  "alcohol_percent": 12.5,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<2 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "бледно-рубиновое с оранжевым",
+    "nose": "роза, шиповник, белый перец",
+    "palate": "лёгкое, высокая кислотность, пикантные танины",
+    "finish": "среднее, горьковатое"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Grignolino.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Grignolino",
+    "Тоскана"
+  ],
+  "image_search_query": "Crinet Vino rosso Grignolino d'Asti Doc 2017 wine bottle",
+  "_id": 172,
+  "_sku": "449",
+  "_title_source": "Crinet Vino rosso Grignolino d'Asti Doc 2017 0,75"
+}

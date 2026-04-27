@@ -1,0 +1,42 @@
+{
+  "name_original": "Chianti Riserva Docg Borioso 2014 0.75",
+  "name_ru": "Чьянти Рисерва Докг Борьосо 2014",
+  "producer": "Chianti",
+  "country": "Италия",
+  "region": "Кьянти, Тоскана",
+  "wine_style": "сухое вино",
+  "grape_varieties": [
+    "Sangiovese"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 14,
+    "max": 16
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Classico: минимум 12 месяцев; Riserva: 24 месяца",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи, ваниль, кедр, дуб",
+    "palate": "сбалансированное, фруктовое, с дубовыми оттенками",
+    "finish": "долгое, с нотами специй и дуба"
+  },
+  "vineyards": "холмистый регион между Флоренцией и Сиеной",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Кьянти, Тоскана (Италия). ",
+  "tags": [
+    "Италия",
+    "Кьянти",
+    "Резерва"
+  ],
+  "image_search_query": "Chianti Riserva Docg Borioso 2014 wine bottle",
+  "_id": 152,
+  "_sku": "188",
+  "_title_source": "Chianti Riserva Docg Borioso 2014 0.75"
+}

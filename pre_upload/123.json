@@ -1,0 +1,43 @@
+{
+  "name_original": "Chianti Classico Riserva DOCG 2012 Villa Antinori 0,75",
+  "name_ru": "Чьянти Классико Рисерва Докг 2012 Вилла Антинори",
+  "producer": "Marchesi Antinori",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое вино",
+  "grape_varieties": [
+    "Sangiovese"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 14,
+    "max": 16
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Classico: минимум 12 месяцев; Riserva: 24 месяца",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи, ваниль, кедр, дуб",
+    "palate": "сбалансированное, фруктовое, с дубовыми оттенками",
+    "finish": "долгое, с нотами специй и дуба"
+  },
+  "vineyards": "холмистый регион между Флоренцией и Сиеной",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Одна из старейших винодельческих семей Тосканы, основана в XIV веке. Пионеры движения Super Tuscans.",
+  "tags": [
+    "Италия",
+    "Кьянти",
+    "Резерва",
+    "Classico"
+  ],
+  "image_search_query": "Chianti Classico Riserva DOCG 2012 Villa Antinori wine bottle",
+  "_id": 149,
+  "_sku": "123",
+  "_title_source": "Chianti Classico Riserva DOCG 2012 Villa Antinori 0,75"
+}

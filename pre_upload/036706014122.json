@@ -1,0 +1,40 @@
+{
+  "name_original": "Вино Norton, Privada / Привада, Бодега Нортон, 0.75",
+  "name_ru": "Вино Нортон, Привада / Привада, Бодега Нортон,",
+  "producer": "Bodega Norton",
+  "country": "Аргентина",
+  "region": "Мендоса",
+  "wine_style": "сухое вино",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 14,
+    "max": 16
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "Мендоса, Аргентина",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Одна из старейших виноделен Мендосы, основана в 1895 году британским инженером Эдмундом Нортоном.",
+  "tags": [
+    "Аргентина"
+  ],
+  "image_search_query": "Norton, Privada / Привада, Бодега Нортон, wine bottle",
+  "_id": 736,
+  "_sku": "036706014122",
+  "_title_source": "Вино Norton, Privada / Привада, Бодега Нортон, 0.75"
+}

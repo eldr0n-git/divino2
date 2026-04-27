@@ -1,0 +1,43 @@
+{
+  "name_original": "Gewurztraminer Elegance trocken 0.75 белое сухое",
+  "name_ru": "Джевурцтраминер Елеганчэ Трокен",
+  "producer": "Gewurztraminer",
+  "country": "Германия",
+  "region": "Германия (Рейн / Пфальц)",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Gewurztraminer"
+  ],
+  "alcohol_percent": 14.0,
+  "serving_temperature_c": {
+    "min": 8,
+    "max": 10
+  },
+  "sugar_content": "dry (<5 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "золотисто-жёлтое",
+    "nose": "личи, роза, имбирь, мускат",
+    "palate": "ароматное, маслянистое, пряное",
+    "finish": "долгое, пряное"
+  },
+  "vineyards": "Германия (Рейн / Пфальц), Германия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Германия",
+    "Gewurztraminer"
+  ],
+  "image_search_query": "Gewurztraminer Elegance trocken  белое сухое wine bottle",
+  "_id": 204,
+  "_sku": "528",
+  "_title_source": "Gewurztraminer Elegance trocken 0.75 белое сухое"
+}

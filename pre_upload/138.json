@@ -1,0 +1,44 @@
+{
+  "name_original": "Vino rosso Bardolino Classico DOC 2015 Frescaripa 0,75",
+  "name_ru": "Вино Россо Бардолино Классико Док 2015 Фрескарипа",
+  "producer": "rosso",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Sangiovese",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). ",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Тоскана",
+    "Classico"
+  ],
+  "image_search_query": "Vino rosso Bardolino Classico DOC 2015 Frescaripa wine bottle",
+  "_id": 346,
+  "_sku": "138",
+  "_title_source": "Vino rosso Bardolino Classico DOC 2015 Frescaripa 0,75"
+}

@@ -1,0 +1,44 @@
+{
+  "name_original": "Alto Adige Cardellino Chardonnay DOC 2016 0,75 белое",
+  "name_ru": "Алто Адидже Карделлино Чардоннаи Док 2016",
+  "producer": "Alto",
+  "country": "Италия",
+  "region": "Альто Адидже (Судтироль)",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Chardonnay"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "золотисто-жёлтое",
+    "nose": "яблоко, груша, цитрус, дуб, ваниль",
+    "palate": "округлое, маслянистое или хрустящее в зависимости от выдержки",
+    "finish": "долгое"
+  },
+  "vineyards": "альпийские склоны",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Альто Адидже (Судтироль) (Италия). Главный сорт — Chardonnay.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Италия",
+    "Chardonnay",
+    "Альто Адидже (Судтироль)"
+  ],
+  "image_search_query": "Alto Adige Cardellino Chardonnay DOC 2016  белое wine bottle",
+  "_id": 397,
+  "_sku": "278",
+  "_title_source": "Alto Adige Cardellino Chardonnay DOC 2016 0,75 белое"
+}

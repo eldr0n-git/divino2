@@ -1,0 +1,40 @@
+{
+  "name_original": "Clos Pons Alges 2012   1,5L",
+  "name_ru": "Клос Понс Алджес 2012 1,5л",
+  "producer": "Clos Pons",
+  "country": "Испания",
+  "region": "Коsters дель Сегре, Каталония",
+  "wine_style": "сухое вино",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 14,
+    "max": 16
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "Коsters дель Сегре, Каталония, Испания",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Небольшая биодинамическая винодельня в горах Каталонии.",
+  "tags": [
+    "магнум 1.5 л"
+  ],
+  "image_search_query": "Clos Pons Alges 2012   1,5L wine bottle",
+  "_id": 404,
+  "_sku": "228.29",
+  "_title_source": "Clos Pons Alges 2012   1,5L"
+}

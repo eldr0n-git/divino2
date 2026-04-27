@@ -1,0 +1,43 @@
+{
+  "name_original": "Silvaner Elegance trocken 0.75 белое сухое",
+  "name_ru": "Силванер Елеганчэ Трокен",
+  "producer": "Silvaner",
+  "country": "Германия",
+  "region": "Германия (Рейн / Пфальц)",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Silvaner"
+  ],
+  "alcohol_percent": 12.5,
+  "serving_temperature_c": {
+    "min": 8,
+    "max": 10
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "бледно-жёлтое",
+    "nose": "трава, яблоко, белые цветы",
+    "palate": "нейтральное, свежее",
+    "finish": "среднее"
+  },
+  "vineyards": "Германия (Рейн / Пфальц), Германия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Германия",
+    "Silvaner"
+  ],
+  "image_search_query": "Silvaner Elegance trocken  белое сухое wine bottle",
+  "_id": 428,
+  "_sku": "508",
+  "_title_source": "Silvaner Elegance trocken 0.75 белое сухое"
+}

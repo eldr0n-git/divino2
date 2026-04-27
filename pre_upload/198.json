@@ -1,0 +1,44 @@
+{
+  "name_original": "Pinot Grigio Igp Colline pescaresi Meraviglia 2016 0,75",
+  "name_ru": "Пинот Григьо Игп Коллине Пескареси Меравильья 2016",
+  "producer": "Pinot",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Pinot grigio"
+  ],
+  "alcohol_percent": 12.5,
+  "serving_temperature_c": {
+    "min": 8,
+    "max": 10
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "бледно-золотистое",
+    "nose": "груша, яблоко, миндаль, цитрус",
+    "palate": "лёгкое, свежее, хрустящее",
+    "finish": "короткое, чистое"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Pinot grigio.",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Италия",
+    "Pinot grigio",
+    "Тоскана"
+  ],
+  "image_search_query": "Pinot Grigio Igp Colline pescaresi Meraviglia 2016 wine bottle",
+  "_id": 272,
+  "_sku": "198",
+  "_title_source": "Pinot Grigio Igp Colline pescaresi Meraviglia 2016 0,75"
+}

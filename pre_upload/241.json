@@ -1,0 +1,43 @@
+{
+  "name_original": "Zotikos Rosso Bolgheri DOC 2015 0.75",
+  "name_ru": "Цотикос Россо Болгери Док 2015",
+  "producer": "Zotikos",
+  "country": "Италия",
+  "region": "Больгери, Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Cabernet Sauvignon",
+    "Merlot"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "от 12 до 24 месяцев в дубовых бочках",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "прибрежный регион Маремма",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Больгери, Тоскана (Италия). ",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Больгери"
+  ],
+  "image_search_query": "Zotikos Rosso Bolgheri DOC 2015 wine bottle",
+  "_id": 377,
+  "_sku": "241",
+  "_title_source": "Zotikos Rosso Bolgheri DOC 2015 0.75"
+}

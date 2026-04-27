@@ -1,0 +1,43 @@
+{
+  "name_original": "Riesling Spatlese feiherb 0.75 белое сухое",
+  "name_ru": "Рьеслинг Спатлесе Фэйерб",
+  "producer": "Riesling",
+  "country": "Германия",
+  "region": "Германия (Рейн / Пфальц)",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Riesling"
+  ],
+  "alcohol_percent": 12.0,
+  "serving_temperature_c": {
+    "min": 8,
+    "max": 10
+  },
+  "sugar_content": "dry (<5 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "бледно-жёлтое с зелёными отблесками",
+    "nose": "цитрус, персик, бензин, минерал",
+    "palate": "хрустящее, яркая кислотность, минеральное",
+    "finish": "долгое, минеральное"
+  },
+  "vineyards": "Германия (Рейн / Пфальц), Германия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "белое вино",
+    "сухое вино",
+    "Германия",
+    "Riesling"
+  ],
+  "image_search_query": "Riesling Spatlese feiherb  белое сухое wine bottle",
+  "_id": 280,
+  "_sku": "522",
+  "_title_source": "Riesling Spatlese feiherb 0.75 белое сухое"
+}

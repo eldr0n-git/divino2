@@ -1,0 +1,44 @@
+{
+  "name_original": "Refosco dal Peduncolo rosso Doc Colli Orientali 2016 0,75",
+  "name_ru": "Рефоско Дал Педунколо Россо Док Колли Орьентали 2016",
+  "producer": "Refosco",
+  "country": "Италия",
+  "region": "Тоскана",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Refosco"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "тёмно-рубиновое",
+    "nose": "черника, слива, дуб",
+    "palate": "структурированное, высокая кислотность",
+    "finish": "долгое"
+  },
+  "vineyards": "холмистая Тоскана",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Тоскана (Италия). Главный сорт — Refosco.",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Италия",
+    "Refosco",
+    "Тоскана"
+  ],
+  "image_search_query": "Refosco dal Peduncolo rosso Doc Colli Orientali 2016 wine bottle",
+  "_id": 279,
+  "_sku": "383",
+  "_title_source": "Refosco dal Peduncolo rosso Doc Colli Orientali 2016 0,75"
+}

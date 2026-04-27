@@ -1,0 +1,42 @@
+{
+  "name_original": "Uva Pirata Petit Verdot 0.75 красное сухое",
+  "name_ru": "Ува Пирата Петит Вердот",
+  "producer": "Uva",
+  "country": "Италия",
+  "region": "не определён",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Petit verdot"
+  ],
+  "alcohol_percent": 14.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Нержавеющая сталь или краткая выдержка в дубовых ёмкостях",
+  "tasting_notes": {
+    "appearance": "тёмно-фиолетовое",
+    "nose": "черника, фиалка, специи, свинец",
+    "palate": "плотное, мощные танины",
+    "finish": "долгое, интенсивное"
+  },
+  "vineyards": "не определён, Италия",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "",
+  "tags": [
+    "красное вино",
+    "сухое вино",
+    "Petit verdot"
+  ],
+  "image_search_query": "Uva Pirata Petit Verdot  красное сухое wine bottle",
+  "_id": 314,
+  "_sku": "490",
+  "_title_source": "Uva Pirata Petit Verdot 0.75 красное сухое"
+}

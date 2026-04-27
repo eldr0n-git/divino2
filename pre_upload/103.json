@@ -1,0 +1,43 @@
+{
+  "name_original": "Vino rosso LGT Puglia 2014 Amarosso 0,75",
+  "name_ru": "Вино Россо Лгт Пульья 2014 Амароссо",
+  "producer": "rosso",
+  "country": "Италия",
+  "region": "Апулия",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "Primitivo",
+    "Negroamaro"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "варьируется",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "равнины юга Италии",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Апулия (Италия). ",
+  "tags": [
+    "красное вино",
+    "Италия",
+    "Апулия"
+  ],
+  "image_search_query": "Vino rosso LGT Puglia 2014 Amarosso wine bottle",
+  "_id": 355,
+  "_sku": "103",
+  "_title_source": "Vino rosso LGT Puglia 2014 Amarosso 0,75"
+}

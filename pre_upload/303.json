@@ -1,0 +1,43 @@
+{
+  "name_original": "Etna Santo Spirito DOC Bianco 2016 0,75",
+  "name_ru": "Етна Санто Спирито Док Бьянко 2016",
+  "producer": "Etna",
+  "country": "Италия",
+  "region": "Этна, Сицилия",
+  "wine_style": "сухое белое",
+  "grape_varieties": [
+    "Nerello Mascalese",
+    "Nerello Cappuccio (красные)"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 10,
+    "max": 12
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "12–24 месяца в бочках",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи",
+    "palate": "сбалансированное, фруктовое",
+    "finish": "среднее"
+  },
+  "vineyards": "вулканические склоны Этны, пепельные почвы",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Вино из региона Этна, Сицилия (Италия). ",
+  "tags": [
+    "белое вино",
+    "Италия",
+    "Этна"
+  ],
+  "image_search_query": "Etna Santo Spirito DOC Bianco 2016 wine bottle",
+  "_id": 406,
+  "_sku": "303",
+  "_title_source": "Etna Santo Spirito DOC Bianco 2016 0,75"
+}

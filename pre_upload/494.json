@@ -1,0 +1,41 @@
+{
+  "name_original": "Ceremonia tinto Reserva 0.75 красное сухое",
+  "name_ru": "Чэремонья Тинто Ресерва",
+  "producer": "Ceremonia (Vicente Gandía)",
+  "country": "Испания",
+  "region": "Валенсия",
+  "wine_style": "сухое красное",
+  "grape_varieties": [
+    "не определён"
+  ],
+  "alcohol_percent": 13.0,
+  "serving_temperature_c": {
+    "min": 16,
+    "max": 18
+  },
+  "sugar_content": "dry (<3 г/л)",
+  "production_method": "Классическая ферментация в контролируемых условиях",
+  "aging": "Выдержка не менее 24–36 месяцев в дубовых бочках и бутылке",
+  "tasting_notes": {
+    "appearance": "рубиновое",
+    "nose": "фрукты, цветы, специи, ваниль, кедр, дуб",
+    "palate": "сбалансированное, фруктовое, с дубовыми оттенками",
+    "finish": "долгое, с нотами специй и дуба"
+  },
+  "vineyards": "Валенсия, Испания",
+  "ratings": {
+    "wine_spectator": null,
+    "robert_parker": null,
+    "vivino": null,
+    "james_suckling": null
+  },
+  "interesting_facts": "Premiumная линейка Vicente Gandía.",
+  "tags": [
+    "красное вино",
+    "Испания"
+  ],
+  "image_search_query": "Ceremonia tinto Reserva  красное сухое wine bottle",
+  "_id": 146,
+  "_sku": "494",
+  "_title_source": "Ceremonia tinto Reserva 0.75 красное сухое"
+}
