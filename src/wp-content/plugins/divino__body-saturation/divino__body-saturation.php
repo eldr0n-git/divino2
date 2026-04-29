@@ -17,7 +17,7 @@ function divino_add_wine_characteristics_metabox() {
     if (!$post) return;
 
     $product_kind = wp_get_post_terms($post->ID, 'product_kind', ['fields' => 'slugs']);
-    if (in_array('wine', $product_kind)) {
+    if (in_array('wine', $product_kind) || in_array('champagne-and-sparkling', $product_kind)) {
         add_meta_box(
             'divino_body_saturation_metabox',
             'Насыщенность',

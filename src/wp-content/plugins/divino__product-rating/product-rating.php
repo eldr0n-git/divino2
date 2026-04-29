@@ -34,11 +34,51 @@ class Divino_Product_Rating {
         add_shortcode('divino_rating_block', array($this, 'rating_block_shortcode'));
         add_shortcode('divino_rating_values', array($this, 'rating_values_shortcode'));
         add_shortcode('divino_extrashort_rating', array($this, 'extrashort_rating_shortcode'));
+        add_action('the_post', array($this, 'track_current_product'), 1, 2);
+        add_filter('render_block_context', array($this, 'capture_block_product_id'), 10, 3);
         add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_scripts'));
         add_action('admin_post_divino_save_rating', array($this, 'handle_save_rating'));
         add_action('admin_post_divino_delete_rating', array($this, 'handle_delete_rating'));
+        add_action('init', array($this, 'register_blocks'));
     }
     
+    /**
+     * Tracks the current product when the_post() advances the loop.
+     * Fires during $query->the_post() in the product-collection loop,
+     * before inner blocks (including core/shortcode) render.
+     */
+    public function track_current_product( $post, $query = null ) {
+        if ( $post && 'product' === get_post_type( $post ) ) {
+            self::$_block_context_product_id = $post->ID;
+        }
+    }
+
+    /**
+     * Secondary capture: reads postId from block context or parent block's
+     * available_context (covers blocks that declare usesContext like core/post-title).
+     * core/shortcode has no usesContext, so we also check parent's available_context
+     * via PHP array cast of the protected property.
+     */
+    public function capture_block_product_id( $context, $parsed_block, $parent_block ) {
+        $post_id = null;
+
+        if ( ! empty( $context['postId'] ) ) {
+            $post_id = absint( $context['postId'] );
+        } elseif ( $parent_block instanceof WP_Block ) {
+            $arr   = (array) $parent_block;
+            $avail = $arr["\0*\0available_context"] ?? array();
+            if ( ! empty( $avail['postId'] ) ) {
+                $post_id = absint( $avail['postId'] );
+            }
+        }
+
+        if ( $post_id && 'product' === get_post_type( $post_id ) ) {
+            self::$_block_context_product_id = $post_id;
+        }
+
+        return $context;
+    }
+
     /**
      * Проверка существования таблицы при загрузке плагина
      */
@@ -487,16 +527,87 @@ class Divino_Product_Rating {
     }
     
     /**
+     * Регистрация Gutenberg-блоков плагина
+     */
+    public function register_blocks() {
+        register_block_type( 'divino/rating-badge', array(
+            'render_callback' => array( $this, 'rating_badge_render' ),
+            'uses_context'    => array( 'postId' ),
+        ) );
+    }
+
+    /**
+     * Рендер блока divino/rating-badge — использует postId из контекста блока,
+     * что гарантирует правильный товар в woocommerce/product-collection loop.
+     */
+    public function rating_badge_render( $attributes, $content, $block ) {
+        global $wpdb;
+
+        $product_id = isset( $block->context['postId'] ) ? absint( $block->context['postId'] ) : $this->get_current_product_id();
+        if ( ! $product_id ) {
+            return '';
+        }
+
+        $ratings = get_post_meta( $product_id, '_divino_product_ratings', true );
+        if ( empty( $ratings ) ) {
+            return '';
+        }
+
+        ob_start();
+        ?>
+        <div class="divino-rating">
+            <?php
+            $currentRating = 0;
+            foreach ( $ratings as $rating_data ) :
+                $rating = $wpdb->get_row( $wpdb->prepare(
+                    "SELECT * FROM {$this->table_name} WHERE id = %d",
+                    $rating_data['rating_id']
+                ) );
+                $currentRating++;
+                if ( $rating && $currentRating < 4 ) :
+            ?>
+                <span class="rating__item rating__item-<?php echo esc_html( $rating->label ); ?>">
+                    <span class="rating__label"><?php echo esc_html( $rating->label ); ?>:</span>
+                    <span class="rating__value"><?php echo esc_html( $rating_data['value'] ); ?></span>
+                </span>
+            <?php
+                endif;
+            endforeach; ?>
+        </div>
+        <?php
+        return ob_get_clean();
+    }
+
+    private function get_current_product_id() {
+        // $query->the_post() is called for each product in the product-collection loop
+        // BEFORE inner blocks render, so global $post is always the current product here.
+        // Check this first — it updates per-product on every iteration.
+        global $post;
+        if ( $post && 'product' === get_post_type( $post ) ) {
+            return $post->ID;
+        }
+        // Fallback: block context captured via render_block_context or the_post hooks.
+        if ( self::$_block_context_product_id ) {
+            return self::$_block_context_product_id;
+        }
+        return null;
+    }
+
+    /** @var int|null Product ID set via render_block_context hook */
+    private static $_block_context_product_id = null;
+
+    /**
      * Шорткод для полного блока рейтингов и наград
      */
     public function rating_block_shortcode($atts) {
-        global $post, $wpdb;
-        
-        if (!$post || get_post_type($post) !== 'product') {
+        global $wpdb;
+
+        $product_id = $this->get_current_product_id();
+        if ( ! $product_id ) {
             return '';
         }
-        
-        $ratings = get_post_meta($post->ID, '_divino_product_ratings', true);
+
+        $ratings = get_post_meta($product_id, '_divino_product_ratings', true);
         
         if (empty($ratings)) {
             return '';
@@ -583,13 +694,14 @@ class Divino_Product_Rating {
      * Шорткод для вывода только значений рейтингов
      */
     public function extrashort_rating_shortcode($atts) {
-        global $post, $wpdb;
-        
-        if (!$post || get_post_type($post) !== 'product') {
+        global $wpdb;
+
+        $product_id = $this->get_current_product_id();
+        if ( ! $product_id ) {
             return '';
         }
-        
-        $ratings = get_post_meta($post->ID, '_divino_product_ratings', true);
+
+        $ratings = get_post_meta($product_id, '_divino_product_ratings', true);
         
         if (empty($ratings)) {
             return '';
@@ -625,13 +737,14 @@ class Divino_Product_Rating {
      * Шорткод для вывода только значений рейтингов
      */
     public function rating_values_shortcode($atts) {
-        global $post, $wpdb;
-        
-        if (!$post || get_post_type($post) !== 'product') {
+        global $wpdb;
+
+        $product_id = $this->get_current_product_id();
+        if ( ! $product_id ) {
             return '';
         }
-        
-        $ratings = get_post_meta($post->ID, '_divino_product_ratings', true);
+
+        $ratings = get_post_meta($product_id, '_divino_product_ratings', true);
         
         if (empty($ratings)) {
             return '';
