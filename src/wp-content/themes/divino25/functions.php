@@ -560,42 +560,42 @@ add_filter( 'woocommerce_customer_has_downloads', '__return_false' );
 //      return '';
 // }
 
-add_filter('template_include', function($template) {
-    ob_start();
-    include $template;
-    $output = ob_get_clean();
-
-    // Получаем классы от body_class()
-    $body_classes = get_body_class();
-    $body_classes[] = 'divino25-debug'; // Добавляем ваш класс
-    $classes_string = implode(' ', $body_classes); // Преобразуем массив классов в строку
-    $product_id = get_the_ID();
-    $terms = get_the_terms($product_id, 'product_kind');
-
-    $slug = '';
-
-    if ( is_singular( 'product' ) ) {
-        global $post;
-        if ( $post ) {
-            $slug = $post->post_name; // это slug товара
-        }
-    }
-    if ($slug) {
-        $term = get_queried_object();
-        if ($term && !is_wp_error($term)) {
-            $classes[] = 'divino25-product-kind-' . sanitize_html_class($term->slug);
-            $classes_string .= ' divino25-product-kind-' . sanitize_html_class($terms[0]->slug);
-        }
-    }
-
-    // Заменяем <body> с учётом всех классов
-    $output = str_replace('<body', '<body class="' . esc_attr($classes_string) . '"', $output);
-
-    echo $output;
-    return null;
-});
-
-
+// add_filter('template_include', function($template) {
+//     ob_start();
+//     include $template;
+//     $output = ob_get_clean();
+// 
+//     // Получаем классы от body_class()
+//     $body_classes = get_body_class();
+//     $body_classes[] = 'divino25-debug'; // Добавляем ваш класс
+//     $classes_string = implode(' ', $body_classes); // Преобразуем массив классов в строку
+//     $product_id = get_the_ID();
+//     $terms = get_the_terms($product_id, 'product_kind');
+// 
+//     $slug = '';
+// 
+//     if ( is_singular( 'product' ) ) {
+//         global $post;
+//         if ( $post ) {
+//             $slug = $post->post_name; // это slug товара
+//         }
+//     }
+//     if ($slug) {
+//         $term = get_queried_object();
+//         if ($term && !is_wp_error($term)) {
+//             $classes[] = 'divino25-product-kind-' . sanitize_html_class($term->slug);
+//             $classes_string .= ' divino25-product-kind-' . sanitize_html_class($terms[0]->slug);
+//         }
+//     }
+// 
+//     // Заменяем <body> с учётом всех классов
+//     $output = str_replace('<body', '<body class="' . esc_attr($classes_string) . '"', $output);
+// 
+//     echo $output;
+//     return null;
+// });
+// 
+// 
 
 
 
